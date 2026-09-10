@@ -99,4 +99,4 @@ Third-party papers, announcements, repositories, media, images, quotations, and 
 
 ## Release status
 
-The v0.1 corpus and public-release branch remain behind a final human launch gate. Repository visibility and the first public deployment are intentionally handled only after release-readiness review is complete.
+AI4Math Chronicle v0.1 is prepared for public release. The repository remains private until the final launch review, after which the release branch can be merged, GitHub Pages verified, and repository visibility switched to public.
