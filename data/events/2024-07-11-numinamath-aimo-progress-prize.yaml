@@ -1,0 +1,99 @@
+schema_version: 1
+id: evt-2024-numinamath-aimo
+slug: numinamath-aimo-progress-prize
+title:
+  en: NuminaMath wins the first AIMO Progress Prize with an open tool-using math model
+  zh-CN: NuminaMath 以开放工具型数学模型赢得首届 AIMO Progress Prize
+dates:
+  event: '2024-07-11'
+  first_public_claim: '2024-07-11'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- competition
+- system
+significance:
+  tier: H2
+  rationale:
+    en: NuminaMath showed that a relatively small open model plus tool-integrated reasoning and carefully curated math data could win a public math-AI competition.
+    zh-CN: NuminaMath 展示了较小规模的开放模型配合工具集成推理与高质量数学数据，也能在公开 AI 数学竞赛中取得领先。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- numeric
+- hybrid
+claim:
+  en: NuminaMath-7B-TIR won the first AIMO Progress Prize by solving 29 of 50 problems on the private test set.
+  zh-CN: NuminaMath-7B-TIR 在私有测试集 50 道题中解出 29 道，赢得首届 AIMO Progress Prize。
+summary:
+  en: The winning system fine-tuned DeepSeekMath-Base 7B and combined chain-of-thought with Python tool execution, self-consistency and internal validation sets.
+  zh-CN: 获胜系统在 DeepSeekMath-Base 7B 上微调，并结合思维链、Python 工具执行、自一致性与内部验证集。
+why_it_matters:
+  en: It provided an open and reproducible counterpoint to closed frontier math systems and helped popularize tool-integrated math reasoning.
+  zh-CN: 它为封闭前沿数学系统提供了开放可复现的对照，并推动工具集成数学推理进入主流。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The model generates reasoning and invokes Python during inference to solve competition problems.
+    zh-CN: 模型在推理过程中生成解题步骤并调用 Python 求解竞赛问题。
+human_contribution:
+  description:
+    en: The Numina and Hugging Face teams curated training data, designed TIR decoding and tuned the competition system.
+    zh-CN: Numina 与 Hugging Face 团队整理训练数据、设计 TIR 解码并调优竞赛系统。
+systems:
+- numinamath
+organizations:
+- numina
+- hugging-face
+people: []
+problems:
+- aimo-progress-prize
+methods:
+- tool-integrated-reasoning
+- self-consistency
+- fine-tuning
+verification:
+  evidence_level: E2
+  status: partially_verified
+  formal_assurance: none
+  history:
+  - date: '2024-07-11'
+    status: partially_verified
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: huggingface-numinamath-aimo-2024
+  tier: S2
+  type: official_announcement
+  title: How NuminaMath Won the 1st AIMO Progress Prize
+  url: https://huggingface.co/blog/winning-aimo-progress-prize
+  primary: true
+  published_date: '2024-07-11'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-deepseekmath
+  - evt-2023-tora
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- aimo
+- open-model
+- tool-use
+- competition
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
