@@ -1,0 +1,96 @@
+schema_version: 1
+id: evt-2021-pact
+slug: pact-proof-artifact-cotraining
+title:
+  en: PACT uses proof artifacts to scale language-model theorem proving
+  zh-CN: PACT 利用证明产物扩展语言模型定理证明
+dates:
+  event: '2021-02-11'
+  first_public_claim: '2021-02-11'
+  paper_release: '2021-02-11'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+significance:
+  tier: H3
+  rationale:
+    en: PACT established proof-term-derived self-supervision as a practical way to alleviate data scarcity in neural theorem proving.
+    zh-CN: PACT 将证明项衍生的自监督数据用于缓解神经定理证明中的数据稀缺问题，形成了重要的训练路线。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+claim:
+  en: PACT co-trained a Transformer theorem prover on Lean proof artifacts and improved held-out theorem-proving success from 32% to 48%.
+  zh-CN: PACT 使用 Lean 证明产物对 Transformer 定理证明器进行协同训练，将留出定理的证明成功率从 32% 提升至 48%。
+summary:
+  en: The method extracts self-supervised objectives from kernel-level proof terms and trains them alongside tactic prediction.
+  zh-CN: 该方法从内核级证明项中提取自监督目标，并与 tactic prediction 一起训练。
+why_it_matters:
+  en: It helped establish that formal libraries contain much more learnable signal than only the next tactic labels exposed at the surface.
+  zh-CN: 它说明形式数学库中可学习的信息远多于表层的下一步 tactic 标签，为后续大规模形式证明训练提供了基础。
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: The language model predicts proof tactics using representation learned from both tactic labels and proof-artifact objectives.
+    zh-CN: 语言模型利用 tactic 标签和证明产物目标共同学习的表示来预测证明步骤。
+human_contribution:
+  description:
+    en: Researchers designed the artifact objectives, instrumented Lean, and curated the evaluation setting.
+    zh-CN: 研究者设计证明产物训练目标、接入 Lean 并构建评测设置。
+systems:
+- pact
+- lean
+organizations:
+- openai
+people: []
+problems: []
+methods:
+- proof-artifact-cotraining
+- transformer
+- tactic-prediction
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2021-02-11'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-pact-2102.06203
+  tier: S1
+  type: paper
+  title: Proof Artifact Co-training for Theorem Proving with Language Models
+  url: https://arxiv.org/abs/2102.06203
+  primary: true
+  published_date: '2021-02-11'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2020-gpt-f
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- lean
+- theorem-proving
+- self-supervision
+- language-model
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
