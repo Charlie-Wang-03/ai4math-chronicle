@@ -1,6 +1,6 @@
 # Contributing to AI4Math Chronicle
 
-**English** · [Simplified Chinese](./CONTRIBUTING.zh-CN.md)
+**English** · [简体中文](./CONTRIBUTING.zh-CN.md)
 
 AI4Math Chronicle welcomes focused contributions that improve the historical record: new milestone proposals, factual corrections, stronger evidence, translation fixes, verification updates, and carefully scoped editorial changes.
 
@@ -31,6 +31,19 @@ Corrections are treated as provenance updates. Published history should not be s
 
 Use the **Website bug** issue form for navigation, search, filtering, rendering, accessibility, data-export, or build problems.
 
+## Contribution lifecycle
+
+The default public workflow is intentionally simple and reviewable:
+
+1. Open the appropriate structured Issue when proposing a new event, correction, or bug.
+2. A maintainer triages the scope and identifies any editorial gate.
+3. External contributors normally work from a fork; maintainers may use a focused repository branch.
+4. Open a small Pull Request that links the Issue and explains the evidence and remaining uncertainty.
+5. CI validates canonical data and the static build.
+6. A maintainer completes any required editorial review before merge.
+
+For event data, one event or one tightly related event cluster per PR is preferred.
+
 ## Editorial expectations
 
 Before proposing a content change, read the [Editorial Methodology](./docs/editorial-methodology.md).
@@ -55,7 +68,7 @@ Automated analysis may suggest classifications, but contributions must not unila
 
 ## Pull requests for event data
 
-If you are comfortable editing the canonical YAML directly, keep the pull request small and reviewable. One event or one tightly related event cluster is preferred.
+If you are comfortable editing the canonical YAML directly, keep the pull request small and reviewable.
 
 A content PR should explain:
 
@@ -66,6 +79,12 @@ A content PR should explain:
 - whether a human editorial gate is triggered.
 
 Technical validation and local build instructions are documented in the [Development Guide](./docs/development.md).
+
+## Community standards
+
+Participation in repository discussions, Issues, reviews, and Pull Requests is governed by the [Code of Conduct](./CODE_OF_CONDUCT.md).
+
+Security or privacy-sensitive problems should follow the [Security Policy](./SECURITY.md) rather than being disclosed with exploit details in a public Issue. Ordinary factual corrections and website bugs should continue to use the structured Issue forms.
 
 ## Licensing of contributions
 
