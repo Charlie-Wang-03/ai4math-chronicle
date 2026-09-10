@@ -18,8 +18,10 @@ event_types:
 significance:
   tier: H3
   rationale:
-    en: DeepSeek-R1 is historically important to general-purpose reasoning-model development, but its relevance to AI4Math is primarily contextual: mathematics served as a capability benchmark rather than the release contributing a mathematical result, proof, formalization, or math-specific system.
-    zh-CN: DeepSeek-R1 对通用推理模型发展具有重要意义，但对 AI4Math 主要属于背景事件：数学主要作为能力评测，而该发布本身并未贡献数学新结果、证明、形式化或数学专项系统。
+    en: >-
+      DeepSeek-R1 is historically important to general-purpose reasoning-model development, but its relevance to AI4Math is primarily contextual: mathematics served as a capability benchmark rather than the release contributing a mathematical result, proof, formalization, or math-specific system.
+    zh-CN: >-
+      DeepSeek-R1 对通用推理模型发展具有重要意义，但对 AI4Math 主要属于背景事件：数学主要作为能力评测，而该发布本身并未贡献数学新结果、证明、形式化或数学专项系统。
 mathematical_novelty:
   type: benchmark_result
 interfaces:
