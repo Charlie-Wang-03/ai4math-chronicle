@@ -5,6 +5,7 @@ import ExploreDirectory from './ExploreDirectory.astro';
 import { getAllEvents } from '../lib/events';
 import { localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
+import '../styles/explore.css';
 const { locale } = Astro.props as { locale: Locale };
 const events = getAllEvents();
 const c = locale === 'zh-CN'
