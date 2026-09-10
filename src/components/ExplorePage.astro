@@ -1,18 +1,42 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SearchBox from './SearchBox.astro';
-import EventCollection from './EventCollection.astro';
+import ExploreDirectory from './ExploreDirectory.astro';
 import { getAllEvents } from '../lib/events';
 import { localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
 const events = getAllEvents();
 const c = locale === 'zh-CN'
- ? { title: '探索事件 — AI4Math 大事记', desc: '按年份、事件类型、重要性与验证状态探索 AI4Math Chronicle 事件。', heading: '探索事件', lede: '筛选 canonical event records；搜索使用完全静态的 Pagefind 索引。' }
- : { title: 'Explore Events — AI4Math Chronicle', desc: 'Explore AI4Math Chronicle events by year, event type, significance, and verification status.', heading: 'Explore events', lede: 'Filter canonical event records. Search is powered by a fully static Pagefind index.' };
+ ? {
+     title: '事件目录 — AI4Math 大事记',
+     desc: '以紧凑目录方式比较 AI4Math Chronicle 事件，并按年份、事件类型、重要性、验证状态与系统筛选。',
+     eyebrow: '事件目录',
+     heading: '比较与筛选全部事件',
+     lede: '时间线适合阅读历史演进；这里把 51 条 canonical event records 压缩为可比较的目录视图，适合快速定位某类系统、事件或验证状态。',
+     noteTitle: '这里与时间线有什么不同？',
+     note: 'Timeline 强调“先后发生了什么”；Explore 强调“这些事件彼此有什么字段差异”。可按系统筛选并切换时间或重要性排序。',
+   }
+ : {
+     title: 'Event Directory — AI4Math Chronicle',
+     desc: 'Compare AI4Math Chronicle events in a compact directory and filter by year, event type, significance, verification, and system.',
+     eyebrow: 'Event directory',
+     heading: 'Compare and filter every event',
+     lede: 'The timeline is for reading historical progression. This page compresses all 51 canonical event records into a comparable directory for quickly locating a system, event class, or verification state.',
+     noteTitle: 'How is this different from the timeline?',
+     note: 'Timeline answers “what happened next?” Explore answers “how do these records differ?” Filter by system and sort by date or significance.',
+   };
 ---
 <BaseLayout locale={locale} title={c.title} description={c.desc} canonicalPath={localePath(locale,'explore')} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en','explore')}>
-  <header class="hero"><p class="eyebrow">Explore</p><h1>{c.heading}</h1><p class="lede">{c.lede}</p></header>
+  <header class="hero explore-hero">
+    <p class="eyebrow">{c.eyebrow}</p>
+    <h1>{c.heading}</h1>
+    <p class="lede">{c.lede}</p>
+    <aside class="explore-note" aria-label={c.noteTitle}>
+      <strong>{c.noteTitle}</strong>
+      <span>{c.note}</span>
+    </aside>
+  </header>
   <SearchBox locale={locale} />
-  <EventCollection events={events} locale={locale} mode="grid" />
+  <ExploreDirectory events={events} locale={locale} />
 </BaseLayout>
