@@ -24,13 +24,15 @@ AI4Math Chronicle is a timeline-first, evidence-backed archive of major mileston
 
 ## Editorial boundaries
 
-Agents may gather evidence, draft bilingual text, suggest taxonomy, detect duplicates, and propose significance or verification changes. They must not independently finalize:
+Agents may gather evidence, draft bilingual text, suggest taxonomy, detect duplicates, and propose or apply verification updates when the documented evidence rule is satisfied and supporting sources are recorded.
 
-- a new `H1` classification unless a human editor directly approves it or has explicitly delegated that classification pass under an established policy;
-- `independently_verified`;
-- a claim that a new mathematical fact has been established.
+They must not independently finalize a new `H1` classification unless a human editor directly approves it or has explicitly delegated that classification pass under an established policy.
 
-Significance and verification are independent dimensions. An H1 event may still be under verification.
+`independently_verified` is an event-level evidence label. It may be assigned when reliable sources independent of the originating claim substantively corroborate the Chronicle's core event description. It must not be treated as a declaration that the underlying mathematics is ultimately correct.
+
+Agents and the Chronicle must not present the correctness of a new mathematical fact as the project's own adjudication. High-risk wording such as “first”, “solves”, “proves”, or “disproves” should remain source-attributed unless the relevant historical fact is independently established.
+
+Significance, event-level verification, formal assurance, and ultimate mathematical correctness are independent dimensions.
 
 ## Verification
 
@@ -51,9 +53,9 @@ Do not treat a visually plausible page or an agent-generated record as verified 
 - Preserve stable Event IDs and explicit correction / verification history.
 - Do not commit credentials, secrets, machine-specific private paths, or private source material.
 - Do not force-push shared branches, rewrite published history, delete branches with active work, change repository visibility, or perform other destructive / high-blast-radius operations without explicit human authorization.
-- Do not merge release work to `main` merely because CI is green when a human editorial or launch gate remains open.
+- Do not merge release work to `main` merely because CI is green when a human H1 editorial or launch gate remains open.
 - Do not move or rewrite published tags or GitHub Releases; treat them as historical snapshots.
 
 ## Definition of done
 
-A change is done only when its intended outcome is implemented, canonical data remains valid, relevant tests/builds pass, documentation is updated when behavior or governance changes, and any required human editorial or release gate has been explicitly satisfied.
+A change is done only when its intended outcome is implemented, canonical data remains valid, relevant tests/builds pass, documentation is updated when behavior or governance changes, and any required human H1 editorial or release gate has been explicitly satisfied.
