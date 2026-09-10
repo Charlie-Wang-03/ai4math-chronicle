@@ -18,10 +18,10 @@ event_types:
 - formalization
 - system
 significance:
-  tier: H2
+  tier: H1
   rationale:
-    en: The result is a concrete AI-generated research contribution in analytic number theory, with human mathematical review and a Lean formalization.
-    zh-CN: 该结果是在解析数论中的具体 AI 生成研究贡献，并同时具有数学家人工审查与 Lean 形式化。
+    en: A concrete AI-generated improvement to a longstanding analytic-number-theory bound is a historical AI4Math milestone because it contributes new mathematics rather than merely demonstrating benchmark competence; H1 does not replace the separate verification state.
+    zh-CN: AI 对解析数论中长期下界给出具体改进，属于历史级 AI4Math 里程碑，因为它贡献的是新的数学结果，而非仅展示基准能力；H1 不替代独立的 verification 状态。
 mathematical_novelty:
   type: new_result
 interfaces:
@@ -99,5 +99,5 @@ editorial:
   created_at: '2026-09-10'
   last_reviewed: '2026-09-10'
   reviewers:
-  - ai-draft-pending-human-editorial-review
+  - Charlie-Wang-03
 corrections: []
