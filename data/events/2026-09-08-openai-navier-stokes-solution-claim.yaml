@@ -7,8 +7,8 @@ title:
 dates:
   event: '2026-09-08'
   first_public_claim: '2026-09-08'
-  paper_release: null
-  artifact_release: null
+  paper_release: '2026-09-08'
+  artifact_release: '2026-09-08'
   independently_verified: null
   added_to_chronicle: '2026-09-10'
   last_updated: '2026-09-10'
@@ -62,7 +62,7 @@ methods:
 - formalization
 - lean
 verification:
-  evidence_level: E2
+  evidence_level: E3
   status: under_verification
   formal_assurance: machine_checked
   history:
@@ -72,6 +72,12 @@ verification:
     note:
       en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
       zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+  - date: '2026-09-10'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: The Chronicle confirmed that OpenAI publicly released a 166-page proof manuscript and a Lean 4 repository formalizing the Navier–Stokes and Euler results. These primary artifacts strengthen the evidence record and support machine-checked formal assurance, but independent mathematical review of the Navier–Stokes claim remains unresolved.
+      zh-CN: Chronicle 已确认 OpenAI 公开发布 166 页证明稿，以及形式化 Navier–Stokes 与 Euler 结果的 Lean 4 仓库。这些一手产物加强了证据记录并支持 machine-checked formal assurance，但 Navier–Stokes 主张的独立数学审查仍未解决。
 sources:
 - id: openai-navier-stokes-2026
   tier: S2
@@ -81,7 +87,31 @@ sources:
   primary: true
   published_date: '2026-09-08'
   accessed_at: '2026-09-10'
-artifacts: []
+- id: openai-navier-stokes-paper-2026
+  tier: S1
+  type: paper
+  title: Finite Time Blowup for Navier–Stokes
+  url: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+  primary: true
+  published_date: '2026-09-08'
+  accessed_at: '2026-09-10'
+- id: github-openai-navier-stokes-euler-lean
+  tier: S1
+  type: formal_artifact
+  title: Lean certificates accompanying Navier–Stokes and Euler results
+  url: https://github.com/openai/NavierStokesAndEuler
+  primary: true
+  published_date: '2026-09-08'
+  accessed_at: '2026-09-10'
+artifacts:
+- id: openai-navier-stokes-proof-pdf
+  kind: proof
+  title: Finite Time Blowup for Navier–Stokes proof manuscript
+  url: https://cdn.openai.com/pdf/32d9f210-8b73-45e0-91bc-82a30aef8a9a/navier-stokes.pdf
+- id: openai-navier-stokes-lean-repository
+  kind: proof
+  title: Lean 4 formalization and proof-checking tooling
+  url: https://github.com/openai/NavierStokesAndEuler
 relationships:
   predecessors:
   - evt-2026-unit-distance-disproof
