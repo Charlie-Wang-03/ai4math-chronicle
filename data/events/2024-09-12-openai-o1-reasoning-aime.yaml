@@ -1,0 +1,97 @@
+schema_version: 1
+id: evt-2024-openai-o1
+slug: openai-o1-reasoning-aime
+title:
+  en: OpenAI o1 introduces inference-time reasoning with a large AIME performance jump
+  zh-CN: OpenAI o1 以推理时思考带来 AIME 能力跃升
+dates:
+  event: '2024-09-12'
+  first_public_claim: '2024-09-12'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- system
+- benchmark
+significance:
+  tier: H2
+  rationale:
+    en: o1 marked a visible shift from next-token chat models toward dedicated long-form reasoning models, with mathematics providing one of the clearest capability signals.
+    zh-CN: o1 标志着模型从普通对话式生成明显转向专门的长程推理范式，而数学成为最清晰的能力信号之一。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- symbolic
+claim:
+  en: OpenAI reported o1 at 74% single-sample accuracy on AIME 2024 and 93% after reranking 1,000 samples, far above GPT-4o's 12% baseline.
+  zh-CN: OpenAI 报告 o1 在 AIME 2024 上单样本准确率为 74%，对 1,000 个样本重排序后达到 93%，显著高于 GPT-4o 的 12%。
+summary:
+  en: The o1 series was trained to spend more inference-time computation on multi-step reasoning before producing an answer.
+  zh-CN: o1 系列被训练为在给出答案前投入更多推理时计算执行多步思考。
+why_it_matters:
+  en: The release helped establish test-time compute and long reasoning traces as central levers for frontier mathematical performance.
+  zh-CN: 该发布推动“测试时计算”和长程推理轨迹成为提升前沿数学能力的核心杠杆。
+ai_role:
+  level: computation_only
+  description:
+    en: The model performs extended internal reasoning before answering mathematical problems.
+    zh-CN: 模型在回答数学问题前执行更长的内部推理。
+human_contribution:
+  description:
+    en: OpenAI researchers designed the reasoning training method and benchmark evaluations.
+    zh-CN: OpenAI 研究者设计推理训练方法与基准评测。
+systems:
+- openai-o1
+organizations:
+- openai
+people: []
+problems:
+- aime-2024
+methods:
+- reasoning-model
+- test-time-compute
+- reinforcement-learning
+verification:
+  evidence_level: E1
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2024-09-12'
+    status: claimed
+    evidence_level: E1
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: openai-o1-reasoning-2024
+  tier: S2
+  type: official_announcement
+  title: Learning to reason with LLMs
+  url: https://openai.com/index/learning-to-reason-with-llms/
+  primary: true
+  published_date: '2024-09-12'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2022-minerva
+  - evt-2021-math-benchmark
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- openai
+- reasoning-model
+- aime
+- test-time-compute
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
