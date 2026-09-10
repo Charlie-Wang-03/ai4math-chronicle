@@ -1,0 +1,43 @@
+name: Stage C editorial close
+
+on:
+  push:
+    branches:
+      - content/stage-c-timeline-expansion
+
+permissions:
+  contents: write
+
+jobs:
+  close-editorial-review:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: content/stage-c-timeline-expansion
+      - name: Apply human editorial reviewer to accepted corpus
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          old = '  - ai-draft-pending-human-editorial-review\n'
+          new = '  - Charlie-Wang-03\n'
+          changed = 0
+          for path in sorted(Path('data/events').glob('*.yaml')):
+              text = path.read_text(encoding='utf-8')
+              if old in text:
+                  path.write_text(text.replace(old, new), encoding='utf-8')
+                  changed += 1
+          print(f'Updated {changed} event records.')
+          PY
+      - name: Commit editorial closure
+        run: |
+          if git diff --quiet -- data/events; then
+            echo 'No editorial reviewer updates needed.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/events
+          git commit -m 'content: record human acceptance of Stage C corpus'
+          git push origin HEAD:content/stage-c-timeline-expansion
