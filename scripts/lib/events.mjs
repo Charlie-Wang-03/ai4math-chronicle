@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import yaml from 'js-yaml';
+import { load } from 'js-yaml';
 
 export const ROOT = path.resolve(import.meta.dirname, '../..');
 export const EVENTS_DIR = path.join(ROOT, 'data', 'events');
@@ -14,7 +14,7 @@ export function loadEventFiles() {
     .map((name) => {
       const filePath = path.join(EVENTS_DIR, name);
       const raw = fs.readFileSync(filePath, 'utf8');
-      const data = yaml.load(raw);
+      const data = load(raw);
       return { name, filePath, data };
     });
 }
