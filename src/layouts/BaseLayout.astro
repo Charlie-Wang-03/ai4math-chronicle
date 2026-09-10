@@ -78,11 +78,29 @@ const alternate = alternatePath ?? localePath(other);
           <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
           <a href={href(localePath(locale, 'data'))}>{labels.data}</a>
           <a href="https://github.com/Charlie-Wang-03/ai4math-chronicle" rel="noreferrer">{labels.github}</a>
-          <select class="theme-select" data-theme-select aria-label={labels.theme} title={labels.theme}>
-            <option value="system">{labels.system}</option>
-            <option value="light">{labels.light}</option>
-            <option value="dark">{labels.dark}</option>
-          </select>
+          <button
+            class="theme-toggle"
+            type="button"
+            data-theme-toggle
+            data-label-theme={labels.theme}
+            data-label-system={labels.system}
+            data-label-light={labels.light}
+            data-label-dark={labels.dark}
+            aria-label={`${labels.theme}: ${labels.system}`}
+            title={`${labels.theme}: ${labels.system}`}
+          >
+            <svg class="theme-icon theme-icon-system" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="4.5" width="17" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8" />
+              <path d="M8 20h8M12 16.5V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+            <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3.7" fill="none" stroke="currentColor" stroke-width="1.8" />
+              <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.55 1.55M17.15 17.15l1.55 1.55M18.7 5.3l-1.55 1.55M6.85 17.15L5.3 18.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </svg>
+            <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.4 15.2A7.8 7.8 0 0 1 8.8 4.6 8.2 8.2 0 1 0 19.4 15.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            </svg>
+          </button>
           <a class="lang-switch" href={href(alternate)} hreflang={other}>{labels.switch}</a>
         </nav>
       </div>
@@ -101,9 +119,25 @@ const alternate = alternatePath ?? localePath(other);
         const key = 'ai4math-theme';
         const root = document.documentElement;
         const media = window.matchMedia('(prefers-color-scheme: dark)');
-        const select = document.querySelector('[data-theme-select]');
+        const button = document.querySelector('[data-theme-toggle]');
         const meta = document.querySelector('meta[name="theme-color"]');
-        const valid = new Set(['light', 'dark', 'system']);
+        const modes = ['system', 'light', 'dark'];
+        const valid = new Set(modes);
+
+        const modeLabel = (preference) => {
+          if (!(button instanceof HTMLButtonElement)) return preference;
+          if (preference === 'light') return button.dataset.labelLight || 'Light';
+          if (preference === 'dark') return button.dataset.labelDark || 'Dark';
+          return button.dataset.labelSystem || 'System';
+        };
+
+        const updateButtonLabel = (preference) => {
+          if (!(button instanceof HTMLButtonElement)) return;
+          const themeLabel = button.dataset.labelTheme || 'Theme';
+          const label = `${themeLabel}: ${modeLabel(preference)}`;
+          button.setAttribute('aria-label', label);
+          button.title = label;
+        };
 
         const apply = (rawPreference, persist = false) => {
           const preference = valid.has(rawPreference) ? rawPreference : 'system';
@@ -111,7 +145,7 @@ const alternate = alternatePath ?? localePath(other);
           root.dataset.theme = resolved;
           root.dataset.themePreference = preference;
           root.style.colorScheme = resolved;
-          if (select instanceof HTMLSelectElement) select.value = preference;
+          updateButtonLabel(preference);
           if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0b1020' : '#f6f7fa');
           if (persist) {
             try { localStorage.setItem(key, preference); } catch {}
@@ -119,8 +153,13 @@ const alternate = alternatePath ?? localePath(other);
         };
 
         apply(root.dataset.themePreference || 'system');
-        if (select instanceof HTMLSelectElement) {
-          select.addEventListener('change', () => apply(select.value, true));
+        if (button instanceof HTMLButtonElement) {
+          button.addEventListener('click', () => {
+            const current = root.dataset.themePreference || 'system';
+            const index = modes.indexOf(current);
+            const next = modes[(index + 1) % modes.length];
+            apply(next, true);
+          });
         }
 
         const handleSystemChange = () => {
