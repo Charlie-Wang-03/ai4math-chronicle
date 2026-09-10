@@ -73,18 +73,18 @@ verification:
     note:
       en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
       zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
-  - date: '2026-09-10'
-    status: under_verification
-    evidence_level: E3
-    note:
-      en: The Chronicle confirmed that OpenAI publicly released a 166-page proof manuscript and a Lean 4 repository formalizing the Navier–Stokes and Euler results. These primary artifacts strengthen the evidence record and support machine-checked formal assurance, but independent mathematical review of the Navier–Stokes claim remains unresolved.
-      zh-CN: Chronicle 已确认 OpenAI 公开发布 166 页证明稿，以及形式化 Navier–Stokes 与 Euler 结果的 Lean 4 仓库。这些一手产物加强了证据记录并支持 machine-checked formal assurance，但 Navier–Stokes 主张的独立数学审查仍未解决。
   - date: '2026-09-08'
     status: independently_verified
     evidence_level: E3
     note:
       en: Independent reporting corroborated the core event facts that OpenAI publicly announced the claimed Millennium Problem solution, released a proof manuscript and Lean formalization, and described the large multi-agent search. This event-level corroboration does not certify the underlying mathematical claim.
       zh-CN: 独立报道确认了该事件的核心事实：OpenAI 公开宣布这一千禧年问题解答主张，发布证明稿与 Lean 形式化，并披露大规模多 Agent 搜索过程。这一事件级佐证并不认证底层数学主张的最终正确性。
+  - date: '2026-09-10'
+    status: independently_verified
+    evidence_level: E3
+    note:
+      en: The Chronicle confirmed the public 166-page proof manuscript and Lean 4 repository formalizing the Navier–Stokes and Euler results. These primary artifacts strengthen the evidence record and support machine-checked formal assurance; independent mathematical assessment of the underlying claim remains a separate question from event-level corroboration.
+      zh-CN: Chronicle 已确认公开的 166 页证明稿，以及形式化 Navier–Stokes 与 Euler 结果的 Lean 4 仓库。这些一手产物加强了证据记录并支持 machine-checked formal assurance；对底层数学主张的独立数学评估与事件级佐证属于不同问题。
   - date: '2026-09-10'
     status: disputed
     evidence_level: E3
