@@ -1,0 +1,103 @@
+schema_version: 1
+id: evt-2026-openai-ten-advances
+slug: openai-ten-math-tcs-advances
+title:
+  en: OpenAI publishes ten AI-generated advances across mathematics and theoretical computer science
+  zh-CN: OpenAI 发布十项 AI 生成的数学与理论计算机科学进展
+dates:
+  event: '2026-08-01'
+  first_public_claim: '2026-08-01'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- discovery
+- proof
+- formalization
+- system
+significance:
+  tier: H2
+  rationale:
+    en: The collection moved from a single headline result to a portfolio of claimed research advances across several mathematical fields, each accompanied by a Lean certificate.
+    zh-CN: 该发布从单个标志性结果扩展到跨多个数学领域的一组研究进展，并为每项结果提供 Lean certificate。
+mathematical_novelty:
+  type: new_result
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+claim:
+  en: OpenAI released ten results resolving or substantially advancing longstanding problems in areas including sphere packing, group theory, circuit complexity, quantum complexity, lattice problems and extremal combinatorics.
+  zh-CN: OpenAI 发布十项结果，声称解决或实质推进球堆积、群论、算术电路复杂度、量子复杂性、格问题与极值组合等领域的长期问题。
+summary:
+  en: OpenAI states that an internal Astra model generated the mathematical arguments, humans prepared manuscripts with the model, and the model formalized each argument into a Lean certificate.
+  zh-CN: OpenAI 表示内部 Astra 模型生成数学论证，人类与模型共同整理稿件，随后模型把每项论证形式化为 Lean certificate。
+why_it_matters:
+  en: If the individual results survive expert review, the release indicates a shift from isolated AI mathematics successes toward repeated research-level contributions.
+  zh-CN: 如果这些结果经受住专家审查，该发布意味着 AI 数学可能从孤立成功转向可重复的研究级贡献。
+ai_role:
+  level: autonomous_primary
+  description:
+    en: OpenAI attributes the mathematical arguments to its internal Astra model and says the model also produced Lean formalizations.
+    zh-CN: OpenAI 将数学论证归因于内部 Astra 模型，并称模型还生成了 Lean 形式化。
+human_contribution:
+  description:
+    en: Humans selected problems, prepared manuscripts with the model and take responsibility for correctness; broader community review is still relevant.
+    zh-CN: 人类选择问题、与模型整理稿件并对正确性负责；更广泛的社区审查仍然重要。
+systems:
+- openai-astra-internal
+- lean
+organizations:
+- openai
+people: []
+problems:
+- research-mathematics
+- theoretical-computer-science
+methods:
+- autonomous-research
+- formalization
+- lean
+verification:
+  evidence_level: E2
+  status: under_verification
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-08-01'
+    status: under_verification
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: openai-ten-advances-2026
+  tier: S2
+  type: official_announcement
+  title: Ten advances in mathematics and theoretical computer science
+  url: https://openai.com/index/ten-advances-in-mathematics/
+  primary: true
+  published_date: '2026-08-01'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2026-unit-distance-disproof
+  - evt-2026-frontiermath-open-problems
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- research-math
+- open-problems
+- lean
+- autonomous-research
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
