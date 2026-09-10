@@ -4,6 +4,9 @@ import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { event, locale, showDate = false } = Astro.props as { event: ChronicleEvent; locale: Locale; showDate?: boolean };
 const primarySources = event.sources.filter((source) => source.primary || source.tier === 'S1').slice(0, 3);
+const labels = locale === 'zh-CN'
+  ? { evidence: '主要证据', paper: '论文', code: '代码', official: '官方', source: '来源', details: '查看事件详情 →' }
+  : { evidence: 'Primary evidence', paper: 'Paper', code: 'Code', official: 'Official', source: 'Source', details: 'View event details →' };
 ---
 <article class={`event-card ${event.significance.tier}`} data-event-card data-year={event.dates.event.slice(0,4)} data-event-types={event.event_types.join(' ')} data-significance={event.significance.tier} data-verification={event.verification.status} data-systems={event.systems.join(' ')}>
   {showDate && <div class="eyebrow">{formatDate(event.dates.event, locale)}</div>}
@@ -16,7 +19,10 @@ const primarySources = event.sources.filter((source) => source.primary || source
   <h3><a href={href(localePath(locale, `events/${event.slug}`))}>{text(event.title, locale)}</a></h3>
   <p>{text(event.summary, locale)}</p>
   {(event.organizations.length > 0 || event.systems.length > 0) && <div class="result-count">{[...event.organizations, ...event.systems].join(' · ')}</div>}
-  <div class="source-shortcuts" aria-label="Primary evidence">
-    {primarySources.map((source) => <a href={source.url} rel="noreferrer">{source.type === 'paper' ? 'Paper' : source.type === 'repository' ? 'Code' : source.tier === 'S2' ? 'Official' : 'Source'}</a>)}
+  <div class="event-card-footer">
+    <div class="source-shortcuts" aria-label={labels.evidence}>
+      {primarySources.map((source) => <a href={source.url} rel="noreferrer">{source.type === 'paper' ? labels.paper : source.type === 'repository' ? labels.code : source.tier === 'S2' ? labels.official : labels.source}</a>)}
+    </div>
+    <a class="details-link" href={href(localePath(locale, `events/${event.slug}`))}>{labels.details}</a>
   </div>
 </article>
