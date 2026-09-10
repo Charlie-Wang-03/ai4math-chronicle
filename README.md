@@ -44,7 +44,7 @@ The current corpus uses three editorial levels:
 - **H2 — Field Milestone:** an important advance in a mathematical AI subfield, system, benchmark, dataset, proof method, or infrastructure direction.
 - **H3 — Context Event:** useful context that is not itself a substantive AI4Math milestone, such as a general-purpose reasoning model whose mathematical results mainly serve as capability evidence.
 
-Significance and verification are intentionally separate. An H1 event can still be under verification.
+The current distribution is **11 H1 / 38 H2 / 2 H3**. Significance and verification are intentionally separate: an H1 event can still be under verification.
 
 ## Evidence and verification
 
