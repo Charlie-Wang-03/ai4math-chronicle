@@ -1,6 +1,6 @@
 # Editorial Methodology
 
-**English** · [Simplified Chinese](./editorial-methodology.zh-CN.md)
+**English** · [简体中文](./editorial-methodology.zh-CN.md)
 
 This document is the repository-side companion to the public Methodology page.
 
