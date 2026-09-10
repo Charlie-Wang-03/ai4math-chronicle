@@ -18,8 +18,10 @@ event_types:
 significance:
   tier: H3
   rationale:
-    en: OpenAI o1 was a major general-purpose reasoning-model release, but its place in the AI4Math Chronicle is contextual: AIME demonstrated capability rather than the release itself contributing a new mathematical result, proof, formalization, or math-specific system.
-    zh-CN: OpenAI o1 是重要的通用推理模型发布，但在 AI4Math Chronicle 中主要承担背景作用：AIME 用于展示模型能力，而该发布本身并未贡献新的数学结果、证明、形式化或数学专项系统。
+    en: >-
+      OpenAI o1 was a major general-purpose reasoning-model release, but its place in the AI4Math Chronicle is contextual: AIME demonstrated capability rather than the release itself contributing a new mathematical result, proof, formalization, or math-specific system.
+    zh-CN: >-
+      OpenAI o1 是重要的通用推理模型发布，但在 AI4Math Chronicle 中主要承担背景作用：AIME 用于展示模型能力，而该发布本身并未贡献新的数学结果、证明、形式化或数学专项系统。
 mathematical_novelty:
   type: benchmark_result
 interfaces:
