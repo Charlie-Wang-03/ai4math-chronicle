@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use AI4Math Chronicle in research, please cite the Chronicle and the relevant primary sources."
+title: "AI4Math Chronicle"
+type: dataset
+authors:
+  - family-names: "Wang"
+    given-names: "Yichuan"
+version: "0.1"
+date-released: 2026-09-10
+repository-code: "https://github.com/Charlie-Wang-03/ai4math-chronicle"
+url: "https://charlie-wang-03.github.io/ai4math-chronicle/en/"
+abstract: "A bilingual, timeline-first, evidence-backed archive of major milestones in AI for Mathematics."
+keywords:
+  - "AI for Mathematics"
+  - "mathematical reasoning"
+  - "theorem proving"
+  - "formal mathematics"
+  - "AI agents"
