@@ -1,7 +1,6 @@
 name: "Website bug / 网站问题"
 description: "Report a UI, search, build, accessibility, or data-rendering problem / 报告 UI、搜索、构建、可访问性或数据渲染问题"
 title: "[Bug] "
-labels: ["bug", "triage"]
 body:
   - type: textarea
     id: problem
