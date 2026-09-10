@@ -1,0 +1,106 @@
+schema_version: 1
+id: evt-2026-openai-navier-stokes
+slug: openai-navier-stokes-solution-claim
+title:
+  en: OpenAI publishes an AI-generated Navier–Stokes Millennium Problem solution with Lean formalization
+  zh-CN: OpenAI 发布 AI 生成的 Navier–Stokes 千禧年问题解答及 Lean 形式化
+dates:
+  event: '2026-09-08'
+  first_public_claim: '2026-09-08'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- discovery
+- proof
+- formalization
+- system
+significance:
+  tier: H2
+  rationale:
+    en: A claimed solution to a Millennium Prize Problem is intrinsically a potential historical milestone, but the Chronicle keeps it below H1 pending independent mathematical review and human editorial judgment.
+    zh-CN: 千禧年难题解答本身具有潜在历史级意义，但 Chronicle 在独立数学审查与人工编辑裁决完成前不将其自动提升为 H1。
+mathematical_novelty:
+  type: new_proof
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+claim:
+  en: OpenAI reports that a large coordinated-agent system produced a finite-time singularity construction resolving statements C and D of the Navier–Stokes Millennium Prize formulation, together with a Lean formalization.
+  zh-CN: OpenAI 报告一个大规模协同 Agent 系统构造了有限时间奇点，声称解决 Navier–Stokes 千禧年问题官方表述中的 C 与 D，并提供 Lean 形式化。
+summary:
+  en: OpenAI says roughly 10,000 concurrent agents worked for about 88 hours on the successful search, followed by additional Lean formalization and verification.
+  zh-CN: OpenAI 表示成功搜索约使用 10,000 个并发 Agent 工作约 88 小时，随后继续进行 Lean 形式化与验证。
+why_it_matters:
+  en: Because the claim concerns a Millennium Prize Problem and is only days old, its mathematical correctness, priority and historical status require unusually strong independent scrutiny.
+  zh-CN: 由于该主张涉及千禧年难题且发布仅数日，其数学正确性、优先权与历史地位都需要特别严格的独立审查。
+ai_role:
+  level: autonomous_primary
+  description:
+    en: OpenAI attributes the construction to a coordinated multi-agent system powered by an internal model, with GPT-6 Astra used for formalization and verification.
+    zh-CN: OpenAI 将核心构造归因于由内部模型驱动的多 Agent 协同系统，并使用 GPT-6 Astra 完成形式化与验证。
+human_contribution:
+  description:
+    en: OpenAI researchers selected target formulations, orchestrated the evaluation and released the proof; independent community review remains essential.
+    zh-CN: OpenAI 研究者选择目标表述、组织评测并发布证明；独立数学社区审查仍然不可替代。
+systems:
+- openai-internal-model
+- gpt-6-astra
+- lean
+organizations:
+- openai
+people: []
+problems:
+- navier-stokes-existence-and-smoothness
+methods:
+- multi-agent
+- autonomous-research
+- formalization
+- lean
+verification:
+  evidence_level: E2
+  status: under_verification
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-09-08'
+    status: under_verification
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: openai-navier-stokes-2026
+  tier: S2
+  type: official_announcement
+  title: On the Navier–Stokes Millennium Prize Problem
+  url: https://openai.com/index/navier-stokes-solution/
+  primary: true
+  published_date: '2026-09-08'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2026-unit-distance-disproof
+  - evt-2026-openai-ten-advances
+  - evt-2026-claude-flt-formalization
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- navier-stokes
+- millennium-prize
+- multi-agent
+- lean
+- under-verification
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
