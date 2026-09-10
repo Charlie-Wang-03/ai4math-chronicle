@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import yaml from 'js-yaml';
+import { load } from 'js-yaml';
 import type { ChronicleEvent, Locale, LocalizedText } from './types';
 
 const EVENTS_DIR = path.resolve(process.cwd(), 'data/events');
@@ -11,7 +11,7 @@ export function getAllEvents(): ChronicleEvent[] {
   cache = fs.readdirSync(EVENTS_DIR)
     .filter((name) => /\.ya?ml$/i.test(name))
     .sort()
-    .map((name) => yaml.load(fs.readFileSync(path.join(EVENTS_DIR, name), 'utf8')) as ChronicleEvent)
+    .map((name) => load(fs.readFileSync(path.join(EVENTS_DIR, name), 'utf8')) as ChronicleEvent)
     .sort((a, b) => b.dates.event.localeCompare(a.dates.event) || a.id.localeCompare(b.id));
   return cache;
 }
