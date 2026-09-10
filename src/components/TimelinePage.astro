@@ -3,22 +3,80 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SearchBox from './SearchBox.astro';
 import EventCollection from './EventCollection.astro';
 import { getAllEvents } from '../lib/events';
-import { localePath, absolute } from '../lib/site';
+import { localePath, absolute, href } from '../lib/site';
 import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
 const events = getAllEvents();
+const h1Count = events.filter((event) => event.significance.tier === 'H1').length;
+const h2Count = events.filter((event) => event.significance.tier === 'H2').length;
+const h3Count = events.filter((event) => event.significance.tier === 'H3').length;
+const eventYears = events.map((event) => event.dates.event.slice(0, 4)).sort();
+const yearRange = `${eventYears.at(0)}–${eventYears.at(-1)}`;
 const copy = locale === 'zh-CN'
-  ? { title: 'AI4Math 大事记 — AI for Mathematics 重大进展时间线', desc: '可视化、可搜索、基于证据的 AI for Mathematics 重大进展档案。', eyebrow: 'AI for Mathematics 历史档案', heading: 'AI4Math 这些年发生了什么？', lede: '按时间发现重要里程碑，理解 AI 与人类各自做了什么，并在 1–2 次点击内进入主要证据。', timeline: 'Chronicle 时间线' }
-  : { title: 'AI4Math Chronicle — Major Milestones in AI for Mathematics', desc: 'A visual, searchable, evidence-backed chronicle of major milestones in AI for Mathematics.', eyebrow: 'AI for Mathematics historical archive', heading: 'What happened in AI4Math?', lede: 'Discover major milestones chronologically, see what AI and humans contributed, and reach primary evidence in one or two clicks.', timeline: 'Chronicle timeline' };
+  ? {
+      title: 'AI4Math 大事记 — AI for Mathematics 重大进展时间线',
+      desc: '可视化、可搜索、基于证据的 AI for Mathematics 重大进展档案。',
+      eyebrow: 'AI for Mathematics 历史档案',
+      heading: 'AI4Math 这些年发生了什么？',
+      lede: '按时间发现重要里程碑，理解 AI 与人类各自做了什么，并在 1–2 次点击内进入主要证据。',
+      timeline: 'Chronicle 时间线',
+      events: '事件',
+      years: '时间跨度',
+      significance: '重要性结构',
+      explore: '探索全部事件',
+      methodology: '阅读方法论',
+      data: '机器可读数据',
+    }
+  : {
+      title: 'AI4Math Chronicle — Major Milestones in AI for Mathematics',
+      desc: 'A visual, searchable, evidence-backed chronicle of major milestones in AI for Mathematics.',
+      eyebrow: 'AI for Mathematics historical archive',
+      heading: 'What happened in AI4Math?',
+      lede: 'Discover major milestones chronologically, see what AI and humans contributed, and reach primary evidence in one or two clicks.',
+      timeline: 'Chronicle timeline',
+      events: 'events',
+      years: 'year span',
+      significance: 'significance mix',
+      explore: 'Explore all events',
+      methodology: 'Read methodology',
+      data: 'Machine-readable data',
+    };
 const websiteJsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'AI4Math Chronicle', alternateName: 'AI4Math 大事记', url: absolute(localePath(locale)), description: copy.desc };
 ---
 <BaseLayout locale={locale} title={copy.title} description={copy.desc} canonicalPath={localePath(locale)} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en')} jsonLd={websiteJsonLd}>
-  <header class="hero">
-    <p class="eyebrow">{copy.eyebrow}</p>
-    <h1>{copy.heading}</h1>
-    <p class="lede">{copy.lede}</p>
+  <header class="hero hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">{copy.eyebrow}</p>
+      <h1>{copy.heading}</h1>
+      <p class="lede">{copy.lede}</p>
+      <nav class="hero-actions" aria-label={locale === 'zh-CN' ? '主要入口' : 'Primary actions'}>
+        <a class="button-link primary" href={href(localePath(locale, 'explore'))}>{copy.explore}</a>
+        <a class="button-link" href={href(localePath(locale, 'methodology'))}>{copy.methodology}</a>
+        <a class="button-link" href={href(localePath(locale, 'data'))}>{copy.data}</a>
+      </nav>
+    </div>
+    <dl class="hero-stats" aria-label={locale === 'zh-CN' ? '当前语料概览' : 'Current corpus overview'}>
+      <div class="hero-stat">
+        <dt>{copy.events}</dt>
+        <dd>{events.length}</dd>
+      </div>
+      <div class="hero-stat">
+        <dt>{copy.years}</dt>
+        <dd>{yearRange}</dd>
+      </div>
+      <div class="hero-stat hero-stat-wide">
+        <dt>{copy.significance}</dt>
+        <dd><span>H1 {h1Count}</span><span>H2 {h2Count}</span><span>H3 {h3Count}</span></dd>
+      </div>
+    </dl>
   </header>
   <SearchBox locale={locale} />
-  <h2>{copy.timeline}</h2>
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">{locale === 'zh-CN' ? '按时间浏览' : 'Browse chronologically'}</p>
+      <h2>{copy.timeline}</h2>
+    </div>
+    <p class="section-note">{locale === 'zh-CN' ? '先看全局，再筛选，最后进入事件证据详情。' : 'Start with the overview, then filter, then open event-level evidence.'}</p>
+  </div>
   <EventCollection events={events} locale={locale} mode="timeline" />
 </BaseLayout>
