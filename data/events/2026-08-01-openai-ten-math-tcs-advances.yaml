@@ -18,10 +18,10 @@ event_types:
 - formalization
 - system
 significance:
-  tier: H2
+  tier: H1
   rationale:
-    en: The collection moved from a single headline result to a portfolio of claimed research advances across several mathematical fields, each accompanied by a Lean certificate.
-    zh-CN: 该发布从单个标志性结果扩展到跨多个数学领域的一组研究进展，并为每项结果提供 Lean certificate。
+    en: A portfolio of AI-generated advances across multiple active areas of mathematics and theoretical computer science marks a historical shift from isolated successes toward repeated research-level mathematical contributions; H1 records that historical significance without upgrading the still-pending verification of the individual results.
+    zh-CN: 跨多个活跃数学与理论计算机科学领域的一组 AI 生成研究进展，标志着从孤立成功走向可重复研究级数学贡献的历史性转折；H1 记录的是这一历史重要性，并不提升各项结果仍待审查的 verification 状态。
 mathematical_novelty:
   type: new_result
 interfaces:
@@ -99,5 +99,5 @@ editorial:
   created_at: '2026-09-10'
   last_reviewed: '2026-09-10'
   reviewers:
-  - ai-draft-pending-human-editorial-review
+  - Charlie-Wang-03
 corrections: []
