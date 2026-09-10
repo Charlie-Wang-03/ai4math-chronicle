@@ -1,0 +1,101 @@
+schema_version: 1
+id: evt-2025-deepseek-prover-v2
+slug: deepseek-prover-v2-subgoal-rl
+title:
+  en: DeepSeek-Prover-V2 combines informal subgoal decomposition with Lean reinforcement learning
+  zh-CN: DeepSeek-Prover-V2 将非形式子目标分解与 Lean 强化学习结合
+dates:
+  event: '2025-04-30'
+  first_public_claim: '2025-04-30'
+  paper_release: '2025-04-30'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+significance:
+  tier: H2
+  rationale:
+    en: DeepSeek-Prover-V2 narrowed the gap between natural-language reasoning and formal proof generation at much larger scale.
+    zh-CN: DeepSeek-Prover-V2 在更大规模上连接自然语言推理与形式证明生成，缩小两者能力差距。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- formal
+- hybrid
+claim:
+  en: DeepSeek-Prover-V2-671B reported 88.9% on miniF2F-test and solved 49 of 658 PutnamBench problems.
+  zh-CN: DeepSeek-Prover-V2-671B 报告 miniF2F-test 88.9%，并解出 PutnamBench 658 题中的 49 题。
+summary:
+  en: DeepSeek-V3 first decomposes problems into subgoals; successful subgoal proofs become cold-start reasoning traces for reinforcement learning.
+  zh-CN: DeepSeek-V3 先把问题分解为子目标，成功的子目标证明被整理为强化学习的冷启动推理轨迹。
+why_it_matters:
+  en: The design made informal planning an explicit training scaffold for high-capacity formal theorem provers.
+  zh-CN: 该设计把非形式规划显式变成高容量形式定理证明器的训练脚手架。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: Models decompose problems, generate Lean proofs and improve through verifier-backed reinforcement learning.
+    zh-CN: 模型分解问题、生成 Lean 证明，并通过验证器反馈强化学习提升能力。
+human_contribution:
+  description:
+    en: Researchers designed recursive data generation, subgoal decomposition and RL training.
+    zh-CN: 研究者设计递归数据生成、子目标分解与强化学习训练。
+systems:
+- deepseek-prover-v2
+- lean
+organizations:
+- deepseek
+people: []
+problems:
+- minif2f
+- putnambench
+- proverbench
+methods:
+- subgoal-decomposition
+- reinforcement-learning
+- formal-proof
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2025-04-30'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-deepseek-prover-v2-2504.21801
+  tier: S1
+  type: paper
+  title: 'DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition'
+  url: https://arxiv.org/abs/2504.21801
+  primary: true
+  published_date: '2025-04-30'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-deepseek-prover-v1-5
+  - evt-2025-deepseek-r1
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- deepseek
+- lean
+- reinforcement-learning
+- subgoal-decomposition
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
