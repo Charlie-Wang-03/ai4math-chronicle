@@ -21,7 +21,7 @@ jobs:
           node-version-file: .nvmrc
           package-manager-cache: false
       - name: Install dependencies
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
       - name: Test data pipeline
         run: npm test
       - name: Build static site and search index
