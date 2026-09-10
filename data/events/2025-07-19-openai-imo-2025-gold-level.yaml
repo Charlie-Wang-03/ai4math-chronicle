@@ -17,7 +17,7 @@ event_types:
 - proof
 - system
 significance:
-  tier: H2
+  tier: H1
   rationale:
     en: The result was an early public demonstration that a general-purpose reasoning model could produce natural-language solutions at the IMO gold threshold.
     zh-CN: 该结果较早公开展示了通用推理模型能够直接生成达到 IMO 金牌线的自然语言解答。

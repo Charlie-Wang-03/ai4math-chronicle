@@ -18,7 +18,7 @@ dates:
 event_types: [discovery, system]
 
 significance:
-  tier: H2
+  tier: H1
   rationale:
     en: The Nature paper demonstrated an LLM-based search loop producing improved constructions for an established extremal-combinatorics problem, making it a useful early reference point for AI-assisted mathematical discovery.
     zh-CN: Nature 论文展示了基于 LLM 的搜索闭环在一个既有极值组合问题上产生改进构造，是 AI 辅助数学发现的重要早期参照点。
@@ -102,6 +102,6 @@ tags: [mathematical-discovery, combinatorics, program-search, llm]
 editorial:
   created_at: "2026-09-10"
   last_reviewed: "2026-09-10"
-  reviewers: [ai-draft-pending-human-editorial-review]
+  reviewers: [Charlie-Wang-03]
 
 corrections: []
