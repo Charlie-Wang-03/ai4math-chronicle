@@ -1,0 +1,59 @@
+name: "Correction / 事实纠错"
+description: "Report a factual, sourcing, translation, or verification problem / 报告事实、来源、翻译或验证状态问题"
+title: "[Correction] "
+labels: ["correction", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Corrections are treated as provenance updates, not silent rewrites. / 纠错会作为可追溯的 provenance 更新处理，而不是静默覆盖历史。
+  - type: input
+    id: event
+    attributes:
+      label: "Affected event / 受影响事件"
+      description: "Event title, slug, or URL. / 事件标题、slug 或 URL。"
+    validations:
+      required: true
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: "Issue type / 问题类型"
+      options:
+        - "Factual claim / 事实陈述"
+        - "Source or citation / 来源或引用"
+        - "Verification status / 验证状态"
+        - "Significance classification / 重要性分级"
+        - "Translation / 翻译"
+        - "Date or metadata / 日期或元数据"
+        - "Other / 其他"
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: "What is currently wrong? / 当前问题是什么？"
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Proposed correction / 建议修改"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Evidence / 证据"
+      description: "Please provide the strongest available sources. / 请提供最强可用证据。"
+      placeholder: |
+        - https://...
+        - https://...
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist / 检查清单"
+      options:
+        - label: "I am reporting a correction, not requesting silent removal of an inconvenient historical record. / 我提交的是纠错，而不是要求静默删除不利的历史记录。"
+          required: true
