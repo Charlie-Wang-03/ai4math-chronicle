@@ -9,7 +9,7 @@ dates:
   first_public_claim: '2025-07-19'
   paper_release: null
   artifact_release: null
-  independently_verified: null
+  independently_verified: '2025-07-21'
   added_to_chronicle: '2026-09-10'
   last_updated: '2026-09-10'
 event_types:
@@ -56,7 +56,7 @@ methods:
 - natural-language-proof
 verification:
   evidence_level: E2
-  status: partially_verified
+  status: independently_verified
   formal_assurance: none
   history:
   - date: '2025-07-19'
@@ -65,6 +65,12 @@ verification:
     note:
       en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
       zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+  - date: '2026-09-10'
+    status: independently_verified
+    evidence_level: E2
+    note:
+      en: Independent reporting corroborated the core event description: OpenAI's separate evaluation used public natural-language solutions graded by three former IMO medalists and produced a reported 35/42 gold-threshold score. The Chronicle preserves the important distinction that this was not the IMO-coordinated grading process used for Google's Gemini result.
+      zh-CN: 独立报道已经对该事件核心描述形成佐证：OpenAI 的独立评测公开了自然语言解答，由三位前 IMO 奖牌获得者评分，并报告 35/42 的金牌线成绩。Chronicle 同时保留关键区别：这并不是 Google Gemini 所参加的 IMO 协调评分流程。
 sources:
 - id: github-openai-imo-2025-proofs
   tier: S1
@@ -73,6 +79,14 @@ sources:
   url: https://github.com/aw31/openai-imo-2025-proofs
   primary: true
   published_date: null
+  accessed_at: '2026-09-10'
+- id: techcrunch-google-openai-imo-2025
+  tier: S4
+  type: media
+  title: OpenAI and Google outdo the mathletes, but not each other
+  url: https://techcrunch.com/2025/07/21/openai-and-google-outdo-the-mathletes-but-not-each-other/
+  primary: false
+  published_date: '2025-07-21'
   accessed_at: '2026-09-10'
 artifacts: []
 relationships:
