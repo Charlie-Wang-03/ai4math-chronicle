@@ -17,10 +17,10 @@ event_types:
 - proof
 - system
 significance:
-  tier: H2
+  tier: H1
   rationale:
-    en: External mathematicians described the result as a major mathematical achievement, making it a leading candidate for historical significance pending Chronicle editorial review.
-    zh-CN: 外部数学家将该结果评价为重要数学成就，因此它是潜在历史级里程碑候选，但仍需 Chronicle 人工编辑裁决。
+    en: A substantive AI-generated disproof of a longstanding Erdős conjecture is a historical AI4Math milestone because the central contribution is new mathematics rather than benchmark performance or a general model release; the H1 designation does not itself assert independent verification.
+    zh-CN: AI 对长期存在的 Erdős 猜想给出实质性新反例属于历史级 AI4Math 里程碑，因为核心贡献是新的数学结果，而非基准成绩或通用模型发布；H1 定级本身不等同于已完成独立验证。
 mathematical_novelty:
   type: new_result
 interfaces:
@@ -94,5 +94,5 @@ editorial:
   created_at: '2026-09-10'
   last_reviewed: '2026-09-10'
   reviewers:
-  - ai-draft-pending-human-editorial-review
+  - Charlie-Wang-03
 corrections: []
