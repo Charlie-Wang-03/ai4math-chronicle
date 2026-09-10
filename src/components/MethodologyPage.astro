@@ -11,14 +11,14 @@ const desc = zh ? 'AI4Math 大事记的收录、重要性、来源、验证与�
   <article class="prose">
     <p class="eyebrow">Methodology</p>
     <h1>{zh ? '方法论与编辑政策' : 'Methodology & editorial policy'}</h1>
-    <p class="lede">{zh ? 'Chronicle 追求“宽发现、严收录”：热度可以发现候选，但不能替代数学重要性与证据判断。' : 'The Chronicle uses broad discovery and strict publication gates: attention can surface candidates, but cannot substitute for mathematical significance or evidence.'}</p>
+    <p class="lede">{zh ? 'Chronicle 追求“宽发现、严收录”：热度可以发现候选，但不能替代历史重要性与证据判断。' : 'The Chronicle uses broad discovery and strict publication gates: attention can surface candidates, but cannot substitute for historical significance or evidence.'}</p>
 
     <h2>{zh ? '收录范围' : 'Inclusion'}</h2>
     <p>{zh ? '原则上收录具有历史或领域意义的 discovery、proof、formalization、competition、system、benchmark、dataset、infrastructure 与 controversy。普通模型发布、普通论文流、微小 benchmark SOTA、纯 prompt engineering 与缺乏技术内容的营销发布默认不收录。' : 'We include historically or field-significant discoveries, proofs, formalizations, competition results, systems, benchmarks, datasets, infrastructure, and controversies. Routine model launches, paper feeds, incremental benchmark SOTA, pure prompt engineering, and marketing-only releases are excluded by default.'}</p>
 
     <h2>{zh ? '重要性' : 'Significance'}</h2>
     <table><tbody>
-      <tr><th>H1</th><td>{zh ? 'Historical Milestone：AI4Math 历史中的长期转折点，尤其包括 AI 对重大数学新结果、新证明、新反例、重大形式化或可重复研究级进展的实质贡献；必须人工确认。H1 表示历史重要性，不等同于已经独立验证。' : 'Historical Milestone: a durable turning point in AI for Mathematics, especially a major new mathematical result, proof, disproof, formalization milestone, or repeated research-level advance substantially produced by AI. Final designation requires human review. H1 measures historical significance, not verification certainty.'}</td></tr>
+      <tr><th>H1</th><td>{zh ? 'Historical Milestone：AI4Math 历史中的长期转折点，尤其包括 AI 对重大数学新结果、新证明、新反例、重大形式化或可重复研究级进展的实质贡献；必须人工确认。H1 表示历史重要性，不等同于底层数学 claim 已被最终确认。' : 'Historical Milestone: a durable turning point in AI for Mathematics, especially a major new mathematical result, proof, disproof, formalization milestone, or repeated research-level advance substantially produced by AI. Final designation requires human review. H1 measures historical significance, not ultimate mathematical correctness.'}</td></tr>
       <tr><th>H2</th><td>{zh ? 'Field Milestone：对 AI4Math 重要子领域或技术路线具有明显意义，例如数学专项系统、benchmark、dataset、proof search、formalization infrastructure 与重要竞赛结果。' : 'Field Milestone: clear significance to an important AI4Math subfield or technical direction, such as math-specific systems, benchmarks, datasets, proof search, formalization infrastructure, or important competition results.'}</td></tr>
       <tr><th>H3</th><td>{zh ? 'Context Event：主要用于建立历史上下文。若一个通用模型发布只是用数学作为能力评测，而没有贡献新的数学结果或数学专项系统，通常归入 H3。' : 'Context Event: primarily establishes historical context. General-purpose model releases normally belong here when mathematics is mainly a capability benchmark rather than the release contributing new mathematics or a math-specific system.'}</td></tr>
     </tbody></table>
@@ -27,14 +27,15 @@ const desc = zh ? 'AI4Math 大事记的收录、重要性、来源、验证与�
     <table><tbody>
       <tr><th>S1</th><td>{zh ? '论文、期刊/会议、正式证明工件、官方研究仓库、数据集工件。' : 'Papers, journals/conferences, formal proof artifacts, official research repositories, dataset artifacts.'}</td></tr>
       <tr><th>S2</th><td>{zh ? '实验室、大学或研究者的官方公告。' : 'Official lab, university, or researcher announcements.'}</td></tr>
-      <tr><th>S3</th><td>{zh ? '独立学术分析、复现、同行评议或独立数学验证。' : 'Independent scholarly analysis, reproduction, peer review, or mathematical verification.'}</td></tr>
+      <tr><th>S3</th><td>{zh ? '独立学术佐证或分析，包括复现、外部评分、同行评议或 artifact replay。' : 'Independent scholarly corroboration or analysis, including reproduction, external scoring, peer review, or artifact replay.'}</td></tr>
       <tr><th>S4</th><td>{zh ? '高质量科技/科学媒体。' : 'Reputable science and technology media.'}</td></tr>
       <tr><th>S5</th><td>{zh ? 'HN、Reddit、X、论坛等社区发现信号；不能单独支撑重大科研事实。' : 'Community discovery signals such as HN, Reddit, X, or forums; insufficient alone for major research claims.'}</td></tr>
     </tbody></table>
 
     <h2>{zh ? '验证模型' : 'Verification model'}</h2>
-    <p>{zh ? 'Chronicle 分别记录 Evidence Level（E0–E4）、Verification Status、Formal Assurance 与 Significance，不把可信度压缩成一个公开分数。机器检查证明、忠实形式化、新的数学发现与历史重要性是不同维度；一个 H1 事件仍然可以处于 under_verification。' : 'The Chronicle records Evidence Level (E0–E4), Verification Status, Formal Assurance, and Significance separately rather than compressing trust into a public score. A machine-checked proof, a faithful formalization, a new mathematical discovery, and historical importance are distinct dimensions; an H1 event may still be under_verification.'}</p>
-    <div class="callout">{zh ? 'AI 可以提出分类与翻译草案，但不得未经人工审核最终宣布 H1、independently_verified 或新的数学事实。' : 'AI may draft classifications and translations, but may not unilaterally finalize H1, independently_verified, or a new mathematical fact.'}</div>
+    <p>{zh ? 'Chronicle 的 verification 核验“发生了什么”及其证据：原发布方公开声称了什么、发布了哪些 artifact，以及可靠独立来源在多大程度上佐证 Chronicle 的核心事件描述。项目不把 verification 当作对数学真伪的最终裁决。Evidence Level（E0–E4）、Verification Status、Formal Assurance 与 Significance 分开记录；一个 H1 事件仍可能处于 under_verification。' : 'Chronicle verification concerns the evidence for what happened: what the originating source publicly claimed, which artifacts were released, and how far reliable independent sources corroborate the Chronicle’s core event description. It is not a final adjudication of mathematical truth. Evidence Level (E0–E4), Verification Status, Formal Assurance, and Significance are recorded separately; an H1 event may still be under_verification.'}</p>
+    <p>{zh ? '`independently_verified` 表示独立于原发布方的可靠来源已对核心事件描述提供实质性佐证；它不表示 Chronicle 已认证底层数学最终正确。`machine_checked` 与 `independently_replayed` 只描述形式化 artifact 的检查状态。' : '`independently_verified` means reliable sources independent of the originating claim have substantively corroborated the core event description; it does not mean the Chronicle has certified the underlying mathematics as ultimately correct. `machine_checked` and `independently_replayed` describe formal-artifact assurance only.'}</p>
+    <div class="callout">{zh ? 'AI 可以在证据规则明确且来源已记录时更新 verification；新的 H1 仍需人工确认。对于“首次”“解决”“证明”“反驳”等高风险措辞，应明确归属于可靠来源，除非对应历史事实已经独立建立。' : 'AI may update verification when the evidence rule is explicit and supporting sources are recorded; new H1 designations still require human review. High-risk wording such as “first”, “solves”, “proves”, or “disproves” should remain source-attributed unless the historical fact itself is independently established.'}</div>
 
     <h2>{zh ? '更正政策' : 'Correction policy'}</h2>
     <p>{zh ? '事件状态与事实若发生变化，更新 canonical YAML 记录并保留 verification history / corrections。稳定 Event ID 不因标题或叙述调整而改变。' : 'When facts or status change, the canonical YAML record is updated while preserving verification history and corrections. Stable Event IDs do not change when titles or wording change.'}</p>

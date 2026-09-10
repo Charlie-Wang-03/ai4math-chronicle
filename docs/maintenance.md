@@ -29,18 +29,18 @@ New candidate milestones may be proposed at any time. Maintainers should process
 
 Factual errors, broken primary-evidence links, material translation errors, and misleading verification states should be handled ahead of ordinary corpus expansion when the supporting evidence is clear.
 
-### Verification watch — at least monthly when relevant
+### Verification and corroboration watch — at least monthly when relevant
 
-Events marked `under_verification`, `partially_verified`, `disputed`, or otherwise carrying unresolved material uncertainty should be revisited when credible new evidence appears. As a baseline, active unresolved high-significance claims should receive a lightweight monthly review while they remain live editorial concerns.
+Events marked `under_verification`, `partially_verified`, `disputed`, or otherwise carrying unresolved material uncertainty should be revisited when credible new evidence appears. The purpose is to track whether the Chronicle's core event description is increasingly corroborated, contested, corrected, or reinterpreted — not to make the Chronicle the final judge of mathematical correctness.
 
-A verification update must preserve history rather than silently overwrite it.
+As a baseline, active unresolved high-significance events should receive a lightweight monthly review while they remain live editorial concerns. A verification update must preserve history rather than silently overwrite it.
 
 ### Corpus health review — quarterly
 
 At least once per quarter, review the corpus for:
 
 - stale or broken primary-source links;
-- unresolved verification states that may have changed;
+- verification or corroboration states that may have changed;
 - duplicate or overlapping event records;
 - relationship integrity;
 - taxonomy drift;
@@ -51,13 +51,13 @@ The quarterly review is a maintenance target, not a service-level guarantee.
 
 ## Editorial gates
 
-The standing human editorial gates remain unchanged. Automation and contributors may propose, but must not unilaterally finalize:
+The standing human editorial gate is the significance decision: automation and contributors must not unilaterally finalize a new **H1 — Historical Milestone** classification unless explicitly delegated under an established policy.
 
-- a new **H1 — Historical Milestone** classification unless explicitly delegated under an established policy;
-- `independently_verified`;
-- a claim that a new mathematical fact has been established.
+Verification status may be updated when the documented evidence rule is satisfied and supporting sources are recorded. In particular, `independently_verified` means that reliable independent sources substantively corroborate the Chronicle's core event description; it does not mean that the Chronicle has certified the ultimate mathematical correctness of the underlying claim.
 
-Significance, evidence strength, and verification certainty remain separate dimensions.
+The Chronicle should not present “a new mathematical fact is correct” as its own adjudication. Such claims must remain attributed to reliable sources and updated as the public record evolves.
+
+Significance, source strength, event-level corroboration, formal assurance, and mathematical correctness remain distinct concepts.
 
 ## Dependency and platform maintenance
 
@@ -92,7 +92,7 @@ Before a release:
 2. ensure the production Pages deployment is green;
 3. update version-bearing citation metadata when needed;
 4. tag the exact intended commit;
-5. publish release notes summarizing corpus and governance changes without overstating verification.
+5. publish release notes summarizing corpus and governance changes without overstating verification or mathematical correctness.
 
 Published tags and releases are historical records and should not be moved or rewritten.
 
@@ -112,7 +112,7 @@ Repository settings should remain intentionally minimal: Issues enabled; Project
 The project is healthy when:
 
 - canonical Event data remains the single factual source;
-- open corrections and unresolved high-significance verification questions are visible rather than hidden;
+- open corrections and unresolved high-significance corroboration questions are visible rather than hidden;
 - CI, CodeQL, and Pages deployment remain green;
 - dependency updates are controlled without creating toolchain churn;
 - public contribution paths remain usable;

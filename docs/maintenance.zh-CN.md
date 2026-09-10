@@ -29,18 +29,18 @@ AI4Math 大事记定位为精选历史档案，而不是实时新闻流。因此
 
 当证据明确时，事实错误、一手证据链接失效、重要翻译错误以及误导性的验证状态，应优先于普通语料扩展处理。
 
-### 验证状态复核 — 相关事件至少每月一次
+### Verification 与独立佐证复核 — 相关事件至少每月一次
 
-对标记为 `under_verification`、`partially_verified`、`disputed`，或仍存在重要未决不确定性的事件，应在可信新证据出现时及时复核。作为基线，仍处于活跃争议中的高重要性 claim 至少每月进行一次轻量复核。
+对标记为 `under_verification`、`partially_verified`、`disputed`，或仍存在重要未决不确定性的事件，应在可信新证据出现时及时复核。复核目标是追踪 Chronicle 的核心事件描述是否得到更多独立佐证、受到争议、发生纠错或需要重新解释，而不是让 Chronicle 充当数学正确性的最终裁判。
 
-验证状态更新必须保留历史，不得静默覆盖。
+作为基线，仍处于活跃编辑关注中的高重要性事件至少每月进行一次轻量复核。Verification 更新必须保留历史，不得静默覆盖。
 
 ### 语料健康检查 — 每季度一次
 
 至少每季度检查一次：
 
 - 一手来源链接是否失效；
-- 未决 verification 状态是否出现新进展；
+- verification 或独立佐证状态是否出现新进展；
 - 是否存在重复或高度重叠的 Event；
 - relationships 是否完整；
 - taxonomy 是否发生漂移；
@@ -51,13 +51,13 @@ AI4Math 大事记定位为精选历史档案，而不是实时新闻流。因此
 
 ## 人工编辑门槛
 
-既有人工编辑门槛保持不变。自动化和贡献者可以提出建议，但不得单方面最终确定：
+长期保留的人工编辑门槛是重要性判断：自动化和贡献者不得单方面最终确定新的 **H1 — 历史级里程碑**，除非已经在既定标准下获得明确授权。
 
-- 新的 **H1 — 历史级里程碑**，除非已经在既定标准下获得明确授权；
-- `independently_verified`；
-- “某个新数学事实已经成立”的判断。
+当文档化的证据规则已经满足、支持来源已经记录时，可以更新 verification status。特别地，`independently_verified` 表示独立于原始发布方的可靠来源已经对 Chronicle 的核心事件描述提供实质性佐证；它不表示 Chronicle 已经认证底层数学 claim 的最终正确性。
 
-历史重要性、证据强度与验证确定性继续作为彼此独立的维度。
+Chronicle 不应把“某个新数学事实是正确的”写成项目自身的最终裁决。这类判断应继续归属于可靠来源，并随着公开记录变化而更新。
+
+历史重要性、来源强度、事件级独立佐证、formal assurance 与数学正确性是不同概念。
 
 ## 依赖与平台维护
 
@@ -92,7 +92,7 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 2. 确认 production Pages 部署全绿；
 3. 必要时更新带版本信息的 citation metadata；
 4. 在准确的目标 commit 上创建 tag；
-5. 发布 Release notes，总结语料与治理变化，但不得夸大 verification。
+5. 发布 Release notes，总结语料与治理变化，但不得夸大 verification 或数学正确性。
 
 已经发布的 tag 与 Release 属于历史记录，不应移动或重写。
 
@@ -112,7 +112,7 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 满足以下条件时，可以认为项目处于健康维护状态：
 
 - canonical Event data 始终是唯一事实源；
-- 未解决的纠错与高重要性 verification 问题保持可见，而不是被隐藏；
+- 未解决的纠错与高重要性事件佐证问题保持可见，而不是被隐藏；
 - CI、CodeQL 与 Pages deployment 保持绿色；
 - 依赖更新受控，不制造 toolchain churn；
 - 公开贡献入口始终可用；

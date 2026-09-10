@@ -16,7 +16,7 @@ Use the **Event proposal** issue form when you believe an important AI4Math mile
 - a concise factual claim;
 - the AI contribution and human contribution;
 - at least one strong primary or official source;
-- any independent verification or important uncertainty;
+- any independent corroboration, dispute, or important uncertainty;
 - a suggested H1/H2/H3 level, if you have one.
 
 Submitting a proposal does not guarantee inclusion. The Chronicle is selective rather than exhaustive.
@@ -52,19 +52,19 @@ The main rules are:
 
 - prefer primary research records and official sources;
 - every published event must contain at least one S1 or S2 source;
-- keep historical significance separate from verification certainty;
+- keep historical significance separate from event-level verification and from ultimate mathematical correctness;
 - state AI and human contributions separately;
 - preserve stable Event IDs;
-- record status changes in verification history;
+- record verification-status changes in verification history;
 - record factual corrections explicitly instead of silently overwriting them.
+
+`independently_verified` is an event-level evidence label: use it only when reliable sources independent of the originating claim substantively corroborate the Chronicle's core event description. It must not be presented as a Chronicle certification that the underlying mathematics is ultimately correct.
 
 ## Human editorial gates
 
-Automated analysis may suggest classifications, but contributions must not unilaterally finalize:
+Automated analysis may suggest or apply verification updates when the documented evidence rule is satisfied and the supporting sources are recorded. Contributions must not unilaterally finalize **H1 — Historical Milestone** unless the editor has explicitly delegated the classification pass under an established policy.
 
-- **H1 — Historical Milestone** unless the editor has explicitly delegated the classification pass under an established policy;
-- `independently_verified`;
-- a claim that a new mathematical fact has been established.
+The Chronicle does not adjudicate ultimate mathematical correctness. High-risk historical wording such as “first”, “solves”, “proves”, or “disproves” should be attributed to reliable sources unless the historical fact itself is independently established.
 
 ## Pull requests for event data
 
@@ -76,7 +76,7 @@ A content PR should explain:
 - why it changed;
 - which sources support it;
 - what uncertainty remains;
-- whether a human editorial gate is triggered.
+- whether a human H1 editorial gate is triggered.
 
 Technical validation and local build instructions are documented in the [Development Guide](./docs/development.md).
 
