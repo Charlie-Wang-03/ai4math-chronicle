@@ -1,95 +1,76 @@
-# 贡献指南
+# 为 AI4Math 大事记贡献内容
 
 [English](./CONTRIBUTING.md) · **简体中文**
 
-感谢你帮助改进 AI4Math 大事记。本项目接受聚焦的事实纠错、证据升级、新事件提案、元数据修正，以及不破坏 canonical data model 的实现改进。
+AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：新增里程碑建议、事实纠错、证据升级、翻译修正、验证状态更新，以及范围清晰的编辑性修改。
 
-## 开始之前
+代码实现与构建文档另行维护。代码类贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。
 
-内容相关修改请先阅读 [编辑方法论](./docs/editorial-methodology.zh-CN.md)；实现相关修改请先阅读 [架构说明](./docs/architecture.zh-CN.md)。
+## 选择合适的贡献方式
 
-当前仓库仍处于 v0.1 公开发布门槛之前，因此在切换为 public 前，贡献入口仍可能继续调整。
+### 提议遗漏事件
 
-## 事件贡献流程
+如果你认为时间线遗漏了一条重要 AI4Math 里程碑，请使用 **事件收录建议** Issue 表单。高质量提案应尽量包含：
 
-对于新增或修改事件：
+- 事件名称与日期；
+- 简洁、可核查的事实性 claim；
+- AI 与人类分别完成了什么；
+- 至少一个强的一手或官方来源；
+- 已知的独立验证或重要不确定性；
+- 如有判断，可建议 H1/H2/H3 等级。
 
-1. 在 `data/events/*.yaml` 下新增或修改一条记录。
-2. 保持稳定 Event ID；不要因为标题变化就重命名已有 ID。
-3. 提供中英双语事实字段（`en` 与 `zh-CN`）。
-4. 提供权威证据。每条正式发布事件至少需要一个 S1 或 S2 来源。
-5. 明确写出 AI contribution 与 human contribution。
-6. 将 significance、verification status、evidence level 与 formal assurance 分开处理。
-7. 状态变化应追加到 `verification.history`。
-8. 事实纠正应写入 `corrections`，并引用对应 source ID。
-9. 运行完整本地校验流程。
-10. 提交聚焦的 Pull Request，说明证据、不确定性与预期的编辑性改动。
+提交提案不代表一定收录。Chronicle 的目标是精选重要历史事件，而不是穷举所有论文或模型发布。
+
+### 提交事实纠错
+
+事实、来源、翻译、日期、重要性分级或验证状态存在问题时，请使用 **事实纠错** Issue 表单。
+
+纠错应当作为 provenance 更新处理。当证据发生变化时，不应静默重写已经发布的历史记录。
+
+### 报告网站问题
+
+导航、搜索、筛选、渲染、可访问性、数据导出或构建问题，请使用 **网站问题** Issue 表单。
+
+## 编辑要求
+
+提交内容修改前，请阅读 [编辑方法论](./docs/editorial-methodology.zh-CN.md)。
+
+核心规则包括：
+
+- 优先使用一手研究记录与官方来源；
+- 每条正式发布事件至少包含一个 S1 或 S2 来源；
+- 历史重要性与验证确定性分开判断；
+- AI 与人类贡献分别说明；
+- 保持稳定 Event ID；
+- 状态变化写入 verification history；
+- 事实纠错显式记录，不静默覆盖。
 
 ## 人工编辑门槛
 
-自动化分析可以提出分类建议，但贡献不得单方面最终确定：
+自动化分析可以提出建议，但贡献者不得单方面最终确定：
 
-- `H1`；
+- **H1 — 历史级里程碑**；
 - `independently_verified`；
 - “某个新数学事实已经成立”的判断。
 
 这些决定必须经过人工编辑审核。
 
-## 本地校验
+## 直接修改事件数据
 
-需要 Node.js `>=22.12.0`。
+如果你熟悉 canonical YAML，也可以直接提交 Pull Request。建议保持 PR 小而可审查：通常一条事件或一个紧密相关的事件组即可。
 
-```bash
-npm install
-npm run validate
-npm test
-npm run build
-```
+内容类 PR 应说明：
 
-内容类 Pull Request 在以上三个 validation / build 步骤全部通过前，不应视为 ready。
-
-## 来源要求
-
-证据层级定义为：
-
-- **S1：** 一手研究记录或原始 artifact；
-- **S2：** 机构或研究者官方来源；
-- **S3：** 独立学术验证或分析；
-- **S4：** 高质量二手媒体；
-- **S5：** 仅作为社区发现信号。
-
-S5 可以帮助发现候选事件，但不足以单独支持正式收录。
-
-## Pull Request 范围
-
-优先提交小而可审查的 PR。事件相关修改通常应限制为单条事件或一个紧密相关的事件组。不要在同一 PR 中混入无关的 UI refactor、依赖升级与编辑性修改。
-
-一份合格的 PR 描述应说明：
-
-- 改了什么；
-- 为什么需要修改；
+- 修改了什么；
+- 为什么修改；
 - 哪些来源支持修改；
 - 仍存在哪些不确定性；
-- 是否触发人工编辑门槛；
-- 哪些校验命令已通过。
+- 是否触发人工编辑门槛。
 
-## 实现类贡献
+本地校验、构建与实现规范见 [开发指南](./docs/development.zh-CN.md)。
 
-MVP 刻意保持静态、GitHub-native。除非未来 Product Specification 明确修改方向，否则实现应保持：
+## 贡献内容的许可
 
-- 不引入 backend 或账号系统；
-- 不在 canonical YAML 之外维护第二份事实数据库；
-- 不允许绕过人工编辑审核的 autonomous publication；
-- 保持 `/ai4math-chronicle/` 下的 GitHub Pages project-site 兼容性；
-- 静态、可索引 HTML 与机器可读导出继续作为一级产物。
+提交源代码即表示你同意该贡献可按照仓库的 MIT License 分发。
 
-## 纠错与争议事件
-
-不要静默重写历史记录。如果发布后证据发生变化：
-
-- 视情况更新 `verification.status`；
-- 追加 `verification.history`；
-- 当事实陈述发生变化时新增 `corrections`；
-- 保留理解“改了什么、为什么改”所需的来源。
-
-Chronicle 应当显式呈现不确定性，而不是把不确定性从历史记录中抹去。
+提交原创 Chronicle 编辑文本或数据编纂内容，即表示你同意该贡献按照 [内容许可说明](./LICENSE-CONTENT.zh-CN.md) 中定义的 CC BY 4.0 条款分发。请勿提交你无权按照相应条款贡献的第三方内容。
