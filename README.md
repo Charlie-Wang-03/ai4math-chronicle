@@ -17,9 +17,17 @@ It is built for readers who want to understand how AI4Math has evolved, identify
 ## Start exploring
 
 - **[Timeline](https://charlie-wang-03.github.io/ai4math-chronicle/en/)** — browse the full chronology from early neural theorem proving to research-level mathematical discovery.
-- **[Explore events](https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/)** — filter by year, event type, significance, and verification status.
+- **[Explore events](https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/)** — compare and filter events by year, event type, significance, verification status, and system.
 - **[Methodology](https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/)** — understand inclusion, significance, evidence, verification, and correction policies.
 - **[Data](https://charlie-wang-03.github.io/ai4math-chronicle/en/data/)** — access machine-readable JSON, NDJSON, schema, RSS, and sitemap outputs.
+
+## Ask an AI with the Chronicle
+
+If your AI tool can browse the web or access GitHub, copy this one-line prompt and replace the final placeholder with your question:
+
+> Use AI4Math Chronicle (https://charlie-wang-03.github.io/ai4math-chronicle/en/; canonical data: https://charlie-wang-03.github.io/ai4math-chronicle/data/events.json) as the index for my AI-for-Mathematics question: identify the relevant canonical events, preserve their H1/H2/H3 and verification status, follow the linked primary sources to verify key factual claims, and cite both the Chronicle event pages and primary evidence in your answer: [YOUR QUESTION]
+
+The Chronicle is intended to help an AI locate and structure evidence, not to replace verification against the linked primary sources.
 
 ## What the Chronicle records
 
@@ -85,6 +93,8 @@ AI4Math Chronicle is intended to be auditable and correctable. If an event is mi
 
 - [Contributing guide](./CONTRIBUTING.md)
 - [Editorial methodology](./docs/editorial-methodology.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
+- [Security policy](./SECURITY.md)
 
 Implementation details are intentionally separated from this website-oriented README. Developers should use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md).
 
@@ -99,4 +109,4 @@ Third-party papers, announcements, repositories, media, images, quotations, and 
 
 ## Release status
 
-AI4Math Chronicle v0.1 is prepared for public release. The repository remains private until the final launch review, after which the release branch can be merged, GitHub Pages verified, and repository visibility switched to public.
+**AI4Math Chronicle v0.1 is public.** The website is deployed on GitHub Pages, the repository accepts issues and pull requests, and future changes remain subject to CI plus the documented human editorial gates.
