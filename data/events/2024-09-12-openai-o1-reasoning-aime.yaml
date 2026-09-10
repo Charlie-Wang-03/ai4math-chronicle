@@ -16,10 +16,10 @@ event_types:
 - system
 - benchmark
 significance:
-  tier: H2
+  tier: H3
   rationale:
-    en: o1 marked a visible shift from next-token chat models toward dedicated long-form reasoning models, with mathematics providing one of the clearest capability signals.
-    zh-CN: o1 标志着模型从普通对话式生成明显转向专门的长程推理范式，而数学成为最清晰的能力信号之一。
+    en: OpenAI o1 was a major general-purpose reasoning-model release, but its place in the AI4Math Chronicle is contextual: AIME demonstrated capability rather than the release itself contributing a new mathematical result, proof, formalization, or math-specific system.
+    zh-CN: OpenAI o1 是重要的通用推理模型发布，但在 AI4Math Chronicle 中主要承担背景作用：AIME 用于展示模型能力，而该发布本身并未贡献新的数学结果、证明、形式化或数学专项系统。
 mathematical_novelty:
   type: benchmark_result
 interfaces:
@@ -32,8 +32,8 @@ summary:
   en: The o1 series was trained to spend more inference-time computation on multi-step reasoning before producing an answer.
   zh-CN: o1 系列被训练为在给出答案前投入更多推理时计算执行多步思考。
 why_it_matters:
-  en: The release helped establish test-time compute and long reasoning traces as central levers for frontier mathematical performance.
-  zh-CN: 该发布推动“测试时计算”和长程推理轨迹成为提升前沿数学能力的核心杠杆。
+  en: The release helped establish test-time compute and long reasoning traces as central levers for frontier mathematical performance, providing context for later math-specific systems.
+  zh-CN: 该发布推动“测试时计算”和长程推理轨迹成为提升前沿数学能力的重要杠杆，为后续数学专项系统提供背景。
 ai_role:
   level: computation_only
   description:
@@ -82,8 +82,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: true
-  significance: primary
+  featured: false
+  significance: context
 tags:
 - openai
 - reasoning-model
@@ -93,5 +93,5 @@ editorial:
   created_at: '2026-09-10'
   last_reviewed: '2026-09-10'
   reviewers:
-  - ai-draft-pending-human-editorial-review
+  - Charlie-Wang-03
 corrections: []
