@@ -71,7 +71,7 @@ methods: [multi-agent, autoformalization, formal-theorem-proving, lean, proof-da
 verification:
   evidence_level: E3
   status: partially_verified
-  formal_assurance: machine_checked
+  formal_assurance: independently_replayed
   history:
     - date: "2026-09-04"
       status: partially_verified
@@ -81,6 +81,14 @@ verification:
           Anthropic released the full Lean artifact. Its verification documentation reports a from-scratch Lean build, a comparator replay against a stock-Mathlib challenge statement and acceptance by the independent nanoda Lean kernel implementation.
         zh-CN: >-
           Anthropic 公开完整 Lean 产物；其验证文档报告了从头 Lean 构建、针对标准 Mathlib 挑战陈述的 comparator 重放，以及独立 nanoda Lean 内核实现的通过结果。
+    - date: "2026-09-04"
+      status: partially_verified
+      evidence_level: E3
+      note:
+        en: >-
+          Kevin Buzzard independently reported compiling the public code base and running comparator successfully. He also manually inspected non-proof/non-definition code for suspicious mechanisms. This supports `independently_replayed` formal assurance without by itself triggering the Chronicle's `independently_verified` editorial status.
+        zh-CN: >-
+          Kevin Buzzard 独立报告称已编译公开代码库并成功运行 comparator；他还人工检查了并非数学定义或定理证明的代码，以排查可疑机制。这支持将 formal assurance 记为 `independently_replayed`，但其本身不自动触发 Chronicle 的 `independently_verified` 编辑状态。
     - date: "2026-09-07"
       status: partially_verified
       evidence_level: E3
@@ -105,6 +113,14 @@ sources:
     title: Fermat's Last Theorem in Lean 4
     url: https://github.com/anthropics/fermats-last-theorem
     primary: true
+    published_date: "2026-09-04"
+    accessed_at: "2026-09-10"
+  - id: kevin-buzzard-xena-flt-2026
+    tier: S3
+    type: independent_analysis
+    title: "FLT: Anthropic has beaten me to it"
+    url: https://xenaproject.wordpress.com/2026/09/04/flt-anthropic-has-beaten-me-to-it/
+    primary: false
     published_date: "2026-09-04"
     accessed_at: "2026-09-10"
   - id: nature-claude-flt-2026
