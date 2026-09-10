@@ -11,7 +11,7 @@ const t = locale === 'zh-CN'
   <div class="result-count" id={`search-status-${locale}`}>{t.hint}</div>
   <ul class="search-results" id={`search-results-${locale}`}></ul>
 </section>
-<script define:vars={{ locale, baseUrl: BASE_URL }}>
+<script is:inline define:vars={{ locale, baseUrl: BASE_URL }}>
   const input = document.getElementById(`site-search-${locale}`);
   const status = document.getElementById(`search-status-${locale}`);
   const list = document.getElementById(`search-results-${locale}`);
