@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/theme.css';
 import { absolute, href, localePath, otherLocale } from '../lib/site';
 import type { Locale } from '../lib/types';
 
@@ -16,10 +17,12 @@ const other = otherLocale(locale);
 const labels = locale === 'zh-CN'
   ? {
       timeline: '时间线', explore: '探索', methodology: '方法论', data: '数据', github: 'GitHub', switch: 'English',
+      theme: '主题', system: '跟随系统', light: '浅色', dark: '深色',
       nav: '主导航', skip: '跳到主要内容', footer: '以时间线为核心、基于证据。Canonical YAML 同时生成静态网页与机器可读数据。'
     }
   : {
-      timeline: 'Timeline', explore: 'Explore', methodology: 'Methodology', data: 'Data', github: 'GitHub', switch: '中文',
+      timeline: 'Timeline', explore: 'Explore', methodology: 'Methodology', data: 'Data', github: 'GitHub', switch: '简体中文',
+      theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark',
       nav: 'Primary navigation', skip: 'Skip to main content', footer: 'Timeline-first, evidence-backed. Canonical YAML drives both static pages and machine-readable data.'
     };
 const alternate = alternatePath ?? localePath(other);
@@ -31,7 +34,26 @@ const alternate = alternatePath ?? localePath(other);
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#17284a" />
+    <meta name="theme-color" content="#f6f7fa" />
+    <script is:inline>
+      (() => {
+        const key = 'ai4math-theme';
+        const root = document.documentElement;
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        const valid = new Set(['light', 'dark', 'system']);
+        let preference = 'system';
+        try {
+          const saved = localStorage.getItem(key);
+          if (saved && valid.has(saved)) preference = saved;
+        } catch {}
+        const resolved = preference === 'system' ? (media.matches ? 'dark' : 'light') : preference;
+        root.dataset.theme = resolved;
+        root.dataset.themePreference = preference;
+        root.style.colorScheme = resolved;
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0b1020' : '#f6f7fa');
+      })();
+    </script>
     <link rel="canonical" href={absolute(canonicalPath)} />
     <link rel="alternate" hreflang={other} href={absolute(alternate)} />
     <link rel="alternate" hreflang="x-default" href={absolute(localePath('en'))} />
@@ -56,6 +78,11 @@ const alternate = alternatePath ?? localePath(other);
           <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
           <a href={href(localePath(locale, 'data'))}>{labels.data}</a>
           <a href="https://github.com/Charlie-Wang-03/ai4math-chronicle" rel="noreferrer">{labels.github}</a>
+          <select class="theme-select" data-theme-select aria-label={labels.theme} title={labels.theme}>
+            <option value="system">{labels.system}</option>
+            <option value="light">{labels.light}</option>
+            <option value="dark">{labels.dark}</option>
+          </select>
           <a class="lang-switch" href={href(alternate)} hreflang={other}>{labels.switch}</a>
         </nav>
       </div>
@@ -69,5 +96,39 @@ const alternate = alternatePath ?? localePath(other);
         <a href={href(localePath(locale, 'data'))}>{locale === 'zh-CN' ? '数据与订阅' : 'Data & feeds'}</a>
       </div>
     </footer>
+    <script is:inline>
+      (() => {
+        const key = 'ai4math-theme';
+        const root = document.documentElement;
+        const media = window.matchMedia('(prefers-color-scheme: dark)');
+        const select = document.querySelector('[data-theme-select]');
+        const meta = document.querySelector('meta[name="theme-color"]');
+        const valid = new Set(['light', 'dark', 'system']);
+
+        const apply = (rawPreference, persist = false) => {
+          const preference = valid.has(rawPreference) ? rawPreference : 'system';
+          const resolved = preference === 'system' ? (media.matches ? 'dark' : 'light') : preference;
+          root.dataset.theme = resolved;
+          root.dataset.themePreference = preference;
+          root.style.colorScheme = resolved;
+          if (select instanceof HTMLSelectElement) select.value = preference;
+          if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0b1020' : '#f6f7fa');
+          if (persist) {
+            try { localStorage.setItem(key, preference); } catch {}
+          }
+        };
+
+        apply(root.dataset.themePreference || 'system');
+        if (select instanceof HTMLSelectElement) {
+          select.addEventListener('change', () => apply(select.value, true));
+        }
+
+        const handleSystemChange = () => {
+          if ((root.dataset.themePreference || 'system') === 'system') apply('system');
+        };
+        if ('addEventListener' in media) media.addEventListener('change', handleSystemChange);
+        else if ('addListener' in media) media.addListener(handleSystemChange);
+      })();
+    </script>
   </body>
 </html>
