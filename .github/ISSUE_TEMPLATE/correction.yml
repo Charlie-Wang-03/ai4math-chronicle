@@ -1,7 +1,6 @@
 name: "Correction / 事实纠错"
 description: "Report a factual, sourcing, translation, or verification problem / 报告事实、来源、翻译或验证状态问题"
 title: "[Correction] "
-labels: ["correction", "triage"]
 body:
   - type: markdown
     attributes:
