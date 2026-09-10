@@ -18,10 +18,10 @@ event_types:
 - formalization
 - system
 significance:
-  tier: H2
+  tier: H1
   rationale:
-    en: A claimed solution to a Millennium Prize Problem is intrinsically a potential historical milestone, but the Chronicle keeps it below H1 pending independent mathematical review and human editorial judgment.
-    zh-CN: 千禧年难题解答本身具有潜在历史级意义，但 Chronicle 在独立数学审查与人工编辑裁决完成前不将其自动提升为 H1。
+    en: A publicly released AI-generated claimed solution to a Millennium Prize Problem is intrinsically a historical AI4Math event regardless of whether the claim ultimately survives review; the H1 tier records the magnitude of the event while `under_verification` preserves the unresolved mathematical status.
+    zh-CN: 公开发布的 AI 生成千禧年难题解答主张本身就是历史级 AI4Math 事件，无论其最终能否通过审查；H1 记录事件的重要程度，而 `under_verification` 明确保留数学正确性尚未定论的状态。
 mathematical_novelty:
   type: new_proof
 interfaces:
@@ -102,5 +102,5 @@ editorial:
   created_at: '2026-09-10'
   last_reviewed: '2026-09-10'
   reviewers:
-  - ai-draft-pending-human-editorial-review
+  - Charlie-Wang-03
 corrections: []
