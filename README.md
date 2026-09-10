@@ -3,164 +3,100 @@
 </p>
 
 <p align="center">
-  <strong>English</strong> · <a href="./README.zh-CN.md">简体中文</a>
+  <strong>English</strong> · <a href="./README.zh-CN.md">Simplified Chinese</a>
 </p>
 
 # AI4Math Chronicle
 
-**AI4Math Chronicle / AI4Math 大事记** is a timeline-first, evidence-backed, bilingual archive of major milestones in **AI for Mathematics**.
+**AI4Math Chronicle** is a timeline-first, evidence-backed archive of major milestones in **AI for Mathematics**.
 
-It is designed to answer three questions quickly:
+It is built for readers who want to understand how AI4Math has evolved, identify the most consequential milestones, and reach the strongest available evidence without reconstructing the history from scattered papers, announcements, repositories, benchmarks, and social posts.
 
-1. **What happened?** — a chronological view of important AI4Math milestones.
-2. **What did the AI and humans actually contribute?** — explicit contribution boundaries on every event.
-3. **What is the evidence?** — primary or official sources reachable in one or two clicks.
+> **Public site:** [AI4Math Chronicle](https://charlie-wang-03.github.io/ai4math-chronicle/en/)
 
-> **Release status:** the repository remains private until the v0.1 public-release gate is completed. The target GitHub Pages site is `https://charlie-wang-03.github.io/ai4math-chronicle/`.
+## Start exploring
 
-## At a glance
+- **[Timeline](https://charlie-wang-03.github.io/ai4math-chronicle/en/)** — browse the full chronology from early neural theorem proving to research-level mathematical discovery.
+- **[Explore events](https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/)** — filter by year, event type, significance, and verification status.
+- **[Methodology](https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/)** — understand inclusion, significance, evidence, verification, and correction policies.
+- **[Data](https://charlie-wang-03.github.io/ai4math-chronicle/en/data/)** — access machine-readable JSON, NDJSON, schema, RSS, and sitemap outputs.
 
-| Corpus | Current MVP |
-| --- | ---: |
-| Canonical timeline events | **51** |
-| H1 — historical milestones | **6** |
-| H2 — field milestones | **43** |
-| H3 — context events | **2** |
-| Languages | English + 简体中文 |
-| Minimum evidence gate | ≥ 1 S1/S2 source per event |
+## What the Chronicle records
 
-The corpus spans theorem proving, formalization, mathematical discovery, competition results, math-specific systems, benchmarks, datasets, and infrastructure. H3 is intentionally narrow: it is reserved for general-purpose model releases where mathematics mainly serves as a capability benchmark.
+The v0.1 corpus contains **51 canonical events** spanning theorem proving, formalization, mathematical discovery, competition results, math-specific systems, benchmarks, datasets, and infrastructure.
 
-## Why this project exists
+Each event is designed to answer:
 
-AI4Math progress is scattered across papers, lab announcements, repositories, benchmark releases, competition reports, and social discussion. A news feed is easy to produce but hard to audit later. AI4Math Chronicle instead maintains a **canonical historical record**:
+1. **What happened?**
+2. **Why does it matter historically?**
+3. **What did the AI system actually do?**
+4. **What did humans contribute?**
+5. **How strong is the verification?**
+6. **Where is the primary evidence?**
 
-- **Timeline-first:** history remains the primary reading interface.
-- **Evidence-backed:** every published event must include authoritative S1/S2 evidence.
-- **Contribution-aware:** AI and human contributions are modeled separately.
-- **Verification-aware:** historical significance is separate from verification certainty.
-- **Bilingual:** the same canonical record generates English and Simplified Chinese pages.
-- **Machine-readable:** JSON, NDJSON, JSON Schema, RSS, sitemap, and semantic HTML are generated from the same source data.
+The goal is not to reproduce a paper feed or model leaderboard. The Chronicle selects events that help explain the historical development of AI for Mathematics.
 
-## One canonical record, every public surface
+## Significance levels
 
-```text
-Canonical YAML event
-        │
-        ├── schema + semantic validation
-        ├── bilingual timeline / event pages
-        ├── Explore filters + Pagefind search
-        ├── JSON / NDJSON / JSON Schema
-        ├── RSS
-        └── sitemap + structured metadata
-```
+The current corpus uses three editorial levels:
 
-No downstream page maintains a second factual copy. Event cards, detail pages, filters, feeds, and machine-readable exports are derived from `data/events/*.yaml`.
+- **H1 — Historical Milestone:** a durable turning point in AI for Mathematics. Examples include major new mathematical results, landmark formalization achievements, and competition or research breakthroughs that materially change the historical picture.
+- **H2 — Field Milestone:** an important advance in a mathematical AI subfield, system, benchmark, dataset, proof method, or infrastructure direction.
+- **H3 — Context Event:** useful context that is not itself a substantive AI4Math milestone, such as a general-purpose reasoning model whose mathematical results mainly serve as capability evidence.
 
-## Significance and verification are independent
+Significance and verification are intentionally separate. An H1 event can still be under verification.
 
-- **H1 — Historical Milestone:** a durable turning point in AI for Mathematics. Human editorial review is required.
-- **H2 — Field Milestone:** a material advance in an AI4Math subfield or technical direction.
-- **H3 — Context Event:** supporting historical context; currently reserved for general-purpose reasoning-model releases where math is mainly a benchmark.
+## Evidence and verification
 
-An H1 event may still be `under_verification`. Likewise, `machine_checked` does not automatically mean `independently_verified`.
+Every published event must include at least one authoritative **S1 or S2** source.
 
-See the full policy in [Editorial Methodology](./docs/editorial-methodology.md).
-
-## Evidence model
-
-| Tier | Meaning |
+| Tier | Source role |
 | --- | --- |
 | **S1** | Primary research record or artifact |
 | **S2** | Official institutional or researcher source |
 | **S3** | Independent scholarly verification or analysis |
-| **S4** | Reputable secondary media |
+| **S4** | Reputable secondary reporting |
 | **S5** | Community discovery signal only |
 
-Every published MVP event must contain at least one S1 or S2 source. Major scientific claims should resolve to primary evidence from the event card or detail page with minimal navigation.
+Event pages separately expose claim status, evidence level, formal assurance, verification history, and corrections. `machine_checked` does not automatically mean `independently_verified`, and historical importance does not imply that a claim has been ratified as correct.
 
-## Tech stack
+Read the full policy on the **[Methodology page](https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/)**.
 
-- **Astro 7 + TypeScript** — static site generation
-- **Pagefind** — static full-text search
-- **YAML + JSON Schema + Ajv** — canonical content and validation
-- **GitHub Actions** — validation, tests, build, and Pages deployment
-- **GitHub Pages** — static public hosting
+## One event, one canonical record
 
-The MVP deliberately does **not** add a backend, CMS, account system, vector database, leaderboard, chatbot, or autonomous publishing pipeline.
-
-## Repository map
+A single canonical event record drives the timeline, event detail pages, filters, search, RSS, sitemap, and machine-readable exports.
 
 ```text
-.
-├── data/events/               # canonical YAML event records
-├── data/entities/             # reserved canonical entity identifiers / notes
-├── content/                   # non-canonical editorial prose
-├── schema/event.schema.json   # Event v0.1 JSON Schema
-├── scripts/                   # validation + machine-readable export
-├── src/                       # Astro pages, components, layouts, styles
-├── public/                    # static assets + generated public data
-├── docs/                      # architecture + editorial methodology
-├── tests/                     # data-pipeline tests
-└── .github/                   # CI, Pages deployment, templates
+Canonical event
+      │
+      ├── Timeline and Explore
+      ├── Event detail pages
+      ├── Primary-evidence links
+      ├── JSON / NDJSON / Schema
+      ├── RSS
+      └── Sitemap and structured metadata
 ```
 
-## Local development
+This avoids maintaining multiple factual copies of the same historical event.
 
-Requires Node.js `>=22.12.0`.
+## Corrections and contributions
 
-```bash
-npm install
-npm run validate
-npm test
-npm run dev
-```
+AI4Math Chronicle is intended to be auditable and correctable. If an event is missing, a source is weak, a translation is inaccurate, or a verification state needs revision, use the repository's structured issue forms.
 
-Production build:
+- [Contributing guide](./CONTRIBUTING.md)
+- [Editorial methodology](./docs/editorial-methodology.md)
 
-```bash
-npm run build
-```
+Implementation details are intentionally separated from this website-oriented README. Developers should use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md).
 
-The production build validates all canonical YAML, generates machine-readable data, checks Astro/TypeScript, renders static HTML/RSS/sitemap, and builds the Pagefind index.
+## Licensing
 
-## Contributing an event
+The repository uses split licensing:
 
-A focused event contribution should:
+- **Source code:** MIT License.
+- **Original Chronicle editorial content and data compilation:** Creative Commons Attribution 4.0 International (CC BY 4.0), within the scope described in [Content Licensing](./LICENSE-CONTENT.md).
 
-1. add or edit one canonical YAML record under `data/events/`;
-2. preserve stable Event IDs;
-3. provide authoritative sources and bilingual factual fields;
-4. make AI and human contributions explicit;
-5. update verification history and corrections when applicable;
-6. pass `npm run validate`, `npm test`, and `npm run build`;
-7. avoid finalizing `H1`, `independently_verified`, or a new mathematical fact without human editorial review.
+Third-party papers, announcements, repositories, media, images, quotations, and external artifacts retain their original rights and are not relicensed merely because the Chronicle links to or cites them.
 
-Read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
+## Release status
 
-## Machine-readable outputs
-
-Generated during the build:
-
-- `/data/events.json`
-- `/data/events.ndjson`
-- `/data/schema/event.schema.json`
-- `/feed.xml`
-- `/sitemap.xml`
-
-## Documentation
-
-- [Architecture](./docs/architecture.md) · [架构说明](./docs/architecture.zh-CN.md)
-- [Editorial Methodology](./docs/editorial-methodology.md) · [编辑方法论](./docs/editorial-methodology.zh-CN.md)
-- [Contributing](./CONTRIBUTING.md) · [贡献指南](./CONTRIBUTING.zh-CN.md)
-
-## Public-release gates still open
-
-Before repository visibility is switched to public, v0.1 still requires final human review of:
-
-- repository license choice;
-- GitHub Pages settings and first public deployment;
-- final desktop/mobile visual QA;
-- repository metadata and public contribution surfaces.
-
-These are deliberate human gates rather than automated release steps.
+The v0.1 corpus and public-release branch remain behind a final human launch gate. Repository visibility and the first public deployment are intentionally handled only after release-readiness review is complete.
