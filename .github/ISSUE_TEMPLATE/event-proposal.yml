@@ -1,0 +1,75 @@
+name: "Event proposal / 事件收录建议"
+description: "Propose a new AI4Math milestone with evidence / 提议收录一条有证据支持的 AI4Math 里程碑"
+title: "[Event] "
+labels: ["content", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for proposing an event. / 感谢提供事件线索。
+
+        Please prioritize primary or official evidence. Community discussion alone is not sufficient for publication. / 请优先提供一手研究记录或官方来源；仅有社区讨论不足以支持正式收录。
+  - type: input
+    id: event-name
+    attributes:
+      label: "Event name / 事件名称"
+      placeholder: "e.g. AlphaGeometry / 例如 AlphaGeometry"
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: "Event date / 事件日期"
+      description: "Prefer YYYY-MM-DD when known. / 已知时优先使用 YYYY-MM-DD。"
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: "What happened? / 发生了什么？"
+      description: "State the factual milestone concisely. / 简洁描述可核查的事实性里程碑。"
+    validations:
+      required: true
+  - type: textarea
+    id: ai-human
+    attributes:
+      label: "AI and human contribution / AI 与人类贡献"
+      description: "What did the AI system do, and what did humans do? / AI 系统与人类分别完成了什么？"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Primary or official evidence / 一手或官方证据"
+      description: "Provide paper, repository, official lab/institution announcement, competition record, or equivalent S1/S2 sources. / 请提供论文、代码仓库、研究机构官方公告、竞赛记录等 S1/S2 来源。"
+      placeholder: |
+        - https://...
+        - https://...
+    validations:
+      required: true
+  - type: textarea
+    id: independent
+    attributes:
+      label: "Independent verification or context / 独立验证或补充背景"
+      description: "Optional S3/S4 evidence, especially for major or disputed claims. / 可选；重大或争议 claim 建议提供 S3/S4 来源。"
+  - type: dropdown
+    id: significance
+    attributes:
+      label: "Suggested significance / 建议重要性"
+      description: "This is only a suggestion; H1 requires human editorial review. / 仅为建议；H1 必须人工编辑审核。"
+      options:
+        - "H2 — Field milestone / 领域级里程碑"
+        - "H3 — Context event / 背景事件"
+        - "H1 — Historical milestone / 历史级里程碑（需人工审核）"
+        - "Unsure / 不确定"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist / 检查清单"
+      options:
+        - label: "I searched the existing timeline for duplicates. / 我已检查现有时间线，未发现明显重复事件。"
+          required: true
+        - label: "I understand that inclusion and significance are editorial decisions. / 我理解是否收录及最终分级属于编辑决策。"
+          required: true
