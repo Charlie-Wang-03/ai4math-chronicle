@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2026-frontiermath-open-problems
+slug: frontiermath-open-problems-50
+title:
+  en: 'FrontierMath: Open Problems expands to 50 verifiable research problems'
+  zh-CN: 'FrontierMath: Open Problems 扩展到 50 个可验证研究问题'
+dates:
+  event: '2026-07-31'
+  first_public_claim: '2026-07-31'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- dataset
+- infrastructure
+significance:
+  tier: H2
+  rationale:
+    en: FM:OP created a denominator for autonomous mathematical discovery by tracking significant unsolved problems whose candidate solutions can be computationally verified.
+    zh-CN: FM:OP 通过跟踪可计算验证候选解的显著未解问题，为衡量自主数学发现提供了一个更有意义的“分母”。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- symbolic
+- numeric
+- hybrid
+claim:
+  en: 'Epoch AI expanded FrontierMath: Open Problems to 50 significant unsolved research problems and tracked AI solutions separately by mathematical notability.'
+  zh-CN: 'Epoch AI 将 FrontierMath: Open Problems 扩展到 50 个重要未解研究问题，并按数学重要性分层跟踪 AI 解答。'
+summary:
+  en: Problems are selected by mathematicians, paired with bespoke computational verifiers where possible, and categorized by the significance of a solution.
+  zh-CN: 问题由数学家筛选，并尽可能配套专用计算验证器，同时按解答的重要性进行分级。
+why_it_matters:
+  en: The benchmark focuses evaluation on whether AI advances human mathematical knowledge rather than only reproducing known solutions.
+  zh-CN: 该基准把评测重点放在 AI 是否真正推进人类数学知识，而不只是复现已知答案。
+ai_role:
+  level: computation_only
+  description:
+    en: Frontier systems attempt open problems under long-horizon scaffolds and are tested by problem-specific verifiers.
+    zh-CN: 前沿系统在长程脚手架下尝试开放问题，并由问题专用验证器检查候选解。
+human_contribution:
+  description:
+    en: Mathematicians propose and review problems while Epoch AI builds verifiers and maintains attribution and solution status.
+    zh-CN: 数学家提出并审核问题，Epoch AI 构建验证器并维护归属与解答状态。
+systems:
+- frontiermath-open-problems
+organizations:
+- epoch-ai
+people: []
+problems:
+- open-research-mathematics
+methods:
+- benchmarking
+- computational-verification
+- expert-curation
+verification:
+  evidence_level: E2
+  status: partially_verified
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-07-31'
+    status: partially_verified
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: epoch-frontiermath-open-problems-2026
+  tier: S1
+  type: benchmark
+  title: 'FrontierMath: Open Problems'
+  url: https://epoch.ai/frontiermath/open-problems?notability=Moderately+interesting
+  primary: true
+  published_date: '2026-07-31'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-frontiermath
+  - evt-2026-unit-distance-disproof
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- research-math
+- open-problems
+- benchmark
+- verification
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
