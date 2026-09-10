@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2025-goedel-prover-v2
+slug: goedel-prover-v2-self-correction
+title:
+  en: Goedel-Prover-V2 scales open theorem proving with self-correction
+  zh-CN: Goedel-Prover-V2 通过自我纠错扩展开放定理证明
+dates:
+  event: '2025-08-05'
+  first_public_claim: '2025-08-05'
+  paper_release: '2025-08-05'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+significance:
+  tier: H2
+  rationale:
+    en: Goedel-Prover-V2 showed that scaffolded synthetic data and Lean-guided self-correction could deliver strong open theorem-proving performance with much smaller models.
+    zh-CN: Goedel-Prover-V2 展示了分阶段合成数据与 Lean 引导自我纠错能让较小开放模型达到很强的形式证明性能。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+claim:
+  en: Goedel-Prover-V2-32B reported 90.4% miniF2F in self-correction mode and 86 solved PutnamBench problems under its reported evaluation.
+  zh-CN: Goedel-Prover-V2-32B 报告在自我纠错模式下 miniF2F 达到 90.4%，并在其评测设置中解出 86 道 PutnamBench。
+summary:
+  en: The system uses scaffolded data synthesis, verifier-guided iterative repair and model averaging.
+  zh-CN: 系统采用脚手架式数据合成、验证器引导的迭代修复与模型平均。
+why_it_matters:
+  en: It strengthened the case for compact open provers that spend computation on correction rather than only increasing parameter count.
+  zh-CN: 它强化了“小型开放证明器通过测试时纠错而非只增大参数规模获得能力”的路线。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The model generates Lean proofs and iteratively repairs them using compiler feedback.
+    zh-CN: 模型生成 Lean 证明并根据编译器反馈迭代修复。
+human_contribution:
+  description:
+    en: Researchers designed staged synthesis, self-correction and model-merging procedures.
+    zh-CN: 研究者设计分阶段数据合成、自我纠错与模型合并流程。
+systems:
+- goedel-prover-v2
+- lean
+organizations:
+- princeton-university
+- nvidia
+people: []
+problems:
+- minif2f
+- putnambench
+methods:
+- self-correction
+- synthetic-data
+- formal-proof
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2025-08-05'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-goedel-prover-v2-2508.03613
+  tier: S1
+  type: paper
+  title: 'Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction'
+  url: https://arxiv.org/abs/2508.03613
+  primary: true
+  published_date: '2025-08-05'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2025-deepseek-prover-v2
+  - evt-2024-lean-workbook
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- lean
+- open-model
+- self-correction
+- formal-proof
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
