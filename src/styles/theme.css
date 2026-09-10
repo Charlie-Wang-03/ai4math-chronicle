@@ -26,28 +26,41 @@ body {
   background: linear-gradient(180deg, var(--theme-gradient-start) 0, var(--bg) 19rem, var(--bg) 100%);
 }
 
-.theme-select {
-  width: auto;
-  min-width: 6.8rem;
+.theme-toggle {
+  width: 2.15rem;
+  height: 2.15rem;
+  flex: 0 0 2.15rem;
+  display: inline-grid;
+  place-items: center;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 999px;
   background: var(--surface);
   color: var(--muted);
-  padding: .34rem 1.8rem .34rem .58rem;
-  font-size: .82rem;
-  font-weight: 620;
+  padding: 0;
   cursor: pointer;
 }
 
-.theme-select:hover {
+.theme-toggle:hover {
   border-color: var(--accent);
   color: var(--text);
 }
 
-.theme-select:focus-visible {
+.theme-toggle:focus-visible {
   outline: 3px solid color-mix(in srgb, var(--accent) 20%, transparent);
   outline-offset: 2px;
   border-color: var(--accent);
+}
+
+.theme-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: none;
+}
+
+:root[data-theme-preference='system'] .theme-icon-system,
+:root[data-theme-preference='light'] .theme-icon-light,
+:root[data-theme-preference='dark'] .theme-icon-dark {
+  display: block;
 }
 
 :root[data-theme='dark'] .site-header {
@@ -66,10 +79,4 @@ body {
 
 :root[data-theme='dark'] .event-card.H1 .badge.significance {
   border-color: #60498b;
-}
-
-@media (max-width: 620px) {
-  .theme-select {
-    min-width: 0;
-  }
 }
