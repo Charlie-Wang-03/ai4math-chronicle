@@ -33,7 +33,9 @@
 }
 .explore-table th {
   position: sticky;
-  top: 64px;
+  /* The horizontal-scroll wrapper is the sticky containing block, so this
+     offset must be relative to the table wrapper rather than the 64px site header. */
+  top: 0;
   z-index: 2;
   background: color-mix(in srgb, var(--surface) 96%, var(--bg));
   color: var(--muted);
