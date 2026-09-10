@@ -39,7 +39,7 @@ Each event is designed to answer:
 2. **Why does it matter historically?**
 3. **What did the AI system actually do?**
 4. **What did humans contribute?**
-5. **How strong is the verification?**
+5. **How strongly is the event and public claim corroborated?**
 6. **Where is the primary evidence?**
 
 The goal is not to reproduce a paper feed or model leaderboard. The Chronicle selects events that help explain the historical development of AI for Mathematics.
@@ -52,7 +52,7 @@ The current corpus uses three editorial levels:
 - **H2 — Field Milestone:** an important advance in a mathematical AI subfield, system, benchmark, dataset, proof method, or infrastructure direction.
 - **H3 — Context Event:** useful context that is not itself a substantive AI4Math milestone, such as a general-purpose reasoning model whose mathematical results mainly serve as capability evidence.
 
-The current distribution is **11 H1 / 38 H2 / 2 H3**. Significance and verification are intentionally separate: an H1 event can still be under verification.
+The current distribution is **11 H1 / 38 H2 / 2 H3**. Significance and verification are intentionally separate: an H1 event can remain under external scrutiny.
 
 ## Evidence and verification
 
@@ -62,11 +62,11 @@ Every published event must include at least one authoritative **S1 or S2** sourc
 | --- | --- |
 | **S1** | Primary research record or artifact |
 | **S2** | Official institutional or researcher source |
-| **S3** | Independent scholarly verification or analysis |
+| **S3** | Independent scholarly corroboration or analysis |
 | **S4** | Reputable secondary reporting |
 | **S5** | Community discovery signal only |
 
-Event pages separately expose claim status, evidence level, formal assurance, verification history, and corrections. `machine_checked` does not automatically mean `independently_verified`, and historical importance does not imply that a claim has been ratified as correct.
+Event pages separately expose claim status, evidence level, formal assurance, verification history, and corrections. In the Chronicle, verification concerns **the evidence for what happened and how far reliable independent sources corroborate the event description**. `independently_verified` does not mean that AI4Math Chronicle has certified the ultimate mathematical correctness of an underlying theorem, proof, disproof, or solution; `machine_checked` and `independently_replayed` describe formal artifacts rather than serving as a universal truth label.
 
 Read the full policy on the **[Methodology page](https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/)**.
 
@@ -109,4 +109,4 @@ Third-party papers, announcements, repositories, media, images, quotations, and 
 
 ## Release status
 
-**AI4Math Chronicle v0.1 is public.** The website is deployed on GitHub Pages, the repository accepts issues and pull requests, and future changes remain subject to CI plus the documented human editorial gates.
+**AI4Math Chronicle v0.1 is public.** The website is deployed on GitHub Pages, the repository accepts issues and pull requests, and future changes remain subject to CI plus the documented editorial policy.
