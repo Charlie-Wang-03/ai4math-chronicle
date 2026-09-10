@@ -1,0 +1,98 @@
+schema_version: 1
+id: evt-2026-unit-distance-disproof
+slug: openai-unit-distance-conjecture-disproof
+title:
+  en: OpenAI reports an autonomous disproof of Erdős's unit-distance growth conjecture
+  zh-CN: OpenAI 报告 AI 自主反驳 Erdős 单位距离增长猜想
+dates:
+  event: '2026-05-20'
+  first_public_claim: '2026-05-20'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- discovery
+- proof
+- system
+significance:
+  tier: H2
+  rationale:
+    en: External mathematicians described the result as a major mathematical achievement, making it a leading candidate for historical significance pending Chronicle editorial review.
+    zh-CN: 外部数学家将该结果评价为重要数学成就，因此它是潜在历史级里程碑候选，但仍需 Chronicle 人工编辑裁决。
+mathematical_novelty:
+  type: new_result
+interfaces:
+- informal
+- symbolic
+claim:
+  en: OpenAI reported that an internal general reasoning model disproved the longstanding conjectured n^(1+o(1)) upper-growth behavior for planar unit distances by constructing infinitely many configurations with at least n^(1+delta) unit distances for fixed delta>0.
+  zh-CN: OpenAI 报告内部通用推理模型反驳了平面单位距离问题长期流行的 n^(1+o(1)) 增长猜想，构造出无穷多个具有至少 n^(1+delta) 个单位距离的点集，其中 delta>0 为常数。
+summary:
+  en: The model found a construction using tools from algebraic number theory; OpenAI released the proof and a companion paper by external mathematicians who checked and contextualized the argument.
+  zh-CN: 模型使用代数数论工具发现构造；OpenAI 同时发布证明与由外部数学家撰写的 companion paper，后者检查并解释了论证。
+why_it_matters:
+  en: Unlike benchmark progress, the event concerns a longstanding open problem in active mathematics and an AI-generated argument judged substantive by independent experts.
+  zh-CN: 与基准进展不同，该事件涉及活跃数学领域的长期开放问题，且 AI 生成论证获得外部专家的实质性认可。
+ai_role:
+  level: autonomous_primary
+  description:
+    en: OpenAI states that the core construction and proof were generated autonomously by an internal general-purpose reasoning model.
+    zh-CN: OpenAI 表示核心构造与证明由内部通用推理模型自主生成。
+human_contribution:
+  description:
+    en: External mathematicians checked the proof and wrote companion analysis; OpenAI researchers ran the evaluation and publication process.
+    zh-CN: 外部数学家检查证明并撰写 companion analysis；OpenAI 研究者组织评测与发布。
+systems:
+- openai-internal-reasoning-model
+organizations:
+- openai
+people: []
+problems:
+- erdos-unit-distance-growth-conjecture
+methods:
+- algebraic-number-theory
+- autonomous-research
+- proof-generation
+verification:
+  evidence_level: E3
+  status: partially_verified
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-05-20'
+    status: partially_verified
+    evidence_level: E3
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: openai-unit-distance-2026
+  tier: S2
+  type: official_announcement
+  title: An OpenAI model has disproved a central conjecture in discrete geometry
+  url: https://openai.com/index/model-disproves-discrete-geometry-conjecture/
+  primary: true
+  published_date: '2026-05-20'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2026-first-proof-openai
+  - evt-2025-alphaevolve
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- open-problem
+- discrete-geometry
+- erdos
+- autonomous-research
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
