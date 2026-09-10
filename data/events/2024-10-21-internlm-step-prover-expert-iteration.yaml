@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2024-internlm-step-prover
+slug: internlm-step-prover-expert-iteration
+title:
+  en: InternLM2.5-StepProver scales expert iteration over large Lean problem sets
+  zh-CN: InternLM2.5-StepProver 在大规模 Lean 问题集上扩展专家迭代
+dates:
+  event: '2024-10-21'
+  first_public_claim: '2024-10-21'
+  paper_release: '2024-10-21'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+significance:
+  tier: H3
+  rationale:
+    en: StepProver showed how large problem banks and compute-intensive expert iteration can steadily raise open formal theorem-proving performance.
+    zh-CN: StepProver 展示了大规模问题库与高算力专家迭代如何持续提升开放形式定理证明性能。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+claim:
+  en: InternLM2.5-StepProver reported 65.9% on miniF2F-test and proved or disproved 17.0% of Lean-Workbook-Plus problems.
+  zh-CN: InternLM2.5-StepProver 报告 miniF2F-test 65.9%，并证明或反驳 Lean-Workbook-Plus 中 17.0% 的问题。
+summary:
+  en: The system performs expert iteration over large Lean datasets and uses a critic to prioritize easier problems and guide deeper proof searches.
+  zh-CN: 系统在大规模 Lean 数据上执行专家迭代，并使用 critic 选择相对容易的问题、引导更深证明搜索。
+why_it_matters:
+  en: It provided an open empirical example of theorem-proving performance scaling with data, search and compute.
+  zh-CN: 它提供了一个开放实证案例，显示形式证明性能如何随数据、搜索和算力扩展。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The prover searches for Lean proofs, trains on successful outputs and uses a learned critic to allocate effort.
+    zh-CN: 证明器搜索 Lean 证明、用成功结果继续训练，并通过学习式 critic 分配搜索资源。
+human_contribution:
+  description:
+    en: Researchers built the large-scale expert-iteration pipeline and curated Lean datasets.
+    zh-CN: 研究者构建大规模专家迭代管线并整理 Lean 数据。
+systems:
+- internlm2.5-stepprover
+- lean
+organizations:
+- shanghai-ai-laboratory
+people: []
+problems:
+- minif2f
+- lean-workbook-plus
+- putnambench
+methods:
+- expert-iteration
+- critic-model
+- proof-search
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2024-10-21'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-internlm-step-prover-2410.15700
+  tier: S1
+  type: paper
+  title: 'InternLM2.5-StepProver: Advancing Automated Theorem Proving via Expert Iteration on Large-Scale LEAN Problems'
+  url: https://arxiv.org/abs/2410.15700
+  primary: true
+  published_date: '2024-10-21'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-lean-workbook
+  - evt-2024-lean-star
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- lean
+- expert-iteration
+- open-model
+- formal-proof
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
