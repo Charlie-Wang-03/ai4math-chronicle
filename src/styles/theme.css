@@ -1,0 +1,75 @@
+:root {
+  --theme-gradient-start: #f3f6fb;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b1020;
+  --surface: #111827;
+  --surface-2: #182133;
+  --text: #e7ecf5;
+  --muted: #a6b0c3;
+  --border: #273247;
+  --border-strong: #3a4964;
+  --accent: #8ba6ff;
+  --accent-strong: #adc0ff;
+  --accent-soft: #19254b;
+  --h1: #c6a7ff;
+  --h1-soft: #251d3d;
+  --good: #6fd0a4;
+  --warn: #e8b45b;
+  --danger: #f08a9a;
+  --theme-gradient-start: #0d1426;
+}
+
+body {
+  background: linear-gradient(180deg, var(--theme-gradient-start) 0, var(--bg) 19rem, var(--bg) 100%);
+}
+
+.theme-select {
+  width: auto;
+  min-width: 6.8rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--muted);
+  padding: .34rem 1.8rem .34rem .58rem;
+  font-size: .82rem;
+  font-weight: 620;
+  cursor: pointer;
+}
+
+.theme-select:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.theme-select:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  outline-offset: 2px;
+  border-color: var(--accent);
+}
+
+:root[data-theme='dark'] .site-header {
+  background: color-mix(in srgb, var(--surface) 91%, transparent);
+}
+
+:root[data-theme='dark'] .event-card,
+:root[data-theme='dark'] .panel,
+:root[data-theme='dark'] .hero-stats {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .22);
+}
+
+:root[data-theme='dark'] .badge.significance {
+  border-color: #3f5797;
+}
+
+:root[data-theme='dark'] .event-card.H1 .badge.significance {
+  border-color: #60498b;
+}
+
+@media (max-width: 620px) {
+  .theme-select {
+    min-width: 0;
+  }
+}
