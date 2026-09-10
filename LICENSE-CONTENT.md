@@ -1,6 +1,6 @@
 # AI4Math Chronicle Content Licensing
 
-**English** · [Simplified Chinese](./LICENSE-CONTENT.zh-CN.md)
+**English** · [简体中文](./LICENSE-CONTENT.zh-CN.md)
 
 Unless otherwise noted, original AI4Math Chronicle editorial content and the Chronicle's original data compilation are licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
