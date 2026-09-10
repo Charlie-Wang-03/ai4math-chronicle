@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2024-internlm-math
+slug: internlm-math-verifiable-reasoning
+title:
+  en: InternLM-Math unifies informal, tool-assisted and formal mathematical reasoning
+  zh-CN: InternLM-Math 统一非形式、工具辅助与形式数学推理
+dates:
+  event: '2024-02-09'
+  first_public_claim: '2024-02-09'
+  paper_release: '2024-02-09'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- system
+significance:
+  tier: H3
+  rationale:
+    en: InternLM-Math explored a single open model family spanning chain-of-thought, verification, code assistance and Lean theorem proving.
+    zh-CN: InternLM-Math 探索用同一开放模型族覆盖思维链、验证、代码辅助与 Lean 定理证明。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- formal
+- symbolic
+- numeric
+- hybrid
+claim:
+  en: InternLM-Math reported open-source state-of-the-art results across several math benchmarks and a 30.3% miniF2F score from its pretrained model without theorem-proving fine-tuning.
+  zh-CN: InternLM-Math 在多项数学基准上报告开放模型领先结果，其预训练模型在未进行定理证明专项微调时于 miniF2F 达到 30.3%。
+summary:
+  en: The project encodes reasoning, reward modeling, formal tasks, data augmentation and code-interpreter behavior in a unified sequence-to-sequence format.
+  zh-CN: 项目把推理、奖励建模、形式任务、数据增强与代码解释器行为统一到序列到序列格式。
+why_it_matters:
+  en: It represented a move toward general-purpose mathematical models that can switch between natural language, code and proof-assistant interfaces.
+  zh-CN: 它代表了面向通用数学模型的方向：模型能够在自然语言、代码和证明助手接口之间切换。
+ai_role:
+  level: computation_only
+  description:
+    en: The model acts as reasoner, verifier, prover and data augmenter across several interfaces.
+    zh-CN: 模型在多种接口下充当推理器、验证器、证明器与数据增强器。
+human_contribution:
+  description:
+    en: Researchers unified the training tasks, curated data and open-sourced models, code and data.
+    zh-CN: 研究者统一训练任务、整理数据并开放模型、代码与数据。
+systems:
+- internlm-math
+organizations:
+- shanghai-ai-laboratory
+people: []
+problems:
+- minif2f
+- math-benchmark
+methods:
+- multi-task-learning
+- code-interpreter
+- formal-reasoning
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-02-09'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-internlm-math-2402.06332
+  tier: S1
+  type: paper
+  title: 'InternLM-Math: Open Math Large Language Models Toward Verifiable Reasoning'
+  url: https://arxiv.org/abs/2402.06332
+  primary: true
+  published_date: '2024-02-09'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2023-llemma
+  - evt-2024-deepseekmath
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- open-model
+- lean
+- verifier
+- code-interpreter
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
