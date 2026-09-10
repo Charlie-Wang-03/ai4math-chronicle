@@ -1,0 +1,99 @@
+schema_version: 1
+id: evt-2023-llemma
+slug: llemma-open-math-language-model
+title:
+  en: Llemma releases open language models and data specialized for mathematics
+  zh-CN: Llemma 发布面向数学的开放语言模型与训练数据
+dates:
+  event: '2023-10-16'
+  first_public_claim: '2023-10-16'
+  paper_release: '2023-10-16'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- system
+- dataset
+significance:
+  tier: H2
+  rationale:
+    en: Llemma established a reproducible open math-language-model stack, including model weights, Proof-Pile-2 and training code.
+    zh-CN: Llemma 建立了可复现的开放数学语言模型栈，包括模型权重、Proof-Pile-2 与训练代码。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- formal
+- symbolic
+claim:
+  en: Llemma released 7B and 34B math-specialized models that outperformed known open base models on MATH and showed tool-use and formal-proof capabilities without task-specific fine-tuning.
+  zh-CN: Llemma 发布 7B 与 34B 数学专用模型，在 MATH 上超过当时已知开放基础模型，并在无任务专项微调下展示工具使用与形式证明能力。
+summary:
+  en: The project continued pretraining Code Llama on Proof-Pile-2, a mixture of mathematical web text, scientific papers and mathematical code.
+  zh-CN: 该项目在 Proof-Pile-2 上继续预训练 Code Llama；该语料混合数学网页、科学论文与数学代码。
+why_it_matters:
+  en: It gave the community an open base model and corpus for studying how mathematical specialization transfers across informal, tool and formal settings.
+  zh-CN: 它为社区提供开放基础模型与语料，支持研究数学专项预训练如何迁移到非形式推理、工具使用和形式证明。
+ai_role:
+  level: computation_only
+  description:
+    en: The trained models perform mathematical reasoning, tool use and formal proof generation.
+    zh-CN: 训练后的模型执行数学推理、工具使用与形式证明生成。
+human_contribution:
+  description:
+    en: Researchers assembled Proof-Pile-2, continued pretraining the models and released the full artifacts.
+    zh-CN: 研究者构建 Proof-Pile-2、继续预训练模型并公开完整产物。
+systems:
+- llemma
+organizations:
+- eleutherai
+- princeton-university
+people: []
+problems:
+- math-benchmark
+methods:
+- continued-pretraining
+- math-corpus
+- language-model
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2023-10-16'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-llemma-2310.10631
+  tier: S1
+  type: paper
+  title: 'Llemma: An Open Language Model For Mathematics'
+  url: https://arxiv.org/abs/2310.10631
+  primary: true
+  published_date: '2023-10-16'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2022-minerva
+  - evt-2021-math-benchmark
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- open-model
+- math-language-model
+- proof-pile-2
+- formal-proof
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
