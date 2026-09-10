@@ -1,0 +1,6 @@
+---
+import { absolute, href, localePath } from '../lib/site';
+const target = href(localePath('en'));
+const canonical = absolute(localePath('en'));
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="robots" content="noindex"/><meta http-equiv="refresh" content={`0; url=${target}`}/><link rel="canonical" href={canonical}/><title>AI4Math Chronicle</title></head><body><p><a href={target}>Continue to AI4Math Chronicle</a></p></body></html>

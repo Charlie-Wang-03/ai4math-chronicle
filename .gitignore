@@ -6,3 +6,8 @@ pagefind/
 .env
 .env.*
 !.env.example
+
+# Build-derived public data; generated from data/events/*.yaml
+public/data/events.json
+public/data/events.ndjson
+public/data/schema/event.schema.json

@@ -1,0 +1,7 @@
+---
+import EventDetailPage from '../../../components/EventDetailPage.astro';
+import { getAllEvents } from '../../../lib/events';
+export function getStaticPaths() { return getAllEvents().map((event) => ({ params: { slug: event.slug }, props: { event } })); }
+const { event } = Astro.props;
+---
+<EventDetailPage event={event} locale="zh-CN" />

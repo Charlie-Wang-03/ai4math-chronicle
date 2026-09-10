@@ -1,0 +1,34 @@
+{
+  "name": "ai4math-chronicle",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "npm@10.9.2",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "validate": "node scripts/validate-events.mjs",
+    "generate": "node scripts/generate-data.mjs",
+    "test": "npm run validate && npm run generate && node --test tests/*.test.mjs",
+    "check": "astro check",
+    "build:site": "astro build",
+    "index:search": "pagefind --site dist",
+    "build": "npm run validate && npm run generate && npm run check && npm run build:site && npm run index:search",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/rss": "4.0.19",
+    "astro": "7.3.2",
+    "js-yaml": "5.4.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@types/node": "22.20.2",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "pagefind": "1.5.2",
+    "typescript": "5.9.2"
+  }
+}

@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { href, localePath } from '../lib/site';
+import type { Locale } from '../lib/types';
+const { locale } = Astro.props as { locale: Locale };
+const zh = locale === 'zh-CN';
+const title = zh ? '公开数据 — AI4Math 大事记' : 'Public Data — AI4Math Chronicle';
+const desc = zh ? '从 canonical YAML 自动生成的 JSON、NDJSON、RSS 与 JSON Schema。' : 'JSON, NDJSON, RSS, and JSON Schema generated from canonical YAML event records.';
+const links = [
+  ['events.json', 'JSON', zh ? '完整事件数组，适合一般机器消费。' : 'Complete event collection for general machine consumption.'],
+  ['events.ndjson', 'NDJSON', zh ? '每行一个事件，适合流式处理。' : 'One event per line for streaming workflows.'],
+  ['schema/event.schema.json', 'JSON Schema', zh ? 'Event v0.1 的正式结构约束。' : 'Formal structural contract for Event v0.1.'],
+];
+---
+<BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'data')} alternatePath={localePath(zh ? 'en':'zh-CN','data')}>
+  <article class="prose">
+    <p class="eyebrow">Machine-readable</p>
+    <h1>{zh ? '公开数据接口' : 'Public data interface'}</h1>
+    <p class="lede">{zh ? '网站没有 API server。所有公开接口都是由同一份 canonical Event YAML 静态派生的版本化文件。' : 'There is no API server. Every public interface is a static derivative of the same canonical Event YAML records.'}</p>
+    <div class="data-links">
+      {links.map(([path,label,note]) => <a class="data-link" href={href(`data/${path}`)}><strong>{label}</strong><span>{note}</span></a>)}
+      <a class="data-link" href={href('feed.xml')}><strong>RSS</strong><span>{zh ? '按事件时间发布的 Chronicle feed。' : 'Chronicle feed ordered by event chronology.'}</span></a>
+      <a class="data-link" href={href('sitemap.xml')}><strong>Sitemap</strong><span>{zh ? '静态页面与事件页面索引。' : 'Index of static and event pages.'}</span></a>
+    </div>
+    <h2>{zh ? 'Canonical source' : 'Canonical source'}</h2>
+    <p><code>data/events/*.yaml</code> → validation → static HTML / JSON / NDJSON / RSS / sitemap.</p>
+    <p>{zh ? 'English canonical identifiers 与双语展示字段共同存在于同一记录中，不维护两套事实数据库。' : 'English canonical identifiers and bilingual presentation fields coexist in each record; there are no separate factual databases per language.'}</p>
+  </article>
+</BaseLayout>

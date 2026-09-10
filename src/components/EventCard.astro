@@ -1,0 +1,22 @@
+---
+import { formatDate, text } from '../lib/events';
+import { href, localePath } from '../lib/site';
+import type { ChronicleEvent, Locale } from '../lib/types';
+const { event, locale, showDate = false } = Astro.props as { event: ChronicleEvent; locale: Locale; showDate?: boolean };
+const primarySources = event.sources.filter((source) => source.primary || source.tier === 'S1').slice(0, 3);
+---
+<article class={`event-card ${event.significance.tier}`} data-event-card data-year={event.dates.event.slice(0,4)} data-event-types={event.event_types.join(' ')} data-significance={event.significance.tier} data-verification={event.verification.status} data-systems={event.systems.join(' ')}>
+  {showDate && <div class="eyebrow">{formatDate(event.dates.event, locale)}</div>}
+  <div class="badges">
+    <span class="badge significance">{event.significance.tier}</span>
+    <span class={`badge ${event.verification.status}`}>{event.verification.status}</span>
+    <span class="badge">{event.verification.evidence_level}</span>
+    {event.event_types.slice(0, 2).map((type) => <span class="badge">{type}</span>)}
+  </div>
+  <h3><a href={href(localePath(locale, `events/${event.slug}`))}>{text(event.title, locale)}</a></h3>
+  <p>{text(event.summary, locale)}</p>
+  {(event.organizations.length > 0 || event.systems.length > 0) && <div class="result-count">{[...event.organizations, ...event.systems].join(' · ')}</div>}
+  <div class="source-shortcuts" aria-label="Primary evidence">
+    {primarySources.map((source) => <a href={source.url} rel="noreferrer">{source.type === 'paper' ? 'Paper' : source.type === 'repository' ? 'Code' : source.tier === 'S2' ? 'Official' : 'Source'}</a>)}
+  </div>
+</article>

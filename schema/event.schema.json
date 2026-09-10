@@ -1,0 +1,547 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://charlie-wang-03.github.io/ai4math-chronicle/data/schema/event.schema.json",
+  "title": "AI4Math Chronicle Event v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "slug",
+    "title",
+    "dates",
+    "event_types",
+    "significance",
+    "mathematical_novelty",
+    "interfaces",
+    "claim",
+    "summary",
+    "why_it_matters",
+    "ai_role",
+    "human_contribution",
+    "systems",
+    "organizations",
+    "people",
+    "problems",
+    "methods",
+    "verification",
+    "sources",
+    "artifacts",
+    "relationships",
+    "timeline",
+    "tags",
+    "editorial",
+    "corrections"
+  ],
+  "$defs": {
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "zh-CN"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1
+        },
+        "zh-CN": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "nullableDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "stringList": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "uniqueItems": true
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "tier",
+        "type",
+        "title",
+        "url",
+        "primary",
+        "published_date",
+        "accessed_at"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]+$"
+        },
+        "tier": {
+          "enum": [
+            "S1",
+            "S2",
+            "S3",
+            "S4",
+            "S5"
+          ]
+        },
+        "type": {
+          "enum": [
+            "paper",
+            "official_announcement",
+            "repository",
+            "formal_artifact",
+            "dataset",
+            "benchmark",
+            "independent_analysis",
+            "media",
+            "community",
+            "other"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "primary": {
+          "type": "boolean"
+        },
+        "published_date": {
+          "$ref": "#/$defs/nullableDate"
+        },
+        "accessed_at": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "title",
+        "url"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._-]+$"
+        },
+        "kind": {
+          "enum": [
+            "code",
+            "proof",
+            "dataset",
+            "benchmark",
+            "model",
+            "supplement",
+            "other"
+          ]
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        }
+      }
+    },
+    "verificationHistory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "status",
+        "evidence_level",
+        "note"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "status": {
+          "enum": [
+            "claimed",
+            "paper_released",
+            "under_verification",
+            "partially_verified",
+            "independently_verified",
+            "disputed",
+            "corrected",
+            "retracted"
+          ]
+        },
+        "evidence_level": {
+          "enum": [
+            "E0",
+            "E1",
+            "E2",
+            "E3",
+            "E4"
+          ]
+        },
+        "note": {
+          "$ref": "#/$defs/localizedText"
+        }
+      }
+    },
+    "correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "date",
+        "summary",
+        "source_ids"
+      ],
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "summary": {
+          "$ref": "#/$defs/localizedText"
+        },
+        "source_ids": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    }
+  },
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^evt-[0-9]{4}-[a-z0-9-]+$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "title": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "dates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event",
+        "first_public_claim",
+        "paper_release",
+        "artifact_release",
+        "independently_verified",
+        "added_to_chronicle",
+        "last_updated"
+      ],
+      "properties": {
+        "event": {
+          "type": "string",
+          "format": "date"
+        },
+        "first_public_claim": {
+          "$ref": "#/$defs/nullableDate"
+        },
+        "paper_release": {
+          "$ref": "#/$defs/nullableDate"
+        },
+        "artifact_release": {
+          "$ref": "#/$defs/nullableDate"
+        },
+        "independently_verified": {
+          "$ref": "#/$defs/nullableDate"
+        },
+        "added_to_chronicle": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "event_types": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "discovery",
+          "proof",
+          "formalization",
+          "competition",
+          "system",
+          "benchmark",
+          "dataset",
+          "infrastructure",
+          "controversy"
+        ]
+      }
+    },
+    "significance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "tier",
+        "rationale"
+      ],
+      "properties": {
+        "tier": {
+          "enum": [
+            "H1",
+            "H2",
+            "H3"
+          ]
+        },
+        "rationale": {
+          "$ref": "#/$defs/localizedText"
+        }
+      }
+    },
+    "mathematical_novelty": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "new_result",
+            "new_proof",
+            "new_algorithm",
+            "new_conjecture",
+            "formalization_of_known_result",
+            "rediscovery",
+            "benchmark_result",
+            "tooling_only"
+          ]
+        }
+      }
+    },
+    "interfaces": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "informal",
+          "formal",
+          "symbolic",
+          "numeric",
+          "hybrid"
+        ]
+      }
+    },
+    "claim": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "summary": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "why_it_matters": {
+      "$ref": "#/$defs/localizedText"
+    },
+    "ai_role": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "description"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "autonomous_primary",
+            "ai_primary_human_verified",
+            "human_ai_collaboration",
+            "ai_substantive_support",
+            "ai_minor_support",
+            "computation_only",
+            "literature_assistance",
+            "unclear"
+          ]
+        },
+        "description": {
+          "$ref": "#/$defs/localizedText"
+        }
+      }
+    },
+    "human_contribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "description"
+      ],
+      "properties": {
+        "description": {
+          "$ref": "#/$defs/localizedText"
+        }
+      }
+    },
+    "systems": {
+      "$ref": "#/$defs/stringList"
+    },
+    "organizations": {
+      "$ref": "#/$defs/stringList"
+    },
+    "people": {
+      "$ref": "#/$defs/stringList"
+    },
+    "problems": {
+      "$ref": "#/$defs/stringList"
+    },
+    "methods": {
+      "$ref": "#/$defs/stringList"
+    },
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidence_level",
+        "status",
+        "formal_assurance",
+        "history"
+      ],
+      "properties": {
+        "evidence_level": {
+          "enum": [
+            "E0",
+            "E1",
+            "E2",
+            "E3",
+            "E4"
+          ]
+        },
+        "status": {
+          "enum": [
+            "claimed",
+            "paper_released",
+            "under_verification",
+            "partially_verified",
+            "independently_verified",
+            "disputed",
+            "corrected",
+            "retracted"
+          ]
+        },
+        "formal_assurance": {
+          "enum": [
+            "none",
+            "artifact_available",
+            "machine_checked",
+            "independently_replayed"
+          ]
+        },
+        "history": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/verificationHistory"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "artifacts": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/artifact"
+      }
+    },
+    "relationships": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "predecessors",
+        "successors",
+        "related"
+      ],
+      "properties": {
+        "predecessors": {
+          "$ref": "#/$defs/stringList"
+        },
+        "successors": {
+          "$ref": "#/$defs/stringList"
+        },
+        "related": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    },
+    "timeline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "featured",
+        "significance"
+      ],
+      "properties": {
+        "featured": {
+          "type": "boolean"
+        },
+        "significance": {
+          "enum": [
+            "primary",
+            "context"
+          ]
+        }
+      }
+    },
+    "tags": {
+      "$ref": "#/$defs/stringList"
+    },
+    "editorial": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "created_at",
+        "last_reviewed",
+        "reviewers"
+      ],
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "last_reviewed": {
+          "type": "string",
+          "format": "date"
+        },
+        "reviewers": {
+          "$ref": "#/$defs/stringList"
+        }
+      }
+    },
+    "corrections": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/correction"
+      }
+    }
+  }
+}
