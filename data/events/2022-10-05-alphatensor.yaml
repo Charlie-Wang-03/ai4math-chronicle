@@ -1,0 +1,133 @@
+schema_version: 1
+id: evt-2022-alphatensor
+slug: alphatensor-matrix-multiplication-algorithms
+
+title:
+  en: AlphaTensor discovers improved matrix multiplication algorithms
+  zh-CN: AlphaTensor 发现改进的矩阵乘法算法
+
+dates:
+  event: "2022-10-05"
+  first_public_claim: "2022-10-05"
+  paper_release: "2022-10-05"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [discovery, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      AlphaTensor provided a prominent example of reinforcement learning discovering exact algorithms that improved long-standing matrix-multiplication records, including a finite-field 4-by-4 result reported as the first improvement over Strassen's two-level construction in that setting.
+    zh-CN: >-
+      AlphaTensor 是强化学习发现精确算法的代表性案例：它改进了长期存在的矩阵乘法记录，其中有限域上的 4×4 结果被论文报告为该设定下首次超过 Strassen 两层构造。
+
+mathematical_novelty:
+  type: new_algorithm
+interfaces: [symbolic, numeric, hybrid]
+
+claim:
+  en: >-
+    AlphaTensor discovered provably correct matrix multiplication algorithms that improved the best known multiplication counts for multiple matrix sizes, including a 4-by-4 construction over Z2 using 47 scalar multiplications instead of 49 from two-level Strassen.
+  zh-CN: >-
+    AlphaTensor 发现了一批可证明正确的矩阵乘法算法，在多个矩阵尺寸上改进已知最佳乘法次数，其中在 Z2 上的 4×4 构造使用 47 次标量乘法，而两层 Strassen 构造需要 49 次。
+
+summary:
+  en: >-
+    DeepMind represented matrix multiplication as a tensor-decomposition game and trained an AlphaZero-style reinforcement-learning agent to search the enormous space of factorizations. Released artifacts include discovered factorizations, benchmarking code and checks of algorithmic properties.
+  zh-CN: >-
+    DeepMind 将矩阵乘法表示为张量分解游戏，并训练类似 AlphaZero 的强化学习智能体搜索巨大的分解空间。公开产物包括所发现的分解、基准代码以及算法性质检查工具。
+
+why_it_matters:
+  en: >-
+    The work moved AI4Math beyond solving prepared exercises by demonstrating machine search that produced new exact algorithms with mathematical and computational significance.
+  zh-CN: >-
+    该工作超越了求解预设习题的范式，展示了机器搜索能够产生具有数学与计算意义的新精确算法。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      AlphaTensor searched for tensor decompositions and discovered candidate algorithms; the resulting decompositions admit exact mathematical checking and were analyzed by the research team.
+    zh-CN: >-
+      AlphaTensor 搜索张量分解并发现候选算法；所得分解可以进行精确数学检查，并由研究团队进一步分析。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers formulated TensorGame, designed the reinforcement-learning system and reward structures, chose target problems, verified outputs and interpreted their algorithmic consequences.
+    zh-CN: >-
+      研究者构造 TensorGame、设计强化学习系统与奖励机制、选择目标问题、验证输出并解释其算法意义。
+
+systems: [alphatensor]
+organizations: [deepmind]
+people: [alhussein-fawzi, matej-balog, aja-huang, thomas-hubert, pushmeet-kohli]
+problems: [matrix-multiplication]
+methods: [reinforcement-learning, monte-carlo-tree-search, tensor-decomposition, algorithm-search]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: "2022-10-05"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          Nature published the discovery results and their mathematical formulation.
+        zh-CN: >-
+          Nature 发表了相关发现结果及其数学表述。
+    - date: "2022-10-05"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          DeepMind released discovered algorithms and supporting verification and benchmarking materials.
+        zh-CN: >-
+          DeepMind 公开了所发现的算法以及配套验证与基准材料。
+
+sources:
+  - id: nature-alphatensor-2022
+    tier: S1
+    type: paper
+    title: Discovering faster matrix multiplication algorithms with reinforcement learning
+    url: https://www.nature.com/articles/s41586-022-05172-4
+    primary: true
+    published_date: "2022-10-05"
+    accessed_at: "2026-09-10"
+  - id: github-google-deepmind-alphatensor
+    tier: S1
+    type: repository
+    title: AlphaTensor accompanying repository
+    url: https://github.com/google-deepmind/alphatensor
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: alphatensor-results-repository
+    kind: code
+    title: AlphaTensor algorithms and verification materials
+    url: https://github.com/google-deepmind/alphatensor
+
+relationships:
+  predecessors: []
+  successors: [evt-2025-alphaevolve]
+  related: [evt-2023-funsearch-cap-set]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [matrix-multiplication, reinforcement-learning, algorithm-discovery, tensor-decomposition, alphazero]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

@@ -1,0 +1,133 @@
+schema_version: 1
+id: evt-2026-alphaproof-nexus
+slug: alphaproof-nexus-open-problem-proof-search
+
+title:
+  en: AlphaProof Nexus scales Lean-based agents to hundreds of open research problems
+  zh-CN: AlphaProof Nexus 将基于 Lean 的 Agent 扩展到数百个开放研究问题
+
+dates:
+  event: "2026-05-21"
+  first_public_claim: "2026-05-21"
+  paper_release: "2026-05-21"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [system, proof, formalization, discovery]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      AlphaProof Nexus was reported as the first large-scale evaluation of LLM-driven formal proof search on open research problems, moving Lean-based agents from benchmark theorems to hundreds of active mathematical conjectures with public proof artifacts.
+    zh-CN: >-
+      AlphaProof Nexus 被论文报告为首次对 LLM 驱动的形式证明搜索在开放研究问题上进行大规模评测，将基于 Lean 的 Agent 从基准定理推进到数百个真实开放猜想，并公开证明产物。
+
+mathematical_novelty:
+  type: new_result
+interfaces: [formal, symbolic, hybrid]
+
+claim:
+  en: >-
+    The paper reported that the most capable AlphaProof Nexus agent autonomously resolved 9 of 353 open Erdős problems and proved 44 of 492 OEIS conjectures, while also contributing to research problems in algebraic geometry, optimization, graph theory and quantum optics.
+  zh-CN: >-
+    论文报告最强的 AlphaProof Nexus Agent 自主解决了 353 个开放 Erdős 问题中的 9 个，并证明了 492 个 OEIS 猜想中的 44 个，同时还参与代数几何、优化、图论与量子光学中的研究问题。
+
+summary:
+  en: >-
+    AlphaProof Nexus organized frontier LLM subagents around the Lean compiler and escalated proof search with specialized tools and evolutionary search. The project released Lean proofs for successful Erdős, OEIS and research-collaboration cases together with human-readable proof writeups for selected results.
+  zh-CN: >-
+    AlphaProof Nexus 让前沿 LLM 子 Agent 围绕 Lean 编译器工作，并通过专用工具与进化搜索逐级增强证明搜索。项目公开了成功解决的 Erdős、OEIS 与科研协作案例的 Lean 证明，并为部分结果提供人类可读证明说明。
+
+why_it_matters:
+  en: >-
+    The scale and open-problem setting changed the evidentiary standard for formal AI4Math: generated research claims could be paired directly with kernel-checkable proof artifacts rather than only prose reasoning or benchmark scores.
+  zh-CN: >-
+    其规模与开放问题场景提高了形式化 AI4Math 的证据标准：生成的研究结论可以直接配套内核可检查的证明产物，而不只是自然语言推理或基准分数。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      LLM agents generated and revised Lean proofs using compiler feedback and search; accepted formal proofs were mechanically checked, while researchers curated problems and assessed their research interpretation.
+    zh-CN: >-
+      LLM Agent 利用编译器反馈与搜索生成并修订 Lean 证明；被接受的形式证明由机器检查，研究者则整理问题并评估其研究含义。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the agent hierarchy and search methods, formalized or curated open problems, supplied domain context in collaborative deployments, and analyzed whether formal solutions matched the intended mathematical questions.
+    zh-CN: >-
+      研究者设计 Agent 层级与搜索方法，形式化或整理开放问题，在协作部署中提供领域背景，并分析形式解是否忠实对应原始数学问题。
+
+systems: [alphaproof-nexus, lean, gemini]
+organizations: [google-deepmind, university-of-texas-at-austin]
+people: [george-tsoukalas, anton-kovsharov, swarat-chaudhuri, pushmeet-kohli, thomas-hubert]
+problems: [erdos-problems, oeis-conjectures, research-mathematics]
+methods: [formal-proof-search, llm-agents, compiler-feedback, evolutionary-search, lean]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+    - date: "2026-05-21"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The preprint reported the open-problem evaluation and research deployments.
+        zh-CN: >-
+          预印本报告了开放问题评测与科研部署结果。
+    - date: "2026-05-21"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          Google DeepMind released a repository of generated Lean proofs and natural-language writeups, with instructions for rebuilding the formal artifacts.
+        zh-CN: >-
+          Google DeepMind 公开了生成的 Lean 证明与自然语言说明仓库，并提供重建形式产物的说明。
+
+sources:
+  - id: arxiv-alphaproof-nexus-2605.22763
+    tier: S1
+    type: paper
+    title: Advancing Mathematics Research with AI-Driven Formal Proof Search
+    url: https://arxiv.org/abs/2605.22763
+    primary: true
+    published_date: "2026-05-21"
+    accessed_at: "2026-09-10"
+  - id: github-alphaproof-nexus-results
+    tier: S1
+    type: formal_artifact
+    title: AlphaProof Nexus Results
+    url: https://github.com/google-deepmind/alphaproof-nexus-results
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: alphaproof-nexus-lean-results
+    kind: proof
+    title: AlphaProof Nexus generated Lean proofs
+    url: https://github.com/google-deepmind/alphaproof-nexus-results
+
+relationships:
+  predecessors: [evt-2024-alphaproof-alphageometry2-imo, evt-2023-leandojo, evt-2024-deepseek-prover-v1-5]
+  successors: []
+  related: [evt-2026-aletheia]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [lean, open-problems, erdos, oeis, theorem-proving, agent, formal-verification]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

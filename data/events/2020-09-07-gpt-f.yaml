@@ -1,0 +1,121 @@
+schema_version: 1
+id: evt-2020-gpt-f
+slug: gpt-f-metamath-theorem-proving
+
+title:
+  en: GPT-f brings generative language modeling to formal theorem proving
+  zh-CN: GPT-f 将生成式语言模型引入形式定理证明
+
+dates:
+  event: "2020-09-07"
+  first_public_claim: "2020-09-07"
+  paper_release: "2020-09-07"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [proof, formalization, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      GPT-f was an early demonstration that transformer language models could generate formal proof steps rather than only score or classify them, and its authors reported new shorter proofs accepted into the Metamath library.
+    zh-CN: >-
+      GPT-f 是较早展示 Transformer 语言模型能够直接生成形式证明步骤、而非仅进行评分或分类的系统之一；作者还报告其找到的新短证明被 Metamath 主库接收。
+
+mathematical_novelty:
+  type: new_proof
+interfaces: [formal, symbolic]
+
+claim:
+  en: >-
+    GPT-f used a generative transformer model to search for proofs in Metamath and found new shorter proofs that were accepted into the main Metamath library.
+  zh-CN: >-
+    GPT-f 使用生成式 Transformer 模型在 Metamath 中搜索证明，并找到被 Metamath 主库接收的新短证明。
+
+summary:
+  en: >-
+    OpenAI researchers Stanislas Polu and Ilya Sutskever trained generative models over formal mathematical text and integrated them into proof search for the Metamath language. The work framed theorem proving as sequence generation and showed that learned generation could contribute usable proof artifacts to an established formal library.
+  zh-CN: >-
+    OpenAI 研究者 Stanislas Polu 与 Ilya Sutskever 在形式数学文本上训练生成模型，并将其整合进 Metamath 的证明搜索。该工作把定理证明表述为序列生成任务，并展示了学习式生成模型可以向既有形式数学库贡献可用的证明产物。
+
+why_it_matters:
+  en: >-
+    The result is a useful starting point for the later LLM-plus-proof-assistant line of AI4Math, where language models propose proof actions and formal systems provide exact feedback.
+  zh-CN: >-
+    这一结果可视为后来“LLM + 证明助手”AI4Math 路线的重要起点：语言模型提出证明动作，形式系统提供精确反馈。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      The model generated candidate proof steps and proof searches; Metamath mechanically checked resulting proofs before they could be accepted.
+    zh-CN: >-
+      模型生成候选证明步骤并执行证明搜索；所得证明在被接收前由 Metamath 进行机械检查。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the model and search procedure, selected the formal corpus and evaluation, and the Metamath community maintained the target library and reviewed contributions.
+    zh-CN: >-
+      研究者设计模型与搜索流程、选择形式语料和评测方式；Metamath 社区维护目标证明库并审核贡献。
+
+systems: [gpt-f, metamath]
+organizations: [openai, metamath-community]
+people: [stanislas-polu, ilya-sutskever]
+problems: []
+methods: [transformer-language-modeling, formal-theorem-proving, proof-search]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+    - date: "2020-09-07"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          OpenAI and the arXiv paper reported the Metamath prover and the adoption of generated shorter proofs into the library.
+        zh-CN: >-
+          OpenAI 与 arXiv 论文报告了该 Metamath 证明器，以及生成的更短证明被主库接收的情况。
+
+sources:
+  - id: openai-gpt-f-2020
+    tier: S2
+    type: official_announcement
+    title: Generative language modeling for automated theorem proving
+    url: https://openai.com/index/generative-language-modeling-for-automated-theorem-proving/
+    primary: true
+    published_date: "2020-09-07"
+    accessed_at: "2026-09-10"
+  - id: arxiv-gpt-f-2009.03393
+    tier: S1
+    type: paper
+    title: Generative Language Modeling for Automated Theorem Proving
+    url: https://arxiv.org/abs/2009.03393
+    primary: true
+    published_date: "2020-09-07"
+    accessed_at: "2026-09-10"
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: [evt-2021-minif2f, evt-2023-leandojo, evt-2023-copra, evt-2024-deepseek-prover-v1-5]
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [metamath, theorem-proving, transformers, formal-mathematics, proof-search]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

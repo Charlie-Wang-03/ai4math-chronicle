@@ -1,0 +1,133 @@
+schema_version: 1
+id: evt-2023-leandojo
+slug: leandojo-retrieval-augmented-theorem-proving
+
+title:
+  en: LeanDojo opens a reproducible environment for LLM theorem proving in Lean
+  zh-CN: LeanDojo 建立可复现的 Lean 大模型定理证明环境
+
+dates:
+  event: "2023-06-27"
+  first_public_claim: "2023-06-27"
+  paper_release: "2023-06-27"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [infrastructure, dataset, system, formalization]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      LeanDojo lowered the reproducibility barrier for learning-based theorem proving by combining programmatic Lean interaction, extracted proof data, a large benchmark and an open retrieval-augmented prover.
+    zh-CN: >-
+      LeanDojo 将可编程 Lean 交互、证明数据抽取、大规模基准和开放的检索增强证明器整合起来，显著降低了学习式定理证明的复现门槛。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces: [formal, symbolic]
+
+claim:
+  en: >-
+    LeanDojo released an open toolkit and benchmark for interacting with Lean and training theorem provers, together with ReProver, a retrieval-augmented language-model prover evaluated on nearly one hundred thousand mathlib theorems.
+  zh-CN: >-
+    LeanDojo 公开了用于与 Lean 交互和训练定理证明器的工具与基准，并发布检索增强语言模型证明器 ReProver，在近十万个 mathlib 定理构成的基准上进行评测。
+
+summary:
+  en: >-
+    The project extracts proof states, tactics and premise information from Lean repositories and exposes a programmatic proof environment. ReProver retrieves relevant premises before generating tactics, directly addressing the library-scale premise-selection problem.
+  zh-CN: >-
+    该项目从 Lean 仓库抽取证明状态、战术与前提信息，并提供可编程证明环境。ReProver 在生成战术前检索相关前提，直接处理大规模数学库中的前提选择问题。
+
+why_it_matters:
+  en: >-
+    LeanDojo helped turn Lean theorem proving into an accessible machine-learning research platform and supplied infrastructure that later formal-math agents could reuse rather than rebuilding environment integration from scratch.
+  zh-CN: >-
+    LeanDojo 推动 Lean 定理证明成为更易进入的机器学习研究平台，并提供了后续形式数学 Agent 可复用的基础设施，避免重复搭建证明环境集成。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      ReProver used retrieval and language-model generation to choose premises and propose Lean tactics, with the proof assistant determining whether generated proof steps were valid.
+    zh-CN: >-
+      ReProver 使用检索与语言模型生成选择前提并提出 Lean 战术，由证明助手判断生成的证明步骤是否有效。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers engineered the Lean extraction and interaction tooling, built the benchmark, trained the retriever and generator, and designed reproducible evaluation splits.
+    zh-CN: >-
+      研究者开发 Lean 数据抽取与交互工具、构建基准、训练检索器与生成器，并设计可复现的评测划分。
+
+systems: [leandojo, reprover, lean]
+organizations: [caltech, nvidia]
+people: [kaiyu-yang, aidan-swope, alex-gu, anima-anandkumar]
+problems: [lean-theorem-proving]
+methods: [retrieval-augmented-generation, premise-selection, formal-theorem-proving, language-modeling]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: "2023-06-27"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The paper described LeanDojo, ReProver and the benchmark methodology.
+        zh-CN: >-
+          论文公开说明了 LeanDojo、ReProver 与基准方法。
+    - date: "2023-06-27"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          Open-source tooling, benchmark resources and prover code were released for reproduction and extension.
+        zh-CN: >-
+          开源工具、基准资源与证明器代码被公开，可用于复现与扩展。
+
+sources:
+  - id: arxiv-leandojo-2306.15626
+    tier: S1
+    type: paper
+    title: "LeanDojo: Theorem Proving with Retrieval-Augmented Language Models"
+    url: https://arxiv.org/abs/2306.15626
+    primary: true
+    published_date: "2023-06-27"
+    accessed_at: "2026-09-10"
+  - id: github-lean-dojo
+    tier: S1
+    type: repository
+    title: LeanDojo repository
+    url: https://github.com/lean-dojo/LeanDojo
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: leandojo-repository
+    kind: code
+    title: LeanDojo theorem-proving toolkit
+    url: https://github.com/lean-dojo/LeanDojo
+
+relationships:
+  predecessors: [evt-2020-gpt-f, evt-2021-minif2f]
+  successors: [evt-2024-deepseek-prover-v1-5, evt-2026-alphaproof-nexus]
+  related: [evt-2023-copra]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [lean, theorem-proving, retrieval, infrastructure, benchmark, open-source]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

@@ -1,0 +1,129 @@
+schema_version: 1
+id: evt-2026-aletheia
+slug: aletheia-autonomous-mathematics-research-agent
+
+title:
+  en: Aletheia extends Deep Think from Olympiad solving into research-level mathematics
+  zh-CN: Aletheia 将 Deep Think 从奥赛解题推进到研究级数学
+
+dates:
+  event: "2026-02-10"
+  first_public_claim: "2026-02-10"
+  paper_release: "2026-02-10"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [system, discovery, proof]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Aletheia was presented as an end-to-end math research agent that iteratively generates, verifies and revises long-horizon natural-language solutions, with reported applications ranging from PhD-level exercises to new research results and open problems.
+    zh-CN: >-
+      Aletheia 被提出为端到端数学研究 Agent，可迭代生成、验证并修订长程自然语言解答；论文报告其应用范围从博士层次习题延伸到新的研究结果与开放问题。
+
+mathematical_novelty:
+  type: new_result
+interfaces: [informal, hybrid]
+
+claim:
+  en: >-
+    The Aletheia paper reported several levels of AI-assisted research, including an AI-generated paper on eigenweight structure constants, human-AI collaborative results and a semi-autonomous evaluation of 700 open problems from Bloom's Erdős conjectures database that included autonomous solutions to four open questions.
+  zh-CN: >-
+    Aletheia 论文报告了多种自主程度的 AI 数学研究，包括关于 eigenweight 结构常数的 AI 生成论文、人机协作结果，以及对 Bloom 的 Erdős 猜想数据库中 700 个开放问题的半自主评测，其中包含对 4 个开放问题的自主解答。
+
+summary:
+  en: >-
+    Aletheia couples an advanced Gemini Deep Think model with iterative verification, revision and intensive tool use intended for research settings where literature navigation and long proof chains matter. The authors explicitly separated levels of autonomy and novelty rather than treating all AI-assisted results as equivalent.
+  zh-CN: >-
+    Aletheia 将高级 Gemini Deep Think 模型与迭代验证、修订及密集工具使用结合，面向需要文献导航和长证明链的研究环境。作者还明确区分不同自主性与新颖性层级，而非把所有 AI 辅助结果视为同一种贡献。
+
+why_it_matters:
+  en: >-
+    The work marked a shift in the public AI4Math frontier from contest performance toward sustained research workflows and made attribution, autonomy and verification part of the system-level discussion.
+  zh-CN: >-
+    该工作标志着公开 AI4Math 前沿从竞赛表现转向持续科研工作流，并把贡献归属、自主程度与验证问题纳入系统层面的讨论。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Aletheia generated, checked and revised candidate research solutions with tool use; the reported research cases ranged from highly autonomous operation to close collaboration with expert mathematicians.
+    zh-CN: >-
+      Aletheia 借助工具生成、检查并修订候选研究解答；论文中的案例从高度自主运行到与专家数学家的紧密协作不等。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers built the agent and verifier loop, selected and formalized research tasks, supplied expert direction where required, and evaluated novelty and mathematical correctness of reported results.
+    zh-CN: >-
+      研究者构建 Agent 与验证循环、选择并整理研究任务、在需要时提供专家指导，并评估所报告结果的新颖性与数学正确性。
+
+systems: [aletheia, gemini-deep-think]
+organizations: [google-deepmind]
+people: [tony-feng, trieu-trinh, garrett-bingham, thang-luong]
+problems: [erdos-conjectures-database, research-level-mathematics]
+methods: [research-agent, inference-time-scaling, iterative-verification, tool-use, natural-language-proof]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+    - date: "2026-02-10"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The research paper documented the agent design, evaluations and several research case studies with different autonomy levels.
+        zh-CN: >-
+          研究论文公开了 Agent 设计、评测，以及多种自主程度的研究案例。
+    - date: "2026-02-11"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          Google DeepMind published an institutional overview of the research-level mathematics program and Aletheia.
+        zh-CN: >-
+          Google DeepMind 发布机构介绍，说明研究级数学计划与 Aletheia。
+
+sources:
+  - id: arxiv-aletheia-2602.10177
+    tier: S1
+    type: paper
+    title: Towards Autonomous Mathematics Research
+    url: https://arxiv.org/abs/2602.10177
+    primary: true
+    published_date: "2026-02-10"
+    accessed_at: "2026-09-10"
+  - id: deepmind-aletheia-2026
+    tier: S2
+    type: official_announcement
+    title: Accelerating Mathematical and Scientific Discovery with Gemini Deep Think
+    url: https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/
+    primary: true
+    published_date: "2026-02-11"
+    accessed_at: "2026-09-10"
+
+artifacts: []
+
+relationships:
+  predecessors: [evt-2025-gemini-imo-gold]
+  successors: []
+  related: [evt-2025-alphaevolve, evt-2026-alphaproof-nexus]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [research-agent, gemini, mathematical-research, erdos, tool-use, verification]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

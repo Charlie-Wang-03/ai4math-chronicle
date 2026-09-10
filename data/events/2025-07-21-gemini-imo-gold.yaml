@@ -1,0 +1,113 @@
+schema_version: 1
+id: evt-2025-gemini-imo-gold
+slug: gemini-deep-think-imo-2025-gold
+
+title:
+  en: Gemini Deep Think reaches officially graded IMO 2025 gold-medal standard in natural language
+  zh-CN: Gemini Deep Think 以自然语言达到经官方评分的 IMO 2025 金牌标准
+
+dates:
+  event: "2025-07-21"
+  first_public_claim: "2025-07-21"
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [competition, proof, system]
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      The result moved Olympiad-level AI from the manually formalized, multi-day AlphaProof workflow of 2024 to end-to-end natural-language proof generation within the contest time limit, with grading certified by IMO coordinators.
+    zh-CN: >-
+      该结果把奥赛级 AI 从 2024 年依赖人工形式化且计算数日的 AlphaProof 工作流，推进到在竞赛时限内端到端生成自然语言证明，并由 IMO 协调方进行评分认证。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces: [informal]
+
+claim:
+  en: >-
+    An advanced Gemini Deep Think model solved five of the six IMO 2025 problems for 35 out of 42 points, reaching gold-medal standard; Google DeepMind reported that IMO graders evaluated the natural-language solutions under the same criteria used for contestants.
+  zh-CN: >-
+    一个高级版 Gemini Deep Think 模型解出了 IMO 2025 六道题中的五道，获得 35/42 分并达到金牌标准；Google DeepMind 报告称 IMO 评分人员按与参赛学生相同的标准评阅了这些自然语言解答。
+
+summary:
+  en: >-
+    Unlike AlphaProof and AlphaGeometry 2 in 2024, the 2025 system consumed official problem statements directly and produced natural-language proofs without manual translation into Lean or another domain-specific formal language. It completed the task within the 4.5-hour competition limit.
+  zh-CN: >-
+    与 2024 年的 AlphaProof 和 AlphaGeometry 2 不同，2025 年系统直接读取官方题目并生成自然语言证明，无需人工翻译成 Lean 或其他专用形式语言，并在 4.5 小时竞赛时限内完成。
+
+why_it_matters:
+  en: >-
+    This was a major change in interface and latency, showing that a general reasoning model could reach elite Olympiad performance end-to-end in the language used by human contestants.
+  zh-CN: >-
+    这是接口与时延上的重要变化，表明通用推理模型能够以人类参赛者使用的语言端到端达到顶尖奥赛水平。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Gemini generated the solutions end-to-end from the natural-language problems; external IMO graders assessed the submitted solutions.
+    zh-CN: >-
+      Gemini 从自然语言题目端到端生成解答；外部 IMO 评分人员对提交的解答进行评阅。
+
+human_contribution:
+  description:
+    en: >-
+      DeepMind researchers developed and post-trained the model and supplied general problem-solving guidance; IMO coordinators and graders provided the competition problems and external scoring.
+    zh-CN: >-
+      DeepMind 研究者开发并后训练模型，并提供一般性解题指导；IMO 协调方和评分人员提供竞赛题目并进行外部评分。
+
+systems: [gemini-deep-think]
+organizations: [google-deepmind, international-mathematical-olympiad]
+people: [thang-luong, edward-lockhart, gregor-dolinar]
+problems: [international-mathematical-olympiad-2025]
+methods: [reasoning-model, parallel-thinking, reinforcement-learning, natural-language-proof]
+
+verification:
+  evidence_level: E2
+  status: partially_verified
+  formal_assurance: none
+  history:
+    - date: "2025-07-21"
+      status: partially_verified
+      evidence_level: E2
+      note:
+        en: >-
+          Google DeepMind published the score and quoted the IMO president confirming 35/42 and gold-medal standard after official grading.
+        zh-CN: >-
+          Google DeepMind 公布成绩，并引用 IMO 主席确认官方评分后的 35/42 分与金牌标准。
+
+sources:
+  - id: deepmind-gemini-imo-2025
+    tier: S2
+    type: official_announcement
+    title: Advanced version of Gemini with Deep Think officially achieves gold-medal standard at the International Mathematical Olympiad
+    url: https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/
+    primary: true
+    published_date: "2025-07-21"
+    accessed_at: "2026-09-10"
+
+artifacts: []
+
+relationships:
+  predecessors: [evt-2022-minerva, evt-2024-alphaproof-alphageometry2-imo]
+  successors: [evt-2026-aletheia]
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [imo, olympiad, gemini, natural-language, reasoning, competition]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [Charlie-Wang-03]
+
+corrections: []

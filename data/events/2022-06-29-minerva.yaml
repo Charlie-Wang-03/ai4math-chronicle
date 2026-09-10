@@ -1,0 +1,121 @@
+schema_version: 1
+id: evt-2022-minerva
+slug: minerva-quantitative-reasoning-language-model
+
+title:
+  en: Minerva demonstrates large-scale language-model gains on quantitative reasoning
+  zh-CN: Minerva 展示大语言模型在定量推理上的规模化提升
+
+dates:
+  event: "2022-06-29"
+  first_public_claim: "2022-06-29"
+  paper_release: "2022-06-29"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [system, benchmark]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Minerva showed that a general language-model architecture further trained on technical content could make a large jump on mathematical and scientific quantitative reasoning benchmarks without external symbolic tools.
+    zh-CN: >-
+      Minerva 展示了通用语言模型架构在技术内容上继续训练后，可以在不调用外部符号工具的情况下显著提升数学与科学定量推理基准表现。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces: [informal, symbolic, numeric]
+
+claim:
+  en: >-
+    Minerva achieved then-state-of-the-art performance on several quantitative reasoning benchmarks and correctly solved nearly one third of a separate set of more than two hundred undergraduate-level science problems evaluated by the researchers.
+  zh-CN: >-
+    Minerva 在多个定量推理基准上取得当时的领先表现，并在研究团队另外评测的两百余道本科层次科学问题中正确解答了接近三分之一。
+
+summary:
+  en: >-
+    Google Research continued pretraining a large language model on scientific papers and mathematical web content, then evaluated chain-of-thought-style solutions across mathematics, physics and other quantitative domains. The system operated in natural language rather than a proof assistant.
+  zh-CN: >-
+    Google Research 在科学论文与数学网页内容上继续预训练大型语言模型，并在数学、物理等定量领域评测逐步推理式解答。该系统直接使用自然语言，而非证明助手。
+
+why_it_matters:
+  en: >-
+    Minerva helped establish natural-language mathematical reasoning as a serious scaling target for large language models, providing an important precursor to later Olympiad-level end-to-end reasoning systems.
+  zh-CN: >-
+    Minerva 推动自然语言数学推理成为大语言模型规模化研究的重要目标，并为后来的端到端奥赛级推理系统提供了关键前序参照。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The language model generated complete natural-language quantitative solutions; correctness was assessed against benchmark answers and researcher evaluation protocols.
+    zh-CN: >-
+      语言模型自主生成完整的自然语言定量解答；正确性通过基准答案与研究者设计的评测流程判定。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers assembled the technical training mixture, designed prompting and evaluation procedures, curated additional undergraduate problems and analyzed model outputs.
+    zh-CN: >-
+      研究者构建技术训练语料、设计提示与评测流程、整理额外本科问题，并分析模型输出。
+
+systems: [minerva]
+organizations: [google-research]
+people: [aitor-lewkowycz, anders-andreassen, ethan-dyer, guy-gur-ari]
+problems: [math-benchmark, quantitative-reasoning]
+methods: [language-model-pretraining, chain-of-thought, quantitative-reasoning]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+    - date: "2022-06-29"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The quantitative reasoning results and evaluation methodology were released in the research paper.
+        zh-CN: >-
+          论文公开了定量推理结果与评测方法。
+
+sources:
+  - id: arxiv-minerva-2206.14858
+    tier: S1
+    type: paper
+    title: Solving Quantitative Reasoning Problems with Language Models
+    url: https://arxiv.org/abs/2206.14858
+    primary: true
+    published_date: "2022-06-29"
+    accessed_at: "2026-09-10"
+  - id: google-research-minerva-2022
+    tier: S2
+    type: official_announcement
+    title: "Minerva: Solving Quantitative Reasoning Problems with Language Models"
+    url: https://research.google/blog/minerva-solving-quantitative-reasoning-problems-with-language-models/
+    primary: true
+    published_date: "2022-06-30"
+    accessed_at: "2026-09-10"
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: [evt-2025-gemini-imo-gold]
+  related: [evt-2020-gpt-f]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [language-model, quantitative-reasoning, math-benchmark, natural-language, scaling]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []
