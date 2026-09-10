@@ -1,38 +1,37 @@
-## Summary / 摘要
+## Summary
 
-<!-- What changed and why? / 改了什么，为什么？ -->
+<!-- English summary. / 中文摘要可写在下一段。 -->
 
-## Scope / 范围
+## 摘要
 
-- [ ] Content / editorial data
-- [ ] Website / UI
-- [ ] Documentation
-- [ ] Tooling / CI
+## Event / editorial changes
 
-## Event/data changes / 事件与数据修改
+- [ ] No duplicate canonical event was introduced.
+- [ ] Stable Event IDs were preserved.
+- [ ] S1/S2 evidence is linked.
+- [ ] AI and human contributions are explicit.
+- [ ] Verification history / corrections are updated when applicable.
 
-- [ ] No duplicate canonical event was introduced. / 未引入重复 canonical event。
-- [ ] Stable Event IDs were preserved. / 保持稳定 Event ID。
-- [ ] At least one S1/S2 source supports every published event changed here. / 本 PR 涉及的正式事件均有至少一个 S1/S2 来源。
-- [ ] AI and human contributions are explicit. / AI 与人类贡献边界明确。
-- [ ] Verification history/corrections are updated when applicable. / 必要时已更新 verification history / corrections。
-- [ ] English and `zh-CN` factual fields remain aligned. / 英文与 `zh-CN` 事实字段保持一致。
+## Implementation changes
 
-## Evidence / 证据
+- [ ] Reader-facing README content stays focused on the website and Chronicle.
+- [ ] Developer-facing implementation detail belongs in `docs/development*.md` or `docs/architecture*.md`.
+- [ ] English reader-facing links use English routes; Chinese reader-facing links use `zh-CN` routes.
+- [ ] GitHub Pages base-path behavior remains valid.
 
-<!-- Link the strongest sources and describe remaining uncertainty. / 提供最强证据，并说明仍存在哪些不确定性。 -->
-
-## Validation / 校验
+## Validation
 
 - [ ] `npm run validate`
 - [ ] `npm test`
 - [ ] `npm run build`
-- [ ] Relevant desktop/mobile visual QA completed. / 已完成相关 desktop/mobile 视觉 QA。
+- [ ] Desktop / mobile visual QA when UI changes are included.
 
-## Human editorial gates / 人工编辑门槛
+## Human editorial gates
 
-- [ ] This PR does not newly finalize `H1`, `independently_verified`, or a new mathematical fact without human editorial review. / 本 PR 未在缺少人工编辑审核的情况下最终确定 `H1`、`independently_verified` 或新的数学事实。
+- [ ] This PR does not finalize `H1` without direct human review or explicit delegated classification authority.
+- [ ] This PR does not finalize `independently_verified` or establish a new mathematical fact without human editorial review.
 
-## Notes for reviewers / 审查说明
+## Licensing
 
-<!-- Call out disputed evidence, historical uncertainty, migration risk, or follow-up work. / 标注争议证据、历史不确定性、迁移风险或后续工作。 -->
+- [ ] Code changes are compatible with the MIT License.
+- [ ] Original Chronicle editorial/data contributions are compatible with CC BY 4.0 and do not relicense third-party material.
