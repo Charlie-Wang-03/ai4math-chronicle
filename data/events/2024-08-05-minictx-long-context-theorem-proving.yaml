@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2024-minictx
+slug: minictx-long-context-theorem-proving
+title:
+  en: miniCTX tests theorem provers on long, unseen project context
+  zh-CN: miniCTX 测试定理证明器使用长篇、未见项目上下文的能力
+dates:
+  event: '2024-08-05'
+  first_public_claim: '2024-08-05'
+  paper_release: '2024-08-05'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- dataset
+- infrastructure
+significance:
+  tier: H3
+  rationale:
+    en: miniCTX moved evaluation toward repository-scale theorem proving where definitions and lemmas live in long, previously unseen context.
+    zh-CN: miniCTX 把评测推进到仓库级定理证明：所需定义与引理存在于长篇、训练时未见的上下文中。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+claim:
+  en: miniCTX introduced Lean theorem-proving tasks with repository context spanning up to tens of thousands of tokens and showed that context-aware methods outperform state-only baselines.
+  zh-CN: miniCTX 引入带有可达数万 token 仓库上下文的 Lean 定理证明任务，并显示利用上下文的方法明显优于只看 proof state 的基线。
+summary:
+  en: The benchmark draws theorems from real Lean projects and textbooks and includes tooling for extracting new project contexts.
+  zh-CN: 该基准从真实 Lean 项目和教材中抽取定理，并提供提取新项目上下文的工具。
+why_it_matters:
+  en: It better approximated the conditions faced by practical proof agents operating inside large formal codebases.
+  zh-CN: 它更接近实际证明 Agent 在大型形式化代码库中工作的真实条件。
+ai_role:
+  level: computation_only
+  description:
+    en: Models must retrieve and use relevant definitions and lemmas from long project context while proving.
+    zh-CN: 模型在证明过程中必须从长篇项目上下文中检索并利用相关定义与引理。
+human_contribution:
+  description:
+    en: Researchers constructed the benchmark and ntp-toolkit for context-aware theorem-proving data extraction.
+    zh-CN: 研究者构建基准与 ntp-toolkit，用于提取上下文感知的定理证明数据。
+systems:
+- minictx
+- ntp-toolkit
+- lean
+organizations:
+- carnegie-mellon-university
+people: []
+problems:
+- repository-level-theorem-proving
+methods:
+- long-context
+- retrieval
+- benchmarking
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-08-05'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-minictx-2408.03350
+  tier: S1
+  type: paper
+  title: 'miniCTX: Neural Theorem Proving with (Long-)Contexts'
+  url: https://arxiv.org/abs/2408.03350
+  primary: true
+  published_date: '2024-08-05'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2023-leandojo
+  - evt-2024-putnambench
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- lean
+- long-context
+- benchmark
+- retrieval
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
