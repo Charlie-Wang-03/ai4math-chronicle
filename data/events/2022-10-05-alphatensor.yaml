@@ -18,7 +18,7 @@ dates:
 event_types: [discovery, system]
 
 significance:
-  tier: H2
+  tier: H1
   rationale:
     en: >-
       AlphaTensor provided a prominent example of reinforcement learning discovering exact algorithms that improved long-standing matrix-multiplication records, including a finite-field 4-by-4 result reported as the first improvement over Strassen's two-level construction in that setting.
@@ -128,6 +128,6 @@ tags: [matrix-multiplication, reinforcement-learning, algorithm-discovery, tenso
 editorial:
   created_at: "2026-09-10"
   last_reviewed: "2026-09-10"
-  reviewers: [ai-draft-pending-human-editorial-review]
+  reviewers: [Charlie-Wang-03]
 
 corrections: []

@@ -17,7 +17,7 @@ event_types:
 - dataset
 - infrastructure
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: miniCTX moved evaluation toward repository-scale theorem proving where definitions and lemmas live in long, previously unseen context.
     zh-CN: miniCTX 把评测推进到仓库级定理证明：所需定义与引理存在于长篇、训练时未见的上下文中。
@@ -85,8 +85,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - lean
 - long-context

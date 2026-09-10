@@ -16,7 +16,7 @@ event_types:
 - proof
 - system
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: PACT established proof-term-derived self-supervision as a practical way to alleviate data scarcity in neural theorem proving.
     zh-CN: PACT 将证明项衍生的自监督数据用于缓解神经定理证明中的数据稀缺问题，形成了重要的训练路线。
@@ -81,8 +81,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - lean
 - theorem-proving

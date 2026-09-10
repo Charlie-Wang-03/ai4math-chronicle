@@ -1,0 +1,151 @@
+---
+import { formatDate, text } from '../lib/events';
+import { href, localePath } from '../lib/site';
+import type { ChronicleEvent, Locale } from '../lib/types';
+
+const { events, locale } = Astro.props as { events: ChronicleEvent[]; locale: Locale };
+const years = [...new Set(events.map((event) => event.dates.event.slice(0, 4)))].sort((a, b) => b.localeCompare(a));
+const systems = [...new Set(events.flatMap((event) => event.systems).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+const labels = locale === 'zh-CN'
+  ? {
+      filters: '筛选事件目录', year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', system: '系统', sort: '排序',
+      all: '全部', newest: '最新优先', oldest: '最早优先', highest: '重要性优先', showing: '显示', events: '个事件', clear: '清除筛选',
+      date: '日期', event: '事件', classification: '分类', status: '验证', evidence: '证据', primary: '主要证据', details: '详情', noEvidence: '—',
+    }
+  : {
+      filters: 'Filter event directory', year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', system: 'System', sort: 'Sort',
+      all: 'All', newest: 'Newest first', oldest: 'Oldest first', highest: 'Significance first', showing: 'Showing', events: 'events', clear: 'Clear filters',
+      date: 'Date', event: 'Event', classification: 'Class', status: 'Verification', evidence: 'Evidence', primary: 'Primary evidence', details: 'Details', noEvidence: '—',
+    };
+const ids = {
+  year: `explore-year-${locale}`,
+  type: `explore-type-${locale}`,
+  significance: `explore-significance-${locale}`,
+  verification: `explore-verification-${locale}`,
+  system: `explore-system-${locale}`,
+  sort: `explore-sort-${locale}`,
+};
+function evidenceLabel(source: ChronicleEvent['sources'][number]) {
+  if (source.type === 'paper') return locale === 'zh-CN' ? '论文' : 'Paper';
+  if (source.type === 'repository') return locale === 'zh-CN' ? '代码' : 'Code';
+  if (source.tier === 'S2') return locale === 'zh-CN' ? '官方' : 'Official';
+  return locale === 'zh-CN' ? '来源' : 'Source';
+}
+---
+<section class="panel explore-filter-panel" data-explore-shell data-pagefind-ignore>
+  <div class="filter-head">
+    <div>
+      <p class="eyebrow">{labels.filters}</p>
+      <div class="result-count"><strong><span data-visible-count>{events.length}</span></strong> {labels.events}</div>
+    </div>
+    <button class="clear-filters" type="button" data-clear-filters>{labels.clear}</button>
+  </div>
+  <div class="explore-controls">
+    <div class="control"><label for={ids.year}>{labels.year}</label><select id={ids.year} data-filter="year"><option value="">{labels.all}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></div>
+    <div class="control"><label for={ids.type}>{labels.type}</label><select id={ids.type} data-filter="type"><option value="">{labels.all}</option><option>discovery</option><option>proof</option><option>formalization</option><option>competition</option><option>system</option><option>benchmark</option><option>dataset</option><option>infrastructure</option><option>controversy</option></select></div>
+    <div class="control"><label for={ids.significance}>{labels.significance}</label><select id={ids.significance} data-filter="significance"><option value="">{labels.all}</option><option>H1</option><option>H2</option><option>H3</option></select></div>
+    <div class="control"><label for={ids.verification}>{labels.verification}</label><select id={ids.verification} data-filter="verification"><option value="">{labels.all}</option><option>claimed</option><option>paper_released</option><option>under_verification</option><option>partially_verified</option><option>independently_verified</option><option>disputed</option><option>corrected</option><option>retracted</option></select></div>
+    <div class="control"><label for={ids.system}>{labels.system}</label><select id={ids.system} data-filter="system"><option value="">{labels.all}</option>{systems.map((system) => <option value={system}>{system}</option>)}</select></div>
+    <div class="control"><label for={ids.sort}>{labels.sort}</label><select id={ids.sort} data-sort><option value="newest">{labels.newest}</option><option value="oldest">{labels.oldest}</option><option value="significance">{labels.highest}</option></select></div>
+  </div>
+</section>
+
+<div class="explore-table-wrap">
+  <table class="explore-table" data-explore-list>
+    <thead>
+      <tr>
+        <th scope="col">{labels.date}</th>
+        <th scope="col">{labels.event}</th>
+        <th scope="col">{labels.classification}</th>
+        <th scope="col">{labels.status}</th>
+        <th scope="col">{labels.evidence}</th>
+        <th scope="col" class="explore-actions-col"><span class="sr-only">{labels.details}</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      {events.map((event) => {
+        const primary = event.sources.find((source) => source.primary || source.tier === 'S1');
+        return (
+          <tr
+            data-event-item
+            data-date={event.dates.event}
+            data-year={event.dates.event.slice(0, 4)}
+            data-event-types={event.event_types.join(' ')}
+            data-significance={event.significance.tier}
+            data-verification={event.verification.status}
+            data-systems={event.systems.join('|')}
+          >
+            <td class="explore-date"><time datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time></td>
+            <td class="explore-event-cell">
+              <a class="explore-title" href={href(localePath(locale, `events/${event.slug}`))}>{text(event.title, locale)}</a>
+              <div class="explore-summary">{text(event.summary, locale)}</div>
+              {(event.systems.length > 0 || event.organizations.length > 0) && <div class="explore-entities">{[...event.systems.slice(0, 2), ...event.organizations.slice(0, 1)].join(' · ')}</div>}
+            </td>
+            <td><span class={`badge significance ${event.significance.tier}`}>{event.significance.tier}</span><div class="explore-types">{event.event_types.slice(0, 2).join(' · ')}</div></td>
+            <td><span class={`badge ${event.verification.status}`}>{event.verification.status}</span></td>
+            <td>{primary ? <a class="explore-evidence" href={primary.url} rel="noreferrer">{evidenceLabel(primary)} ↗</a> : labels.noEvidence}</td>
+            <td class="explore-actions-col"><a class="details-link" href={href(localePath(locale, `events/${event.slug}`))}>{labels.details} →</a></td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  // @ts-nocheck
+  for (const shell of document.querySelectorAll('[data-explore-shell]')) {
+    const list = shell.nextElementSibling?.querySelector('[data-explore-list]');
+    if (!list) continue;
+    const body = list.querySelector('tbody');
+    const items = [...list.querySelectorAll('[data-event-item]')];
+    const selects = [...shell.querySelectorAll('select[data-filter]')];
+    const sort = shell.querySelector('select[data-sort]');
+    const count = shell.querySelector('[data-visible-count]');
+    const clearButton = shell.querySelector('[data-clear-filters]');
+    const filters = { year: '', type: '', significance: '', verification: '', system: '' };
+    const rank = { H1: 1, H2: 2, H3: 3 };
+
+    function apply() {
+      let visible = 0;
+      for (const item of items) {
+        const systems = (item.dataset.systems || '').split('|').filter(Boolean);
+        const ok = (!filters.year || item.dataset.year === filters.year)
+          && (!filters.type || item.dataset.eventTypes?.split(' ').includes(filters.type))
+          && (!filters.significance || item.dataset.significance === filters.significance)
+          && (!filters.verification || item.dataset.verification === filters.verification)
+          && (!filters.system || systems.includes(filters.system));
+        item.classList.toggle('hidden', !ok);
+        if (ok) visible += 1;
+      }
+      if (count) count.textContent = String(visible);
+      if (clearButton) clearButton.disabled = !Object.values(filters).some(Boolean);
+    }
+
+    function sortRows() {
+      const mode = sort?.value || 'newest';
+      const ordered = [...items].sort((a, b) => {
+        if (mode === 'oldest') return a.dataset.date.localeCompare(b.dataset.date);
+        if (mode === 'significance') {
+          const byRank = (rank[a.dataset.significance] || 9) - (rank[b.dataset.significance] || 9);
+          return byRank || b.dataset.date.localeCompare(a.dataset.date);
+        }
+        return b.dataset.date.localeCompare(a.dataset.date);
+      });
+      for (const item of ordered) body?.appendChild(item);
+    }
+
+    for (const select of selects) select.addEventListener('change', () => {
+      filters[select.dataset.filter] = select.value;
+      apply();
+    });
+    sort?.addEventListener('change', sortRows);
+    clearButton?.addEventListener('click', () => {
+      for (const key of Object.keys(filters)) filters[key] = '';
+      for (const select of selects) select.value = '';
+      apply();
+    });
+    sortRows();
+    apply();
+  }
+</script>

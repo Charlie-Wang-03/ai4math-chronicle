@@ -3,12 +3,12 @@ import type { Locale } from '../lib/types';
 import { BASE_URL } from '../lib/site';
 const { locale } = Astro.props as { locale: Locale };
 const t = locale === 'zh-CN'
-  ? { placeholder: '搜索事件、系统、问题或方法…', hint: '至少输入 2 个字符。搜索索引由 Pagefind 在构建时生成。', unavailable: '搜索索引仅在生产构建后可用。' }
-  : { placeholder: 'Search events, systems, problems, or methods…', hint: 'Type at least 2 characters. The Pagefind index is generated at build time.', unavailable: 'Search index is available after a production build.' };
+  ? { placeholder: '搜索事件、系统、问题或方法…', hint: '至少输入 2 个字符。搜索索引由 Pagefind 在构建时生成。', unavailable: '搜索索引仅在生产构建后可用。', label: '站内搜索' }
+  : { placeholder: 'Search events, systems, problems, or methods…', hint: 'Type at least 2 characters. The Pagefind index is generated at build time.', unavailable: 'Search index is available after a production build.', label: 'Site search' };
 ---
-<section class="panel search-panel" aria-label="Site search" data-pagefind-ignore>
+<section class="panel search-panel" aria-label={t.label} data-pagefind-ignore>
   <input class="search-input" id={`site-search-${locale}`} type="search" autocomplete="off" placeholder={t.placeholder} aria-label={t.placeholder} />
-  <div class="result-count" id={`search-status-${locale}`}>{t.hint}</div>
+  <div class="result-count" id={`search-status-${locale}`} role="status" aria-live="polite">{t.hint}</div>
   <ul class="search-results" id={`search-results-${locale}`}></ul>
 </section>
 <script is:inline define:vars={{ locale, baseUrl: BASE_URL }}>

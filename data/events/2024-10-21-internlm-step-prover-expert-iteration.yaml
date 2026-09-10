@@ -16,7 +16,7 @@ event_types:
 - proof
 - system
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: StepProver showed how large problem banks and compute-intensive expert iteration can steadily raise open formal theorem-proving performance.
     zh-CN: StepProver 展示了大规模问题库与高算力专家迭代如何持续提升开放形式定理证明性能。
@@ -85,8 +85,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - lean
 - expert-iteration

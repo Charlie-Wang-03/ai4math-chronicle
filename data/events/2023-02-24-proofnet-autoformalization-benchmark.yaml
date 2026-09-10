@@ -17,7 +17,7 @@ event_types:
 - dataset
 - formalization
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: ProofNet broadened evaluation beyond Olympiad statements to textbook-level undergraduate mathematics and paired informal statements, proofs and Lean formalizations.
     zh-CN: ProofNet 把评测从奥赛题扩展到本科教材数学，并配对自然语言陈述、证明与 Lean 形式化。
@@ -85,8 +85,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - benchmark
 - autoformalization

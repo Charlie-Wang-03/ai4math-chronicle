@@ -1,0 +1,36 @@
+name: "Website bug / 网站问题"
+description: "Report a UI, search, build, accessibility, or data-rendering problem / 报告 UI、搜索、构建、可访问性或数据渲染问题"
+title: "[Bug] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem / 问题描述"
+      description: "What happened, and what did you expect? / 实际发生了什么？你期望什么？"
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: "Page or route / 页面或路由"
+      placeholder: "/en/... or /zh-CN/..."
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Steps to reproduce / 复现步骤"
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Environment / 环境"
+      description: "Browser, OS, viewport/device, and any relevant build context. / 浏览器、操作系统、设备或 viewport，以及相关构建环境。"
+  - type: textarea
+    id: evidence
+    attributes:
+      label: "Screenshots or logs / 截图或日志"
+      description: "Do not include secrets or private credentials. / 请勿包含 secret 或私人凭证。"

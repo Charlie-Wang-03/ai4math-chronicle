@@ -5,21 +5,33 @@ import type { ChronicleEvent, Locale } from '../lib/types';
 const { events, locale, mode = 'timeline' } = Astro.props as { events: ChronicleEvent[]; locale: Locale; mode?: 'timeline' | 'grid' };
 const years = [...new Set(events.map((event) => event.dates.event.slice(0, 4)))].sort((a,b) => b.localeCompare(a));
 const labels = locale === 'zh-CN'
-  ? { year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', all: '全部', showing: '显示', events: '个事件' }
-  : { year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', all: 'All', showing: 'Showing', events: 'events' };
+  ? { filters: '筛选时间线', year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', all: '全部', showing: '显示', events: '个事件', clear: '清除筛选', yearNav: '年份导航' }
+  : { filters: 'Filter timeline', year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', all: 'All', showing: 'Showing', events: 'events', clear: 'Clear filters', yearNav: 'Year navigation' };
+const controlIds = {
+  year: `filter-year-${mode}-${locale}`,
+  type: `filter-type-${mode}-${locale}`,
+  significance: `filter-significance-${mode}-${locale}`,
+  verification: `filter-verification-${mode}-${locale}`,
+};
 ---
-<section class="panel" data-filter-shell data-pagefind-ignore>
-  <div class="controls">
-    <div class="control"><label>{labels.year}</label><select data-filter="year"><option value="">{labels.all}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></div>
-    <div class="control"><label>{labels.type}</label><select data-filter="type"><option value="">{labels.all}</option><option>discovery</option><option>proof</option><option>formalization</option><option>competition</option><option>system</option><option>benchmark</option><option>dataset</option><option>infrastructure</option><option>controversy</option></select></div>
-    <div class="control"><label>{labels.significance}</label><select data-filter="significance"><option value="">{labels.all}</option><option>H1</option><option>H2</option><option>H3</option></select></div>
-    <div class="control"><label>{labels.verification}</label><select data-filter="verification"><option value="">{labels.all}</option><option>claimed</option><option>paper_released</option><option>under_verification</option><option>partially_verified</option><option>independently_verified</option><option>disputed</option><option>corrected</option><option>retracted</option></select></div>
+<section class="panel filter-panel" data-filter-shell data-pagefind-ignore>
+  <div class="filter-head">
+    <div>
+      <p class="eyebrow">{labels.filters}</p>
+      <div class="result-count"><strong><span data-visible-count>{events.length}</span></strong> {labels.events}</div>
+    </div>
+    <button class="clear-filters" type="button" data-clear-filters>{labels.clear}</button>
   </div>
-  <div class="year-nav" aria-label="Year navigation">
+  <div class="controls">
+    <div class="control"><label for={controlIds.year}>{labels.year}</label><select id={controlIds.year} data-filter="year"><option value="">{labels.all}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></div>
+    <div class="control"><label for={controlIds.type}>{labels.type}</label><select id={controlIds.type} data-filter="type"><option value="">{labels.all}</option><option>discovery</option><option>proof</option><option>formalization</option><option>competition</option><option>system</option><option>benchmark</option><option>dataset</option><option>infrastructure</option><option>controversy</option></select></div>
+    <div class="control"><label for={controlIds.significance}>{labels.significance}</label><select id={controlIds.significance} data-filter="significance"><option value="">{labels.all}</option><option>H1</option><option>H2</option><option>H3</option></select></div>
+    <div class="control"><label for={controlIds.verification}>{labels.verification}</label><select id={controlIds.verification} data-filter="verification"><option value="">{labels.all}</option><option>claimed</option><option>paper_released</option><option>under_verification</option><option>partially_verified</option><option>independently_verified</option><option>disputed</option><option>corrected</option><option>retracted</option></select></div>
+  </div>
+  <div class="year-nav" aria-label={labels.yearNav}>
     <button class="year-chip" type="button" data-year-chip="">{labels.all}</button>
     {years.map((year) => <button class="year-chip" type="button" data-year-chip={year}>{year}</button>)}
   </div>
-  <div class="result-count"><span data-visible-count>{events.length}</span> {labels.events}</div>
 </section>
 
 {mode === 'timeline' ? (
@@ -39,6 +51,7 @@ const labels = locale === 'zh-CN'
     const selects = [...shell.querySelectorAll('select[data-filter]')];
     const count = shell.querySelector('[data-visible-count]');
     const chips = [...shell.querySelectorAll('[data-year-chip]')];
+    const clearButton = shell.querySelector('[data-clear-filters]');
     const filters = { year: '', type: '', significance: '', verification: '' };
 
     function apply() {
@@ -55,6 +68,7 @@ const labels = locale === 'zh-CN'
       }
       if (count) count.textContent = String(visible);
       for (const chip of chips) chip.dataset.active = String(chip.dataset.yearChip === filters.year);
+      if (clearButton) clearButton.disabled = !Object.values(filters).some(Boolean);
     }
 
     for (const select of selects) select.addEventListener('change', () => {
@@ -68,6 +82,11 @@ const labels = locale === 'zh-CN'
       filters.year = chip.dataset.yearChip ?? '';
       const yearSelect = selects.find((select) => select.dataset.filter === 'year');
       if (yearSelect) yearSelect.value = filters.year;
+      apply();
+    });
+    clearButton?.addEventListener('click', () => {
+      for (const key of Object.keys(filters)) filters[key] = '';
+      for (const select of selects) select.value = '';
       apply();
     });
     apply();

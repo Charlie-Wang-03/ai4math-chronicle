@@ -16,7 +16,7 @@ event_types:
 - proof
 - system
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: Lean-STaR explicitly inserted learned informal thoughts before proof steps and combined them with expert iteration.
     zh-CN: Lean-STaR 在形式证明步骤前显式插入学习到的非形式思考，并与专家迭代结合。
@@ -84,8 +84,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - lean
 - chain-of-thought

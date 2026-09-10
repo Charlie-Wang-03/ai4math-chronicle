@@ -16,7 +16,7 @@ event_types:
 - proof
 - system
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: Thor was an early explicit neuro-symbolic architecture in which language models delegated premise-selection bottlenecks to classical automated provers.
     zh-CN: Thor 是较早明确采用神经符号分工的架构之一：语言模型把前提选择瓶颈交给传统自动定理证明器处理。
@@ -85,8 +85,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - theorem-proving
 - neuro-symbolic

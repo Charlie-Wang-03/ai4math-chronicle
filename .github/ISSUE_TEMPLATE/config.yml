@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Editorial methodology / 编辑方法论"
+    url: "https://github.com/Charlie-Wang-03/ai4math-chronicle/blob/main/docs/editorial-methodology.md"
+    about: "Read the significance, evidence, verification, and correction policy before proposing major editorial changes. / 提议重大编辑性修改前，请先阅读重要性、证据、验证与纠错政策。"
+  - name: "Contribution guide / 贡献指南"
+    url: "https://github.com/Charlie-Wang-03/ai4math-chronicle/blob/main/CONTRIBUTING.md"
+    about: "Repository workflow, validation, and pull-request scope. / 仓库工作流、校验与 Pull Request 范围。"
