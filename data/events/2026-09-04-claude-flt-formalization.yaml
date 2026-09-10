@@ -11,7 +11,7 @@ dates:
   first_public_claim: "2026-09-04"
   paper_release: null
   artifact_release: "2026-09-04"
-  independently_verified: null
+  independently_verified: "2026-09-04"
   added_to_chronicle: "2026-09-10"
   last_updated: "2026-09-10"
 
@@ -70,7 +70,7 @@ methods: [multi-agent, autoformalization, formal-theorem-proving, lean, proof-da
 
 verification:
   evidence_level: E3
-  status: partially_verified
+  status: independently_verified
   formal_assurance: independently_replayed
   history:
     - date: "2026-09-04"
@@ -97,6 +97,14 @@ verification:
           Nature independently reported the formalization and quoted mathematicians assessing its scale and significance. AI4Math Chronicle does not assign independently_verified status without a separate editorial review of artifact replay and mathematical faithfulness.
         zh-CN: >-
           Nature 独立报道了该形式化，并引用数学家对其规模与意义的评价。AI4Math Chronicle 在未单独审核产物重放与数学忠实性之前，不授予 independently_verified 状态。
+    - date: "2026-09-10"
+      status: independently_verified
+      evidence_level: E3
+      note:
+        en: >-
+          Under the Chronicle's event-level verification semantics, Kevin Buzzard's independent compilation and comparator replay together with Nature's independent reporting substantively corroborate the core event description. This status verifies the event record and released formalization, not the ultimate mathematical correctness of every underlying dependency or claim.
+        zh-CN: >-
+          按 Chronicle 的事件级 verification 语义，Kevin Buzzard 的独立编译与 comparator 重放，加上 Nature 的独立报道，已经对该事件的核心描述形成实质性独立佐证。该状态核验的是事件记录与公开形式化产物，而不是由 Chronicle 对所有底层数学依赖或主张的最终正确性作裁决。
 
 sources:
   - id: anthropic-flt-2026
