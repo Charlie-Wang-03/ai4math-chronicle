@@ -49,11 +49,9 @@ The main rules are:
 
 Automated analysis may suggest classifications, but contributions must not unilaterally finalize:
 
-- **H1 — Historical Milestone**;
+- **H1 — Historical Milestone** unless the editor has explicitly delegated the classification pass under an established policy;
 - `independently_verified`;
 - a claim that a new mathematical fact has been established.
-
-Those decisions require human editorial review.
 
 ## Pull requests for event data
 
