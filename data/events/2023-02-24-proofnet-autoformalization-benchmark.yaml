@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2023-proofnet
+slug: proofnet-autoformalization-benchmark
+title:
+  en: ProofNet benchmarks autoformalization and proving of undergraduate mathematics
+  zh-CN: ProofNet 建立本科数学自动形式化与形式证明基准
+dates:
+  event: '2023-02-24'
+  first_public_claim: '2023-02-24'
+  paper_release: '2023-02-24'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- dataset
+- formalization
+significance:
+  tier: H3
+  rationale:
+    en: ProofNet broadened evaluation beyond Olympiad statements to textbook-level undergraduate mathematics and paired informal statements, proofs and Lean formalizations.
+    zh-CN: ProofNet 把评测从奥赛题扩展到本科教材数学，并配对自然语言陈述、证明与 Lean 形式化。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- formal
+- hybrid
+claim:
+  en: ProofNet introduced 371 undergraduate-level examples pairing natural-language theorem statements and proofs with Lean 3 formal statements.
+  zh-CN: ProofNet 引入 371 个本科层次样例，将自然语言定理陈述与证明和 Lean 3 形式陈述配对。
+summary:
+  en: The benchmark covers analysis, linear algebra, abstract algebra, topology and other textbook mathematics.
+  zh-CN: 该基准覆盖分析、线性代数、抽象代数、拓扑等本科教材数学。
+why_it_matters:
+  en: It created a shared target for measuring whether models can translate ordinary mathematical prose into proof-assistant representations.
+  zh-CN: 它为衡量模型能否把普通数学文本转化为证明助手表示建立了共享目标。
+ai_role:
+  level: computation_only
+  description:
+    en: Models are evaluated on autoformalization and formal proving tasks built from the benchmark.
+    zh-CN: 模型在该基准构建的自动形式化与形式证明任务上接受评测。
+human_contribution:
+  description:
+    en: Researchers curated textbook problems, natural-language proofs and corresponding Lean statements.
+    zh-CN: 研究者整理教材题目、自然语言证明与对应 Lean 陈述。
+systems:
+- proofnet
+- lean
+organizations:
+- yale
+- carnegie-mellon-university
+people: []
+problems:
+- undergraduate-mathematics
+methods:
+- benchmarking
+- autoformalization
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2023-02-24'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-proofnet-2302.12433
+  tier: S1
+  type: paper
+  title: 'ProofNet: Autoformalizing and Formally Proving Undergraduate-Level Mathematics'
+  url: https://arxiv.org/abs/2302.12433
+  primary: true
+  published_date: '2023-02-24'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2021-minif2f
+  - evt-2022-draft-sketch-prove
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- benchmark
+- autoformalization
+- lean
+- undergraduate-math
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
