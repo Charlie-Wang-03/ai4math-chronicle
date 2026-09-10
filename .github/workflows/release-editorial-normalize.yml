@@ -1,0 +1,82 @@
+name: Release editorial normalization
+
+on:
+  push:
+    branches:
+      - release/v0.1-public-readiness
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: release/v0.1-public-readiness
+      - name: Apply final human-approved editorial policy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          promote = {
+              '2022-10-05-alphatensor.yaml',
+              '2023-12-14-funsearch.yaml',
+              '2024-07-25-alphaproof-alphageometry2-imo.yaml',
+              '2025-05-14-alphaevolve.yaml',
+              '2025-07-19-openai-imo-2025-gold-level.yaml',
+          }
+
+          events = sorted(Path('data/events').glob('*.yaml'))
+          if len(events) != 51:
+              raise SystemExit(f'Expected 51 canonical events, found {len(events)}')
+
+          promoted = []
+          reviewer_updates = 0
+          for path in events:
+              text = path.read_text(encoding='utf-8')
+              if path.name in promote:
+                  old = 'significance:\n  tier: H2\n'
+                  new = 'significance:\n  tier: H1\n'
+                  if old not in text:
+                      raise SystemExit(f'Expected H2 before promotion: {path.name}')
+                  text = text.replace(old, new, 1)
+                  promoted.append(path.name)
+              if 'ai-draft-pending-human-editorial-review' in text:
+                  text = text.replace('ai-draft-pending-human-editorial-review', 'Charlie-Wang-03')
+                  reviewer_updates += 1
+              path.write_text(text, encoding='utf-8')
+
+          if promoted != sorted(promote):
+              raise SystemExit(f'Promotion mismatch: {promoted}')
+
+          groups = {'H1': 0, 'H2': 0, 'H3': 0}
+          for path in events:
+              text = path.read_text(encoding='utf-8')
+              m = re.search(r'(?m)^significance:\n  tier: (H[123])$', text)
+              if not m:
+                  raise SystemExit(f'Missing significance tier: {path.name}')
+              groups[m.group(1)] += 1
+              if 'ai-draft-pending-human-editorial-review' in text:
+                  raise SystemExit(f'Unclosed reviewer provenance: {path.name}')
+
+          expected = {'H1': 11, 'H2': 38, 'H3': 2}
+          if groups != expected:
+              raise SystemExit(f'Unexpected significance distribution: {groups}, expected {expected}')
+
+          print('Promoted to H1:')
+          for name in promoted:
+              print(f'  {name}')
+          print(f'Reviewer records normalized: {reviewer_updates}')
+          print('Final distribution:', groups)
+          PY
+      - name: Commit editorial normalization
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/events
+          git commit -m 'content: finalize v0.1 significance and reviewer provenance'
+          git push origin HEAD:release/v0.1-public-readiness
