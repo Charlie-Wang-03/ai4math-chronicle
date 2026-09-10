@@ -21,16 +21,18 @@
   <text x="72" y="164" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="760" letter-spacing="-1.5">AI4Math Chronicle</text>
   <text x="72" y="218" fill="#d5dff0" font-family="Inter, system-ui, sans-serif" font-size="24">Major milestones in AI for Mathematics, organized by time and evidence</text>
   <text x="72" y="254" fill="#aebbd0" font-family="Inter, system-ui, sans-serif" font-size="18">Timeline-first · Evidence-backed · Canonical data · Bilingual website</text>
-  <g transform="translate(72 303)">
+  <g transform="translate(72 297)">
     <path d="M0 0H1050" stroke="url(#line)" stroke-width="3" stroke-linecap="round"/>
+    <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#9facbf">
+      <text x="0" y="32">2020</text><text x="318" y="32">2023</text><text x="646" y="32">2025</text><text x="1002" y="32">2026</text>
+    </g>
     <g stroke="#0d1726" stroke-width="4">
       <circle cx="0" cy="0" r="8" fill="#6ea8fe"/>
-      <circle cx="260" cy="0" r="8" fill="#758de8"/>
-      <circle cx="520" cy="0" r="9" fill="#8b7cf6"/>
-      <circle cx="790" cy="0" r="10" fill="#d49b5b"/>
+      <circle cx="318" cy="0" r="8" fill="#758de8"/>
+      <circle cx="646" cy="0" r="10" fill="#9b79e8"/>
+      <circle cx="870" cy="0" r="11" fill="#d49b5b"/>
       <circle cx="1050" cy="0" r="12" fill="#e6b85c"/>
     </g>
-    <path d="M1035 -9L1050 0L1035 9" fill="none" stroke="#e6b85c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
   <g transform="translate(932 54)" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
     <rect width="194" height="128" rx="14" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.12"/>
