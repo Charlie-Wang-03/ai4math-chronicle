@@ -16,10 +16,10 @@ event_types:
 - system
 - benchmark
 significance:
-  tier: H2
+  tier: H3
   rationale:
-    en: DeepSeek-R1 made reinforcement-learned long reasoning widely reproducible through open models and showed competitive results on mathematical reasoning benchmarks.
-    zh-CN: DeepSeek-R1 通过开放模型使强化学习长程推理更易复现，并在数学推理基准上达到有竞争力的水平。
+    en: DeepSeek-R1 is historically important to general-purpose reasoning-model development, but its relevance to AI4Math is primarily contextual: mathematics served as a capability benchmark rather than the release contributing a mathematical result, proof, formalization, or math-specific system.
+    zh-CN: DeepSeek-R1 对通用推理模型发展具有重要意义，但对 AI4Math 主要属于背景事件：数学主要作为能力评测，而该发布本身并未贡献数学新结果、证明、形式化或数学专项系统。
 mathematical_novelty:
   type: benchmark_result
 interfaces:
@@ -32,8 +32,8 @@ summary:
   en: R1-Zero used reinforcement learning without an SFT cold start, while R1 added multi-stage training and released several distilled open models.
   zh-CN: R1-Zero 在无 SFT 冷启动的情况下使用强化学习；R1 则加入多阶段训练并开放多个蒸馏模型。
 why_it_matters:
-  en: The release accelerated open research on reasoning models, verifier-guided RL and math-specific post-training.
-  zh-CN: 该发布加速了开放社区对推理模型、验证器引导强化学习与数学专项后训练的研究。
+  en: The release accelerated open research on reasoning models, verifier-guided RL and math-specific post-training, providing context for later dedicated AI4Math systems.
+  zh-CN: 该发布加速了开放社区对推理模型、验证器引导强化学习与数学专项后训练的研究，为后续专门的 AI4Math 系统提供背景。
 ai_role:
   level: computation_only
   description:
@@ -83,8 +83,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: true
-  significance: primary
+  featured: false
+  significance: context
 tags:
 - deepseek
 - reasoning-model
@@ -94,5 +94,5 @@ editorial:
   created_at: '2026-09-10'
   last_reviewed: '2026-09-10'
   reviewers:
-  - ai-draft-pending-human-editorial-review
+  - Charlie-Wang-03
 corrections: []
