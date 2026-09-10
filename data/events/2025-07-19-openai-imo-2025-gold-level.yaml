@@ -69,8 +69,10 @@ verification:
     status: independently_verified
     evidence_level: E2
     note:
-      en: Independent reporting corroborated the core event description: OpenAI's separate evaluation used public natural-language solutions graded by three former IMO medalists and produced a reported 35/42 gold-threshold score. The Chronicle preserves the important distinction that this was not the IMO-coordinated grading process used for Google's Gemini result.
-      zh-CN: 独立报道已经对该事件核心描述形成佐证：OpenAI 的独立评测公开了自然语言解答，由三位前 IMO 奖牌获得者评分，并报告 35/42 的金牌线成绩。Chronicle 同时保留关键区别：这并不是 Google Gemini 所参加的 IMO 协调评分流程。
+      en: >-
+        Independent reporting corroborated the core event description: OpenAI's separate evaluation used public natural-language solutions graded by three former IMO medalists and produced a reported 35/42 gold-threshold score. The Chronicle preserves the important distinction that this was not the IMO-coordinated grading process used for Google's Gemini result.
+      zh-CN: >-
+        独立报道已经对该事件核心描述形成佐证：OpenAI 的独立评测公开了自然语言解答，由三位前 IMO 奖牌获得者评分，并报告 35/42 的金牌线成绩。Chronicle 同时保留关键区别：这并不是 Google Gemini 所参加的 IMO 协调评分流程。
 sources:
 - id: github-openai-imo-2025-proofs
   tier: S1
