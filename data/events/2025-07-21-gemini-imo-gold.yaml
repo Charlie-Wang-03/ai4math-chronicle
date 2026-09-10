@@ -11,7 +11,7 @@ dates:
   first_public_claim: "2025-07-21"
   paper_release: null
   artifact_release: null
-  independently_verified: null
+  independently_verified: "2025-07-21"
   added_to_chronicle: "2026-09-10"
   last_updated: "2026-09-10"
 
@@ -70,7 +70,7 @@ methods: [reasoning-model, parallel-thinking, reinforcement-learning, natural-la
 
 verification:
   evidence_level: E2
-  status: partially_verified
+  status: independently_verified
   formal_assurance: none
   history:
     - date: "2025-07-21"
@@ -81,6 +81,14 @@ verification:
           Google DeepMind published the score and quoted the IMO president confirming 35/42 and gold-medal standard after official grading.
         zh-CN: >-
           Google DeepMind 公布成绩，并引用 IMO 主席确认官方评分后的 35/42 分与金牌标准。
+    - date: "2026-09-10"
+      status: independently_verified
+      evidence_level: E2
+      note:
+        en: >-
+          The Chronicle records the result as independently corroborated at the event level: IMO coordinators graded the submission, and independent reporting confirmed the 35/42 gold-standard result and the distinction between Google's officially coordinated evaluation and OpenAI's separate evaluation. This status concerns the competition event, not a broader claim about mathematical correctness beyond the grading process.
+        zh-CN: >-
+          Chronicle 将该结果记为事件级 independently_verified：IMO 协调方参与评分，独立报道也确认了 35/42 金牌标准成绩，并明确区分 Google 的 IMO 协调评测与 OpenAI 的独立评测。该状态针对竞赛事件本身，不表示超出评分过程之外的更广泛数学正确性裁决。
 
 sources:
   - id: deepmind-gemini-imo-2025
@@ -89,6 +97,14 @@ sources:
     title: Advanced version of Gemini with Deep Think officially achieves gold-medal standard at the International Mathematical Olympiad
     url: https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/
     primary: true
+    published_date: "2025-07-21"
+    accessed_at: "2026-09-10"
+  - id: techcrunch-google-openai-imo-2025
+    tier: S4
+    type: media
+    title: OpenAI and Google outdo the mathletes, but not each other
+    url: https://techcrunch.com/2025/07/21/openai-and-google-outdo-the-mathletes-but-not-each-other/
+    primary: false
     published_date: "2025-07-21"
     accessed_at: "2026-09-10"
 
