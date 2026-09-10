@@ -1,0 +1,125 @@
+schema_version: 1
+id: evt-2021-minif2f
+slug: minif2f-formal-olympiad-benchmark
+
+title:
+  en: miniF2F establishes a cross-system benchmark for formal Olympiad mathematics
+  zh-CN: miniF2F 建立跨形式系统的奥赛数学基准
+
+dates:
+  event: "2021-08-31"
+  first_public_claim: "2021-08-31"
+  paper_release: "2021-08-31"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [benchmark, dataset, infrastructure, formalization]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      miniF2F created a shared set of Olympiad-level statements across formal systems, making progress in neural theorem proving easier to compare and helping establish a durable evaluation target used by later Lean provers.
+    zh-CN: >-
+      miniF2F 将奥赛级题目整理为多个形式系统中的共享题集，使神经定理证明方法更容易直接比较，并成为后来多种 Lean 证明器长期使用的评测目标。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces: [formal, symbolic]
+
+claim:
+  en: >-
+    miniF2F introduced 488 formal Olympiad-level problem statements spanning Metamath, Lean and additional proof assistants, with held-out splits intended for cross-system theorem-proving evaluation.
+  zh-CN: >-
+    miniF2F 引入了 488 个形式化的奥赛级数学题目陈述，覆盖 Metamath、Lean 等证明助手，并提供用于跨系统定理证明评测的留出划分。
+
+summary:
+  en: >-
+    The benchmark translated problems from AIME, AMC, IMO and educational sources into formal languages. Its goal was not a new mathematical theorem but a reproducible common target on which learned theorem provers could be trained and compared.
+  zh-CN: >-
+    该基准把 AIME、AMC、IMO 及教学来源中的问题翻译为形式语言。其贡献不是新的数学定理，而是为学习式定理证明器提供可复现、可训练和可比较的共同目标。
+
+why_it_matters:
+  en: >-
+    miniF2F became part of the evaluation backbone for formal AI4Math, allowing later systems such as LeanDojo, COPRA and DeepSeek-Prover to report progress against a recognizable shared task.
+  zh-CN: >-
+    miniF2F 成为形式化 AI4Math 的核心评测基础之一，使 LeanDojo、COPRA、DeepSeek-Prover 等后续系统能够在一个可识别的共享任务上报告进展。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      AI systems were benchmarked on the dataset, but the benchmark construction and formal statement curation were human-led rather than an AI mathematical discovery.
+    zh-CN: >-
+      AI 系统在该数据集上接受评测，但基准构建与形式化题目整理主要由人类完成，并非 AI 数学发现事件。
+
+human_contribution:
+  description:
+    en: >-
+      The authors selected source problems, translated and curated formal statements, designed benchmark splits and maintained the cross-system evaluation resource.
+    zh-CN: >-
+      作者选择原始问题、翻译并整理形式化陈述、设计评测划分，并维护跨系统评测资源。
+
+systems: [minif2f, lean, metamath, isabelle, hol-light]
+organizations: [openai, formal-mathematics-community]
+people: [kunhao-zheng, jesse-michael-han, stanislas-polu]
+problems: [olympiad-mathematics]
+methods: [benchmarking, formalization, theorem-proving]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: "2021-08-31"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The benchmark was documented in an arXiv paper and released as a public formal-mathematics repository.
+        zh-CN: >-
+          该基准通过 arXiv 论文公开说明，并以形式数学公共仓库的形式发布。
+
+sources:
+  - id: arxiv-minif2f-2109.00110
+    tier: S1
+    type: paper
+    title: "MiniF2F: a cross-system benchmark for formal Olympiad-level mathematics"
+    url: https://arxiv.org/abs/2109.00110
+    primary: true
+    published_date: "2021-08-31"
+    accessed_at: "2026-09-10"
+  - id: github-openai-minif2f
+    tier: S1
+    type: benchmark
+    title: OpenAI miniF2F repository
+    url: https://github.com/openai/miniF2F
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: minif2f-repository
+    kind: benchmark
+    title: miniF2F benchmark repository
+    url: https://github.com/openai/miniF2F
+
+relationships:
+  predecessors: [evt-2020-gpt-f]
+  successors: [evt-2023-leandojo, evt-2023-copra, evt-2024-deepseek-prover-v1-5]
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [benchmark, olympiad, lean, metamath, theorem-proving, formalization]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

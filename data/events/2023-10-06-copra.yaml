@@ -1,0 +1,133 @@
+schema_version: 1
+id: evt-2023-copra
+slug: copra-in-context-formal-proof-agent
+
+title:
+  en: COPRA turns a general LLM into a stateful formal proof-search agent
+  zh-CN: COPRA 将通用大模型转化为有状态的形式证明搜索 Agent
+
+dates:
+  event: "2023-10-06"
+  first_public_claim: "2023-10-06"
+  paper_release: "2023-10-06"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [system, formalization, proof]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      COPRA was an early explicit agentic theorem-proving design in which a general-purpose LLM repeatedly acted inside Lean or Coq, consumed proof-assistant feedback and backtracked through a maintained search state rather than answering in one shot.
+    zh-CN: >-
+      COPRA 是较早明确采用 Agent 结构的定理证明系统之一：通用大模型反复在 Lean 或 Coq 中行动，读取证明助手反馈并维护可回溯的搜索状态，而不是一次性生成答案。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces: [formal, symbolic, hybrid]
+
+claim:
+  en: >-
+    COPRA used GPT-4 in a stateful backtracking loop with proof-environment feedback and retrieval, outperforming few-shot GPT-4 and reporting competitive results against finetuned provers on Lean miniF2F while also operating on Coq tasks.
+  zh-CN: >-
+    COPRA 将 GPT-4 置于带证明环境反馈、检索和回溯机制的有状态循环中；论文报告其明显优于 few-shot GPT-4，并在 Lean miniF2F 上与微调证明器竞争，同时还能处理 Coq 任务。
+
+summary:
+  en: >-
+    At each step the agent proposed a tactic, executed it in the proof assistant, incorporated errors or new goals into the next prompt and maintained a search history for backtracking. The architecture showed how a frontier general model could be wrapped in a proof-oriented agent harness without task-specific finetuning.
+  zh-CN: >-
+    Agent 在每一步提出战术、在证明助手中执行，将错误或新的目标写回下一轮提示，并维护搜索历史以支持回溯。该架构展示了无需针对任务专门微调，也能把前沿通用模型封装为证明导向 Agent。
+
+why_it_matters:
+  en: >-
+    COPRA made the proof assistant an interactive environment for an LLM agent, anticipating the generate-execute-observe-revise loop that later became central to formal mathematical agents.
+  zh-CN: >-
+    COPRA 把证明助手变成 LLM Agent 的交互环境，提前体现了后来形式数学 Agent 中核心的“生成—执行—观察—修订”循环。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      GPT-4 proposed tactics and navigated the proof search, while Lean or Coq checked each accepted proof action mechanically.
+    zh-CN: >-
+      GPT-4 提出战术并推进证明搜索，Lean 或 Coq 对每个被接受的证明动作进行机械检查。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the agent state, retrieval, backtracking and prompting protocol, selected benchmarks and built the interfaces to the proof assistants.
+    zh-CN: >-
+      研究者设计 Agent 状态、检索、回溯与提示协议，选择基准并构建与证明助手之间的接口。
+
+systems: [copra, gpt-4, lean, coq]
+organizations: [university-of-texas-at-austin]
+people: [amitayush-thakur, george-tsoukalas, yeming-wen, jimmy-xin, swarat-chaudhuri]
+problems: [minif2f, compcert]
+methods: [agentic-proof-search, in-context-learning, backtracking, retrieval, proof-assistant-feedback]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: "2023-10-06"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The authors released the paper describing the agent and its Lean and Coq evaluations.
+        zh-CN: >-
+          作者公开论文，说明 Agent 设计以及 Lean 与 Coq 评测。
+    - date: "2023-10-06"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          Code and experiment infrastructure were made available in the public COPRA repository.
+        zh-CN: >-
+          代码与实验基础设施通过公开 COPRA 仓库提供。
+
+sources:
+  - id: arxiv-copra-2310.04353
+    tier: S1
+    type: paper
+    title: An In-Context Learning Agent for Formal Theorem-Proving
+    url: https://arxiv.org/abs/2310.04353
+    primary: true
+    published_date: "2023-10-06"
+    accessed_at: "2026-09-10"
+  - id: github-trishullab-copra
+    tier: S1
+    type: repository
+    title: COPRA repository
+    url: https://github.com/trishullab/copra
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: copra-repository
+    kind: code
+    title: COPRA formal theorem-proving agent
+    url: https://github.com/trishullab/copra
+
+relationships:
+  predecessors: [evt-2020-gpt-f, evt-2021-minif2f]
+  successors: [evt-2024-deepseek-prover-v1-5, evt-2026-alphaproof-nexus]
+  related: [evt-2023-leandojo]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [agent, theorem-proving, lean, coq, gpt-4, proof-feedback, backtracking]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

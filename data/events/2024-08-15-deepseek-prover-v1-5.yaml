@@ -1,0 +1,133 @@
+schema_version: 1
+id: evt-2024-deepseek-prover-v1-5
+slug: deepseek-prover-v1-5-lean-proof-search
+
+title:
+  en: DeepSeek-Prover-V1.5 combines proof-assistant feedback, reinforcement learning and tree search
+  zh-CN: DeepSeek-Prover-V1.5 结合证明助手反馈、强化学习与树搜索
+
+dates:
+  event: "2024-08-15"
+  first_public_claim: "2024-08-15"
+  paper_release: "2024-08-15"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [system, proof, formalization]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      DeepSeek-Prover-V1.5 made proof-assistant feedback a training signal through reinforcement learning and combined it with Monte Carlo tree search, while releasing the 7B model and proof-search implementation openly.
+    zh-CN: >-
+      DeepSeek-Prover-V1.5 将证明助手反馈直接用作强化学习训练信号，并与蒙特卡洛树搜索结合，同时公开 7B 模型和证明搜索实现。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces: [formal, symbolic]
+
+claim:
+  en: >-
+    DeepSeek-Prover-V1.5 reported 63.5% success on miniF2F-test and 25.3% on ProofNet using reinforcement learning from proof-assistant feedback plus RMaxTS proof search, improving on the earlier DeepSeek-Prover line.
+  zh-CN: >-
+    DeepSeek-Prover-V1.5 通过证明助手反馈强化学习与 RMaxTS 证明搜索，在 miniF2F-test 上报告 63.5% 成功率，在 ProofNet 上报告 25.3%，较此前 DeepSeek-Prover 系列进一步提升。
+
+summary:
+  en: >-
+    The model was specialized for Lean 4 formal mathematics, refined with reinforcement learning from Lean feedback and paired with an intrinsic-reward Monte Carlo tree-search variant to explore diverse proof paths. DeepSeek released model weights and code for reproducing the proof-search setup.
+  zh-CN: >-
+    该模型针对 Lean 4 形式数学进行专门训练，使用 Lean 反馈进行强化学习，并配合带内在奖励的蒙特卡洛树搜索变体探索多样证明路径。DeepSeek 公开了模型权重和复现实验的代码。
+
+why_it_matters:
+  en: >-
+    The system is a clear bridge from static proof generation toward learned agents that train and search against a formal verifier, while remaining small enough and open enough to become a widely reusable research baseline.
+  zh-CN: >-
+    该系统清晰连接了静态证明生成与“面向形式验证器进行训练和搜索”的学习式 Agent，同时凭借较小规模与开放发布成为可广泛复用的研究基线。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      The language model generated Lean proofs and tree-search actions, while Lean supplied correctness feedback for both training and inference-time verification.
+    zh-CN: >-
+      语言模型生成 Lean 证明与树搜索动作，Lean 同时为训练和推理阶段提供正确性反馈与验证。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers assembled formal training data, designed reinforcement-learning and RMaxTS procedures, trained the models and selected benchmark protocols.
+    zh-CN: >-
+      研究者构建形式训练数据，设计强化学习与 RMaxTS 流程，训练模型并选择评测协议。
+
+systems: [deepseek-prover-v1-5, lean]
+organizations: [deepseek-ai]
+people: [huajian-xin, z-z-ren, junxiao-song, zhihong-shao, fuli-luo]
+problems: [minif2f, proofnet]
+methods: [reinforcement-learning-from-proof-feedback, monte-carlo-tree-search, formal-theorem-proving, proof-search]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+    - date: "2024-08-15"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The paper reported the training method and benchmark results.
+        zh-CN: >-
+          论文公开了训练方法与基准结果。
+    - date: "2024-08-15"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          Model weights, Lean integration and proof-search code were released publicly.
+        zh-CN: >-
+          模型权重、Lean 集成与证明搜索代码被公开发布。
+
+sources:
+  - id: arxiv-deepseek-prover-v1-5-2408.08152
+    tier: S1
+    type: paper
+    title: "DeepSeek-Prover-V1.5: Harnessing Proof Assistant Feedback for Reinforcement Learning and Monte-Carlo Tree Search"
+    url: https://arxiv.org/abs/2408.08152
+    primary: true
+    published_date: "2024-08-15"
+    accessed_at: "2026-09-10"
+  - id: github-deepseek-prover-v1-5
+    tier: S1
+    type: repository
+    title: DeepSeek-Prover-V1.5 repository
+    url: https://github.com/deepseek-ai/DeepSeek-Prover-V1.5
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: deepseek-prover-v1-5-repository
+    kind: code
+    title: DeepSeek-Prover-V1.5 models and prover code
+    url: https://github.com/deepseek-ai/DeepSeek-Prover-V1.5
+
+relationships:
+  predecessors: [evt-2020-gpt-f, evt-2021-minif2f, evt-2023-leandojo]
+  successors: [evt-2026-alphaproof-nexus]
+  related: [evt-2023-copra, evt-2024-alphaproof-alphageometry2-imo]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [lean, theorem-proving, reinforcement-learning, tree-search, open-model, proof-feedback]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

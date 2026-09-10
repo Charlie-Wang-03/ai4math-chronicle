@@ -1,0 +1,141 @@
+schema_version: 1
+id: evt-2026-claude-flt-formalization
+slug: claude-fermat-last-theorem-formalization
+
+title:
+  en: Anthropic releases a Claude-generated complete Lean formalization of Fermat's Last Theorem
+  zh-CN: Anthropic 发布由 Claude 生成的费马大定理完整 Lean 形式化
+
+dates:
+  event: "2026-09-04"
+  first_public_claim: "2026-09-04"
+  paper_release: null
+  artifact_release: "2026-09-04"
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [formalization, proof, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The release demonstrated unusually large-scale AI-driven formalization of a landmark modern theorem: Claude worked largely autonomously for 11 days to translate the established Wiles and Taylor-Wiles argument into a Lean artifact that can be checked by proof kernels.
+    zh-CN: >-
+      该发布展示了规模异常巨大的 AI 驱动形式化：Claude 在 11 天内大部分时间自主工作，将既有的 Wiles 与 Taylor-Wiles 论证转化为可由证明内核检查的 Lean 产物，目标是一个现代数学标志性定理。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+interfaces: [formal, symbolic, hybrid]
+
+claim:
+  en: >-
+    Anthropic described the release as the first complete computer-checked formalization of Fermat's Last Theorem. The public Lean repository states the standard theorem, contains no admitted proof gaps in the built package, and reports successful checking by Lean, comparator and a second Rust Lean kernel.
+  zh-CN: >-
+    Anthropic 将该发布描述为费马大定理首次完整的计算机检查形式化。公开 Lean 仓库陈述了标准定理，在构建包中不包含被承认的证明缺口，并报告已通过 Lean、comparator 以及第二个 Rust Lean 内核的检查。
+
+summary:
+  en: >-
+    Claude agents used Anthropic's Prove2Me workflow to build a dependency graph of formal subproblems and expand it into millions of lines of Lean code. The repository follows the classical Frey-Serre-Ribet-Wiles-Taylor-Wiles route and exposes the theorem graph, source attribution and reproducible verification procedures.
+  zh-CN: >-
+    Claude Agent 使用 Anthropic 的 Prove2Me 工作流构建形式化子问题依赖图，并将其扩展为数百万行 Lean 代码。仓库沿用经典的 Frey–Serre–Ribet–Wiles–Taylor-Wiles 路线，并公开定理依赖图、来源归属和可复现验证流程。
+
+why_it_matters:
+  en: >-
+    The event is important primarily as an autoformalization and proof-engineering milestone rather than a new proof of Fermat's Last Theorem. It tests whether multi-agent systems can assemble and verify a very large existing mathematical argument while preserving machine-checkable correctness.
+  zh-CN: >-
+    该事件的重要性主要在自动形式化与证明工程，而不是发现费马大定理的新证明。它检验了多 Agent 系统能否组装并验证一个极其庞大的既有数学论证，同时保持机器可检查的正确性。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Claude agents generated the bulk of the Lean formalization, decomposed proof obligations and iteratively repaired code against Lean feedback; proof kernels determined whether the resulting formal terms type-checked.
+    zh-CN: >-
+      Claude Agent 生成了大部分 Lean 形式化内容、分解证明义务，并根据 Lean 反馈迭代修复代码；证明内核负责判定最终形式项是否通过类型检查。
+
+human_contribution:
+  description:
+    en: >-
+      The underlying mathematics comes from Fermat's Last Theorem research culminating in Wiles and Taylor-Wiles, together with later expositions and open Lean libraries. Anthropic researchers designed and orchestrated the agent workflow, selected sources, integrated existing formal libraries and documented verification and attribution.
+    zh-CN: >-
+      底层数学来自最终由 Wiles 与 Taylor-Wiles 完成的费马大定理研究，以及后续阐释和开放 Lean 数学库。Anthropic 研究者设计并编排 Agent 工作流、选择来源、整合既有形式库，并记录验证和归属信息。
+
+systems: [claude, prove2me, lean, mathlib]
+organizations: [anthropic, imperial-college-london, lean-community]
+people: [tianyi-peng, kevin-buzzard, andrew-wiles, richard-taylor]
+problems: [fermats-last-theorem]
+methods: [multi-agent, autoformalization, formal-theorem-proving, lean, proof-dag]
+
+verification:
+  evidence_level: E3
+  status: partially_verified
+  formal_assurance: machine_checked
+  history:
+    - date: "2026-09-04"
+      status: partially_verified
+      evidence_level: E3
+      note:
+        en: >-
+          Anthropic released the full Lean artifact. Its verification documentation reports a from-scratch Lean build, a comparator replay against a stock-Mathlib challenge statement and acceptance by the independent nanoda Lean kernel implementation.
+        zh-CN: >-
+          Anthropic 公开完整 Lean 产物；其验证文档报告了从头 Lean 构建、针对标准 Mathlib 挑战陈述的 comparator 重放，以及独立 nanoda Lean 内核实现的通过结果。
+    - date: "2026-09-07"
+      status: partially_verified
+      evidence_level: E3
+      note:
+        en: >-
+          Nature independently reported the formalization and quoted mathematicians assessing its scale and significance. AI4Math Chronicle does not assign independently_verified status without a separate editorial review of artifact replay and mathematical faithfulness.
+        zh-CN: >-
+          Nature 独立报道了该形式化，并引用数学家对其规模与意义的评价。AI4Math Chronicle 在未单独审核产物重放与数学忠实性之前，不授予 independently_verified 状态。
+
+sources:
+  - id: anthropic-flt-2026
+    tier: S2
+    type: official_announcement
+    title: Formalizing Fermat's Last Theorem
+    url: https://www.anthropic.com/research/formalizing-fermats-last-theorem
+    primary: true
+    published_date: "2026-09-04"
+    accessed_at: "2026-09-10"
+  - id: github-anthropic-flt
+    tier: S1
+    type: formal_artifact
+    title: Fermat's Last Theorem in Lean 4
+    url: https://github.com/anthropics/fermats-last-theorem
+    primary: true
+    published_date: "2026-09-04"
+    accessed_at: "2026-09-10"
+  - id: nature-claude-flt-2026
+    tier: S4
+    type: media
+    title: Anthropic AI formalizes proof of Fermat's last theorem — a milestone for mathematics
+    url: https://www.nature.com/articles/d41586-026-02822-9
+    primary: false
+    published_date: "2026-09-07"
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: anthropic-flt-lean-repository
+    kind: proof
+    title: Complete Lean 4 formalization and verification tooling
+    url: https://github.com/anthropics/fermats-last-theorem
+
+relationships:
+  predecessors: [evt-2020-gpt-f, evt-2023-leandojo]
+  successors: []
+  related: [evt-2026-alphaproof-nexus]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [fermat-last-theorem, lean, autoformalization, multi-agent, claude, formal-verification]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

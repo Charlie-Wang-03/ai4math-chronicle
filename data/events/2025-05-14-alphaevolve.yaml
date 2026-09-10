@@ -1,0 +1,141 @@
+schema_version: 1
+id: evt-2025-alphaevolve
+slug: alphaevolve-algorithm-discovery
+
+title:
+  en: AlphaEvolve generalizes LLM-guided evolutionary search for algorithm discovery
+  zh-CN: AlphaEvolve 将 LLM 引导的进化搜索推广到通用算法发现
+
+dates:
+  event: "2025-05-14"
+  first_public_claim: "2025-05-14"
+  paper_release: "2025-06-16"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [discovery, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      AlphaEvolve extended the evaluator-guided discovery pattern from domain-specific systems into a general coding agent, reporting new exact algorithms and mathematical constructions across multiple problems.
+    zh-CN: >-
+      AlphaEvolve 将“生成器 + 自动评估器”的发现范式从专用系统推广为通用代码 Agent，并报告在多个问题上发现新的精确算法与数学构造。
+
+mathematical_novelty:
+  type: new_algorithm
+interfaces: [symbolic, numeric, hybrid]
+
+claim:
+  en: >-
+    AlphaEvolve used LLM-generated code mutations, automated evaluators and evolutionary selection to discover algorithms that surpassed previous state of the art on several mathematical and computational tasks, including a 48-multiplication procedure for 4-by-4 complex matrix multiplication.
+  zh-CN: >-
+    AlphaEvolve 通过 LLM 生成代码变异、自动评估器与进化选择，在多个数学和计算任务上发现超过此前最佳结果的算法，其中包括使用 48 次标量乘法完成 4×4 复矩阵乘法的方案。
+
+summary:
+  en: >-
+    The agent maintains populations of candidate programs, uses language models to propose edits and repeatedly scores outputs with executable evaluators. The accompanying technical report and results repository document mathematical cases where the evolved programs improved known constructions.
+  zh-CN: >-
+    该 Agent 维护候选程序种群，使用语言模型提出修改，并通过可执行评估器反复评分。技术报告及结果仓库记录了进化程序在若干数学问题上改进已知构造的案例。
+
+why_it_matters:
+  en: >-
+    AlphaEvolve made algorithm and mathematical-object discovery look less like a single bespoke demonstration and more like a reusable agentic research pattern for problems with objective automated evaluation.
+  zh-CN: >-
+    AlphaEvolve 使算法与数学对象发现不再只是一次性的专用演示，而更接近一种可复用的 Agent 科研范式，尤其适用于具有客观自动评估器的问题。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      LLMs proposed code changes and the evolutionary loop selected improved candidates using automated evaluators; humans formulated tasks, supplied evaluators and interpreted the resulting discoveries.
+    zh-CN: >-
+      LLM 提出代码修改，进化循环依据自动评估器选择更优候选；人类负责定义任务、提供评估器并解释所得发现。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the evolutionary agent, defined optimization problems and evaluators, validated discovered algorithms and analyzed which outputs constituted genuine improvements.
+    zh-CN: >-
+      研究者设计进化 Agent、定义优化问题与评估器、验证发现的算法，并分析哪些输出构成真正改进。
+
+systems: [alphaevolve, gemini]
+organizations: [google-deepmind]
+people: [alexander-novikov, ngan-vu, adam-zsolt-wagner, pushmeet-kohli, matej-balog]
+problems: [matrix-multiplication, mathematical-construction-search]
+methods: [evolutionary-search, llm-code-generation, automated-evaluation, algorithm-discovery]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: "2025-05-14"
+      status: claimed
+      evidence_level: E1
+      note:
+        en: >-
+          Google DeepMind announced AlphaEvolve and described mathematical and infrastructure results.
+        zh-CN: >-
+          Google DeepMind 公布 AlphaEvolve，并介绍数学与基础设施方面的结果。
+    - date: "2025-06-16"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          The technical report and a public results repository documented improved mathematical constructions and verification code.
+        zh-CN: >-
+          技术报告与公开结果仓库记录了改进的数学构造及验证代码。
+
+sources:
+  - id: deepmind-alphaevolve-2025
+    tier: S2
+    type: official_announcement
+    title: "AlphaEvolve: A Gemini-powered coding agent for designing advanced algorithms"
+    url: https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/
+    primary: true
+    published_date: "2025-05-14"
+    accessed_at: "2026-09-10"
+  - id: arxiv-alphaevolve-2506.13131
+    tier: S1
+    type: paper
+    title: "AlphaEvolve: A coding agent for scientific and algorithmic discovery"
+    url: https://arxiv.org/abs/2506.13131
+    primary: true
+    published_date: "2025-06-16"
+    accessed_at: "2026-09-10"
+  - id: github-alphaevolve-results
+    tier: S1
+    type: repository
+    title: Results of AlphaEvolve
+    url: https://github.com/google-deepmind/alphaevolve_results
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: alphaevolve-results-repository
+    kind: code
+    title: AlphaEvolve mathematical results and verification code
+    url: https://github.com/google-deepmind/alphaevolve_results
+
+relationships:
+  predecessors: [evt-2022-alphatensor, evt-2023-funsearch]
+  successors: []
+  related: [evt-2026-aletheia]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [agent, algorithm-discovery, evolutionary-search, gemini, automated-evaluation, mathematics]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []
