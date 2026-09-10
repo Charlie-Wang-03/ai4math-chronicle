@@ -123,7 +123,7 @@ artifacts:
     url: https://github.com/google-deepmind/alphaevolve_results
 
 relationships:
-  predecessors: [evt-2022-alphatensor, evt-2023-funsearch]
+  predecessors: [evt-2022-alphatensor, evt-2023-funsearch-cap-set]
   successors: []
   related: [evt-2026-aletheia]
 
