@@ -58,9 +58,9 @@ Pagefind 在 Astro 渲染 `dist/` 之后运行。浏览器侧搜索 API 使用 P
 UI 明确区分两种发现方式：
 
 - **Timeline：** 时间顺序始终是产品的主要阅读表面。
-- **Explore：** search 与 filters 用于定向检索，但不替代历史时间线。
+- **Explore：** 通过紧凑比较、筛选、搜索与排序支持定向检索，但不替代历史时间线。
 
-交互遵循信息密集型出版物的结构：先给 overview，再允许 search / filter，最后按需进入 event-level evidence detail。
+交互遵循信息密集型出版物的结构：先给 overview，再允许 search / filter，最后按需进入 event-level evidence detail。Light / Dark / 跟随系统主题是轻量客户端增强，不改变内容或路由。
 
 ## SEO / GEO / AI 可读结构
 
@@ -82,8 +82,8 @@ Canonical identifiers、source metadata、relationships 与 taxonomies 在两种
 
 - `ci.yml` 对 Pull Request 与 push 执行 validation、tests 与 build。
 - `deploy-pages.yml` 只从 `main` 构建并部署 `dist/`，同时保留 manual dispatch。
-- Repository Settings → Pages 仍是人工权限门槛。
-- 仓库 visibility 从 private 切换为 public 同样是人工发布门槛。
+- Repository Settings → Pages 仍属于人工控制的部署设置。
+- 仓库现已公开；未来涉及 visibility、ruleset 或发布设置等高影响操作仍必须获得人工授权。
 
 ## v0.1 明确非目标
 

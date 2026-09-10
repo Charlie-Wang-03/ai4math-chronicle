@@ -1,6 +1,6 @@
 # Development Guide
 
-**English** · [Simplified Chinese](./development.zh-CN.md)
+**English** · [简体中文](./development.zh-CN.md)
 
 This document is for contributors working on the website implementation, build pipeline, validation, or repository automation. Reader-facing project introduction belongs in the root README; editorial policy belongs in the Editorial Methodology.
 
@@ -45,7 +45,7 @@ schema/event.schema.json   Event schema
 scripts/                   validation and export generation
 src/                       Astro pages, layouts, components and styles
 public/                    static public assets
- tests/                    data-pipeline tests
+tests/                     data-pipeline tests
 .github/workflows/         CI and Pages deployment
 ```
 

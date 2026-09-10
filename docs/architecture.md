@@ -58,9 +58,9 @@ Pagefind runs after Astro renders `dist/`. The browser search API is configured 
 The UI separates two discovery modes:
 
 - **Timeline:** chronological reading remains the primary product surface.
-- **Explore:** filters and search support targeted retrieval without replacing the historical view.
+- **Explore:** compact comparison, filtering, search, and sorting support targeted retrieval without replacing the historical view.
 
-The interaction model follows an information-dense publication pattern: overview first, then search/filter, then event-level evidence details on demand.
+The interaction model follows an information-dense publication pattern: overview first, then search/filter, then event-level evidence details on demand. Reader theme preference is a lightweight client-side enhancement with Light, Dark, and System modes; it does not change content or routing.
 
 ## SEO / GEO / AI-readable structure
 
@@ -82,8 +82,8 @@ Repository documentation uses paired Markdown files with explicit language-switc
 
 - `ci.yml` validates, tests, and builds pull requests and pushes.
 - `deploy-pages.yml` builds and deploys `dist/` only from `main` plus manual dispatch.
-- Repository Settings → Pages remains a human permission gate.
-- Switching repository visibility to public is also a human release gate.
+- Repository Settings → Pages remains a human-controlled deployment setting.
+- The repository is public; future high-blast-radius visibility, ruleset, or release-setting changes remain human-authorized operations.
 
 ## Explicit non-goals for v0.1
 

@@ -1,0 +1,8 @@
+# Default maintainer review
+* @Charlie-Wang-03
+
+# Canonical data and editorial policy are high-risk review areas
+/data/events/ @Charlie-Wang-03
+/schema/ @Charlie-Wang-03
+/docs/editorial-methodology.md @Charlie-Wang-03
+/docs/editorial-methodology.zh-CN.md @Charlie-Wang-03

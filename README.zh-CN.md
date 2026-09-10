@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/readme/hero.svg" alt="AI4Math Chronicle — AI for Mathematics 重大里程碑时间线档案" width="100%" />
+  <img src="./assets/readme/hero.svg" alt="AI4Math Chronicle — timeline-first, evidence-backed archive of major milestones in AI for Mathematics" width="100%" />
 </p>
 
 <p align="center">
@@ -17,9 +17,17 @@
 ## 开始浏览
 
 - **[完整时间线](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/)** —— 从早期神经定理证明一直浏览到研究级数学发现。
-- **[探索事件](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/explore/)** —— 按年份、事件类型、重要性与验证状态筛选。
+- **[探索事件](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/explore/)** —— 按年份、事件类型、重要性、验证状态与系统比较和筛选事件。
 - **[方法论](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/methodology/)** —— 了解收录、重要性、证据、验证与纠错规则。
 - **[数据](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/data/)** —— 获取 JSON、NDJSON、Schema、RSS 与 Sitemap 等机器可读输出。
+
+## 使用 AI 查询大事记
+
+如果你的 AI 工具支持联网或访问 GitHub，可以直接复制下面这句提示词，并把最后的占位符替换为你的问题：
+
+> 请使用 AI4Math Chronicle（https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/；canonical data：https://charlie-wang-03.github.io/ai4math-chronicle/data/events.json）作为我查询 AI4Math 的索引：定位相关 canonical events，保留其 H1/H2/H3 与 verification 状态，沿记录中的 primary sources 核实关键事实，并在回答中引用 Chronicle 事件页与一手证据：[你的问题]
+
+Chronicle 的作用是帮助 AI 定位并组织证据，而不是替代对记录中一手来源的核验。
 
 ## 大事记记录什么
 
@@ -85,6 +93,8 @@ AI4Math 大事记强调可审计与可纠错。如果你发现遗漏的重要事
 
 - [贡献指南](./CONTRIBUTING.zh-CN.md)
 - [编辑方法论](./docs/editorial-methodology.zh-CN.md)
+- [社区行为准则](./CODE_OF_CONDUCT.zh-CN.md)
+- [安全政策](./SECURITY.zh-CN.md)
 
 本 README 不承担开发者手册职责。实现、构建与代码贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。
 
@@ -99,4 +109,4 @@ AI4Math 大事记强调可审计与可纠错。如果你发现遗漏的重要事
 
 ## 发布状态
 
-AI4Math 大事记 v0.1 已完成公开发布准备，目前仓库仍保持 private，等待最终 Launch Review。验收后再合并发布分支、验证 GitHub Pages，并将仓库切换为 public。
+**AI4Math 大事记 v0.1 已正式公开。** 网站部署于 GitHub Pages，公开仓库接受 Issue 与 Pull Request；后续修改仍需通过 CI，并遵守既定人工编辑门槛。
