@@ -5,7 +5,7 @@ type: dataset
 authors:
   - family-names: "Wang"
     given-names: "Yichuan"
-version: "0.1"
+version: "0.1.0"
 date-released: 2026-09-10
 repository-code: "https://github.com/Charlie-Wang-03/ai4math-chronicle"
 url: "https://charlie-wang-03.github.io/ai4math-chronicle/en/"
