@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/theme.css';
+import '../styles/brand.css';
 import { absolute, href, localePath, otherLocale } from '../lib/site';
 import type { Locale } from '../lib/types';
 
@@ -18,14 +19,23 @@ const labels = locale === 'zh-CN'
   ? {
       timeline: '时间线', explore: '探索', methodology: '方法论', data: '数据', github: 'GitHub', switch: 'English',
       theme: '主题', system: '跟随系统', light: '浅色', dark: '深色',
-      nav: '主导航', skip: '跳到主要内容', footer: '以时间线为核心、基于证据。Canonical YAML 同时生成静态网页与机器可读数据。'
+      nav: '主导航', skip: '跳到主要内容',
+      footerMission: '一个以时间线为核心、基于证据、可审计且可修正的 AI for Mathematics 历史档案。Canonical YAML 同时生成静态网页与机器可读数据。',
+      footerExplore: '浏览', footerProject: '项目', contribute: '参与贡献', releases: '发布版本', citation: '引用',
+      footerLicense: '开放源代码项目 · 代码采用 MIT · Chronicle 原创内容与数据汇编采用 CC BY 4.0',
+      footerData: '数据与订阅'
     }
   : {
       timeline: 'Timeline', explore: 'Explore', methodology: 'Methodology', data: 'Data', github: 'GitHub', switch: '简体中文',
       theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark',
-      nav: 'Primary navigation', skip: 'Skip to main content', footer: 'Timeline-first, evidence-backed. Canonical YAML drives both static pages and machine-readable data.'
+      nav: 'Primary navigation', skip: 'Skip to main content',
+      footerMission: 'A timeline-first, evidence-backed, auditable, and correctable historical archive for AI for Mathematics. Canonical YAML drives both static pages and machine-readable data.',
+      footerExplore: 'Explore', footerProject: 'Project', contribute: 'Contribute', releases: 'Releases', citation: 'Citation',
+      footerLicense: 'Open-source project · MIT code · CC BY 4.0 original Chronicle content and data compilation',
+      footerData: 'Data & feeds'
     };
 const alternate = alternatePath ?? localePath(other);
+const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
 ---
 <!doctype html>
 <html lang={locale}>
@@ -33,6 +43,7 @@ const alternate = alternatePath ?? localePath(other);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <meta name="application-name" content="AI4Math Chronicle" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#f6f7fa" />
     <script is:inline>
@@ -60,10 +71,14 @@ const alternate = alternatePath ?? localePath(other);
     <link rel="alternate" type="application/rss+xml" title="AI4Math Chronicle RSS" href={absolute('feed.xml')} />
     <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AI4Math Chronicle" />
+    <meta property="og:locale" content={locale === 'zh-CN' ? 'zh_CN' : 'en_US'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={absolute(canonicalPath)} />
     <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <title>{title}</title>
     {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
@@ -71,13 +86,19 @@ const alternate = alternatePath ?? localePath(other);
     <a class="skip-link" href="#main-content">{labels.skip}</a>
     <header class="site-header" data-pagefind-ignore>
       <div class="site-shell header-inner">
-        <a class="brand" href={href(localePath(locale))}>AI4Math Chronicle <span aria-hidden="true">/</span> AI4Math 大事记</a>
+        <a class="brand" href={href(localePath(locale))} aria-label="AI4Math Chronicle">
+          <img class="brand-mark" src={href('logo-mark.svg')} alt="" width="32" height="32" />
+          <span class="brand-lockup">
+            <span class="brand-name">AI4Math Chronicle</span>
+            <span class="brand-local-name">AI4Math 大事记</span>
+          </span>
+        </a>
         <nav class="nav" aria-label={labels.nav}>
           <a href={href(localePath(locale))}>{labels.timeline}</a>
           <a href={href(localePath(locale, 'explore'))}>{labels.explore}</a>
           <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
           <a href={href(localePath(locale, 'data'))}>{labels.data}</a>
-          <a href="https://github.com/Charlie-Wang-03/ai4math-chronicle" rel="noreferrer">{labels.github}</a>
+          <a href={repositoryUrl} rel="noreferrer">{labels.github}</a>
           <button
             class="theme-toggle"
             type="button"
@@ -109,9 +130,34 @@ const alternate = alternatePath ?? localePath(other);
       <slot />
     </main>
     <footer class="site-footer" data-pagefind-ignore>
-      <div class="site-shell footer-inner">
-        <span>{labels.footer}</span>
-        <a href={href(localePath(locale, 'data'))}>{locale === 'zh-CN' ? '数据与订阅' : 'Data & feeds'}</a>
+      <div class="site-shell footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-lockup">
+            <img src={href('logo-mark.svg')} alt="" width="34" height="34" />
+            <span>AI4Math Chronicle</span>
+          </div>
+          <p>{labels.footerMission}</p>
+        </div>
+        <nav class="footer-nav" aria-label={locale === 'zh-CN' ? '页脚导航' : 'Footer navigation'}>
+          <div class="footer-group">
+            <strong>{labels.footerExplore}</strong>
+            <a href={href(localePath(locale))}>{labels.timeline}</a>
+            <a href={href(localePath(locale, 'explore'))}>{labels.explore}</a>
+            <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
+            <a href={href(localePath(locale, 'data'))}>{labels.footerData}</a>
+          </div>
+          <div class="footer-group">
+            <strong>{labels.footerProject}</strong>
+            <a href={repositoryUrl} rel="noreferrer">GitHub</a>
+            <a href={`${repositoryUrl}/blob/main/CONTRIBUTING.md`} rel="noreferrer">{labels.contribute}</a>
+            <a href={`${repositoryUrl}/releases`} rel="noreferrer">{labels.releases}</a>
+            <a href={`${repositoryUrl}/blob/main/CITATION.cff`} rel="noreferrer">{labels.citation}</a>
+          </div>
+        </nav>
+      </div>
+      <div class="site-shell footer-meta">
+        <span>{labels.footerLicense}</span>
+        <a href={`${repositoryUrl}/blob/main/LICENSE-CONTENT.md`} rel="noreferrer">CC BY 4.0</a>
       </div>
     </footer>
     <script is:inline>
