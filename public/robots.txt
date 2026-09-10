@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://charlie-wang-03.github.io/ai4math-chronicle/sitemap.xml

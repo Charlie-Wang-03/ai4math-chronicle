@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchBox from './SearchBox.astro';
+import EventCollection from './EventCollection.astro';
+import { getAllEvents } from '../lib/events';
+import { localePath } from '../lib/site';
+import type { Locale } from '../lib/types';
+const { locale } = Astro.props as { locale: Locale };
+const events = getAllEvents();
+const c = locale === 'zh-CN'
+ ? { title: '探索事件 — AI4Math 大事记', desc: '按年份、事件类型、重要性与验证状态探索 AI4Math Chronicle 事件。', heading: '探索事件', lede: '筛选 canonical event records；搜索使用完全静态的 Pagefind 索引。' }
+ : { title: 'Explore Events — AI4Math Chronicle', desc: 'Explore AI4Math Chronicle events by year, event type, significance, and verification status.', heading: 'Explore events', lede: 'Filter canonical event records. Search is powered by a fully static Pagefind index.' };
+---
+<BaseLayout locale={locale} title={c.title} description={c.desc} canonicalPath={localePath(locale,'explore')} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en','explore')}>
+  <header class="hero"><p class="eyebrow">Explore</p><h1>{c.heading}</h1><p class="lede">{c.lede}</p></header>
+  <SearchBox locale={locale} />
+  <EventCollection events={events} locale={locale} mode="grid" />
+</BaseLayout>

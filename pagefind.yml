@@ -1,0 +1,7 @@
+site: dist
+output_subdir: pagefind
+root_selector: "[data-pagefind-body]"
+exclude_selectors:
+  - "nav"
+  - "footer"
+  - "[data-pagefind-ignore]"

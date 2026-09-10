@@ -1,0 +1,107 @@
+schema_version: 1
+id: evt-2023-funsearch-cap-set
+slug: funsearch-mathematical-discovery
+
+title:
+  en: FunSearch reports new cap-set constructions with LLM-guided program search
+  zh-CN: FunSearch 通过 LLM 引导的程序搜索报告新的 cap set 构造
+
+dates:
+  event: "2023-12-14"
+  first_public_claim: "2023-12-14"
+  paper_release: "2023-12-14"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [discovery, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: The Nature paper demonstrated an LLM-based search loop producing improved constructions for an established extremal-combinatorics problem, making it a useful early reference point for AI-assisted mathematical discovery.
+    zh-CN: Nature 论文展示了基于 LLM 的搜索闭环在一个既有极值组合问题上产生改进构造，是 AI 辅助数学发现的重要早期参照点。
+
+mathematical_novelty:
+  type: new_result
+interfaces: [informal, numeric]
+
+claim:
+  en: FunSearch found cap-set constructions exceeding previously known constructions in finite-dimensional and asymptotic settings, and also found improved heuristics for online bin packing.
+  zh-CN: FunSearch 在有限维与渐近情形中找到超过此前已知结果的 cap set 构造，并在在线装箱问题上找到改进启发式算法。
+
+summary:
+  en: Google DeepMind paired a pretrained language model with an evaluator and evolutionary program search. The resulting system searched over executable programs rather than directly emitting final mathematical answers.
+  zh-CN: Google DeepMind 将预训练语言模型、评估器与进化式程序搜索结合，让系统搜索可执行程序，而不是直接生成最终数学答案。
+
+why_it_matters:
+  en: The result supplied a concrete, checkable example of LLM-generated code participating in a search process that improved the known solution landscape of an established mathematical problem.
+  zh-CN: 该结果提供了一个可检查的具体案例：LLM 生成的代码参与系统化搜索，并改进了一个既有数学问题的已知解空间。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The language model generated candidate programs inside an automated evolutionary loop, while deterministic evaluators selected and scored candidates.
+    zh-CN: 语言模型在自动化进化搜索闭环中生成候选程序，确定性的评估器负责筛选与评分。
+
+human_contribution:
+  description:
+    en: Researchers designed the search procedure and evaluators, chose the mathematical tasks and representations, interpreted the discovered programs, and authored the scientific analysis.
+    zh-CN: 研究人员设计搜索流程与评估器，选择数学任务和表示方式，解释发现的程序，并完成科学分析。
+
+systems: [funsearch]
+organizations: [google-deepmind]
+people: [alhussein-fawzi, bernardino-romera-paredes]
+problems: [cap-set-problem, online-bin-packing]
+methods: [large-language-models, evolutionary-search, program-search]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+    - date: "2023-12-14"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: Peer-reviewed Nature article and official institutional announcement were public.
+        zh-CN: 经同行评审的 Nature 论文与机构官方公告已公开。
+
+sources:
+  - id: nature-funsearch-2023
+    tier: S1
+    type: paper
+    title: Mathematical discoveries from program search with large language models
+    url: https://www.nature.com/articles/s41586-023-06924-6
+    primary: true
+    published_date: "2023-12-14"
+    accessed_at: "2026-09-10"
+  - id: deepmind-funsearch-2023
+    tier: S2
+    type: official_announcement
+    title: FunSearch — Making new discoveries in mathematical sciences using Large Language Models
+    url: https://deepmind.google/blog/funsearch-making-new-discoveries-in-mathematical-sciences-using-large-language-models/
+    primary: false
+    published_date: "2023-12-14"
+    accessed_at: "2026-09-10"
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [mathematical-discovery, combinatorics, program-search, llm]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { formatDate, getEventById, text } from '../lib/events';
+import { absolute, href, localePath } from '../lib/site';
+import type { ChronicleEvent, Locale } from '../lib/types';
+const { event, locale } = Astro.props as { event: ChronicleEvent; locale: Locale };
+const zh = locale === 'zh-CN';
+const other = zh ? 'en' : 'zh-CN';
+const canonicalPath = localePath(locale, `events/${event.slug}`);
+const eventTitle = text(event.title, locale);
+const description = text(event.summary, locale);
+const primary = event.sources.filter((source) => source.primary || source.tier === 'S1');
+const relationGroups = [
+  [zh ? '更早进展' : 'Earlier developments', event.relationships.predecessors],
+  [zh ? '后续进展' : 'Later developments', event.relationships.successors],
+  [zh ? '相关里程碑' : 'Related milestones', event.relationships.related],
+] as const;
+const articleJsonLd = {
+  '@context': 'https://schema.org', '@type': 'Article',
+  headline: eventTitle,
+  description,
+  datePublished: event.dates.event,
+  dateModified: event.dates.last_updated,
+  mainEntityOfPage: absolute(canonicalPath),
+  about: [...event.systems, ...event.problems, ...event.methods],
+  citation: event.sources.map((source) => source.url),
+  author: { '@type': 'Organization', name: 'AI4Math Chronicle' },
+};
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'AI4Math Chronicle', item: absolute(localePath(locale)) },
+    { '@type': 'ListItem', position: 2, name: eventTitle, item: absolute(canonicalPath) },
+  ]
+};
+---
+<BaseLayout locale={locale} title={`${eventTitle} — AI4Math Chronicle`} description={description} canonicalPath={canonicalPath} alternatePath={localePath(other, `events/${event.slug}`)} jsonLd={[articleJsonLd,breadcrumbJsonLd]}>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={href(localePath(locale))}>{zh ? '时间线' : 'Timeline'}</a><span>/</span><span>{eventTitle}</span></nav>
+  <header class="event-header">
+    <p class="eyebrow"><time datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time></p>
+    <h1>{eventTitle}</h1>
+    <div class="meta-strip">
+      <span class="badge significance">{event.significance.tier}</span>
+      <span class={`badge ${event.verification.status}`}>{event.verification.status}</span>
+      <span class="badge">Evidence {event.verification.evidence_level}</span>
+      <span class="badge">AI: {event.ai_role.level}</span>
+      <span class="badge">{event.verification.formal_assurance}</span>
+    </div>
+    <p class="lede">{description}</p>
+  </header>
+
+  <section class="event-section"><h2>{zh ? '发生了什么？' : 'What happened?'}</h2><p>{text(event.claim, locale)}</p></section>
+  <section class="event-section"><h2>{zh ? '为什么重要？' : 'Why it matters'}</h2><p>{text(event.why_it_matters, locale)}</p><p><strong>{zh ? '重要性说明：' : 'Significance rationale: '}</strong>{text(event.significance.rationale, locale)}</p></section>
+
+  <section class="event-section"><h2>{zh ? '主要证据' : 'Primary evidence'}</h2>
+    <ul class="evidence-list">{primary.map((source) => <li><a href={source.url} rel="noreferrer"><strong>{source.title}</strong></a><div class="source-tier">{source.tier} · {source.type}{source.published_date ? ` · ${source.published_date}` : ''}</div></li>)}</ul>
+  </section>
+
+  <section class="event-section"><h2>{zh ? '贡献与验证' : 'Contribution & verification'}</h2>
+    <dl class="fact-grid">
+      <div class="fact"><dt>{zh ? '数学新颖性' : 'Mathematical novelty'}</dt><dd>{event.mathematical_novelty.type}</dd></div>
+      <div class="fact"><dt>{zh ? '接口' : 'Interface'}</dt><dd>{event.interfaces.join(', ')}</dd></div>
+      <div class="fact"><dt>{zh ? 'AI 贡献' : 'AI contribution'}</dt><dd>{text(event.ai_role.description, locale)}</dd></div>
+      <div class="fact"><dt>{zh ? '人类贡献' : 'Human contribution'}</dt><dd>{text(event.human_contribution.description, locale)}</dd></div>
+      <div class="fact"><dt>{zh ? '验证状态' : 'Verification'}</dt><dd>{event.verification.status} · {event.verification.evidence_level} · {event.verification.formal_assurance}</dd></div>
+      <div class="fact"><dt>{zh ? '最后审阅' : 'Last reviewed'}</dt><dd>{event.editorial.last_reviewed}</dd></div>
+    </dl>
+  </section>
+
+  <section class="event-section"><h2>{zh ? '技术细节' : 'Technical details'}</h2>
+    <dl class="fact-grid">
+      <div class="fact"><dt>Systems</dt><dd>{event.systems.join(', ') || '—'}</dd></div>
+      <div class="fact"><dt>Organizations</dt><dd>{event.organizations.join(', ') || '—'}</dd></div>
+      <div class="fact"><dt>Problems</dt><dd>{event.problems.join(', ') || '—'}</dd></div>
+      <div class="fact"><dt>Methods</dt><dd>{event.methods.join(', ') || '—'}</dd></div>
+    </dl>
+  </section>
+
+  <section class="event-section"><h2>{zh ? '全部来源与工件' : 'Sources & artifacts'}</h2>
+    <ul class="evidence-list">{event.sources.map((source) => <li><a href={source.url} rel="noreferrer">{source.title}</a><div class="source-tier">{source.tier} · {source.type} · accessed {source.accessed_at}</div></li>)}</ul>
+    {event.artifacts.length > 0 && <ul class="evidence-list">{event.artifacts.map((artifact) => <li><a href={artifact.url} rel="noreferrer">{artifact.title}</a><div class="source-tier">artifact · {artifact.kind}</div></li>)}</ul>}
+  </section>
+
+  <section class="event-section"><h2>{zh ? '历史关系' : 'Historical relationships'}</h2>
+    <div class="relationships">{relationGroups.map(([label, ids]) => <div class="fact"><strong>{label}</strong>{ids.length ? <ul>{ids.map((id) => { const related = getEventById(id); return related ? <li><a href={href(localePath(locale, `events/${related.slug}`))}>{text(related.title, locale)}</a></li> : null; })}</ul> : <p>—</p>}</div>)}</div>
+  </section>
+
+  <section class="event-section"><h2>{zh ? '验证历史' : 'Verification history'}</h2>
+    <ul class="evidence-list">{event.verification.history.map((item) => <li><strong>{item.date} · {item.status} · {item.evidence_level}</strong><p>{text(item.note, locale)}</p></li>)}</ul>
+  </section>
+
+  <section class="event-section"><h2>{zh ? '更正' : 'Corrections'}</h2>
+    {event.corrections.length ? <ul class="evidence-list">{event.corrections.map((item) => <li><strong>{item.date}</strong><p>{text(item.summary, locale)}</p></li>)}</ul> : <p>{zh ? '当前没有记录的更正。' : 'No corrections recorded.'}</p>}
+  </section>
+</BaseLayout>

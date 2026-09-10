@@ -1,0 +1,119 @@
+schema_version: 1
+id: evt-2024-alphageometry
+slug: alphageometry-olympiad-geometry
+
+title:
+  en: AlphaGeometry reaches near gold-medallist performance on olympiad geometry benchmark
+  zh-CN: AlphaGeometry 在奥林匹克几何基准上达到接近金牌选手的表现
+
+dates:
+  event: "2024-01-17"
+  first_public_claim: "2024-01-17"
+  paper_release: "2024-01-17"
+  artifact_release: "2024-01-17"
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [proof, system, benchmark]
+
+significance:
+  tier: H2
+  rationale:
+    en: AlphaGeometry sharply improved automated performance on a curated olympiad-geometry benchmark and provided a prominent neuro-symbolic example of synthetic-data-driven theorem proving.
+    zh-CN: AlphaGeometry 在精选奥赛几何基准上显著提升自动定理证明表现，并成为合成数据驱动的神经符号定理证明的重要案例。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces: [symbolic, hybrid]
+
+claim:
+  en: On IMO-AG-30, a benchmark of 30 translated olympiad-level geometry problems, AlphaGeometry solved 25 problems versus 10 for the previous reported best method, approaching the estimated average performance of an IMO gold medallist on the same set.
+  zh-CN: 在由 30 道经翻译的奥赛级几何题组成的 IMO-AG-30 基准上，AlphaGeometry 解出 25 题，而论文所述此前最佳方法解出 10 题；其表现接近同一题集上 IMO 金牌选手的估计平均水平。
+
+summary:
+  en: AlphaGeometry combines a neural language model trained on synthetic theorem/proof data with a symbolic deduction engine. The language model proposes auxiliary constructions and the symbolic engine checks deductions.
+  zh-CN: AlphaGeometry 将基于合成定理与证明数据训练的神经语言模型同符号推理引擎结合；语言模型提出辅助构造，符号引擎检查推导。
+
+why_it_matters:
+  en: It showed that synthetic data plus neuro-symbolic search could overcome a scarcity of human formalized geometry proofs and produce machine-checkable, human-readable olympiad-style solutions.
+  zh-CN: 它展示了合成数据与神经符号搜索可以绕开人工形式化几何证明稀缺的问题，并生成可机器检查、也可供人阅读的奥赛风格解答。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The learned model proposed proof-relevant constructions while the symbolic engine performed rule-bound deductions and checked the resulting proof structure.
+    zh-CN: 学习模型提出与证明相关的构造，符号引擎执行规则约束下的推导并检查所得证明结构。
+
+human_contribution:
+  description:
+    en: Researchers built the geometry representation, symbolic engines, synthetic-data pipeline, model and evaluation benchmark; human experts also evaluated selected outputs.
+    zh-CN: 研究人员构建几何表示、符号引擎、合成数据流程、模型与评测基准，并由人类专家评估部分输出。
+
+systems: [alphageometry]
+organizations: [google-deepmind, new-york-university]
+people: [trieu-h-trinh, yuhuai-wu, quoc-v-le, he-he, thang-luong]
+problems: [imo-ag-30]
+methods: [neuro-symbolic-reasoning, synthetic-data, theorem-proving]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: "2024-01-17"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: Nature paper, supplementary solutions, source data, and an official code/model release were available.
+        zh-CN: Nature 论文、补充解答、源数据以及官方代码/模型发布均已公开。
+
+sources:
+  - id: nature-alphageometry-2024
+    tier: S1
+    type: paper
+    title: Solving olympiad geometry without human demonstrations
+    url: https://www.nature.com/articles/s41586-023-06747-5
+    primary: true
+    published_date: "2024-01-17"
+    accessed_at: "2026-09-10"
+  - id: deepmind-alphageometry-2024
+    tier: S2
+    type: official_announcement
+    title: AlphaGeometry — An Olympiad-level AI system for geometry
+    url: https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/
+    primary: false
+    published_date: "2024-01-17"
+    accessed_at: "2026-09-10"
+  - id: github-alphageometry
+    tier: S1
+    type: repository
+    title: google-deepmind/alphageometry
+    url: https://github.com/google-deepmind/alphageometry
+    primary: true
+    published_date: "2024-01-17"
+    accessed_at: "2026-09-10"
+
+artifacts:
+  - id: alphageometry-code
+    kind: code
+    title: AlphaGeometry source code and model repository
+    url: https://github.com/google-deepmind/alphageometry
+
+relationships:
+  predecessors: []
+  successors: [evt-2024-alphaproof-alphageometry2-imo]
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [geometry, olympiad, theorem-proving, neuro-symbolic, synthetic-data]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

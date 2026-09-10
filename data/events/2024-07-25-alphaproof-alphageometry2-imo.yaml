@@ -1,0 +1,113 @@
+schema_version: 1
+id: evt-2024-alphaproof-alphageometry2-imo
+slug: alphaproof-alphageometry2-imo-2024
+
+title:
+  en: AlphaProof and AlphaGeometry 2 reach silver-medal standard on IMO 2024 problems
+  zh-CN: AlphaProof 与 AlphaGeometry 2 在 IMO 2024 题目上达到银牌标准
+
+dates:
+  event: "2024-07-25"
+  first_public_claim: "2024-07-25"
+  paper_release: "2025-11-12"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-10"
+  last_updated: "2026-09-10"
+
+event_types: [competition, proof, formalization, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: The combined system was reported as the first AI system to achieve medal-level performance on a full set of current IMO problems, while also exposing the practical trade-offs of manual formalization and multi-day computation.
+    zh-CN: 该组合系统被报告为首个在当届完整 IMO 题集上达到奖牌水平的 AI 系统，同时也清楚暴露了人工形式化与多日计算的实际代价。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces: [formal, symbolic, hybrid]
+
+claim:
+  en: AlphaProof solved three non-geometry IMO 2024 problems and AlphaGeometry 2 solved the geometry problem. The four perfect solutions totaled 28/42 points, equivalent to the top end of the silver-medal range and one point below the gold threshold that year.
+  zh-CN: AlphaProof 解出 3 道非几何的 IMO 2024 题目，AlphaGeometry 2 解出几何题；4 道满分解答合计 28/42 分，对应当年银牌区间上沿，距金牌线 1 分。
+
+summary:
+  en: AlphaProof used reinforcement learning in Lean for formal proof search, while AlphaGeometry 2 handled the geometry problem with a faster neuro-symbolic system. The 2024 workflow required experts to translate problems into formal representations and used up to several days of computation.
+  zh-CN: AlphaProof 在 Lean 中使用强化学习进行形式证明搜索，AlphaGeometry 2 则以更快的神经符号系统处理几何题。2024 年的流程需要专家将题目翻译为形式化表示，并使用最长数日的计算时间。
+
+why_it_matters:
+  en: The result connected formal proof search with a recognizable external benchmark at medal level and became a reference point for later end-to-end natural-language olympiad systems.
+  zh-CN: 该结果把形式证明搜索与一个公众熟知的外部竞赛基准连接到奖牌水平，并成为后续端到端自然语言奥赛系统的重要参照点。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: AlphaProof searched for Lean proofs using reinforcement learning and test-time adaptation; AlphaGeometry 2 generated and checked geometry proofs in its specialized system.
+    zh-CN: AlphaProof 通过强化学习与测试时适应搜索 Lean 证明；AlphaGeometry 2 在其专用系统中生成并检查几何证明。
+
+human_contribution:
+  description:
+    en: Experts manually translated the contest problems into formal or specialized representations, the research teams designed and trained the systems, and mathematicians graded the resulting solutions under IMO scoring rules.
+    zh-CN: 专家将竞赛题人工翻译为形式化或专用表示，研究团队设计并训练系统，数学家按 IMO 评分规则评阅最终解答。
+
+systems: [alphaproof, alphageometry-2]
+organizations: [google-deepmind, international-mathematical-olympiad]
+people: [thomas-hubert, rishi-mehta, laurent-sartran, thang-luong]
+problems: [international-mathematical-olympiad-2024]
+methods: [reinforcement-learning, lean, formal-theorem-proving, neuro-symbolic-reasoning]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+    - date: "2024-07-25"
+      status: claimed
+      evidence_level: E1
+      note:
+        en: Google DeepMind published the competition result and described external scoring by mathematicians.
+        zh-CN: Google DeepMind 公布竞赛结果，并说明由数学家按竞赛规则进行外部评分。
+    - date: "2025-11-12"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: The AlphaProof methodology and IMO 2024 result were published in a peer-reviewed Nature article.
+        zh-CN: AlphaProof 方法与 IMO 2024 结果在经同行评审的 Nature 论文中发表。
+
+sources:
+  - id: deepmind-imo-2024
+    tier: S2
+    type: official_announcement
+    title: AI achieves silver-medal standard solving International Mathematical Olympiad problems
+    url: https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/
+    primary: true
+    published_date: "2024-07-25"
+    accessed_at: "2026-09-10"
+  - id: nature-alphaproof-2025
+    tier: S1
+    type: paper
+    title: Olympiad-level formal mathematical reasoning with reinforcement learning
+    url: https://www.nature.com/articles/s41586-025-09833-y
+    primary: true
+    published_date: "2025-11-12"
+    accessed_at: "2026-09-10"
+
+artifacts: []
+
+relationships:
+  predecessors: [evt-2024-alphageometry]
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [imo, olympiad, lean, reinforcement-learning, formal-proof, geometry]
+
+editorial:
+  created_at: "2026-09-10"
+  last_reviewed: "2026-09-10"
+  reviewers: [ai-draft-pending-human-editorial-review]
+
+corrections: []

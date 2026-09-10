@@ -1,0 +1,17 @@
+# AI4Math Chronicle
+
+AI4Math Chronicle is a timeline-first, evidence-backed archive of major milestones in AI for Mathematics.
+
+Canonical human-readable timeline:
+- https://charlie-wang-03.github.io/ai4math-chronicle/en/
+- https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/
+
+Machine-readable data:
+- https://charlie-wang-03.github.io/ai4math-chronicle/data/events.json
+- https://charlie-wang-03.github.io/ai4math-chronicle/data/events.ndjson
+- https://charlie-wang-03.github.io/ai4math-chronicle/data/schema/event.schema.json
+- https://charlie-wang-03.github.io/ai4math-chronicle/feed.xml
+- https://charlie-wang-03.github.io/ai4math-chronicle/sitemap.xml
+
+Methodology:
+- https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/

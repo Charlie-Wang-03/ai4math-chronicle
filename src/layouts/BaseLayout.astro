@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import { absolute, href, localePath, otherLocale } from '../lib/site';
+import type { Locale } from '../lib/types';
+
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  canonicalPath: string;
+  alternatePath?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+const { locale, title, description, canonicalPath, alternatePath, jsonLd } = Astro.props;
+const other = otherLocale(locale);
+const labels = locale === 'zh-CN'
+  ? { timeline: '时间线', explore: '探索', methodology: '方法论', data: '数据', github: 'GitHub', switch: 'English' }
+  : { timeline: 'Timeline', explore: 'Explore', methodology: 'Methodology', data: 'Data', github: 'GitHub', switch: '中文' };
+const alternate = alternatePath ?? localePath(other);
+---
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={absolute(canonicalPath)} />
+    <link rel="alternate" hreflang={other} href={absolute(alternate)} />
+    <link rel="alternate" hreflang="x-default" href={absolute(localePath('en'))} />
+    <link rel="alternate" type="application/rss+xml" title="AI4Math Chronicle RSS" href={absolute('feed.xml')} />
+    <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={absolute(canonicalPath)} />
+    <meta name="twitter:card" content="summary" />
+    <title>{title}</title>
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+  </head>
+  <body>
+    <header class="site-header" data-pagefind-ignore>
+      <div class="site-shell header-inner">
+        <a class="brand" href={href(localePath(locale))}>AI4Math Chronicle <span aria-hidden="true">/</span> AI4Math 大事记</a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href={href(localePath(locale))}>{labels.timeline}</a>
+          <a href={href(localePath(locale, 'explore'))}>{labels.explore}</a>
+          <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
+          <a href={href(localePath(locale, 'data'))}>{labels.data}</a>
+          <a href="https://github.com/Charlie-Wang-03/ai4math-chronicle" rel="noreferrer">{labels.github}</a>
+          <a class="lang-switch" href={href(alternate)} hreflang={other}>{labels.switch}</a>
+        </nav>
+      </div>
+    </header>
+    <main class="site-shell" data-pagefind-body>
+      <slot />
+    </main>
+    <footer class="site-footer" data-pagefind-ignore>
+      <div class="site-shell">Timeline-first, evidence-backed. Canonical records are maintained in YAML and published as static HTML + machine-readable data.</div>
+    </footer>
+  </body>
+</html>
