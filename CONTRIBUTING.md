@@ -4,7 +4,7 @@
 
 AI4Math Chronicle welcomes focused contributions that improve the historical record: new milestone proposals, factual corrections, stronger evidence, translation fixes, verification updates, and carefully scoped editorial changes.
 
-Implementation and build documentation is intentionally maintained separately. For code changes, use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md).
+Implementation and build documentation is intentionally maintained separately. For code changes, use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md). Long-term review cadence, dependency maintenance, and release snapshot policy are defined in the [Maintenance Policy](./docs/maintenance.md).
 
 ## Choose the right contribution path
 

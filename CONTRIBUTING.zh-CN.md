@@ -4,7 +4,7 @@
 
 AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：新增里程碑建议、事实纠错、证据升级、翻译修正、验证状态更新，以及范围清晰的编辑性修改。
 
-代码实现与构建文档另行维护。代码类贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。
+代码实现与构建文档另行维护。代码类贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。长期复核节奏、依赖维护与版本快照策略见 [长期维护政策](./docs/maintenance.zh-CN.md)。
 
 ## 选择合适的贡献方式
 

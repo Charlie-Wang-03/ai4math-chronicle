@@ -10,6 +10,7 @@ AI4Math Chronicle is a timeline-first, evidence-backed archive of major mileston
 
 - Website / build work: [`docs/development.md`](docs/development.md) and [`docs/architecture.md`](docs/architecture.md)
 - Event data / classification / verification: [`docs/editorial-methodology.md`](docs/editorial-methodology.md)
+- Long-term cadence / dependency maintenance / release snapshots: [`docs/maintenance.md`](docs/maintenance.md)
 - External contributions: [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ## Repository invariants
@@ -51,6 +52,7 @@ Do not treat a visually plausible page or an agent-generated record as verified 
 - Do not commit credentials, secrets, machine-specific private paths, or private source material.
 - Do not force-push shared branches, rewrite published history, delete branches with active work, change repository visibility, or perform other destructive / high-blast-radius operations without explicit human authorization.
 - Do not merge release work to `main` merely because CI is green when a human editorial or launch gate remains open.
+- Do not move or rewrite published tags or GitHub Releases; treat them as historical snapshots.
 
 ## Definition of done
 
