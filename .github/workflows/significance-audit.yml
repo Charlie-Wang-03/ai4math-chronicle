@@ -1,0 +1,33 @@
+name: Significance audit
+
+on:
+  push:
+    branches:
+      - release/v0.1-public-readiness
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Report H1 H2 H3 corpus
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          groups = {'H1': [], 'H2': [], 'H3': []}
+          for p in sorted(Path('data/events').glob('*.yaml')):
+              text = p.read_text(encoding='utf-8')
+              m = re.search(r'(?m)^significance:\n  tier: (H[123])$', text)
+              if not m:
+                  raise SystemExit(f'Missing significance tier: {p}')
+              groups[m.group(1)].append(p.name)
+          for tier in ('H1','H2','H3'):
+              print(f'{tier}: {len(groups[tier])}')
+              for name in groups[tier]:
+                  print(f'  {name}')
+          print('TOTAL:', sum(map(len, groups.values())))
+          PY
