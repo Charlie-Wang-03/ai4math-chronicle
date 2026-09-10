@@ -12,6 +12,7 @@ const h2Count = events.filter((event) => event.significance.tier === 'H2').lengt
 const h3Count = events.filter((event) => event.significance.tier === 'H3').length;
 const eventYears = events.map((event) => event.dates.event.slice(0, 4)).sort();
 const yearRange = `${eventYears.at(0)}–${eventYears.at(-1)}`;
+const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
 const copy = locale === 'zh-CN'
   ? {
       title: 'AI4Math 大事记 — AI for Mathematics 重大进展时间线',
@@ -26,6 +27,26 @@ const copy = locale === 'zh-CN'
       explore: '探索全部事件',
       methodology: '阅读方法论',
       data: '机器可读数据',
+      trustEvidence: '证据链',
+      trustEvidenceText: '每条已发布事件至少包含一个权威 S1 或 S2 来源。',
+      trustStatus: '状态透明',
+      trustStatusText: '历史重要性、独立佐证与形式化保障分别记录。',
+      trustCanonical: '规范记录',
+      trustCanonicalText: '同一事件记录驱动网页、搜索、订阅与数据导出。',
+      trustOpen: '开放可修正',
+      trustOpenText: '双语、可引用、GitHub-native，并保留结构化纠错入口。',
+      useEyebrow: '使用与共建',
+      useHeading: '研究、复用或改进这份历史记录',
+      useNote: 'Chronicle 既是阅读入口，也是面向研究者、AI 工具与开源协作者的公共数据基础。',
+      readerTitle: '读者与研究者',
+      readerText: '按主题和年份定位关键事件，并继续追踪到事件级证据与主要来源。',
+      readerLink: '探索全部事件 →',
+      aiTitle: 'AI 与数据工作流',
+      aiText: '使用 JSON、NDJSON、Schema、RSS、Sitemap 与 llms.txt 接入检索或研究流程。',
+      aiLink: '打开数据接口 →',
+      contributorTitle: '贡献者与开发者',
+      contributorText: '补充遗漏事件、修正事实与来源、改进翻译、界面、可访问性或工程实现。',
+      contributorLink: '查看贡献指南 →',
     }
   : {
       title: 'AI4Math Chronicle — Major Milestones in AI for Mathematics',
@@ -40,8 +61,38 @@ const copy = locale === 'zh-CN'
       explore: 'Explore all events',
       methodology: 'Read methodology',
       data: 'Machine-readable data',
+      trustEvidence: 'Evidence trail',
+      trustEvidenceText: 'Every published event includes at least one authoritative S1 or S2 source.',
+      trustStatus: 'Transparent status',
+      trustStatusText: 'Historical significance, independent corroboration, and formal assurance are tracked separately.',
+      trustCanonical: 'Canonical records',
+      trustCanonicalText: 'One event record drives pages, search, feeds, and machine-readable exports.',
+      trustOpen: 'Open and correctable',
+      trustOpenText: 'Bilingual, citable, GitHub-native, with structured correction paths.',
+      useEyebrow: 'Use and contribute',
+      useHeading: 'Research, reuse, or improve the record',
+      useNote: 'The Chronicle is both a reading interface and public data infrastructure for researchers, AI workflows, and open-source collaborators.',
+      readerTitle: 'Readers & researchers',
+      readerText: 'Locate consequential events by topic and year, then follow the event-level evidence trail to primary sources.',
+      readerLink: 'Explore all events →',
+      aiTitle: 'AI & data workflows',
+      aiText: 'Use JSON, NDJSON, Schema, RSS, Sitemap, and llms.txt in retrieval and research workflows.',
+      aiLink: 'Open data interfaces →',
+      contributorTitle: 'Contributors & developers',
+      contributorText: 'Propose missing events, correct facts or sources, and improve translation, UI, accessibility, or implementation.',
+      contributorLink: 'Read the contributing guide →',
     };
-const websiteJsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', name: 'AI4Math Chronicle', alternateName: 'AI4Math 大事记', url: absolute(localePath(locale)), description: copy.desc };
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'AI4Math Chronicle',
+  alternateName: 'AI4Math 大事记',
+  url: absolute(localePath(locale)),
+  description: copy.desc,
+  isAccessibleForFree: true,
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+  sameAs: [repositoryUrl],
+};
 ---
 <BaseLayout locale={locale} title={copy.title} description={copy.desc} canonicalPath={localePath(locale)} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en')} jsonLd={websiteJsonLd}>
   <header class="hero hero-grid">
@@ -70,6 +121,26 @@ const websiteJsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', na
       </div>
     </dl>
   </header>
+
+  <section class="credibility-strip" aria-label={locale === 'zh-CN' ? 'Chronicle 核心原则' : 'Chronicle core principles'}>
+    <div class="credibility-item">
+      <strong>{copy.trustEvidence}</strong>
+      <span>{copy.trustEvidenceText}</span>
+    </div>
+    <div class="credibility-item">
+      <strong>{copy.trustStatus}</strong>
+      <span>{copy.trustStatusText}</span>
+    </div>
+    <div class="credibility-item">
+      <strong>{copy.trustCanonical}</strong>
+      <span>{copy.trustCanonicalText}</span>
+    </div>
+    <div class="credibility-item">
+      <strong>{copy.trustOpen}</strong>
+      <span>{copy.trustOpenText}</span>
+    </div>
+  </section>
+
   <SearchBox locale={locale} />
   <div class="section-heading">
     <div>
@@ -79,4 +150,31 @@ const websiteJsonLd = { '@context': 'https://schema.org', '@type': 'WebSite', na
     <p class="section-note">{locale === 'zh-CN' ? '先看全局，再筛选，最后进入事件证据详情。' : 'Start with the overview, then filter, then open event-level evidence.'}</p>
   </div>
   <EventCollection events={events} locale={locale} mode="timeline" />
+
+  <section class="participation-section" aria-labelledby="use-chronicle-heading">
+    <div class="participation-header">
+      <div>
+        <p class="eyebrow">{copy.useEyebrow}</p>
+        <h2 id="use-chronicle-heading">{copy.useHeading}</h2>
+      </div>
+      <p>{copy.useNote}</p>
+    </div>
+    <div class="participation-grid">
+      <article class="participation-card">
+        <h3>{copy.readerTitle}</h3>
+        <p>{copy.readerText}</p>
+        <a href={href(localePath(locale, 'explore'))}>{copy.readerLink}</a>
+      </article>
+      <article class="participation-card">
+        <h3>{copy.aiTitle}</h3>
+        <p>{copy.aiText}</p>
+        <a href={href(localePath(locale, 'data'))}>{copy.aiLink}</a>
+      </article>
+      <article class="participation-card">
+        <h3>{copy.contributorTitle}</h3>
+        <p>{copy.contributorText}</p>
+        <a href={`${repositoryUrl}/blob/main/CONTRIBUTING.md`} rel="noreferrer">{copy.contributorLink}</a>
+      </article>
+    </div>
+  </section>
 </BaseLayout>
