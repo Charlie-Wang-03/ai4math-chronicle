@@ -11,6 +11,8 @@
 - [ ] S1/S2 evidence is linked.
 - [ ] AI and human contributions are explicit.
 - [ ] Verification history / corrections are updated when applicable.
+- [ ] Any `independently_verified` status is supported by reliable independent sources corroborating the core event description.
+- [ ] Verification wording does not imply that AI4Math Chronicle adjudicates ultimate mathematical correctness.
 
 ## Implementation changes
 
@@ -29,7 +31,7 @@
 ## Human editorial gates
 
 - [ ] This PR does not finalize `H1` without direct human review or explicit delegated classification authority.
-- [ ] This PR does not finalize `independently_verified` or establish a new mathematical fact without human editorial review.
+- [ ] High-risk wording such as `first`, `solves`, `proves`, or `disproves` is source-attributed unless the historical fact itself is independently established.
 
 ## Licensing
 
