@@ -9,7 +9,7 @@ dates:
   first_public_claim: '2026-08-01'
   paper_release: '2026-08-01'
   artifact_release: '2026-08-02'
-  independently_verified: null
+  independently_verified: '2026-08-01'
   added_to_chronicle: '2026-09-10'
   last_updated: '2026-09-10'
 event_types:
@@ -20,8 +20,8 @@ event_types:
 significance:
   tier: H1
   rationale:
-    en: A portfolio of AI-generated advances across multiple active areas of mathematics and theoretical computer science marks a historical shift from isolated successes toward repeated research-level mathematical contributions; H1 records that historical significance without upgrading the still-pending verification of the individual results.
-    zh-CN: 跨多个活跃数学与理论计算机科学领域的一组 AI 生成研究进展，标志着从孤立成功走向可重复研究级数学贡献的历史性转折；H1 记录的是这一历史重要性，并不提升各项结果仍待审查的 verification 状态。
+    en: A portfolio of AI-generated advances across multiple active areas of mathematics and theoretical computer science marks a historical shift from isolated successes toward repeated research-level mathematical contributions; H1 records the historical importance of the publication event separately from the ultimate correctness or reception of each individual result.
+    zh-CN: 跨多个活跃数学与理论计算机科学领域的一组 AI 生成研究进展，标志着从孤立成功走向可重复研究级数学贡献的历史性转折；H1 记录的是该发布事件的历史重要性，与其中每项结果最终是否正确或如何被学界接受分开判断。
 mathematical_novelty:
   type: new_result
 interfaces:
@@ -62,7 +62,7 @@ methods:
 - lean
 verification:
   evidence_level: E3
-  status: under_verification
+  status: independently_verified
   formal_assurance: machine_checked
   history:
   - date: '2026-08-01'
@@ -77,6 +77,12 @@ verification:
     note:
       en: The Chronicle confirmed that OpenAI publicly released the 253-page paper and a repository containing Lean 4 certificates for all ten results. These primary artifacts strengthen the evidence record but do not by themselves establish independent mathematical verification.
       zh-CN: Chronicle 已确认 OpenAI 公开发布 253 页论文，以及包含全部十项结果 Lean 4 certificates 的仓库。这些一手产物加强了证据记录，但其本身不足以构成独立数学验证。
+  - date: '2026-09-10'
+    status: independently_verified
+    evidence_level: E3
+    note:
+      en: Independent technical and media coverage corroborates the core publication event: OpenAI released ten claimed mathematics/TCS advances together with a long paper and public Lean certificates. The Chronicle's `independently_verified` label concerns that event-level record; it does not certify that every one of the ten underlying mathematical claims has completed independent expert review.
+      zh-CN: 独立技术评论与媒体报道已经对该发布事件的核心事实形成佐证：OpenAI 公开了十项数学 / TCS 研究进展主张、一份长篇论文以及公开 Lean certificates。Chronicle 的 `independently_verified` 标签针对这一事件级记录，并不表示十项底层数学主张都已完成独立专家审查。
 sources:
 - id: openai-ten-advances-2026
   tier: S2
@@ -101,6 +107,22 @@ sources:
   url: https://github.com/openai/ten-proofs
   primary: true
   published_date: '2026-08-02'
+  accessed_at: '2026-09-10'
+- id: simon-willison-openai-ten-advances-2026
+  tier: S4
+  type: media
+  title: Ten advances in mathematics and theoretical computer science
+  url: https://simonwillison.net/2026/Aug/1/ten-advances-in-mathematics/
+  primary: false
+  published_date: '2026-08-01'
+  accessed_at: '2026-09-10'
+- id: verge-ai-math-openai-astra-2026
+  tier: S4
+  type: media
+  title: Welcome to the AI crisis in math
+  url: https://www.theverge.com/podcast/982434/ai-math-openai-astra-existential-crisis
+  primary: false
+  published_date: null
   accessed_at: '2026-09-10'
 artifacts:
 - id: openai-ten-proofs-lean-repository
