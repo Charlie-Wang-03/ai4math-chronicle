@@ -36,7 +36,7 @@ const alternate = alternatePath ?? localePath(other);
     <meta property="og:url" content={absolute(canonicalPath)} />
     <meta name="twitter:card" content="summary" />
     <title>{title}</title>
-    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+    {jsonLd && <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
     <header class="site-header" data-pagefind-ignore>
