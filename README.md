@@ -16,7 +16,7 @@ It is built for readers who want to understand how AI4Math has evolved, identify
 
 ## Start exploring
 
-- **[Timeline](https://charlie-wang-03.github.io/ai4math-chronicle/en/)** — browse the full chronology from early neural theorem proving to research-level mathematical discovery.
+- **[Timeline](https://charlie-wang-03.github.io/ai4math-chronicle/en/)** — browse the chronology from early neural theorem proving to research-level mathematical discovery.
 - **[Explore events](https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/)** — compare and filter events by year, event type, significance, verification status, and system.
 - **[Methodology](https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/)** — understand inclusion, significance, evidence, verification, and correction policies.
 - **[Data](https://charlie-wang-03.github.io/ai4math-chronicle/en/data/)** — access machine-readable JSON, NDJSON, schema, RSS, and sitemap outputs.
@@ -31,7 +31,7 @@ The Chronicle is intended to help an AI locate and structure evidence, not to re
 
 ## What the Chronicle records
 
-The v0.1 corpus contains **51 canonical events** spanning theorem proving, formalization, mathematical discovery, competition results, math-specific systems, benchmarks, datasets, and infrastructure.
+The Chronicle maintains a **growing canonical corpus** spanning theorem proving, formalization, mathematical discovery, competition results, math-specific systems, benchmarks, datasets, and infrastructure.
 
 Each event is designed to answer:
 
@@ -42,17 +42,17 @@ Each event is designed to answer:
 5. **How strongly is the event and public claim corroborated?**
 6. **Where is the primary evidence?**
 
-The goal is not to reproduce a paper feed or model leaderboard. The Chronicle selects events that help explain the historical development of AI for Mathematics.
+The goal is not to reproduce a paper feed or model leaderboard. The Chronicle selects events that help explain the historical development of AI for Mathematics, and the corpus evolves as new milestones emerge and older records gain stronger evidence, corrections, or historical context.
 
 ## Significance levels
 
-The current corpus uses three editorial levels:
+The Chronicle uses three editorial levels:
 
 - **H1 — Historical Milestone:** a durable turning point in AI for Mathematics. Examples include major new mathematical results, landmark formalization achievements, and competition or research breakthroughs that materially change the historical picture.
 - **H2 — Field Milestone:** an important advance in a mathematical AI subfield, system, benchmark, dataset, proof method, or infrastructure direction.
 - **H3 — Context Event:** useful context that is not itself a substantive AI4Math milestone, such as a general-purpose reasoning model whose mathematical results mainly serve as capability evidence.
 
-The current distribution is **11 H1 / 38 H2 / 2 H3**. Significance and verification are intentionally separate: an H1 event can remain under external scrutiny.
+Significance and verification are intentionally separate: an H1 event can remain under external scrutiny or active dispute.
 
 ## Evidence and verification
 
@@ -107,6 +107,8 @@ The repository uses split licensing:
 
 Third-party papers, announcements, repositories, media, images, quotations, and external artifacts retain their original rights and are not relicensed merely because the Chronicle links to or cites them.
 
-## Release status
+## Releases and live updates
 
-**AI4Math Chronicle v0.1 is public.** The website is deployed on GitHub Pages, the repository accepts issues and pull requests, and future changes remain subject to CI plus the documented editorial policy.
+The public website follows the continuously maintained `main` branch. **GitHub Releases provide citable snapshots** of significant project states, while the live Chronicle continues to evolve between releases as new events, evidence, corrections, and editorial updates are merged.
+
+See the repository's [Releases](https://github.com/Charlie-Wang-03/ai4math-chronicle/releases) for frozen snapshots.
