@@ -28,6 +28,8 @@ jobs:
           package-manager-cache: false
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
+      - name: Test data pipeline
+        run: npm test
       - name: Build
         run: npm run build
       - name: Configure Pages
