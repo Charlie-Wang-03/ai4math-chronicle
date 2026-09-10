@@ -1,7 +1,6 @@
 name: "Event proposal / 事件收录建议"
 description: "Propose a new AI4Math milestone with evidence / 提议收录一条有证据支持的 AI4Math 里程碑"
 title: "[Event] "
-labels: ["content", "triage"]
 body:
   - type: markdown
     attributes:
