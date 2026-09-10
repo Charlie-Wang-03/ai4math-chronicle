@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2024-putnambench
+slug: putnambench-formal-undergraduate-competition
+title:
+  en: PutnamBench raises formal theorem-proving evaluation to Putnam-level mathematics
+  zh-CN: PutnamBench 将形式定理证明评测提升到 Putnam 级本科数学
+dates:
+  event: '2024-07-15'
+  first_public_claim: '2024-07-15'
+  paper_release: '2024-07-15'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- dataset
+- formalization
+significance:
+  tier: H2
+  rationale:
+    en: PutnamBench created a difficult multi-system benchmark from the premier North American undergraduate mathematics competition and exposed a large capability gap.
+    zh-CN: PutnamBench 基于北美顶尖本科数学竞赛构建高难度多形式系统基准，并揭示当时证明器与高水平本科数学之间的巨大能力差距。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+claim:
+  en: PutnamBench released 1,692 hand-constructed formalizations of 640 Putnam theorems in Lean 4 and Isabelle, with a substantial Coq subset.
+  zh-CN: PutnamBench 发布 640 道 Putnam 定理的 1,692 个手工形式化版本，覆盖 Lean 4、Isabelle，并包含相当规模的 Coq 子集。
+summary:
+  en: Initial neural and symbolic provers solved only a handful of benchmark problems, making the collection a high-difficulty target for formal reasoning.
+  zh-CN: 初始神经与符号证明器只能解决极少数题目，使该集合成为高难度形式推理目标。
+why_it_matters:
+  en: It shifted formal theorem-prover evaluation from high-school Olympiad problems toward broad advanced undergraduate mathematics.
+  zh-CN: 它把形式定理证明评测从高中奥赛进一步推进到覆盖广泛的高阶本科数学。
+ai_role:
+  level: computation_only
+  description:
+    en: Automated theorem provers are evaluated on the formalized Putnam problems.
+    zh-CN: 自动定理证明器在形式化 Putnam 问题上接受评测。
+human_contribution:
+  description:
+    en: Researchers hand-formalized competition problems across multiple proof assistants and built the benchmark.
+    zh-CN: 研究者在多个证明助手中手工形式化竞赛题并构建基准。
+systems:
+- putnambench
+- lean
+- isabelle
+- coq
+organizations:
+- university-of-texas-at-austin
+people: []
+problems:
+- putnam-competition
+methods:
+- benchmarking
+- formalization
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-07-15'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-putnambench-2407.11214
+  tier: S1
+  type: paper
+  title: 'PutnamBench: Evaluating Neural Theorem-Provers on the Putnam Mathematical Competition'
+  url: https://arxiv.org/abs/2407.11214
+  primary: true
+  published_date: '2024-07-15'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2023-proofnet
+  - evt-2021-minif2f
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- putnam
+- benchmark
+- lean
+- formal-proof
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - ai-draft-pending-human-editorial-review
+corrections: []
