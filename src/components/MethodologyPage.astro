@@ -18,9 +18,9 @@ const desc = zh ? 'AI4Math 大事记的收录、重要性、来源、验证与�
 
     <h2>{zh ? '重要性' : 'Significance'}</h2>
     <table><tbody>
-      <tr><th>H1</th><td>{zh ? 'Historical Milestone：对 AI4Math 历史具有长期意义；需要人工编辑最终确认。' : 'Historical Milestone: durable historical significance; final designation requires human editorial review.'}</td></tr>
-      <tr><th>H2</th><td>{zh ? 'Field Milestone：对重要子领域或技术路线具有明显意义。' : 'Field Milestone: clear significance to an important subfield or technical direction.'}</td></tr>
-      <tr><th>H3</th><td>{zh ? 'Context Event：主要用于建立历史上下文。' : 'Context Event: primarily establishes historical context.'}</td></tr>
+      <tr><th>H1</th><td>{zh ? 'Historical Milestone：AI4Math 历史中的长期转折点，尤其包括 AI 对重大数学新结果、新证明、新反例、重大形式化或可重复研究级进展的实质贡献；必须人工确认。H1 表示历史重要性，不等同于已经独立验证。' : 'Historical Milestone: a durable turning point in AI for Mathematics, especially a major new mathematical result, proof, disproof, formalization milestone, or repeated research-level advance substantially produced by AI. Final designation requires human review. H1 measures historical significance, not verification certainty.'}</td></tr>
+      <tr><th>H2</th><td>{zh ? 'Field Milestone：对 AI4Math 重要子领域或技术路线具有明显意义，例如数学专项系统、benchmark、dataset、proof search、formalization infrastructure 与重要竞赛结果。' : 'Field Milestone: clear significance to an important AI4Math subfield or technical direction, such as math-specific systems, benchmarks, datasets, proof search, formalization infrastructure, or important competition results.'}</td></tr>
+      <tr><th>H3</th><td>{zh ? 'Context Event：主要用于建立历史上下文。若一个通用模型发布只是用数学作为能力评测，而没有贡献新的数学结果或数学专项系统，通常归入 H3。' : 'Context Event: primarily establishes historical context. General-purpose model releases normally belong here when mathematics is mainly a capability benchmark rather than the release contributing new mathematics or a math-specific system.'}</td></tr>
     </tbody></table>
 
     <h2>{zh ? '来源层级' : 'Source hierarchy'}</h2>
@@ -33,7 +33,7 @@ const desc = zh ? 'AI4Math 大事记的收录、重要性、来源、验证与�
     </tbody></table>
 
     <h2>{zh ? '验证模型' : 'Verification model'}</h2>
-    <p>{zh ? 'Chronicle 分别记录 Evidence Level（E0–E4）、Verification Status 与 Formal Assurance，不把可信度压缩成一个公开分数。机器检查证明、忠实形式化与新的数学发现是三个不同概念。' : 'The Chronicle records Evidence Level (E0–E4), Verification Status, and Formal Assurance separately rather than compressing trust into a public score. A machine-checked proof, a faithful formalization, and a new mathematical discovery are distinct claims.'}</p>
+    <p>{zh ? 'Chronicle 分别记录 Evidence Level（E0–E4）、Verification Status、Formal Assurance 与 Significance，不把可信度压缩成一个公开分数。机器检查证明、忠实形式化、新的数学发现与历史重要性是不同维度；一个 H1 事件仍然可以处于 under_verification。' : 'The Chronicle records Evidence Level (E0–E4), Verification Status, Formal Assurance, and Significance separately rather than compressing trust into a public score. A machine-checked proof, a faithful formalization, a new mathematical discovery, and historical importance are distinct dimensions; an H1 event may still be under_verification.'}</p>
     <div class="callout">{zh ? 'AI 可以提出分类与翻译草案，但不得未经人工审核最终宣布 H1、independently_verified 或新的数学事实。' : 'AI may draft classifications and translations, but may not unilaterally finalize H1, independently_verified, or a new mathematical fact.'}</div>
 
     <h2>{zh ? '更正政策' : 'Correction policy'}</h2>
