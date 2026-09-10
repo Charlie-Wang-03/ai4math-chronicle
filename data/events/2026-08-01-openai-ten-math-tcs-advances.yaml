@@ -7,8 +7,8 @@ title:
 dates:
   event: '2026-08-01'
   first_public_claim: '2026-08-01'
-  paper_release: null
-  artifact_release: null
+  paper_release: '2026-08-01'
+  artifact_release: '2026-08-02'
   independently_verified: null
   added_to_chronicle: '2026-09-10'
   last_updated: '2026-09-10'
@@ -61,7 +61,7 @@ methods:
 - formalization
 - lean
 verification:
-  evidence_level: E2
+  evidence_level: E3
   status: under_verification
   formal_assurance: machine_checked
   history:
@@ -71,6 +71,12 @@ verification:
     note:
       en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
       zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+  - date: '2026-09-10'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: The Chronicle confirmed that OpenAI publicly released the 253-page paper and a repository containing Lean 4 certificates for all ten results. These primary artifacts strengthen the evidence record but do not by themselves establish independent mathematical verification.
+      zh-CN: Chronicle 已确认 OpenAI 公开发布 253 页论文，以及包含全部十项结果 Lean 4 certificates 的仓库。这些一手产物加强了证据记录，但其本身不足以构成独立数学验证。
 sources:
 - id: openai-ten-advances-2026
   tier: S2
@@ -80,7 +86,27 @@ sources:
   primary: true
   published_date: '2026-08-01'
   accessed_at: '2026-09-10'
-artifacts: []
+- id: openai-ten-advances-paper-2026
+  tier: S1
+  type: paper
+  title: Ten Advances in Mathematics and Theoretical Computer Science
+  url: https://cdn.openai.com/pdf/ten-proofs-oai.pdf
+  primary: true
+  published_date: '2026-08-01'
+  accessed_at: '2026-09-10'
+- id: github-openai-ten-proofs
+  tier: S1
+  type: formal_artifact
+  title: OpenAI ten-proofs Lean certificates
+  url: https://github.com/openai/ten-proofs
+  primary: true
+  published_date: '2026-08-02'
+  accessed_at: '2026-09-10'
+artifacts:
+- id: openai-ten-proofs-lean-repository
+  kind: proof
+  title: Lean 4 certificates for the ten published results
+  url: https://github.com/openai/ten-proofs
 relationships:
   predecessors:
   - evt-2026-unit-distance-disproof
