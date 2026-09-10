@@ -1,0 +1,103 @@
+schema_version: 1
+id: evt-2026-claude-riemann-lower-bound
+slug: claude-riemann-zeta-lower-bound
+title:
+  en: Claude improves a longstanding lower bound related to the Riemann hypothesis
+  zh-CN: Claude 改进与黎曼猜想相关的长期下界
+dates:
+  event: '2026-08-10'
+  first_public_claim: '2026-08-10'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- discovery
+- proof
+- formalization
+- system
+significance:
+  tier: H1
+  rationale:
+    en: A concrete AI-generated improvement to a longstanding analytic-number-theory bound is a historical AI4Math milestone because it contributes new mathematics rather than merely demonstrating benchmark competence; H1 does not replace the separate verification state.
+    zh-CN: AI 对解析数论中长期下界给出具体改进，属于历史级 AI4Math 里程碑，因为它贡献的是新的数学结果，而非仅展示基准能力；H1 不替代独立的 verification 状态。
+mathematical_novelty:
+  type: new_result
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+claim:
+  en: Anthropic reported that an unreleased Claude research model raised the known lower bound for the fraction of Riemann-zeta zeros on the critical line from 41.6% to 67.2%.
+  zh-CN: Anthropic 报告一个未发布 Claude 研究模型把已知的“位于临界线上的黎曼 zeta 零点比例下界”从 41.6% 提升到 67.2%。
+summary:
+  en: Claude coordinated dozens of subagents, searched literature and numerical evidence, and produced a paper; Anthropic mathematicians reviewed the result and a Lean formalization passed comparator.
+  zh-CN: Claude 协调数十个子 Agent、检索文献并进行数值检查，随后生成论文；Anthropic 数学家审核结果，Lean 形式化通过 comparator。
+why_it_matters:
+  en: It is a notable example of autonomous mathematical exploration yielding an unexpected publishable result while failing at the original, much harder Riemann-hypothesis objective.
+  zh-CN: 这是自主数学探索产生意外可发表结果的代表案例，同时也清楚显示模型并未解决最初更困难的黎曼猜想。
+ai_role:
+  level: autonomous_primary
+  description:
+    en: Claude generated and explored thousands of ideas with subagents, found the core argument and produced a formalization workflow.
+    zh-CN: Claude 通过多个子 Agent 生成并探索大量想法，找到核心论证并参与形式化流程。
+human_contribution:
+  description:
+    en: Anthropic mathematicians reviewed the result, external experts examined it, and staff assisted formalization and publication.
+    zh-CN: Anthropic 数学家审核结果，外部专家进行审阅，工作人员协助形式化与发布。
+systems:
+- claude-research
+- lean
+organizations:
+- anthropic
+people: []
+problems:
+- riemann-hypothesis-related-zero-density
+methods:
+- multi-agent
+- literature-search
+- analytic-number-theory
+- formalization
+verification:
+  evidence_level: E3
+  status: partially_verified
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-08-10'
+    status: partially_verified
+    evidence_level: E3
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: anthropic-riemann-zeta-2026
+  tier: S2
+  type: official_announcement
+  title: Learning more about Claude's mathematical capabilities
+  url: https://www.anthropic.com/research/riemann-zeta
+  primary: true
+  published_date: '2026-08-10'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2026-first-proof-openai
+  - evt-2026-frontiermath-open-problems
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- riemann-hypothesis
+- number-theory
+- claude
+- multi-agent
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

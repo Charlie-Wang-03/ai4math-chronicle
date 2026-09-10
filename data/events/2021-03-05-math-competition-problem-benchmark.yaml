@@ -1,0 +1,94 @@
+schema_version: 1
+id: evt-2021-math-benchmark
+slug: math-competition-problem-benchmark
+title:
+  en: MATH makes competition mathematics a standard language-model benchmark
+  zh-CN: MATH 将竞赛数学确立为语言模型标准基准之一
+dates:
+  event: '2021-03-05'
+  first_public_claim: '2021-03-05'
+  paper_release: '2021-03-05'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- dataset
+significance:
+  tier: H2
+  rationale:
+    en: MATH became a durable benchmark for measuring multi-step competition-level mathematical reasoning and later exposed saturation as reasoning models improved.
+    zh-CN: MATH 成为衡量多步竞赛级数学推理的长期基准，并在后续推理模型快速提升后反过来显示出基准饱和问题。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- symbolic
+claim:
+  en: The MATH dataset introduced 12,500 challenging competition mathematics problems with step-by-step solutions for training and evaluation.
+  zh-CN: MATH 数据集引入了 12,500 道具有逐步解答的高难度竞赛数学问题，用于训练与评测。
+summary:
+  en: The benchmark covered algebra, geometry, number theory, probability and other competition topics and provided full solution derivations.
+  zh-CN: 该基准覆盖代数、几何、数论、概率等竞赛数学主题，并提供完整解题过程。
+why_it_matters:
+  en: For several years, progress on MATH served as one of the clearest quantitative signals of LLM mathematical reasoning.
+  zh-CN: 此后数年，MATH 上的进展成为观察 LLM 数学推理能力变化的主要量化信号之一。
+ai_role:
+  level: computation_only
+  description:
+    en: AI systems are evaluated and trained on the benchmark; the benchmark itself is a human-curated research artifact.
+    zh-CN: AI 系统在该基准上训练与评测；基准本身由研究者构建。
+human_contribution:
+  description:
+    en: Researchers collected problems and solutions, designed the dataset and evaluated scaling behavior.
+    zh-CN: 研究者收集题目与解答、设计数据集并研究模型扩展规律。
+systems:
+- math-benchmark
+organizations:
+- uc-berkeley
+people: []
+problems:
+- competition-mathematics
+methods:
+- benchmarking
+- dataset-curation
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2021-03-05'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-math-2103.03874
+  tier: S1
+  type: paper
+  title: Measuring Mathematical Problem Solving With the MATH Dataset
+  url: https://arxiv.org/abs/2103.03874
+  primary: true
+  published_date: '2021-03-05'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- benchmark
+- competition-math
+- language-model
+- reasoning
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

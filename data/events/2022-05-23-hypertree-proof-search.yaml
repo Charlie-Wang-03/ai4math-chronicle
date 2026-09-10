@@ -1,0 +1,98 @@
+schema_version: 1
+id: evt-2022-htps
+slug: hypertree-proof-search
+title:
+  en: HyperTree Proof Search introduces online self-improvement for neural theorem proving
+  zh-CN: HyperTree Proof Search 引入神经定理证明的在线自我改进
+dates:
+  event: '2022-05-23'
+  first_public_claim: '2022-05-23'
+  paper_release: '2022-05-23'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+significance:
+  tier: H2
+  rationale:
+    en: HTPS coupled AlphaZero-inspired search with online learning and substantially advanced both Metamath and Lean theorem-proving performance.
+    zh-CN: HTPS 将 AlphaZero 式搜索与在线学习结合，在 Metamath 与 Lean 定理证明上均取得显著提升。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+claim:
+  en: HTPS plus online training reached 82.6% on held-out Metamath theorems and improved miniF2F-curriculum performance to 42%.
+  zh-CN: HTPS 配合在线训练在留出 Metamath 定理上达到 82.6%，并将 miniF2F-curriculum 的证明率提升到 42%。
+summary:
+  en: The system learns from its own proof searches and uses a hyper-tree search algorithm inspired by Monte Carlo tree search and AlphaZero.
+  zh-CN: 系统从自身证明搜索中继续学习，并使用受蒙特卡洛树搜索与 AlphaZero 启发的超树搜索算法。
+why_it_matters:
+  en: It foreshadowed the verifier-guided self-improvement loops that became common in later formal reasoning systems.
+  zh-CN: 它预示了后来形式推理系统中广泛采用的“验证器反馈 + 自我改进”训练循环。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The prover searches, learns from successful and failed search trajectories, and iteratively improves its policy.
+    zh-CN: 证明器执行搜索、从成功与失败的轨迹中学习，并迭代改进策略。
+human_contribution:
+  description:
+    en: Researchers designed HTPS, training environments and benchmark protocols.
+    zh-CN: 研究者设计 HTPS、训练环境与基准协议。
+systems:
+- htps
+organizations:
+- meta-ai
+people: []
+problems:
+- metamath
+- minif2f
+methods:
+- online-training
+- tree-search
+- expert-iteration
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2022-05-23'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-htps-2205.11491
+  tier: S1
+  type: paper
+  title: HyperTree Proof Search for Neural Theorem Proving
+  url: https://arxiv.org/abs/2205.11491
+  primary: true
+  published_date: '2022-05-23'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2020-gpt-f
+  - evt-2021-minif2f
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- tree-search
+- formal-proof
+- online-learning
+- alphazero
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

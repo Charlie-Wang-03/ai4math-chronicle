@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2025-aristotle
+slug: aristotle-imo-level-formal-theorem-proving
+title:
+  en: Aristotle reports gold-equivalent formal performance on IMO 2025
+  zh-CN: Aristotle 报告在 IMO 2025 上达到形式证明金牌等效水平
+dates:
+  event: '2025-10-01'
+  first_public_claim: '2025-10-01'
+  paper_release: '2025-10-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- competition
+- system
+significance:
+  tier: H2
+  rationale:
+    en: Aristotle combined formal search, informal lemma generation and a geometry solver into an integrated system reported at IMO gold-equivalent performance.
+    zh-CN: Aristotle 将形式搜索、非形式引理生成与几何求解器整合，并报告达到 IMO 金牌等效水平。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- formal
+- hybrid
+claim:
+  en: Aristotle reported gold-medal-equivalent performance on the 2025 IMO problems using Lean proof search, informal reasoning and a dedicated geometry solver.
+  zh-CN: Aristotle 报告通过 Lean 证明搜索、非形式推理与专用几何求解器，在 IMO 2025 题目上达到金牌等效表现。
+summary:
+  en: The architecture generates and formalizes useful lemmas, searches formal proofs and handles geometry through a specialist component.
+  zh-CN: 该架构生成并形式化有用引理、搜索形式证明，并通过专用组件处理几何。
+why_it_matters:
+  en: It illustrated the emergence of integrated formal-math agents rather than single-model proof generators.
+  zh-CN: 它体现了集成式形式数学 Agent 的出现，而不只是单模型证明生成器。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The system coordinates informal reasoning, lemma formalization, proof search and geometry solving.
+    zh-CN: 系统协调非形式推理、引理形式化、证明搜索与几何求解。
+human_contribution:
+  description:
+    en: Researchers built the integrated architecture and verified formal outputs.
+    zh-CN: 研究者构建集成架构并验证形式输出。
+systems:
+- aristotle
+- lean
+organizations:
+- harmonic
+people: []
+problems:
+- imo-2025
+methods:
+- formal-proof-search
+- lemma-generation
+- geometry-solver
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2025-10-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-aristotle-2510.01346
+  tier: S1
+  type: paper
+  title: 'Aristotle: IMO-level Automated Theorem Proving'
+  url: https://arxiv.org/abs/2510.01346
+  primary: true
+  published_date: '2025-10-01'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2025-seed-prover
+  - evt-2024-alphaproof-alphageometry2-imo
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- lean
+- imo
+- agent
+- formal-proof
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

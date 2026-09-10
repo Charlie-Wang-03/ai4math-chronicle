@@ -1,0 +1,97 @@
+schema_version: 1
+id: evt-2025-gpt5-nag-open-problem
+slug: gpt5-assisted-nesterov-point-convergence
+title:
+  en: An AI-assisted proof resolves the point-convergence question for Nesterov acceleration
+  zh-CN: AI 辅助证明解决 Nesterov 加速法的点收敛问题
+dates:
+  event: '2025-10-27'
+  first_public_claim: '2025-10-27'
+  paper_release: '2025-10-27'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- discovery
+- proof
+significance:
+  tier: H2
+  rationale:
+    en: The result became a concrete case study of a mathematician using a frontier LLM to discover key ideas for a longstanding research problem while retaining human control of the final proof.
+    zh-CN: 该结果成为数学家利用前沿 LLM 为长期研究问题发现关键思路、同时由人类掌控最终证明的具体案例。
+mathematical_novelty:
+  type: new_proof
+interfaces:
+- informal
+- symbolic
+claim:
+  en: Jang and Ryu reported a proof resolving the longstanding point-convergence question for Nesterov's accelerated gradient method, with the discovery heavily assisted by ChatGPT/GPT-5.
+  zh-CN: Jang 与 Ryu 报告了 Nesterov 加速梯度法长期点收敛问题的证明，其发现过程受到 ChatGPT/GPT-5 的大量辅助。
+summary:
+  en: GPT-5 proposed multiple directions and several key structural ideas; Ryu checked, reformulated and wrote the rigorous final proof with coauthor Uijeong Jang.
+  zh-CN: GPT-5 提出多个方向和若干关键结构性想法；Ryu 负责检查与重构，并与 Uijeong Jang 写成严格的最终证明。
+why_it_matters:
+  en: It exemplified human-AI mathematical collaboration in research rather than benchmark solving or autonomous proof search.
+  zh-CN: 它展示了真实研究中的人机数学协作，而非仅仅基准求解或自主证明搜索。
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: GPT-5 generated candidate approaches and key ideas, some incorrect and some useful, that accelerated exploration.
+    zh-CN: GPT-5 生成候选路径与关键想法，其中既有错误也有有效启发，从而加速研究探索。
+human_contribution:
+  description:
+    en: Ryu and Jang validated the mathematics, developed the successful idea rigorously and authored the final paper.
+    zh-CN: Ryu 与 Jang 验证数学内容、严谨发展成功思路并撰写最终论文。
+systems:
+- gpt-5
+organizations:
+- ucla
+- openai
+people: []
+problems:
+- nesterov-accelerated-gradient-point-convergence
+methods:
+- human-ai-collaboration
+- literature-retrieval
+- proof-development
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2025-10-27'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-nag-ai-proof-2510.23513
+  tier: S1
+  type: paper
+  title: 'Point Convergence of Nesterov''s Accelerated Gradient Method: An AI-Assisted Proof'
+  url: https://arxiv.org/abs/2510.23513
+  primary: true
+  published_date: '2025-10-27'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-openai-o1
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- optimization
+- gpt-5
+- human-ai-collaboration
+- open-problem
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2022-thor
+slug: thor-language-model-hammer-integration
+title:
+  en: Thor integrates language models with automated theorem-prover hammers
+  zh-CN: Thor 将语言模型与自动定理证明器 Hammer 集成
+dates:
+  event: '2022-05-22'
+  first_public_claim: '2022-05-22'
+  paper_release: '2022-05-22'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+significance:
+  tier: H3
+  rationale:
+    en: Thor was an early explicit neuro-symbolic architecture in which language models delegated premise-selection bottlenecks to classical automated provers.
+    zh-CN: Thor 是较早明确采用神经符号分工的架构之一：语言模型把前提选择瓶颈交给传统自动定理证明器处理。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+- hybrid
+claim:
+  en: Thor increased a language model's success on the PISA dataset from 39% to 57% and matched leading miniF2F methods with less compute.
+  zh-CN: Thor 将语言模型在 PISA 数据集上的成功率从 39% 提升到 57%，并以更少算力在 miniF2F 上达到当时领先方法水平。
+summary:
+  en: The framework uses theorem-prover hammers for premise selection while leaving other proof decisions to the language model.
+  zh-CN: 该框架使用定理证明器 hammer 进行前提选择，其余证明决策由语言模型完成。
+why_it_matters:
+  en: 'It highlighted a durable design principle: use symbolic tools where exhaustive reliability is strong and learned models where generation is needed.'
+  zh-CN: 它体现了一条长期有效的设计原则：把符号工具用于可靠的结构化搜索，把学习模型用于需要生成与启发式判断的环节。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The language model generated proof actions while automated provers supplied premise-search assistance.
+    zh-CN: 语言模型生成证明动作，自动定理证明器负责提供前提搜索支持。
+human_contribution:
+  description:
+    en: Researchers designed the integration protocol and evaluation across theorem-proving environments.
+    zh-CN: 研究者设计集成协议并在多个定理证明环境中进行评测。
+systems:
+- thor
+organizations:
+- university-of-cambridge
+- microsoft-research
+people: []
+problems:
+- pisa
+- minif2f
+methods:
+- hammer
+- premise-selection
+- language-model
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2022-05-22'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-thor-2205.10893
+  tier: S1
+  type: paper
+  title: 'Thor: Wielding Hammers to Integrate Language Models and Automated Theorem Provers'
+  url: https://arxiv.org/abs/2205.10893
+  primary: true
+  published_date: '2022-05-22'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2021-pact
+  - evt-2021-minif2f
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- theorem-proving
+- neuro-symbolic
+- hammer
+- premise-selection
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

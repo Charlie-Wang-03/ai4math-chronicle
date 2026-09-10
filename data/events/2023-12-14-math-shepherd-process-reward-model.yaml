@@ -1,0 +1,99 @@
+schema_version: 1
+id: evt-2023-math-shepherd
+slug: math-shepherd-process-reward-model
+title:
+  en: Math-Shepherd automates step-level process supervision for math reasoning
+  zh-CN: Math-Shepherd 自动化数学推理的步骤级过程监督
+dates:
+  event: '2023-12-14'
+  first_public_claim: '2023-12-14'
+  paper_release: '2023-12-14'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- system
+- dataset
+significance:
+  tier: H3
+  rationale:
+    en: Math-Shepherd made process reward modeling more scalable by generating step-level supervision without manual annotation.
+    zh-CN: Math-Shepherd 通过自动生成步骤级监督降低人工标注依赖，使过程奖励模型更容易扩展。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- symbolic
+claim:
+  en: Math-Shepherd trained a process reward model from automatically constructed step-wise supervision and improved both reranking and reinforcement-learning performance on GSM8K and MATH.
+  zh-CN: Math-Shepherd 使用自动构造的步骤级监督训练过程奖励模型，并在 GSM8K 与 MATH 上同时提升重排序与强化学习效果。
+summary:
+  en: The verifier scores intermediate reasoning steps rather than only final answers and can be used for selection or reinforcement learning.
+  zh-CN: 该验证器对中间推理步骤评分，而非只判断最终答案，并可用于候选选择或强化学习。
+why_it_matters:
+  en: Process-level verification became a central ingredient in the later generation of reasoning models and verifier-guided math systems.
+  zh-CN: 步骤级验证后来成为推理模型和验证器引导数学系统的重要组成部分。
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: A learned verifier judges intermediate reasoning steps and supplies selection or training signals.
+    zh-CN: 学习式验证器判断中间推理步骤，并提供选择或训练信号。
+human_contribution:
+  description:
+    en: Researchers designed automatic supervision construction, reward modeling and evaluation.
+    zh-CN: 研究者设计自动监督构造、奖励建模与评测。
+systems:
+- math-shepherd
+organizations:
+- peking-university
+- deepseek
+people: []
+problems:
+- gsm8k
+- math-benchmark
+methods:
+- process-reward-model
+- reinforcement-learning
+- verification
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2023-12-14'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-math-shepherd-2312.08935
+  tier: S1
+  type: paper
+  title: 'Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations'
+  url: https://arxiv.org/abs/2312.08935
+  primary: true
+  published_date: '2023-12-14'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2023-tora
+  - evt-2023-llemma
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- process-reward-model
+- verifier
+- reinforcement-learning
+- math-reasoning
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

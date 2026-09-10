@@ -1,0 +1,99 @@
+schema_version: 1
+id: evt-2024-olympiadbench
+slug: olympiadbench-bilingual-multimodal
+title:
+  en: OlympiadBench scales Olympiad-level evaluation to bilingual multimodal science
+  zh-CN: OlympiadBench 将奥赛级评测扩展到双语多模态科学问题
+dates:
+  event: '2024-02-21'
+  first_public_claim: '2024-02-21'
+  paper_release: '2024-02-21'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- dataset
+significance:
+  tier: H3
+  rationale:
+    en: OlympiadBench provided a large bilingual benchmark that combined mathematics, physics and multimodal problem statements at Olympiad difficulty.
+    zh-CN: OlympiadBench 提供大规模双语奥赛级基准，把数学、物理和多模态题目结合起来。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- symbolic
+- numeric
+claim:
+  en: OlympiadBench introduced 8,476 bilingual multimodal Olympiad-level math and physics problems with expert step-by-step annotations.
+  zh-CN: OlympiadBench 引入 8,476 道双语多模态奥赛级数学与物理问题，并提供专家逐步推理标注。
+summary:
+  en: The benchmark was designed to remain difficult for frontier text and multimodal models and includes detailed evaluation methodology.
+  zh-CN: 该基准面向前沿文本与多模态模型保持较高难度，并提供细致的评测方法。
+why_it_matters:
+  en: It broadened AI4Math evaluation beyond English text-only competition problems.
+  zh-CN: 它把 AI4Math 评测从英语纯文本竞赛题扩展到双语与多模态场景。
+ai_role:
+  level: computation_only
+  description:
+    en: Language and multimodal models are evaluated on the benchmark.
+    zh-CN: 语言模型与多模态模型在该基准上接受评测。
+human_contribution:
+  description:
+    en: Researchers curated problems, annotations and evaluation rules.
+    zh-CN: 研究者整理题目、专家标注与评测规则。
+systems:
+- olympiadbench
+organizations:
+- tsinghua-university
+- openbmb
+people: []
+problems:
+- olympiad-mathematics
+- olympiad-physics
+methods:
+- benchmarking
+- multimodal-evaluation
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-02-21'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-olympiadbench-2402.14008
+  tier: S1
+  type: paper
+  title: 'OlympiadBench: A Challenging Benchmark for Promoting AGI with Olympiad-Level Bilingual Multimodal Scientific Problems'
+  url: https://arxiv.org/abs/2402.14008
+  primary: true
+  published_date: '2024-02-21'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2021-math-benchmark
+  - evt-2022-minerva
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- benchmark
+- olympiad
+- bilingual
+- multimodal
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

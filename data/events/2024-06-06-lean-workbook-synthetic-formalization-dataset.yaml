@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2024-lean-workbook
+slug: lean-workbook-synthetic-formalization-dataset
+title:
+  en: Lean Workbook releases a large formal-informal mathematics dataset
+  zh-CN: Lean Workbook 发布大规模形式—非形式数学数据集
+dates:
+  event: '2024-06-06'
+  first_public_claim: '2024-06-06'
+  paper_release: '2024-06-06'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- dataset
+- formalization
+- infrastructure
+significance:
+  tier: H3
+  rationale:
+    en: Lean Workbook expanded the supply of paired natural-language and Lean problems for training autoformalizers and provers.
+    zh-CN: Lean Workbook 扩大了自然语言数学与 Lean 形式问题配对数据的规模，为自动形式化和证明训练提供资源。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- formal
+- hybrid
+claim:
+  en: Lean Workbook released about 57,000 formal-informal question pairs together with searched proofs and 21 new IMO questions.
+  zh-CN: Lean Workbook 发布约 57,000 个形式—非形式问题对、搜索得到的证明以及 21 道新的 IMO 题目。
+summary:
+  en: An iterative generation-and-filtering pipeline translates natural-language math problems to Lean 4 statements and back.
+  zh-CN: 迭代式生成与过滤管线把自然语言数学问题翻译为 Lean 4 陈述，并进行反向转换。
+why_it_matters:
+  en: 'The dataset lowered a key bottleneck for training larger Lean provers: the scarcity of aligned formal and informal mathematics.'
+  zh-CN: 该数据集缓解了训练大型 Lean 证明器的关键瓶颈——形式与非形式数学对齐数据稀缺。
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: Models participate in synthetic translation and proof search used to construct the dataset.
+    zh-CN: 模型参与用于构建数据集的合成翻译与证明搜索。
+human_contribution:
+  description:
+    en: Researchers designed the iterative data pipeline, filtering criteria and release.
+    zh-CN: 研究者设计迭代数据管线、过滤标准与公开发布。
+systems:
+- lean-workbook
+- lean
+organizations:
+- shanghai-ai-laboratory
+people: []
+problems:
+- formalization-data
+methods:
+- synthetic-data
+- autoformalization
+- proof-search
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-06-06'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-lean-workbook-2406.03847
+  tier: S1
+  type: paper
+  title: 'Lean Workbook: A large-scale Lean problem set formalized from natural language math problems'
+  url: https://arxiv.org/abs/2406.03847
+  primary: true
+  published_date: '2024-06-06'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2023-proofnet
+  - evt-2024-deepseek-prover-v1
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- lean
+- dataset
+- autoformalization
+- synthetic-data
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

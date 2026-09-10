@@ -1,0 +1,96 @@
+schema_version: 1
+id: evt-2024-omni-math
+slug: omni-math-olympiad-benchmark
+title:
+  en: Omni-MATH refreshes Olympiad evaluation after older math benchmarks begin saturating
+  zh-CN: Omni-MATH 在旧数学基准趋于饱和后更新奥赛级评测
+dates:
+  event: '2024-10-10'
+  first_public_claim: '2024-10-10'
+  paper_release: '2024-10-10'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- dataset
+significance:
+  tier: H3
+  rationale:
+    en: Omni-MATH responded to rapid benchmark saturation by collecting a larger, finer-grained set of Olympiad-level mathematics problems.
+    zh-CN: Omni-MATH 针对数学基准快速饱和的问题，构建了更大且难度划分更细的奥赛级数学题集。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- symbolic
+claim:
+  en: Omni-MATH introduced 4,428 human-annotated competition problems spanning more than 33 subdomains and more than 10 difficulty levels.
+  zh-CN: Omni-MATH 引入 4,428 道人工标注的竞赛数学题，覆盖 33 个以上子领域和 10 个以上难度等级。
+summary:
+  en: The benchmark was designed after frontier reasoning models approached saturation on older datasets such as MATH.
+  zh-CN: 该基准在前沿推理模型逐渐接近 MATH 等旧数据集饱和后设计。
+why_it_matters:
+  en: It provided a more discriminating informal-math benchmark during the transition to reasoning-specialized models.
+  zh-CN: 它在推理专用模型兴起阶段提供了更有区分度的非形式数学评测。
+ai_role:
+  level: computation_only
+  description:
+    en: Frontier language models are evaluated across difficulty levels and mathematical subdomains.
+    zh-CN: 前沿语言模型在多个难度等级和数学子领域接受评测。
+human_contribution:
+  description:
+    en: Researchers curated and annotated competition problems and designed the taxonomy and scoring.
+    zh-CN: 研究者整理并标注竞赛问题，设计分类体系与评分。
+systems:
+- omni-math
+organizations:
+- shenzhen-research-institute-of-big-data
+people: []
+problems:
+- olympiad-mathematics
+methods:
+- benchmarking
+- difficulty-stratification
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-10-10'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-omni-math-2410.07985
+  tier: S1
+  type: paper
+  title: 'Omni-MATH: A Universal Olympiad Level Mathematic Benchmark For Large Language Models'
+  url: https://arxiv.org/abs/2410.07985
+  primary: true
+  published_date: '2024-10-10'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-olympiadbench
+  - evt-2024-openai-o1
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- benchmark
+- olympiad
+- reasoning-model
+- dataset
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

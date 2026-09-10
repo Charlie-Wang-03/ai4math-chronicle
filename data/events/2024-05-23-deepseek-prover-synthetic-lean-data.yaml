@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2024-deepseek-prover-v1
+slug: deepseek-prover-synthetic-lean-data
+title:
+  en: DeepSeek-Prover scales Lean theorem proving with millions of synthetic formal statements
+  zh-CN: DeepSeek-Prover 用数百万合成形式命题扩展 Lean 定理证明
+dates:
+  event: '2024-05-23'
+  first_public_claim: '2024-05-23'
+  paper_release: '2024-05-23'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+- dataset
+significance:
+  tier: H2
+  rationale:
+    en: DeepSeek-Prover demonstrated that large-scale synthetic Lean data could materially raise whole-proof generation performance.
+    zh-CN: DeepSeek-Prover 展示了大规模合成 Lean 数据能够显著提升整段形式证明生成能力。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+claim:
+  en: DeepSeek-Prover trained on a synthetic corpus containing about eight million formal statements with proofs and reported 52% cumulative accuracy on Lean 4 miniF2F plus five FIMO proofs.
+  zh-CN: DeepSeek-Prover 在包含约 800 万条带证明形式命题的合成语料上训练，并报告 Lean 4 miniF2F 累计 52% 的证明率以及 5 道 FIMO 证明。
+summary:
+  en: Natural-language competition problems are translated into Lean statements, filtered, proved and recycled as synthetic training data.
+  zh-CN: 自然语言竞赛题被翻译为 Lean 陈述、过滤、搜索证明，再作为合成训练数据回流。
+why_it_matters:
+  en: The work established synthetic formal-data generation as a scalable route to stronger neural theorem provers.
+  zh-CN: 该工作确立了“合成形式数据生成”作为扩展神经定理证明器的重要路线。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: Models generate formal statements and whole proofs that Lean checks mechanically.
+    zh-CN: 模型生成形式命题与整段证明，由 Lean 进行机械检查。
+human_contribution:
+  description:
+    en: Researchers designed the translation, filtering, proof-generation and training pipeline.
+    zh-CN: 研究者设计翻译、过滤、证明生成与训练管线。
+systems:
+- deepseek-prover
+- lean
+organizations:
+- deepseek
+people: []
+problems:
+- minif2f
+- fimo
+methods:
+- synthetic-data
+- whole-proof-generation
+- lean
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2024-05-23'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-deepseek-prover-2405.14333
+  tier: S1
+  type: paper
+  title: 'DeepSeek-Prover: Advancing Theorem Proving in LLMs through Large-Scale Synthetic Data'
+  url: https://arxiv.org/abs/2405.14333
+  primary: true
+  published_date: '2024-05-23'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-deepseekmath
+  - evt-2021-minif2f
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- lean
+- synthetic-data
+- formal-proof
+- deepseek
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

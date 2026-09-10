@@ -1,0 +1,99 @@
+schema_version: 1
+id: evt-2026-first-proof-openai
+slug: openai-first-proof-research-challenge
+title:
+  en: OpenAI publishes research-level proof attempts on the First Proof challenge
+  zh-CN: OpenAI 发布 First Proof 研究级数学挑战的证明尝试
+dates:
+  event: '2026-02-20'
+  first_public_claim: '2026-02-20'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- benchmark
+- proof
+- system
+significance:
+  tier: H2
+  rationale:
+    en: First Proof moved frontier-model evaluation from contests and hidden benchmarks to expert-designed research proof attempts requiring prolonged community scrutiny.
+    zh-CN: First Proof 把前沿模型评测从竞赛与隐藏基准推进到专家设计的研究级证明尝试，并要求持续社区审查。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- symbolic
+claim:
+  en: OpenAI published attempts on all ten First Proof problems and said at least five had a high chance of being correct, while explicitly retracting confidence in one earlier attempt after expert feedback.
+  zh-CN: OpenAI 发布全部十道 First Proof 问题的证明尝试，称至少五份有较高概率正确，并在专家反馈后明确撤回对其中一份早期尝试的信心。
+summary:
+  en: The internal model worked with limited human supervision; researchers sometimes requested retries or clarifications and selected among attempts.
+  zh-CN: 内部模型在有限人工监督下工作；研究者有时要求重试或澄清，并在人类判断下选择候选尝试。
+why_it_matters:
+  en: The episode provided unusually transparent evidence of both research-level capability and the verification difficulty of AI-generated mathematics.
+  zh-CN: 该事件同时透明展示了研究级能力与 AI 生成数学在验证上的困难。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The model produced long research-level proof attempts across specialized domains.
+    zh-CN: 模型在多个专业领域生成长篇研究级证明尝试。
+human_contribution:
+  description:
+    en: Researchers prompted and selected attempts, experts supplied feedback, and correctness remained an explicit review question.
+    zh-CN: 研究者负责提示与选择候选，专家提供反馈，而正确性被明确保留为待审查问题。
+systems:
+- openai-internal-reasoning-model
+organizations:
+- openai
+- first-proof
+people: []
+problems:
+- first-proof
+methods:
+- long-horizon-reasoning
+- expert-review
+- proof-generation
+verification:
+  evidence_level: E2
+  status: under_verification
+  formal_assurance: none
+  history:
+  - date: '2026-02-20'
+    status: under_verification
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: openai-first-proof-2026
+  tier: S2
+  type: official_announcement
+  title: Our First Proof submissions
+  url: https://openai.com/index/first-proof-submissions/
+  primary: true
+  published_date: '2026-02-20'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2025-openai-imo-gold
+  - evt-2024-frontiermath
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- research-math
+- proof
+- expert-review
+- openai
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

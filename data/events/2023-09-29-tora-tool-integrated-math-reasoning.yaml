@@ -1,0 +1,99 @@
+schema_version: 1
+id: evt-2023-tora
+slug: tora-tool-integrated-math-reasoning
+title:
+  en: ToRA makes tool-integrated reasoning a competitive open math-agent paradigm
+  zh-CN: ToRA 将工具集成推理推进为有竞争力的开放数学 Agent 范式
+dates:
+  event: '2023-09-29'
+  first_public_claim: '2023-09-29'
+  paper_release: '2023-09-29'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- system
+significance:
+  tier: H2
+  rationale:
+    en: ToRA demonstrated that language reasoning interleaved with executable tools could substantially improve difficult mathematical problem solving in open models.
+    zh-CN: ToRA 展示了自然语言推理与可执行工具交替使用能够显著提升开放模型的高难度数学求解能力。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- symbolic
+- numeric
+- hybrid
+claim:
+  en: ToRA-7B reached 44.6% on MATH and ToRA-Code-34B exceeded 50%, using trajectories that interleave reasoning with computational tools.
+  zh-CN: ToRA-7B 在 MATH 上达到 44.6%，ToRA-Code-34B 超过 50%，其推理轨迹交替使用自然语言推理与计算工具。
+summary:
+  en: The agents learn interactive tool-use trajectories involving computation libraries and symbolic solvers rather than relying on text-only chain-of-thought.
+  zh-CN: 这些 Agent 学习调用计算库与符号求解器的交互轨迹，而不是仅依赖纯文本思维链。
+why_it_matters:
+  en: Tool-integrated reasoning became a reusable pattern for later math systems that need exact arithmetic or programmatic checking.
+  zh-CN: 工具集成推理随后成为数学系统在需要精确计算或程序化检查时反复采用的设计模式。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The model decides when to reason in language and when to call external computational tools.
+    zh-CN: 模型自行决定何时进行语言推理、何时调用外部计算工具。
+human_contribution:
+  description:
+    en: Researchers curated tool-use trajectories, trained the agents and designed evaluations.
+    zh-CN: 研究者构造工具调用轨迹、训练 Agent 并设计评测。
+systems:
+- tora
+organizations:
+- microsoft-research
+- tsinghua-university
+people: []
+problems:
+- math-benchmark
+methods:
+- tool-integrated-reasoning
+- code-execution
+- symbolic-tools
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2023-09-29'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-tora-2309.17452
+  tier: S1
+  type: paper
+  title: 'ToRA: A Tool-Integrated Reasoning Agent for Mathematical Problem Solving'
+  url: https://arxiv.org/abs/2309.17452
+  primary: true
+  published_date: '2023-09-29'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2022-minerva
+  - evt-2021-math-benchmark
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- tool-use
+- math-agent
+- code-execution
+- reasoning
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

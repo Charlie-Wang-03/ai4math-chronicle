@@ -1,0 +1,99 @@
+schema_version: 1
+id: evt-2024-lean-star
+slug: lean-star-thinking-and-proving
+title:
+  en: Lean-STaR trains theorem provers to interleave informal thinking with Lean tactics
+  zh-CN: Lean-STaR 训练定理证明器交替执行非形式思考与 Lean tactic
+dates:
+  event: '2024-07-14'
+  first_public_claim: '2024-07-14'
+  paper_release: '2024-07-14'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+significance:
+  tier: H3
+  rationale:
+    en: Lean-STaR explicitly inserted learned informal thoughts before proof steps and combined them with expert iteration.
+    zh-CN: Lean-STaR 在形式证明步骤前显式插入学习到的非形式思考，并与专家迭代结合。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- formal
+- hybrid
+claim:
+  en: Lean-STaR improved miniF2F pass@64 from 43.4% to 46.3% by training models to generate synthetic informal thoughts before tactics.
+  zh-CN: Lean-STaR 通过训练模型在 tactic 前生成合成的非形式思考，将 miniF2F pass@64 从 43.4% 提升到 46.3%。
+summary:
+  en: The method generates retrospective thoughts from known tactics and then uses expert iteration on newly discovered verified proofs.
+  zh-CN: 该方法从已知 tactic 反向生成思考文本，并对新发现且验证通过的证明执行专家迭代。
+why_it_matters:
+  en: It explored a direct bridge between chain-of-thought-style reasoning and proof-assistant feedback.
+  zh-CN: 它探索了思维链式推理与证明助手反馈之间的直接桥接方式。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The model generates both informal thoughts and Lean tactics, while Lean verifies the proof state.
+    zh-CN: 模型同时生成非形式思考与 Lean tactic，Lean 负责验证证明状态。
+human_contribution:
+  description:
+    en: Researchers designed synthetic-thought generation, expert iteration and evaluation.
+    zh-CN: 研究者设计合成思考生成、专家迭代与评测。
+systems:
+- lean-star
+- lean
+organizations:
+- carnegie-mellon-university
+people: []
+problems:
+- minif2f
+methods:
+- expert-iteration
+- synthetic-thought
+- lean
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2024-07-14'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-lean-star-2407.10040
+  tier: S1
+  type: paper
+  title: 'Lean-STaR: Learning to Interleave Thinking and Proving'
+  url: https://arxiv.org/abs/2407.10040
+  primary: true
+  published_date: '2024-07-14'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2023-leandojo
+  - evt-2022-htps
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- lean
+- chain-of-thought
+- expert-iteration
+- formal-proof
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

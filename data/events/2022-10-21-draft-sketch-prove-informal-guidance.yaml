@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2022-draft-sketch-prove
+slug: draft-sketch-prove-informal-guidance
+title:
+  en: Draft, Sketch, and Prove uses informal proofs to guide formal proof search
+  zh-CN: Draft, Sketch, and Prove 用非形式证明引导形式证明搜索
+dates:
+  event: '2022-10-21'
+  first_public_claim: '2022-10-21'
+  paper_release: '2022-10-21'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- formalization
+- proof
+- system
+significance:
+  tier: H3
+  rationale:
+    en: DSP made informal reasoning an explicit intermediate representation between language models and formal theorem provers.
+    zh-CN: DSP 将非形式推理显式作为语言模型与形式定理证明器之间的中间表示。
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- informal
+- formal
+- hybrid
+claim:
+  en: DSP mapped informal proofs into formal sketches and raised automated proving performance from 20.9% to 39.3% on a competition-problem collection.
+  zh-CN: DSP 将非形式证明映射为形式 proof sketch，并在一组竞赛题上把自动证明性能从 20.9% 提升到 39.3%。
+summary:
+  en: Language models produce a high-level formal sketch whose subgoals are then discharged by an automated prover.
+  zh-CN: 语言模型先生成高层形式证明草图，再由自动证明器完成其中的子目标。
+why_it_matters:
+  en: The architecture anticipated later systems that alternate natural-language decomposition with verifier-backed formal proof.
+  zh-CN: 该架构预示了后来“自然语言分解 + 验证器支持的形式证明”交替执行的系统。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: Language models draft and sketch proof structure; formal provers verify and complete subproblems.
+    zh-CN: 语言模型负责起草和构造证明结构，形式证明器验证并完成子问题。
+human_contribution:
+  description:
+    en: Researchers designed the three-stage workflow and constructed evaluation problems and prompting procedures.
+    zh-CN: 研究者设计三阶段工作流、评测问题与提示流程。
+systems:
+- draft-sketch-prove
+organizations:
+- meta-ai
+- university-of-cambridge
+people: []
+problems:
+- competition-mathematics
+methods:
+- autoformalization
+- proof-sketch
+- language-model
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2022-10-21'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-dsp-2210.12283
+  tier: S1
+  type: paper
+  title: 'Draft, Sketch, and Prove: Guiding Formal Theorem Provers with Informal Proofs'
+  url: https://arxiv.org/abs/2210.12283
+  primary: true
+  published_date: '2022-10-21'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2022-thor
+  - evt-2021-minif2f
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- autoformalization
+- proof-sketch
+- lean
+- language-model
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

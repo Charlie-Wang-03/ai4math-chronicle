@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2025-deepseek-r1
+slug: deepseek-r1-reinforcement-learning-reasoning
+title:
+  en: DeepSeek-R1 shows open reinforcement-learned reasoning at frontier math performance
+  zh-CN: DeepSeek-R1 展示开放强化学习推理模型的前沿数学能力
+dates:
+  event: '2025-01-22'
+  first_public_claim: '2025-01-22'
+  paper_release: '2025-01-22'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- system
+- benchmark
+significance:
+  tier: H3
+  rationale:
+    en: >-
+      DeepSeek-R1 is historically important to general-purpose reasoning-model development, but its relevance to AI4Math is primarily contextual: mathematics served as a capability benchmark rather than the release contributing a mathematical result, proof, formalization, or math-specific system.
+    zh-CN: >-
+      DeepSeek-R1 对通用推理模型发展具有重要意义，但对 AI4Math 主要属于背景事件：数学主要作为能力评测，而该发布本身并未贡献数学新结果、证明、形式化或数学专项系统。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- informal
+- symbolic
+claim:
+  en: DeepSeek-R1 and R1-Zero demonstrated strong reasoning behavior from large-scale reinforcement learning, with R1 reported as comparable to OpenAI o1 on reasoning tasks.
+  zh-CN: DeepSeek-R1 与 R1-Zero 展示了由大规模强化学习产生的强推理行为，论文报告 R1 在推理任务上可与 OpenAI o1 相比。
+summary:
+  en: R1-Zero used reinforcement learning without an SFT cold start, while R1 added multi-stage training and released several distilled open models.
+  zh-CN: R1-Zero 在无 SFT 冷启动的情况下使用强化学习；R1 则加入多阶段训练并开放多个蒸馏模型。
+why_it_matters:
+  en: The release accelerated open research on reasoning models, verifier-guided RL and math-specific post-training, providing context for later dedicated AI4Math systems.
+  zh-CN: 该发布加速了开放社区对推理模型、验证器引导强化学习与数学专项后训练的研究，为后续专门的 AI4Math 系统提供背景。
+ai_role:
+  level: computation_only
+  description:
+    en: The models perform extended mathematical reasoning learned through reinforcement-learning objectives.
+    zh-CN: 模型通过强化学习目标学习并执行长程数学推理。
+human_contribution:
+  description:
+    en: Researchers designed the RL and cold-start recipes, trained the models and released weights.
+    zh-CN: 研究者设计 RL 与冷启动方案、训练模型并开放权重。
+systems:
+- deepseek-r1
+organizations:
+- deepseek
+people: []
+problems:
+- aime
+- math-benchmark
+methods:
+- reinforcement-learning
+- reasoning-model
+- distillation
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2025-01-22'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: arxiv-deepseek-r1-2501.12948
+  tier: S1
+  type: paper
+  title: 'DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning'
+  url: https://arxiv.org/abs/2501.12948
+  primary: true
+  published_date: '2025-01-22'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2024-openai-o1
+  - evt-2024-deepseekmath
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- deepseek
+- reasoning-model
+- reinforcement-learning
+- open-model
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

@@ -1,0 +1,100 @@
+schema_version: 1
+id: evt-2022-statement-curriculum-learning
+slug: lean-statement-curriculum-learning
+title:
+  en: OpenAI's Lean prover uses expert iteration to solve formal Olympiad problems
+  zh-CN: OpenAI Lean 证明器通过专家迭代求解形式化奥赛题
+dates:
+  event: '2022-02-02'
+  first_public_claim: '2022-02-02'
+  paper_release: '2022-02-03'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-10'
+  last_updated: '2026-09-10'
+event_types:
+- proof
+- system
+- competition
+significance:
+  tier: H2
+  rationale:
+    en: The work showed that proof search interleaved with learning could create its own curriculum and reach a new state of the art on miniF2F.
+    zh-CN: 该工作展示了证明搜索与学习交替进行可以形成自举式课程，并在 miniF2F 上取得当时领先结果。
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+claim:
+  en: OpenAI reported 41.2% on miniF2F and automatic proofs of challenging AMC/AIME and two IMO-adapted problems using statement curriculum learning in Lean.
+  zh-CN: OpenAI 报告其基于 Lean 的 statement curriculum learning 在 miniF2F 上达到 41.2%，并自动证明若干 AMC/AIME 及两道改编 IMO 问题。
+summary:
+  en: The prover alternated proof search with retraining on newly discovered proofs over statements of varied difficulty.
+  zh-CN: 该证明器在不同难度的形式命题上交替执行证明搜索与基于新发现证明的再训练。
+why_it_matters:
+  en: It connected language-model theorem proving with expert-iteration ideas that later became central to formal reasoning systems.
+  zh-CN: 它把语言模型定理证明与专家迭代结合，后者后来成为形式推理系统中的核心训练范式之一。
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: The neural prover searched for Lean proofs and used successful proofs as new training data.
+    zh-CN: 神经证明器搜索 Lean 证明，并把成功证明作为新的训练数据。
+human_contribution:
+  description:
+    en: Researchers curated statements, designed the expert-iteration loop and evaluated generated formal proofs.
+    zh-CN: 研究者整理命题、设计专家迭代训练循环并评测生成的形式证明。
+systems:
+- lean-statement-curriculum-prover
+- lean
+organizations:
+- openai
+people: []
+problems:
+- minif2f
+- olympiad-mathematics
+methods:
+- expert-iteration
+- proof-search
+- language-model
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2022-02-02'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+sources:
+- id: openai-formal-math-2022
+  tier: S2
+  type: official_announcement
+  title: Solving (some) formal math olympiad problems
+  url: https://openai.com/index/formal-math/
+  primary: true
+  published_date: '2022-02-02'
+  accessed_at: '2026-09-10'
+artifacts: []
+relationships:
+  predecessors:
+  - evt-2021-pact
+  - evt-2021-minif2f
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- lean
+- expert-iteration
+- olympiad
+- formal-proof
+editorial:
+  created_at: '2026-09-10'
+  last_reviewed: '2026-09-10'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []
