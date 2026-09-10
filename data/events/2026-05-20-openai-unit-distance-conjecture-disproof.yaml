@@ -9,7 +9,7 @@ dates:
   first_public_claim: '2026-05-20'
   paper_release: '2026-05-20'
   artifact_release: null
-  independently_verified: null
+  independently_verified: '2026-05-20'
   added_to_chronicle: '2026-09-10'
   last_updated: '2026-09-10'
 event_types:
@@ -57,7 +57,7 @@ methods:
 - proof-generation
 verification:
   evidence_level: E3
-  status: partially_verified
+  status: independently_verified
   formal_assurance: artifact_available
   history:
   - date: '2026-05-20'
@@ -72,6 +72,12 @@ verification:
     note:
       en: OpenAI released the AI-generated proof together with a companion paper by nine external mathematicians describing a human-verified, digested version of the argument. Will Sawin independently published a stronger explicit lower bound building on the new construction. These sources materially strengthen the mathematical evidence while the Chronicle retains the human editorial gate for `independently_verified`.
       zh-CN: OpenAI 同日公开 AI 生成证明及由九位外部数学家撰写的 companion paper，后者给出经人工核查和整理的论证版本；Will Sawin 还独立发表了建立在该新构造之上的更强显式下界。这些来源显著加强了数学证据，但 Chronicle 仍保留 `independently_verified` 的人工编辑门槛。
+  - date: '2026-09-10'
+    status: independently_verified
+    evidence_level: E3
+    note:
+      en: Under the Chronicle's event-level verification semantics, the nine-mathematician human-verified companion paper and Will Sawin's independent follow-up work substantively corroborate the core event description. This label records independent corroboration of the event and its public evidence trail rather than a Chronicle adjudication of ultimate mathematical correctness.
+      zh-CN: 按 Chronicle 的事件级 verification 语义，九位数学家的 human-verified companion paper 与 Will Sawin 的独立后续工作已经对该事件核心描述形成实质性独立佐证。该标签记录的是事件与公开证据链获得独立确认，而不是 Chronicle 对底层数学结论最终正确性的裁决。
 sources:
 - id: openai-unit-distance-2026
   tier: S2
