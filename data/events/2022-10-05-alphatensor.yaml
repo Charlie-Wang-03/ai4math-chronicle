@@ -117,7 +117,7 @@ artifacts:
 relationships:
   predecessors: []
   successors: [evt-2025-alphaevolve]
-  related: [evt-2023-funsearch]
+  related: [evt-2023-funsearch-cap-set]
 
 timeline:
   featured: true
