@@ -7,7 +7,7 @@ title:
 dates:
   event: '2026-05-20'
   first_public_claim: '2026-05-20'
-  paper_release: null
+  paper_release: '2026-05-20'
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-10'
@@ -66,6 +66,12 @@ verification:
     note:
       en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
       zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+  - date: '2026-05-20'
+    status: partially_verified
+    evidence_level: E3
+    note:
+      en: OpenAI released the AI-generated proof together with a companion paper by nine external mathematicians describing a human-verified, digested version of the argument. Will Sawin independently published a stronger explicit lower bound building on the new construction. These sources materially strengthen the mathematical evidence while the Chronicle retains the human editorial gate for `independently_verified`.
+      zh-CN: OpenAI 同日公开 AI 生成证明及由九位外部数学家撰写的 companion paper，后者给出经人工核查和整理的论证版本；Will Sawin 还独立发表了建立在该新构造之上的更强显式下界。这些来源显著加强了数学证据，但 Chronicle 仍保留 `independently_verified` 的人工编辑门槛。
 sources:
 - id: openai-unit-distance-2026
   tier: S2
@@ -75,7 +81,39 @@ sources:
   primary: true
   published_date: '2026-05-20'
   accessed_at: '2026-09-10'
-artifacts: []
+- id: openai-unit-distance-proof-2026
+  tier: S1
+  type: paper
+  title: Planar Point Sets with Many Unit Distances
+  url: https://cdn.openai.com/pdf/74c24085-19b0-4534-9c90-465b8e29ad73/unit-distance-proof.pdf
+  primary: true
+  published_date: '2026-05-20'
+  accessed_at: '2026-09-10'
+- id: unit-distance-remarks-2026
+  tier: S3
+  type: paper
+  title: Remarks on the disproof of the unit distance conjecture
+  url: https://arxiv.org/abs/2605.20695
+  primary: false
+  published_date: '2026-05-20'
+  accessed_at: '2026-09-10'
+- id: sawin-unit-distance-explicit-bound-2026
+  tier: S3
+  type: paper
+  title: An explicit lower bound for the unit distance problem
+  url: https://arxiv.org/abs/2605.20579
+  primary: false
+  published_date: '2026-05-20'
+  accessed_at: '2026-09-10'
+artifacts:
+- id: openai-unit-distance-proof-pdf
+  kind: proof
+  title: AI-generated proof manuscript
+  url: https://cdn.openai.com/pdf/74c24085-19b0-4534-9c90-465b8e29ad73/unit-distance-proof.pdf
+- id: unit-distance-human-verified-remarks
+  kind: supplement
+  title: Human-verified companion remarks
+  url: https://arxiv.org/abs/2605.20695
 relationships:
   predecessors:
   - evt-2026-first-proof-openai
