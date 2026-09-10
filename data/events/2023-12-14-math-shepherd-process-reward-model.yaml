@@ -16,7 +16,7 @@ event_types:
 - system
 - dataset
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: Math-Shepherd made process reward modeling more scalable by generating step-level supervision without manual annotation.
     zh-CN: Math-Shepherd 通过自动生成步骤级监督降低人工标注依赖，使过程奖励模型更容易扩展。
@@ -84,8 +84,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - process-reward-model
 - verifier

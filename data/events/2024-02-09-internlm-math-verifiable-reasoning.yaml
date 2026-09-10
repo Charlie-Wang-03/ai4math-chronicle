@@ -15,7 +15,7 @@ dates:
 event_types:
 - system
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: InternLM-Math explored a single open model family spanning chain-of-thought, verification, code assistance and Lean theorem proving.
     zh-CN: InternLM-Math 探索用同一开放模型族覆盖思维链、验证、代码辅助与 Lean 定理证明。
@@ -85,8 +85,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - open-model
 - lean

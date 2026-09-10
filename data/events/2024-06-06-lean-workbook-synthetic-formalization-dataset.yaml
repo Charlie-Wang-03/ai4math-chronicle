@@ -17,7 +17,7 @@ event_types:
 - formalization
 - infrastructure
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: Lean Workbook expanded the supply of paired natural-language and Lean problems for training autoformalizers and provers.
     zh-CN: Lean Workbook 扩大了自然语言数学与 Lean 形式问题配对数据的规模，为自动形式化和证明训练提供资源。
@@ -85,8 +85,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - lean
 - dataset

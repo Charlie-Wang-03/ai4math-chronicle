@@ -17,7 +17,7 @@ event_types:
 - proof
 - system
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: DSP made informal reasoning an explicit intermediate representation between language models and formal theorem provers.
     zh-CN: DSP 将非形式推理显式作为语言模型与形式定理证明器之间的中间表示。
@@ -85,8 +85,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - autoformalization
 - proof-sketch

@@ -16,7 +16,7 @@ event_types:
 - benchmark
 - dataset
 significance:
-  tier: H3
+  tier: H2
   rationale:
     en: Omni-MATH responded to rapid benchmark saturation by collecting a larger, finer-grained set of Olympiad-level mathematics problems.
     zh-CN: Omni-MATH 针对数学基准快速饱和的问题，构建了更大且难度划分更细的奥赛级数学题集。
@@ -81,8 +81,8 @@ relationships:
   successors: []
   related: []
 timeline:
-  featured: false
-  significance: context
+  featured: true
+  significance: primary
 tags:
 - benchmark
 - olympiad
