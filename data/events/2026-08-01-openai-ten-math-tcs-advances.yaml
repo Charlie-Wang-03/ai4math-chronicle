@@ -81,8 +81,10 @@ verification:
     status: independently_verified
     evidence_level: E3
     note:
-      en: Independent technical and media coverage corroborates the core publication event: OpenAI released ten claimed mathematics/TCS advances together with a long paper and public Lean certificates. The Chronicle's `independently_verified` label concerns that event-level record; it does not certify that every one of the ten underlying mathematical claims has completed independent expert review.
-      zh-CN: 独立技术评论与媒体报道已经对该发布事件的核心事实形成佐证：OpenAI 公开了十项数学 / TCS 研究进展主张、一份长篇论文以及公开 Lean certificates。Chronicle 的 `independently_verified` 标签针对这一事件级记录，并不表示十项底层数学主张都已完成独立专家审查。
+      en: >-
+        Independent technical and media coverage corroborates the core publication event: OpenAI released ten claimed mathematics/TCS advances together with a long paper and public Lean certificates. The Chronicle's `independently_verified` label concerns that event-level record; it does not certify that every one of the ten underlying mathematical claims has completed independent expert review.
+      zh-CN: >-
+        独立技术评论与媒体报道已经对该发布事件的核心事实形成佐证：OpenAI 公开了十项数学 / TCS 研究进展主张、一份长篇论文以及公开 Lean certificates。Chronicle 的 `independently_verified` 标签针对这一事件级记录，并不表示十项底层数学主张都已完成独立专家审查。
 sources:
 - id: openai-ten-advances-2026
   tier: S2
