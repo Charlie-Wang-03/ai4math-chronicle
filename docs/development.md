@@ -37,6 +37,16 @@ npm run build
 
 The production build validates canonical YAML, generates machine-readable exports, checks Astro/TypeScript, renders the static site, and builds the Pagefind index.
 
+For reader-interface work, run the focused browser smoke suite against the production build. The suite deliberately uses one pinned Chromium toolchain rather than a broad browser matrix:
+
+```bash
+npm run build
+npx --yes --package=@playwright/test@1.55.0 playwright install chromium
+npm run test:browser
+```
+
+CI installs the same pinned Playwright version with Chromium system dependencies and runs `npm run test:browser` after the normal production build. Browser reports and failure artifacts are local/CI outputs and are not committed.
+
 ## Repository areas
 
 ```text
@@ -45,7 +55,8 @@ schema/event.schema.json   Event schema
 scripts/                   validation and export generation
 src/                       Astro pages, layouts, components and styles
 public/                    static public assets
-tests/                     data-pipeline tests
+tests/                     data-pipeline and static contract tests
+tests/browser/             focused browser-level reader-interface smoke tests
 .github/workflows/         CI and Pages deployment
 ```
 
@@ -71,7 +82,10 @@ CI should remain deterministic and cover at least:
 - generated-data consistency;
 - Astro/TypeScript checks;
 - static production build;
-- Pagefind index build.
+- Pagefind index build;
+- a small real-browser responsive/accessibility smoke gate for critical reader interactions.
+
+The browser smoke gate is intentionally narrow. It protects the compact mobile header, mobile-native Explore layout, keyboard operation and focus visibility for multi-select controls, explicit zero-results recovery, bilingual route switching, theme persistence, key landmarks, and Event Detail in-page navigation. It is not a pixel-diff suite, a full WCAG certification, or a cross-browser compatibility matrix.
 
 External link checking should remain non-flaky and should not become a permanent source of false CI failures.
 
