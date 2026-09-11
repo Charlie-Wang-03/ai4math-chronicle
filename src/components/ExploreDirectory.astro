@@ -27,12 +27,20 @@ const labels = locale === 'zh-CN'
   ? {
       filters: '探索事件', search: '搜索', placeholder: '搜索事件、系统、问题或方法…', searchHint: '全文搜索与下方筛选共同构成一个查询；至少输入 2 个字符。同一字段内多选为“或”，不同字段之间为“且”。', unavailable: '全文搜索索引暂不可用，已回退到当前页面文本匹配。',
       year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', system: '系统', aiRole: 'AI 角色', interface: '接口', evidenceLevel: '证据等级', assurance: '形式保障', novelty: '数学新颖性', organization: '机构', person: '人物', problem: '问题', method: '方法', sourceType: '来源类型', artifactKind: '工件类型', tag: '标签', sort: '排序', advanced: '高级筛选', active: '当前条件',
+      groupEvent: '事件属性', groupEventDesc: '事件本身的级别、数学新颖性与主题标签。',
+      groupAiMath: 'AI 与数学', groupAiMathDesc: '所用系统、AI 角色、交互接口与方法。',
+      groupActors: '主体与对象', groupActorsDesc: '参与机构、人物以及所处理的数学问题。',
+      groupEvidence: '证据与验证', groupEvidenceDesc: '验证状态、证据强度、形式保障与可用工件。',
       all: '全部', selected: '已选', relevance: '相关性', newest: '最新优先', oldest: '最早优先', highest: '重要性优先', events: '个事件', clear: '清除全部',
       date: '日期', event: '事件', classification: '分类', status: '验证', evidence: '证据', primary: '主要证据', details: '详情', noEvidence: '—',
     }
   : {
       filters: 'Explore events', search: 'Search', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Full-text search and the filters below form one query. Within a facet selections are OR; across facets they are AND. Type at least 2 characters.', unavailable: 'Full-text search is unavailable; falling back to text already rendered on this page.',
       year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', system: 'System', aiRole: 'AI role', interface: 'Interface', evidenceLevel: 'Evidence level', assurance: 'Formal assurance', novelty: 'Mathematical novelty', organization: 'Organization', person: 'Person', problem: 'Problem', method: 'Method', sourceType: 'Source type', artifactKind: 'Artifact type', tag: 'Tag', sort: 'Sort', advanced: 'Advanced filters', active: 'Active conditions',
+      groupEvent: 'Event attributes', groupEventDesc: 'The event’s tier, mathematical novelty, and topical tags.',
+      groupAiMath: 'AI & mathematics', groupAiMathDesc: 'Systems, AI role, interaction interface, and methods.',
+      groupActors: 'Actors & objects', groupActorsDesc: 'Organizations, people, and mathematical problems involved.',
+      groupEvidence: 'Evidence & verification', groupEvidenceDesc: 'Verification state, evidence strength, formal assurance, and available artifacts.',
       all: 'All', selected: 'selected', relevance: 'Relevance', newest: 'Newest first', oldest: 'Oldest first', highest: 'Significance first', events: 'events', clear: 'Clear all',
       date: 'Date', event: 'Event', classification: 'Class', status: 'Verification', evidence: 'Evidence', primary: 'Primary evidence', details: 'Details', noEvidence: '—',
     };
@@ -70,22 +78,45 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
 
   <details class="explore-advanced" data-advanced>
     <summary>{labels.advanced}</summary>
-    <div class="explore-advanced-controls">
-      <MultiSelectFilter id={ids.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(significanceTiers)} />
-      <MultiSelectFilter id={ids.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(verificationStatuses)} />
-      <MultiSelectFilter id={ids.system} name="system" label={labels.system} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(systems)} />
-      <MultiSelectFilter id={ids['ai-role']} name="ai_role" label={labels.aiRole} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(aiRoles)} />
-      <MultiSelectFilter id={ids.interface} name="interface" label={labels.interface} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(interfaces)} />
-      <MultiSelectFilter id={ids.evidence} name="evidence" label={labels.evidenceLevel} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(evidenceLevels)} />
-      <MultiSelectFilter id={ids.assurance} name="formal_assurance" label={labels.assurance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(assurances)} />
-      <MultiSelectFilter id={ids.novelty} name="novelty" label={labels.novelty} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(noveltyTypes)} />
-      <MultiSelectFilter id={ids.organization} name="organization" label={labels.organization} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(organizations)} />
-      <MultiSelectFilter id={ids.person} name="person" label={labels.person} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(people)} />
-      <MultiSelectFilter id={ids.problem} name="problem" label={labels.problem} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(problems)} />
-      <MultiSelectFilter id={ids.method} name="method" label={labels.method} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(methods)} />
-      <MultiSelectFilter id={ids['source-type']} name="source_type" label={labels.sourceType} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(sourceTypes)} />
-      <MultiSelectFilter id={ids['artifact-kind']} name="artifact_kind" label={labels.artifactKind} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(artifactKinds)} />
-      <MultiSelectFilter id={ids.tag} name="tag" label={labels.tag} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(tags)} />
+    <div class="explore-advanced-groups">
+      <section class="facet-group" data-facet-group="event-attributes">
+        <header class="facet-group-head"><h3>{labels.groupEvent}</h3><p>{labels.groupEventDesc}</p></header>
+        <div class="facet-group-controls">
+          <MultiSelectFilter id={ids.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(significanceTiers)} />
+          <MultiSelectFilter id={ids.novelty} name="novelty" label={labels.novelty} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(noveltyTypes)} />
+          <MultiSelectFilter id={ids.tag} name="tag" label={labels.tag} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(tags)} />
+        </div>
+      </section>
+
+      <section class="facet-group" data-facet-group="ai-mathematics">
+        <header class="facet-group-head"><h3>{labels.groupAiMath}</h3><p>{labels.groupAiMathDesc}</p></header>
+        <div class="facet-group-controls">
+          <MultiSelectFilter id={ids.system} name="system" label={labels.system} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(systems)} />
+          <MultiSelectFilter id={ids['ai-role']} name="ai_role" label={labels.aiRole} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(aiRoles)} />
+          <MultiSelectFilter id={ids.interface} name="interface" label={labels.interface} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(interfaces)} />
+          <MultiSelectFilter id={ids.method} name="method" label={labels.method} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(methods)} />
+        </div>
+      </section>
+
+      <section class="facet-group" data-facet-group="actors-objects">
+        <header class="facet-group-head"><h3>{labels.groupActors}</h3><p>{labels.groupActorsDesc}</p></header>
+        <div class="facet-group-controls">
+          <MultiSelectFilter id={ids.organization} name="organization" label={labels.organization} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(organizations)} />
+          <MultiSelectFilter id={ids.person} name="person" label={labels.person} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(people)} />
+          <MultiSelectFilter id={ids.problem} name="problem" label={labels.problem} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(problems)} />
+        </div>
+      </section>
+
+      <section class="facet-group" data-facet-group="evidence-verification">
+        <header class="facet-group-head"><h3>{labels.groupEvidence}</h3><p>{labels.groupEvidenceDesc}</p></header>
+        <div class="facet-group-controls">
+          <MultiSelectFilter id={ids.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(verificationStatuses)} />
+          <MultiSelectFilter id={ids.evidence} name="evidence" label={labels.evidenceLevel} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(evidenceLevels)} />
+          <MultiSelectFilter id={ids.assurance} name="formal_assurance" label={labels.assurance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(assurances)} />
+          <MultiSelectFilter id={ids['source-type']} name="source_type" label={labels.sourceType} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(sourceTypes)} />
+          <MultiSelectFilter id={ids['artifact-kind']} name="artifact_kind" label={labels.artifactKind} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(artifactKinds)} />
+        </div>
+      </section>
     </div>
   </details>
 

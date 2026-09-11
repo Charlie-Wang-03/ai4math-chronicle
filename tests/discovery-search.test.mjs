@@ -50,6 +50,19 @@ test('Explore exposes multi-select advanced facets and repeatable URL query stat
   assert.match(source, /data-filter-chips/);
 });
 
+test('Explore advanced facets are organized into semantic groups', () => {
+  const source = read('src/components/ExploreDirectory.astro');
+  for (const group of ['event-attributes', 'ai-mathematics', 'actors-objects', 'evidence-verification']) {
+    assert.ok(source.includes(`data-facet-group="${group}"`), `missing advanced facet group: ${group}`);
+  }
+  assert.match(source, /groupEvent: '事件属性'/);
+  assert.match(source, /groupAiMath: 'AI 与数学'/);
+  assert.match(source, /groupActors: '主体与对象'/);
+  assert.match(source, /groupEvidence: '证据与验证'/);
+  assert.match(source, /groupEvent: 'Event attributes'/);
+  assert.match(source, /groupEvidence: 'Evidence & verification'/);
+});
+
 test('Explore event count is derived from canonical records instead of hard-coded copy', () => {
   const source = read('src/components/ExplorePage.astro');
   assert.match(source, /\$\{events\.length\}/);
