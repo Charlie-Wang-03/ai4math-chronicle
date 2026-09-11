@@ -1,0 +1,173 @@
+schema_version: 1
+id: evt-2026-m2f
+slug: m2f-project-scale-autoformalization
+
+title:
+  en: M2F scales autoformalization from isolated theorems to machine-checked Lean projects
+  zh-CN: M2F 将自动形式化从孤立定理扩展到机器检查的 Lean 项目
+
+dates:
+  event: '2026-02-19'
+  first_public_claim: '2026-02-19'
+  paper_release: '2026-02-19'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- formalization
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      M2F moved automated formalization from single theorem statements toward dependency-aware, document- and project-scale Lean generation, addressing imports, declarations, proof holes and whole-project compilation as one workflow.
+    zh-CN: >-
+      M2F 将自动形式化从单个定理命题推进到具有依赖关系的文档级与项目级 Lean 生成，把导入、声明、证明缺口与整个项目的编译统一纳入同一工作流。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    The M2F paper reported a two-stage statement-compilation and proof-repair pipeline that converted 479 pages of real- and convex-analysis material into a 153,853-line Lean project and achieved 96% proof success on FATE-H in its fully automatic setting; generated Lean code was released publicly.
+  zh-CN: >-
+    M2F 论文报告了一套“命题编译 + 证明修复”的两阶段管线，将 479 页实分析与凸分析材料转化为 153,853 行 Lean 项目，并在完全自动设置下于 FATE-H 达到 96% 的证明成功率；生成的 Lean 代码已公开。
+
+summary:
+  en: >-
+    M2F first translates long mathematical documents into dependency-ordered Lean declaration skeletons and repairs project-level structural inconsistencies, then freezes statement signatures and iteratively closes proof holes using verifier feedback. The companion ReasBook repository exposes generated formalizations from textbooks and research papers.
+  zh-CN: >-
+    M2F 首先把长篇数学文档翻译为按依赖排序的 Lean 声明骨架，并修复项目层面的结构不一致；随后固定命题签名，利用验证器反馈迭代填补证明缺口。配套 ReasBook 仓库公开了由教材和研究论文生成的形式化项目。
+
+why_it_matters:
+  en: >-
+    Project-scale autoformalization changes the unit of automation from one problem at a time to coherent mathematical literature with shared definitions and dependencies, a prerequisite for turning large informal corpora into reusable formal libraries.
+  zh-CN: >-
+    项目级自动形式化把自动化单位从“一次处理一道题”转变为具有共享定义和依赖关系的完整数学文献，这是将大规模非形式数学语料转化为可复用形式库的重要前提。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The system automatically translates statements, repairs declarations and closes proof holes while using Lean toolchain feedback to accept or reject project edits.
+    zh-CN: >-
+      系统自动翻译命题、修复声明并填补证明缺口，同时利用 Lean 工具链反馈决定项目修改是否被接受。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the staged formalization pipeline, prepared source documents and evaluation protocol, and report human checks for whether extracted natural-language theorems and their formal statements align with the original mathematics.
+    zh-CN: >-
+      研究者设计分阶段形式化管线、准备源文档与评测协议，并报告由人类检查抽取的自然语言定理及其形式命题是否与原始数学内容一致。
+
+systems:
+- m2f
+- reasbook
+- lean
+organizations:
+- peking-university
+people: []
+problems:
+- project-scale-autoformalization
+- mathematical-literature-formalization
+methods:
+- autoformalization
+- dependency-ordering
+- verifier-guided-repair
+- proof-repair
+- lean
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-02-19'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv paper introduced M2F and reported project-scale formalization and FATE-H results.
+      zh-CN: >-
+        arXiv 论文发布 M2F，并报告项目级形式化与 FATE-H 结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public M2F and ReasBook repositories expose the framework, examples and generated Lean projects. Machine-checked refers to Lean compilation and proof checking in the released workflow; it does not establish independent semantic review of every generated formalization.
+      zh-CN: >-
+        M2F 与 ReasBook 公开仓库提供框架、示例和生成的 Lean 项目。machine-checked 指发布工作流中的 Lean 编译与证明检查，并不表示每一项生成形式化都获得独立语义审查。
+
+sources:
+- id: arxiv-m2f-2602.17016
+  tier: S1
+  type: paper
+  title: 'M2F: Automated Formalization of Mathematical Literature at Scale'
+  url: https://arxiv.org/abs/2602.17016
+  primary: true
+  published_date: '2026-02-19'
+  accessed_at: '2026-09-11'
+- id: github-optsuite-m2f
+  tier: S1
+  type: repository
+  title: M2F autoformalization framework
+  url: https://github.com/optsuite/M2F
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: github-optsuite-reasbook
+  tier: S1
+  type: formal_artifact
+  title: ReasBook generated Lean formalization projects
+  url: https://github.com/optsuite/ReasBook
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: m2f-repository
+  kind: code
+  title: M2F project-scale autoformalization framework
+  url: https://github.com/optsuite/M2F
+- id: reasbook-formalizations
+  kind: proof
+  title: ReasBook generated Lean projects
+  url: https://github.com/optsuite/ReasBook
+
+relationships:
+  predecessors:
+  - evt-2022-autoformalization-llm
+  - evt-2025-mathesis
+  successors: []
+  related:
+  - evt-2026-claude-flt-formalization
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- m2f
+- autoformalization
+- lean
+- mathematical-literature
+- project-scale
+- formalization
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

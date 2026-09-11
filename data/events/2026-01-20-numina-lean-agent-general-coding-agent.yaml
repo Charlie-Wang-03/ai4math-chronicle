@@ -1,0 +1,162 @@
+schema_version: 1
+id: evt-2026-numina-lean-agent
+slug: numina-lean-agent-general-coding-agent
+
+title:
+  en: Numina-Lean-Agent turns a general coding agent into an open Lean mathematics reasoner
+  zh-CN: Numina-Lean-Agent 将通用 Coding Agent 转化为开放的 Lean 数学推理系统
+
+dates:
+  event: '2026-01-20'
+  first_public_claim: '2026-01-20'
+  paper_release: '2026-01-20'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- system
+- proof
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Numina-Lean-Agent showed a distinct formal-mathematics architecture in which a general coding agent could directly operate Lean and call specialized tools through MCP, rather than depending on a task-specific prover pipeline or newly trained formal model.
+    zh-CN: >-
+      Numina-Lean-Agent 展示了一种不同的形式数学架构：通用 Coding Agent 可以直接操作 Lean，并通过 MCP 自主调用专用工具，而不必依赖任务专用的证明管线或新训练的形式证明模型。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- hybrid
+
+claim:
+  en: >-
+    The paper reported that Numina-Lean-Agent, built around Claude Code and Numina-Lean-MCP, solved all 12 Putnam 2025 problems with Claude Opus 4.5 and was also used with mathematicians to formalize the Effective Brascamp–Lieb theorem; the agent implementation and formal solutions were released publicly.
+  zh-CN: >-
+    论文报告称，基于 Claude Code 与 Numina-Lean-MCP 的 Numina-Lean-Agent 在 Claude Opus 4.5 上完成了 2025 Putnam 的全部 12 道题，并与数学家协作完成 Effective Brascamp–Lieb 定理的形式化；Agent 实现与形式证明结果均已公开。
+
+summary:
+  en: >-
+    The system uses a general-purpose coding-agent loop as the controller for Lean work and extends it with theorem retrieval, informal proving, verification and auxiliary reasoning tools exposed through an MCP-oriented interface. Its public repository includes setup instructions, runnable agent tooling and links to the Putnam proof artifacts.
+  zh-CN: >-
+    该系统以通用 Coding Agent 循环作为 Lean 工作的控制器，并通过面向 MCP 的接口接入定理检索、非形式证明、验证和辅助推理工具。公开仓库提供安装说明、可运行的 Agent 工具以及 Putnam 形式证明产物。
+
+why_it_matters:
+  en: >-
+    The work connected the rapidly developing coding-agent ecosystem to formal mathematics and suggested that improvements in general agent harnesses and base models could transfer directly into theorem proving without rebuilding a bespoke prover stack for each task.
+  zh-CN: >-
+    该工作把快速发展的 Coding Agent 生态直接连接到形式数学，并表明通用 Agent Harness 与基础模型的改进有可能直接迁移到定理证明，而无需为每类任务重新构建专用证明栈。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The coding agent autonomously inspects Lean goals, edits proof code and invokes specialized reasoning and retrieval tools; Lean compiler feedback mechanically constrains accepted formal outputs.
+    zh-CN: >-
+      Coding Agent 自主检查 Lean 目标、编辑证明代码并调用专用推理与检索工具；Lean 编译器反馈对被接受的形式输出进行机械约束。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the agent and MCP tool interface, configured evaluation tasks, released the implementation and proof artifacts, and supplied mathematician collaboration and semantic oversight in the research-level formalization case.
+    zh-CN: >-
+      研究者设计 Agent 与 MCP 工具接口、配置评测任务、公开实现及证明产物，并在研究级形式化案例中提供数学家协作与语义监督。
+
+systems:
+- numina-lean-agent
+- claude-code
+- numina-lean-mcp
+- lean
+organizations:
+- project-numina
+people: []
+problems:
+- putnam-2025
+- effective-brascamp-lieb-formalization
+methods:
+- coding-agent
+- model-context-protocol
+- compiler-feedback
+- theorem-retrieval
+- lean
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-01-20'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv paper introduced the general coding-agent paradigm for formal mathematics and reported the Putnam 2025 and Brascamp–Lieb results.
+      zh-CN: >-
+        arXiv 论文发布面向形式数学的通用 Coding Agent 范式，并报告 Putnam 2025 与 Brascamp–Lieb 案例结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public Numina-Lean-Agent repository exposes runnable tooling and links to generated Lean proof artifacts. Machine-checked describes Lean acceptance of formal outputs; it does not mean Chronicle independently reproduced every reported run or judged the informal-to-formal correspondence.
+      zh-CN: >-
+        Numina-Lean-Agent 公开仓库提供可运行工具并链接生成的 Lean 证明产物。machine-checked 表示形式输出可由 Lean 接受，并不表示 Chronicle 独立复现了全部报告运行或裁决非形式表述与形式命题之间的语义对应。
+
+sources:
+- id: arxiv-numina-lean-agent-2601.14027
+  tier: S1
+  type: paper
+  title: 'Numina-Lean-Agent: An Open and General Agentic Reasoning System for Formal Mathematics'
+  url: https://arxiv.org/abs/2601.14027
+  primary: true
+  published_date: '2026-01-20'
+  accessed_at: '2026-09-11'
+- id: github-project-numina-lean-agent
+  tier: S1
+  type: repository
+  title: Numina-Lean-Agent implementation and proof resources
+  url: https://github.com/project-numina/numina-lean-agent
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: numina-lean-agent-repository
+  kind: code
+  title: Numina-Lean-Agent implementation and Lean proof resources
+  url: https://github.com/project-numina/numina-lean-agent
+
+relationships:
+  predecessors:
+  - evt-2023-copra
+  - evt-2024-putnambench
+  successors: []
+  related:
+  - evt-2026-alphaproof-nexus
+  - evt-2025-mathesis
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- numina-lean-agent
+- lean
+- coding-agent
+- mcp
+- theorem-proving
+- formal-mathematics
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
