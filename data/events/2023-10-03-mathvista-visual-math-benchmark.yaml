@@ -116,7 +116,7 @@ sources:
   accessed_at: '2026-09-11'
 - id: mathvista-project
   tier: S1
-  type: project_page
+  type: other
   title: MathVista project page
   url: https://mathvista.github.io/
   primary: true
