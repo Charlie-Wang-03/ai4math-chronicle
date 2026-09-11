@@ -33,18 +33,6 @@ const copy = locale === 'zh-CN'
       trustCanonicalText: '同一事件记录驱动网页、搜索、订阅与数据导出。',
       trustOpen: '开放可修正',
       trustOpenText: '双语、可引用、GitHub-native，并保留结构化纠错入口。',
-      useEyebrow: '引用、复用与共建',
-      useHeading: '把 Chronicle 用于研究、数据工作流或共同维护',
-      useNote: '时间线负责阅读历史；这里提供引用、机器可读数据与公开纠错共建入口。',
-      citationTitle: '引用与研究',
-      citationText: '在论文、报告、课程材料或研究项目中引用 Chronicle，并优先使用 GitHub Release 作为可复现的版本快照。',
-      citationLink: '查看引用方式 →',
-      aiTitle: '数据与 AI 工作流',
-      aiText: '使用 JSON、NDJSON、Schema、RSS 与 llms.txt 进行分析、检索、知识整理或 AI-assisted workflows。',
-      aiLink: '打开数据与订阅 →',
-      contributorTitle: '纠错与共建',
-      contributorText: '提交遗漏事件、来源线索、事实纠错、验证更新、翻译修正或网站改进。',
-      contributorLink: '参与贡献 →',
     }
   : {
       title: 'AI4Math Chronicle — Major Milestones in AI for Mathematics',
@@ -66,18 +54,6 @@ const copy = locale === 'zh-CN'
       trustCanonicalText: 'One event record drives pages, search, feeds, and machine-readable exports.',
       trustOpen: 'Open and correctable',
       trustOpenText: 'Bilingual, citable, GitHub-native, with structured correction paths.',
-      useEyebrow: 'Cite, reuse & contribute',
-      useHeading: 'Use the Chronicle in research, data workflows, or shared maintenance',
-      useNote: 'The timeline is for reading history; these paths support citation, machine-readable reuse, corrections, and contribution.',
-      citationTitle: 'Citation & research',
-      citationText: 'Cite the Chronicle in papers, reports, teaching materials, or research projects, and prefer GitHub Releases as reproducible version snapshots.',
-      citationLink: 'View citation guidance →',
-      aiTitle: 'Data & AI workflows',
-      aiText: 'Use JSON, NDJSON, Schema, RSS, and llms.txt for analysis, retrieval, knowledge workflows, or AI-assisted research.',
-      aiLink: 'Open data & feeds →',
-      contributorTitle: 'Corrections & contribution',
-      contributorText: 'Submit missing events, source leads, factual corrections, verification updates, translation fixes, or website improvements.',
-      contributorLink: 'Contribute →',
     };
 const websiteJsonLd = {
   '@context': 'https://schema.org',
@@ -145,31 +121,4 @@ const websiteJsonLd = {
     <p class="section-note">{locale === 'zh-CN' ? '搜索与筛选只收窄当前时间线，不改变历史顺序；需要跨字段比较时进入“探索”。' : 'Search and filters only refine the current timeline; chronology stays fixed. Use Explore for cross-field comparison.'}</p>
   </div>
   <EventCollection events={events} locale={locale} mode="timeline" />
-
-  <section class="participation-section" aria-labelledby="use-chronicle-heading">
-    <div class="participation-header">
-      <div>
-        <p class="eyebrow">{copy.useEyebrow}</p>
-        <h2 id="use-chronicle-heading">{copy.useHeading}</h2>
-      </div>
-      <p>{copy.useNote}</p>
-    </div>
-    <div class="participation-grid">
-      <article class="participation-card">
-        <h3>{copy.citationTitle}</h3>
-        <p>{copy.citationText}</p>
-        <a href={`${repositoryUrl}/blob/main/CITATION.cff`} rel="noreferrer">{copy.citationLink}</a>
-      </article>
-      <article class="participation-card">
-        <h3>{copy.aiTitle}</h3>
-        <p>{copy.aiText}</p>
-        <a href={href(localePath(locale, 'data'))}>{copy.aiLink}</a>
-      </article>
-      <article class="participation-card">
-        <h3>{copy.contributorTitle}</h3>
-        <p>{copy.contributorText}</p>
-        <a href={`${repositoryUrl}/blob/main/CONTRIBUTING.md`} rel="noreferrer">{copy.contributorLink}</a>
-      </article>
-    </div>
-  </section>
 </BaseLayout>

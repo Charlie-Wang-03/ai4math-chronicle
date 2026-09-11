@@ -14,8 +14,9 @@ Canonical YAML Event
         │   ├── /zh-CN/
         │   ├── Explore
         │   ├── Event detail
-        │   ├── Methodology
-        │   └── Data
+        │   ├── Standards & Methodology
+        │   ├── Cite, Reuse & Contribute
+        │   └── Data & Feeds
         │
         ├── JSON / NDJSON
         ├── RSS
@@ -53,7 +54,7 @@ The validator reports shared source URLs as warnings because legitimate related 
 
 ## Search and exploration
 
-Pagefind runs after Astro renders `dist/`. Its CLI glob indexes only bilingual Event Detail routes under `**/events/**/*.html`, so Timeline, Explore, Methodology, Data, and other non-Event pages never appear as search results. The browser search API is configured with the Project Pages base URL, so result links remain valid under `/ai4math-chronicle/`. The npm Pagefind package uses the extended binary and supports Chinese/Japanese indexing.
+Pagefind runs after Astro renders `dist/`. Its CLI glob indexes only bilingual Event Detail routes under `**/events/**/*.html`, so Timeline, Explore, Standards & Methodology, Cite/Reuse/Contribute, Data & Feeds, and other non-Event pages never appear as search results. The browser search API is configured with the Project Pages base URL, so result links remain valid under `/ai4math-chronicle/`. The npm Pagefind package uses the extended binary and supports Chinese/Japanese indexing.
 
 Event Detail pages expose Pagefind filter metadata derived from the canonical record. The indexed facets now include year, event type, significance, verification status, system, AI role, interface, evidence level, formal assurance, mathematical novelty, organization, person, problem, method, source type, artifact type, and tags. Text search and structured facets therefore resolve through one Pagefind query rather than through independent result sets.
 
@@ -68,13 +69,14 @@ Explore persists multi-select state with repeatable URL query parameters, so a f
 
 ## Public information architecture
 
-The reader-facing hierarchy intentionally separates product discovery, trust explanation, and reuse utilities:
+The reader-facing hierarchy intentionally separates product discovery, trust explanation, and reuse/ecosystem actions:
 
 - **Timeline + Explore are the primary product surfaces.** Timeline answers “what happened over time?” while Explore answers “which events match these conditions?”.
 - **Standards & Methodology is the trust and interpretation layer.** It explains inclusion, significance, source tiers, evidence levels, verification semantics, formal assurance, uncertainty, and corrections for readers rather than acting as a maintainer operations manual.
-- **Data & Feeds and contribution paths are reuse/ecosystem utilities.** Data provides machine-readable exports, feeds, citation/version guidance, and canonical-record access; contribution paths live primarily in the homepage closing section, footer, and repository documentation.
+- **Cite, Reuse & Contribute is the top-level reuse/ecosystem gateway.** It routes readers to research citation and version snapshots, machine-readable data and AI workflows, or corrections and public contribution.
+- **Data & Feeds remains a specialized utility surface.** It owns export formats, feeds, Quick Start examples, version guidance, licensing, and canonical-record access without competing with the main reading modes.
 
-Accordingly, the primary header contains Timeline, Explore, Standards & Methodology, and GitHub. Data & Feeds remains reachable from the homepage reuse section and footer but is not a peer reading mode in the primary navigation. The homepage hero likewise prioritizes Explore and Standards & Methodology, while the closing section provides three next actions: citation/research, data/AI reuse, and corrections/contribution.
+Accordingly, the primary header contains Timeline, Explore, Standards & Methodology, Cite/Reuse/Contribute, and GitHub. Data & Feeds remains reachable from the use page and footer rather than becoming a peer reading mode. The homepage hero continues to prioritize Explore and Standards & Methodology, and the former homepage closing section has moved to the dedicated `/use/` page so Timeline stays focused on historical reading.
 
 The interaction model follows an information-dense publication pattern: overview first, then search/filter, then event-level evidence details on demand. Reader theme preference is a lightweight client-side enhancement with Light, Dark, and System modes; it does not change content or routing.
 
