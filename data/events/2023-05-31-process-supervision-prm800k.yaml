@@ -1,0 +1,174 @@
+schema_version: 1
+id: evt-2023-process-supervision-prm800k
+slug: process-supervision-prm800k
+
+title:
+  en: Process supervision and PRM800K establish step-level verification for math reasoning
+  zh-CN: 过程监督与 PRM800K 建立数学推理的步骤级验证路线
+
+dates:
+  event: '2023-05-31'
+  first_public_claim: '2023-05-31'
+  paper_release: '2023-05-31'
+  artifact_release: '2023-05-31'
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- system
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The work made step-level human feedback a concrete and scalable research object for mathematical reasoning, directly comparing process and outcome supervision and releasing PRM800K as a large process-supervision dataset that influenced later verifier and reward-model work.
+    zh-CN: >-
+      该工作把步骤级人工反馈变成数学推理中可系统研究和扩展的对象，直接比较过程监督与结果监督，并发布大规模过程监督数据集 PRM800K，对后续验证器与奖励模型路线产生持续影响。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- symbolic
+- numeric
+
+claim:
+  en: >-
+    OpenAI reported that process supervision significantly outperformed outcome supervision for training reward models on MATH solutions; its process-supervised model solved 78% of a representative held-out MATH subset, and the project released PRM800K with 800,000 step-level correctness labels.
+  zh-CN: >-
+    OpenAI 报告称，在 MATH 解题上使用过程监督训练奖励模型显著优于结果监督；其过程监督模型在代表性的留出 MATH 子集上解出 78% 的问题，并发布包含 80 万个步骤级正确性标签的 PRM800K。
+
+summary:
+  en: >-
+    Rather than rewarding only a final answer, the project collected human judgments on intermediate reasoning steps and trained process reward models from those labels. PRM800K exposes the annotations, labeling instructions and scored model samples used in the study.
+  zh-CN: >-
+    该项目不只对最终答案给出奖励，而是收集中间推理步骤的人工判断，并据此训练过程奖励模型。PRM800K 公开了研究使用的标注、标注说明以及带评分的模型样本。
+
+why_it_matters:
+  en: >-
+    Step-level verification became a durable component of later mathematical reasoning systems, providing training and selection signals that diagnose where a chain of reasoning first goes wrong rather than judging only its endpoint.
+  zh-CN: >-
+    步骤级验证后来成为数学推理系统的重要组成部分：它可以定位推理链从何处开始出错，并为训练与候选选择提供比只判断最终答案更细粒度的信号。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Language models generated mathematical solution trajectories and learned reward models scored intermediate reasoning steps; the correctness labels used for process supervision were supplied by human annotators.
+    zh-CN: >-
+      语言模型生成数学解题轨迹，学习式奖励模型对中间推理步骤进行评分；过程监督所需的正确性标签由人工标注者提供。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the process-versus-outcome supervision comparison, data-collection and active-learning procedures, while human labelers supplied step-level judgments for PRM800K.
+    zh-CN: >-
+      研究者设计过程监督与结果监督的比较、数据收集及主动学习流程，人工标注者则为 PRM800K 提供步骤级判断。
+
+systems:
+- process-reward-model
+- prm800k
+organizations:
+- openai
+people:
+- hunter-lightman
+- vineet-kosaraju
+- yura-burda
+- harri-edwards
+- bowen-baker
+- teddy-lee
+- jan-leike
+- john-schulman
+- ilya-sutskever
+- karl-cobbe
+problems:
+- math-benchmark
+methods:
+- process-supervision
+- process-reward-model
+- outcome-supervision
+- active-learning
+- verification
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2023-05-31'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        OpenAI released the research paper and official description comparing process and outcome supervision on MATH.
+      zh-CN: >-
+        OpenAI 公开研究论文与官方说明，报告在 MATH 上对过程监督和结果监督进行比较。
+  - date: '2023-05-31'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public PRM800K repository exposes 800,000 step-level labels, labeling instructions, data splits and evaluation samples. E3 records inspectability and does not imply independent verification of the reported model results.
+      zh-CN: >-
+        公开的 PRM800K 仓库提供 80 万个步骤级标签、标注说明、数据划分与评测样本。E3 表示产物可直接检查，并不等同于论文报告的模型结果已获得独立验证。
+
+sources:
+- id: arxiv-lets-verify-step-by-step-2305.20050
+  tier: S1
+  type: paper
+  title: Let's Verify Step by Step
+  url: https://arxiv.org/abs/2305.20050
+  primary: true
+  published_date: '2023-05-31'
+  accessed_at: '2026-09-11'
+- id: openai-process-supervision-2023
+  tier: S2
+  type: official_announcement
+  title: Improving mathematical reasoning with process supervision
+  url: https://openai.com/index/improving-mathematical-reasoning-with-process-supervision/
+  primary: true
+  published_date: '2023-05-31'
+  accessed_at: '2026-09-11'
+- id: github-openai-prm800k
+  tier: S1
+  type: repository
+  title: PRM800K process supervision dataset
+  url: https://github.com/openai/prm800k
+  primary: true
+  published_date: '2023-05-31'
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: prm800k-dataset
+  kind: dataset
+  title: PRM800K — 800,000 step-level correctness labels
+  url: https://github.com/openai/prm800k
+
+relationships:
+  predecessors:
+  - evt-2021-gsm8k
+  successors:
+  - evt-2023-math-shepherd
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- process-supervision
+- process-reward-model
+- verifier
+- math-reasoning
+- dataset
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

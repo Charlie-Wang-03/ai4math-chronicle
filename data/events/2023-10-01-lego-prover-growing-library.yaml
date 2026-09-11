@@ -1,0 +1,171 @@
+schema_version: 1
+id: evt-2023-lego-prover
+slug: lego-prover-growing-library
+
+title:
+  en: LEGO-Prover grows a reusable library of machine-checked lemmas during proof search
+  zh-CN: LEGO-Prover 在证明过程中持续扩展可复用的机器检查引理库
+
+dates:
+  event: '2023-10-01'
+  first_public_claim: '2023-10-01'
+  paper_release: '2023-10-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- proof
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      LEGO-Prover made a growing library of reusable, machine-checked lemmas part of the proving loop itself, moving beyond fixed theorem libraries and one-off proof trajectories toward accumulated formal skills that can support later problems.
+    zh-CN: >-
+      LEGO-Prover 把持续增长的可复用、机器检查引理库直接纳入证明循环，从固定定理库和一次性证明轨迹迈向能够为后续问题积累形式技能的路线。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    LEGO-Prover decomposed miniF2F problems into subgoal lemmas, retrieved or generated reusable skills, verified them with Isabelle through PISA and accumulated more than 20,000 skills in a growing library; the paper reported a 57.0% pass rate on miniF2F-valid and gains from the newly added skills.
+  zh-CN: >-
+    LEGO-Prover 将 miniF2F 问题分解为子目标引理，检索或生成可复用技能，通过 PISA 调用 Isabelle 进行验证，并在增长式技能库中积累超过 20,000 个技能；论文报告 miniF2F-valid 通过率达到 57.0%，且新增技能能够带来性能提升。
+
+summary:
+  en: >-
+    The system couples a prover and an evolver through a shared skill library. The prover constructs modular proofs from retrieved and newly generated lemmas, while the evolver transforms verified skills to increase their generality, reuse and complexity.
+  zh-CN: >-
+    该系统通过共享技能库连接 prover 与 evolver：prover 利用检索到的和新生成的引理构造模块化证明，evolver 则对已验证技能进行变换，以提高其通用性、可复用性与复杂度。
+
+why_it_matters:
+  en: >-
+    It provided an early concrete design for cumulative formal reasoning, where successful proof fragments become durable resources for future proof attempts rather than disappearing after a single theorem is solved.
+  zh-CN: >-
+    它提供了较早的“累积式形式推理”具体设计：成功的证明片段不会在单个定理解决后消失，而是转化为后续证明可继续使用的持久资源。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Large language models proposed subgoal lemmas, proof blocks and skill transformations, while Isabelle mechanically checked formal code before skills were admitted to the reusable library.
+    zh-CN: >-
+      大语言模型提出子目标引理、证明块和技能变换，Isabelle 则在技能进入可复用库之前对形式代码进行机械检查。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the prover/evolver architecture, skill-library lifecycle, retrieval and prompting procedures, integrated PISA and Isabelle, and evaluated the system on miniF2F.
+    zh-CN: >-
+      研究者设计 prover/evolver 架构、技能库生命周期、检索与提示流程，集成 PISA 和 Isabelle，并在 miniF2F 上评测系统。
+
+systems:
+- lego-prover
+- isabelle
+- pisa
+organizations: []
+people:
+- haiming-wang
+- huajian-xin
+- chuanyang-zheng
+- zhengying-liu
+problems:
+- minif2f
+methods:
+- theorem-proving
+- growing-skill-library
+- lemma-generation
+- retrieval
+- modular-proof-construction
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2023-10-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The public research record introduced the growing verified-skill-library architecture and reported miniF2F evaluations.
+      zh-CN: >-
+        公开研究记录提出增长式已验证技能库架构，并报告 miniF2F 评测结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The authors' public repository exposes the LEGO-Prover implementation, miniF2F integration and generated results. E3 records inspectability; it does not claim an independent replay of the reported experiments.
+      zh-CN: >-
+        作者公开仓库提供 LEGO-Prover 实现、miniF2F 集成与生成结果。E3 表示产物可检查，并不表示论文实验已经获得独立重放。
+
+sources:
+- id: arxiv-lego-prover-2310.00656
+  tier: S1
+  type: paper
+  title: 'LEGO-Prover: Neural Theorem Proving with Growing Libraries'
+  url: https://arxiv.org/abs/2310.00656
+  primary: true
+  published_date: '2023-10-01'
+  accessed_at: '2026-09-11'
+- id: github-lego-prover
+  tier: S1
+  type: repository
+  title: LEGO-Prover implementation and generated skills
+  url: https://github.com/wiio12/LEGO-Prover
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: iclr-lego-prover-2024
+  tier: S1
+  type: paper
+  title: 'LEGO-Prover: Neural Theorem Proving with Growing Libraries'
+  url: https://proceedings.iclr.cc/paper_files/paper/2024/hash/85dca46374dc0f27b4bb5f265b3d17f0-Abstract-Conference.html
+  primary: true
+  published_date: '2024-05-07'
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: lego-prover-repository
+  kind: code
+  title: LEGO-Prover code and generated theorem-proving resources
+  url: https://github.com/wiio12/LEGO-Prover
+
+relationships:
+  predecessors:
+  - evt-2021-minif2f
+  - evt-2022-thor
+  successors: []
+  related:
+  - evt-2023-leandojo
+  - evt-2023-copra
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- theorem-proving
+- isabelle
+- skill-library
+- lemma-generation
+- minif2f
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

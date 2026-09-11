@@ -1,0 +1,165 @@
+schema_version: 1
+id: evt-2023-alphadev
+slug: alphadev-sorting-algorithms
+
+title:
+  en: AlphaDev discovers faster sorting algorithms with deep reinforcement learning
+  zh-CN: AlphaDev 使用深度强化学习发现更快的排序算法
+
+dates:
+  event: '2023-06-07'
+  first_public_claim: '2023-06-07'
+  paper_release: '2023-06-07'
+  artifact_release: '2023-06-07'
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- discovery
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      AlphaDev extended reinforcement-learning-based algorithm discovery from mathematical search benchmarks into low-level computer-science routines whose discovered sorting algorithms were integrated into LLVM libc++, providing a deployed example of AI-generated exact algorithms.
+    zh-CN: >-
+      AlphaDev 将基于强化学习的算法发现从数学搜索扩展到低层计算机算法，并使发现的排序算法进入 LLVM libc++，成为 AI 生成精确算法并实际部署的代表性案例。
+
+mathematical_novelty:
+  type: new_algorithm
+
+interfaces:
+- symbolic
+- numeric
+- hybrid
+
+claim:
+  en: >-
+    AlphaDev formulated low-level algorithm design as a reinforcement-learning game and discovered new sorting routines that outperformed prior human-designed benchmarks; fixed sort-3, sort-4 and sort-5 routines were integrated into the LLVM standard C++ library.
+  zh-CN: >-
+    AlphaDev 将低层算法设计表述为强化学习游戏，并发现超过既有人类设计基准的新排序例程；其中固定长度的 sort-3、sort-4 与 sort-5 例程被集成进 LLVM 标准 C++ 库。
+
+summary:
+  en: >-
+    The system searches directly over assembly instructions using an AlphaZero-style learning and search procedure. DeepMind reported speedups up to 70% for short sequences and about 1.7% for very long sequences, while releasing pseudocode and discovered assembly programs with correctness tests.
+  zh-CN: >-
+    该系统使用类似 AlphaZero 的学习与搜索流程，直接在汇编指令空间中寻找算法。DeepMind 报告短序列最高约 70% 的加速、超长序列约 1.7% 的加速，并公开伪代码、发现的汇编程序及正确性测试。
+
+why_it_matters:
+  en: >-
+    The result showed that AI-discovered algorithmic improvements could move from a research search space into widely used production software, connecting exact algorithm discovery with measurable real-world deployment.
+  zh-CN: >-
+    该结果展示 AI 发现的算法改进可以从研究搜索空间进入广泛使用的生产软件，把精确算法发现与可测量的真实部署影响连接起来。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      AlphaDev searched the assembly-program space and discovered candidate sorting routines under correctness and latency rewards; the resulting algorithms were tested, translated and integrated by researchers and software maintainers.
+    zh-CN: >-
+      AlphaDev 在汇编程序空间中搜索，并在正确性与延迟奖励下发现候选排序例程；研究者与软件维护者随后对算法进行测试、转换与集成。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers formulated AssemblyGame, designed the reinforcement-learning system and evaluation, analyzed the discovered routines and translated suitable discoveries into C++ for library integration.
+    zh-CN: >-
+      研究者构造 AssemblyGame、设计强化学习系统与评测、分析发现的例程，并将适合部署的结果转换为 C++ 以集成到标准库。
+
+systems:
+- alphadev
+organizations:
+- google-deepmind
+people:
+- daniel-j-mankowitz
+- andrea-michi
+problems:
+- sorting-algorithms
+methods:
+- reinforcement-learning
+- alphazero
+- program-search
+- assembly-search
+- algorithm-discovery
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2023-06-07'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        Nature published the AlphaDev algorithm-discovery results and Google DeepMind released an official technical account.
+      zh-CN: >-
+        Nature 发表 AlphaDev 的算法发现结果，Google DeepMind 同日公开官方技术说明。
+  - date: '2023-06-07'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public AlphaDev repository exposes agent pseudocode, discovered assembly programs and correctness tests. E3 records inspectability rather than independent verification of every performance claim.
+      zh-CN: >-
+        公开 AlphaDev 仓库提供 Agent 伪代码、发现的汇编程序与正确性测试。E3 表示产物可检查，并不等同于全部性能主张已经获得独立验证。
+
+sources:
+- id: nature-alphadev-2023
+  tier: S1
+  type: paper
+  title: Faster sorting algorithms discovered using deep reinforcement learning
+  url: https://www.nature.com/articles/s41586-023-06004-9
+  primary: true
+  published_date: '2023-06-07'
+  accessed_at: '2026-09-11'
+- id: deepmind-alphadev-2023
+  tier: S2
+  type: official_announcement
+  title: AlphaDev discovers faster sorting algorithms
+  url: https://deepmind.google/blog/alphadev-discovers-faster-sorting-algorithms/
+  primary: false
+  published_date: '2023-06-07'
+  accessed_at: '2026-09-11'
+- id: github-google-deepmind-alphadev
+  tier: S1
+  type: repository
+  title: AlphaDev accompanying repository
+  url: https://github.com/google-deepmind/alphadev
+  primary: true
+  published_date: '2023-06-07'
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: alphadev-repository
+  kind: code
+  title: AlphaDev pseudocode, discovered assembly routines and correctness tests
+  url: https://github.com/google-deepmind/alphadev
+
+relationships:
+  predecessors:
+  - evt-2022-alphatensor
+  successors:
+  - evt-2023-funsearch-cap-set
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- algorithm-discovery
+- reinforcement-learning
+- sorting
+- program-search
+- alphazero
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
