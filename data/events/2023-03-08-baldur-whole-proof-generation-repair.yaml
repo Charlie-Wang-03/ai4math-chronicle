@@ -110,7 +110,7 @@ sources:
   accessed_at: '2026-09-11'
 - id: esec-fse-baldur-2023
   tier: S1
-  type: conference
+  type: other
   title: 'Baldur: Whole-Proof Generation and Repair with Large Language Models'
   url: https://2023.esec-fse.org/details/fse-2023-research-papers/2/Baldur-Whole-Proof-Generation-and-Repair-with-Large-Language-Models
   primary: true
