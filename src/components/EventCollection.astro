@@ -57,7 +57,7 @@ const controlIds = {
     {events.map((event, index) => {
       const eventUrl = href(localePath(locale, `events/${event.slug}`));
       const year = event.dates.event.slice(0, 4);
-      const previousYear = index > 0 ? events[index - 1].dates.event.slice(0, 4) : null;
+      const previousYear = index > 0 ? events[index - 1]?.dates.event.slice(0, 4) ?? null : null;
       const startsYear = year !== previousYear;
       return (
         <>
