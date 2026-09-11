@@ -24,15 +24,29 @@ test('multi-select facet control uses checkbox options instead of native multi-s
   assert.doesNotMatch(source, /<select/);
 });
 
-test('timeline combines text search with OR-within-facet multi-select filters without changing chronology', () => {
+test('Timeline keeps search chronological while limiting refinements to type and significance', () => {
   const source = read('src/components/EventCollection.astro');
   assert.match(source, /MultiSelectFilter/);
+  assert.match(source, /name="type"/);
+  assert.match(source, /name="significance"/);
+  assert.doesNotMatch(source, /name="year"/);
+  assert.doesNotMatch(source, /name="verification"/);
   assert.match(source, /\[key, \{ any: values \}\]/);
   assert.match(source, /engine\.search\(query, \{ filters: pagefindFilters \}\)/);
-  assert.match(source, /timeline-filter-panel/);
+  assert.match(source, /timeline-tools/);
   assert.doesNotMatch(source, /search-results/);
   assert.match(source, /chronology is unchanged/);
-  assert.match(source, /filters\.year\.includes\(year\)/);
+  assert.doesNotMatch(source, /filters\.year/);
+  assert.doesNotMatch(source, /data-year-chip/);
+});
+
+test('Timeline year controls are chronology anchors rather than duplicate filters', () => {
+  const source = read('src/components/EventCollection.astro');
+  assert.match(source, /yearNav: '跳转年份'/);
+  assert.match(source, /yearNav: 'Jump to year'/);
+  assert.match(source, /class="timeline-year-nav"/);
+  assert.match(source, /href=\{`#timeline-year-\$\{year\}`\}/);
+  assert.match(source, /class="timeline-year-anchor" id=\{`timeline-year-\$\{year\}`\}/);
 });
 
 test('Explore exposes multi-select advanced facets and repeatable URL query state', () => {
