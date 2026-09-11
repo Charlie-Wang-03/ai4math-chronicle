@@ -66,6 +66,16 @@ The UI separates two discovery modes:
 
 Explore persists multi-select state with repeatable URL query parameters, so a filtered view can be shared or revisited without a backend. The interaction remains entirely static and client-side.
 
+## Public information architecture
+
+The reader-facing hierarchy intentionally separates product discovery, trust explanation, and reuse utilities:
+
+- **Timeline + Explore are the primary product surfaces.** Timeline answers “what happened over time?” while Explore answers “which events match these conditions?”.
+- **Standards & Methodology is the trust and interpretation layer.** It explains inclusion, significance, source tiers, evidence levels, verification semantics, formal assurance, uncertainty, and corrections for readers rather than acting as a maintainer operations manual.
+- **Data & Feeds and contribution paths are reuse/ecosystem utilities.** Data provides machine-readable exports, feeds, citation/version guidance, and canonical-record access; contribution paths live primarily in the homepage closing section, footer, and repository documentation.
+
+Accordingly, the primary header contains Timeline, Explore, Standards & Methodology, and GitHub. Data & Feeds remains reachable from the homepage reuse section and footer but is not a peer reading mode in the primary navigation. The homepage hero likewise prioritizes Explore and Standards & Methodology, while the closing section provides three next actions: citation/research, data/AI reuse, and corrections/contribution.
+
 The interaction model follows an information-dense publication pattern: overview first, then search/filter, then event-level evidence details on demand. Reader theme preference is a lightweight client-side enhancement with Light, Dark, and System modes; it does not change content or routing.
 
 ## SEO / GEO / AI-readable structure
