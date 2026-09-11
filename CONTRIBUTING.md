@@ -4,7 +4,7 @@
 
 AI4Math Chronicle welcomes focused contributions that improve the historical record: new milestone proposals, factual corrections, stronger evidence, translation fixes, verification updates, and carefully scoped editorial changes.
 
-Implementation and build documentation is intentionally maintained separately. For code changes, use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md). Long-term review cadence, dependency maintenance, and release snapshot policy are defined in the [Maintenance Policy](./docs/maintenance.md).
+Implementation and build documentation is intentionally maintained separately. For code changes, use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md). Long-term review cadence, dependency maintenance, and release snapshot policy are defined in the [Maintenance Policy](./docs/maintenance.md). AI-assisted maintainer authority and human hard gates are defined in the [GPT Project Governance Protocol](./docs/gpt-project-governance.md).
 
 ## Choose the right contribution path
 
@@ -62,7 +62,16 @@ The main rules are:
 
 ## Human editorial gates
 
-Automated analysis may suggest or apply verification updates when the documented evidence rule is satisfied and the supporting sources are recorded. Contributions must not unilaterally finalize **H1 — Historical Milestone** unless the editor has explicitly delegated the classification pass under an established policy.
+Automated analysis may collect evidence, prepare the full Event / correction patch, and recommend significance or verification changes. Lower-risk H2/H3 publication and routine verification maintenance may proceed under the documented rules.
+
+Contributions and automation must not unilaterally finalize any of the following without direct human editorial approval unless an already-established human policy explicitly delegates that exact class of decision:
+
+- a new or materially changed **H1 — Historical Milestone** classification;
+- `independently_verified`;
+- `disputed`;
+- `corrected` as the current verification status;
+- `retracted`;
+- a material mathematical-correctness, attribution, or historical-priority adjudication made on the Chronicle's own authority.
 
 The Chronicle does not adjudicate ultimate mathematical correctness. High-risk historical wording such as “first”, “solves”, “proves”, or “disproves” should be attributed to reliable sources unless the historical fact itself is independently established.
 
@@ -76,7 +85,7 @@ A content PR should explain:
 - why it changed;
 - which sources support it;
 - what uncertainty remains;
-- whether a human H1 editorial gate is triggered.
+- whether any human editorial gate is triggered.
 
 Technical validation and local build instructions are documented in the [Development Guide](./docs/development.md).
 

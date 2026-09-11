@@ -51,13 +51,26 @@ Status changes must append to `verification.history`. Factual corrections belong
 
 ## AI and editorial boundary
 
-AI may collect sources, draft bilingual text, suggest taxonomy, detect duplicate metadata, perform consistency checks, and propose or apply verification updates when the documented evidence rule is satisfied and the supporting sources are recorded.
+AI may collect sources, draft bilingual text, suggest taxonomy, detect duplicate metadata, perform consistency checks, create ordinary H2/H3 Event records, and apply lower-risk evidence / verification updates when the documented rule is satisfied and the supporting sources are recorded.
 
-Final **H1 — Historical Milestone** classification requires either direct human editorial review or explicit delegated classification authority under an already established human policy.
+The standing human hard gates are:
+
+- final **H1 — Historical Milestone** classification or a material move into / out of H1;
+- finalizing `independently_verified`;
+- finalizing `disputed`;
+- finalizing `corrected` as the current verification status;
+- finalizing `retracted`;
+- resolving a material mathematical-correctness, attribution, or historical-priority dispute on the Chronicle's own authority.
+
+AI may prepare a complete evidence-backed patch and recommendation up to any of these gates, but publication of the gated decision requires direct human editorial approval unless an already-established human policy explicitly delegates that exact class of decision.
+
+The `independently_verified` gate is a governance requirement on publication; it does **not** redefine the status. The status still means event-level independent corroboration, not ultimate certification of mathematical correctness.
 
 Neither AI nor the Chronicle should present “this new mathematical fact is correct” as the project's own adjudication. High-risk wording such as “first”, “solves”, “proves”, or “disproves” should be attributed to reliable sources unless the historical fact itself is independently established.
 
 The v0.1 significance pass was finalized under explicit human editorial approval and delegated authority. Future H1 additions remain subject to the same human gate.
+
+Detailed cross-conversation authority and state-recovery rules are defined in [`gpt-project-governance.md`](./gpt-project-governance.md).
 
 ## Historical record versus endorsement
 

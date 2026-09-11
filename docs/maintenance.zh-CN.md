@@ -2,7 +2,7 @@
 
 [English](./maintenance.md) · **简体中文**
 
-本文定义 AI4Math 大事记在 v0.1.0 公开发布后的长期维护节奏。它补充而不替代 [编辑方法论](./editorial-methodology.zh-CN.md)、[开发指南](./development.zh-CN.md) 与 [贡献指南](../CONTRIBUTING.zh-CN.md)。
+本文定义 AI4Math 大事记在 v0.1.0 公开发布后的长期维护节奏。它补充而不替代 [编辑方法论](./editorial-methodology.zh-CN.md)、[开发指南](./development.zh-CN.md)、[GPT 项目治理协议](./gpt-project-governance.md) 与 [贡献指南](../CONTRIBUTING.zh-CN.md)。
 
 ## 维护模型
 
@@ -51,9 +51,22 @@ AI4Math 大事记定位为精选历史档案，而不是实时新闻流。因此
 
 ## 人工编辑门槛
 
-长期保留的人工编辑门槛是重要性判断：自动化和贡献者不得单方面最终确定新的 **H1 — 历史级里程碑**，除非已经在既定标准下获得明确授权。
+人工审核只保留给有限枚举的高风险决定，而不是所有普通维护修改。
 
-当文档化的证据规则已经满足、支持来源已经记录时，可以更新 verification status。特别地，`independently_verified` 表示独立于原始发布方的可靠来源已经对 Chronicle 的核心事件描述提供实质性佐证；它不表示 Chronicle 已经认证底层数学 claim 的最终正确性。
+长期保留的人工编辑 hard gates 为：
+
+- 新增或实质性改变 **H1 — 历史级里程碑** 分类；
+- 最终确定 `independently_verified`；
+- 最终确定 `disputed`；
+- 最终将 `corrected` 设为当前 verification status；
+- 最终确定 `retracted`；
+- 以 Chronicle 自身权威解决存在实质冲突的数学正确性、归属或历史优先权争议。
+
+自动化可以把证据收集、完整 patch 与推荐结论准备到 gate 边界，但除非既有人工政策已经明确授权该类决定，否则不得在没有直接人工批准的情况下正式发布 gated status 或 classification。
+
+较低风险的 evidence / verification 更新，在文档化规则满足且支持来源已记录时仍可高自治推进。
+
+`independently_verified` 仍然表示独立于原始发布方的可靠来源已经实质性佐证 Chronicle 的核心事件描述；人工 gate 是发布治理要求，不表示 Chronicle 已经认证底层数学 claim 的最终正确性。
 
 Chronicle 不应把“某个新数学事实是正确的”写成项目自身的最终裁决。这类判断应继续归属于可靠来源，并随着公开记录变化而更新。
 
@@ -107,6 +120,8 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 
 仓库设置继续保持最小化：开启 Issues；Projects、Wiki 与 Discussions 保持关闭，直到真实协作规模证明它们有必要。
 
+跨对话的 Agent 权限、state recovery 与 agenda 限制以 [`gpt-project-governance.md`](./gpt-project-governance.md) 为准；当前批准的语义阶段与主线记录在 [`project-state.md`](./project-state.md)。
+
 ## 健康维护的定义
 
 满足以下条件时，可以认为项目处于健康维护状态：
@@ -116,4 +131,5 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 - CI、CodeQL 与 Pages deployment 保持绿色；
 - 依赖更新受控，不制造 toolchain churn；
 - 公开贡献入口始终可用；
-- Release 周期性提供可引用快照，同时不会把仓库拖入沉重的 release management。
+- Release 周期性提供可引用快照，同时不会把仓库拖入沉重的 release management；
+- 一个全新的 AI 协作对话可以仅依赖仓库证据恢复当前项目状态，而不依赖陈旧聊天上下文。
