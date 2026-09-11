@@ -60,6 +60,8 @@ Event Detail pages expose Pagefind filter metadata derived from the canonical re
 
 All user-facing filter controls are multi-select. Within one facet, selected values use OR semantics; different facets combine with AND semantics. For example, `H1 + H2` and `Lean + Isabelle` means `(H1 OR H2) AND (Lean OR Isabelle)`. The client sends these groups to Pagefind with compound `any` filters and mirrors the same semantics in the local fallback path.
 
+Canonical taxonomy identifiers remain the values used by YAML, `data-*` attributes, Pagefind filters, and shareable URL query parameters. Reader-facing surfaces resolve those identifiers through the centralized bilingual presentation layer in `src/lib/presentation.ts`, so machine-stable values such as `under_verification` or `ai_primary_human_verified` do not have to appear as final interface copy.
+
 The UI separates two discovery modes:
 
 - **Timeline:** chronological reading remains the primary product surface. Search plus multi-select year, event type, significance, and verification only refine the visible timeline; they never reorder history. Year chips also support multiple active years and remain synchronized with the year facet.
