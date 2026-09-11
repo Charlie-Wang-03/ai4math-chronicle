@@ -45,12 +45,16 @@ function arxivDateBoundary(date, endOfDay) {
   return `${date.replaceAll('-', '')}${endOfDay ? '2359' : '0000'}`;
 }
 
-export function buildArxivUrl(channel, start, end, maxOverride = null) {
+export function resultLimit(channel, maxOverride = null) {
   const maxResults = maxOverride ?? channel.max_results ?? 80;
   if (!Number.isInteger(maxResults) || maxResults < 1 || maxResults > 2000) {
     throw new Error(`Invalid max_results for ${channel.id}: ${maxResults}`);
   }
+  return maxResults;
+}
 
+export function buildArxivUrl(channel, start, end, maxOverride = null) {
+  const maxResults = resultLimit(channel, maxOverride);
   const dateFilter = `submittedDate:[${arxivDateBoundary(start, false)} TO ${arxivDateBoundary(end, true)}]`;
   const url = new URL(ARXIV_ENDPOINT);
   url.searchParams.set('search_query', `(${channel.query.trim()}) AND ${dateFilter}`);
@@ -199,6 +203,7 @@ function mergeCandidate(map, entry, channelId, corpusIndex) {
 
 function markdownReport(report) {
   const fresh = report.candidates.filter((candidate) => !candidate.already_in_corpus);
+  const saturated = report.channels.filter((channel) => channel.possible_truncation);
   const lines = [
     '# AI4Math Chronicle deterministic source scan',
     '',
@@ -208,13 +213,29 @@ function markdownReport(report) {
     `- Machine channels: ${report.channels.map((channel) => `\`${channel.id}\``).join(', ')}`,
     `- Unique arXiv records: ${report.candidates.length}`,
     `- Not already cited by canonical Events: ${fresh.length}`,
+    `- Channels at result cap: ${saturated.length}`,
     '',
     '> This is a discovery artifact, not a Chronicle Event list and not a significance or verification judgment.',
     '',
-    '## Candidates not already cited in the corpus',
+    '## Coverage diagnostics',
     '',
   ];
 
+  for (const channel of report.channels) {
+    const capNote = channel.possible_truncation ? ' **POSSIBLE TRUNCATION — rerun with a smaller window or higher cap.**' : '';
+    lines.push(`- \`${channel.id}\`: ${channel.returned}/${channel.max_results} returned; response SHA-256 \`${channel.response_sha256}\`.${capNote}`);
+    lines.push(`  - Request: ${channel.request_url}`);
+  }
+  lines.push('');
+
+  lines.push('## Direct channels requiring explicit inspection', '');
+  lines.push('These versioned channels are part of the repeatable discovery checklist but are not machine-scraped in R0.', '');
+  for (const channel of report.manual_channels) {
+    lines.push(`- \`${channel.id}\` — ${channel.default_source_tier ?? 'unspecified'} — ${channel.purpose ?? 'unspecified'} — ${channel.url}`);
+  }
+  lines.push('');
+
+  lines.push('## Candidates not already cited in the corpus', '');
   if (fresh.length === 0) lines.push('_None in this scan window._', '');
   for (const candidate of fresh) {
     lines.push(`### ${candidate.title}`);
@@ -248,6 +269,17 @@ export async function runScan({ start, end, output = DEFAULT_OUTPUT_DIR, maxResu
 
   const { raw: registryRaw, config } = loadChannels();
   const channels = config.channels.filter((channel) => channel.enabled && channel.mode === 'machine' && channel.adapter === 'arxiv_api');
+  const manualChannels = config.channels
+    .filter((channel) => channel.enabled && channel.mode === 'manual')
+    .map((channel) => ({
+      id: channel.id,
+      adapter: channel.adapter,
+      default_source_tier: channel.default_source_tier ?? null,
+      purpose: channel.purpose ?? null,
+      url: channel.url,
+      tracking_issue: channel.tracking_issue ?? null,
+      notes: channel.notes ?? null,
+    }));
   if (channels.length === 0) throw new Error('No enabled machine arXiv channels configured');
 
   const corpusIndex = buildCorpusArxivIndex();
@@ -256,10 +288,18 @@ export async function runScan({ start, end, output = DEFAULT_OUTPUT_DIR, maxResu
 
   for (let index = 0; index < channels.length; index += 1) {
     const channel = channels[index];
+    const maxForChannel = resultLimit(channel, maxResults);
     const url = buildArxivUrl(channel, start, end, maxResults);
     const xml = await fetchText(url);
     const entries = parseArxivAtom(xml);
-    channelRuns.push({ id: channel.id, request_url: url.toString(), returned: entries.length });
+    channelRuns.push({
+      id: channel.id,
+      request_url: url.toString(),
+      max_results: maxForChannel,
+      returned: entries.length,
+      possible_truncation: entries.length >= maxForChannel,
+      response_sha256: sha256(xml),
+    });
     for (const entry of entries) mergeCandidate(candidates, entry, channel.id, corpusIndex);
     if (!noDelay && index < channels.length - 1) await sleep(3000);
   }
@@ -275,6 +315,7 @@ export async function runScan({ start, end, output = DEFAULT_OUTPUT_DIR, maxResu
     window: { start, end },
     registry_sha256: sha256(registryRaw),
     channels: channelRuns,
+    manual_channels: manualChannels,
     candidates: sorted,
   };
 
@@ -295,7 +336,8 @@ if (isMain) {
     if (!args.start || !args.end) throw new Error(`--start and --end are required\n${usage()}`);
     const report = await runScan(args);
     const fresh = report.candidates.filter((candidate) => !candidate.already_in_corpus).length;
-    console.log(`Source scan complete: ${report.candidates.length} unique records; ${fresh} not already cited by canonical Events.`);
+    const saturated = report.channels.filter((channel) => channel.possible_truncation).length;
+    console.log(`Source scan complete: ${report.candidates.length} unique records; ${fresh} not already cited by canonical Events; ${saturated} channels at result cap.`);
   } catch (error) {
     console.error(error instanceof Error ? error.message : error);
     process.exit(1);
