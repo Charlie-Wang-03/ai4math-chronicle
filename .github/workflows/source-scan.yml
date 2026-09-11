@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       start_date:
-        description: "Inclusive arXiv submittedDate start (YYYY-MM-DD)"
+        description: "Inclusive discovery-window start (YYYY-MM-DD)"
         required: true
         type: string
       end_date:
-        description: "Inclusive arXiv submittedDate end (YYYY-MM-DD)"
+        description: "Inclusive discovery-window end (YYYY-MM-DD)"
         required: true
         type: string
       max_results:
@@ -35,9 +35,16 @@ jobs:
           package-manager-cache: false
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-      - name: Run deterministic source scan
+      - name: Run deterministic arXiv scan
         run: >-
           npm run scan:sources --
+          --start "${{ inputs.start_date }}"
+          --end "${{ inputs.end_date }}"
+          --max-results "${{ inputs.max_results }}"
+          --output source-scan-output
+      - name: Run deterministic official feed scan
+        run: >-
+          npm run scan:feeds --
           --start "${{ inputs.start_date }}"
           --end "${{ inputs.end_date }}"
           --max-results "${{ inputs.max_results }}"

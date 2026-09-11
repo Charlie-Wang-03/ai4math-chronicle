@@ -46,14 +46,18 @@ channels:
     notes: >-
       Discovery-oriented lane intended to surface research that may not use theorem-proving vocabulary.
 
-  - id: openai-research-news
+  - id: openai-news-rss
     enabled: true
-    mode: manual
-    adapter: direct_url
+    mode: machine
+    adapter: rss_atom
     default_source_tier: S2
     purpose: official_claim_watch
-    url: https://openai.com/news/
-    notes: Official OpenAI news surface; use the direct research paper or artifact when available.
+    url: https://openai.com/news/rss.xml
+    max_results: 120
+    notes: >-
+      Official RSS endpoint linked from OpenAI's News site. The feed is broader than mathematics;
+      use it for deterministic official-claim enumeration, then triage relevance and follow promoted
+      items to direct research papers, repositories, formal artifacts or dedicated announcement pages.
 
   - id: google-deepmind-news
     enabled: true

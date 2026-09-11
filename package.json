@@ -12,6 +12,7 @@
     "validate": "node scripts/validate-events.mjs",
     "generate": "node scripts/generate-data.mjs",
     "scan:sources": "node scripts/source-scan.mjs",
+    "scan:feeds": "node scripts/feed-scan.mjs",
     "test": "npm run validate && npm run generate && node --test tests/*.test.mjs",
     "check": "astro check",
     "build:site": "astro build",

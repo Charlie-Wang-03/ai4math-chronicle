@@ -72,9 +72,16 @@ test('source channel registry has unique, actionable channel definitions', () =>
     assert.ok(typeof channel.purpose === 'string' && channel.purpose.length > 0, `missing purpose for ${channel.id}`);
 
     if (channel.mode === 'machine') {
-      assert.equal(channel.adapter, 'arxiv_api', `unsupported machine adapter for ${channel.id}`);
-      assert.ok(typeof channel.query === 'string' && channel.query.trim().length > 0, `missing query for ${channel.id}`);
+      assert.ok(['arxiv_api', 'rss_atom'].includes(channel.adapter), `unsupported machine adapter for ${channel.id}`);
       assert.ok(Number.isInteger(channel.max_results) && channel.max_results > 0 && channel.max_results <= 2000, `invalid max_results for ${channel.id}`);
+      if (channel.adapter === 'arxiv_api') {
+        assert.ok(typeof channel.query === 'string' && channel.query.trim().length > 0, `missing query for ${channel.id}`);
+      } else {
+        assert.doesNotThrow(() => {
+          const url = new URL(channel.url);
+          assert.equal(url.protocol, 'https:');
+        }, `invalid feed URL for ${channel.id}`);
+      }
     } else {
       assert.equal(channel.adapter, 'direct_url', `unsupported manual adapter for ${channel.id}`);
       assert.doesNotThrow(() => {

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Example Research News</title>
+    <item>
+      <title><![CDATA[Example & Mathematical Discovery]]></title>
+      <link>https://example.org/research/math-discovery/?utm_source=rss</link>
+      <guid>https://example.org/research/math-discovery/</guid>
+      <pubDate>Tue, 08 Sep 2026 12:30:00 GMT</pubDate>
+      <dc:creator><![CDATA[Example Lab]]></dc:creator>
+      <category><![CDATA[Research]]></category>
+      <category>Mathematics</category>
+      <description><![CDATA[<p>A <strong>research</strong> announcement.</p>]]></description>
+    </item>
+    <item>
+      <title>Older item</title>
+      <link>https://example.org/research/older-item/</link>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <description>Outside the target window.</description>
+    </item>
+  </channel>
+</rss>
