@@ -34,6 +34,18 @@ const breadcrumbJsonLd = {
 };
 ---
 <BaseLayout locale={locale} title={`${eventTitle} — AI4Math Chronicle`} description={description} canonicalPath={canonicalPath} alternatePath={localePath(other, `events/${event.slug}`)} jsonLd={[articleJsonLd,breadcrumbJsonLd]}>
+  <div class="sr-only" data-pagefind-ignore aria-hidden="true">
+    <span data-pagefind-filter={`year:${event.dates.event.slice(0, 4)}`}></span>
+    {event.event_types.map((value) => <span data-pagefind-filter={`type:${value}`}></span>)}
+    <span data-pagefind-filter={`significance:${event.significance.tier}`}></span>
+    <span data-pagefind-filter={`verification:${event.verification.status}`}></span>
+    {event.systems.map((value) => <span data-pagefind-filter={`system:${value}`}></span>)}
+    <span data-pagefind-filter={`ai_role:${event.ai_role.level}`}></span>
+    {event.interfaces.map((value) => <span data-pagefind-filter={`interface:${value}`}></span>)}
+    <span data-pagefind-filter={`evidence:${event.verification.evidence_level}`}></span>
+    <span data-pagefind-filter={`formal_assurance:${event.verification.formal_assurance}`}></span>
+  </div>
+
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={href(localePath(locale))}>{zh ? '时间线' : 'Timeline'}</a><span>/</span><span>{eventTitle}</span></nav>
   <header class="event-header">
     <p class="eyebrow"><time datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time></p>
