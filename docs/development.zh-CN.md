@@ -37,6 +37,17 @@ npm run build
 
 生产构建会校验 canonical YAML、生成机器可读输出、检查 Astro / TypeScript、渲染静态站点并构建 Pagefind 索引。
 
+涉及 reader interface 的修改还应针对 production build 运行聚焦的浏览器 smoke suite。该套件刻意只使用一套固定版本的 Chromium 工具链，而不是扩大成跨浏览器矩阵。Playwright 采用临时安装，因此不会成为网站运行依赖，也不会修改已提交的 lockfile：
+
+```bash
+npm run build
+npm install --no-save --package-lock=false @playwright/test@1.55.0
+npx playwright install chromium
+npm run test:browser
+```
+
+CI 会安装相同固定版本的 Playwright、Chromium 及其系统依赖，并在正常 production build 之后执行 `npm run test:browser`。浏览器报告与失败产物只属于本地 / CI 输出，不提交进仓库。
+
 ## 仓库区域
 
 ```text
@@ -45,7 +56,8 @@ schema/event.schema.json   Event Schema
 scripts/                   校验与导出生成
 src/                       Astro 页面、layout、component 与样式
 public/                    静态公开资源
-tests/                     数据管线测试
+tests/                     数据管线与静态契约测试
+tests/browser/             聚焦的 reader-interface 浏览器 smoke tests
 .github/workflows/         CI 与 Pages 部署
 ```
 
@@ -71,7 +83,10 @@ CI 应保持 deterministic，并至少覆盖：
 - generated data consistency；
 - Astro / TypeScript checks；
 - 静态 production build；
-- Pagefind index build。
+- Pagefind index build；
+- 针对关键读者交互的小型真实浏览器 responsive / accessibility smoke gate。
+
+浏览器 smoke gate 刻意保持窄范围。它保护 compact mobile header、Explore 的 mobile-native 布局、多选控件的键盘操作与 focus visibility、显式零结果恢复、双语路由切换、主题偏好持久化、关键 landmarks 与 Event Detail 页内导航。它不是像素级截图回归、完整 WCAG 认证或跨浏览器兼容性矩阵。
 
 外部链接检查不应成为长期 flaky CI 来源。
 
