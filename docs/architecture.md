@@ -64,7 +64,7 @@ Canonical taxonomy identifiers remain the values used by YAML, `data-*` attribut
 
 The UI separates two discovery modes:
 
-- **Timeline:** chronological reading remains the primary product surface. Search plus multi-select year, event type, significance, and verification only refine the visible timeline; they never reorder history. Year chips also support multiple active years and remain synchronized with the year facet.
+- **Timeline:** chronological reading remains the primary product surface. Full-text search plus multi-select event type and significance provide only lightweight refinement and never reorder history. Year controls are true in-page chronology anchors that jump to the first record for a year rather than duplicating filter state. Year filtering, verification filtering, and richer cross-field combinations are intentionally delegated to Explore.
 - **Explore:** targeted retrieval and comparison. Full-text search, basic multi-select facets, advanced facets, sorting, removable per-value condition chips, and URL query state operate on one event result set. Advanced facets are grouped into four semantic sections—Event attributes, AI & mathematics, Actors & objects, and Evidence & verification—so the richer query surface remains scannable as the corpus grows.
 
 Explore persists multi-select state with repeatable URL query parameters, so a filtered view can be shared or revisited without a backend. The interaction remains entirely static and client-side.

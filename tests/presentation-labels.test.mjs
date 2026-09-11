@@ -44,7 +44,8 @@ test('reader surfaces use presentation labels while preserving canonical filter 
   assert.match(card, /presentationLabel\('evidence_level'/);
   assert.match(card, /presentationLabel\('event_type'/);
   assert.match(timeline, /presentationOptions\('event_type'/);
-  assert.match(timeline, /presentationOptions\('verification'/);
+  assert.match(timeline, /presentationOptions\('significance'/);
+  assert.match(explore, /presentationOptions\('verification'/);
   assert.match(explore, /presentationOptions\('ai_role'/);
   assert.match(explore, /presentationOptions\('formal_assurance'/);
   assert.match(explore, /presentationOptions\('source_type'/);
