@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/theme.css';
 import '../styles/brand.css';
+import '../styles/responsive.css';
 import { absolute, href, localePath, otherLocale } from '../lib/site';
 import type { Locale } from '../lib/types';
 
@@ -18,7 +19,7 @@ const other = otherLocale(locale);
 const labels = locale === 'zh-CN'
   ? {
       timeline: '时间线', explore: '探索', methodology: '标准与方法', use: '使用与共建', data: '数据与订阅', github: 'GitHub', switch: 'English',
-      theme: '主题', system: '跟随系统', light: '浅色', dark: '深色',
+      theme: '主题', system: '跟随系统', light: '浅色', dark: '深色', menu: '菜单',
       nav: '主导航', skip: '跳到主要内容',
       footerMission: '一个以时间线为核心、基于证据、可审计且可修正的 AI for Mathematics 历史档案。Canonical YAML 同时生成静态网页与机器可读数据。',
       footerExplore: '浏览', footerProject: '项目', contribute: '参与贡献', releases: '发布版本', citation: '引用',
@@ -27,7 +28,7 @@ const labels = locale === 'zh-CN'
     }
   : {
       timeline: 'Timeline', explore: 'Explore', methodology: 'Standards & Methodology', use: 'Use & Contribute', data: 'Data & Feeds', github: 'GitHub', switch: '简体中文',
-      theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark',
+      theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', menu: 'Menu',
       nav: 'Primary navigation', skip: 'Skip to main content',
       footerMission: 'A timeline-first, evidence-backed, auditable, and correctable historical archive for AI for Mathematics. Canonical YAML drives both static pages and machine-readable data.',
       footerExplore: 'Explore', footerProject: 'Project', contribute: 'Contribute', releases: 'Releases', citation: 'Citation',
@@ -46,6 +47,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
     <meta name="application-name" content="AI4Math Chronicle" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#f6f7fa" />
+    <script is:inline>document.documentElement.classList.add('js');</script>
     <script is:inline>
       (() => {
         const key = 'ai4math-theme';
@@ -93,7 +95,13 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
             <span class="brand-local-name">AI4Math 大事记</span>
           </span>
         </a>
-        <nav class="nav" aria-label={labels.nav}>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-controls="primary-nav" aria-expanded="false">
+          <span>{labels.menu}</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true">
+            <path d="M3 5.5h14M3 10h14M3 14.5h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          </svg>
+        </button>
+        <nav class="nav" id="primary-nav" data-site-nav aria-label={labels.nav}>
           <a href={href(localePath(locale))}>{labels.timeline}</a>
           <a href={href(localePath(locale, 'explore'))}>{labels.explore}</a>
           <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
@@ -214,6 +222,36 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
         };
         if ('addEventListener' in media) media.addEventListener('change', handleSystemChange);
         else if ('addListener' in media) media.addListener(handleSystemChange);
+      })();
+    </script>
+    <script is:inline>
+      (() => {
+        const toggle = document.querySelector('[data-nav-toggle]');
+        const nav = document.querySelector('[data-site-nav]');
+        const compact = window.matchMedia('(max-width: 760px)');
+        if (!(toggle instanceof HTMLButtonElement) || !(nav instanceof HTMLElement)) return;
+
+        const setOpen = (open) => {
+          nav.dataset.open = String(open);
+          toggle.setAttribute('aria-expanded', String(open));
+        };
+
+        setOpen(false);
+        toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+        nav.addEventListener('click', (event) => {
+          if (compact.matches && event.target instanceof Element && event.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false);
+            toggle.focus();
+          }
+        });
+        const handleViewportChange = () => {
+          if (!compact.matches) setOpen(false);
+        };
+        if ('addEventListener' in compact) compact.addEventListener('change', handleViewportChange);
+        else if ('addListener' in compact) compact.addListener(handleViewportChange);
       })();
     </script>
   </body>
