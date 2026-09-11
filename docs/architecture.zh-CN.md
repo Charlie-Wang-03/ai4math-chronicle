@@ -14,8 +14,9 @@ Canonical YAML Event
         │   ├── /zh-CN/
         │   ├── Explore
         │   ├── Event detail
-        │   ├── Methodology
-        │   └── Data
+        │   ├── 标准与方法
+        │   ├── 引用、复用与共建
+        │   └── 数据与订阅
         │
         ├── JSON / NDJSON
         ├── RSS
@@ -53,7 +54,7 @@ Canonical YAML Event
 
 ## 搜索与探索
 
-Pagefind 在 Astro 渲染 `dist/` 之后运行。其 CLI glob 只索引 `**/events/**/*.html` 下的中英文 Event Detail 路由，因此 Timeline、Explore、Methodology、Data 等非事件页面不会出现在搜索结果中。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
+Pagefind 在 Astro 渲染 `dist/` 之后运行。其 CLI glob 只索引 `**/events/**/*.html` 下的中英文 Event Detail 路由，因此 Timeline、Explore、标准与方法、引用/复用/共建、数据与订阅等非事件页面不会出现在搜索结果中。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
 
 Event Detail 页面会从 canonical record 写入 Pagefind filter metadata。当前索引 facets 包括年份、事件类型、重要性、验证状态、系统、AI 角色、接口、证据等级、形式保障、数学新颖性、机构、人物、问题、方法、来源类型、工件类型与标签。因此全文搜索和结构化筛选通过同一个 Pagefind 查询求交，而不是分别生成多套结果。
 
@@ -68,13 +69,14 @@ Explore 使用可重复的 URL query parameters 持久化多选状态，因此�
 
 ## 公共信息架构
 
-面向读者的站点层级明确区分产品发现、可信度解释与复用工具：
+面向读者的站点层级明确区分产品发现、可信度解释与复用 / 开放生态行动：
 
 - **Timeline + Explore 是主产品表面。** Timeline 回答“AI4Math 随时间发生了什么？”，Explore 回答“哪些事件符合这些条件？”。
 - **标准与方法是可信度与解释层。** 它面向普通读者解释收录规则、历史重要性、来源层级、证据等级、验证语义、形式化保障、不确定性与更正，而不是充当维护者操作手册。
-- **数据与订阅、贡献入口属于复用 / 开放生态层。** Data 页面提供机器可读导出、feed、引用与版本说明以及 canonical record 访问；贡献入口主要存在于首页收尾区、Footer 与仓库文档中。
+- **引用、复用与共建是一级的复用 / 开放生态入口。** 它把用户导向研究引用与版本快照、机器可读数据与 AI 工作流，以及纠错与公开贡献。
+- **数据与订阅仍是专业 utility surface。** 它负责导出格式、feed、Quick Start、版本说明、许可与 canonical record 访问，而不与核心阅读模式争夺定位。
 
-因此一级 Header 只保留时间线、探索、标准与方法、GitHub；“数据与订阅”仍可从首页复用区和 Footer 进入，但不再与核心阅读模式并列。首页 Hero 同样只突出“探索”和“标准与方法”；页面底部则提供三个后续行动：引用与研究、数据 / AI 复用、纠错与共建。
+因此一级 Header 包含时间线、探索、标准与方法、引用/复用/共建、GitHub；“数据与订阅”继续从“引用、复用与共建”页面和 Footer 进入，而不作为独立的一级阅读模式。首页 Hero 仍然优先突出“探索”和“标准与方法”；此前首页底部的“引用、复用与共建”板块已经迁移到独立 `/use/` 页面，使 Timeline 页面本身更聚焦历史阅读。
 
 交互遵循信息密集型出版物的结构：先给 overview，再允许 search / filter，最后按需进入 event-level evidence detail。Light / Dark / 跟随系统主题是轻量客户端增强，不改变内容或路由。
 
