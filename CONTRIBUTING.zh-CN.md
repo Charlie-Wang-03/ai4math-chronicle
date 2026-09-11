@@ -4,7 +4,7 @@
 
 AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：新增里程碑建议、事实纠错、证据升级、翻译修正、验证状态更新，以及范围清晰的编辑性修改。
 
-代码实现与构建文档另行维护。代码类贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。长期复核节奏、依赖维护与版本快照策略见 [长期维护政策](./docs/maintenance.zh-CN.md)。
+代码实现与构建文档另行维护。代码类贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。长期复核节奏、依赖维护与版本快照策略见 [长期维护政策](./docs/maintenance.zh-CN.md)。AI 协作维护权限与人工 hard gates 见 [GPT 项目治理协议](./docs/gpt-project-governance.md)。
 
 ## 选择合适的贡献方式
 
@@ -62,7 +62,16 @@ AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：
 
 ## 人工编辑门槛
 
-当文档化的证据规则已经满足且支持来源已记录时，自动化分析可以提出或执行 verification 更新。贡献者不得单方面最终确定新的 **H1 — 历史级里程碑**，除非编辑者已经根据既定标准显式授权该轮分类。
+自动化分析可以完成证据收集、完整 Event / correction patch，并提出 significance 或 verification 建议。普通 H2/H3 发布和较低风险的日常 verification 维护，在满足文档规则时可以继续高自治推进。
+
+除非既有人工政策已经明确授权该类决定，否则贡献者与自动化不得在缺少直接人工编辑批准的情况下单方面最终确定：
+
+- 新增或实质性改变 **H1 — 历史级里程碑** 分类；
+- `independently_verified`；
+- `disputed`；
+- 将 `corrected` 设为当前 verification status；
+- `retracted`；
+- 以 Chronicle 自身权威处理存在实质冲突的数学正确性、归属或历史优先权裁决。
 
 Chronicle 不裁决底层数学结论的最终正确性。对于“首次”“解决”“证明”“反驳”等高风险历史措辞，除非对应历史事实已经得到独立确认，否则应明确归属于可靠来源。
 
@@ -76,7 +85,7 @@ Chronicle 不裁决底层数学结论的最终正确性。对于“首次”“�
 - 为什么修改；
 - 哪些来源支持修改；
 - 仍存在哪些不确定性；
-- 是否触发 H1 人工编辑门槛。
+- 是否触发任何人工编辑门槛。
 
 本地校验、构建与实现规范见 [开发指南](./docs/development.zh-CN.md)。
 
