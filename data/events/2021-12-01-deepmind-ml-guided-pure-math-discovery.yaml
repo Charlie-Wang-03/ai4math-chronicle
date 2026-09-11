@@ -1,0 +1,170 @@
+schema_version: 1
+id: evt-2021-deepmind-math-discovery
+slug: deepmind-ml-guided-pure-math-discovery
+
+title:
+  en: DeepMind and mathematicians use machine learning to guide new discoveries in pure mathematics
+  zh-CN: DeepMind 与数学家利用机器学习引导纯数学新发现
+
+dates:
+  event: '2021-12-01'
+  first_public_claim: '2021-11-30'
+  paper_release: '2021-12-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- discovery
+- system
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      This work is a candidate Historical Milestone because it provided an early, high-profile demonstration that modern machine learning could make a substantive intellectual contribution to frontier pure-mathematics research rather than only solve benchmark problems or automate formal proof search. In two distinct fields, learned models exposed relationships that guided mathematicians toward new research-level results: a theorem-level relationship in hyperbolic knot theory and a new formula and conjectural route for Kazhdan-Lusztig combinatorial invariance. The Nature paper explicitly proposed this workflow as a model for human-AI mathematical discovery.
+    zh-CN: >-
+      该工作被建议列为 Historical Milestone，因为它较早且高影响力地展示了现代机器学习能够对前沿纯数学研究作出实质性智力贡献，而不仅是解决基准题或自动执行形式证明搜索。在两个不同领域中，学习模型揭示的关系引导数学家得到研究级新成果：双曲纽结理论中的定理级关系，以及 Kazhdan-Lusztig 组合不变性方向的新公式与猜想性解决路线。Nature 主论文还明确把这一流程提出为人机协作数学发现的一种范式。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- numeric
+
+claim:
+  en: >-
+    A DeepMind–mathematician collaboration reported that machine-learning models helped identify previously unnoticed structures in two pure-mathematics research programs. In knot theory, ML-guided feature analysis contributed to the discovery of a relationship between knot signature and hyperbolic cusp geometry that the mathematicians then proved in a companion paper. In representation theory, the collaboration derived a new Bruhat-graph-based formula for Kazhdan-Lusztig polynomials of symmetric groups that suggested a route toward the combinatorial invariance conjecture.
+  zh-CN: >-
+    DeepMind 与数学家的合作工作报告称，机器学习模型帮助在两个纯数学研究方向中识别此前未被注意的结构。在纽结理论中，ML 引导的特征分析参与发现了纽结 signature 与双曲 cusp geometry 之间的关系，随后数学家在配套论文中给出了证明；在表示论中，合作团队得到一个基于 Bruhat graph 的对称群 Kazhdan-Lusztig 多项式新公式，并据此提出通向组合不变性猜想的研究路线。
+
+summary:
+  en: >-
+    The project used supervised machine learning to search large mathematical datasets for predictive relationships and attribution methods to expose which variables drove those predictions. Mathematicians then interpreted the signals, reformulated them as mathematical statements, tested counterexamples and supplied conventional mathematical arguments. The Nature article demonstrated the workflow on hyperbolic knots and Kazhdan-Lusztig polynomials, alongside public notebooks and datasets for both case studies.
+  zh-CN: >-
+    该项目利用监督式机器学习在大型数学数据集中寻找预测关系，再利用 attribution 方法揭示哪些变量驱动模型预测。数学家随后解释这些信号，将其重新表述为数学命题、寻找反例并给出传统数学论证。Nature 论文以双曲纽结和 Kazhdan-Lusztig 多项式为两个案例展示这一流程，并公开了相应 notebook 与数据。
+
+why_it_matters:
+  en: >-
+    The historical importance is the research workflow rather than autonomous theorem proving: AI acted as a pattern-finding instrument inside live pure-mathematics research, while mathematicians retained problem selection, interpretation, conjecture formulation and proof. This human-AI discovery pattern anticipated later systems aimed explicitly at research-level mathematical discovery.
+  zh-CN: >-
+    其历史意义主要在研究工作流而非自主定理证明：AI 作为模式发现工具进入真实纯数学研究过程，而数学家仍负责问题选择、解释、猜想形成和证明。这种人机协作发现模式预示了后来明确面向研究级数学发现的 AI 系统。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Machine-learning models searched mathematical datasets for predictive structure and attribution analyses highlighted candidate relationships that redirected or sharpened human mathematical investigation; the AI did not autonomously produce the final rigorous proofs.
+    zh-CN: >-
+      机器学习模型在数学数据集中寻找预测结构，attribution 分析突出潜在关系，从而改变或聚焦人类数学家的研究方向；AI 并未自主完成最终严格证明。
+
+human_contribution:
+  description:
+    en: >-
+      Mathematicians selected research questions, generated and interpreted domain data, judged which learned signals were mathematically meaningful, constructed counterexamples, formulated precise conjectures and supplied rigorous mathematical arguments. DeepMind researchers designed and trained the ML pipeline and collaborated on interpreting the learned structure.
+    zh-CN: >-
+      数学家选择研究问题、生成和解释领域数据、判断哪些学习信号具有数学意义、构造反例、形成精确猜想并给出严格数学论证；DeepMind 研究者设计并训练机器学习流程，并共同解释模型发现的结构。
+
+systems: [ml-guided-mathematical-discovery]
+organizations: [deepmind, university-of-oxford, university-of-sydney]
+people: [alex-davies, petar-velickovic, andras-juhasz, marc-lackenby, geordie-williamson, pushmeet-kohli]
+problems: [hyperbolic-knot-invariants, kazhdan-lusztig-combinatorial-invariance]
+methods: [supervised-learning, attribution, pattern-discovery, conjecture-generation, human-ai-collaboration]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2021-12-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The Nature research article and companion mathematical preprints publicly documented the ML-guided discovery workflow and the resulting knot-theory and representation-theory contributions.
+      zh-CN: >-
+        Nature 研究论文与配套数学预印本公开记录了 ML 引导的发现流程，以及由此形成的纽结理论和表示论研究贡献。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The Chronicle review linked DeepMind's public notebooks and datasets for both mathematical case studies, making the computational discovery artifacts directly inspectable. E3 records artifact availability and does not by itself constitute independent verification of every mathematical interpretation or priority claim.
+      zh-CN: >-
+        Chronicle 本轮审核链接了 DeepMind 针对两个数学案例公开的 notebook 与数据，使计算发现产物可以直接检查。E3 表示 artifact 可检查，并不单独构成对全部数学解释或历史优先权主张的独立验证。
+
+sources:
+- id: nature-ai-guided-math-2021
+  tier: S1
+  type: paper
+  title: Advancing mathematics by guiding human intuition with AI
+  url: https://www.nature.com/articles/s41586-021-04086-x
+  primary: true
+  published_date: '2021-12-01'
+  accessed_at: '2026-09-11'
+- id: arxiv-hyperbolic-knots-2111.15323
+  tier: S1
+  type: paper
+  title: The signature and cusp geometry of hyperbolic knots
+  url: https://arxiv.org/abs/2111.15323
+  primary: true
+  published_date: '2021-11-30'
+  accessed_at: '2026-09-11'
+- id: arxiv-kl-invariance-2111.15161
+  tier: S1
+  type: paper
+  title: Towards combinatorial invariance for Kazhdan-Lusztig polynomials
+  url: https://arxiv.org/abs/2111.15161
+  primary: true
+  published_date: '2021-11-30'
+  accessed_at: '2026-09-11'
+- id: deepmind-pure-math-blog-2021
+  tier: S2
+  type: official_announcement
+  title: Exploring the beauty of pure mathematics in novel ways
+  url: https://deepmind.google/blog/exploring-the-beauty-of-pure-mathematics-in-novel-ways/
+  primary: true
+  published_date: '2021-12-01'
+  accessed_at: '2026-09-11'
+- id: github-deepmind-mathematics-conjectures
+  tier: S1
+  type: repository
+  title: DeepMind mathematics conjectures notebooks and datasets
+  url: https://github.com/google-deepmind/mathematics_conjectures
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: nature-news-deepmind-math-2021
+  tier: S4
+  type: media
+  title: DeepMind's AI helps untangle the mathematics of knots
+  url: https://www.nature.com/articles/d41586-021-03593-1
+  primary: false
+  published_date: '2021-12-01'
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: deepmind-mathematics-conjectures-notebooks
+  kind: code
+  title: Reproducible knot-theory and representation-theory notebooks and data
+  url: https://github.com/google-deepmind/mathematics_conjectures
+
+relationships:
+  predecessors: []
+  successors: [evt-2022-alphatensor]
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [mathematical-discovery, pure-mathematics, knot-theory, representation-theory, machine-learning, human-ai-collaboration]
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers: [Charlie-Wang-03]
+
+corrections: []
