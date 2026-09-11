@@ -33,14 +33,14 @@
   border-top: 1px solid var(--border);
   padding-top: .75rem;
 }
-.explore-advanced summary {
+.explore-advanced > summary {
   width: fit-content;
   color: var(--accent);
   cursor: pointer;
   font-size: .86rem;
   font-weight: 700;
 }
-.explore-advanced[open] summary { margin-bottom: .2rem; }
+.explore-advanced[open] > summary { margin-bottom: .2rem; }
 .active-filters {
   display: flex;
   align-items: flex-start;
