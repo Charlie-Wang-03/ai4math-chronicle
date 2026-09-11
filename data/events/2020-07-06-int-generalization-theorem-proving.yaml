@@ -1,0 +1,165 @@
+schema_version: 1
+id: evt-2020-int
+slug: int-generalization-theorem-proving
+
+title:
+  en: INT makes systematic generalization a first-class theorem-proving benchmark
+  zh-CN: INT 将系统化泛化能力确立为定理证明基准的核心对象
+
+dates:
+  event: '2020-07-06'
+  first_public_claim: '2020-07-06'
+  paper_release: '2020-07-06'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- benchmark
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      INT reframed theorem-proving evaluation around controlled generalization rather than only aggregate proof success, using a theorem generator to expose distinct distribution shifts and providing a lightweight environment for learning-based prover research.
+    zh-CN: >-
+      INT 不再只用总体证明成功率评价定理证明器，而是借助定理生成器系统构造不同分布偏移，把受控泛化能力作为核心评测对象，并提供轻量级学习式证明研究环境。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    INT introduced an inequality theorem-proving benchmark with a theoretically unbounded theorem-and-proof generator, six controlled generalization settings, and fast sequence- and graph-based interfaces for training and evaluating proof agents.
+  zh-CN: >-
+    INT 引入不等式定理证明基准，提供理论上可无限生成定理与证明的生成器、六类受控泛化设置，以及用于训练和评测证明 Agent 的快速序列与图接口。
+
+summary:
+  en: >-
+    The benchmark generates synthetic inequality proofs from axioms and varies properties of training and test distributions so researchers can distinguish memorization-like success from different forms of out-of-distribution theorem-proving generalization.
+  zh-CN: >-
+    该基准从公理出发生成合成不等式证明，并系统改变训练与测试分布的属性，使研究者能够区分近似记忆式成功与不同形式的分布外定理证明泛化。
+
+why_it_matters:
+  en: >-
+    It supplied an early controlled testbed for a problem that remains central to learned theorem proving: whether a prover can transfer beyond theorem shapes and proof patterns seen during training.
+  zh-CN: >-
+    它较早为学习式定理证明中的核心问题提供了受控试验场：证明器能否超越训练阶段见过的定理形态和证明模式进行迁移。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Learning-based proof agents are trained and evaluated inside the generated theorem-proving environment; the benchmark itself is a researcher-designed evaluation artifact.
+    zh-CN: >-
+      学习式证明 Agent 在生成的定理证明环境中训练与评测；基准本身是研究者设计的评测产物。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the inequality axioms, theorem generator, six generalization regimes, interfaces, baselines and evaluation protocol.
+    zh-CN: >-
+      研究者设计不等式公理、定理生成器、六类泛化设置、交互接口、基线和评测协议。
+
+systems:
+- int-benchmark
+organizations:
+- university-of-toronto
+- vector-institute
+people:
+- yuhuai-wu
+- albert-qiaochu-jiang
+- jimmy-ba
+- roger-grosse
+problems:
+- inequality-theorem-proving
+methods:
+- theorem-generation
+- benchmarking
+- systematic-generalization
+- graph-neural-networks
+- transformers
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2020-07-06'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record established the INT benchmark, theorem generator and reported generalization experiments.
+      zh-CN: >-
+        arXiv 研究记录公开了 INT 基准、定理生成器及其报告的泛化实验。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The Chronicle linked the ICLR 2021 research record and the authors' public INT repository containing the proving environment, generator and training code. E3 denotes inspectable artifacts, not independent verification of benchmark conclusions.
+      zh-CN: >-
+        Chronicle 补入 ICLR 2021 研究记录以及作者公开的 INT 仓库，其中包含证明环境、生成器和训练代码。E3 表示存在可检查产物，并不等同于对基准结论的独立验证。
+
+sources:
+- id: arxiv-int-2007.02924
+  tier: S1
+  type: paper
+  title: 'INT: An Inequality Benchmark for Evaluating Generalization in Theorem Proving'
+  url: https://arxiv.org/abs/2007.02924
+  primary: true
+  published_date: '2020-07-06'
+  accessed_at: '2026-09-11'
+- id: openreview-int-iclr2021
+  tier: S1
+  type: paper
+  title: 'INT: An Inequality Benchmark for Evaluating Generalization in Theorem Proving — ICLR 2021'
+  url: https://openreview.net/forum?id=O6LPudowNQm
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: github-int
+  tier: S1
+  type: repository
+  title: INT theorem-proving benchmark and environment
+  url: https://github.com/albertqjiang/INT
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: int-repository
+  kind: code
+  title: INT theorem generator, proving environment and training code
+  url: https://github.com/albertqjiang/INT
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2021-minif2f
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- benchmark
+- theorem-proving
+- generalization
+- synthetic-data
+- inequalities
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
