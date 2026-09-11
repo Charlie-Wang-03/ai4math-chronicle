@@ -14,8 +14,10 @@ test('primary header navigation exposes discovery, trust, and use surfaces while
   assert.doesNotMatch(nav, /localePath\(locale, 'data'\)/);
   assert.match(source, /methodology: '标准与方法'/);
   assert.match(source, /methodology: 'Standards & Methodology'/);
-  assert.match(source, /use: '引用、复用与共建'/);
-  assert.match(source, /use: 'Cite, Reuse & Contribute'/);
+  assert.match(source, /use: '使用与共建'/);
+  assert.match(source, /use: 'Use & Contribute'/);
+  assert.doesNotMatch(source, /use: '引用、复用与共建'/);
+  assert.doesNotMatch(source, /use: 'Cite, Reuse & Contribute'/);
 });
 
 test('homepage keeps the timeline focused and no longer duplicates the use and contribution hub', async () => {
@@ -35,11 +37,11 @@ test('use page owns citation, data reuse, and contribution paths', async () => {
   const zhRoute = await read('src/pages/zh-CN/use.astro');
   const sitemap = await read('src/pages/sitemap.xml.ts');
 
-  assert.match(source, /'引用、复用与共建 — AI4Math 大事记'/);
-  assert.match(source, /'Cite, Reuse & Contribute — AI4Math Chronicle'/);
+  assert.match(source, /'使用与共建 — AI4Math 大事记'/);
+  assert.match(source, /'Use & Contribute — AI4Math Chronicle'/);
   assert.match(source, /citationTitle: '引用与研究'/);
   assert.match(source, /dataTitle: '数据与 AI 工作流'/);
-  assert.match(source, /contributeTitle: '纠错与共建'/);
+  assert.match(source, /contributeTitle: '参与共建'/);
   assert.match(source, /CITATION\.cff/);
   assert.match(source, /localePath\(locale, 'data'\)/);
   assert.match(source, /source-lead\.yml/);
@@ -51,15 +53,16 @@ test('use page owns citation, data reuse, and contribution paths', async () => {
   assert.match(sitemap, /'use'/);
 });
 
-test('reader-facing standards and data pages keep their approved positioning', async () => {
+test('standards page owns trust interpretation and routes practical actions to the use hub', async () => {
   const methodology = await read('src/components/MethodologyPage.astro');
   const data = await read('src/components/DataPage.astro');
 
   assert.match(methodology, /'标准与方法 — AI4Math 大事记'/);
   assert.match(methodology, /重要性（Significance）≠ 验证状态（Verification）/);
   assert.match(methodology, /machine_checked ≠ independently_verified ≠ mathematical correctness/);
-  assert.match(methodology, /correction\.yml/);
-  assert.match(methodology, /event-proposal\.yml/);
+  assert.match(methodology, /localePath\(locale, 'use'\)/);
+  assert.doesNotMatch(methodology, /correction\.yml/);
+  assert.doesNotMatch(methodology, /event-proposal\.yml/);
 
   assert.match(data, /'数据与订阅 — AI4Math 大事记'/);
   assert.match(data, /'Data & Feeds — AI4Math Chronicle'/);
