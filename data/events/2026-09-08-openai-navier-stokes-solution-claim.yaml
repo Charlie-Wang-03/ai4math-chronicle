@@ -11,7 +11,7 @@ dates:
   artifact_release: '2026-09-08'
   independently_verified: '2026-09-08'
   added_to_chronicle: '2026-09-10'
-  last_updated: '2026-09-10'
+  last_updated: '2026-09-11'
 event_types:
 - discovery
 - proof
@@ -139,7 +139,8 @@ relationships:
   - evt-2026-openai-ten-advances
   - evt-2026-claude-flt-formalization
   successors: []
-  related: []
+  related:
+  - evt-2026-buckmaster-alpoge-fluid-blowup
 timeline:
   featured: true
   significance: primary
@@ -152,7 +153,7 @@ tags:
 - provenance
 editorial:
   created_at: '2026-09-10'
-  last_reviewed: '2026-09-10'
+  last_reviewed: '2026-09-11'
   reviewers:
   - Charlie-Wang-03
 corrections:
