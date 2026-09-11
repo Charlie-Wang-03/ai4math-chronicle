@@ -69,6 +69,8 @@ The UI separates two discovery modes:
 
 Explore persists multi-select state with repeatable URL query parameters, so a filtered view can be shared or revisited without a backend. The interaction remains entirely static and client-side.
 
+Reader-facing Event Cards use an explicit metadata hierarchy rather than presenting every taxonomy dimension as an equal pill. The title leads the card; significance and verification are the two primary status badges; event type and evidence level are quieter secondary metadata. Primary-evidence shortcuts remain one-click links, but each shortcut now combines the bilingual source type with the concrete canonical source title so multiple papers, repositories, or announcements are distinguishable before navigation. When Timeline or Explore filters hide every Event, the result surface is replaced by a bilingual empty state with a direct reset path; Explore additionally points readers back to its removable active-condition chips.
+
 Responsive presentation does not create parallel data or result surfaces. At compact widths, the primary header progressively collapses behind an accessible menu button when JavaScript is available, while the complete navigation remains visible as the no-JS fallback. Explore keeps one semantic result table for filtering and sorting; CSS reflows those same rows into stacked result cards at phone/tablet widths, preserving table headers for assistive technology and avoiding horizontal panning for the main retrieval task.
 
 ## Public information architecture
