@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:arxiv="http://arxiv.org/schemas/atom">
+  <title>ArXiv Query</title>
+  <entry>
+    <id>http://arxiv.org/abs/2609.01234v2</id>
+    <updated>2026-09-10T12:30:00Z</updated>
+    <published>2026-09-09T08:00:00Z</published>
+    <title>
+      Example &amp; Verified Mathematical Reasoning
+    </title>
+    <summary>
+      A compact example for parser tests &lt;with entities&gt; and normalized whitespace.
+    </summary>
+    <author><name>Alice Example</name></author>
+    <author><name>Bob Example</name></author>
+    <arxiv:primary_category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="cs.AI" scheme="http://arxiv.org/schemas/atom"/>
+    <category term="math.LO" scheme="http://arxiv.org/schemas/atom"/>
+    <link href="http://arxiv.org/abs/2609.01234v2" rel="alternate" type="text/html"/>
+    <link title="pdf" href="http://arxiv.org/pdf/2609.01234v2" rel="related" type="application/pdf"/>
+  </entry>
+  <entry>
+    <id>https://arxiv.org/abs/math/0301234v1</id>
+    <updated>2003-01-20T00:00:00Z</updated>
+    <published>2003-01-20T00:00:00Z</published>
+    <title>Legacy identifier example</title>
+    <summary>Legacy arXiv identifiers should remain usable.</summary>
+    <author><name>Carol Example</name></author>
+    <category term="math.LO"/>
+    <link href="https://arxiv.org/abs/math/0301234v1" rel="alternate" type="text/html"/>
+  </entry>
+</feed>
