@@ -55,10 +55,14 @@ The validator reports shared source URLs as warnings because legitimate related 
 
 Pagefind runs after Astro renders `dist/`. Its CLI glob indexes only bilingual Event Detail routes under `**/events/**/*.html`, so Timeline, Explore, Methodology, Data, and other non-Event pages never appear as search results. The browser search API is configured with the Project Pages base URL, so result links remain valid under `/ai4math-chronicle/`. The npm Pagefind package uses the extended binary and supports Chinese/Japanese indexing.
 
+Event Detail pages also expose Pagefind filter metadata derived from the canonical record: year, event type, significance, verification status, system, AI role, interface, evidence level, and formal assurance. Text search and these structured facets therefore resolve through one Pagefind query rather than through independent result sets.
+
 The UI separates two discovery modes:
 
-- **Timeline:** chronological reading remains the primary product surface.
-- **Explore:** compact comparison, filtering, search, and sorting support targeted retrieval without replacing the historical view.
+- **Timeline:** chronological reading remains the primary product surface. Search, year, event type, significance, and verification only refine the visible timeline; they never reorder history.
+- **Explore:** targeted retrieval and comparison. Full-text search, basic filters, advanced facets, sorting, removable active-condition chips, and URL query state operate on one event result set.
+
+Explore URLs persist active query state with normal query parameters so a filtered view can be shared or revisited without a backend. The interaction remains entirely static and client-side.
 
 The interaction model follows an information-dense publication pattern: overview first, then search/filter, then event-level evidence details on demand. Reader theme preference is a lightweight client-side enhancement with Light, Dark, and System modes; it does not change content or routing.
 
