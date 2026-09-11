@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       start_date:
-        description: "Inclusive arXiv submittedDate start (YYYY-MM-DD)"
+        description: "Inclusive discovery-window start (YYYY-MM-DD)"
         required: true
         type: string
       end_date:
-        description: "Inclusive arXiv submittedDate end (YYYY-MM-DD)"
+        description: "Inclusive discovery-window end (YYYY-MM-DD)"
         required: true
         type: string
       max_results:
@@ -16,6 +16,10 @@ on:
         required: false
         default: "80"
         type: string
+  # Temporary branch smoke trigger; removed before merge after live feed validation.
+  push:
+    branches:
+      - source/openai-rss-adapter
 
 permissions:
   contents: read
@@ -35,13 +39,26 @@ jobs:
           package-manager-cache: false
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
-      - name: Run deterministic source scan
-        run: >-
-          npm run scan:sources --
-          --start "${{ inputs.start_date }}"
-          --end "${{ inputs.end_date }}"
-          --max-results "${{ inputs.max_results }}"
-          --output source-scan-output
+      - name: Run deterministic arXiv scan
+        env:
+          INPUT_START: ${{ inputs.start_date }}
+          INPUT_END: ${{ inputs.end_date }}
+          INPUT_MAX: ${{ inputs.max_results }}
+        run: |
+          START="${INPUT_START:-2026-09-01}"
+          END="${INPUT_END:-2026-09-11}"
+          MAX="${INPUT_MAX:-80}"
+          npm run scan:sources -- --start "$START" --end "$END" --max-results "$MAX" --output source-scan-output
+      - name: Run deterministic official feed scan
+        env:
+          INPUT_START: ${{ inputs.start_date }}
+          INPUT_END: ${{ inputs.end_date }}
+          INPUT_MAX: ${{ inputs.max_results }}
+        run: |
+          START="${INPUT_START:-2026-09-01}"
+          END="${INPUT_END:-2026-09-11}"
+          MAX="${INPUT_MAX:-80}"
+          npm run scan:feeds -- --start "$START" --end "$END" --max-results "$MAX" --output source-scan-output
       - name: Upload scan artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
