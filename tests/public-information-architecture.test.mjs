@@ -20,15 +20,20 @@ test('primary header navigation exposes discovery, trust, and use surfaces while
   assert.doesNotMatch(source, /use: 'Cite, Reuse & Contribute'/);
 });
 
-test('homepage keeps the timeline focused and no longer duplicates the use and contribution hub', async () => {
+test('homepage keeps a compact timeline-first prelude and routes richer tasks outward', async () => {
   const source = await read('src/components/TimelinePage.astro');
   const heroActions = source.match(/<nav class="hero-actions"[\s\S]*?<\/nav>/)?.[0];
   assert.ok(heroActions, 'hero actions should be present');
   assert.match(heroActions, /localePath\(locale, 'explore'\)/);
   assert.match(heroActions, /localePath\(locale, 'methodology'\)/);
   assert.doesNotMatch(heroActions, /localePath\(locale, 'data'\)/);
+  assert.match(source, /class="timeline-summary"/);
+  assert.match(source, /class="timeline-trust"/);
+  assert.doesNotMatch(source, /credibility-strip/);
+  assert.doesNotMatch(source, /section-heading/);
   assert.doesNotMatch(source, /participation-section/);
   assert.doesNotMatch(source, /useEyebrow/);
+  assert.match(source, /<EventCollection events=\{events\} locale=\{locale\} mode="timeline" \/>/);
 });
 
 test('use page owns citation, data reuse, and contribution paths', async () => {
