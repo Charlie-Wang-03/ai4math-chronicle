@@ -1,26 +1,39 @@
 ---
 import EventCard from './EventCard.astro';
 import { formatDate } from '../lib/events';
+import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { events, locale, mode = 'timeline' } = Astro.props as { events: ChronicleEvent[]; locale: Locale; mode?: 'timeline' | 'grid' };
 const years = [...new Set(events.map((event) => event.dates.event.slice(0, 4)))].sort((a,b) => b.localeCompare(a));
 const labels = locale === 'zh-CN'
-  ? { filters: '筛选时间线', year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', all: '全部', showing: '显示', events: '个事件', clear: '清除筛选', yearNav: '年份导航' }
-  : { filters: 'Filter timeline', year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', all: 'All', showing: 'Showing', events: 'events', clear: 'Clear filters', yearNav: 'Year navigation' };
+  ? {
+      filters: '收窄时间线', search: '搜索时间线', placeholder: '搜索事件、系统、问题或方法…', searchHint: '至少输入 2 个字符。搜索与筛选共同作用于当前时间线，并始终保持时间顺序。', unavailable: '全文搜索索引暂不可用；结构化筛选仍可使用。',
+      year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', all: '全部', showing: '显示', events: '个事件', clear: '清除条件', yearNav: '年份导航'
+    }
+  : {
+      filters: 'Refine timeline', search: 'Search timeline', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Type at least 2 characters. Search and filters refine this timeline without changing chronological order.', unavailable: 'Full-text search is unavailable; structured filters still work.',
+      year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', all: 'All', showing: 'Showing', events: 'events', clear: 'Clear conditions', yearNav: 'Year navigation'
+    };
 const controlIds = {
+  query: `timeline-query-${locale}`,
   year: `filter-year-${mode}-${locale}`,
   type: `filter-type-${mode}-${locale}`,
   significance: `filter-significance-${mode}-${locale}`,
   verification: `filter-verification-${mode}-${locale}`,
 };
 ---
-<section class="panel filter-panel" data-filter-shell data-pagefind-ignore>
+<section class="panel filter-panel timeline-filter-panel" data-filter-shell data-pagefind-ignore>
   <div class="filter-head">
     <div>
       <p class="eyebrow">{labels.filters}</p>
       <div class="result-count"><strong><span data-visible-count>{events.length}</span></strong> {labels.events}</div>
     </div>
     <button class="clear-filters" type="button" data-clear-filters>{labels.clear}</button>
+  </div>
+  <div class="timeline-query">
+    <label for={controlIds.query}>{labels.search}</label>
+    <input class="search-input" id={controlIds.query} data-query type="search" autocomplete="off" placeholder={labels.placeholder} />
+    <div class="result-count timeline-query-status" data-query-status role="status" aria-live="polite">{labels.searchHint}</div>
   </div>
   <div class="controls">
     <div class="control"><label for={controlIds.year}>{labels.year}</label><select id={controlIds.year} data-filter="year"><option value="">{labels.all}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></div>
@@ -36,59 +49,147 @@ const controlIds = {
 
 {mode === 'timeline' ? (
   <ol class="timeline" data-event-list>
-    {events.map((event) => <li class="timeline-item" data-event-item><time class="timeline-date" datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time><span class="timeline-dot" aria-hidden="true"></span><EventCard event={event} locale={locale} /></li>)}
+    {events.map((event) => {
+      const eventUrl = href(localePath(locale, `events/${event.slug}`));
+      return <li class="timeline-item" data-event-item data-event-url={eventUrl}><time class="timeline-date" datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time><span class="timeline-dot" aria-hidden="true"></span><EventCard event={event} locale={locale} /></li>;
+    })}
   </ol>
 ) : (
-  <div class="grid-list" data-event-list>{events.map((event) => <div data-event-item><EventCard event={event} locale={locale} showDate /></div>)}</div>
+  <div class="grid-list" data-event-list>{events.map((event) => <div data-event-item data-event-url={href(localePath(locale, `events/${event.slug}`))}><EventCard event={event} locale={locale} showDate /></div>)}</div>
 )}
 
 <script>
   // @ts-nocheck
+  const baseUrl = import.meta.env.BASE_URL;
+  let pagefindPromise;
+
+  function normalizePath(value) {
+    try {
+      const path = new URL(value, window.location.origin).pathname;
+      return path.endsWith('/') ? path : `${path}/`;
+    } catch {
+      return value;
+    }
+  }
+
+  async function getPagefind() {
+    if (!pagefindPromise) {
+      pagefindPromise = (async () => {
+        const moduleUrl = `${baseUrl}pagefind/pagefind.js`;
+        const engine = await import(/* @vite-ignore */ moduleUrl);
+        await engine.options({ baseUrl });
+        return engine;
+      })();
+    }
+    return pagefindPromise;
+  }
+
   for (const shell of document.querySelectorAll('[data-filter-shell]')) {
     const list = shell.nextElementSibling;
     if (!list) continue;
     const items = [...list.querySelectorAll('[data-event-item]')];
     const selects = [...shell.querySelectorAll('select[data-filter]')];
+    const input = shell.querySelector('[data-query]');
+    const status = shell.querySelector('[data-query-status]');
     const count = shell.querySelector('[data-visible-count]');
     const chips = [...shell.querySelectorAll('[data-year-chip]')];
     const clearButton = shell.querySelector('[data-clear-filters]');
     const filters = { year: '', type: '', significance: '', verification: '' };
+    let timer;
+    let requestId = 0;
 
-    function apply() {
+    function setVisibility(predicate) {
       let visible = 0;
       for (const item of items) {
-        const card = item.querySelector('[data-event-card]');
-        if (!card) continue;
-        const ok = (!filters.year || card.dataset.year === filters.year)
-          && (!filters.type || card.dataset.eventTypes?.split(' ').includes(filters.type))
-          && (!filters.significance || card.dataset.significance === filters.significance)
-          && (!filters.verification || card.dataset.verification === filters.verification);
-        item.classList.toggle('hidden', !ok);
-        if (ok) visible += 1;
+        const shown = predicate(item);
+        item.classList.toggle('hidden', !shown);
+        if (shown) visible += 1;
       }
       if (count) count.textContent = String(visible);
       for (const chip of chips) chip.dataset.active = String(chip.dataset.yearChip === filters.year);
-      if (clearButton) clearButton.disabled = !Object.values(filters).some(Boolean);
+      const hasQuery = Boolean(input?.value.trim());
+      if (clearButton) clearButton.disabled = !hasQuery && !Object.values(filters).some(Boolean);
     }
 
+    function fallback() {
+      const query = input?.value.trim().toLocaleLowerCase() || '';
+      setVisibility((item) => {
+        const card = item.querySelector('[data-event-card]');
+        if (!card) return false;
+        const structured = (!filters.year || card.dataset.year === filters.year)
+          && (!filters.type || card.dataset.eventTypes?.split(' ').includes(filters.type))
+          && (!filters.significance || card.dataset.significance === filters.significance)
+          && (!filters.verification || card.dataset.verification === filters.verification);
+        const textMatch = query.length < 2 || item.textContent.toLocaleLowerCase().includes(query);
+        return structured && textMatch;
+      });
+    }
+
+    async function apply() {
+      const currentRequest = ++requestId;
+      const rawQuery = input?.value.trim() || '';
+      const query = rawQuery.length >= 2 ? rawQuery : null;
+      const pagefindFilters = Object.fromEntries(Object.entries(filters).filter(([, value]) => Boolean(value)));
+      const hasConditions = Boolean(query) || Object.keys(pagefindFilters).length > 0;
+
+      if (!hasConditions) {
+        setVisibility(() => true);
+        if (status) status.textContent = rawQuery.length === 1
+          ? (document.documentElement.lang === 'zh-CN' ? '至少输入 2 个字符。' : 'Type at least 2 characters.')
+          : (document.documentElement.lang === 'zh-CN'
+              ? '至少输入 2 个字符。搜索与筛选共同作用于当前时间线，并始终保持时间顺序。'
+              : 'Type at least 2 characters. Search and filters refine this timeline without changing chronological order.');
+        return;
+      }
+
+      try {
+        const engine = await getPagefind();
+        const search = await engine.search(query, { filters: pagefindFilters });
+        const results = await Promise.all(search.results.map((result) => result.data()));
+        if (currentRequest !== requestId) return;
+        const matched = new Set(results.map((result) => normalizePath(result.url)));
+        setVisibility((item) => matched.has(normalizePath(item.dataset.eventUrl || '')));
+        if (status) status.textContent = document.documentElement.lang === 'zh-CN'
+          ? `搜索与筛选后匹配 ${matched.size} 个事件；时间顺序保持不变。`
+          : `${matched.size} events match the current search and filters; chronology is unchanged.`;
+      } catch (error) {
+        console.warn('Pagefind unavailable', error);
+        fallback();
+        if (status) status.textContent = document.documentElement.lang === 'zh-CN'
+          ? '全文搜索索引暂不可用；结构化筛选仍可使用。'
+          : 'Full-text search is unavailable; structured filters still work.';
+      }
+    }
+
+    function scheduleApply() {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(apply, 180);
+    }
+
+    input?.addEventListener('focus', () => { void getPagefind().catch(() => {}); }, { once: true });
+    input?.addEventListener('input', scheduleApply);
     for (const select of selects) select.addEventListener('change', () => {
       filters[select.dataset.filter] = select.value;
-      if (select.dataset.filter === 'year') {
-        for (const chip of chips) chip.dataset.active = String(chip.dataset.yearChip === select.value);
-      }
-      apply();
+      void apply();
     });
     for (const chip of chips) chip.addEventListener('click', () => {
       filters.year = chip.dataset.yearChip ?? '';
       const yearSelect = selects.find((select) => select.dataset.filter === 'year');
       if (yearSelect) yearSelect.value = filters.year;
-      apply();
+      void apply();
     });
     clearButton?.addEventListener('click', () => {
+      if (input) input.value = '';
       for (const key of Object.keys(filters)) filters[key] = '';
       for (const select of selects) select.value = '';
-      apply();
+      void apply();
     });
-    apply();
+    void apply();
   }
 </script>
+
+<style>
+  .timeline-query { margin-top: 1rem; }
+  .timeline-query label { display: block; margin: 0 0 .28rem; color: var(--muted); font-size: .78rem; font-weight: 680; }
+  .timeline-query-status { margin-top: .35rem; }
+</style>

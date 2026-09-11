@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SearchBox from './SearchBox.astro';
 import EventCollection from './EventCollection.astro';
 import { getAllEvents } from '../lib/events';
 import { localePath, absolute, href } from '../lib/site';
@@ -141,13 +140,12 @@ const websiteJsonLd = {
     </div>
   </section>
 
-  <SearchBox locale={locale} />
   <div class="section-heading">
     <div>
       <p class="eyebrow">{locale === 'zh-CN' ? '按时间浏览' : 'Browse chronologically'}</p>
       <h2>{copy.timeline}</h2>
     </div>
-    <p class="section-note">{locale === 'zh-CN' ? '先看全局，再筛选，最后进入事件证据详情。' : 'Start with the overview, then filter, then open event-level evidence.'}</p>
+    <p class="section-note">{locale === 'zh-CN' ? '搜索与筛选只收窄当前时间线，不改变历史顺序；需要跨字段比较时进入“探索”。' : 'Search and filters only refine the current timeline; chronology stays fixed. Use Explore for cross-field comparison.'}</p>
   </div>
   <EventCollection events={events} locale={locale} mode="timeline" />
 

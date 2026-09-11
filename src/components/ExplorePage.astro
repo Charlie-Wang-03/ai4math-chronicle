@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SearchBox from './SearchBox.astro';
 import ExploreDirectory from './ExploreDirectory.astro';
 import { getAllEvents } from '../lib/events';
 import { localePath } from '../lib/site';
@@ -10,22 +9,22 @@ const { locale } = Astro.props as { locale: Locale };
 const events = getAllEvents();
 const c = locale === 'zh-CN'
  ? {
-     title: '事件目录 — AI4Math 大事记',
-     desc: '以紧凑目录方式比较 AI4Math Chronicle 事件，并按年份、事件类型、重要性、验证状态与系统筛选。',
-     eyebrow: '事件目录',
-     heading: '比较与筛选全部事件',
-     lede: '时间线适合阅读历史演进；这里把 51 条 canonical event records 压缩为可比较的目录视图，适合快速定位某类系统、事件或验证状态。',
+     title: '事件探索 — AI4Math 大事记',
+     desc: '使用全文搜索、结构化筛选与排序来定位和比较 AI4Math Chronicle 的 canonical event records。',
+     eyebrow: '事件探索',
+     heading: '搜索、组合条件并比较事件',
+     lede: `时间线用于理解历史演进；这里把 ${events.length} 条 canonical event records 作为一个可查询目录，用于定向定位、跨字段比较与证据检查。`,
      noteTitle: '这里与时间线有什么不同？',
-     note: 'Timeline 强调“先后发生了什么”；Explore 强调“这些事件彼此有什么字段差异”。可按系统筛选并切换时间或重要性排序。',
+     note: 'Timeline 回答“接下来发生了什么”，并始终保持历史顺序；Explore 回答“哪些事件符合这些条件”，把全文搜索、结构化筛选、排序与可分享 URL 合并成一个查询。',
    }
  : {
-     title: 'Event Directory — AI4Math Chronicle',
-     desc: 'Compare AI4Math Chronicle events in a compact directory and filter by year, event type, significance, verification, and system.',
-     eyebrow: 'Event directory',
-     heading: 'Compare and filter every event',
-     lede: 'The timeline is for reading historical progression. This page compresses all 51 canonical event records into a comparable directory for quickly locating a system, event class, or verification state.',
+     title: 'Explore Events — AI4Math Chronicle',
+     desc: 'Use full-text search, structured filters, and sorting to locate and compare canonical AI4Math Chronicle event records.',
+     eyebrow: 'Event exploration',
+     heading: 'Search, combine conditions, and compare events',
+     lede: `The timeline is for understanding historical progression. This page treats all ${events.length} canonical event records as one queryable directory for targeted retrieval, cross-field comparison, and evidence checks.`,
      noteTitle: 'How is this different from the timeline?',
-     note: 'Timeline answers “what happened next?” Explore answers “how do these records differ?” Filter by system and sort by date or significance.',
+     note: 'Timeline answers “what happened next?” and preserves chronology. Explore answers “which events match these conditions?” by combining full-text search, structured filters, sorting, and a shareable URL into one query.',
    };
 ---
 <BaseLayout locale={locale} title={c.title} description={c.desc} canonicalPath={localePath(locale,'explore')} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en','explore')}>
@@ -38,6 +37,5 @@ const c = locale === 'zh-CN'
       <span>{c.note}</span>
     </aside>
   </header>
-  <SearchBox locale={locale} />
   <ExploreDirectory events={events} locale={locale} />
 </BaseLayout>
