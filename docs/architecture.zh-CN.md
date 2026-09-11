@@ -55,10 +55,14 @@ Canonical YAML Event
 
 Pagefind 在 Astro 渲染 `dist/` 之后运行。其 CLI glob 只索引 `**/events/**/*.html` 下的中英文 Event Detail 路由，因此 Timeline、Explore、Methodology、Data 等非事件页面不会出现在搜索结果中。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
 
+Event Detail 页面还会从 canonical record 写入 Pagefind filter metadata，包括年份、事件类型、重要性、验证状态、系统、AI 角色、接口、证据等级与形式保障。因此全文搜索和结构化筛选通过同一个 Pagefind 查询求交，而不是分别生成两套结果。
+
 UI 明确区分两种发现方式：
 
-- **Timeline：** 时间顺序始终是产品的主要阅读表面。
-- **Explore：** 通过紧凑比较、筛选、搜索与排序支持定向检索，但不替代历史时间线。
+- **Timeline：** 时间顺序始终是产品的主要阅读表面。搜索、年份、事件类型、重要性和验证状态只收窄当前可见时间线，不改变历史顺序。
+- **Explore：** 面向定向检索与比较。全文搜索、基础筛选、高级 facets、排序、可移除的当前条件 chips 与 URL 查询状态共同作用于同一个事件结果集。
+
+Explore 使用普通 URL query parameters 持久化当前查询状态，因此筛选后的视图可以直接分享或重新访问，不需要 backend。
 
 交互遵循信息密集型出版物的结构：先给 overview，再允许 search / filter，最后按需进入 event-level evidence detail。Light / Dark / 跟随系统主题是轻量客户端增强，不改变内容或路由。
 
