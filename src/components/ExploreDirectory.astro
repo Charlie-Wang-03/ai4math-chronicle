@@ -1,5 +1,6 @@
 ---
 import MultiSelectFilter from './MultiSelectFilter.astro';
+import '../styles/reader-interface.css';
 import { formatDate, text } from '../lib/events';
 import { presentationLabel, presentationOptions } from '../lib/presentation';
 import { href, localePath } from '../lib/site';
@@ -34,6 +35,7 @@ const labels = locale === 'zh-CN'
       groupEvidence: '证据与验证', groupEvidenceDesc: '验证状态、证据强度、形式保障与可用工件。',
       all: '全部', selected: '已选', relevance: '相关性', newest: '最新优先', oldest: '最早优先', highest: '重要性优先', events: '个事件', clear: '清除全部',
       date: '日期', event: '事件', classification: '分类', status: '验证', evidence: '证据', primary: '主要证据', details: '详情', noEvidence: '—',
+      emptyTitle: '没有匹配的事件', emptyText: '当前搜索与筛选条件没有结果。可以移除上方某个当前条件，或一键清除全部条件后重新浏览。', emptyReset: '清除全部条件',
     }
   : {
       filters: 'Explore events', search: 'Search', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Full-text search and the filters below form one query. Within a facet selections are OR; across facets they are AND. Type at least 2 characters.', unavailable: 'Full-text search is unavailable; falling back to text already rendered on this page.',
@@ -44,6 +46,7 @@ const labels = locale === 'zh-CN'
       groupEvidence: 'Evidence & verification', groupEvidenceDesc: 'Verification state, evidence strength, formal assurance, and available artifacts.',
       all: 'All', selected: 'selected', relevance: 'Relevance', newest: 'Newest first', oldest: 'Oldest first', highest: 'Significance first', events: 'events', clear: 'Clear all',
       date: 'Date', event: 'Event', classification: 'Class', status: 'Verification', evidence: 'Evidence', primary: 'Primary evidence', details: 'Details', noEvidence: '—',
+      emptyTitle: 'No events match', emptyText: 'The current search and filters return no events. Remove one of the active conditions above, or clear everything to browse again.', emptyReset: 'Clear all conditions',
     };
 const ids = Object.fromEntries([
   'query', 'year', 'type', 'significance', 'verification', 'system', 'ai-role', 'interface', 'evidence', 'assurance', 'novelty', 'organization', 'person', 'problem', 'method', 'source-type', 'artifact-kind', 'tag', 'sort'
@@ -168,13 +171,18 @@ const optionize = (values: string[]) => values.map((value) => ({ value }));
             </td>
             <td><span class={`badge significance ${event.significance.tier}`}>{presentationLabel('significance', event.significance.tier, locale)}</span><div class="explore-types">{event.event_types.slice(0, 2).map((value) => presentationLabel('event_type', value, locale)).join(' · ')}</div></td>
             <td><span class={`badge ${event.verification.status}`}>{presentationLabel('verification', event.verification.status, locale)}</span></td>
-            <td>{primary ? <a class="explore-evidence" href={primary.url} rel="noreferrer">{presentationLabel('source_type', primary.type, locale)} ↗</a> : labels.noEvidence}</td>
+            <td>{primary ? <a class="explore-evidence" href={primary.url} rel="noreferrer" aria-label={`${presentationLabel('source_type', primary.type, locale)}: ${primary.title}`} title={primary.title}>{presentationLabel('source_type', primary.type, locale)} ↗</a> : labels.noEvidence}</td>
             <td class="explore-actions-col"><a class="details-link" href={eventUrl}>{labels.details} →</a></td>
           </tr>
         );
       })}
     </tbody>
   </table>
+</div>
+<div class="empty-state" data-empty-state role="status" aria-live="polite">
+  <strong>{labels.emptyTitle}</strong>
+  <p>{labels.emptyText}</p>
+  <a class="button-link" href={href(localePath(locale, 'explore'))}>{labels.emptyReset}</a>
 </div>
 
 <script>

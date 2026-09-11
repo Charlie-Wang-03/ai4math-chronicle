@@ -12,11 +12,13 @@ const significance = ['H1', 'H2', 'H3'];
 const labels = locale === 'zh-CN'
   ? {
       timeline: 'Chronicle 时间线', search: '搜索时间线', placeholder: '搜索事件、系统、问题或方法…', searchHint: '搜索始终保持时间顺序；这里仅按事件类型或重要性轻量收窄。年份、验证状态与跨字段组合查询请使用“探索”。', unavailable: '全文搜索索引暂不可用；结构化筛选仍可使用。',
-      type: '事件类型', significance: '重要性', all: '全部', selected: '已选', showing: '显示', events: '个事件', clear: '清除条件', yearNav: '跳转年份', advanced: '高级探索'
+      type: '事件类型', significance: '重要性', all: '全部', selected: '已选', showing: '显示', events: '个事件', clear: '清除条件', yearNav: '跳转年份', advanced: '高级探索',
+      emptyTitle: '没有匹配的时间线事件', emptyText: '当前搜索、事件类型或重要性条件没有匹配结果。可以调整条件，或一键恢复完整时间线。', emptyReset: '恢复完整时间线'
     }
   : {
       timeline: 'Chronicle timeline', search: 'Search timeline', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Search always preserves chronology. Refine by event type or significance here; use Explore for year, verification, and multi-field queries.', unavailable: 'Full-text search is unavailable; structured filters still work.',
-      type: 'Event type', significance: 'Significance', all: 'All', selected: 'selected', showing: 'Showing', events: 'events', clear: 'Clear conditions', yearNav: 'Jump to year', advanced: 'Advanced Explore'
+      type: 'Event type', significance: 'Significance', all: 'All', selected: 'selected', showing: 'Showing', events: 'events', clear: 'Clear conditions', yearNav: 'Jump to year', advanced: 'Advanced Explore',
+      emptyTitle: 'No timeline events match', emptyText: 'The current search, event type, or significance conditions return no events. Adjust a condition or restore the full timeline.', emptyReset: 'Restore full timeline'
     };
 const controlIds = {
   query: `timeline-query-${locale}`,
@@ -70,6 +72,11 @@ const controlIds = {
 ) : (
   <div class="grid-list" data-event-list>{events.map((event) => <div data-event-item data-event-url={href(localePath(locale, `events/${event.slug}`))}><EventCard event={event} locale={locale} showDate /></div>)}</div>
 )}
+<div class="empty-state" data-empty-state role="status" aria-live="polite">
+  <strong>{labels.emptyTitle}</strong>
+  <p>{labels.emptyText}</p>
+  <a class="button-link" href={href(localePath(locale))}>{labels.emptyReset}</a>
+</div>
 
 <script>
   // @ts-nocheck
