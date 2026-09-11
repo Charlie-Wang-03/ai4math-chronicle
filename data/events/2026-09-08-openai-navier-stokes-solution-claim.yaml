@@ -34,8 +34,8 @@ claim:
   en: OpenAI reports that a large coordinated-agent system produced a finite-time singularity construction resolving statements C and D of the Navier–Stokes Millennium Prize formulation, together with a Lean formalization.
   zh-CN: OpenAI 报告一个大规模协同 Agent 系统构造了有限时间奇点，声称解决 Navier–Stokes 千禧年问题官方表述中的 C 与 D，并提供 Lean 形式化。
 summary:
-  en: OpenAI says roughly 10,000 concurrent agents worked for about 88 hours on the successful search, followed by additional Lean formalization and verification. Independent reporting corroborated the publication event while also documenting disputes over attribution, provenance and priority.
-  zh-CN: OpenAI 表示成功搜索约使用 10,000 个并发 Agent 工作约 88 小时，随后继续进行 Lean 形式化与验证。独立报道确认了这一发布事件，同时也记录了围绕归属、来源与优先权的争议。
+  en: OpenAI says roughly 10,000 concurrent agents worked for about 88 hours on the successful search, followed by additional Lean formalization and verification. Independent reporting corroborated the publication event while also documenting disputes over attribution, provenance and priority involving contemporaneous work by Tristan Buckmaster and Levent Alpöge. OpenAI states that no specific user data from those researchers was accessed for the proof, while acknowledging that it cannot fully rule out an indirect contribution from de-identified product-usage data that improved its models.
+  zh-CN: OpenAI 表示成功搜索约使用 10,000 个并发 Agent 工作约 88 小时，随后继续进行 Lean 形式化与验证。独立报道确认了这一发布事件，同时也记录了围绕 Tristan Buckmaster 与 Levent Alpöge 同期工作的归属、来源与优先权争议。OpenAI 表示其证明过程没有访问两位研究者的特定用户数据，但同时承认无法完全排除去标识化产品使用数据曾通过模型改进产生间接影响。
 why_it_matters:
   en: Because the claim concerns a Millennium Prize Problem and immediately triggered broad independent scrutiny and controversy, the event is historically significant regardless of the claim's eventual mathematical disposition. The proof, priority, attribution and community reception remain subjects for external mathematical and historical assessment.
   zh-CN: 由于该主张涉及千禧年难题，并立即引发广泛独立审视与争议，无论其数学结论最终如何，该事件本身都具有历史重要性。证明本身、优先权、归属与共同体接受度仍应由外部数学与历史证据持续评估。
@@ -46,15 +46,17 @@ ai_role:
     zh-CN: OpenAI 将核心构造归因于由内部模型驱动的多 Agent 协同系统，并使用 GPT-6 Astra 完成形式化与验证。
 human_contribution:
   description:
-    en: OpenAI researchers selected target formulations, orchestrated the evaluation and released the proof; external mathematicians and journalists subsequently scrutinized the claim, attribution and provenance.
-    zh-CN: OpenAI 研究者选择目标表述、组织评测并发布证明；随后外部数学家与记者持续审视该主张、归属与来源问题。
+    en: OpenAI researchers selected target formulations, orchestrated the evaluation and released the proof. Tristan Buckmaster and Levent Alpöge were conducting separate contemporaneous fluid-dynamics research rather than contributing to OpenAI's proof; their work, use of frontier AI tools and subsequent public accounts became central to the attribution, provenance and priority dispute. External mathematicians and journalists continue to scrutinize the claim and its historical context.
+    zh-CN: OpenAI 研究者选择目标表述、组织评测并发布证明。Tristan Buckmaster 与 Levent Alpöge 当时正独立开展同期流体动力学研究，并非 OpenAI 证明的贡献者；他们的研究、对前沿 AI 工具的使用以及后续公开说明成为归属、来源与优先权争议的核心背景。外部数学家与记者仍在持续审视该主张及其历史语境。
 systems:
 - openai-internal-model
 - gpt-6-astra
 - lean
 organizations:
 - openai
-people: []
+people:
+- tristan-buckmaster
+- levent-alpoge
 problems:
 - navier-stokes-existence-and-smoothness
 methods:
@@ -91,6 +93,14 @@ verification:
     note:
       en: Reliable independent reporting also documented material disputes over attribution, provenance and priority involving contemporaneous work by Tristan Buckmaster and Levent Alpöge. The Chronicle therefore records the event as `disputed` while preserving that the publication event itself is independently corroborated.
       zh-CN: 可靠独立报道同时记录了围绕 Tristan Buckmaster 与 Levent Alpöge 同期工作的归属、来源与优先权争议。因此 Chronicle 将当前事件状态记为 `disputed`，同时保留“发布事件本身已获独立佐证”这一事实。
+  - date: '2026-09-11'
+    status: disputed
+    evidence_level: E3
+    note:
+      en: >-
+        Axios independently documented Buckmaster and Alpöge's provenance and credit concerns and reported OpenAI's explicit boundary: the company says it did not access their specific user data for the proof, while acknowledging that it cannot fully rule out de-identified data from their product usage having indirectly improved its models. This sharpens the provenance record without establishing that such indirect use occurred.
+      zh-CN: >-
+        Axios 独立记录了 Buckmaster 与 Alpöge 对来源和署名的担忧，并报道了 OpenAI 给出的明确边界：公司称证明过程中没有访问两人的特定用户数据，但承认无法完全排除来自其产品使用的去标识化数据曾间接改善模型。这一证据进一步明确了 provenance 记录，但并不能证明这种间接使用确实发生。
 sources:
 - id: openai-navier-stokes-2026
   tier: S2
@@ -124,6 +134,14 @@ sources:
   primary: false
   published_date: '2026-09-08'
   accessed_at: '2026-09-10'
+- id: axios-openai-navier-stokes-credit-2026
+  tier: S4
+  type: media
+  title: OpenAI's historic math solution overshadowed by credit controversy
+  url: https://www.axios.com/2026/09/08/openai-math-solution-navier-stokes-credit
+  primary: false
+  published_date: '2026-09-08'
+  accessed_at: '2026-09-11'
 artifacts:
 - id: openai-navier-stokes-proof-pdf
   kind: proof
@@ -151,6 +169,8 @@ tags:
 - lean
 - controversy
 - provenance
+- attribution
+- priority
 editorial:
   created_at: '2026-09-10'
   last_reviewed: '2026-09-11'
