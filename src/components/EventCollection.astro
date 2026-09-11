@@ -2,6 +2,7 @@
 import EventCard from './EventCard.astro';
 import MultiSelectFilter from './MultiSelectFilter.astro';
 import { formatDate } from '../lib/events';
+import { presentationOptions } from '../lib/presentation';
 import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { events, locale, mode = 'timeline' } = Astro.props as { events: ChronicleEvent[]; locale: Locale; mode?: 'timeline' | 'grid' };
@@ -41,9 +42,9 @@ const controlIds = {
   </div>
   <div class="controls">
     <MultiSelectFilter id={controlIds.year} name="year" label={labels.year} allLabel={labels.all} selectedLabel={labels.selected} options={years.map((value) => ({ value }))} />
-    <MultiSelectFilter id={controlIds.type} name="type" label={labels.type} allLabel={labels.all} selectedLabel={labels.selected} options={eventTypes.map((value) => ({ value }))} />
-    <MultiSelectFilter id={controlIds.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={significance.map((value) => ({ value }))} />
-    <MultiSelectFilter id={controlIds.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={verification.map((value) => ({ value }))} />
+    <MultiSelectFilter id={controlIds.type} name="type" label={labels.type} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('event_type', eventTypes, locale)} />
+    <MultiSelectFilter id={controlIds.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('significance', significance, locale)} />
+    <MultiSelectFilter id={controlIds.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('verification', verification, locale)} />
   </div>
   <div class="year-nav" aria-label={labels.yearNav}>
     <button class="year-chip" type="button" data-year-chip="">{labels.all}</button>
