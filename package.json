@@ -16,7 +16,7 @@
     "test": "npm run validate && npm run generate && node --test tests/*.test.mjs",
     "check": "astro check",
     "build:site": "astro build",
-    "index:search": "pagefind --site dist",
+    "index:search": "pagefind --site dist --glob '**/events/**/*.html'",
     "build": "npm run validate && npm run generate && npm run check && npm run build:site && npm run index:search",
     "preview": "astro preview"
   },
