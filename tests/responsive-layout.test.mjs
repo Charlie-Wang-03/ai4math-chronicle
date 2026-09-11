@@ -16,13 +16,11 @@ test('mobile header uses progressive disclosure without removing no-JS navigatio
   assert.match(layout, /matchMedia\('\(max-width: 760px\)'\)/);
   assert.match(layout, /event\.key === 'Escape'/);
 
+  assert.match(responsive, /^\.nav-toggle \{[\s\S]*?display: none;/);
   assert.match(responsive, /@media \(max-width: 760px\)/);
-  assert.match(responsive, /\.js \.nav-toggle \{[\s\S]*display: inline-flex;/);
-  assert.match(responsive, /\.js \.nav \{[\s\S]*display: none;/);
-  assert.match(responsive, /\.js \.nav\[data-open='true'\] \{[\s\S]*display: grid;/);
-
-  const mobileBlock = responsive.match(/@media \(max-width: 760px\) \{[\s\S]*?\n\}/)?.[0] ?? '';
-  assert.doesNotMatch(mobileBlock, /\.nav-toggle \{[\s\S]*display: none;/);
+  assert.match(responsive, /\.js \.nav-toggle \{\s*display: inline-flex;/);
+  assert.match(responsive, /\.js \.nav \{\s*display: none;/);
+  assert.match(responsive, /\.js \.nav\[data-open='true'\] \{\s*display: grid;/);
 });
 
 test('Explore switches its single semantic result table to stacked mobile cards', async () => {
