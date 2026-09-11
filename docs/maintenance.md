@@ -2,7 +2,7 @@
 
 **English** · [简体中文](./maintenance.zh-CN.md)
 
-This document defines the long-term maintenance rhythm for AI4Math Chronicle after the v0.1.0 public launch. It complements, rather than replaces, the [Editorial Methodology](./editorial-methodology.md), [Development Guide](./development.md), [GPT Project Governance Protocol](./gpt-project-governance.md), and [Contributing Guide](../CONTRIBUTING.md).
+This document defines the long-term maintenance rhythm for AI4Math Chronicle after the v0.1.0 public launch. It complements, rather than replaces, the [Editorial Methodology](./editorial-methodology.md), [Source Intake Workflow](./source-intake.md), [Development Guide](./development.md), [GPT Project Governance Protocol](./gpt-project-governance.md), and [Contributing Guide](../CONTRIBUTING.md).
 
 ## Maintenance model
 
@@ -10,9 +10,9 @@ AI4Math Chronicle is maintained as a curated historical archive, not a real-time
 
 The default operating loop is:
 
-1. collect candidate events or corrections through Issues and maintainer research;
-2. triage whether the item is in scope and what evidence is still missing;
-3. prepare one focused PR per event or tightly related event cluster;
+1. collect raw source leads, candidate events, or corrections through structured Issues and maintainer research;
+2. deduplicate and triage whether a source belongs to an existing Event, a new candidate, a watch item, or an out-of-scope / low-significance item;
+3. for mature candidates, identify what evidence is still missing and prepare one focused PR per event or tightly related event cluster;
 4. run CI and complete any required editorial gate;
 5. merge by squash after review;
 6. let `main` deploy continuously to GitHub Pages.
@@ -21,9 +21,19 @@ There is no guaranteed publication SLA. Accuracy, provenance, and historical sel
 
 ## Suggested review cadence
 
+### Source intake — continuous
+
+Potentially useful papers, repositories, announcements, artifact replays, independent analyses, media reports, and community signals may be captured as **Source Lead** Issues before they mature into Event proposals.
+
+Use the [Source Intake Workflow](./source-intake.md) to keep raw discovery durable without creating a second factual database. Open leads should have a concrete triage reason or missing trigger; mature evidence should move into canonical Event records rather than accumulating indefinitely in Issues.
+
+A Source Lead does not imply that the underlying claim is true, important, or publishable. S5/community attention remains discovery-only until stronger evidence supports an editorial decision.
+
 ### Event intake — continuous
 
 New candidate milestones may be proposed at any time. Maintainers should process them in batches when practical rather than treating the project as a live news stream.
+
+A candidate may arrive through a mature Event Proposal or be promoted from a Source Lead after deduplication, scope screening, and evidence collection. Maintainers may proceed directly to a focused Event branch / PR when the evidence package is already mature and no intermediate Issue adds review value.
 
 ### Corrections — priority path
 
@@ -127,6 +137,7 @@ Cross-conversation agent authority, state recovery, and agenda limits are govern
 The project is healthy when:
 
 - canonical Event data remains the single factual source;
+- useful source leads are durably triaged rather than depending on browser tabs or chat history;
 - open corrections and unresolved high-significance corroboration questions are visible rather than hidden;
 - CI, CodeQL, and Pages deployment remain green;
 - dependency updates are controlled without creating toolchain churn;
