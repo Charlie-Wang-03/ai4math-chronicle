@@ -1,6 +1,7 @@
 ---
 import MultiSelectFilter from './MultiSelectFilter.astro';
 import { formatDate, text } from '../lib/events';
+import { presentationLabel, presentationOptions } from '../lib/presentation';
 import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 
@@ -48,12 +49,6 @@ const ids = Object.fromEntries([
   'query', 'year', 'type', 'significance', 'verification', 'system', 'ai-role', 'interface', 'evidence', 'assurance', 'novelty', 'organization', 'person', 'problem', 'method', 'source-type', 'artifact-kind', 'tag', 'sort'
 ].map((key) => [key, `explore-${key}-${locale}`]));
 const optionize = (values: string[]) => values.map((value) => ({ value }));
-function evidenceLabel(source: ChronicleEvent['sources'][number]) {
-  if (source.type === 'paper') return locale === 'zh-CN' ? '论文' : 'Paper';
-  if (source.type === 'repository') return locale === 'zh-CN' ? '代码' : 'Code';
-  if (source.tier === 'S2') return locale === 'zh-CN' ? '官方' : 'Official';
-  return locale === 'zh-CN' ? '来源' : 'Source';
-}
 ---
 <section class="panel explore-filter-panel" data-explore-shell data-pagefind-ignore>
   <div class="filter-head">
@@ -72,7 +67,7 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
 
   <div class="explore-basic-controls">
     <MultiSelectFilter id={ids.year} name="year" label={labels.year} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(years)} />
-    <MultiSelectFilter id={ids.type} name="type" label={labels.type} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(eventTypes)} />
+    <MultiSelectFilter id={ids.type} name="type" label={labels.type} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('event_type', eventTypes, locale)} />
     <div class="control"><label for={ids.sort}>{labels.sort}</label><select id={ids.sort} data-sort><option value="newest">{labels.newest}</option><option value="relevance">{labels.relevance}</option><option value="oldest">{labels.oldest}</option><option value="significance">{labels.highest}</option></select></div>
   </div>
 
@@ -82,8 +77,8 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       <section class="facet-group" data-facet-group="event-attributes">
         <header class="facet-group-head"><h3>{labels.groupEvent}</h3><p>{labels.groupEventDesc}</p></header>
         <div class="facet-group-controls">
-          <MultiSelectFilter id={ids.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(significanceTiers)} />
-          <MultiSelectFilter id={ids.novelty} name="novelty" label={labels.novelty} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(noveltyTypes)} />
+          <MultiSelectFilter id={ids.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('significance', significanceTiers, locale)} />
+          <MultiSelectFilter id={ids.novelty} name="novelty" label={labels.novelty} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('mathematical_novelty', noveltyTypes, locale)} />
           <MultiSelectFilter id={ids.tag} name="tag" label={labels.tag} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(tags)} />
         </div>
       </section>
@@ -92,8 +87,8 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
         <header class="facet-group-head"><h3>{labels.groupAiMath}</h3><p>{labels.groupAiMathDesc}</p></header>
         <div class="facet-group-controls">
           <MultiSelectFilter id={ids.system} name="system" label={labels.system} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(systems)} />
-          <MultiSelectFilter id={ids['ai-role']} name="ai_role" label={labels.aiRole} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(aiRoles)} />
-          <MultiSelectFilter id={ids.interface} name="interface" label={labels.interface} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(interfaces)} />
+          <MultiSelectFilter id={ids['ai-role']} name="ai_role" label={labels.aiRole} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('ai_role', aiRoles, locale)} />
+          <MultiSelectFilter id={ids.interface} name="interface" label={labels.interface} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('interface', interfaces, locale)} />
           <MultiSelectFilter id={ids.method} name="method" label={labels.method} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(methods)} />
         </div>
       </section>
@@ -110,11 +105,11 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       <section class="facet-group" data-facet-group="evidence-verification">
         <header class="facet-group-head"><h3>{labels.groupEvidence}</h3><p>{labels.groupEvidenceDesc}</p></header>
         <div class="facet-group-controls">
-          <MultiSelectFilter id={ids.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(verificationStatuses)} />
-          <MultiSelectFilter id={ids.evidence} name="evidence" label={labels.evidenceLevel} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(evidenceLevels)} />
-          <MultiSelectFilter id={ids.assurance} name="formal_assurance" label={labels.assurance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(assurances)} />
-          <MultiSelectFilter id={ids['source-type']} name="source_type" label={labels.sourceType} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(sourceTypes)} />
-          <MultiSelectFilter id={ids['artifact-kind']} name="artifact_kind" label={labels.artifactKind} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(artifactKinds)} />
+          <MultiSelectFilter id={ids.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('verification', verificationStatuses, locale)} />
+          <MultiSelectFilter id={ids.evidence} name="evidence" label={labels.evidenceLevel} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('evidence_level', evidenceLevels, locale)} />
+          <MultiSelectFilter id={ids.assurance} name="formal_assurance" label={labels.assurance} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('formal_assurance', assurances, locale)} />
+          <MultiSelectFilter id={ids['source-type']} name="source_type" label={labels.sourceType} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('source_type', sourceTypes, locale)} />
+          <MultiSelectFilter id={ids['artifact-kind']} name="artifact_kind" label={labels.artifactKind} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('artifact_kind', artifactKinds, locale)} />
         </div>
       </section>
     </div>
@@ -171,9 +166,9 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
               <div class="explore-summary">{text(event.summary, locale)}</div>
               {(event.systems.length > 0 || event.organizations.length > 0) && <div class="explore-entities">{[...event.systems.slice(0, 2), ...event.organizations.slice(0, 1)].join(' · ')}</div>}
             </td>
-            <td><span class={`badge significance ${event.significance.tier}`}>{event.significance.tier}</span><div class="explore-types">{event.event_types.slice(0, 2).join(' · ')}</div></td>
-            <td><span class={`badge ${event.verification.status}`}>{event.verification.status}</span></td>
-            <td>{primary ? <a class="explore-evidence" href={primary.url} rel="noreferrer">{evidenceLabel(primary)} ↗</a> : labels.noEvidence}</td>
+            <td><span class={`badge significance ${event.significance.tier}`}>{presentationLabel('significance', event.significance.tier, locale)}</span><div class="explore-types">{event.event_types.slice(0, 2).map((value) => presentationLabel('event_type', value, locale)).join(' · ')}</div></td>
+            <td><span class={`badge ${event.verification.status}`}>{presentationLabel('verification', event.verification.status, locale)}</span></td>
+            <td>{primary ? <a class="explore-evidence" href={primary.url} rel="noreferrer">{presentationLabel('source_type', primary.type, locale)} ↗</a> : labels.noEvidence}</td>
             <td class="explore-actions-col"><a class="details-link" href={eventUrl}>{labels.details} →</a></td>
           </tr>
         );
@@ -236,12 +231,17 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       return [...group.querySelectorAll('[data-filter-option]:checked')].map((input) => input.value);
     }
 
+    function optionLabel(group, value) {
+      const option = [...group.querySelectorAll('[data-filter-option]')].find((input) => input.value === value);
+      return option?.closest('label')?.querySelector('span')?.textContent?.trim() || value;
+    }
+
     function updateSummary(group) {
       const summary = group.querySelector('[data-filter-summary]');
       if (!summary) return;
       const values = selectedValues(group);
       if (!values.length) summary.textContent = group.dataset.allLabel || 'All';
-      else if (values.length <= 2) summary.textContent = values.join(', ');
+      else if (values.length <= 2) summary.textContent = values.map((value) => optionLabel(group, value)).join(', ');
       else summary.textContent = `${values.length} ${group.dataset.selectedLabel || 'selected'}`;
     }
 
@@ -340,7 +340,7 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       if (query.length >= 2) entries.push(['q', document.documentElement.lang === 'zh-CN' ? '搜索' : 'Search', `“${query}”`, '']);
       for (const group of groups) {
         const label = group.dataset.filterLabel || group.dataset.filter;
-        for (const value of filters[group.dataset.filter]) entries.push([group.dataset.filter, label, value, value]);
+        for (const value of filters[group.dataset.filter]) entries.push([group.dataset.filter, label, optionLabel(group, value), value]);
       }
       for (const [key, label, value, clearValue] of entries) {
         const button = document.createElement('button');
