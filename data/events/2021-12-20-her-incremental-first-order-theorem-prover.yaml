@@ -1,0 +1,126 @@
+schema_version: 1
+id: evt-2021-her-prover
+slug: her-incremental-first-order-theorem-prover
+
+title:
+  en: Incremental learning and hindsight replay reduce handcrafted guidance in first-order theorem proving
+  zh-CN: 增量学习与 hindsight replay 减少一阶定理证明中的手工搜索启发式
+
+dates:
+  event: '2021-12-20'
+  first_public_claim: '2021-12-20'
+  paper_release: '2021-12-20'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      This work showed that a learned first-order prover could replace much of a strong prover's handcrafted clause-selection guidance with an incrementally trained neural scorer, using hindsight experience replay to learn from unsuccessful searches and reaching competitive performance on standard theorem-proving benchmarks.
+    zh-CN: >-
+      该工作展示了学习式一阶证明器可以用增量训练的神经评分器替代强自动证明器中大量手工 clause-selection 启发式，并借助 hindsight experience replay 从失败搜索中学习，在标准定理证明基准上达到具有竞争力的性能。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The authors trained a first-order logic prover around a basic given-clause algorithm, replacing handcrafted clause-scoring heuristics with a learned neural scorer and using hindsight experience replay so training could extract useful supervision even from failed proof searches; the resulting prover matched or surpassed strong traditional baselines on several TPTP-derived benchmarks.
+  zh-CN: >-
+    作者以基础 given-clause 算法构建一阶逻辑证明器，用学习式神经评分器替代手工 clause-scoring 启发式，并利用 hindsight experience replay 从失败证明搜索中提取训练信号；所得证明器在多个源自 TPTP 的基准上达到或超过强传统基线。
+
+summary:
+  en: >-
+    Clauses are encoded as graphs and scored by transformer-based models. Training proceeds incrementally, while hindsight replay turns intermediate states from unsuccessful searches into additional learning targets instead of discarding those trajectories.
+  zh-CN: >-
+    系统把 clause 编码为图并交由基于 Transformer 的模型评分。训练以增量方式推进，同时使用 hindsight replay 将失败搜索中的中间状态转化为额外学习目标，而不是丢弃这些轨迹。
+
+why_it_matters:
+  en: >-
+    The system is an early example of self-generated proof-search experience replacing brittle hand-designed search knowledge, a pattern that later became central to self-improving neural theorem provers and reasoning agents.
+  zh-CN: >-
+    该系统较早展示了如何用证明搜索过程中自产生的经验替代脆弱的手工搜索知识，这一模式后来成为自我改进神经证明器和推理智能体的重要组成部分。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      The learned clause scorer guided proof search and was iteratively improved from search experience, including trajectories that did not initially find a proof.
+    zh-CN: >-
+      学习式 clause scorer 负责引导证明搜索，并从搜索经验中迭代改进，其中也包括最初未找到证明的轨迹。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the given-clause environment, graph representation, transformer scorer, hindsight-replay training scheme and benchmark evaluation.
+    zh-CN: >-
+      研究者设计 given-clause 环境、图表示、Transformer 评分器、hindsight replay 训练方案与基准评测。
+
+systems: [her-theorem-prover]
+organizations: [deepmind]
+people: []
+problems: [first-order-theorem-proving]
+methods: [incremental-learning, hindsight-experience-replay, learned-clause-selection, transformer, proof-search]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2021-12-20'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The Chronicle records the system and reported theorem-proving results from the public research paper. No directly linked public code or independently replayed artifact is used here to raise the evidence level.
+      zh-CN: >-
+        Chronicle 根据公开研究论文记录该系统及其报告的定理证明结果；本记录未使用可直接链接的公开代码或独立 replay artifact 来提高证据等级。
+
+sources:
+- id: arxiv-her-prover-2112.10664
+  tier: S1
+  type: paper
+  title: Proving Theorems using Incremental Learning and Hindsight Experience Replay
+  url: https://arxiv.org/abs/2112.10664
+  primary: true
+  published_date: '2021-12-20'
+  accessed_at: '2026-09-11'
+- id: pmlr-her-prover-icml-2022
+  tier: S1
+  type: paper
+  title: Proving Theorems using Incremental Learning and Hindsight Experience Replay
+  url: https://proceedings.mlr.press/v162/aygun22a.html
+  primary: true
+  published_date: '2022-06-28'
+  accessed_at: '2026-09-11'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: [evt-2022-htps]
+  related: [evt-2021-tacticzero, evt-2021-pact]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [theorem-proving, first-order-logic, reinforcement-learning, hindsight-replay, proof-search]
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers: [Charlie-Wang-03]
+
+corrections: []
