@@ -5,24 +5,39 @@ import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { event, locale, showDate = false } = Astro.props as { event: ChronicleEvent; locale: Locale; showDate?: boolean };
 const primarySources = event.sources.filter((source) => source.primary || source.tier === 'S1').slice(0, 3);
+const typeLabels = event.event_types.slice(0, 2).map((type) => presentationLabel('event_type', type, locale));
 const labels = locale === 'zh-CN'
-  ? { evidence: '主要证据', details: '查看事件详情 →' }
-  : { evidence: 'Primary evidence', details: 'View event details →' };
+  ? { evidence: '主要证据', evidenceLevel: '证据', details: '查看事件详情 →' }
+  : { evidence: 'Primary evidence', evidenceLevel: 'Evidence', details: 'View event details →' };
 ---
 <article class={`event-card ${event.significance.tier}`} data-event-card data-year={event.dates.event.slice(0,4)} data-event-types={event.event_types.join(' ')} data-significance={event.significance.tier} data-verification={event.verification.status} data-systems={event.systems.join(' ')}>
   {showDate && <div class="eyebrow">{formatDate(event.dates.event, locale)}</div>}
-  <div class="badges">
+  <h3><a href={href(localePath(locale, `events/${event.slug}`))}>{text(event.title, locale)}</a></h3>
+  <div class="event-card-primary-status">
     <span class="badge significance">{presentationLabel('significance', event.significance.tier, locale)}</span>
     <span class={`badge ${event.verification.status}`}>{presentationLabel('verification', event.verification.status, locale)}</span>
-    <span class="badge">{presentationLabel('evidence_level', event.verification.evidence_level, locale)}</span>
-    {event.event_types.slice(0, 2).map((type) => <span class="badge">{presentationLabel('event_type', type, locale)}</span>)}
   </div>
-  <h3><a href={href(localePath(locale, `events/${event.slug}`))}>{text(event.title, locale)}</a></h3>
   <p>{text(event.summary, locale)}</p>
-  {(event.organizations.length > 0 || event.systems.length > 0) && <div class="result-count">{[...event.organizations, ...event.systems].join(' · ')}</div>}
+  {(event.organizations.length > 0 || event.systems.length > 0) && <div class="result-count event-card-entities">{[...event.organizations, ...event.systems].join(' · ')}</div>}
+  <div class="event-card-secondary-meta">
+    {typeLabels.length > 0 && <span>{typeLabels.join(' · ')}</span>}
+    <span>{labels.evidenceLevel}: {presentationLabel('evidence_level', event.verification.evidence_level, locale)}</span>
+  </div>
   <div class="event-card-footer">
     <div class="source-shortcuts" aria-label={labels.evidence}>
-      {primarySources.map((source) => <a href={source.url} rel="noreferrer">{presentationLabel('source_type', source.type, locale)}</a>)}
+      <span class="source-shortcuts-label">{labels.evidence}</span>
+      <div class="source-shortcuts-list">
+        {primarySources.map((source) => {
+          const sourceType = presentationLabel('source_type', source.type, locale);
+          return (
+            <a class="source-shortcut" href={source.url} rel="noreferrer" aria-label={`${sourceType}: ${source.title}`} title={source.title}>
+              <span class="source-shortcut-kind">{sourceType}</span>
+              <span class="source-shortcut-title">{source.title}</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          );
+        })}
+      </div>
     </div>
     <a class="details-link" href={href(localePath(locale, `events/${event.slug}`))}>{labels.details}</a>
   </div>
