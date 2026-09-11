@@ -24,8 +24,7 @@ const copy = locale === 'zh-CN'
       years: '时间跨度',
       significance: '重要性结构',
       explore: '探索全部事件',
-      methodology: '阅读方法论',
-      data: '机器可读数据',
+      methodology: '了解标准与方法',
       trustEvidence: '证据链',
       trustEvidenceText: '每条已发布事件至少包含一个权威 S1 或 S2 来源。',
       trustStatus: '状态透明',
@@ -34,18 +33,18 @@ const copy = locale === 'zh-CN'
       trustCanonicalText: '同一事件记录驱动网页、搜索、订阅与数据导出。',
       trustOpen: '开放可修正',
       trustOpenText: '双语、可引用、GitHub-native，并保留结构化纠错入口。',
-      useEyebrow: '使用与共建',
-      useHeading: '研究、复用或改进这份历史记录',
-      useNote: 'Chronicle 既是阅读入口，也是面向研究者、AI 工具与开源协作者的公共数据基础。',
-      readerTitle: '读者与研究者',
-      readerText: '按主题和年份定位关键事件，并继续追踪到事件级证据与主要来源。',
-      readerLink: '探索全部事件 →',
-      aiTitle: 'AI 与数据工作流',
-      aiText: '使用 JSON、NDJSON、Schema、RSS、Sitemap 与 llms.txt 接入检索或研究流程。',
-      aiLink: '打开数据接口 →',
-      contributorTitle: '贡献者与开发者',
-      contributorText: '补充遗漏事件、修正事实与来源、改进翻译、界面、可访问性或工程实现。',
-      contributorLink: '查看贡献指南 →',
+      useEyebrow: '引用、复用与共建',
+      useHeading: '把 Chronicle 用于研究、数据工作流或共同维护',
+      useNote: '时间线负责阅读历史；这里提供引用、机器可读数据与公开纠错共建入口。',
+      citationTitle: '引用与研究',
+      citationText: '在论文、报告、课程材料或研究项目中引用 Chronicle，并优先使用 GitHub Release 作为可复现的版本快照。',
+      citationLink: '查看引用方式 →',
+      aiTitle: '数据与 AI 工作流',
+      aiText: '使用 JSON、NDJSON、Schema、RSS 与 llms.txt 进行分析、检索、知识整理或 AI-assisted workflows。',
+      aiLink: '打开数据与订阅 →',
+      contributorTitle: '纠错与共建',
+      contributorText: '提交遗漏事件、来源线索、事实纠错、验证更新、翻译修正或网站改进。',
+      contributorLink: '参与贡献 →',
     }
   : {
       title: 'AI4Math Chronicle — Major Milestones in AI for Mathematics',
@@ -58,8 +57,7 @@ const copy = locale === 'zh-CN'
       years: 'year span',
       significance: 'significance mix',
       explore: 'Explore all events',
-      methodology: 'Read methodology',
-      data: 'Machine-readable data',
+      methodology: 'Understand standards & methodology',
       trustEvidence: 'Evidence trail',
       trustEvidenceText: 'Every published event includes at least one authoritative S1 or S2 source.',
       trustStatus: 'Transparent status',
@@ -68,18 +66,18 @@ const copy = locale === 'zh-CN'
       trustCanonicalText: 'One event record drives pages, search, feeds, and machine-readable exports.',
       trustOpen: 'Open and correctable',
       trustOpenText: 'Bilingual, citable, GitHub-native, with structured correction paths.',
-      useEyebrow: 'Use and contribute',
-      useHeading: 'Research, reuse, or improve the record',
-      useNote: 'The Chronicle is both a reading interface and public data infrastructure for researchers, AI workflows, and open-source collaborators.',
-      readerTitle: 'Readers & researchers',
-      readerText: 'Locate consequential events by topic and year, then follow the event-level evidence trail to primary sources.',
-      readerLink: 'Explore all events →',
-      aiTitle: 'AI & data workflows',
-      aiText: 'Use JSON, NDJSON, Schema, RSS, Sitemap, and llms.txt in retrieval and research workflows.',
-      aiLink: 'Open data interfaces →',
-      contributorTitle: 'Contributors & developers',
-      contributorText: 'Propose missing events, correct facts or sources, and improve translation, UI, accessibility, or implementation.',
-      contributorLink: 'Read the contributing guide →',
+      useEyebrow: 'Cite, reuse & contribute',
+      useHeading: 'Use the Chronicle in research, data workflows, or shared maintenance',
+      useNote: 'The timeline is for reading history; these paths support citation, machine-readable reuse, corrections, and contribution.',
+      citationTitle: 'Citation & research',
+      citationText: 'Cite the Chronicle in papers, reports, teaching materials, or research projects, and prefer GitHub Releases as reproducible version snapshots.',
+      citationLink: 'View citation guidance →',
+      aiTitle: 'Data & AI workflows',
+      aiText: 'Use JSON, NDJSON, Schema, RSS, and llms.txt for analysis, retrieval, knowledge workflows, or AI-assisted research.',
+      aiLink: 'Open data & feeds →',
+      contributorTitle: 'Corrections & contribution',
+      contributorText: 'Submit missing events, source leads, factual corrections, verification updates, translation fixes, or website improvements.',
+      contributorLink: 'Contribute →',
     };
 const websiteJsonLd = {
   '@context': 'https://schema.org',
@@ -102,7 +100,6 @@ const websiteJsonLd = {
       <nav class="hero-actions" aria-label={locale === 'zh-CN' ? '主要入口' : 'Primary actions'}>
         <a class="button-link primary" href={href(localePath(locale, 'explore'))}>{copy.explore}</a>
         <a class="button-link" href={href(localePath(locale, 'methodology'))}>{copy.methodology}</a>
-        <a class="button-link" href={href(localePath(locale, 'data'))}>{copy.data}</a>
       </nav>
     </div>
     <dl class="hero-stats" aria-label={locale === 'zh-CN' ? '当前语料概览' : 'Current corpus overview'}>
@@ -159,9 +156,9 @@ const websiteJsonLd = {
     </div>
     <div class="participation-grid">
       <article class="participation-card">
-        <h3>{copy.readerTitle}</h3>
-        <p>{copy.readerText}</p>
-        <a href={href(localePath(locale, 'explore'))}>{copy.readerLink}</a>
+        <h3>{copy.citationTitle}</h3>
+        <p>{copy.citationText}</p>
+        <a href={`${repositoryUrl}/blob/main/CITATION.cff`} rel="noreferrer">{copy.citationLink}</a>
       </article>
       <article class="participation-card">
         <h3>{copy.aiTitle}</h3>

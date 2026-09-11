@@ -4,40 +4,66 @@ import { localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
 const zh = locale === 'zh-CN';
-const title = zh ? '方法论 — AI4Math 大事记' : 'Methodology — AI4Math Chronicle';
-const desc = zh ? 'AI4Math 大事记的收录、重要性、来源、验证与更正政策。' : 'Inclusion, significance, source, verification, and correction policies for AI4Math Chronicle.';
+const title = zh ? '标准与方法 — AI4Math 大事记' : 'Standards & Methodology — AI4Math Chronicle';
+const desc = zh ? '理解 AI4Math 大事记如何收录事件、判断历史重要性、组织来源与证据、表达验证状态并处理更正。' : 'How AI4Math Chronicle selects events, assesses historical significance, organizes evidence, communicates verification, and handles corrections.';
+const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
+const correctionUrl = `${repositoryUrl}/issues/new?template=correction.yml`;
+const eventProposalUrl = `${repositoryUrl}/issues/new?template=event-proposal.yml`;
 ---
 <BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'methodology')} alternatePath={localePath(zh ? 'en':'zh-CN','methodology')}>
   <article class="prose">
-    <p class="eyebrow">Methodology</p>
-    <h1>{zh ? '方法论与编辑政策' : 'Methodology & editorial policy'}</h1>
-    <p class="lede">{zh ? 'Chronicle 追求“宽发现、严收录”：热度可以发现候选，但不能替代历史重要性与证据判断。' : 'The Chronicle uses broad discovery and strict publication gates: attention can surface candidates, but cannot substitute for historical significance or evidence.'}</p>
+    <p class="eyebrow">{zh ? '标准与方法' : 'Standards & Methodology'}</p>
+    <h1>{zh ? '如何理解与核查 Chronicle' : 'How to read and evaluate the Chronicle'}</h1>
+    <p class="lede">{zh ? 'AI4Math 大事记不是新闻流或论文数据库。它把多个公开来源组织成稳定的历史事件记录，并把历史重要性、证据强度、验证状态与形式化保障分开表达。' : 'AI4Math Chronicle is not a news feed or paper database. It organizes public sources into stable historical event records and keeps historical significance, evidence strength, verification status, and formal assurance separate.'}</p>
 
-    <h2>{zh ? '收录范围' : 'Inclusion'}</h2>
-    <p>{zh ? '原则上收录具有历史或领域意义的 discovery、proof、formalization、competition、system、benchmark、dataset、infrastructure 与 controversy。普通模型发布、普通论文流、微小 benchmark SOTA、纯 prompt engineering 与缺乏技术内容的营销发布默认不收录。' : 'We include historically or field-significant discoveries, proofs, formalizations, competition results, systems, benchmarks, datasets, infrastructure, and controversies. Routine model launches, paper feeds, incremental benchmark SOTA, pure prompt engineering, and marketing-only releases are excluded by default.'}</p>
+    <h2>{zh ? '1. 什么会进入 Chronicle？' : '1. What enters the Chronicle?'}</h2>
+    <p>{zh ? '采用“宽发现、严收录”：候选可以来自论文、正式证明工件、实验室公告、GitHub、学术讨论或社区信号，但只有具有历史或领域意义的 canonical event 才进入公开 Chronicle。' : 'The Chronicle uses broad discovery and strict publication gates: candidates may come from papers, formal proof artifacts, lab announcements, GitHub, scholarly discussion, or community signals, but only historically or field-significant canonical events enter the published record.'}</p>
+    <p>{zh ? '原则上收录 discovery、proof、formalization、competition、system、benchmark、dataset、infrastructure 与具有历史意义的 controversy。普通模型发布、普通论文流、微小 benchmark SOTA、纯 prompt engineering、普通形式化更新以及只有营销材料而缺乏技术内容的发布默认不收录。' : 'In scope are historically meaningful discoveries, proofs, formalizations, competition results, systems, benchmarks, datasets, infrastructure, and controversies. Routine model launches, ordinary paper flow, incremental benchmark SOTA, pure prompt engineering, routine formalization updates, and marketing-only releases are excluded by default.'}</p>
 
-    <h2>{zh ? '重要性' : 'Significance'}</h2>
+    <h2>{zh ? '2. 如何理解历史重要性？' : '2. How should historical significance be read?'}</h2>
+    <div class="callout">{zh ? '重要性（Significance）≠ 验证状态（Verification）。一个 H1 事件仍可能处于 under_verification；历史重要并不等于底层数学 claim 已被最终确认。' : 'Significance ≠ Verification. An H1 event may still be under_verification; historical importance does not mean the underlying mathematical claim has been finally established.'}</div>
     <table><tbody>
-      <tr><th>H1</th><td>{zh ? 'Historical Milestone：AI4Math 历史中的长期转折点，尤其包括 AI 对重大数学新结果、新证明、新反例、重大形式化或可重复研究级进展的实质贡献；必须人工确认。H1 表示历史重要性，不等同于底层数学 claim 已被最终确认。' : 'Historical Milestone: a durable turning point in AI for Mathematics, especially a major new mathematical result, proof, disproof, formalization milestone, or repeated research-level advance substantially produced by AI. Final designation requires human review. H1 measures historical significance, not ultimate mathematical correctness.'}</td></tr>
-      <tr><th>H2</th><td>{zh ? 'Field Milestone：对 AI4Math 重要子领域或技术路线具有明显意义，例如数学专项系统、benchmark、dataset、proof search、formalization infrastructure 与重要竞赛结果。' : 'Field Milestone: clear significance to an important AI4Math subfield or technical direction, such as math-specific systems, benchmarks, datasets, proof search, formalization infrastructure, or important competition results.'}</td></tr>
-      <tr><th>H3</th><td>{zh ? 'Context Event：主要用于建立历史上下文。若一个通用模型发布只是用数学作为能力评测，而没有贡献新的数学结果或数学专项系统，通常归入 H3。' : 'Context Event: primarily establishes historical context. General-purpose model releases normally belong here when mathematics is mainly a capability benchmark rather than the release contributing new mathematics or a math-specific system.'}</td></tr>
+      <tr><th>H1</th><td>{zh ? 'Historical Milestone：AI4Math 历史中的长期转折点，例如重大新数学结果、新证明、新反例、重大形式化或可重复的研究级突破；最终 designation 需要人工确认。' : 'Historical Milestone: a durable turning point in AI for Mathematics, such as a major new result, proof, disproof, landmark formalization, or repeated research-level breakthrough. Final designation requires human review.'}</td></tr>
+      <tr><th>H2</th><td>{zh ? 'Field Milestone：对重要子领域或技术路线具有明显意义，例如数学专项系统、benchmark、dataset、proof search、formalization infrastructure 与重要竞赛结果。' : 'Field Milestone: clear significance to an important AI4Math subfield or technical direction, including math-specific systems, benchmarks, datasets, proof search, formalization infrastructure, or important competition results.'}</td></tr>
+      <tr><th>H3</th><td>{zh ? 'Context Event：主要用于建立历史上下文，而不是作为实质性 AI4Math milestone。' : 'Context Event: primarily establishes historical context rather than representing a substantive AI4Math milestone.'}</td></tr>
     </tbody></table>
 
-    <h2>{zh ? '来源层级' : 'Source hierarchy'}</h2>
+    <h2>{zh ? '3. Chronicle 如何组织证据？' : '3. How does the Chronicle organize evidence?'}</h2>
+    <p>{zh ? 'Chronicle 不把可信度压缩成一个分数，而是分别记录来源、证据成熟度、当前验证状态和形式化工件保障。' : 'The Chronicle does not compress trust into one score. It records source quality, evidence maturity, current verification status, and formal-artifact assurance as separate dimensions.'}</p>
+
+    <h3>{zh ? '来源层级（S1–S5）' : 'Source hierarchy (S1–S5)'}</h3>
     <table><tbody>
-      <tr><th>S1</th><td>{zh ? '论文、期刊/会议、正式证明工件、官方研究仓库、数据集工件。' : 'Papers, journals/conferences, formal proof artifacts, official research repositories, dataset artifacts.'}</td></tr>
+      <tr><th>S1</th><td>{zh ? '论文、期刊/会议、正式证明工件、官方研究仓库、数据集工件等 primary research source。' : 'Primary research sources such as papers, journals/conferences, formal proof artifacts, official research repositories, and dataset artifacts.'}</td></tr>
       <tr><th>S2</th><td>{zh ? '实验室、大学或研究者的官方公告。' : 'Official lab, university, or researcher announcements.'}</td></tr>
       <tr><th>S3</th><td>{zh ? '独立学术佐证或分析，包括复现、外部评分、同行评议或 artifact replay。' : 'Independent scholarly corroboration or analysis, including reproduction, external scoring, peer review, or artifact replay.'}</td></tr>
-      <tr><th>S4</th><td>{zh ? '高质量科技/科学媒体。' : 'Reputable science and technology media.'}</td></tr>
-      <tr><th>S5</th><td>{zh ? 'HN、Reddit、X、论坛等社区发现信号；不能单独支撑重大科研事实。' : 'Community discovery signals such as HN, Reddit, X, or forums; insufficient alone for major research claims.'}</td></tr>
+      <tr><th>S4</th><td>{zh ? '高质量科技或科学媒体。' : 'Reputable science and technology media.'}</td></tr>
+      <tr><th>S5</th><td>{zh ? 'HN、Reddit、X、论坛等社区发现信号；可用于发现候选，但不能单独支撑重大科研事实。' : 'Community discovery signals such as HN, Reddit, X, or forums; useful for discovery but insufficient alone for major research claims.'}</td></tr>
     </tbody></table>
 
-    <h2>{zh ? '验证模型' : 'Verification model'}</h2>
-    <p>{zh ? 'Chronicle 的 verification 核验“发生了什么”及其证据：原发布方公开声称了什么、发布了哪些 artifact，以及可靠独立来源在多大程度上佐证 Chronicle 的核心事件描述。项目不把 verification 当作对数学真伪的最终裁决。Evidence Level（E0–E4）、Verification Status、Formal Assurance 与 Significance 分开记录；一个 H1 事件仍可能处于 under_verification。' : 'Chronicle verification concerns the evidence for what happened: what the originating source publicly claimed, which artifacts were released, and how far reliable independent sources corroborate the Chronicle’s core event description. It is not a final adjudication of mathematical truth. Evidence Level (E0–E4), Verification Status, Formal Assurance, and Significance are recorded separately; an H1 event may still be under_verification.'}</p>
-    <p>{zh ? '`independently_verified` 表示独立于原发布方的可靠来源已对核心事件描述提供实质性佐证；它不表示 Chronicle 已认证底层数学最终正确。`machine_checked` 与 `independently_replayed` 只描述形式化 artifact 的检查状态。' : '`independently_verified` means reliable sources independent of the originating claim have substantively corroborated the core event description; it does not mean the Chronicle has certified the underlying mathematics as ultimately correct. `machine_checked` and `independently_replayed` describe formal-artifact assurance only.'}</p>
-    <div class="callout">{zh ? 'AI 可以高自治完成来源收集、普通 H2/H3 事件与较低风险的 verification 更新；新的 H1，以及 independently_verified、disputed、corrected（作为当前状态）和 retracted 必须经过人工最终确认。对于“首次”“解决”“证明”“反驳”等高风险措辞，应明确归属于可靠来源，除非对应历史事实已经独立建立。' : 'AI may autonomously collect evidence, publish ordinary H2/H3 events, and apply lower-risk verification updates. New H1 designations and final independently_verified, disputed, corrected (as the current status), or retracted states require human approval. High-risk wording such as “first”, “solves”, “proves”, or “disproves” should remain source-attributed unless the historical fact itself is independently established.'}</div>
+    <h3>{zh ? '证据等级（E0–E4）' : 'Evidence level (E0–E4)'}</h3>
+    <table><tbody>
+      <tr><th>E0</th><td>{zh ? 'Unsubstantiated：尚缺乏足够公开依据。' : 'Unsubstantiated: insufficient public evidence is recorded.'}</td></tr>
+      <tr><th>E1</th><td>{zh ? 'Primary Claim：已有原发布方公开 claim。' : 'Primary Claim: the originating party has made a public claim.'}</td></tr>
+      <tr><th>E2</th><td>{zh ? 'Research Record：已有公开研究记录。' : 'Research Record: a public research record exists.'}</td></tr>
+      <tr><th>E3</th><td>{zh ? 'Inspectable Artifact：存在可检查的代码、证明、数据或其他 artifact。' : 'Inspectable Artifact: code, proof, data, or another inspectable artifact is available.'}</td></tr>
+      <tr><th>E4</th><td>{zh ? 'Independent Check：已有独立检查或佐证。' : 'Independent Check: independent checking or corroboration is recorded.'}</td></tr>
+    </tbody></table>
 
-    <h2>{zh ? '更正政策' : 'Correction policy'}</h2>
-    <p>{zh ? '事件状态与事实若发生变化，更新 canonical YAML 记录并保留 verification history / corrections。稳定 Event ID 不因标题或叙述调整而改变。' : 'When facts or status change, the canonical YAML record is updated while preserving verification history and corrections. Stable Event IDs do not change when titles or wording change.'}</p>
+    <h3>{zh ? '验证状态与形式化保障' : 'Verification status and formal assurance'}</h3>
+    <p>{zh ? 'Verification Status 描述 Chronicle 对“发生了什么”的当前证据判断，例如 claimed、paper_released、under_verification、partially_verified、independently_verified、disputed、corrected 或 retracted。Formal Assurance 则只描述形式化 artifact 的保障程度：none、artifact_available、machine_checked、independently_replayed。' : 'Verification Status describes the current evidence state for what happened, such as claimed, paper_released, under_verification, partially_verified, independently_verified, disputed, corrected, or retracted. Formal Assurance separately describes formal-artifact assurance: none, artifact_available, machine_checked, or independently_replayed.'}</p>
+    <div class="callout">{zh ? 'machine_checked ≠ independently_verified ≠ mathematical correctness。机器检查过形式化工件，不等于 Chronicle 已独立佐证整个事件，也不等于项目替学术共同体裁决了数学真伪。' : 'machine_checked ≠ independently_verified ≠ mathematical correctness. A machine-checked formal artifact does not mean the whole event has independent corroboration, nor does it make the Chronicle a final mathematical referee.'}</div>
+
+    <h2>{zh ? '4. 如何处理不确定性与争议？' : '4. How are uncertainty and disputes handled?'}</h2>
+    <p>{zh ? 'Chronicle 核验的是事件及其公开证据：原发布方声称了什么、发布了哪些 artifact，以及可靠独立来源在多大程度上佐证核心事件描述。项目不把 verification 当作对数学真伪、历史优先权或归属争议的最终裁决。' : 'Chronicle verification concerns the event and its public evidence: what the originating source claimed, which artifacts were released, and how far reliable independent sources corroborate the core event description. Verification is not a final adjudication of mathematical truth, historical priority, or attribution disputes.'}</p>
+    <p>{zh ? '`under_verification` 表示重要部分仍处于外部核查中；`partially_verified` 表示已有重要独立佐证但仍有实质问题未决；`independently_verified` 表示可靠独立来源已实质性佐证核心事件描述；`disputed`、`corrected` 与 `retracted` 则明确保留争议、更正或撤回状态。' : '`under_verification` marks material aspects still under external scrutiny; `partially_verified` records important corroboration with material questions still open; `independently_verified` means reliable independent sources substantively corroborate the core event description; `disputed`, `corrected`, and `retracted` preserve material contestation, correction, or withdrawal.'}</p>
+
+    <h2>{zh ? '5. 如果记录有误或遗漏怎么办？' : '5. What if a record is wrong or incomplete?'}</h2>
+    <p>{zh ? 'Chronicle 使用稳定 Event ID，并通过 verification history 与 corrections 保留可审计修订轨迹。事实变化时应更新 canonical YAML，而不是静默改写历史。' : 'Chronicle uses stable Event IDs and preserves auditable revision trails through verification history and corrections. When facts change, the canonical YAML should be updated rather than silently rewriting history.'}</p>
+    <div class="data-links">
+      <a class="data-link" href={correctionUrl} rel="noreferrer"><strong>{zh ? '报告错误' : 'Report a correction'}</strong><span>{zh ? '事实、来源、日期、翻译、重要性或验证状态存在问题。' : 'Report factual, sourcing, date, translation, significance, or verification problems.'}</span></a>
+      <a class="data-link" href={eventProposalUrl} rel="noreferrer"><strong>{zh ? '提议遗漏事件' : 'Propose a missing event'}</strong><span>{zh ? '提交可能值得进入 Chronicle 的重要 AI4Math milestone。' : 'Propose an important AI4Math milestone that may be missing from the Chronicle.'}</span></a>
+    </div>
+    <p>{zh ? 'Chronicle 采用 human-in-the-loop editorial review。面向维护者与贡献者的详细 publication workflow、AI 权限与 human hard gates 记录在 GitHub 的贡献指南、Editorial Methodology 与 Governance Protocol 中。' : 'The Chronicle uses human-in-the-loop editorial review. Maintainer-facing publication workflow, AI authority, and human hard gates are documented in the repository Contributing Guide, Editorial Methodology, and Governance Protocol.'}</p>
+    <p><a href={`${repositoryUrl}/blob/main/CONTRIBUTING.md`} rel="noreferrer">{zh ? '查看贡献指南 →' : 'Read the contributing guide →'}</a></p>
   </article>
 </BaseLayout>
