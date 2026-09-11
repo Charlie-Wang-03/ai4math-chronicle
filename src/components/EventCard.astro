@@ -5,7 +5,8 @@ import { presentationLabel } from '../lib/presentation';
 import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { event, locale, showDate = false } = Astro.props as { event: ChronicleEvent; locale: Locale; showDate?: boolean };
-const primarySources = event.sources.filter((source) => source.primary || source.tier === 'S1').slice(0, 3);
+const preferredSources = event.sources.filter((source) => source.primary || source.tier === 'S1');
+const primarySources = (preferredSources.length > 0 ? preferredSources : event.sources.filter((source) => source.tier === 'S1' || source.tier === 'S2')).slice(0, 3);
 const typeLabels = event.event_types.slice(0, 2).map((type) => presentationLabel('event_type', type, locale));
 const labels = locale === 'zh-CN'
   ? { evidence: '主要证据', evidenceLevel: '证据', details: '查看事件详情 →' }
