@@ -1,0 +1,170 @@
+schema_version: 1
+id: evt-2025-mathesis
+slug: mathesis-natural-language-formal-proving
+
+title:
+  en: Mathesis connects natural-language mathematics to end-to-end Lean theorem proving
+  zh-CN: Mathesis 将自然语言数学连接到端到端 Lean 定理证明
+
+dates:
+  event: '2025-06-08'
+  first_public_claim: '2025-06-08'
+  paper_release: '2025-06-08'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- formalization
+- system
+- benchmark
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Mathesis addressed a major interface bottleneck in neural theorem proving by coupling learned autoformalization of ordinary mathematical language with downstream Lean proof generation and feedback, rather than assuming an expert-written formal statement as the starting point.
+    zh-CN: >-
+      Mathesis 针对神经定理证明的重要接口瓶颈，将普通数学语言的学习式自动形式化与后续 Lean 证明生成和反馈连接起来，不再默认任务必须从专家编写的形式命题开始。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    The Mathesis paper introduced an autoformalization-and-proving pipeline trained with reinforcement and preference feedback, together with LeanScorer and the Gaokao-Formal benchmark, and reported that pairing its autoformalizer with existing provers substantially improved end-to-end proving accuracy on natural-language problems.
+  zh-CN: >-
+    Mathesis 论文发布了结合强化学习与偏好反馈的自动形式化—证明管线，并提出 LeanScorer 与 Gaokao-Formal 基准；论文报告称，将其自动形式化器与既有证明器配合后，自然语言题目的端到端形式证明准确率获得显著提升。
+
+summary:
+  en: >-
+    Mathesis translates an informal problem into a Lean 4 statement, scores candidate formalizations for syntactic and semantic quality, and uses downstream prover feedback to prefer statements that can support machine-checked proofs. Gaokao-Formal provides hundreds of challenging proof problems derived from Chinese college-entrance examinations for evaluating this full pipeline.
+  zh-CN: >-
+    Mathesis 将非形式题目翻译为 Lean 4 命题，对候选形式化结果的语法与语义质量进行评分，并利用下游证明器反馈偏好能够支撑机器检查证明的命题。Gaokao-Formal 则提供数百道源自中国高考的高难度证明题，用于评测完整管线。
+
+why_it_matters:
+  en: >-
+    The work moved formal-math systems closer to the way mathematical problems are actually presented to humans: in natural language. It also made autoformalization quality part of an end-to-end proving objective rather than an isolated translation task.
+  zh-CN: >-
+    该工作让形式数学系统更接近人类实际接收数学问题的方式——自然语言，并把自动形式化质量纳入端到端证明目标，而不是把它仅视为孤立的翻译任务。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Learned models generate Lean statements and downstream formal proofs, while Lean compilation, semantic scoring and prover feedback constrain and evaluate the automated pipeline.
+    zh-CN: >-
+      学习模型自动生成 Lean 命题与后续形式证明，Lean 编译、语义评分和证明器反馈则约束并评估这一自动化管线。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the autoformalization training procedure, LeanScorer, Gaokao-Formal and the end-to-end evaluation protocol, curated problems and analyzed the resulting system performance.
+    zh-CN: >-
+      研究者设计自动形式化训练流程、LeanScorer、Gaokao-Formal 与端到端评测协议，整理题目并分析系统表现。
+
+systems:
+- mathesis
+- mathesis-autoformalizer
+- leanscorer
+- lean
+organizations:
+- huawei
+people: []
+problems:
+- natural-language-to-formal-theorem-proving
+- gaokao-formal
+methods:
+- autoformalization
+- reinforcement-learning
+- preference-optimization
+- prover-feedback
+- lean
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2025-06-08'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record introduced Mathesis, LeanScorer and Gaokao-Formal and reported end-to-end formal-proving results.
+      zh-CN: >-
+        arXiv 研究记录发布 Mathesis、LeanScorer 与 Gaokao-Formal，并报告端到端形式证明结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public Mathesis repository exposes implementation and project resources, and the work later appeared at ICLR 2026. Machine-checked refers to Lean acceptance within the evaluated proof pipeline; it does not imply independent replay of every experiment or semantic equivalence judgment.
+      zh-CN: >-
+        Mathesis 公开仓库提供实现与项目资源，该工作后来发表于 ICLR 2026。machine-checked 指评测证明管线中的结果可由 Lean 接受，并不表示全部实验或语义等价判断均已获得独立重放。
+
+sources:
+- id: arxiv-mathesis-2506.07047
+  tier: S1
+  type: paper
+  title: 'Mathesis: Towards Formal Theorem Proving from Natural Languages'
+  url: https://arxiv.org/abs/2506.07047
+  primary: true
+  published_date: '2025-06-08'
+  accessed_at: '2026-09-11'
+- id: github-huawei-ai4math-mathesis
+  tier: S1
+  type: repository
+  title: Mathesis implementation and project resources
+  url: https://github.com/Huawei-AI4Math/Mathesis
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: iclr-mathesis-2026
+  tier: S1
+  type: paper
+  title: Mathesis — ICLR 2026 conference paper
+  url: https://proceedings.iclr.cc/paper_files/paper/2026/hash/93d5797656d3e70dca7535160a1458f3-Abstract-Conference.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: mathesis-repository
+  kind: code
+  title: Mathesis autoformalization and theorem-proving implementation
+  url: https://github.com/Huawei-AI4Math/Mathesis
+
+relationships:
+  predecessors:
+  - evt-2022-autoformalization-llm
+  - evt-2023-proofnet
+  successors: []
+  related:
+  - evt-2025-deepseek-prover-v2
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- mathesis
+- autoformalization
+- lean
+- theorem-proving
+- natural-language
+- gaokao-formal
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

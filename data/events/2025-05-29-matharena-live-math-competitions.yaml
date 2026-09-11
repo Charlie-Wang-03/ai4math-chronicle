@@ -1,0 +1,166 @@
+schema_version: 1
+id: evt-2025-matharena
+slug: matharena-live-math-competitions
+
+title:
+  en: MathArena turns newly released math competitions into a live contamination-resistant benchmark
+  zh-CN: MathArena 将最新数学竞赛转化为低污染的实时评测基准
+
+dates:
+  event: '2025-05-29'
+  first_public_claim: '2025-05-29'
+  paper_release: '2025-05-29'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- benchmark
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      MathArena changed mathematical-reasoning evaluation from repeatedly scoring static historical datasets toward evaluating models on newly released competitions close to their publication date, while also incorporating expert-graded proof-writing tasks.
+    zh-CN: >-
+      MathArena 将数学推理评测从反复使用静态历史数据集，推进到在竞赛题目刚发布时即评测模型，并进一步纳入由专家评分的证明题，从评测机制上直接降低数据污染风险。
+
+mathematical_novelty:
+  type: benchmark_result
+
+interfaces:
+- informal
+- numeric
+
+claim:
+  en: >-
+    The MathArena paper introduced a continuously updated benchmark built from newly released mathematics competitions, reported evidence of contamination in AIME 2024, and added human-graded proof-writing evaluation alongside final-answer competitions.
+  zh-CN: >-
+    MathArena 论文发布了一个由最新数学竞赛持续更新的基准，报告 AIME 2024 存在数据污染迹象，并在最终答案型竞赛之外加入由人工专家评分的证明写作评测。
+
+summary:
+  en: >-
+    MathArena evaluates models on recurring competitions soon after problems are released and records whether a model predates each competition. Its public pipeline supports final-answer parsing as well as proof-based competitions such as USAMO and IMO, where expert graders assess model-generated proofs.
+  zh-CN: >-
+    MathArena 在竞赛题目发布后尽快评测模型，并记录模型发布时间与竞赛时间的先后关系。其公开管线既支持最终答案解析，也支持 USAMO、IMO 等证明型竞赛，由专家对模型生成证明进行评分。
+
+why_it_matters:
+  en: >-
+    As static math benchmarks became increasingly vulnerable to contamination and saturation, MathArena supplied a reusable live-evaluation pattern that better separates current reasoning capability from exposure to old benchmark material and makes proof quality part of the evaluation target.
+  zh-CN: >-
+    当静态数学基准越来越容易受到污染与饱和影响时，MathArena 提供了可持续复用的实时评测范式，更有利于区分当前推理能力与对旧基准材料的接触，并把证明质量本身纳入评测目标。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Language models are the systems under evaluation and generate answers or proofs; humans design the benchmark, maintain the competition pipeline and perform expert grading for proof-based tasks.
+    zh-CN: >-
+      语言模型作为被评测系统生成答案或证明；基准设计、竞赛管线维护以及证明题的专家评分由人类完成。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the live-evaluation protocol, selected and normalized competitions, built parsing and review tooling, ran model evaluations, and organized expert grading for proof-based responses.
+    zh-CN: >-
+      研究者设计实时评测协议，选择并规范化竞赛题目，开发解析与复核工具，运行模型评测，并组织证明题回答的专家评分。
+
+systems:
+- matharena
+organizations:
+- eth-zurich
+- insait
+people: []
+problems:
+- mathematical-competition-reasoning
+- proof-writing-evaluation
+methods:
+- live-evaluation
+- contamination-resistant-evaluation
+- competition-benchmarking
+- expert-grading
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2025-05-29'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record introduced MathArena and reported the initial live-competition and proof-writing evaluation results.
+      zh-CN: >-
+        arXiv 研究记录发布 MathArena，并报告最初的实时竞赛与证明写作评测结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public MathArena repository exposes evaluation code, competition configurations and result-inspection tooling; the work also appeared in the NeurIPS 2025 Datasets and Benchmarks Track. E3 records inspectable infrastructure and does not imply independent verification of every model score or contamination finding.
+      zh-CN: >-
+        MathArena 公开仓库提供评测代码、竞赛配置与结果检查工具，该工作也发表于 NeurIPS 2025 Datasets and Benchmarks Track。E3 表示基础设施可直接检查，并不表示所有模型分数或污染结论均已获得独立验证。
+
+sources:
+- id: arxiv-matharena-2505.23281
+  tier: S1
+  type: paper
+  title: 'MathArena: Evaluating LLMs on Uncontaminated Math Competitions'
+  url: https://arxiv.org/abs/2505.23281
+  primary: true
+  published_date: '2025-05-29'
+  accessed_at: '2026-09-11'
+- id: github-eth-sri-matharena
+  tier: S1
+  type: repository
+  title: MathArena evaluation repository
+  url: https://github.com/eth-sri/matharena
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: neurips-matharena-2025
+  tier: S1
+  type: paper
+  title: MathArena — NeurIPS 2025 Datasets and Benchmarks Track
+  url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/1d27c01ebd3e3aebe226b44fc970d803-Abstract-Datasets_and_Benchmarks_Track.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: matharena-repository
+  kind: benchmark
+  title: MathArena evaluation code and competition configurations
+  url: https://github.com/eth-sri/matharena
+
+relationships:
+  predecessors:
+  - evt-2024-gsm-symbolic
+  - evt-2024-omni-math
+  successors: []
+  related:
+  - evt-2025-openai-imo-gold
+  - evt-2025-gemini-imo-gold
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- matharena
+- benchmark
+- live-evaluation
+- contamination
+- math-reasoning
+- proof-writing
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

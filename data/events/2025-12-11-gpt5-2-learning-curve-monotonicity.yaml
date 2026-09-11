@@ -1,0 +1,142 @@
+schema_version: 1
+id: evt-2025-gpt5-2-learning-curves
+slug: gpt5-2-learning-curve-monotonicity
+
+title:
+  en: GPT-5.2 Pro derives proofs for an open learning-curve monotonicity problem
+  zh-CN: GPT-5.2 Pro 推导开放学习曲线单调性问题的证明
+
+dates:
+  event: '2025-12-11'
+  first_public_claim: '2025-12-11'
+  paper_release: '2025-12-11'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- discovery
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The learning-curve paper provided a concrete late-2025 example in which researchers reported that a frontier language model derived the mathematical results and proof arguments for a previously open statistical-learning problem without receiving a human proof strategy, while humans retained responsibility for verification and transcription.
+    zh-CN: >-
+      这篇学习曲线论文提供了 2025 年末一个具体案例：研究者报告前沿语言模型在未获得人类证明策略的情况下推导出一个此前开放的统计学习问题之数学结果与证明论证，而人类仍负责验证与整理成文。
+
+mathematical_novelty:
+  type: new_proof
+
+interfaces:
+- informal
+- symbolic
+
+claim:
+  en: >-
+    Sellke and Yin reported new monotonicity guarantees for maximum-likelihood estimators, including a Gaussian case previously highlighted as open, and stated that all results in the paper were derived by variants of GPT-5.2 Pro while humans supplied no proof strategies or intermediate arguments and instead verified and transcribed the proofs.
+  zh-CN: >-
+    Sellke 与 Yin 报告了最大似然估计量新的单调性保证，其中包括此前文献明确列为开放问题的 Gaussian 情形；论文同时声明，全部结果均由 GPT-5.2 Pro 的不同变体推导，人类没有提供证明策略或中间论证，而是负责验证并整理证明。
+
+summary:
+  en: >-
+    The paper studies whether expected prediction error for maximum-likelihood estimation improves monotonically as more data are observed. It proves forward-KL monotonicity for several Gaussian and Gamma settings and gives a reverse-KL argument for broad exponential families. OpenAI presented the work as a case study of GPT-5.2 Pro contributing directly to previously unsolved mathematical questions.
+  zh-CN: >-
+    该论文研究最大似然估计在数据增加时其期望预测误差是否单调改善，证明若干 Gaussian 与 Gamma 情形下的 forward-KL 单调性，并给出适用于广泛指数族的 reverse-KL 论证。OpenAI 将其作为 GPT-5.2 Pro 直接参与此前未解决数学问题的案例公开介绍。
+
+why_it_matters:
+  en: >-
+    Compared with earlier cases where a model supplied ideas inside a human-led proof process, this record documents a stronger source-attributed AI role: the authors say the model generated the result and proof development itself, with humans focused on validation and exposition.
+  zh-CN: >-
+    相较于此前模型主要在人类主导证明流程中提供思路的案例，这一记录呈现了来源明确声明的更强 AI 角色：作者称结果与证明发展本身由模型生成，人类主要负责验证与表述。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      According to the paper, variants of GPT-5.2 Pro derived the results and proof arguments without human-provided proof strategies or intermediate steps; humans prompted further exploration, checked the mathematics and transcribed the final proofs.
+    zh-CN: >-
+      按论文说明，GPT-5.2 Pro 的不同变体在没有人类提供证明策略或中间步骤的情况下推导结果与证明论证；人类负责提出后续探索要求、检查数学内容并整理最终证明。
+
+human_contribution:
+  description:
+    en: >-
+      Sellke and Yin selected and framed the research question, prompted the model's continued exploration, verified the resulting mathematics, connected it to prior literature and authored the final paper.
+    zh-CN: >-
+      Sellke 与 Yin 选择并界定研究问题，推动模型继续探索，验证所得数学内容，将结果与既有文献联系起来，并完成最终论文。
+
+systems:
+- gpt-5-2-pro
+organizations:
+- openai
+people:
+- mark-sellke
+- steven-yin
+problems:
+- learning-curve-monotonicity
+methods:
+- language-model-proof-generation
+- human-verification
+- statistical-learning-theory
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2025-12-11'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The primary paper and OpenAI's official case study publicly document the mathematical claims and the stated division of work between GPT-5.2 Pro and the human authors. Chronicle records those claims without independently certifying the proofs or historical priority.
+      zh-CN: >-
+        原始论文与 OpenAI 官方案例公开记录了数学主张以及 GPT-5.2 Pro 与人类作者之间所声明的工作分工。Chronicle 记录这些主张，但不独立认证证明正确性或历史优先权。
+
+sources:
+- id: arxiv-learning-curve-monotonicity-2512.10220
+  tier: S1
+  type: paper
+  title: On Learning-Curve Monotonicity for Maximum Likelihood Estimators
+  url: https://arxiv.org/abs/2512.10220
+  primary: true
+  published_date: '2025-12-11'
+  accessed_at: '2026-09-11'
+- id: openai-gpt5-2-science-math-2025
+  tier: S2
+  type: official_announcement
+  title: Advancing science and math with GPT-5.2
+  url: https://openai.com/index/gpt-5-2-for-science-and-math/
+  primary: true
+  published_date: '2025-12-11'
+  accessed_at: '2026-09-11'
+
+artifacts: []
+
+relationships:
+  predecessors:
+  - evt-2025-gpt5-nag-open-problem
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- gpt-5-2
+- mathematical-discovery
+- proof-generation
+- statistical-learning-theory
+- open-problem
+- human-verification
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

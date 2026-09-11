@@ -1,0 +1,160 @@
+schema_version: 1
+id: evt-2025-leanconjecturer
+slug: leanconjecturer-formal-conjecture-generation
+
+title:
+  en: LeanConjecturer scales LLM-generated mathematical conjectures inside Lean
+  zh-CN: LeanConjecturer 在 Lean 中扩展 LLM 数学猜想生成
+
+dates:
+  event: '2025-06-27'
+  first_public_claim: '2025-06-27'
+  paper_release: '2025-06-27'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- system
+- dataset
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      LeanConjecturer made conjecture generation a scalable formal-mathematics pipeline rather than an occasional by-product of theorem proving, combining Mathlib context extraction, LLM generation and Lean-based filtering to create large numbers of candidate training problems.
+    zh-CN: >-
+      LeanConjecturer 将猜想生成从定理证明的偶发副产品推进为可扩展的形式数学管线，把 Mathlib 上下文抽取、LLM 生成与 Lean 过滤结合起来，大规模产生候选训练问题。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The LeanConjecturer paper reported generating 12,289 university-level Lean conjectures from 40 Mathlib seed files, of which 3,776 were syntactically valid and not discharged by the chosen `aesop` non-triviality filter, and showed that such generated problems could support domain-specific reinforcement learning for theorem proving.
+  zh-CN: >-
+    LeanConjecturer 论文报告从 40 个 Mathlib 种子文件生成 12,289 条大学层次 Lean 猜想，其中 3,776 条通过语法有效性检查且无法被所采用的 `aesop` 非平凡性过滤器直接证明，并展示这些生成问题可用于面向特定领域的定理证明强化学习。
+
+summary:
+  en: >-
+    The pipeline extracts definitions and theorem context from Lean files, asks an LLM to propose new formal statements, checks generated statements through Lean and separates harder candidates for subsequent training. The paper also reports several non-trivial topology examples as evidence that the pipeline can produce mathematically useful statements rather than only superficial perturbations.
+  zh-CN: >-
+    该管线从 Lean 文件提取定义与定理上下文，让 LLM 提出新的形式命题，再通过 Lean 检查生成结果，并把更困难的候选分离出来供后续训练。论文还报告若干非平凡拓扑学示例，用以说明系统可以产生具有数学用途的命题，而不仅是表面扰动。
+
+why_it_matters:
+  en: >-
+    Formal theorem provers depend heavily on available theorem statements and training tasks. LeanConjecturer supplied a reproducible route for expanding that problem distribution from the formal library itself and linked conjecture generation directly to reinforcement-learning data creation.
+    
+  zh-CN: >-
+    形式定理证明器高度依赖可用的定理命题与训练任务。LeanConjecturer 提供了从形式数学库本身扩展问题分布的可复现路线，并把猜想生成直接连接到强化学习数据构造。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Language models generate candidate Lean theorem statements from extracted mathematical context, while Lean and rule-based filters test syntax and selected notions of non-triviality before candidates are reused for training.
+    zh-CN: >-
+      语言模型根据抽取出的数学上下文生成候选 Lean 定理命题，Lean 与规则过滤器检查语法和选定的非平凡性标准，再将候选用于后续训练。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the context-extraction and filtering pipeline, chose seed files and evaluation criteria, conducted reinforcement-learning experiments, and analyzed representative generated statements.
+    zh-CN: >-
+      研究者设计上下文抽取与过滤管线，选择种子文件与评测标准，开展强化学习实验，并分析代表性的生成命题。
+
+systems:
+- leanconjecturer
+- lean
+- mathlib
+organizations:
+- auto-res
+people: []
+problems:
+- formal-conjecture-generation
+- theorem-proving-data-scarcity
+methods:
+- conjecture-generation
+- synthetic-formal-data
+- context-extraction
+- reinforcement-learning
+- lean
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2025-06-27'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record introduced LeanConjecturer and reported the generated-conjecture counts, filtering procedure and theorem-proving training results.
+      zh-CN: >-
+        arXiv 研究记录发布 LeanConjecturer，并报告生成猜想数量、过滤流程与定理证明训练结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public LeanConjecturer repository exposes the generation and evaluation pipeline. The generated data directory is not committed in the repository, so E3 records inspectable implementation rather than independent verification of the paper's novelty claims or every generated theorem.
+      zh-CN: >-
+        LeanConjecturer 公开仓库提供生成与评测管线；生成数据目录并未提交到仓库，因此 E3 表示实现可直接检查，而不是对论文中的新颖性主张或每一条生成定理完成独立验证。
+
+sources:
+- id: arxiv-leanconjecturer-2506.22005
+  tier: S1
+  type: paper
+  title: 'LeanConjecturer: Automatic Generation of Mathematical Conjectures for Theorem Proving'
+  url: https://arxiv.org/abs/2506.22005
+  primary: true
+  published_date: '2025-06-27'
+  accessed_at: '2026-09-11'
+- id: github-auto-res-leanconjecturer
+  tier: S1
+  type: repository
+  title: LeanConjecturer generation and evaluation repository
+  url: https://github.com/auto-res/LeanConjecturer
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: leanconjecturer-repository
+  kind: code
+  title: LeanConjecturer formal conjecture-generation pipeline
+  url: https://github.com/auto-res/LeanConjecturer
+
+relationships:
+  predecessors:
+  - evt-2024-deepseek-prover-v1
+  successors: []
+  related:
+  - evt-2025-deepseek-prover-v2
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- leanconjecturer
+- lean
+- conjecture-generation
+- synthetic-data
+- theorem-proving
+- reinforcement-learning
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
