@@ -2,15 +2,29 @@
 
 [English](./CONTRIBUTING.md) · **简体中文**
 
-AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：新增里程碑建议、事实纠错、证据升级、翻译修正、验证状态更新，以及范围清晰的编辑性修改。
+AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：信源线索、新增里程碑建议、事实纠错、证据升级、翻译修正、验证状态更新，以及范围清晰的编辑性修改。
 
-代码实现与构建文档另行维护。代码类贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。长期复核节奏、依赖维护与版本快照策略见 [长期维护政策](./docs/maintenance.zh-CN.md)。AI 协作维护权限与人工 hard gates 见 [GPT 项目治理协议](./docs/gpt-project-governance.md)。
+代码实现与构建文档另行维护。代码类贡献请阅读 [开发指南](./docs/development.zh-CN.md) 与 [架构说明](./docs/architecture.zh-CN.md)。长期复核节奏、依赖维护与版本快照策略见 [长期维护政策](./docs/maintenance.zh-CN.md)。原始信源发现与 triage 见 [信源收集与 Intake 工作流](./docs/source-intake.zh-CN.md)。AI 协作维护权限与人工 hard gates 见 [GPT 项目治理协议](./docs/gpt-project-governance.md)。
 
 ## 选择合适的贡献方式
 
+### 提交 Source Lead / 信源线索
+
+当你发现了可能有价值的公开信源，但还无法形成完整里程碑提案时，请使用 **Source lead / 信源线索** Issue 表单。典型情况包括：新论文、代码仓库、官方公告、独立分析、artifact replay、媒体报道或值得继续核查的社区信号。
+
+高质量 Source Lead 应尽量包含：
+
+- 最直接的公开 URL；
+- 已知时的信源标题和日期；
+- 如果能判断，给出初步 S1–S5 tier；
+- 它可能承担的作用：候选发现、已有 Event 证据补充、独立佐证、纠错 / dispute / provenance review、或历史背景；
+- 已知不确定性与仍缺少的证据。
+
+Source Lead 是编辑 inbox，不是 canonical data。它可以是初步的、重复的，也可能最终关闭而不发布。具体 triage 与 promotion 规则见 [信源收集与 Intake 工作流](./docs/source-intake.zh-CN.md)。
+
 ### 提议遗漏事件
 
-如果你认为时间线遗漏了一条重要 AI4Math 里程碑，请使用 **事件收录建议** Issue 表单。高质量提案应尽量包含：
+如果你认为时间线遗漏了一条重要 AI4Math 里程碑，并且已经能描述“事件”而不只是一个 raw source，请使用 **事件收录建议** Issue 表单。高质量提案应尽量包含：
 
 - 事件名称与日期；
 - 简洁、可核查的事实性 claim；
@@ -35,12 +49,13 @@ AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：
 
 公开协作默认采用尽量简单、可审查的流程：
 
-1. 新事件、纠错或 Bug 首先使用对应的结构化 Issue。
-2. 维护者完成 triage，并指出是否触发人工编辑门槛。
-3. 外部贡献者通常从 fork 工作；维护者可以使用仓库内聚焦分支。
-4. 提交小型 Pull Request，关联 Issue，并说明证据与仍存在的不确定性。
-5. CI 自动验证 canonical data 与静态构建。
-6. 如涉及编辑门槛，由维护者完成人工审核后再合并。
+1. 当一个 raw source 值得长期保留但还不足以进行 Event 级判断时，先创建 **Source Lead**；已经成熟的事件、纠错或 Bug 则直接使用对应结构化 Issue。
+2. 维护者 triage scope、完成 source / event 去重、识别缺失证据，并判断是否触发人工编辑门槛。
+3. 成熟 Source Lead 会被关联到已有 canonical Event、升级为新 Event candidate、在存在明确缺失 trigger 时继续 watch，或附带 disposition note 后关闭。
+4. 外部贡献者通常从 fork 工作；维护者可以使用仓库内聚焦分支。
+5. 提交小型 Pull Request，关联相关 Issue，并说明证据与仍存在的不确定性。
+6. CI 自动验证 canonical data 与静态构建。
+7. 如涉及编辑门槛，由维护者完成人工审核后再合并。
 
 事件数据 PR 优先保持“一条事件或一个紧密相关事件组一个 PR”。
 
@@ -52,11 +67,13 @@ AI4Math 大事记欢迎能够改进历史记录质量的聚焦贡献，包括：
 
 - 优先使用一手研究记录与官方来源；
 - 每条正式发布事件至少包含一个 S1 或 S2 来源；
+- S5 / 社区热度可以帮助发现候选，但不能单独支持重大科研事实；
 - 历史重要性、事件级 verification 与数学结论的最终正确性分开判断；
 - AI 与人类贡献分别说明；
 - 保持稳定 Event ID；
 - verification status 变化写入 verification history；
-- 事实纠错显式记录，不静默覆盖。
+- 事实纠错显式记录，不静默覆盖；
+- Source Lead Issue 只作为 workflow 记录，不维护成第二套事实数据库。
 
 `independently_verified` 是事件级证据标签：只有当独立于原始发布方的可靠来源已经实质性佐证 Chronicle 的核心事件描述时才应使用。它不得被表述为 Chronicle 已经认证底层数学最终正确。
 
@@ -94,6 +111,8 @@ Chronicle 不裁决底层数学结论的最终正确性。对于“首次”“�
 仓库讨论、Issue、Code Review 与 Pull Request 均遵循 [社区行为准则](./CODE_OF_CONDUCT.zh-CN.md)。
 
 涉及安全或隐私的敏感问题应按照 [安全政策](./SECURITY.zh-CN.md) 处理，不要在公开 Issue 中披露密钥、利用细节或其他敏感信息。普通事实纠错与网站 Bug 仍使用结构化 Issue 表单。
+
+不要通过 Source Lead Issue 提交 confidential、private、embargoed、leaked、需要凭证访问或其他非公开研究材料。请链接公开来源并概述其相关性，不要复制完整第三方论文或大段受版权保护文本。
 
 ## 贡献内容的许可
 

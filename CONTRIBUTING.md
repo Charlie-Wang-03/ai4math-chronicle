@@ -2,15 +2,29 @@
 
 **English** · [简体中文](./CONTRIBUTING.zh-CN.md)
 
-AI4Math Chronicle welcomes focused contributions that improve the historical record: new milestone proposals, factual corrections, stronger evidence, translation fixes, verification updates, and carefully scoped editorial changes.
+AI4Math Chronicle welcomes focused contributions that improve the historical record: source leads, new milestone proposals, factual corrections, stronger evidence, translation fixes, verification updates, and carefully scoped editorial changes.
 
-Implementation and build documentation is intentionally maintained separately. For code changes, use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md). Long-term review cadence, dependency maintenance, and release snapshot policy are defined in the [Maintenance Policy](./docs/maintenance.md). AI-assisted maintainer authority and human hard gates are defined in the [GPT Project Governance Protocol](./docs/gpt-project-governance.md).
+Implementation and build documentation is intentionally maintained separately. For code changes, use the [Development Guide](./docs/development.md) and [Architecture](./docs/architecture.md). Long-term review cadence, dependency maintenance, and release snapshot policy are defined in the [Maintenance Policy](./docs/maintenance.md). Raw-source discovery and triage are documented in the [Source Intake Workflow](./docs/source-intake.md). AI-assisted maintainer authority and human hard gates are defined in the [GPT Project Governance Protocol](./docs/gpt-project-governance.md).
 
 ## Choose the right contribution path
 
+### Submit a source lead
+
+Use the **Source lead** issue form when you found a potentially useful public source but do not yet have a complete milestone proposal. Examples include a new paper, repository, official announcement, independent analysis, artifact replay, media report, or community signal that may deserve follow-up.
+
+A useful source lead should include:
+
+- the most direct public URL;
+- the source title and date when known;
+- a rough S1–S5 tier if you can infer it;
+- what the source might contribute: candidate discovery, evidence for an existing Event, independent corroboration, correction/dispute/provenance review, or historical context;
+- any known uncertainty or missing evidence.
+
+Source leads are an editorial inbox, not canonical data. They may be preliminary, duplicated, or ultimately closed without publication. See the [Source Intake Workflow](./docs/source-intake.md) for triage and promotion rules.
+
 ### Propose a missing event
 
-Use the **Event proposal** issue form when you believe an important AI4Math milestone is missing. A useful proposal should include:
+Use the **Event proposal** issue form when you believe an important AI4Math milestone is missing and can already describe the event rather than only a raw source. A useful proposal should include:
 
 - the event and date;
 - a concise factual claim;
@@ -35,12 +49,13 @@ Use the **Website bug** issue form for navigation, search, filtering, rendering,
 
 The default public workflow is intentionally simple and reviewable:
 
-1. Open the appropriate structured Issue when proposing a new event, correction, or bug.
-2. A maintainer triages the scope and identifies any editorial gate.
-3. External contributors normally work from a fork; maintainers may use a focused repository branch.
-4. Open a small Pull Request that links the Issue and explains the evidence and remaining uncertainty.
-5. CI validates canonical data and the static build.
-6. A maintainer completes any required editorial review before merge.
+1. Capture a raw source in a **Source lead** Issue when it is worth remembering but not yet ready for Event-level judgment; otherwise open the appropriate Event proposal, correction, or bug Issue directly.
+2. A maintainer triages scope, deduplicates the source/event, identifies missing evidence, and determines whether any editorial gate applies.
+3. Mature source leads are either attached to an existing canonical Event, promoted into a new candidate Event, kept on watch with a concrete missing trigger, or closed with a disposition note.
+4. External contributors normally work from a fork; maintainers may use a focused repository branch.
+5. Open a small Pull Request that links the relevant Issue and explains the evidence and remaining uncertainty.
+6. CI validates canonical data and the static build.
+7. A maintainer completes any required editorial review before merge.
 
 For event data, one event or one tightly related event cluster per PR is preferred.
 
@@ -52,11 +67,13 @@ The main rules are:
 
 - prefer primary research records and official sources;
 - every published event must contain at least one S1 or S2 source;
+- S5/community attention may discover candidates but cannot by itself support a major research claim;
 - keep historical significance separate from event-level verification and from ultimate mathematical correctness;
 - state AI and human contributions separately;
 - preserve stable Event IDs;
 - record verification-status changes in verification history;
-- record factual corrections explicitly instead of silently overwriting them.
+- record factual corrections explicitly instead of silently overwriting them;
+- keep Source Lead Issues as workflow records rather than a second factual database.
 
 `independently_verified` is an event-level evidence label: use it only when reliable sources independent of the originating claim substantively corroborate the Chronicle's core event description. It must not be presented as a Chronicle certification that the underlying mathematics is ultimately correct.
 
@@ -94,6 +111,8 @@ Technical validation and local build instructions are documented in the [Develop
 Participation in repository discussions, Issues, reviews, and Pull Requests is governed by the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 Security or privacy-sensitive problems should follow the [Security Policy](./SECURITY.md) rather than being disclosed with exploit details in a public Issue. Ordinary factual corrections and website bugs should continue to use the structured Issue forms.
+
+Do not submit confidential, private, embargoed, leaked, credential-gated, or otherwise non-public research material through Source Lead Issues. Link public sources and summarize relevance rather than copying full third-party papers or long copyrighted passages.
 
 ## Licensing of contributions
 

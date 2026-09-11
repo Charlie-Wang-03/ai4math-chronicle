@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: "Source intake workflow / 信源收集工作流"
+    url: "https://github.com/Charlie-Wang-03/ai4math-chronicle/blob/main/docs/source-intake.md"
+    about: "How raw source leads are triaged before Event proposals or canonical updates. / 原始信源如何在进入 Event proposal 或 canonical 更新前被 triage。"
   - name: "Editorial methodology / 编辑方法论"
     url: "https://github.com/Charlie-Wang-03/ai4math-chronicle/blob/main/docs/editorial-methodology.md"
     about: "Read the significance, evidence, verification, and correction policy before proposing major editorial changes. / 提议重大编辑性修改前，请先阅读重要性、证据、验证与纠错政策。"
