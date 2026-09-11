@@ -69,6 +69,8 @@ The UI separates two discovery modes:
 
 Explore persists multi-select state with repeatable URL query parameters, so a filtered view can be shared or revisited without a backend. The interaction remains entirely static and client-side.
 
+Responsive presentation does not create parallel data or result surfaces. At compact widths, the primary header progressively collapses behind an accessible menu button when JavaScript is available, while the complete navigation remains visible as the no-JS fallback. Explore keeps one semantic result table for filtering and sorting; CSS reflows those same rows into stacked result cards at phone/tablet widths, preserving table headers for assistive technology and avoiding horizontal panning for the main retrieval task.
+
 ## Public information architecture
 
 The reader-facing hierarchy intentionally separates product discovery, trust interpretation, and practical use / participation:
