@@ -21,6 +21,7 @@ Do not treat old chat summaries, memory, copied commit SHAs, or stale branch nam
 
 - Website / build work: [`docs/development.md`](docs/development.md) and [`docs/architecture.md`](docs/architecture.md)
 - Event data / classification / verification: [`docs/editorial-methodology.md`](docs/editorial-methodology.md)
+- Candidate/source discovery: [`docs/deterministic-source-discovery.md`](docs/deterministic-source-discovery.md) and [`docs/source-intake.md`](docs/source-intake.md)
 - Long-term cadence / dependency maintenance / release snapshots: [`docs/maintenance.md`](docs/maintenance.md)
 - External contributions: [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
@@ -42,6 +43,12 @@ Agents do **not** have autonomous agenda or constitutional authority. Do not inv
 Use the rule:
 
 > **Autonomous decomposition, not autonomous agenda creation.**
+
+## Source discovery
+
+For broad candidate discovery, prefer the repository's versioned deterministic and direct-source channels before relying on open-ended LLM/web search. Use [`docs/deterministic-source-discovery.md`](docs/deterministic-source-discovery.md) and `config/source-channels.yaml` to establish an explicit date window and inspectable candidate set. Probabilistic web search remains useful for gap filling, following a named lead, locating independent corroboration, and investigating known uncertainty; it should not be the only baseline enumeration method when a deterministic/direct channel covers the task.
+
+Scanner output and Source Lead Issues are operational discovery records, not canonical factual data. Triage machine results before opening Source Leads; persist a lead when it is worth later editorial action; move mature evidence into the relevant canonical Event through the normal review path. Discovery automation must not become autonomous publication.
 
 ## Editorial boundaries
 
