@@ -60,6 +60,8 @@ Event Detail 页面会从 canonical record 写入 Pagefind filter metadata。当
 
 所有面向用户的筛选控件均支持多选。同一个 facet 内部采用 OR 语义，不同 facets 之间采用 AND 语义。例如同时选择 `H1 + H2` 与 `Lean + Isabelle`，表示 `(H1 OR H2) AND (Lean OR Isabelle)`。客户端通过 Pagefind compound `any` filters 实现这一语义，并在本地 fallback 路径中保持一致。
 
+Canonical taxonomy identifier 继续作为 YAML、`data-*` 属性、Pagefind filter 和可分享 URL query parameter 中的稳定值。面向读者的页面则统一通过 `src/lib/presentation.ts` 中的双语 presentation layer 把这些 identifier 转换为可读标签，因此 `under_verification`、`ai_primary_human_verified` 等机器友好值不再需要作为最终界面文案直接显示。
+
 UI 明确区分两种发现方式：
 
 - **Timeline：** 时间顺序始终是产品的主要阅读表面。搜索加上年份、事件类型、重要性和验证状态的多选筛选，只收窄当前可见时间线，不改变历史顺序。年份 chips 同样支持多年份同时激活，并与年份 facet 保持同步。
