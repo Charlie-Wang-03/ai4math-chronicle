@@ -11,7 +11,7 @@
 - [ ] S1/S2 evidence is linked.
 - [ ] AI and human contributions are explicit.
 - [ ] Verification history / corrections are updated when applicable.
-- [ ] Any `independently_verified` status is supported by reliable independent sources corroborating the core event description.
+- [ ] Any `independently_verified` recommendation is supported by reliable independent sources corroborating the core event description.
 - [ ] Verification wording does not imply that AI4Math Chronicle adjudicates ultimate mathematical correctness.
 
 ## Implementation changes
@@ -28,10 +28,13 @@
 - [ ] `npm run build`
 - [ ] Desktop / mobile visual QA when UI changes are included.
 
-## Human editorial gates
+## Human editorial / governance gates
 
-- [ ] This PR does not finalize `H1` without direct human review or explicit delegated classification authority.
+- [ ] This PR does not finalize a new or materially changed `H1` classification without direct human review or an already-established explicit delegation.
+- [ ] This PR does not finalize `independently_verified`, `disputed`, `corrected` as the current verification status, or `retracted` without direct human editorial approval or an already-established explicit delegation.
+- [ ] This PR does not adjudicate a material mathematical-correctness, attribution, or historical-priority dispute on Chronicle's own authority.
 - [ ] High-risk wording such as `first`, `solves`, `proves`, or `disproves` is source-attributed unless the historical fact itself is independently established.
+- [ ] Any Product Specification / Governance Protocol / source-of-truth / human-gate change has explicit owner approval.
 
 ## Licensing
 
