@@ -15,7 +15,7 @@ Canonical YAML Event
         │   ├── Explore
         │   ├── Event detail
         │   ├── 标准与方法
-        │   ├── 引用、复用与共建
+        │   ├── 使用与共建
         │   └── 数据与订阅
         │
         ├── JSON / NDJSON
@@ -54,7 +54,7 @@ Canonical YAML Event
 
 ## 搜索与探索
 
-Pagefind 在 Astro 渲染 `dist/` 之后运行。其 CLI glob 只索引 `**/events/**/*.html` 下的中英文 Event Detail 路由，因此 Timeline、Explore、标准与方法、引用/复用/共建、数据与订阅等非事件页面不会出现在搜索结果中。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
+Pagefind 在 Astro 渲染 `dist/` 之后运行。其 CLI glob 只索引 `**/events/**/*.html` 下的中英文 Event Detail 路由，因此 Timeline、Explore、标准与方法、使用与共建、数据与订阅等非事件页面不会出现在搜索结果中。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
 
 Event Detail 页面会从 canonical record 写入 Pagefind filter metadata。当前索引 facets 包括年份、事件类型、重要性、验证状态、系统、AI 角色、接口、证据等级、形式保障、数学新颖性、机构、人物、问题、方法、来源类型、工件类型与标签。因此全文搜索和结构化筛选通过同一个 Pagefind 查询求交，而不是分别生成多套结果。
 
@@ -69,14 +69,14 @@ Explore 使用可重复的 URL query parameters 持久化多选状态，因此�
 
 ## 公共信息架构
 
-面向读者的站点层级明确区分产品发现、可信度解释与复用 / 开放生态行动：
+面向读者的站点层级明确区分产品发现、可信度解释与实际使用 / 参与行动：
 
 - **Timeline + Explore 是主产品表面。** Timeline 回答“AI4Math 随时间发生了什么？”，Explore 回答“哪些事件符合这些条件？”。
-- **标准与方法是可信度与解释层。** 它面向普通读者解释收录规则、历史重要性、来源层级、证据等级、验证语义、形式化保障、不确定性与更正，而不是充当维护者操作手册。
-- **引用、复用与共建是一级的复用 / 开放生态入口。** 它把用户导向研究引用与版本快照、机器可读数据与 AI 工作流，以及纠错与公开贡献。
+- **标准与方法是可信度与解释层。** 它面向普通读者解释收录规则、历史重要性、来源层级、证据等级、验证语义、形式化保障、不确定性与更正原则。它负责说明为什么 Chronicle 可被修正，但不再重复具体提交入口；实际行动统一导向“使用与共建”。
+- **使用与共建是一级行动层。** 它集中承载研究引用与版本快照、机器可读数据与 AI 工作流，以及来源线索、遗漏事件提议、纠错和网站贡献等实际操作入口。
 - **数据与订阅仍是专业 utility surface。** 它负责导出格式、feed、Quick Start、版本说明、许可与 canonical record 访问，而不与核心阅读模式争夺定位。
 
-因此一级 Header 包含时间线、探索、标准与方法、引用/复用/共建、GitHub；“数据与订阅”继续从“引用、复用与共建”页面和 Footer 进入，而不作为独立的一级阅读模式。首页 Hero 仍然优先突出“探索”和“标准与方法”；此前首页底部的“引用、复用与共建”板块已经迁移到独立 `/use/` 页面，使 Timeline 页面本身更聚焦历史阅读。
+因此一级 Header 包含时间线、探索、标准与方法、使用与共建、GitHub；“数据与订阅”继续从“使用与共建”页面和 Footer 进入，而不作为独立的一级阅读模式。首页 Hero 仍然优先突出“探索”和“标准与方法”；独立 `/use/` 页面集中负责引用、机器复用与公开共建动作，使 Timeline 页面本身保持对历史阅读的聚焦。
 
 交互遵循信息密集型出版物的结构：先给 overview，再允许 search / filter，最后按需进入 event-level evidence detail。Light / Dark / 跟随系统主题是轻量客户端增强，不改变内容或路由。
 

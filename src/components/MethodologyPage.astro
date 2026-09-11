@@ -1,14 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { localePath } from '../lib/site';
+import { href, localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
 const zh = locale === 'zh-CN';
 const title = zh ? '标准与方法 — AI4Math 大事记' : 'Standards & Methodology — AI4Math Chronicle';
 const desc = zh ? '理解 AI4Math 大事记如何收录事件、判断历史重要性、组织来源与证据、表达验证状态并处理更正。' : 'How AI4Math Chronicle selects events, assesses historical significance, organizes evidence, communicates verification, and handles corrections.';
-const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
-const correctionUrl = `${repositoryUrl}/issues/new?template=correction.yml`;
-const eventProposalUrl = `${repositoryUrl}/issues/new?template=event-proposal.yml`;
 ---
 <BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'methodology')} alternatePath={localePath(zh ? 'en':'zh-CN','methodology')}>
   <article class="prose">
@@ -57,13 +54,9 @@ const eventProposalUrl = `${repositoryUrl}/issues/new?template=event-proposal.ym
     <p>{zh ? 'Chronicle 核验的是事件及其公开证据：原发布方声称了什么、发布了哪些 artifact，以及可靠独立来源在多大程度上佐证核心事件描述。项目不把 verification 当作对数学真伪、历史优先权或归属争议的最终裁决。' : 'Chronicle verification concerns the event and its public evidence: what the originating source claimed, which artifacts were released, and how far reliable independent sources corroborate the core event description. Verification is not a final adjudication of mathematical truth, historical priority, or attribution disputes.'}</p>
     <p>{zh ? '`under_verification` 表示重要部分仍处于外部核查中；`partially_verified` 表示已有重要独立佐证但仍有实质问题未决；`independently_verified` 表示可靠独立来源已实质性佐证核心事件描述；`disputed`、`corrected` 与 `retracted` 则明确保留争议、更正或撤回状态。' : '`under_verification` marks material aspects still under external scrutiny; `partially_verified` records important corroboration with material questions still open; `independently_verified` means reliable independent sources substantively corroborate the core event description; `disputed`, `corrected`, and `retracted` preserve material contestation, correction, or withdrawal.'}</p>
 
-    <h2>{zh ? '5. 如果记录有误或遗漏怎么办？' : '5. What if a record is wrong or incomplete?'}</h2>
-    <p>{zh ? 'Chronicle 使用稳定 Event ID，并通过 verification history 与 corrections 保留可审计修订轨迹。事实变化时应更新 canonical YAML，而不是静默改写历史。' : 'Chronicle uses stable Event IDs and preserves auditable revision trails through verification history and corrections. When facts change, the canonical YAML should be updated rather than silently rewriting history.'}</p>
-    <div class="data-links">
-      <a class="data-link" href={correctionUrl} rel="noreferrer"><strong>{zh ? '报告错误' : 'Report a correction'}</strong><span>{zh ? '事实、来源、日期、翻译、重要性或验证状态存在问题。' : 'Report factual, sourcing, date, translation, significance, or verification problems.'}</span></a>
-      <a class="data-link" href={eventProposalUrl} rel="noreferrer"><strong>{zh ? '提议遗漏事件' : 'Propose a missing event'}</strong><span>{zh ? '提交可能值得进入 Chronicle 的重要 AI4Math milestone。' : 'Propose an important AI4Math milestone that may be missing from the Chronicle.'}</span></a>
-    </div>
-    <p>{zh ? 'Chronicle 采用 human-in-the-loop editorial review。面向维护者与贡献者的详细 publication workflow、AI 权限与 human hard gates 记录在 GitHub 的贡献指南、Editorial Methodology 与 Governance Protocol 中。' : 'The Chronicle uses human-in-the-loop editorial review. Maintainer-facing publication workflow, AI authority, and human hard gates are documented in the repository Contributing Guide, Editorial Methodology, and Governance Protocol.'}</p>
-    <p><a href={`${repositoryUrl}/blob/main/CONTRIBUTING.md`} rel="noreferrer">{zh ? '查看贡献指南 →' : 'Read the contributing guide →'}</a></p>
+    <h2>{zh ? '5. 如果记录有误或遗漏，如何处理？' : '5. What happens when a record is wrong or incomplete?'}</h2>
+    <p>{zh ? 'Chronicle 使用稳定 Event ID，并通过 verification history 与 corrections 保留可审计修订轨迹。事实变化时应更新 canonical YAML，而不是静默改写历史。纠错、来源线索、遗漏事件提议与网站问题都通过公开、可追踪的 GitHub 工作流进入审核。' : 'Chronicle uses stable Event IDs and preserves auditable revision trails through verification history and corrections. When facts change, the canonical YAML should be updated rather than silently rewriting history. Corrections, source leads, missing-event proposals, and website problems enter review through public, traceable GitHub workflows.'}</p>
+    <p>{zh ? '本页负责解释为什么 Chronicle 可被修正，以及修订如何进入可信度模型；具体提交入口集中在“使用与共建”页面，避免标准说明页与行动入口重复。' : 'This page explains why the Chronicle is correctable and how revision fits the trust model. The practical submission paths are centralized on Use & Contribute so the standards page does not duplicate action workflows.'}</p>
+    <p><a class="button-link" href={href(localePath(locale, 'use'))}>{zh ? '前往使用与共建 →' : 'Go to Use & Contribute →'}</a></p>
   </article>
 </BaseLayout>

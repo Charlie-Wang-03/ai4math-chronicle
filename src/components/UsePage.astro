@@ -6,32 +6,32 @@ import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
 const zh = locale === 'zh-CN';
 const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
-const title = zh ? '引用、复用与共建 — AI4Math 大事记' : 'Cite, Reuse & Contribute — AI4Math Chronicle';
+const title = zh ? '使用与共建 — AI4Math 大事记' : 'Use & Contribute — AI4Math Chronicle';
 const desc = zh
-  ? '引用 AI4Math Chronicle、复用机器可读数据，或通过 GitHub 提交来源、纠错与项目改进。'
-  : 'Cite AI4Math Chronicle, reuse its machine-readable data, or improve the historical record through GitHub.';
+  ? '在研究中引用与复用 AI4Math Chronicle，使用机器可读数据，并通过 GitHub 参与纠错与共同维护。'
+  : 'Use AI4Math Chronicle in research and data workflows, or help maintain it through corrections and public contribution.';
 
 const copy = zh
   ? {
-      eyebrow: '开放使用与共同维护',
-      heading: '引用、复用与共建',
-      lede: 'Chronicle 不只是一条可阅读的时间线。你可以在研究中引用可复现版本、把 canonical corpus 接入数据与 AI 工作流，也可以提交遗漏、证据与纠错来共同维护这份历史记录。',
-      choose: '选择你的使用方式',
-      chooseNote: '三个入口分别对应研究引用、机器复用和公共维护；详细规则与工具仍保留在各自的专业页面或 GitHub 文档中。',
+      eyebrow: '使用、复用与参与',
+      heading: '使用与共建',
+      lede: '这里集中提供把 Chronicle 用于研究、数据与 AI 工作流，以及参与公共维护所需的入口。标准如何解释、证据如何判断，仍由“标准与方法”页面负责。',
+      choose: '你想怎样使用 Chronicle？',
+      chooseNote: '三条路径分别对应研究引用、机器复用和公开共建；详细规则与工具继续保留在各自的专业页面或 GitHub 文档中。',
       citationTitle: '引用与研究',
       citationText: '在论文、报告、课程材料或研究项目中引用 Chronicle。对于需要可复现版本的工作，优先记录 GitHub Release snapshot 或明确访问日期。',
       citationAction: '查看引用信息 →',
       dataTitle: '数据与 AI 工作流',
       dataText: '使用 JSON、NDJSON、JSON Schema、RSS、Sitemap、llms.txt 与 canonical YAML 做分析、检索、知识整理或 AI-assisted workflows。',
       dataAction: '打开数据与订阅 →',
-      contributeTitle: '纠错与共建',
+      contributeTitle: '参与共建',
       contributeText: '提交遗漏事件、来源线索、事实纠错、验证更新、翻译修正或网站改进。贡献流程保持 GitHub-native、可审查、可追溯。',
       contributeAction: '阅读贡献指南 →',
       researchHeading: '研究引用',
       researchText: '网站与 main 分支是持续演进的 living corpus；GitHub Releases 提供更适合学术引用和复现的版本快照。Chronicle 原创编辑内容与数据汇编采用 CC BY 4.0。',
       dataHeading: '机器复用',
-      dataBody: '“数据与订阅”页面负责具体格式、下载入口、Quick Start、版本说明与许可信息。本页只提供面向任务的入口，避免把每一种机器接口都提升为独立阅读模式。',
-      contributeHeading: '如何改进 Chronicle',
+      dataBody: '“数据与订阅”页面负责具体格式、下载入口、Quick Start、版本说明与许可信息。本页负责把用户导向这些资源，而不重复维护机器接口说明。',
+      contributeHeading: '如何参与共建',
       sourceLead: '提交来源线索',
       sourceLeadText: '发现潜在论文、仓库、公告或独立分析，但还不足以形成完整 Event proposal。',
       eventProposal: '提议遗漏事件',
@@ -44,25 +44,25 @@ const copy = zh
       boundaryText: '所有公开贡献都遵循现有编辑标准与 human-in-the-loop review。提交 Issue 或 Pull Request 不保证纳入 Chronicle；H1、争议性验证状态与重大数学正确性 / 优先权判断仍受既有人工 gate 约束。',
     }
   : {
-      eyebrow: 'Open use and shared maintenance',
-      heading: 'Cite, Reuse & Contribute',
-      lede: 'The Chronicle is more than a timeline to read. Cite reproducible snapshots in research, connect the canonical corpus to data and AI workflows, or help maintain the historical record with missing events, evidence, and corrections.',
-      choose: 'Choose how to use the Chronicle',
-      chooseNote: 'The three paths cover research citation, machine reuse, and public maintenance; detailed rules and tooling remain in their dedicated pages or GitHub documentation.',
+      eyebrow: 'Use, reuse, and participate',
+      heading: 'Use & Contribute',
+      lede: 'This page brings together the practical ways to use the Chronicle in research, data and AI workflows, or public maintenance. Standards, evidence semantics, and trust interpretation remain the responsibility of Standards & Methodology.',
+      choose: 'How do you want to use the Chronicle?',
+      chooseNote: 'The three paths cover research citation, machine reuse, and public contribution; detailed rules and tooling remain in their dedicated pages or GitHub documentation.',
       citationTitle: 'Citation & research',
       citationText: 'Cite the Chronicle in papers, reports, teaching materials, or research projects. For reproducible work, prefer a GitHub Release snapshot or record an explicit access date.',
       citationAction: 'View citation metadata →',
       dataTitle: 'Data & AI workflows',
       dataText: 'Use JSON, NDJSON, JSON Schema, RSS, Sitemap, llms.txt, and canonical YAML for analysis, retrieval, knowledge workflows, or AI-assisted research.',
       dataAction: 'Open Data & Feeds →',
-      contributeTitle: 'Corrections & contribution',
+      contributeTitle: 'Contribute',
       contributeText: 'Submit missing events, source leads, factual corrections, verification updates, translation fixes, or website improvements through a GitHub-native, reviewable workflow.',
       contributeAction: 'Read the contribution guide →',
       researchHeading: 'Research citation',
       researchText: 'The website and main branch form an evolving living corpus; GitHub Releases provide more reproducible snapshots for academic citation. Original Chronicle editorial content and data compilation are licensed under CC BY 4.0.',
       dataHeading: 'Machine reuse',
-      dataBody: 'The Data & Feeds page owns format details, downloads, Quick Start examples, version guidance, and licensing. This page stays task-oriented instead of promoting every machine interface to a separate reading mode.',
-      contributeHeading: 'How to improve the Chronicle',
+      dataBody: 'The Data & Feeds page owns format details, downloads, Quick Start examples, version guidance, and licensing. This page routes users to those resources rather than duplicating machine-interface documentation.',
+      contributeHeading: 'How to contribute',
       sourceLead: 'Submit a source lead',
       sourceLeadText: 'You found a paper, repository, announcement, or independent analysis that may matter but is not yet a complete Event proposal.',
       eventProposal: 'Propose a missing event',
