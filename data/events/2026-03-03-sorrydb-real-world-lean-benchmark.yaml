@@ -1,0 +1,160 @@
+schema_version: 1
+id: evt-2026-sorrydb
+slug: sorrydb-real-world-lean-benchmark
+
+title:
+  en: SorryDB turns live proof holes from real Lean projects into a continuously updated benchmark
+  zh-CN: SorryDB 将真实 Lean 项目的动态证明缺口转化为持续更新的基准
+
+dates:
+  event: '2026-03-03'
+  first_public_claim: '2026-03-03'
+  paper_release: '2026-03-03'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- benchmark
+- dataset
+- infrastructure
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      SorryDB shifted formal-theorem-proving evaluation from mostly static curated theorem sets toward continuously refreshed, reproducible proof obligations taken from active public Lean projects, directly measuring whether AI agents can contribute to real formalization codebases.
+    zh-CN: >-
+      SorryDB 将形式定理证明评测从以静态整理题集为主的模式，推进到从活跃公开 Lean 项目持续提取、可复现的真实证明任务，直接衡量 AI Agent 能否为实际形式化代码库做出贡献。
+
+mathematical_novelty:
+  type: benchmark_result
+
+interfaces:
+- formal
+
+claim:
+  en: >-
+    The SorryDB paper introduced a dynamically updating benchmark of open Lean tasks drawn from 78 real-world formalization projects on GitHub, evaluated general-purpose models, specialized provers and agentic strategies on a 1,000-task snapshot, and released the dataset, verifier and strategy infrastructure publicly.
+  zh-CN: >-
+    SorryDB 论文发布了一个从 GitHub 上 78 个真实形式化项目提取开放 Lean 任务并动态更新的基准，在 1,000 个任务快照上评测通用模型、专用证明器与 Agent 策略，并公开数据集、验证器和策略基础设施。
+
+summary:
+  en: >-
+    SorryDB crawls eligible public Lean repositories, records reproducible repository and toolchain coordinates for unresolved `sorry` statements, and asks proving systems to replace each proof hole in its original project context. A verifier rebuilds the relevant project and checks proposed replacements, while a nightly database refresh supplies new tasks over time.
+  zh-CN: >-
+    SorryDB 抓取符合条件的公开 Lean 仓库，为尚未完成的 `sorry` 命题记录可复现的仓库与工具链坐标，并要求证明系统在原始项目上下文中填补证明缺口。验证器会重建相应项目并检查候选证明，夜间更新的数据库则持续提供新任务。
+
+why_it_matters:
+  en: >-
+    A live benchmark grounded in unresolved work from real formalization projects reduces reliance on saturated competition datasets, exposes dependency and environment complexity that synthetic tasks omit, and aligns prover progress more directly with work useful to Lean contributors and mathematicians.
+  zh-CN: >-
+    基于真实形式化项目未完成工作的动态基准降低了对已趋饱和竞赛数据集的依赖，暴露合成任务常忽略的依赖关系与环境复杂性，并使证明器进展更直接对应 Lean 贡献者和数学家的实际工作需求。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      AI systems are benchmarked as candidate proof producers; they generate tactics or proofs, while the benchmark infrastructure restores the original project context and Lean checks whether a proposed replacement closes the target proof hole.
+    zh-CN: >-
+      AI 系统作为候选证明生成器接受评测；它们生成 tactic 或证明，而基准基础设施恢复原始项目上下文，并由 Lean 检查候选替换能否关闭目标证明缺口。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the crawling, snapshotting, evaluation and verification infrastructure, defined inclusion and reproducibility metadata, implemented baseline strategies and analyzed the benchmark results.
+    zh-CN: >-
+      研究者设计抓取、快照、评测与验证基础设施，定义纳入标准和可复现元数据，实现基线策略并分析基准结果。
+
+systems:
+- sorrydb
+- lean
+organizations:
+- sorrydb
+people: []
+problems:
+- real-world-lean-proof-holes
+- formal-theorem-proving-evaluation
+methods:
+- live-benchmarking
+- repository-crawling
+- project-context-verification
+- agentic-proof-search
+- lean
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-03-03'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv paper introduced SorryDB, its 78-project source pool, the 1,000-task evaluation snapshot and comparative prover results.
+      zh-CN: >-
+        arXiv 论文发布 SorryDB、其 78 个项目的来源集合、1,000 任务评测快照及不同证明系统的比较结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public SorryDB repository exposes the benchmark snapshot, nightly dataset workflow, verifier and example proving strategies. E3 records inspectable benchmark infrastructure rather than independent verification of every reported model score.
+      zh-CN: >-
+        SorryDB 公开仓库提供基准快照、夜间数据更新流程、验证器及示例证明策略。E3 表示基准基础设施可直接检查，并不表示所有报告模型分数都获得独立验证。
+
+sources:
+- id: arxiv-sorrydb-2603.02668
+  tier: S1
+  type: paper
+  title: 'SorryDB: Can AI Provers Complete Real-World Lean Theorems?'
+  url: https://arxiv.org/abs/2603.02668
+  primary: true
+  published_date: '2026-03-03'
+  accessed_at: '2026-09-11'
+- id: github-sorrydb
+  tier: S1
+  type: repository
+  title: SorryDB benchmark, verifier and proving infrastructure
+  url: https://github.com/SorryDB/SorryDB
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: sorrydb-repository
+  kind: benchmark
+  title: SorryDB dynamic Lean benchmark and evaluation infrastructure
+  url: https://github.com/SorryDB/SorryDB
+
+relationships:
+  predecessors:
+  - evt-2023-leandojo
+  - evt-2024-putnambench
+  successors: []
+  related:
+  - evt-2026-numina-lean-agent
+  - evt-2026-alphaproof-nexus
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- sorrydb
+- lean
+- benchmark
+- real-world-formalization
+- theorem-proving
+- contamination
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
