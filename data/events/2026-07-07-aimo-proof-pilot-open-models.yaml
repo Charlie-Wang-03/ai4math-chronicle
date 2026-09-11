@@ -1,0 +1,178 @@
+schema_version: 1
+id: evt-2026-aimo-proof-pilot
+slug: aimo-proof-pilot-open-models
+
+title:
+  en: AIMO Proof Pilot evaluates fully open models on expert-graded Olympiad-style proofs
+  zh-CN: AIMO Proof Pilot 以专家评分的奥赛式完整证明评测完全开放模型
+
+dates:
+  event: '2026-07-07'
+  first_public_claim: '2026-07-07'
+  paper_release: null
+  artifact_release: '2026-06-26'
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- competition
+- benchmark
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The AIMO Proof Pilot combined full Olympiad-style proof generation, expert human grading and unusually strict openness requirements covering model checkpoints, training protocols and training data, creating a reproducible proof-writing milestone distinct from final-answer competitions and closed frontier-model demonstrations.
+    zh-CN: >-
+      AIMO Proof Pilot 将完整奥赛式证明生成、专家人工评分与严格开放要求结合起来，要求公开模型检查点、训练协议和训练数据，形成区别于最终答案竞赛与闭源前沿模型演示的可复现证明写作里程碑。
+
+mathematical_novelty:
+  type: benchmark_result
+
+interfaces:
+- informal
+
+claim:
+  en: >-
+    AIMO reported that the winning Proof Pilot team led by Yi-Chia Chen scored 29 of 42 across six National-Olympiad-hard to IMO-medium problems using fully open-source models, compared with 1 of 42 for the strongest provided open baseline; every submitted proof was graded independently by at least two expert human graders and the outputs and grading data were released publicly.
+  zh-CN: >-
+    AIMO 报告称，由 Yi-Chia Chen 领衔的 Proof Pilot 冠军团队使用完全开源模型，在 6 道从国家奥赛高难度到 IMO 中等难度的问题上取得 29/42 分，而提供给参赛者的最强开放基线为 1/42；每份提交证明至少由两名专家独立评分，输出与评分数据均公开。
+
+summary:
+  en: >-
+    The pilot restricted participants to models whose intermediate checkpoints, training protocols and training data were public. Six teams produced evaluated outputs on six proof problems, and AIMO compared them under the same expert-grading procedure with open-weight and commercial frontier models while publishing the submissions and detailed grading data.
+  zh-CN: >-
+    该试点仅允许使用中间检查点、训练协议和训练数据均公开的模型。6 支团队在 6 道证明题上产出有效提交；AIMO 使用同一专家评分流程，将这些结果与开放权重及商业前沿模型比较，并公开提交内容与详细评分数据。
+
+why_it_matters:
+  en: >-
+    The event supplied a concrete proof-quality benchmark for the fully open model ecosystem, where reproducibility and training transparency were part of the competition contract rather than optional release practices, and where success was measured on human-readable proofs instead of only final answers.
+    
+  zh-CN: >-
+    该事件为完全开放模型生态提供了具体的证明质量基准：可复现性与训练透明度成为竞赛契约的一部分，而非可选发布行为；系统能力也由人类可读的完整证明而不只是最终答案来衡量。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Participating AI systems generated complete natural-language proofs and were the objects under evaluation; humans defined the competition protocol, enforced openness requirements and graded proof quality.
+    zh-CN: >-
+      参赛 AI 系统生成完整自然语言证明并作为被评测对象；人类负责制定竞赛协议、执行开放性要求并评定证明质量。
+
+human_contribution:
+  description:
+    en: >-
+      Competition organizers selected the proof problems and openness rules, teams trained or adapted open models and systems, and expert graders independently assessed each proof to establish final scores.
+    zh-CN: >-
+      竞赛组织者选择证明题目并制定开放规则，参赛团队训练或适配开放模型与系统，专家评分者独立评估每份证明以确定最终成绩。
+
+systems:
+- aimo-proof-pilot
+organizations:
+- aimo-prize
+- xtx-markets
+people:
+- yi-chia-chen
+problems:
+- olympiad-proof-generation
+methods:
+- open-source-model-training
+- proof-generation
+- expert-grading
+- reproducible-evaluation
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-07-07'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        AIMO published the Proof Pilot results, team identities, per-problem scores, comparison models and expert-grading procedure.
+      zh-CN: >-
+        AIMO 公布 Proof Pilot 结果、团队身份、逐题成绩、对比模型及专家评分流程。
+  - date: '2026-09-11'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: >-
+        AIMO links the anonymized team/model outputs and a public grading dataset on Kaggle. E3 records inspectable competition artifacts and does not imply Chronicle independently regraded every proof or reproduced the teams' training runs.
+      zh-CN: >-
+        AIMO 链接了 Kaggle 上公开的匿名团队 / 模型输出及评分数据集。E3 表示竞赛产物可直接检查，并不表示 Chronicle 独立重新评分了全部证明或复现了各团队的训练过程。
+
+sources:
+- id: aimo-proof-pilot-results-2026
+  tier: S2
+  type: official_announcement
+  title: AIMO Proof Pilot Winners Announced
+  url: https://aimoprize.com/updates/2026-07-07-aimo-proof-pilot-winners-announced.md
+  primary: true
+  published_date: '2026-07-07'
+  accessed_at: '2026-09-11'
+- id: aimo-proof-pilot-launch-2026
+  tier: S2
+  type: official_announcement
+  title: AIMO 3 Winners Announced; AIMO Proof Pilot Launched
+  url: https://aimoprize.com/updates/2026-06-24-aimo-3-winners-announced
+  primary: true
+  published_date: '2026-06-24'
+  accessed_at: '2026-09-11'
+- id: kaggle-aimo-proof-pilot-outputs
+  tier: S1
+  type: dataset
+  title: AIMO Proof Pilot submitted proof outputs
+  url: https://www.kaggle.com/competitions/ai-mathematical-olympiad-proof-pilot/discussion/714666
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: kaggle-aimopp-grading-data
+  tier: S1
+  type: dataset
+  title: AIMO Proof Pilot grading data
+  url: https://www.kaggle.com/datasets/sambealing/aimopp-grading-data
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: aimo-proof-pilot-outputs
+  kind: dataset
+  title: AIMO Proof Pilot team and model outputs
+  url: https://www.kaggle.com/competitions/ai-mathematical-olympiad-proof-pilot/discussion/714666
+- id: aimo-proof-pilot-grading
+  kind: dataset
+  title: AIMO Proof Pilot expert and model grading data
+  url: https://www.kaggle.com/datasets/sambealing/aimopp-grading-data
+
+relationships:
+  predecessors:
+  - evt-2024-numinamath-aimo
+  - evt-2025-matharena
+  successors: []
+  related:
+  - evt-2025-openai-imo-gold
+  - evt-2025-gemini-imo-gold
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- aimo
+- competition
+- open-source
+- proof-writing
+- olympiad
+- expert-grading
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
