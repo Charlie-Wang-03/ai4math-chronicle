@@ -1,41 +1,45 @@
 ---
+import MultiSelectFilter from './MultiSelectFilter.astro';
 import { formatDate, text } from '../lib/events';
 import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 
 const { events, locale } = Astro.props as { events: ChronicleEvent[]; locale: Locale };
+const unique = (values: string[]) => [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b));
 const years = [...new Set(events.map((event) => event.dates.event.slice(0, 4)))].sort((a, b) => b.localeCompare(a));
-const systems = [...new Set(events.flatMap((event) => event.systems).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-const aiRoles = [...new Set(events.map((event) => event.ai_role.level).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-const interfaces = [...new Set(events.flatMap((event) => event.interfaces).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-const evidenceLevels = [...new Set(events.map((event) => event.verification.evidence_level).filter(Boolean))].sort((a, b) => a.localeCompare(b));
-const assurances = [...new Set(events.map((event) => event.verification.formal_assurance).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+const eventTypes = unique(events.flatMap((event) => event.event_types));
+const significanceTiers = unique(events.map((event) => event.significance.tier));
+const verificationStatuses = unique(events.map((event) => event.verification.status));
+const systems = unique(events.flatMap((event) => event.systems));
+const aiRoles = unique(events.map((event) => event.ai_role.level));
+const interfaces = unique(events.flatMap((event) => event.interfaces));
+const evidenceLevels = unique(events.map((event) => event.verification.evidence_level));
+const assurances = unique(events.map((event) => event.verification.formal_assurance));
+const noveltyTypes = unique(events.map((event) => event.mathematical_novelty.type));
+const organizations = unique(events.flatMap((event) => event.organizations));
+const people = unique(events.flatMap((event) => event.people));
+const problems = unique(events.flatMap((event) => event.problems));
+const methods = unique(events.flatMap((event) => event.methods));
+const sourceTypes = unique(events.flatMap((event) => event.sources.map((source) => source.type)));
+const artifactKinds = unique(events.flatMap((event) => event.artifacts.map((artifact) => artifact.kind)));
+const tags = unique(events.flatMap((event) => event.tags));
 const labels = locale === 'zh-CN'
   ? {
-      filters: '探索事件', search: '搜索', placeholder: '搜索事件、系统、问题或方法…', searchHint: '全文搜索与下方筛选共同构成一个查询；至少输入 2 个字符。', unavailable: '全文搜索索引暂不可用，已回退到当前页面文本匹配。',
-      year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', system: '系统', aiRole: 'AI 角色', interface: '接口', evidenceLevel: '证据等级', assurance: '形式保障', sort: '排序', advanced: '高级筛选', active: '当前条件',
-      all: '全部', relevance: '相关性', newest: '最新优先', oldest: '最早优先', highest: '重要性优先', showing: '显示', events: '个事件', clear: '清除全部',
+      filters: '探索事件', search: '搜索', placeholder: '搜索事件、系统、问题或方法…', searchHint: '全文搜索与下方筛选共同构成一个查询；至少输入 2 个字符。同一字段内多选为“或”，不同字段之间为“且”。', unavailable: '全文搜索索引暂不可用，已回退到当前页面文本匹配。',
+      year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', system: '系统', aiRole: 'AI 角色', interface: '接口', evidenceLevel: '证据等级', assurance: '形式保障', novelty: '数学新颖性', organization: '机构', person: '人物', problem: '问题', method: '方法', sourceType: '来源类型', artifactKind: '工件类型', tag: '标签', sort: '排序', advanced: '高级筛选', active: '当前条件',
+      all: '全部', selected: '已选', relevance: '相关性', newest: '最新优先', oldest: '最早优先', highest: '重要性优先', events: '个事件', clear: '清除全部',
       date: '日期', event: '事件', classification: '分类', status: '验证', evidence: '证据', primary: '主要证据', details: '详情', noEvidence: '—',
     }
   : {
-      filters: 'Explore events', search: 'Search', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Full-text search and the filters below form one query. Type at least 2 characters.', unavailable: 'Full-text search is unavailable; falling back to text already rendered on this page.',
-      year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', system: 'System', aiRole: 'AI role', interface: 'Interface', evidenceLevel: 'Evidence level', assurance: 'Formal assurance', sort: 'Sort', advanced: 'Advanced filters', active: 'Active conditions',
-      all: 'All', relevance: 'Relevance', newest: 'Newest first', oldest: 'Oldest first', highest: 'Significance first', showing: 'Showing', events: 'events', clear: 'Clear all',
+      filters: 'Explore events', search: 'Search', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Full-text search and the filters below form one query. Within a facet selections are OR; across facets they are AND. Type at least 2 characters.', unavailable: 'Full-text search is unavailable; falling back to text already rendered on this page.',
+      year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', system: 'System', aiRole: 'AI role', interface: 'Interface', evidenceLevel: 'Evidence level', assurance: 'Formal assurance', novelty: 'Mathematical novelty', organization: 'Organization', person: 'Person', problem: 'Problem', method: 'Method', sourceType: 'Source type', artifactKind: 'Artifact type', tag: 'Tag', sort: 'Sort', advanced: 'Advanced filters', active: 'Active conditions',
+      all: 'All', selected: 'selected', relevance: 'Relevance', newest: 'Newest first', oldest: 'Oldest first', highest: 'Significance first', events: 'events', clear: 'Clear all',
       date: 'Date', event: 'Event', classification: 'Class', status: 'Verification', evidence: 'Evidence', primary: 'Primary evidence', details: 'Details', noEvidence: '—',
     };
-const ids = {
-  query: `explore-query-${locale}`,
-  year: `explore-year-${locale}`,
-  type: `explore-type-${locale}`,
-  significance: `explore-significance-${locale}`,
-  verification: `explore-verification-${locale}`,
-  system: `explore-system-${locale}`,
-  aiRole: `explore-ai-role-${locale}`,
-  interface: `explore-interface-${locale}`,
-  evidence: `explore-evidence-${locale}`,
-  assurance: `explore-assurance-${locale}`,
-  sort: `explore-sort-${locale}`,
-};
+const ids = Object.fromEntries([
+  'query', 'year', 'type', 'significance', 'verification', 'system', 'ai-role', 'interface', 'evidence', 'assurance', 'novelty', 'organization', 'person', 'problem', 'method', 'source-type', 'artifact-kind', 'tag', 'sort'
+].map((key) => [key, `explore-${key}-${locale}`]));
+const optionize = (values: string[]) => values.map((value) => ({ value }));
 function evidenceLabel(source: ChronicleEvent['sources'][number]) {
   if (source.type === 'paper') return locale === 'zh-CN' ? '论文' : 'Paper';
   if (source.type === 'repository') return locale === 'zh-CN' ? '代码' : 'Code';
@@ -59,21 +63,29 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
   </div>
 
   <div class="explore-basic-controls">
-    <div class="control"><label for={ids.year}>{labels.year}</label><select id={ids.year} data-filter="year" data-filter-label={labels.year}><option value="">{labels.all}</option>{years.map((year) => <option value={year}>{year}</option>)}</select></div>
-    <div class="control"><label for={ids.type}>{labels.type}</label><select id={ids.type} data-filter="type" data-filter-label={labels.type}><option value="">{labels.all}</option><option>discovery</option><option>proof</option><option>formalization</option><option>competition</option><option>system</option><option>benchmark</option><option>dataset</option><option>infrastructure</option><option>controversy</option></select></div>
+    <MultiSelectFilter id={ids.year} name="year" label={labels.year} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(years)} />
+    <MultiSelectFilter id={ids.type} name="type" label={labels.type} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(eventTypes)} />
     <div class="control"><label for={ids.sort}>{labels.sort}</label><select id={ids.sort} data-sort><option value="newest">{labels.newest}</option><option value="relevance">{labels.relevance}</option><option value="oldest">{labels.oldest}</option><option value="significance">{labels.highest}</option></select></div>
   </div>
 
   <details class="explore-advanced" data-advanced>
     <summary>{labels.advanced}</summary>
     <div class="explore-advanced-controls">
-      <div class="control"><label for={ids.significance}>{labels.significance}</label><select id={ids.significance} data-filter="significance" data-filter-label={labels.significance}><option value="">{labels.all}</option><option>H1</option><option>H2</option><option>H3</option></select></div>
-      <div class="control"><label for={ids.verification}>{labels.verification}</label><select id={ids.verification} data-filter="verification" data-filter-label={labels.verification}><option value="">{labels.all}</option><option>claimed</option><option>paper_released</option><option>under_verification</option><option>partially_verified</option><option>independently_verified</option><option>disputed</option><option>corrected</option><option>retracted</option></select></div>
-      <div class="control"><label for={ids.system}>{labels.system}</label><select id={ids.system} data-filter="system" data-filter-label={labels.system}><option value="">{labels.all}</option>{systems.map((system) => <option value={system}>{system}</option>)}</select></div>
-      <div class="control"><label for={ids.aiRole}>{labels.aiRole}</label><select id={ids.aiRole} data-filter="ai_role" data-filter-label={labels.aiRole}><option value="">{labels.all}</option>{aiRoles.map((value) => <option value={value}>{value}</option>)}</select></div>
-      <div class="control"><label for={ids.interface}>{labels.interface}</label><select id={ids.interface} data-filter="interface" data-filter-label={labels.interface}><option value="">{labels.all}</option>{interfaces.map((value) => <option value={value}>{value}</option>)}</select></div>
-      <div class="control"><label for={ids.evidence}>{labels.evidenceLevel}</label><select id={ids.evidence} data-filter="evidence" data-filter-label={labels.evidenceLevel}><option value="">{labels.all}</option>{evidenceLevels.map((value) => <option value={value}>{value}</option>)}</select></div>
-      <div class="control"><label for={ids.assurance}>{labels.assurance}</label><select id={ids.assurance} data-filter="formal_assurance" data-filter-label={labels.assurance}><option value="">{labels.all}</option>{assurances.map((value) => <option value={value}>{value}</option>)}</select></div>
+      <MultiSelectFilter id={ids.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(significanceTiers)} />
+      <MultiSelectFilter id={ids.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(verificationStatuses)} />
+      <MultiSelectFilter id={ids.system} name="system" label={labels.system} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(systems)} />
+      <MultiSelectFilter id={ids['ai-role']} name="ai_role" label={labels.aiRole} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(aiRoles)} />
+      <MultiSelectFilter id={ids.interface} name="interface" label={labels.interface} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(interfaces)} />
+      <MultiSelectFilter id={ids.evidence} name="evidence" label={labels.evidenceLevel} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(evidenceLevels)} />
+      <MultiSelectFilter id={ids.assurance} name="formal_assurance" label={labels.assurance} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(assurances)} />
+      <MultiSelectFilter id={ids.novelty} name="novelty" label={labels.novelty} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(noveltyTypes)} />
+      <MultiSelectFilter id={ids.organization} name="organization" label={labels.organization} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(organizations)} />
+      <MultiSelectFilter id={ids.person} name="person" label={labels.person} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(people)} />
+      <MultiSelectFilter id={ids.problem} name="problem" label={labels.problem} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(problems)} />
+      <MultiSelectFilter id={ids.method} name="method" label={labels.method} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(methods)} />
+      <MultiSelectFilter id={ids['source-type']} name="source_type" label={labels.sourceType} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(sourceTypes)} />
+      <MultiSelectFilter id={ids['artifact-kind']} name="artifact_kind" label={labels.artifactKind} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(artifactKinds)} />
+      <MultiSelectFilter id={ids.tag} name="tag" label={labels.tag} allLabel={labels.all} selectedLabel={labels.selected} options={optionize(tags)} />
     </div>
   </details>
 
@@ -113,6 +125,14 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
             data-interfaces={event.interfaces.join('|')}
             data-evidence={event.verification.evidence_level}
             data-formal-assurance={event.verification.formal_assurance}
+            data-novelty={event.mathematical_novelty.type}
+            data-organizations={event.organizations.join('|')}
+            data-people={event.people.join('|')}
+            data-problems={event.problems.join('|')}
+            data-methods={event.methods.join('|')}
+            data-source-types={[...new Set(event.sources.map((source) => source.type))].join('|')}
+            data-artifact-kinds={[...new Set(event.artifacts.map((artifact) => artifact.kind))].join('|')}
+            data-tags={event.tags.join('|')}
           >
             <td class="explore-date"><time datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time></td>
             <td class="explore-event-cell">
@@ -162,7 +182,7 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
     if (!list) continue;
     const body = list.querySelector('tbody');
     const items = [...list.querySelectorAll('[data-event-item]')];
-    const selects = [...shell.querySelectorAll('select[data-filter]')];
+    const groups = [...shell.querySelectorAll('[data-multi-filter]')];
     const sort = shell.querySelector('select[data-sort]');
     const input = shell.querySelector('[data-query]');
     const status = shell.querySelector('[data-query-status]');
@@ -171,34 +191,71 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
     const activeWrap = shell.querySelector('[data-active-filters]');
     const chipWrap = shell.querySelector('[data-filter-chips]');
     const advanced = shell.querySelector('[data-advanced]');
-    const filters = Object.fromEntries(selects.map((select) => [select.dataset.filter, '']));
+    const filters = Object.fromEntries(groups.map((group) => [group.dataset.filter, []]));
     const rank = { H1: 1, H2: 2, H3: 3 };
-    const advancedKeys = new Set(['significance', 'verification', 'system', 'ai_role', 'interface', 'evidence', 'formal_assurance']);
+    const advancedKeys = new Set(['significance', 'verification', 'system', 'ai_role', 'interface', 'evidence', 'formal_assurance', 'novelty', 'organization', 'person', 'problem', 'method', 'source_type', 'artifact_kind', 'tag']);
+    const datasetKeys = {
+      year: 'year', type: 'eventTypes', significance: 'significance', verification: 'verification', system: 'systems', ai_role: 'aiRole', interface: 'interfaces', evidence: 'evidence', formal_assurance: 'formalAssurance', novelty: 'novelty', organization: 'organizations', person: 'people', problem: 'problems', method: 'methods', source_type: 'sourceTypes', artifact_kind: 'artifactKinds', tag: 'tags'
+    };
     let relevanceRank = new Map();
     let timer;
     let requestId = 0;
+
+    function selectedValues(group) {
+      return [...group.querySelectorAll('[data-filter-option]:checked')].map((input) => input.value);
+    }
+
+    function updateSummary(group) {
+      const summary = group.querySelector('[data-filter-summary]');
+      if (!summary) return;
+      const values = selectedValues(group);
+      if (!values.length) summary.textContent = group.dataset.allLabel || 'All';
+      else if (values.length <= 2) summary.textContent = values.join(', ');
+      else summary.textContent = `${values.length} ${group.dataset.selectedLabel || 'selected'}`;
+    }
+
+    function syncGroup(group) {
+      filters[group.dataset.filter] = selectedValues(group);
+      updateSummary(group);
+    }
+
+    function setGroupValues(key, values) {
+      const group = groups.find((candidate) => candidate.dataset.filter === key);
+      if (!group) return;
+      const selected = new Set(values);
+      for (const option of group.querySelectorAll('[data-filter-option]')) option.checked = selected.has(option.value);
+      syncGroup(group);
+    }
+
+    function matches(selected, candidates) {
+      return !selected.length || selected.some((value) => candidates.includes(value));
+    }
+
+    function pagefindFilterState() {
+      return Object.fromEntries(Object.entries(filters)
+        .filter(([, values]) => values.length)
+        .map(([key, values]) => [key, { any: values }]));
+    }
 
     function readUrlState() {
       const params = new URLSearchParams(window.location.search);
       const q = params.get('q');
       if (input && q) input.value = q;
-      for (const select of selects) {
-        const value = params.get(select.dataset.filter) || '';
-        if ([...select.options].some((option) => option.value === value)) {
-          select.value = value;
-          filters[select.dataset.filter] = value;
-        }
+      for (const group of groups) {
+        const allowed = new Set([...group.querySelectorAll('[data-filter-option]')].map((option) => option.value));
+        const values = params.getAll(group.dataset.filter).filter((value) => allowed.has(value));
+        setGroupValues(group.dataset.filter, values);
       }
       const sortValue = params.get('sort') || '';
       if (sort && [...sort.options].some((option) => option.value === sortValue)) sort.value = sortValue;
-      if (advanced && [...advancedKeys].some((key) => filters[key])) advanced.open = true;
+      if (advanced && [...advancedKeys].some((key) => filters[key]?.length)) advanced.open = true;
     }
 
     function syncUrlState() {
       const params = new URLSearchParams();
       const query = input?.value.trim() || '';
       if (query.length >= 2) params.set('q', query);
-      for (const [key, value] of Object.entries(filters)) if (value) params.set(key, value);
+      for (const [key, values] of Object.entries(filters)) for (const value of values) params.append(key, value);
       if (sort?.value && sort.value !== 'newest') params.set('sort', sort.value);
       const queryString = params.toString();
       const next = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`;
@@ -206,16 +263,11 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
     }
 
     function fallbackMatch(item, query) {
-      const listValue = (key) => (item.dataset[key] || '').split('|').filter(Boolean);
-      const structured = (!filters.year || item.dataset.year === filters.year)
-        && (!filters.type || listValue('eventTypes').includes(filters.type))
-        && (!filters.significance || item.dataset.significance === filters.significance)
-        && (!filters.verification || item.dataset.verification === filters.verification)
-        && (!filters.system || listValue('systems').includes(filters.system))
-        && (!filters.ai_role || item.dataset.aiRole === filters.ai_role)
-        && (!filters.interface || listValue('interfaces').includes(filters.interface))
-        && (!filters.evidence || item.dataset.evidence === filters.evidence)
-        && (!filters.formal_assurance || item.dataset.formalAssurance === filters.formal_assurance);
+      const itemValues = (filterKey) => {
+        const datasetKey = datasetKeys[filterKey];
+        return (item.dataset[datasetKey] || '').split('|').filter(Boolean);
+      };
+      const structured = Object.entries(filters).every(([key, selected]) => matches(selected, itemValues(key)));
       const textMatch = !query || item.textContent.toLocaleLowerCase().includes(query.toLocaleLowerCase());
       return structured && textMatch;
     }
@@ -254,16 +306,17 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       chipWrap.replaceChildren();
       const query = input?.value.trim() || '';
       const entries = [];
-      if (query.length >= 2) entries.push(['q', document.documentElement.lang === 'zh-CN' ? '搜索' : 'Search', `“${query}”`]);
-      for (const select of selects) {
-        if (!select.value) continue;
-        entries.push([select.dataset.filter, select.dataset.filterLabel || select.dataset.filter, select.value]);
+      if (query.length >= 2) entries.push(['q', document.documentElement.lang === 'zh-CN' ? '搜索' : 'Search', `“${query}”`, '']);
+      for (const group of groups) {
+        const label = group.dataset.filterLabel || group.dataset.filter;
+        for (const value of filters[group.dataset.filter]) entries.push([group.dataset.filter, label, value, value]);
       }
-      for (const [key, label, value] of entries) {
+      for (const [key, label, value, clearValue] of entries) {
         const button = document.createElement('button');
         button.type = 'button';
         button.className = 'filter-chip';
         button.dataset.clearKey = key;
+        if (clearValue) button.dataset.clearValue = clearValue;
         button.textContent = `${label}: ${value} ×`;
         chipWrap.appendChild(button);
       }
@@ -276,7 +329,7 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       const currentRequest = ++requestId;
       const rawQuery = input?.value.trim() || '';
       const query = rawQuery.length >= 2 ? rawQuery : null;
-      const pagefindFilters = Object.fromEntries(Object.entries(filters).filter(([, value]) => Boolean(value)));
+      const pagefindFilters = pagefindFilterState();
       const hasConditions = Boolean(query) || Object.keys(pagefindFilters).length > 0;
       relevanceRank = new Map();
 
@@ -288,8 +341,8 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
         if (status) status.textContent = rawQuery.length === 1
           ? (document.documentElement.lang === 'zh-CN' ? '至少输入 2 个字符。' : 'Type at least 2 characters.')
           : (document.documentElement.lang === 'zh-CN'
-              ? '全文搜索与下方筛选共同构成一个查询；至少输入 2 个字符。'
-              : 'Full-text search and the filters below form one query. Type at least 2 characters.');
+              ? '全文搜索与下方筛选共同构成一个查询；同一字段内多选为“或”，不同字段之间为“且”。'
+              : 'Full-text search and the filters below form one query. Within a facet selections are OR; across facets they are AND.');
         return;
       }
 
@@ -306,8 +359,8 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
         renderChips();
         syncUrlState();
         if (status) status.textContent = document.documentElement.lang === 'zh-CN'
-          ? '全文搜索与结构化筛选已合并为当前结果集。'
-          : 'Full-text search and structured filters are combined in the current result set.';
+          ? '全文搜索与多选结构化筛选已合并为当前结果集。'
+          : 'Full-text search and multi-select structured filters are combined in the current result set.';
       } catch (error) {
         console.warn('Pagefind unavailable', error);
         const fallbackQuery = query || '';
@@ -326,13 +379,17 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       timer = window.setTimeout(apply, 180);
     }
 
+    for (const group of groups) {
+      syncGroup(group);
+      group.addEventListener('change', (event) => {
+        if (!event.target.matches('[data-filter-option]')) return;
+        syncGroup(group);
+        void apply();
+      });
+    }
     readUrlState();
     input?.addEventListener('focus', () => { void getPagefind().catch(() => {}); }, { once: true });
     input?.addEventListener('input', scheduleApply);
-    for (const select of selects) select.addEventListener('change', () => {
-      filters[select.dataset.filter] = select.value;
-      void apply();
-    });
     sort?.addEventListener('change', () => {
       sortRows();
       syncUrlState();
@@ -344,18 +401,14 @@ function evidenceLabel(source: ChronicleEvent['sources'][number]) {
       if (key === 'q') {
         if (input) input.value = '';
       } else {
-        const select = selects.find((candidate) => candidate.dataset.filter === key);
-        if (select) {
-          select.value = '';
-          filters[key] = '';
-        }
+        const next = filters[key].filter((value) => value !== button.dataset.clearValue);
+        setGroupValues(key, next);
       }
       void apply();
     });
     clearButton?.addEventListener('click', () => {
       if (input) input.value = '';
-      for (const key of Object.keys(filters)) filters[key] = '';
-      for (const select of selects) select.value = '';
+      for (const group of groups) setGroupValues(group.dataset.filter, []);
       if (sort) sort.value = 'newest';
       if (advanced) advanced.open = false;
       void apply();
