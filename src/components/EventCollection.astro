@@ -9,54 +9,62 @@ const { events, locale, mode = 'timeline' } = Astro.props as { events: Chronicle
 const years = [...new Set(events.map((event) => event.dates.event.slice(0, 4)))].sort((a,b) => b.localeCompare(a));
 const eventTypes = ['discovery', 'proof', 'formalization', 'competition', 'system', 'benchmark', 'dataset', 'infrastructure', 'controversy'];
 const significance = ['H1', 'H2', 'H3'];
-const verification = ['claimed', 'paper_released', 'under_verification', 'partially_verified', 'independently_verified', 'disputed', 'corrected', 'retracted'];
 const labels = locale === 'zh-CN'
   ? {
-      filters: '收窄时间线', search: '搜索时间线', placeholder: '搜索事件、系统、问题或方法…', searchHint: '至少输入 2 个字符。搜索与筛选共同作用于当前时间线，并始终保持时间顺序。', unavailable: '全文搜索索引暂不可用；结构化筛选仍可使用。',
-      year: '年份', type: '事件类型', significance: '重要性', verification: '验证状态', all: '全部', selected: '已选', showing: '显示', events: '个事件', clear: '清除条件', yearNav: '年份导航'
+      timeline: 'Chronicle 时间线', search: '搜索时间线', placeholder: '搜索事件、系统、问题或方法…', searchHint: '搜索始终保持时间顺序；这里仅按事件类型或重要性轻量收窄。年份、验证状态与跨字段组合查询请使用“探索”。', unavailable: '全文搜索索引暂不可用；结构化筛选仍可使用。',
+      type: '事件类型', significance: '重要性', all: '全部', selected: '已选', showing: '显示', events: '个事件', clear: '清除条件', yearNav: '跳转年份', advanced: '高级探索'
     }
   : {
-      filters: 'Refine timeline', search: 'Search timeline', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Type at least 2 characters. Search and filters refine this timeline without changing chronological order.', unavailable: 'Full-text search is unavailable; structured filters still work.',
-      year: 'Year', type: 'Event type', significance: 'Significance', verification: 'Verification', all: 'All', selected: 'selected', showing: 'Showing', events: 'events', clear: 'Clear conditions', yearNav: 'Year navigation'
+      timeline: 'Chronicle timeline', search: 'Search timeline', placeholder: 'Search events, systems, problems, or methods…', searchHint: 'Search always preserves chronology. Refine by event type or significance here; use Explore for year, verification, and multi-field queries.', unavailable: 'Full-text search is unavailable; structured filters still work.',
+      type: 'Event type', significance: 'Significance', all: 'All', selected: 'selected', showing: 'Showing', events: 'events', clear: 'Clear conditions', yearNav: 'Jump to year', advanced: 'Advanced Explore'
     };
 const controlIds = {
   query: `timeline-query-${locale}`,
-  year: `filter-year-${mode}-${locale}`,
   type: `filter-type-${mode}-${locale}`,
   significance: `filter-significance-${mode}-${locale}`,
-  verification: `filter-verification-${mode}-${locale}`,
 };
 ---
-<section class="panel filter-panel timeline-filter-panel" data-filter-shell data-pagefind-ignore>
-  <div class="filter-head">
-    <div>
-      <p class="eyebrow">{labels.filters}</p>
+<section class="timeline-tools" data-filter-shell data-pagefind-ignore>
+  <div class="timeline-tools-head">
+    <div class="timeline-tools-heading">
+      <p class="eyebrow">{labels.timeline}</p>
       <div class="result-count"><strong><span data-visible-count>{events.length}</span></strong> {labels.events}</div>
     </div>
-    <button class="clear-filters" type="button" data-clear-filters>{labels.clear}</button>
+    <div class="timeline-tools-actions">
+      <button class="clear-filters" type="button" data-clear-filters>{labels.clear}</button>
+      <a class="details-link" href={href(localePath(locale, 'explore'))}>{labels.advanced} →</a>
+    </div>
   </div>
-  <div class="timeline-query">
-    <label for={controlIds.query}>{labels.search}</label>
-    <input class="search-input" id={controlIds.query} data-query type="search" autocomplete="off" placeholder={labels.placeholder} />
-    <div class="result-count timeline-query-status" data-query-status role="status" aria-live="polite">{labels.searchHint}</div>
-  </div>
-  <div class="controls">
-    <MultiSelectFilter id={controlIds.year} name="year" label={labels.year} allLabel={labels.all} selectedLabel={labels.selected} options={years.map((value) => ({ value }))} />
+
+  <div class="timeline-tool-grid">
+    <div class="timeline-query">
+      <label for={controlIds.query}>{labels.search}</label>
+      <input class="search-input" id={controlIds.query} data-query type="search" autocomplete="off" placeholder={labels.placeholder} />
+    </div>
     <MultiSelectFilter id={controlIds.type} name="type" label={labels.type} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('event_type', eventTypes, locale)} />
     <MultiSelectFilter id={controlIds.significance} name="significance" label={labels.significance} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('significance', significance, locale)} />
-    <MultiSelectFilter id={controlIds.verification} name="verification" label={labels.verification} allLabel={labels.all} selectedLabel={labels.selected} options={presentationOptions('verification', verification, locale)} />
   </div>
-  <div class="year-nav" aria-label={labels.yearNav}>
-    <button class="year-chip" type="button" data-year-chip="">{labels.all}</button>
-    {years.map((year) => <button class="year-chip" type="button" data-year-chip={year}>{year}</button>)}
-  </div>
+
+  <nav class="timeline-year-nav" aria-label={labels.yearNav}>
+    <span class="timeline-year-nav-label">{labels.yearNav}</span>
+    {years.map((year) => <a class="year-chip" href={`#timeline-year-${year}`}>{year}</a>)}
+  </nav>
+  <div class="result-count timeline-query-status" data-query-status role="status" aria-live="polite">{labels.searchHint}</div>
 </section>
 
 {mode === 'timeline' ? (
   <ol class="timeline" data-event-list>
-    {events.map((event) => {
+    {events.map((event, index) => {
       const eventUrl = href(localePath(locale, `events/${event.slug}`));
-      return <li class="timeline-item" data-event-item data-event-url={eventUrl}><time class="timeline-date" datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time><span class="timeline-dot" aria-hidden="true"></span><EventCard event={event} locale={locale} /></li>;
+      const year = event.dates.event.slice(0, 4);
+      const previousYear = index > 0 ? events[index - 1].dates.event.slice(0, 4) : null;
+      const startsYear = year !== previousYear;
+      return (
+        <>
+          {startsYear && <li class="timeline-year-anchor" id={`timeline-year-${year}`} aria-hidden="true"></li>}
+          <li class="timeline-item" data-event-item data-event-url={eventUrl}><time class="timeline-date" datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time><span class="timeline-dot" aria-hidden="true"></span><EventCard event={event} locale={locale} /></li>
+        </>
+      );
     })}
   </ol>
 ) : (
@@ -97,7 +105,6 @@ const controlIds = {
     const input = shell.querySelector('[data-query]');
     const status = shell.querySelector('[data-query-status]');
     const count = shell.querySelector('[data-visible-count]');
-    const chips = [...shell.querySelectorAll('[data-year-chip]')];
     const clearButton = shell.querySelector('[data-clear-filters]');
     const filters = Object.fromEntries(groups.map((group) => [group.dataset.filter, []]));
     let timer;
@@ -126,14 +133,6 @@ const controlIds = {
       updateSummary(group);
     }
 
-    function setGroupValues(key, values) {
-      const group = groups.find((candidate) => candidate.dataset.filter === key);
-      if (!group) return;
-      const selected = new Set(values);
-      for (const option of group.querySelectorAll('[data-filter-option]')) option.checked = selected.has(option.value);
-      syncGroup(group);
-    }
-
     function matches(selected, candidates) {
       return !selected.length || selected.some((value) => candidates.includes(value));
     }
@@ -152,10 +151,6 @@ const controlIds = {
         if (shown) visible += 1;
       }
       if (count) count.textContent = String(visible);
-      for (const chip of chips) {
-        const year = chip.dataset.yearChip || '';
-        chip.dataset.active = String(year ? filters.year.includes(year) : filters.year.length === 0);
-      }
       const hasQuery = Boolean(input?.value.trim());
       if (clearButton) clearButton.disabled = !hasQuery && !Object.values(filters).some((values) => values.length);
     }
@@ -165,10 +160,8 @@ const controlIds = {
       setVisibility((item) => {
         const card = item.querySelector('[data-event-card]');
         if (!card) return false;
-        const structured = matches(filters.year, [card.dataset.year])
-          && matches(filters.type, (card.dataset.eventTypes || '').split(' ').filter(Boolean))
-          && matches(filters.significance, [card.dataset.significance])
-          && matches(filters.verification, [card.dataset.verification]);
+        const structured = matches(filters.type, (card.dataset.eventTypes || '').split(' ').filter(Boolean))
+          && matches(filters.significance, [card.dataset.significance]);
         const textMatch = query.length < 2 || item.textContent.toLocaleLowerCase().includes(query);
         return structured && textMatch;
       });
@@ -186,8 +179,8 @@ const controlIds = {
         if (status) status.textContent = rawQuery.length === 1
           ? (document.documentElement.lang === 'zh-CN' ? '至少输入 2 个字符。' : 'Type at least 2 characters.')
           : (document.documentElement.lang === 'zh-CN'
-              ? '至少输入 2 个字符。搜索与筛选共同作用于当前时间线，并始终保持时间顺序。'
-              : 'Type at least 2 characters. Search and filters refine this timeline without changing chronological order.');
+              ? '搜索始终保持时间顺序；这里仅按事件类型或重要性轻量收窄。年份、验证状态与跨字段组合查询请使用“探索”。'
+              : 'Search always preserves chronology. Refine by event type or significance here; use Explore for year, verification, and multi-field queries.');
         return;
       }
 
@@ -199,8 +192,8 @@ const controlIds = {
         const matched = new Set(results.map((result) => normalizePath(result.url)));
         setVisibility((item) => matched.has(normalizePath(item.dataset.eventUrl || '')));
         if (status) status.textContent = document.documentElement.lang === 'zh-CN'
-          ? `搜索与筛选后匹配 ${matched.size} 个事件；时间顺序保持不变。`
-          : `${matched.size} events match the current search and filters; chronology is unchanged.`;
+          ? `当前条件匹配 ${matched.size} 个事件；时间顺序保持不变。`
+          : `${matched.size} events match the current conditions; chronology is unchanged.`;
       } catch (error) {
         console.warn('Pagefind unavailable', error);
         fallback();
@@ -225,28 +218,14 @@ const controlIds = {
     }
     input?.addEventListener('focus', () => { void getPagefind().catch(() => {}); }, { once: true });
     input?.addEventListener('input', scheduleApply);
-    for (const chip of chips) chip.addEventListener('click', () => {
-      const year = chip.dataset.yearChip || '';
-      if (!year) {
-        setGroupValues('year', []);
-      } else {
-        const next = new Set(filters.year);
-        if (next.has(year)) next.delete(year); else next.add(year);
-        setGroupValues('year', [...next]);
-      }
-      void apply();
-    });
     clearButton?.addEventListener('click', () => {
       if (input) input.value = '';
-      for (const group of groups) setGroupValues(group.dataset.filter, []);
+      for (const group of groups) {
+        for (const option of group.querySelectorAll('[data-filter-option]')) option.checked = false;
+        syncGroup(group);
+      }
       void apply();
     });
     void apply();
   }
 </script>
-
-<style>
-  .timeline-query { margin-top: 1rem; }
-  .timeline-query label { display: block; margin: 0 0 .28rem; color: var(--muted); font-size: .78rem; font-weight: 680; }
-  .timeline-query-status { margin-top: .35rem; }
-</style>
