@@ -2,7 +2,7 @@
 
 **English** · [简体中文](./maintenance.zh-CN.md)
 
-This document defines the long-term maintenance rhythm for AI4Math Chronicle after the v0.1.0 public launch. It complements, rather than replaces, the [Editorial Methodology](./editorial-methodology.md), [Development Guide](./development.md), and [Contributing Guide](../CONTRIBUTING.md).
+This document defines the long-term maintenance rhythm for AI4Math Chronicle after the v0.1.0 public launch. It complements, rather than replaces, the [Editorial Methodology](./editorial-methodology.md), [Development Guide](./development.md), [GPT Project Governance Protocol](./gpt-project-governance.md), and [Contributing Guide](../CONTRIBUTING.md).
 
 ## Maintenance model
 
@@ -51,9 +51,22 @@ The quarterly review is a maintenance target, not a service-level guarantee.
 
 ## Editorial gates
 
-The standing human editorial gate is the significance decision: automation and contributors must not unilaterally finalize a new **H1 — Historical Milestone** classification unless explicitly delegated under an established policy.
+Human review is reserved for an enumerated set of high-risk decisions rather than every ordinary maintenance change.
 
-Verification status may be updated when the documented evidence rule is satisfied and supporting sources are recorded. In particular, `independently_verified` means that reliable independent sources substantively corroborate the Chronicle's core event description; it does not mean that the Chronicle has certified the ultimate mathematical correctness of the underlying claim.
+The standing human editorial gates are:
+
+- a new or materially changed **H1 — Historical Milestone** classification;
+- finalizing `independently_verified`;
+- finalizing `disputed`;
+- finalizing `corrected` as the current verification status;
+- finalizing `retracted`;
+- resolving a material mathematical-correctness, attribution, or historical-priority dispute on the Chronicle's own authority.
+
+Automation may prepare the evidence, complete the draft patch, and recommend any of these decisions, but the gated status or classification must not be published without direct human approval unless an already-established human policy explicitly delegates that exact class of decision.
+
+Lower-risk evidence and verification updates may continue autonomously when the documented rule is satisfied and supporting sources are recorded.
+
+`independently_verified` still means that reliable independent sources substantively corroborate the Chronicle's core event description; the human gate is a publication-governance requirement, not a claim that the Chronicle has certified ultimate mathematical correctness.
 
 The Chronicle should not present “a new mathematical fact is correct” as its own adjudication. Such claims must remain attributed to reliable sources and updated as the public record evolves.
 
@@ -107,6 +120,8 @@ Until multiple trusted maintainers exist, the repository uses a single-maintaine
 
 Repository settings should remain intentionally minimal: Issues enabled; Projects, Wiki, and Discussions disabled until real collaboration volume justifies them.
 
+Cross-conversation agent authority, state recovery, and agenda limits are governed by [`gpt-project-governance.md`](./gpt-project-governance.md). The current approved semantic phase and mainline are recorded in [`project-state.md`](./project-state.md).
+
 ## Definition of healthy maintenance
 
 The project is healthy when:
@@ -116,4 +131,5 @@ The project is healthy when:
 - CI, CodeQL, and Pages deployment remain green;
 - dependency updates are controlled without creating toolchain churn;
 - public contribution paths remain usable;
-- releases periodically provide citable snapshots without turning the repository into a release-management burden.
+- releases periodically provide citable snapshots without turning the repository into a release-management burden;
+- a fresh AI-assisted conversation can recover the active project state from repository evidence without depending on stale chat context.
