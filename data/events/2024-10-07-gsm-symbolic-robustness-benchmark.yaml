@@ -124,7 +124,7 @@ sources:
   title: GSM-Symbolic — Apple Machine Learning Research
   url: https://machinelearning.apple.com/research/gsm-symbolic
   primary: true
-  published_date: '2024-10-01'
+  published_date: null
   accessed_at: '2026-09-11'
 - id: github-apple-gsm-symbolic
   tier: S1
