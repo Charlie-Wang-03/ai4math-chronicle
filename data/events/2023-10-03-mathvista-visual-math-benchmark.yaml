@@ -1,0 +1,164 @@
+schema_version: 1
+id: evt-2023-mathvista
+slug: mathvista-visual-math-benchmark
+
+title:
+  en: MathVista establishes a benchmark for mathematical reasoning in visual contexts
+  zh-CN: MathVista 建立视觉场景中的数学推理评测基准
+
+dates:
+  event: '2023-10-03'
+  first_public_claim: '2023-10-03'
+  paper_release: '2023-10-03'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- benchmark
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      MathVista made mathematical reasoning in visual contexts a dedicated evaluation target, consolidating diagrams, charts, geometry, scientific figures and other multimodal tasks into a large benchmark before multimodal mathematical evaluation became a standard capability axis.
+    zh-CN: >-
+      MathVista 将视觉场景中的数学推理确立为独立评测目标，把图表、几何图形、科学图像等多模态任务整合成大规模基准，早于多模态数学评测成为通用能力维度。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- symbolic
+- numeric
+
+claim:
+  en: >-
+    MathVista introduced 6,141 visual mathematical-reasoning examples drawn from 28 existing multimodal datasets and three newly created datasets, and used them to systematically evaluate 12 foundation models across mathematical and visual task types.
+  zh-CN: >-
+    MathVista 引入 6,141 个视觉数学推理样例，来源包括 28 个既有多模态数据集和 3 个新建数据集，并据此系统评测 12 个基础模型在不同数学与视觉任务上的能力。
+
+summary:
+  en: >-
+    The benchmark combines visual perception with compositional mathematical reasoning. The initial study found a substantial gap between frontier multimodal models and human performance, while the public project provides dataset access, evaluation code and model-result tooling.
+  zh-CN: >-
+    该基准把视觉感知与组合式数学推理结合起来。初始研究显示前沿多模态模型与人类表现之间仍有明显差距，公开项目同时提供数据访问、评测代码与模型结果工具。
+
+why_it_matters:
+  en: >-
+    It broadened AI4Math evaluation beyond text-only word problems and formal statements, creating a reference point for later multimodal and Olympiad-level benchmarks that require models to reason over mathematical information embedded in images.
+  zh-CN: >-
+    它把 AI4Math 评测从纯文本文字题和形式陈述扩展到图像中承载的数学信息，为后续多模态与奥赛级评测提供了重要参照。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Language and multimodal foundation models were evaluated on visual mathematical-reasoning tasks; the benchmark itself was curated and designed by researchers.
+    zh-CN: >-
+      语言模型与多模态基础模型在视觉数学推理任务上接受评测；基准的数据整理与设计由研究者完成。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers assembled and normalized datasets, created new visual reasoning tasks, defined the taxonomy and evaluation protocol, and manually analyzed model failure modes and human baselines.
+    zh-CN: >-
+      研究者整理并规范化数据集、创建新的视觉推理任务、定义分类与评测协议，并人工分析模型失败模式和人类基线。
+
+systems:
+- mathvista
+organizations: []
+people:
+- pan-lu
+- hritik-bansal
+- tony-xia
+- jiacheng-liu
+problems:
+- visual-mathematical-reasoning
+methods:
+- multimodal-evaluation
+- benchmarking
+- visual-reasoning
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2023-10-03'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record introduced MathVista and its initial evaluation of foundation models.
+      zh-CN: >-
+        arXiv 研究记录公开 MathVista，并报告其对基础模型的初始评测。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public MathVista repository and project site expose benchmark data access and evaluation tooling. E3 records artifact-level inspectability rather than independent verification of every reported score.
+      zh-CN: >-
+        公开的 MathVista 仓库与项目页面提供基准数据访问和评测工具。E3 表示产物层级可检查，并不等同于所有报告分数都已获得独立验证。
+
+sources:
+- id: arxiv-mathvista-2310.02255
+  tier: S1
+  type: paper
+  title: 'MathVista: Evaluating Mathematical Reasoning of Foundation Models in Visual Contexts'
+  url: https://arxiv.org/abs/2310.02255
+  primary: true
+  published_date: '2023-10-03'
+  accessed_at: '2026-09-11'
+- id: mathvista-project
+  tier: S1
+  type: project_page
+  title: MathVista project page
+  url: https://mathvista.github.io/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: github-mathvista
+  tier: S1
+  type: repository
+  title: MathVista benchmark repository
+  url: https://github.com/lupantech/MathVista
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: mathvista-repository
+  kind: dataset
+  title: MathVista dataset and evaluation code
+  url: https://github.com/lupantech/MathVista
+
+relationships:
+  predecessors:
+  - evt-2021-math-benchmark
+  successors:
+  - evt-2024-olympiadbench
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- benchmark
+- multimodal
+- visual-reasoning
+- math-reasoning
+- dataset
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
