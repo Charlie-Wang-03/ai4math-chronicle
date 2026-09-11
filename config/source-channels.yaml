@@ -1,0 +1,93 @@
+schema_version: 1
+
+# Operational discovery configuration only. These channels do not create
+# canonical Events and do not change source-tier semantics. Machine channels
+# are reproducible inputs to scripts/source-scan.mjs; manual channels are a
+# versioned checklist for direct-source review.
+channels:
+  - id: arxiv-formal-math
+    enabled: true
+    mode: machine
+    adapter: arxiv_api
+    default_source_tier: S1
+    purpose: candidate_discovery
+    query: >-
+      (all:"theorem proving" OR all:autoformalization OR all:"formal mathematics" OR all:"proof assistant" OR all:"formal proof")
+      AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LO OR cat:math.LO)
+    max_results: 80
+    notes: >-
+      High-recall lane for AI-assisted theorem proving, formalization and proof-assistant work.
+      Editorial significance must be screened separately.
+
+  - id: arxiv-mathematical-reasoning
+    enabled: true
+    mode: machine
+    adapter: arxiv_api
+    default_source_tier: S1
+    purpose: candidate_discovery
+    query: >-
+      (all:"mathematical reasoning" OR all:"math reasoning" OR all:"mathematical problem solving")
+      AND (all:"language model" OR all:LLM OR all:agent OR all:transformer)
+      AND (cat:cs.AI OR cat:cs.CL OR cat:cs.LG)
+    max_results: 80
+    notes: >-
+      Broad lane for model and agent work on mathematical reasoning. Expect benchmark noise;
+      Chronicle inclusion still requires the frozen significance gate.
+
+  - id: arxiv-mathematical-discovery
+    enabled: true
+    mode: machine
+    adapter: arxiv_api
+    default_source_tier: S1
+    purpose: candidate_discovery
+    query: >-
+      (all:"mathematical discovery" OR all:"conjecture generation" OR all:"automated mathematician" OR all:"AI mathematician")
+    max_results: 80
+    notes: >-
+      Discovery-oriented lane intended to surface research that may not use theorem-proving vocabulary.
+
+  - id: openai-research-news
+    enabled: true
+    mode: manual
+    adapter: direct_url
+    default_source_tier: S2
+    purpose: official_claim_watch
+    url: https://openai.com/news/
+    notes: Official OpenAI news surface; use the direct research paper or artifact when available.
+
+  - id: google-deepmind-news
+    enabled: true
+    mode: manual
+    adapter: direct_url
+    default_source_tier: S2
+    purpose: official_claim_watch
+    url: https://deepmind.google/blog/
+    notes: Official Google DeepMind news surface; follow candidate items to direct papers and artifacts.
+
+  - id: anthropic-science
+    enabled: true
+    mode: manual
+    adapter: direct_url
+    default_source_tier: S2
+    purpose: official_claim_watch
+    url: https://www.anthropic.com/research
+    notes: Official Anthropic research surface; supplement with the Science Blog / Newsroom when relevant.
+
+  - id: lean-proof-stories
+    enabled: true
+    mode: manual
+    adapter: direct_url
+    default_source_tier: S3
+    purpose: independent_context_watch
+    url: https://lean4.dev/proofs/
+    notes: Lean proof-story surface; verify whether a story reports independent replay versus commentary only.
+
+  - id: ai4math-radar
+    enabled: true
+    mode: manual
+    adapter: direct_url
+    default_source_tier: S5
+    purpose: candidate_discovery
+    url: https://haikangdeng.github.io/AI4Math_Radar/
+    tracking_issue: https://github.com/Charlie-Wang-03/ai4math-chronicle/issues/35
+    notes: Auxiliary discovery signal only. Follow every promoted item back to its direct source.
