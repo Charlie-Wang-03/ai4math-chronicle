@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EventCollection from './EventCollection.astro';
+import '../styles/timeline.css';
 import { getAllEvents } from '../lib/events';
 import { localePath, absolute, href } from '../lib/site';
 import type { Locale } from '../lib/types';
@@ -19,20 +20,15 @@ const copy = locale === 'zh-CN'
       eyebrow: 'AI for Mathematics 历史档案',
       heading: 'AI4Math 这些年发生了什么？',
       lede: '按时间发现重要里程碑，理解 AI 与人类各自做了什么，并在 1–2 次点击内进入主要证据。',
-      timeline: 'Chronicle 时间线',
       events: '事件',
       years: '时间跨度',
       significance: '重要性结构',
       explore: '探索全部事件',
       methodology: '了解标准与方法',
-      trustEvidence: '证据链',
-      trustEvidenceText: '每条已发布事件至少包含一个权威 S1 或 S2 来源。',
-      trustStatus: '状态透明',
-      trustStatusText: '历史重要性、独立佐证与形式化保障分别记录。',
+      trustEvidence: '权威来源',
+      trustStatus: '状态分离',
       trustCanonical: '规范记录',
-      trustCanonicalText: '同一事件记录驱动网页、搜索、订阅与数据导出。',
-      trustOpen: '开放可修正',
-      trustOpenText: '双语、可引用、GitHub-native，并保留结构化纠错入口。',
+      trustOpen: '开放纠错',
     }
   : {
       title: 'AI4Math Chronicle — Major Milestones in AI for Mathematics',
@@ -40,20 +36,15 @@ const copy = locale === 'zh-CN'
       eyebrow: 'AI for Mathematics historical archive',
       heading: 'What happened in AI4Math?',
       lede: 'Discover major milestones chronologically, see what AI and humans contributed, and reach primary evidence in one or two clicks.',
-      timeline: 'Chronicle timeline',
       events: 'events',
       years: 'year span',
       significance: 'significance mix',
       explore: 'Explore all events',
       methodology: 'Understand standards & methodology',
-      trustEvidence: 'Evidence trail',
-      trustEvidenceText: 'Every published event includes at least one authoritative S1 or S2 source.',
-      trustStatus: 'Transparent status',
-      trustStatusText: 'Historical significance, independent corroboration, and formal assurance are tracked separately.',
+      trustEvidence: 'Authoritative sources',
+      trustStatus: 'Separated status',
       trustCanonical: 'Canonical records',
-      trustCanonicalText: 'One event record drives pages, search, feeds, and machine-readable exports.',
-      trustOpen: 'Open and correctable',
-      trustOpenText: 'Bilingual, citable, GitHub-native, with structured correction paths.',
+      trustOpen: 'Open corrections',
     };
 const websiteJsonLd = {
   '@context': 'https://schema.org',
@@ -68,57 +59,41 @@ const websiteJsonLd = {
 };
 ---
 <BaseLayout locale={locale} title={copy.title} description={copy.desc} canonicalPath={localePath(locale)} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en')} jsonLd={websiteJsonLd}>
-  <header class="hero hero-grid">
+  <header class="timeline-hero">
     <div class="hero-copy">
       <p class="eyebrow">{copy.eyebrow}</p>
       <h1>{copy.heading}</h1>
       <p class="lede">{copy.lede}</p>
+    </div>
+
+    <div class="timeline-hero-meta">
+      <dl class="timeline-summary" aria-label={locale === 'zh-CN' ? '当前语料概览' : 'Current corpus overview'}>
+        <div>
+          <dt>{copy.events}</dt>
+          <dd>{events.length}</dd>
+        </div>
+        <div>
+          <dt>{copy.years}</dt>
+          <dd>{yearRange}</dd>
+        </div>
+        <div>
+          <dt>{copy.significance}</dt>
+          <dd><span>H1 {h1Count}</span><span>H2 {h2Count}</span><span>H3 {h3Count}</span></dd>
+        </div>
+      </dl>
       <nav class="hero-actions" aria-label={locale === 'zh-CN' ? '主要入口' : 'Primary actions'}>
         <a class="button-link primary" href={href(localePath(locale, 'explore'))}>{copy.explore}</a>
         <a class="button-link" href={href(localePath(locale, 'methodology'))}>{copy.methodology}</a>
       </nav>
     </div>
-    <dl class="hero-stats" aria-label={locale === 'zh-CN' ? '当前语料概览' : 'Current corpus overview'}>
-      <div class="hero-stat">
-        <dt>{copy.events}</dt>
-        <dd>{events.length}</dd>
-      </div>
-      <div class="hero-stat">
-        <dt>{copy.years}</dt>
-        <dd>{yearRange}</dd>
-      </div>
-      <div class="hero-stat hero-stat-wide">
-        <dt>{copy.significance}</dt>
-        <dd><span>H1 {h1Count}</span><span>H2 {h2Count}</span><span>H3 {h3Count}</span></dd>
-      </div>
-    </dl>
+
+    <ul class="timeline-trust" aria-label={locale === 'zh-CN' ? 'Chronicle 核心原则' : 'Chronicle core principles'}>
+      <li>{copy.trustEvidence}</li>
+      <li>{copy.trustStatus}</li>
+      <li>{copy.trustCanonical}</li>
+      <li>{copy.trustOpen}</li>
+    </ul>
   </header>
 
-  <section class="credibility-strip" aria-label={locale === 'zh-CN' ? 'Chronicle 核心原则' : 'Chronicle core principles'}>
-    <div class="credibility-item">
-      <strong>{copy.trustEvidence}</strong>
-      <span>{copy.trustEvidenceText}</span>
-    </div>
-    <div class="credibility-item">
-      <strong>{copy.trustStatus}</strong>
-      <span>{copy.trustStatusText}</span>
-    </div>
-    <div class="credibility-item">
-      <strong>{copy.trustCanonical}</strong>
-      <span>{copy.trustCanonicalText}</span>
-    </div>
-    <div class="credibility-item">
-      <strong>{copy.trustOpen}</strong>
-      <span>{copy.trustOpenText}</span>
-    </div>
-  </section>
-
-  <div class="section-heading">
-    <div>
-      <p class="eyebrow">{locale === 'zh-CN' ? '按时间浏览' : 'Browse chronologically'}</p>
-      <h2>{copy.timeline}</h2>
-    </div>
-    <p class="section-note">{locale === 'zh-CN' ? '搜索与筛选只收窄当前时间线，不改变历史顺序；需要跨字段比较时进入“探索”。' : 'Search and filters only refine the current timeline; chronology stays fixed. Use Explore for cross-field comparison.'}</p>
-  </div>
   <EventCollection events={events} locale={locale} mode="timeline" />
 </BaseLayout>
