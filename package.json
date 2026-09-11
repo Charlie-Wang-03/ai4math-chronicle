@@ -14,7 +14,7 @@
     "scan:sources": "node scripts/source-scan.mjs",
     "scan:feeds": "node scripts/feed-scan.mjs",
     "test": "npm run validate && npm run generate && node --test tests/*.test.mjs",
-    "test:browser": "npx --yes --package=@playwright/test@1.55.0 playwright test",
+    "test:browser": "playwright test",
     "check": "astro check",
     "build:site": "astro build",
     "index:search": "pagefind --site dist --glob '**/events/**/*.html'",
