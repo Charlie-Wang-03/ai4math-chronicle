@@ -62,10 +62,17 @@ test('reader surfaces use presentation labels while preserving canonical filter 
 
 test('Chinese Event Detail no longer exposes implementation-only metadata headings', async () => {
   const detail = await read('src/components/EventDetailPage.astro');
-  assert.match(detail, /zh \? '系统' : 'Systems'/);
-  assert.match(detail, /zh \? '机构' : 'Organizations'/);
-  assert.match(detail, /zh \? '数学问题' : 'Problems'/);
-  assert.match(detail, /zh \? '方法' : 'Methods'/);
-  assert.match(detail, /zh \? '访问于' : 'accessed'/);
-  assert.match(detail, /zh \? '工件' : 'Artifact'/);
+  assert.match(detail, /systems: '系统'/);
+  assert.match(detail, /organizations: '机构'/);
+  assert.match(detail, /problems: '数学问题'/);
+  assert.match(detail, /methods: '方法'/);
+  assert.match(detail, /accessed: '访问于'/);
+  assert.match(detail, /artifact: '工件'/);
+
+  assert.match(detail, /<dt>\{labels\.systems\}<\/dt>/);
+  assert.match(detail, /<dt>\{labels\.organizations\}<\/dt>/);
+  assert.match(detail, /<dt>\{labels\.problems\}<\/dt>/);
+  assert.match(detail, /<dt>\{labels\.methods\}<\/dt>/);
+  assert.match(detail, /\{labels\.accessed\} \{source\.accessed_at\}/);
+  assert.match(detail, /\{labels\.artifact\} ·/);
 });
