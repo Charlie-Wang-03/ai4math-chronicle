@@ -1,0 +1,175 @@
+schema_version: 1
+id: evt-2024-ramanujan-library
+slug: ramanujan-library-integer-relations
+
+title:
+  en: Ramanujan Library reports automated discovery of new relations among mathematical constants
+  zh-CN: Ramanujan Library 报告自动发现数学常数之间的新关系
+
+dates:
+  event: '2024-12-16'
+  first_public_claim: '2024-12-16'
+  paper_release: '2024-12-16'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- discovery
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The Ramanujan Library extended automated-conjecture work from searching formulas for individual constants to a structured hypergraph of relations among constants, and the authors reported dozens of previously unknown relations generated during construction and testing of the system.
+    zh-CN: >-
+      Ramanujan Library 将自动猜想工作从“为单个常数寻找公式”推进到“构建常数之间关系的结构化超图”；作者报告称，在系统构建与测试过程中自动得到数十个此前未知的常数关系。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- symbolic
+- numeric
+
+claim:
+  en: >-
+    The authors reported that a PSLQ-based automated enrichment strategy discovered 75 previously unknown connections between mathematical constants, including a new formula for the first continued-fraction constant, new logarithmic formulas and formulas relating pi and e.
+  zh-CN: >-
+    作者报告称，基于 PSLQ 的自动扩充策略发现了 75 个此前未知的数学常数关系，其中包括首个连分数常数的新公式、新的对数公式，以及连接 π 与 e 的公式。
+
+summary:
+  en: >-
+    The project represents mathematical constants as vertices and formulas as hyperedges, then searches for integer relations that can expand this graph. The associated LIReC software provides a public database and numerical relation-identification tools for inspecting and extending the library.
+  zh-CN: >-
+    该项目把数学常数表示为顶点、公式表示为超边，再搜索能够扩充该关系图的整数关系。配套的 LIReC 软件提供公开数据库与数值关系识别工具，可用于检查和继续扩展这一常数关系库。
+
+why_it_matters:
+  en: >-
+    The work supplied a concrete research-level example of automated mathematical discovery outside theorem proving and language-model benchmarking, while making the resulting discovery substrate available as reusable experimental-mathematics infrastructure.
+  zh-CN: >-
+    该工作提供了一个区别于定理证明与语言模型基准的研究级自动数学发现案例，并把支撑这些发现的基础设施作为可复用的实验数学资源公开。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Automated numerical and symbolic search based on PSLQ proposed candidate integer relations among constants; this event does not rely on an LLM or autonomous agent making semantic mathematical judgments.
+    zh-CN: >-
+      基于 PSLQ 的自动数值与符号搜索提出数学常数之间的候选整数关系；该事件并不依赖 LLM 或自主 Agent 进行语义层面的数学判断。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the hypergraph representation, discovery and filtering procedure, curated the constants database, analyzed the generated relations and prepared the mathematical claims and software infrastructure.
+    zh-CN: >-
+      研究者设计常数关系的超图表示、发现与筛选流程，维护常数数据库，分析自动生成的关系，并整理数学结论与软件基础设施。
+
+systems:
+- ramanujan-library
+- lirec
+organizations:
+- ramanujan-machine
+- technion
+people:
+- itay-beit-halachmi
+- ido-kaminer
+problems:
+- mathematical-constants
+- integer-relations
+methods:
+- pslq
+- integer-relation-detection
+- automated-discovery
+- hypergraph
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-12-16'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record reported the Ramanujan Library method and 75 previously unknown relations. The Chronicle records that claim without independently adjudicating every underlying identity or priority claim.
+      zh-CN: >-
+        arXiv 研究记录报告了 Ramanujan Library 方法及 75 个此前未知关系。Chronicle 记录这一公开研究主张，但不自行裁决每个恒等式或优先权主张。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public LIReC repository exposes the constants database and integer-relation identification software, and the work later appeared at ICLR 2025. E3 records inspectable research infrastructure rather than independent verification of every reported new relation.
+      zh-CN: >-
+        公开 LIReC 仓库提供常数数据库与整数关系识别软件，该工作后来发表于 ICLR 2025。E3 表示研究基础设施可直接检查，并不等同于论文报告的每个新关系都已获得独立验证。
+
+sources:
+- id: arxiv-ramanujan-library-2412.12361
+  tier: S1
+  type: paper
+  title: The Ramanujan Library — Automated Discovery on the Hypergraph of Integer Relations
+  url: https://arxiv.org/abs/2412.12361
+  primary: true
+  published_date: '2024-12-16'
+  accessed_at: '2026-09-11'
+- id: ramanujan-machine-library-page
+  tier: S2
+  type: official_announcement
+  title: Ramanujan Library — The Hub for Mathematical Constants and Their Surprising Relations
+  url: https://ramanujanmachine.com/ramanujan-library-the-hub-for-mathematical-constants-and-their-surprising-relations/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: github-ramanujan-lirec
+  tier: S1
+  type: repository
+  title: LIReC — Library of Integer RElations and Constants
+  url: https://github.com/RamanujanMachine/LIReC
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: iclr-ramanujan-library-2025
+  tier: S1
+  type: paper
+  title: The Ramanujan Library — ICLR 2025 conference paper
+  url: https://proceedings.iclr.cc/paper_files/paper/2025/hash/6782c18960808848174cfe60742b415a-Abstract-Conference.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: ramanujan-lirec-repository
+  kind: code
+  title: LIReC constants database and integer-relation tools
+  url: https://github.com/RamanujanMachine/LIReC
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2023-funsearch-cap-set
+  - evt-2022-alphatensor
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- mathematical-discovery
+- mathematical-constants
+- pslq
+- integer-relations
+- experimental-mathematics
+- automated-discovery
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
