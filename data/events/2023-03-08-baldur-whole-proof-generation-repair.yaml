@@ -1,0 +1,147 @@
+schema_version: 1
+id: evt-2023-baldur
+slug: baldur-whole-proof-generation-repair
+
+title:
+  en: Baldur generates and repairs whole formal proofs with language models
+  zh-CN: Baldur 使用语言模型生成并修复完整形式证明
+
+dates:
+  event: '2023-03-08'
+  first_public_claim: '2023-03-08'
+  paper_release: '2023-03-08'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Baldur established whole-proof generation plus checker-guided proof repair as a distinct alternative to step-by-step formal proof search, showing that a transformer could emit complete Isabelle/HOL proofs and use failed attempts and error messages as repair context.
+    zh-CN: >-
+      Baldur 将“完整证明生成 + 检查器反馈修复”确立为逐步形式证明搜索之外的一条独立路线，展示 Transformer 可以一次生成完整 Isabelle/HOL 证明，并利用失败证明与错误信息进行修复。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    On a benchmark of 6,336 Isabelle/HOL theorems, Baldur generated whole proofs and repaired failed generations, proving an additional 8.7% of theorems beyond Thor; the paper reported that Baldur and Thor together proved 65.7% fully automatically.
+  zh-CN: >-
+    在包含 6,336 个 Isabelle/HOL 定理的基准上，Baldur 生成完整证明并修复失败结果；论文报告它相较 Thor 额外证明了 8.7% 的定理，而 Baldur 与 Thor 合计可全自动证明 65.7%。
+
+summary:
+  en: >-
+    Instead of predicting one proof step and searching over continuations, Baldur fine-tuned language models to generate an entire proof in one pass. A separate repair model then received a failed proof attempt together with proof-assistant error feedback and proposed a corrected proof.
+  zh-CN: >-
+    与逐步预测证明动作并搜索后续路径不同，Baldur 微调语言模型一次生成完整证明；随后由独立的修复模型读取失败证明及证明助手的错误反馈，再提出修正后的证明。
+
+why_it_matters:
+  en: >-
+    The work made complete-proof synthesis and feedback-driven repair a credible formal-reasoning pattern, complementing search-heavy theorem provers and anticipating later generate-check-revise workflows.
+  zh-CN: >-
+    该工作使完整证明合成与反馈驱动修复成为可信的形式推理模式，补充了依赖搜索的定理证明路线，并预示了后来常见的“生成—检查—修订”工作流。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Fine-tuned language models generated complete candidate proofs and repaired failed attempts using checker feedback; Isabelle/HOL mechanically accepted or rejected the resulting proof text.
+    zh-CN: >-
+      微调后的语言模型生成完整候选证明，并根据检查器反馈修复失败尝试；Isabelle/HOL 对最终证明文本进行机械接受或拒绝。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the whole-proof and repair training setup, assembled the evaluation protocol, trained the models and analyzed performance against prior theorem-proving systems.
+    zh-CN: >-
+      研究者设计完整证明与修复训练方案、构建评测流程、训练模型，并分析其相对既有定理证明系统的表现。
+
+systems:
+- baldur
+- isabelle-hol
+organizations: []
+people:
+- emily-first
+- markus-n-rabe
+- talia-ringer
+- yuriy-brun
+problems:
+- automated-theorem-proving
+methods:
+- whole-proof-generation
+- proof-repair
+- language-models
+- proof-assistant-feedback
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2023-03-08'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The public research record reports the whole-proof generation, repair method and Isabelle/HOL evaluation. This status records the paper and does not imply independent Chronicle verification or a public replay artifact.
+      zh-CN: >-
+        公开研究记录报告了完整证明生成、修复方法及 Isabelle/HOL 评测。该状态仅记录论文已公开，不表示 Chronicle 已独立验证，也不表示存在可公开重放的完整产物。
+
+sources:
+- id: arxiv-baldur-2303.04910
+  tier: S1
+  type: paper
+  title: 'Baldur: Whole-Proof Generation and Repair with Large Language Models'
+  url: https://arxiv.org/abs/2303.04910
+  primary: true
+  published_date: '2023-03-08'
+  accessed_at: '2026-09-11'
+- id: esec-fse-baldur-2023
+  tier: S1
+  type: conference
+  title: 'Baldur: Whole-Proof Generation and Repair with Large Language Models'
+  url: https://2023.esec-fse.org/details/fse-2023-research-papers/2/Baldur-Whole-Proof-Generation-and-Repair-with-Large-Language-Models
+  primary: true
+  published_date: '2023-12-06'
+  accessed_at: '2026-09-11'
+
+artifacts: []
+
+relationships:
+  predecessors:
+  - evt-2022-thor
+  successors: []
+  related:
+  - evt-2023-leandojo
+  - evt-2023-copra
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- theorem-proving
+- isabelle
+- whole-proof-generation
+- proof-repair
+- language-model
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
