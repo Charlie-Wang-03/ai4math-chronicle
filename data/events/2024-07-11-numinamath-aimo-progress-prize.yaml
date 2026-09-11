@@ -11,7 +11,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-10'
-  last_updated: '2026-09-10'
+  last_updated: '2026-09-11'
 event_types:
 - competition
 - system
@@ -57,9 +57,9 @@ methods:
 - self-consistency
 - fine-tuning
 verification:
-  evidence_level: E2
+  evidence_level: E3
   status: partially_verified
-  formal_assurance: none
+  formal_assurance: artifact_available
   history:
   - date: '2024-07-11'
     status: partially_verified
@@ -67,6 +67,14 @@ verification:
     note:
       en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
       zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+  - date: '2026-09-11'
+    status: partially_verified
+    evidence_level: E3
+    note:
+      en: >-
+        This corpus refresh added a directly inspectable public artifact maintained by the authors or releasing organization. E3 records artifact-level inspectability and does not imply independent verification of the underlying scientific or mathematical claim.
+      zh-CN: >-
+        本轮 corpus 刷新增补了由作者或发布机构维护、可直接检查的公开产物。E3 表示证据已达到可检查 artifact 层级，并不等同于底层科学或数学主张已获得独立验证。
 sources:
 - id: huggingface-numinamath-aimo-2024
   tier: S2
@@ -76,7 +84,19 @@ sources:
   primary: true
   published_date: '2024-07-11'
   accessed_at: '2026-09-10'
-artifacts: []
+- id: github-numinamath-aimo
+  tier: S1
+  type: repository
+  title: "Numina solution to the first AIMO Progress Prize"
+  url: https://github.com/project-numina/aimo-progress-prize
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+artifacts:
+- id: numinamath-aimo-repository
+  kind: code
+  title: "NuminaMath winning-solution training and inference code"
+  url: https://github.com/project-numina/aimo-progress-prize
 relationships:
   predecessors:
   - evt-2024-deepseekmath
@@ -93,7 +113,7 @@ tags:
 - competition
 editorial:
   created_at: '2026-09-10'
-  last_reviewed: '2026-09-10'
+  last_reviewed: '2026-09-11'
   reviewers:
   - Charlie-Wang-03
 corrections: []
