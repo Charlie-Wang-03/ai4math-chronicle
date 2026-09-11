@@ -2,7 +2,7 @@
 
 [English](./maintenance.md) · **简体中文**
 
-本文定义 AI4Math 大事记在 v0.1.0 公开发布后的长期维护节奏。它补充而不替代 [编辑方法论](./editorial-methodology.zh-CN.md)、[开发指南](./development.zh-CN.md)、[GPT 项目治理协议](./gpt-project-governance.md) 与 [贡献指南](../CONTRIBUTING.zh-CN.md)。
+本文定义 AI4Math 大事记在 v0.1.0 公开发布后的长期维护节奏。它补充而不替代 [编辑方法论](./editorial-methodology.zh-CN.md)、[信源收集与 Intake 工作流](./source-intake.zh-CN.md)、[开发指南](./development.zh-CN.md)、[GPT 项目治理协议](./gpt-project-governance.md) 与 [贡献指南](../CONTRIBUTING.zh-CN.md)。
 
 ## 维护模型
 
@@ -10,9 +10,9 @@ AI4Math 大事记定位为精选历史档案，而不是实时新闻流。因此
 
 默认工作循环为：
 
-1. 通过 Issues 与维护者研究收集候选事件或纠错；
-2. triage 判断是否属于收录范围，以及仍缺少哪些证据；
-3. 每条事件或紧密相关事件组准备一个聚焦 PR；
+1. 通过结构化 Issues 与维护者研究收集 raw source leads、候选事件或纠错；
+2. 完成去重与 triage，判断信源属于已有 Event、新 candidate、watch item，还是 scope 外 / 重要性不足的条目；
+3. 对成熟 candidate，识别仍缺少哪些证据，并为每条事件或紧密相关事件组准备一个聚焦 PR；
 4. 运行 CI，并完成必要的人工编辑门槛；
 5. 审核后使用 squash merge；
 6. `main` 持续部署到 GitHub Pages。
@@ -21,9 +21,19 @@ AI4Math 大事记定位为精选历史档案，而不是实时新闻流。因此
 
 ## 建议复核节奏
 
+### Source Intake — 持续进行
+
+可能有价值的论文、代码仓库、公告、artifact replay、独立分析、媒体报道和社区信号，可以在成熟为 Event proposal 之前先记录为 **Source Lead** Issue。
+
+按照 [信源收集与 Intake 工作流](./source-intake.zh-CN.md) 处理这些 raw discovery，可以在不建立第二套事实数据库的前提下保持长期可追溯。每个 open lead 都应有明确的 triage 理由或缺失 trigger；成熟证据应进入 canonical Event，而不是长期堆积在 Issues。
+
+Source Lead 不表示底层 claim 已经为真、足够重要或应当发布。S5 / 社区热度仍只用于 discovery，除非出现更强证据支持正式编辑判断。
+
 ### 事件收录 — 持续进行
 
 新的候选里程碑可以随时提出。维护者可在合适时批量处理，不把项目运作成实时新闻流。
+
+Candidate 可以直接来自成熟 Event Proposal，也可以由 Source Lead 在完成去重、scope 筛查与证据收集后升级得到。对于已经掌握成熟 evidence package 的 maintainer，如果中间 Issue 并不能增加审核价值，可以直接进入聚焦 Event branch / PR。
 
 ### 纠错 — 优先路径
 
@@ -127,6 +137,7 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 满足以下条件时，可以认为项目处于健康维护状态：
 
 - canonical Event data 始终是唯一事实源；
+- 有价值的 source lead 会被持久化 triage，而不是依赖浏览器标签页或聊天历史；
 - 未解决的纠错与高重要性事件佐证问题保持可见，而不是被隐藏；
 - CI、CodeQL 与 Pages deployment 保持绿色；
 - 依赖更新受控，不制造 toolchain churn；
