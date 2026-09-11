@@ -129,7 +129,7 @@ sources:
   accessed_at: '2026-09-11'
 - id: iclr-lego-prover-2024
   tier: S1
-  type: conference
+  type: paper
   title: 'LEGO-Prover: Neural Theorem Proving with Growing Libraries'
   url: https://proceedings.iclr.cc/paper_files/paper/2024/hash/85dca46374dc0f27b4bb5f265b3d17f0-Abstract-Conference.html
   primary: true
