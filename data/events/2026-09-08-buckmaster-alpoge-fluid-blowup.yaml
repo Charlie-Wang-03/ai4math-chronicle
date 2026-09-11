@@ -1,0 +1,193 @@
+schema_version: 1
+id: evt-2026-buckmaster-alpoge-fluid-blowup
+slug: buckmaster-alpoge-fluid-blowup
+
+title:
+  en: Buckmaster and Alpöge release AI-assisted smooth-forcing blowup results for Euler, Boussinesq and IPM
+  zh-CN: Buckmaster 与 Alpöge 发布 AI 辅助的 Euler、Boussinesq 与 IPM 光滑外力爆破解果
+
+dates:
+  event: "2026-09-08"
+  first_public_claim: "2026-09-08"
+  paper_release: "2026-09-08"
+  artifact_release: "2026-09-08"
+  independently_verified: null
+  added_to_chronicle: "2026-09-11"
+  last_updated: "2026-09-11"
+
+event_types: [discovery, proof, formalization]
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      The release combines three new smooth-forcing blowup results in major fluid equations with documented substantive LLM-assisted proof development and public Lean formalizations for the Euler and Boussinesq results. If accepted as H1, its historical significance comes from demonstrating human-led AI collaboration on frontier mathematical research, not from an AI originating the underlying research program.
+    zh-CN: >-
+      该发布把三个重要流体方程中的光滑外力爆破新结果，与有明确记录的 LLM 实质性证明辅助，以及 Euler、Boussinesq 结果的公开 Lean 形式化结合在一起。若被接受为 H1，其历史意义来自前沿数学研究中的人类主导 AI 协作，而不是 AI 从零提出了底层研究路线。
+
+mathematical_novelty:
+  type: new_result
+interfaces: [informal, formal, symbolic, hybrid]
+
+claim:
+  en: >-
+    Tristan Buckmaster and Levent Alpöge report finite-time blowup results with smooth forcing for the three-dimensional incompressible Euler equations, the planar inviscid Boussinesq equations and incompressible porous media, developed with substantial help from Claude and Codex; public Lean artifacts formalize the Euler and Boussinesq results.
+  zh-CN: >-
+    Tristan Buckmaster 与 Levent Alpöge 报告了三维不可压 Euler 方程、二维无粘 Boussinesq 方程以及不可压多孔介质方程在光滑外力下的有限时间爆破结果；研究过程中 Claude 与 Codex 提供了大量实质性帮助，公开 Lean 产物则形式化了 Euler 与 Boussinesq 两项结果。
+
+summary:
+  en: >-
+    The researchers explicitly credit Diego Córdoba and Luis Martínez-Zoroa for the underlying forced-blowup research program and describe using LLMs to push that program from rougher forcing toward smooth forcing and related fluid equations. The public `fluid_lean` repository contains complete Lean developments for the Euler and Boussinesq theorems, with its documentation attributing the Lean code to Claude under Alpöge's direction.
+  zh-CN: >-
+    两位研究者明确将底层强迫爆破研究路线归功于 Diego Córdoba 与 Luis Martínez-Zoroa，并描述其使用 LLM 将该路线从较粗糙的外力条件推进到光滑外力及相关流体方程。公开的 `fluid_lean` 仓库包含 Euler 与 Boussinesq 定理的完整 Lean 开发，其文档将 Lean 代码归因于在 Alpöge 指导下工作的 Claude。
+
+why_it_matters:
+  en: >-
+    The event is an unusually inspectable example of AI contributing substantively to frontier mathematical research while humans retain the research program, judgment and responsibility for the claims. The results also became immediate historical context for the contemporaneous OpenAI Navier–Stokes claim, making precise attribution and separation of the distinct mathematical statements important to the Chronicle.
+  zh-CN: >-
+    该事件是一个少见且可检查度较高的案例：AI 对前沿数学研究作出实质性贡献，而研究路线、判断与主张责任仍由人类掌握。这些结果还立即成为同期 OpenAI Navier–Stokes 主张的重要历史背景，因此准确区分不同数学命题及其归属对 Chronicle 尤其重要。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Buckmaster's public account describes Claude and Codex as being used throughout the project with substantial help from LLMs in extending the existing program. The public Euler and Boussinesq Lean repositories state that all Lean code, including the trusted statement files, was written by Claude under Alpöge's direction. The authors explicitly state that the underlying research program was not originated by an LLM.
+    zh-CN: >-
+      Buckmaster 的公开说明称项目全过程使用了 Claude 与 Codex，并由 LLM 在推进既有研究路线时提供大量帮助。公开的 Euler 与 Boussinesq Lean 仓库说明，包括可信 statement 文件在内的全部 Lean 代码均由 Claude 在 Alpöge 指导下编写。作者同时明确说明，底层研究路线并非由 LLM 原创提出。
+
+human_contribution:
+  description:
+    en: >-
+      Buckmaster and Alpöge selected and developed the research direction, evaluated and organized the mathematical arguments, authored the released manuscripts and remained responsible for the claims. They credit Córdoba and Martínez-Zoroa with the foundational forced-blowup program; Alpöge directed and reviewed the public Lean formalization workflow.
+    zh-CN: >-
+      Buckmaster 与 Alpöge 选择并推进研究方向、评估与组织数学论证、撰写公开稿件，并对最终主张负责。他们将基础性的强迫爆破研究路线归功于 Córdoba 与 Martínez-Zoroa；Alpöge 还指导并审阅了公开 Lean 形式化流程。
+
+systems: [claude, codex, lean, mathlib]
+organizations: []
+people: [tristan-buckmaster, levent-alpoge, diego-cordoba, luis-martinez-zoroa]
+problems: [forced-euler-blowup, forced-boussinesq-blowup, forced-ipm-blowup]
+methods: [human-ai-collaboration, proof-development, formal-theorem-proving, lean]
+
+verification:
+  evidence_level: E3
+  status: partially_verified
+  formal_assurance: artifact_available
+  history:
+    - date: "2026-09-08"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          Three manuscripts and a public Lean repository were released. The repository contains dedicated formalization projects for Euler and Boussinesq, while no corresponding IPM Lean project is present in the public repository tree.
+        zh-CN: >-
+          三份稿件与一个公开 Lean 仓库同期发布。该仓库包含 Euler 与 Boussinesq 的专门形式化项目，而公开仓库目录中没有对应的 IPM Lean 项目。
+    - date: "2026-09-11"
+      status: partially_verified
+      evidence_level: E3
+      note:
+        en: >-
+          Terence Tao independently discussed the mathematical work and its relationship to the Córdoba–Martínez-Zoroa program, and OpenAI independently acknowledged Buckmaster and Alpöge's priority on the forced Euler result. These sources corroborate the event and its historical context but are not treated here as independent verification of all three underlying theorems or as an independent replay of the Lean artifacts.
+        zh-CN: >-
+          Terence Tao 独立讨论了这项数学工作及其与 Córdoba–Martínez-Zoroa 研究路线的关系；OpenAI 也独立承认 Buckmaster 与 Alpöge 在 forced Euler 结果上的优先权。这些来源佐证了事件及其历史背景，但 Chronicle 不据此认定三个底层定理均已得到独立验证，也不视为对 Lean 产物的独立重放。
+
+sources:
+  - id: buckmaster-alpoge-statement-2026
+    tier: S2
+    type: official_announcement
+    title: Tristan Buckmaster statement on the joint fluid blowup work with Levent Alpöge
+    url: https://cims.nyu.edu/~tristanb/statement.pdf
+    primary: true
+    published_date: "2026-09-08"
+    accessed_at: "2026-09-11"
+  - id: buckmaster-alpoge-euler-2026
+    tier: S1
+    type: paper
+    title: Finite-time blow-up for the three-dimensional incompressible Euler equations with smooth force
+    url: https://cims.nyu.edu/~tristanb/euler.pdf
+    primary: true
+    published_date: "2026-09-08"
+    accessed_at: "2026-09-11"
+  - id: buckmaster-alpoge-boussinesq-2026
+    tier: S1
+    type: paper
+    title: Finite-time blow-up for the planar inviscid Boussinesq equations with smooth force
+    url: https://cims.nyu.edu/~tristanb/boussinesq.pdf
+    primary: true
+    published_date: "2026-09-08"
+    accessed_at: "2026-09-11"
+  - id: buckmaster-alpoge-ipm-2026
+    tier: S1
+    type: paper
+    title: Extending the Córdoba–Martínez-Zoroa IPM blow-up to uniformly space-time smooth forcing
+    url: https://cims.nyu.edu/~tristanb/ipm.pdf
+    primary: true
+    published_date: "2026-09-08"
+    accessed_at: "2026-09-11"
+  - id: github-buckmaster-fluid-lean
+    tier: S1
+    type: formal_artifact
+    title: Lean formalizations for the Buckmaster–Alpöge fluid blowup results
+    url: https://github.com/tristanbuckmaster/fluid_lean
+    primary: true
+    published_date: "2026-09-08"
+    accessed_at: "2026-09-11"
+  - id: tao-fluid-blowup-2026
+    tier: S3
+    type: independent_analysis
+    title: Finite time blowup with smooth forcing term for the incompressible porous medium, Boussinesq, and incompressible Euler equations
+    url: https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations/
+    primary: false
+    published_date: "2026-09-07"
+    accessed_at: "2026-09-11"
+  - id: openai-navier-stokes-2026-related
+    tier: S2
+    type: official_announcement
+    title: On the Navier–Stokes Millennium Prize Problem
+    url: https://openai.com/index/navier-stokes-solution/
+    primary: false
+    published_date: "2026-09-08"
+    accessed_at: "2026-09-11"
+  - id: techcrunch-buckmaster-alpoge-2026
+    tier: S4
+    type: media
+    title: OpenAI fought dirty on career-making math problem, says NYU mathematician
+    url: https://techcrunch.com/2026/09/08/openai-fought-dirty-on-career-making-math-problem-says-nyu-mathematician/
+    primary: false
+    published_date: "2026-09-08"
+    accessed_at: "2026-09-11"
+
+artifacts:
+  - id: buckmaster-alpoge-fluid-lean-repository
+    kind: proof
+    title: Lean 4 formalizations for Euler and Boussinesq blowup results
+    url: https://github.com/tristanbuckmaster/fluid_lean
+  - id: buckmaster-alpoge-euler-paper
+    kind: proof
+    title: Euler smooth-forcing blowup manuscript
+    url: https://cims.nyu.edu/~tristanb/euler.pdf
+  - id: buckmaster-alpoge-boussinesq-paper
+    kind: proof
+    title: Boussinesq smooth-forcing blowup manuscript
+    url: https://cims.nyu.edu/~tristanb/boussinesq.pdf
+  - id: buckmaster-alpoge-ipm-paper
+    kind: proof
+    title: IPM smooth-forcing blowup manuscript
+    url: https://cims.nyu.edu/~tristanb/ipm.pdf
+
+relationships:
+  predecessors: []
+  successors: []
+  related: [evt-2026-openai-navier-stokes]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [fluid-dynamics, euler, boussinesq, ipm, blowup, human-ai-collaboration, claude, codex, lean]
+
+editorial:
+  created_at: "2026-09-11"
+  last_reviewed: "2026-09-11"
+  reviewers: []
+
+corrections: []
