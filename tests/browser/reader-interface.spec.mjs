@@ -48,7 +48,7 @@ test('Explore is mobile-native and its multi-select is keyboard-operable', async
   expect(tableMinWidth).toBe('0px');
   expect(rowDisplay).toBe('grid');
 
-  const search = page.getByLabel('Search');
+  const search = page.getByRole('searchbox', { name: 'Search' });
   const yearFilter = page.locator('[data-multi-filter][data-filter="year"]');
   const yearSummary = yearFilter.locator('summary');
   const firstOption = yearFilter.locator('input[data-filter-option]').first();
@@ -79,7 +79,7 @@ test('Explore exposes an explicit zero-results recovery path', async ({ page }) 
   const emptyState = page.locator('[data-empty-state]');
   await expect(emptyState).toBeHidden();
 
-  await page.getByLabel('Search').fill('zzzz-no-ai4math-event-should-match-zzzz');
+  await page.getByRole('searchbox', { name: 'Search' }).fill('zzzz-no-ai4math-event-should-match-zzzz');
   await expect(emptyState).toBeVisible({ timeout: 10_000 });
   await expect(emptyState.getByText('No events match')).toBeVisible();
 
