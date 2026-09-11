@@ -10,6 +10,8 @@ const canonicalPath = localePath(locale, `events/${event.slug}`);
 const eventTitle = text(event.title, locale);
 const description = text(event.summary, locale);
 const primary = event.sources.filter((source) => source.primary || source.tier === 'S1');
+const sourceTypes = [...new Set(event.sources.map((source) => source.type))];
+const artifactKinds = [...new Set(event.artifacts.map((artifact) => artifact.kind))];
 const relationGroups = [
   [zh ? '更早进展' : 'Earlier developments', event.relationships.predecessors],
   [zh ? '后续进展' : 'Later developments', event.relationships.successors],
@@ -44,6 +46,14 @@ const breadcrumbJsonLd = {
     {event.interfaces.map((value) => <span data-pagefind-filter={`interface:${value}`}></span>)}
     <span data-pagefind-filter={`evidence:${event.verification.evidence_level}`}></span>
     <span data-pagefind-filter={`formal_assurance:${event.verification.formal_assurance}`}></span>
+    <span data-pagefind-filter={`novelty:${event.mathematical_novelty.type}`}></span>
+    {event.organizations.map((value) => <span data-pagefind-filter={`organization:${value}`}></span>)}
+    {event.people.map((value) => <span data-pagefind-filter={`person:${value}`}></span>)}
+    {event.problems.map((value) => <span data-pagefind-filter={`problem:${value}`}></span>)}
+    {event.methods.map((value) => <span data-pagefind-filter={`method:${value}`}></span>)}
+    {sourceTypes.map((value) => <span data-pagefind-filter={`source_type:${value}`}></span>)}
+    {artifactKinds.map((value) => <span data-pagefind-filter={`artifact_kind:${value}`}></span>)}
+    {event.tags.map((value) => <span data-pagefind-filter={`tag:${value}`}></span>)}
   </div>
 
   <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={href(localePath(locale))}>{zh ? '时间线' : 'Timeline'}</a><span>/</span><span>{eventTitle}</span></nav>

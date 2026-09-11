@@ -6,28 +6,46 @@ import test from 'node:test';
 const ROOT = path.resolve(import.meta.dirname, '..');
 const read = (relative) => fs.readFileSync(path.join(ROOT, relative), 'utf8');
 
-test('event pages expose the Pagefind facets used by Timeline and Explore', () => {
+const coreFacets = ['year', 'type', 'significance', 'verification', 'system', 'ai_role', 'interface', 'evidence', 'formal_assurance'];
+const expandedFacets = ['novelty', 'organization', 'person', 'problem', 'method', 'source_type', 'artifact_kind', 'tag'];
+
+test('event pages expose all Pagefind facets used by Timeline and Explore', () => {
   const source = read('src/components/EventDetailPage.astro');
-  for (const facet of ['year', 'type', 'significance', 'verification', 'system', 'ai_role', 'interface', 'evidence', 'formal_assurance']) {
+  for (const facet of [...coreFacets, ...expandedFacets]) {
     assert.ok(source.includes(`${facet}:`), `missing Pagefind facet: ${facet}`);
   }
 });
 
-test('timeline combines Pagefind text search and structured filters without a second result list', () => {
+test('multi-select facet control uses checkbox options instead of native multi-select gestures', () => {
+  const source = read('src/components/MultiSelectFilter.astro');
+  assert.match(source, /data-multi-filter/);
+  assert.match(source, /type="checkbox"/);
+  assert.match(source, /data-filter-option/);
+  assert.doesNotMatch(source, /<select/);
+});
+
+test('timeline combines text search with OR-within-facet multi-select filters without changing chronology', () => {
   const source = read('src/components/EventCollection.astro');
+  assert.match(source, /MultiSelectFilter/);
+  assert.match(source, /\[key, \{ any: values \}\]/);
   assert.match(source, /engine\.search\(query, \{ filters: pagefindFilters \}\)/);
   assert.match(source, /timeline-filter-panel/);
   assert.doesNotMatch(source, /search-results/);
   assert.match(source, /chronology is unchanged/);
+  assert.match(source, /filters\.year\.includes\(year\)/);
 });
 
-test('Explore exposes advanced facets and serializes query state to the URL', () => {
+test('Explore exposes multi-select advanced facets and repeatable URL query state', () => {
   const source = read('src/components/ExploreDirectory.astro');
-  for (const facet of ['significance', 'verification', 'system', 'ai_role', 'interface', 'evidence', 'formal_assurance']) {
-    assert.ok(source.includes(`data-filter=\"${facet}\"`), `missing Explore filter: ${facet}`);
+  for (const facet of [...coreFacets.slice(2), ...expandedFacets]) {
+    assert.ok(source.includes(`name="${facet}"`), `missing Explore filter: ${facet}`);
   }
+  assert.match(source, /name="year"/);
+  assert.match(source, /name="type"/);
+  assert.match(source, /\[key, \{ any: values \}\]/);
+  assert.match(source, /params\.getAll\(group\.dataset\.filter\)/);
+  assert.match(source, /params\.append\(key, value\)/);
   assert.match(source, /data-advanced/);
-  assert.match(source, /new URLSearchParams\(window\.location\.search\)/);
   assert.match(source, /window\.history\.replaceState/);
   assert.match(source, /data-filter-chips/);
 });

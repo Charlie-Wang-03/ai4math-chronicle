@@ -55,14 +55,16 @@ Canonical YAML Event
 
 Pagefind 在 Astro 渲染 `dist/` 之后运行。其 CLI glob 只索引 `**/events/**/*.html` 下的中英文 Event Detail 路由，因此 Timeline、Explore、Methodology、Data 等非事件页面不会出现在搜索结果中。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
 
-Event Detail 页面还会从 canonical record 写入 Pagefind filter metadata，包括年份、事件类型、重要性、验证状态、系统、AI 角色、接口、证据等级与形式保障。因此全文搜索和结构化筛选通过同一个 Pagefind 查询求交，而不是分别生成两套结果。
+Event Detail 页面会从 canonical record 写入 Pagefind filter metadata。当前索引 facets 包括年份、事件类型、重要性、验证状态、系统、AI 角色、接口、证据等级、形式保障、数学新颖性、机构、人物、问题、方法、来源类型、工件类型与标签。因此全文搜索和结构化筛选通过同一个 Pagefind 查询求交，而不是分别生成多套结果。
+
+所有面向用户的筛选控件均支持多选。同一个 facet 内部采用 OR 语义，不同 facets 之间采用 AND 语义。例如同时选择 `H1 + H2` 与 `Lean + Isabelle`，表示 `(H1 OR H2) AND (Lean OR Isabelle)`。客户端通过 Pagefind compound `any` filters 实现这一语义，并在本地 fallback 路径中保持一致。
 
 UI 明确区分两种发现方式：
 
-- **Timeline：** 时间顺序始终是产品的主要阅读表面。搜索、年份、事件类型、重要性和验证状态只收窄当前可见时间线，不改变历史顺序。
-- **Explore：** 面向定向检索与比较。全文搜索、基础筛选、高级 facets、排序、可移除的当前条件 chips 与 URL 查询状态共同作用于同一个事件结果集。
+- **Timeline：** 时间顺序始终是产品的主要阅读表面。搜索加上年份、事件类型、重要性和验证状态的多选筛选，只收窄当前可见时间线，不改变历史顺序。年份 chips 同样支持多年份同时激活，并与年份 facet 保持同步。
+- **Explore：** 面向定向检索与比较。全文搜索、基础多选 facets、扩展后的高级 facets、排序、逐值可移除的当前条件 chips 与 URL 查询状态共同作用于同一个事件结果集。
 
-Explore 使用普通 URL query parameters 持久化当前查询状态，因此筛选后的视图可以直接分享或重新访问，不需要 backend。
+Explore 使用可重复的 URL query parameters 持久化多选状态，因此筛选后的视图可以直接分享或重新访问，不需要 backend。整个交互仍然保持 static / client-side。
 
 交互遵循信息密集型出版物的结构：先给 overview，再允许 search / filter，最后按需进入 event-level evidence detail。Light / Dark / 跟随系统主题是轻量客户端增强，不改变内容或路由。
 

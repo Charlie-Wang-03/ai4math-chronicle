@@ -55,14 +55,16 @@ The validator reports shared source URLs as warnings because legitimate related 
 
 Pagefind runs after Astro renders `dist/`. Its CLI glob indexes only bilingual Event Detail routes under `**/events/**/*.html`, so Timeline, Explore, Methodology, Data, and other non-Event pages never appear as search results. The browser search API is configured with the Project Pages base URL, so result links remain valid under `/ai4math-chronicle/`. The npm Pagefind package uses the extended binary and supports Chinese/Japanese indexing.
 
-Event Detail pages also expose Pagefind filter metadata derived from the canonical record: year, event type, significance, verification status, system, AI role, interface, evidence level, and formal assurance. Text search and these structured facets therefore resolve through one Pagefind query rather than through independent result sets.
+Event Detail pages expose Pagefind filter metadata derived from the canonical record. The indexed facets now include year, event type, significance, verification status, system, AI role, interface, evidence level, formal assurance, mathematical novelty, organization, person, problem, method, source type, artifact type, and tags. Text search and structured facets therefore resolve through one Pagefind query rather than through independent result sets.
+
+All user-facing filter controls are multi-select. Within one facet, selected values use OR semantics; different facets combine with AND semantics. For example, `H1 + H2` and `Lean + Isabelle` means `(H1 OR H2) AND (Lean OR Isabelle)`. The client sends these groups to Pagefind with compound `any` filters and mirrors the same semantics in the local fallback path.
 
 The UI separates two discovery modes:
 
-- **Timeline:** chronological reading remains the primary product surface. Search, year, event type, significance, and verification only refine the visible timeline; they never reorder history.
-- **Explore:** targeted retrieval and comparison. Full-text search, basic filters, advanced facets, sorting, removable active-condition chips, and URL query state operate on one event result set.
+- **Timeline:** chronological reading remains the primary product surface. Search plus multi-select year, event type, significance, and verification only refine the visible timeline; they never reorder history. Year chips also support multiple active years and remain synchronized with the year facet.
+- **Explore:** targeted retrieval and comparison. Full-text search, basic multi-select facets, expanded advanced facets, sorting, removable per-value condition chips, and URL query state operate on one event result set.
 
-Explore URLs persist active query state with normal query parameters so a filtered view can be shared or revisited without a backend. The interaction remains entirely static and client-side.
+Explore persists multi-select state with repeatable URL query parameters, so a filtered view can be shared or revisited without a backend. The interaction remains entirely static and client-side.
 
 The interaction model follows an information-dense publication pattern: overview first, then search/filter, then event-level evidence details on demand. Reader theme preference is a lightweight client-side enhancement with Light, Dark, and System modes; it does not change content or routing.
 
