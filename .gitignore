@@ -3,6 +3,8 @@ dist/
 .astro/
 pagefind/
 source-scan-output/
+playwright-report/
+test-results/
 .DS_Store
 .env
 .env.*
