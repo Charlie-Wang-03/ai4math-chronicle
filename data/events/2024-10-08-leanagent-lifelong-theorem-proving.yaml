@@ -1,0 +1,173 @@
+schema_version: 1
+id: evt-2024-leanagent
+slug: leanagent-lifelong-theorem-proving
+
+title:
+  en: LeanAgent brings lifelong learning to theorem proving across evolving Lean repositories
+  zh-CN: LeanAgent 将终身学习引入持续演化 Lean 仓库的定理证明
+
+dates:
+  event: '2024-10-08'
+  first_public_claim: '2024-10-08'
+  paper_release: '2024-10-08'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- proof
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      LeanAgent reframed neural theorem proving as a continual-learning problem over evolving mathematical repositories rather than a fixed benchmark, combining a dynamic knowledge database, curriculum ordering and progressive retriever training to preserve and extend proof capability across domains.
+    zh-CN: >-
+      LeanAgent 将神经定理证明重新表述为面向持续演化数学仓库的终身学习问题，而非固定基准任务；它结合动态知识数据库、课程排序和渐进式检索器训练，使证明能力能够跨领域持续保留与扩展。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The LeanAgent paper reported formal proofs for 155 theorems whose Lean repositories previously contained missing proofs across 23 repositories, while improving lifelong-learning stability and backward transfer relative to a static theorem-proving baseline.
+  zh-CN: >-
+    LeanAgent 论文报告在 23 个 Lean 仓库中为 155 个此前缺少形式证明的定理生成了形式证明，并相较静态定理证明基线改善终身学习中的稳定性与向后迁移表现。
+
+summary:
+  en: >-
+    LeanAgent repeatedly ingests new Lean repositories, traces theorem and premise data through LeanDojo, updates a dynamic database, progressively retrains premise retrieval and searches for proofs of `sorry` theorems. Successful proofs can be added back to the knowledge base for later learning.
+  zh-CN: >-
+    LeanAgent 持续接收新的 Lean 仓库，通过 LeanDojo 抽取定理与前提数据，更新动态数据库，渐进训练前提检索器，并搜索带有 `sorry` 的定理证明；成功证明还可回流知识库供后续学习。
+
+why_it_matters:
+  en: >-
+    The work introduced a durable systems perspective for AI theorem proving in which mathematical knowledge, repositories and model competence evolve together, addressing a limitation of provers trained once on static snapshots.
+  zh-CN: >-
+    该工作为 AI 定理证明引入一种持续性的系统视角：数学知识、代码仓库与模型能力共同演化，从而回应“一次训练于静态快照”的证明器难以适应持续增长数学库的问题。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Learned premise retrieval and tactic generation drove automated proof search across Lean repositories, while Lean mechanically checked candidate tactic sequences and accepted successful formal proofs.
+    zh-CN: >-
+      学习式前提检索与 tactic 生成驱动跨 Lean 仓库的自动证明搜索，Lean 则机械检查候选 tactic 序列并接受成功的形式证明。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the lifelong-learning architecture, repository curriculum, dynamic database and progressive training procedure, selected evaluation repositories, and analyzed stability and transfer.
+    zh-CN: >-
+      研究者设计终身学习架构、仓库课程、动态数据库与渐进训练流程，选择评测仓库，并分析稳定性与迁移表现。
+
+systems:
+- leanagent
+- lean
+- leandojo
+organizations:
+- caltech
+people:
+- adarsh-kumarappan
+- mo-tiwari
+- peiyang-song
+- robert-joseph-george
+- chaowei-xiao
+- anima-anandkumar
+problems:
+- lean-theorem-proving
+methods:
+- lifelong-learning
+- continual-learning
+- premise-selection
+- curriculum-learning
+- proof-search
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2024-10-08'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record introduced LeanAgent and reported its continual-learning and formal-proof results across multiple Lean repositories.
+      zh-CN: >-
+        arXiv 研究记录发布 LeanAgent，并报告其跨多个 Lean 仓库的持续学习与形式证明结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public LeanAgent repository exposes implementation, tests and reproduction setup, and the work later appeared at ICLR 2025. Machine-checked describes Lean acceptance of generated formal proofs; it does not imply independent replay of the complete experiment or new informal mathematical results.
+      zh-CN: >-
+        公开的 LeanAgent 仓库提供实现、测试与复现实验配置，该工作后来发表于 ICLR 2025。machine-checked 表示生成的形式证明由 Lean 接受，并不表示完整实验已获独立重放，也不表示产生了新的非形式数学结果。
+
+sources:
+- id: arxiv-leanagent-2410.06209
+  tier: S1
+  type: paper
+  title: 'LeanAgent: Lifelong Learning for Formal Theorem Proving'
+  url: https://arxiv.org/abs/2410.06209
+  primary: true
+  published_date: '2024-10-08'
+  accessed_at: '2026-09-11'
+- id: github-leanagent
+  tier: S1
+  type: repository
+  title: LeanAgent implementation and reproduction repository
+  url: https://github.com/lean-dojo/LeanAgent
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: iclr-leanagent-2025
+  tier: S1
+  type: paper
+  title: LeanAgent — ICLR 2025 conference paper
+  url: https://proceedings.iclr.cc/paper_files/paper/2025/hash/b67c77f8db8b991d73d6f2e16f491840-Abstract-Conference.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: leanagent-repository
+  kind: code
+  title: LeanAgent lifelong theorem-proving implementation
+  url: https://github.com/lean-dojo/LeanAgent
+
+relationships:
+  predecessors:
+  - evt-2023-leandojo
+  successors: []
+  related:
+  - evt-2024-lean-star
+  - evt-2024-deepseek-prover-v1
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- lean
+- theorem-proving
+- lifelong-learning
+- continual-learning
+- proof-search
+- infrastructure
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

@@ -1,0 +1,169 @@
+schema_version: 1
+id: evt-2024-gsm-symbolic
+slug: gsm-symbolic-robustness-benchmark
+
+title:
+  en: GSM-Symbolic exposes robustness failures behind high math-reasoning benchmark scores
+  zh-CN: GSM-Symbolic 揭示高数学推理基准分数背后的鲁棒性缺陷
+
+dates:
+  event: '2024-10-07'
+  first_public_claim: '2024-10-07'
+  paper_release: '2024-10-07'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- benchmark
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      GSM-Symbolic shifted mathematical-reasoning evaluation from a single static score toward controlled robustness tests by regenerating semantically equivalent problems from symbolic templates and measuring sensitivity to changed values and irrelevant clauses.
+    zh-CN: >-
+      GSM-Symbolic 将数学推理评测从单一静态分数推进到可控鲁棒性测试：通过符号模板生成语义等价题目，并检验模型对数值变化与无关条件的敏感性。
+
+mathematical_novelty:
+  type: benchmark_result
+
+interfaces:
+- informal
+- numeric
+
+claim:
+  en: >-
+    Apple researchers introduced GSM-Symbolic and reported substantial performance variance across different instantiations of the same GSM8K-style problem templates, with further degradation as problem complexity increased and with irrelevant-but-plausible clauses causing drops of up to 65% in the evaluated models.
+  zh-CN: >-
+    Apple 研究者发布 GSM-Symbolic，并报告同一类 GSM8K 风格题目在不同模板实例化下会产生显著性能波动；随着题目复杂度增加，性能进一步下降，而加入看似相关但实际无关的条件时，所测模型的成绩最高可下降 65%。
+
+summary:
+  en: >-
+    The benchmark derives controllable families of grade-school mathematics problems from symbolic templates. This lets evaluators vary numerical values, clause counts and distractors while preserving the underlying reasoning structure, testing whether model success is stable rather than tied to a fixed benchmark instance.
+  zh-CN: >-
+    该基准从符号模板生成可控的小学数学题族，在保持底层推理结构的同时改变数值、条件数量与干扰项，从而检验模型成功是否具有稳定性，而非只适用于固定基准实例。
+
+why_it_matters:
+  en: >-
+    GSM-Symbolic made benchmark robustness itself a first-class question in AI4Math evaluation and provided a reusable way to distinguish headline accuracy from consistency under controlled perturbations.
+  zh-CN: >-
+    GSM-Symbolic 把“基准鲁棒性”本身提升为 AI4Math 评测中的核心问题，并提供可复用的方法，用于区分表面准确率与受控扰动下的稳定推理能力。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Language models were the systems under evaluation and generated answers to controlled benchmark variants; the benchmark templates, perturbation design and analysis were created by human researchers.
+    zh-CN: >-
+      语言模型作为被评测系统，对受控变体题目生成答案；基准模板、扰动设计与分析由研究者完成。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the symbolic templates and perturbation families, selected and ran the evaluated models, analyzed robustness failures, and released generated benchmark data.
+    zh-CN: >-
+      研究者设计符号模板与扰动题族，选择并运行被测模型，分析鲁棒性缺陷，并公开生成后的基准数据。
+
+systems:
+- gsm-symbolic
+- gsm8k
+organizations:
+- apple
+people:
+- iman-mirzadeh
+- keivan-alizadeh
+- hooman-shahrokhi
+- oncel-tuzel
+- samy-bengio
+- mehrdad-farajtabar
+problems:
+- grade-school-math-word-problems
+methods:
+- symbolic-templates
+- robustness-evaluation
+- controlled-perturbations
+- benchmarking
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2024-10-07'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The public research record introduced GSM-Symbolic and reported robustness results across controlled variants of GSM8K-style problems.
+      zh-CN: >-
+        公开研究记录发布 GSM-Symbolic，并报告在 GSM8K 风格受控变体上的鲁棒性结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        Apple's public repository exposes the benchmark templates and generated GSM-Symbolic, P1 and P2 data. E3 records inspectability and does not imply independent verification of every reported model result.
+      zh-CN: >-
+        Apple 公开仓库提供基准模板以及生成后的 GSM-Symbolic、P1、P2 数据。E3 表示产物可直接检查，并不表示论文报告的全部模型结果都已获得独立验证。
+
+sources:
+- id: arxiv-gsm-symbolic-2410.05229
+  tier: S1
+  type: paper
+  title: 'GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models'
+  url: https://arxiv.org/abs/2410.05229
+  primary: true
+  published_date: '2024-10-07'
+  accessed_at: '2026-09-11'
+- id: apple-gsm-symbolic-2024
+  tier: S2
+  type: official_announcement
+  title: GSM-Symbolic — Apple Machine Learning Research
+  url: https://machinelearning.apple.com/research/gsm-symbolic
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: github-apple-gsm-symbolic
+  tier: S1
+  type: repository
+  title: GSM-Symbolic templates and generated data
+  url: https://github.com/apple/ml-gsm-symbolic
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: gsm-symbolic-dataset
+  kind: benchmark
+  title: GSM-Symbolic templates and generated benchmark variants
+  url: https://github.com/apple/ml-gsm-symbolic
+
+relationships:
+  predecessors:
+  - evt-2021-gsm8k
+  successors: []
+  related:
+  - evt-2023-mathvista
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- gsm-symbolic
+- gsm8k
+- benchmark
+- robustness
+- math-reasoning
+- evaluation
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
