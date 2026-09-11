@@ -1,0 +1,163 @@
+schema_version: 1
+id: evt-2020-metagen
+slug: metagen-synthetic-theorem-generation
+
+title:
+  en: MetaGen learns to generate synthetic theorems and proofs for theorem-prover training
+  zh-CN: MetaGen 学习生成合成定理与证明，用于训练定理证明器
+
+dates:
+  event: '2020-02-17'
+  first_public_claim: '2020-02-17'
+  paper_release: '2020-02-17'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- proof
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      MetaGen made learned generation of synthetic formal theorems and proofs a practical data-augmentation strategy for neural theorem proving, addressing the scarcity of human-written formal proof data and improving a Metamath prover on real tasks.
+    zh-CN: >-
+      MetaGen 将学习式生成合成形式定理与证明发展为神经定理证明中的实用数据增强路线，用于缓解人工形式证明数据稀缺，并提升 Metamath 真实任务上的证明器表现。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    MetaGen trained a neural generator to synthesize Metamath theorems together with proofs and used those generated examples to improve a neural theorem prover, with the authors reporting state-of-the-art automated theorem-proving performance on their Metamath evaluation.
+  zh-CN: >-
+    MetaGen 训练神经生成器合成带有证明的 Metamath 定理，并用这些生成样本改进神经定理证明器；作者报告其在所用 Metamath 评测上取得当时领先的自动定理证明表现。
+
+summary:
+  en: >-
+    The system learns from existing formal mathematics, generates additional theorem-proof pairs, and feeds the synthetic corpus back into prover training rather than relying only on scarce human-authored proof traces.
+  zh-CN: >-
+    该系统从既有形式数学中学习，生成额外的定理—证明对，再把合成语料反馈到证明器训练中，而不是仅依赖稀缺的人工证明轨迹。
+
+why_it_matters:
+  en: >-
+    It established an early neural data-generation route for formal mathematics that complements later proof-artifact, synthetic-formalization and self-training pipelines.
+  zh-CN: >-
+    它较早确立了面向形式数学的神经数据生成路线，并与后来利用证明产物、合成形式化和自训练的数据管线形成历史上的连续技术脉络。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      A learned generator produces synthetic formal theorem-proof pairs, while a learned prover is trained on the augmented corpus to search for proofs of target theorems.
+    zh-CN: >-
+      学习式生成器产生合成形式定理—证明对，学习式证明器再利用扩充后的语料训练并搜索目标定理的证明。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the generator-prover training loop, formal data pipeline and evaluation, and the Metamath library supplied the human-authored formal corpus and proof checker.
+    zh-CN: >-
+      研究者设计生成器—证明器训练循环、形式数据管线与评测；Metamath 库提供人工编写的形式语料和证明检查器。
+
+systems:
+- metagen
+- metamath
+organizations:
+- princeton-university
+people:
+- mingzhe-wang
+- jia-deng
+problems: []
+methods:
+- synthetic-theorem-generation
+- synthetic-proof-generation
+- data-augmentation
+- neural-theorem-proving
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2020-02-17'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record established the synthetic theorem-and-proof generation method and its reported Metamath theorem-proving results.
+      zh-CN: >-
+        arXiv 研究记录公开了合成定理与证明生成方法及其报告的 Metamath 定理证明结果。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The Chronicle linked the peer-reviewed NeurIPS 2020 record and the authors' public MetaGen repository. E3 records inspectable research artifacts and does not imply independent verification of the reported performance claim.
+      zh-CN: >-
+        Chronicle 补入 NeurIPS 2020 同行评议记录以及作者公开的 MetaGen 仓库。E3 表示存在可检查研究产物，并不等同于对所报告性能主张的独立验证。
+
+sources:
+- id: arxiv-metagen-2002.07019
+  tier: S1
+  type: paper
+  title: Learning to Prove Theorems by Learning to Generate Theorems
+  url: https://arxiv.org/abs/2002.07019
+  primary: true
+  published_date: '2020-02-17'
+  accessed_at: '2026-09-11'
+- id: neurips-metagen-2020
+  tier: S1
+  type: paper
+  title: Learning to Prove Theorems by Learning to Generate Theorems — NeurIPS 2020
+  url: https://proceedings.neurips.cc/paper/2020/hash/d2a27e83d429f0dcae6b937cf440aeb1-Abstract.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: github-princeton-metagen
+  tier: S1
+  type: repository
+  title: MetaGen code and reproduction repository
+  url: https://github.com/princeton-vl/MetaGen
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: metagen-repository
+  kind: code
+  title: MetaGen code, models and reproduction resources
+  url: https://github.com/princeton-vl/MetaGen
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2020-gpt-f
+  - evt-2021-pact
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- metamath
+- theorem-proving
+- synthetic-data
+- formal-mathematics
+- data-generation
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
