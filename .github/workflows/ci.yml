@@ -26,3 +26,7 @@ jobs:
         run: npm test
       - name: Build static site and search index
         run: npm run build
+      - name: Install Chromium for browser smoke tests
+        run: npx --yes --package=@playwright/test@1.55.0 playwright install --with-deps chromium
+      - name: Browser responsive and accessibility smoke
+        run: npm run test:browser
