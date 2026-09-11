@@ -107,12 +107,17 @@ const controlIds = {
       return [...group.querySelectorAll('[data-filter-option]:checked')].map((input) => input.value);
     }
 
+    function optionLabel(group, value) {
+      const option = [...group.querySelectorAll('[data-filter-option]')].find((input) => input.value === value);
+      return option?.closest('label')?.querySelector('span')?.textContent?.trim() || value;
+    }
+
     function updateSummary(group) {
       const summary = group.querySelector('[data-filter-summary]');
       if (!summary) return;
       const values = selectedValues(group);
       if (!values.length) summary.textContent = group.dataset.allLabel || 'All';
-      else if (values.length <= 2) summary.textContent = values.join(', ');
+      else if (values.length <= 2) summary.textContent = values.map((value) => optionLabel(group, value)).join(', ');
       else summary.textContent = `${values.length} ${group.dataset.selectedLabel || 'selected'}`;
     }
 
