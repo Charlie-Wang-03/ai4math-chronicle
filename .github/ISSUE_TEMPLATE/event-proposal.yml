@@ -8,6 +8,8 @@ body:
         Thank you for proposing an event. / 感谢提供事件线索。
 
         Please prioritize primary or official evidence. Community discussion alone is not sufficient for publication. / 请优先提供一手研究记录或官方来源；仅有社区讨论不足以支持正式收录。
+
+        If you only found a potentially useful source and cannot yet identify a complete milestone, use the **Source lead / 信源线索** form instead: https://github.com/Charlie-Wang-03/ai4math-chronicle/issues/new?template=source-lead.yml / 如果你目前只有一个值得跟踪的信源，还无法形成完整事件提案，请改用 **Source lead / 信源线索** 表单。
   - type: input
     id: event-name
     attributes:
