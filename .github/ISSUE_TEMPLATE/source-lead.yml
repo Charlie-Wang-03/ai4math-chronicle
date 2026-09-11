@@ -1,0 +1,100 @@
+name: "Source lead / 信源线索"
+description: "Capture a potentially useful AI4Math source before it becomes a full Event proposal / 暂存一个可能有价值、但尚未形成完整事件提案的 AI4Math 信源"
+title: "[Source] "
+labels:
+  - "editorial-review"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when you found a potentially useful source but do **not** yet have a complete milestone proposal. / 当你发现了可能有价值的信源，但尚未形成完整里程碑提案时，请使用此表单。
+
+        A Source lead is an operational discovery record, not a published Chronicle Event and not evidence that a claim is true. Prefer linking public sources rather than copying large amounts of third-party text. / Source lead 只是用于发现与 triage 的操作记录，不是正式 Chronicle Event，也不表示其中 claim 已被确认。请优先提供公开链接，不要大段复制第三方内容。
+
+        If you already know the event, date, factual claim, AI/human contribution, and primary evidence, use the **Event proposal / 事件收录建议** form instead. / 如果你已经能明确事件、日期、事实性 claim、AI/人类贡献和一手证据，请直接使用 **事件收录建议** 表单。
+
+  - type: input
+    id: source-title
+    attributes:
+      label: "Source title / 信源标题"
+      placeholder: "Paper, repository, announcement, analysis, discussion, etc. / 论文、仓库、公告、分析、讨论等"
+    validations:
+      required: true
+
+  - type: input
+    id: source-url
+    attributes:
+      label: "Source URL / 信源链接"
+      description: "Use the most direct public URL available. / 请尽量提供最直接的公开链接。"
+      placeholder: "https://..."
+    validations:
+      required: true
+
+  - type: input
+    id: source-date
+    attributes:
+      label: "Publication or observation date / 发布时间或发现日期"
+      description: "Prefer YYYY-MM-DD when known. / 已知时优先使用 YYYY-MM-DD。"
+      placeholder: "YYYY-MM-DD or unknown / YYYY-MM-DD 或 unknown"
+
+  - type: dropdown
+    id: source-tier
+    attributes:
+      label: "Likely source tier / 可能的信源等级"
+      description: "A maintainer may revise this during triage. / 维护者会在 triage 时重新判断。"
+      options:
+        - "S1 — Primary research record or artifact / 一手研究记录或产物"
+        - "S2 — Official institution or researcher source / 官方机构或研究者来源"
+        - "S3 — Independent scholarly analysis or replay / 独立学术分析或重放"
+        - "S4 — Reputable secondary media / 高质量二手媒体"
+        - "S5 — Community discovery signal / 社区发现信号"
+        - "Unsure / 不确定"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source-role
+    attributes:
+      label: "What might this source be useful for? / 该信源可能用于什么？"
+      options:
+        - "Candidate discovery / 发现新的候选事件"
+        - "Evidence for an existing Event / 为已有 Event 补充证据"
+        - "Independent corroboration or artifact replay / 独立佐证或产物重放"
+        - "Correction, dispute, attribution, provenance or priority / 纠错、争议、归属、来源或优先权"
+        - "Historical context or relationship / 历史背景或事件关系"
+        - "Unsure / 不确定"
+    validations:
+      required: true
+
+  - type: input
+    id: existing-event
+    attributes:
+      label: "Existing Event or Issue, if any / 如有关联，请填写已有 Event 或 Issue"
+      description: "Event ID, event-page URL, canonical YAML path, or Issue/PR link. / 可填写 Event ID、事件页、canonical YAML 路径或 Issue/PR 链接。"
+      placeholder: "evt-... or https://github.com/..."
+
+  - type: textarea
+    id: relevance
+    attributes:
+      label: "Why is this worth triaging? / 为什么值得 triage？"
+      description: "Briefly describe the possible AI4Math significance, claim, correction, or evidence contribution. Do not overstate unverified claims. / 简要说明它可能涉及的 AI4Math 重要性、claim、纠错或证据价值；不要夸大未验证内容。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: uncertainty
+    attributes:
+      label: "Known uncertainty or missing evidence / 已知不确定性或缺失证据"
+      description: "What still needs checking before this can support an Event or update? / 在进入 Event 或证据更新前，还需要核查什么？"
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Checklist / 检查清单"
+      options:
+        - label: "I searched the existing Chronicle and Issues for the same URL or obvious duplicate. / 我已搜索现有 Chronicle 与 Issues，未发现相同 URL 或明显重复线索。"
+          required: true
+        - label: "This is a public source; I am not submitting private, confidential, or access-restricted material. / 这是公开信源；我没有提交私密、保密或受限访问材料。"
+          required: true
+        - label: "I understand that S5/community attention is only a discovery signal and is not sufficient by itself to support a major research claim. / 我理解 S5/社区热度只能作为发现信号，不能单独支持重大科研事实。"
+          required: true
