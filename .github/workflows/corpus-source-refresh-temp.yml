@@ -1,0 +1,44 @@
+name: Temporary Corpus Source Refresh
+
+on:
+  push:
+    branches:
+      - editorial/corpus-source-refresh-2026-09-11
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    if: github.event.head_commit.message != 'editorial: apply corpus source evidence refresh'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: editorial/corpus-source-refresh-2026-09-11
+      - name: Setup Node
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7
+        with:
+          node-version-file: .nvmrc
+          package-manager-cache: false
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Apply full corpus source refresh
+        run: node scripts/refresh-corpus-source-evidence.mjs
+      - name: Validate event corpus
+        run: npm test
+      - name: Build static site and search index
+        run: npm run build
+      - name: Verify exactly 52 canonical Events were reviewed
+        run: |
+          test "$(grep -R -l "last_reviewed: ['\"]2026-09-11['\"]" data/events/*.yaml | wc -l)" -eq 52
+          test "$(find data/events -maxdepth 1 -name '*.yaml' | wc -l)" -eq 52
+      - name: Commit refreshed canonical Events
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/events/*.yaml
+          git diff --cached --stat
+          git commit -m "editorial: apply corpus source evidence refresh"
+          git push origin HEAD:editorial/corpus-source-refresh-2026-09-11
