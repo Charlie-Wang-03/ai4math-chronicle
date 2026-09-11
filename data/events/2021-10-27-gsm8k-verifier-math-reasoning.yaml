@@ -1,0 +1,147 @@
+schema_version: 1
+id: evt-2021-gsm8k
+slug: gsm8k-verifier-math-reasoning
+
+title:
+  en: GSM8K and learned verifiers establish a durable benchmark for language-model math reasoning
+  zh-CN: GSM8K 与学习式验证器建立语言模型数学推理的长期基准
+
+dates:
+  event: '2021-10-27'
+  first_public_claim: '2021-10-27'
+  paper_release: '2021-10-27'
+  artifact_release: '2021-10-29'
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- benchmark
+- dataset
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      GSM8K became a durable benchmark for multi-step language-model mathematical reasoning, while the accompanying learned-verifier method established an influential generate-and-rank pattern for improving solution accuracy. Both the dataset and verification idea remained central reference points as reasoning models evolved.
+    zh-CN: >-
+      GSM8K 成为衡量语言模型多步数学推理能力的长期基准；同期提出的学习式验证器则确立了具有持续影响的“生成多个候选解并由验证器排序”路线。随着推理模型发展，数据集与验证思想都长期保持为重要参照。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- numeric
+
+claim:
+  en: >-
+    OpenAI introduced GSM8K, a dataset of roughly 8,500 grade-school mathematics word problems, and showed that a learned verifier selecting among multiple generated solutions substantially improved large-model accuracy over finetuning alone.
+  zh-CN: >-
+    OpenAI 发布约 8,500 道小学数学文字题组成的 GSM8K 数据集，并展示学习式验证器从多个模型生成解中选择候选，可以相较单纯微调显著提升大模型准确率。
+
+summary:
+  en: >-
+    The work paired a human-written math reasoning dataset with a generator-verifier pipeline. A language model generated many candidate solutions, while a separately trained verifier scored those solutions and selected the most promising answer.
+  zh-CN: >-
+    该工作把人工编写的数学推理数据集与生成器—验证器流程结合：语言模型生成多个候选解，另一个单独训练的验证器对候选进行评分并选择最有希望的答案。
+
+why_it_matters:
+  en: >-
+    GSM8K became one of the most reused small-scale mathematical reasoning benchmarks, and its verifier-based inference pattern anticipated later outcome- and process-verification methods used throughout LLM reasoning research.
+  zh-CN: >-
+    GSM8K 此后成为使用最广泛的小规模数学推理基准之一，而其基于验证器的推理流程也预示了后来 LLM 推理研究中广泛采用的结果验证与过程验证方法。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Language models generated candidate mathematical solutions and a learned verifier ranked their correctness; the benchmark questions and reference solutions were written and curated by humans.
+    zh-CN: >-
+      语言模型生成候选数学解，学习式验证器对其正确性进行排序；基准题目与参考解答由人工编写和整理。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the benchmark and verifier methodology, commissioned and curated the human-written problems and solutions, trained the models, and evaluated scaling behavior.
+    zh-CN: >-
+      研究者设计基准与验证器方法，组织并整理人工编写的题目和解答，训练模型并评测其扩展规律。
+
+systems: [gsm8k, learned-verifier]
+organizations: [openai]
+people: []
+problems: [grade-school-math-word-problems]
+methods: [language-modeling, verifier-ranking, generate-and-rank, benchmarking]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2021-10-27'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record introduced GSM8K and the verifier-based solution-selection method.
+      zh-CN: >-
+        arXiv 研究记录发布了 GSM8K，并提出基于验证器的候选解选择方法。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The canonical record links the archived official OpenAI dataset repository, making the benchmark data and example evaluation code directly inspectable. E3 does not imply independent verification of every reported model result.
+      zh-CN: >-
+        canonical record 直接链接 OpenAI 已归档的官方数据集仓库，使基准数据与示例评测代码可直接检查。E3 并不表示论文报告的全部模型结果都已获得独立验证。
+
+sources:
+- id: arxiv-gsm8k-2110.14168
+  tier: S1
+  type: paper
+  title: Training Verifiers to Solve Math Word Problems
+  url: https://arxiv.org/abs/2110.14168
+  primary: true
+  published_date: '2021-10-27'
+  accessed_at: '2026-09-11'
+- id: openai-solving-math-word-problems-2021
+  tier: S2
+  type: official_announcement
+  title: Solving math word problems
+  url: https://openai.com/index/solving-math-word-problems/
+  primary: true
+  published_date: '2021-10-29'
+  accessed_at: '2026-09-11'
+- id: github-openai-grade-school-math
+  tier: S1
+  type: repository
+  title: OpenAI Grade School Math dataset and example code
+  url: https://github.com/openai/grade-school-math
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: gsm8k-dataset-repository
+  kind: dataset
+  title: GSM8K dataset and example model-solution code
+  url: https://github.com/openai/grade-school-math
+
+relationships:
+  predecessors: [evt-2021-math-benchmark]
+  successors: [evt-2022-minerva]
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [gsm8k, benchmark, dataset, math-reasoning, verifier, language-model]
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers: [Charlie-Wang-03]
+
+corrections: []

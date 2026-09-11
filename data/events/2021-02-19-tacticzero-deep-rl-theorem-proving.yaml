@@ -1,0 +1,126 @@
+schema_version: 1
+id: evt-2021-tacticzero
+slug: tacticzero-deep-rl-theorem-proving
+
+title:
+  en: TacticZero learns interactive theorem proving from scratch with deep reinforcement learning
+  zh-CN: TacticZero 以深度强化学习从零学习交互式定理证明
+
+dates:
+  event: '2021-02-19'
+  first_public_claim: '2021-02-19'
+  paper_release: '2021-02-19'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      TacticZero established a distinct reinforcement-learning route for proof-assistant-native theorem proving: an end-to-end agent learned proof search, tactic selection and tactic arguments without relying on an imitation dataset of expert proofs, and the work became a representative early neural ITP system.
+    zh-CN: >-
+      TacticZero 建立了一条具有代表性的强化学习定理证明路线：端到端智能体直接在证明助手环境中学习证明搜索、tactic 选择及参数，而不依赖专家证明的模仿学习数据，成为早期神经交互式定理证明的重要系统之一。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    TacticZero formulated HOL4 interactive theorem proving as a Markov decision process and trained a deep reinforcement-learning agent to learn search, tactic and argument prediction from scratch; the authors reported that it outperformed the existing HOL4 hammers on held-out problems.
+  zh-CN: >-
+    TacticZero 将 HOL4 交互式定理证明建模为马尔可夫决策过程，并以深度强化学习从零训练搜索、tactic 与参数预测智能体；作者报告该系统在留出问题上优于 HOL4 中已有的 hammer 自动证明器。
+
+summary:
+  en: >-
+    The system represents proof search as an end-to-end reinforcement-learning problem and introduces backtracking that lets the agent abandon predicted dead ends and resume from promising alternatives. The resulting proofs are constructed inside HOL4 and therefore remain subject to the proof assistant's kernel checking.
+  zh-CN: >-
+    该系统把证明搜索整体表述为端到端强化学习问题，并引入回溯机制，使智能体能够放弃预测为死路的推导并从更有希望的分支继续搜索。最终证明在 HOL4 内构造，因此仍接受证明助手内核检查。
+
+why_it_matters:
+  en: >-
+    It demonstrated that reinforcement learning could jointly learn proof-search control and proof actions inside a mature interactive theorem prover, providing an early precursor to later self-improving and search-driven neural theorem-proving systems.
+  zh-CN: >-
+    它展示了强化学习能够在成熟交互式证明器内部同时学习证明搜索控制与证明动作，为后续自我改进和搜索驱动的神经定理证明系统提供了早期范式。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      The learned agent selected proof-search branches, tactics and tactic arguments; HOL4 mechanically checked proof steps accepted by the environment.
+    zh-CN: >-
+      学习式智能体负责选择证明搜索分支、tactic 及其参数；HOL4 对环境接受的证明步骤进行机械检查。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the reinforcement-learning formulation, search and backtracking mechanism, HOL4 integration, training protocol and evaluation.
+    zh-CN: >-
+      研究者设计强化学习表述、搜索与回溯机制、HOL4 集成、训练流程与评测方案。
+
+systems: [tacticzero, hol4]
+organizations: [australian-national-university, csiro-data61]
+people: [minchao-wu, michael-norrish, christian-walder, amir-dezfouli]
+problems: []
+methods: [deep-reinforcement-learning, proof-search, tactic-prediction, backtracking]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2021-02-19'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The public research record documents the HOL4 system and its reported held-out theorem-proving results. Machine checking refers to proofs constructed inside HOL4 and does not imply independent reproduction of the reported benchmark performance.
+      zh-CN: >-
+        公开研究记录描述了 HOL4 系统及其留出定理证明结果。machine_checked 仅指在 HOL4 内构造的证明接受内核检查，并不表示论文所报告的基准性能已经得到独立复现。
+
+sources:
+- id: arxiv-tacticzero-2102.09756
+  tier: S1
+  type: paper
+  title: "TacticZero: Learning to Prove Theorems from Scratch with Deep Reinforcement Learning"
+  url: https://arxiv.org/abs/2102.09756
+  primary: true
+  published_date: '2021-02-19'
+  accessed_at: '2026-09-11'
+- id: neurips-tacticzero-2021
+  tier: S1
+  type: paper
+  title: "TacticZero: Learning to Prove Theorems from Scratch with Deep Reinforcement Learning"
+  url: https://proceedings.neurips.cc/paper/2021/hash/4dea382d82666332fb564f2e711cbc71-Abstract.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts: []
+
+relationships:
+  predecessors: [evt-2020-gpt-f]
+  successors: [evt-2022-htps]
+  related: [evt-2021-pact, evt-2021-minif2f]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [hol4, theorem-proving, reinforcement-learning, proof-search, tactics]
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers: [Charlie-Wang-03]
+
+corrections: []
