@@ -1,0 +1,141 @@
+schema_version: 1
+id: evt-2022-naturalprover
+slug: naturalprover-grounded-proof-generation
+
+title:
+  en: NaturalProver grounds language-model proof generation in mathematical references
+  zh-CN: NaturalProver 以数学参考资料约束语言模型证明生成
+
+dates:
+  event: "2022-05-25"
+  first_public_claim: "2022-05-25"
+  paper_release: "2022-05-25"
+  artifact_release: "2022-06-03"
+  independently_verified: null
+  added_to_chronicle: "2026-09-11"
+  last_updated: "2026-09-11"
+
+event_types: [proof, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      NaturalProver made next-step and full-proof generation in ordinary mathematical language an explicit language-model task and paired generation with retrieved or human-provided mathematical references, anticipating later retrieval-grounded mathematical reasoning systems.
+    zh-CN: >-
+      NaturalProver 将普通数学语言中的下一步证明与完整证明生成明确建模为语言模型任务，并使用检索或人工提供的数学参考资料约束生成，成为后来检索增强数学推理系统的重要前序。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces: [informal]
+
+claim:
+  en: >-
+    The paper reported that NaturalProver improved next-step suggestions and full-proof generation over fine-tuned GPT-3 on NaturalProofs, generated some short 2–6 step proofs, and produced next-step suggestions judged correct and useful more than 40% of the time in human evaluation.
+  zh-CN: >-
+    论文报告称，NaturalProver 在 NaturalProofs 上的下一步建议与完整证明生成质量优于微调 GPT-3，能够生成部分 2–6 步的短证明，并在人工评测中使超过 40% 的下一步建议被判断为正确且有用。
+
+summary:
+  en: >-
+    NaturalProver conditions language-model proof generation on mathematical background references such as definitions and theorems, either retrieved automatically or supplied by humans. The project studied both next-step suggestion and full-proof generation and released the NaturalProofs-Gen data, training and generation code, evaluation tooling and model assets.
+  zh-CN: >-
+    NaturalProver 在证明生成时让语言模型条件化于定义、定理等数学背景资料，这些资料可以自动检索或由人类提供。项目同时研究下一步证明建议与完整证明生成，并公开 NaturalProofs-Gen 数据、训练与生成代码、评测工具和模型资源。
+
+why_it_matters:
+  en: >-
+    The work helped establish natural-language theorem proving as a generative-model problem distinct from answer-only quantitative reasoning and formal proof search. Its grounding mechanism also made mathematical references explicit rather than leaving proof generation entirely inside an ungrounded language model.
+  zh-CN: >-
+    该工作推动自然语言定理证明成为区别于仅输出答案的定量推理和形式证明搜索的生成模型任务；其 grounding 机制还显式引入数学参考资料，而不是把证明生成完全留在无外部依据的语言模型内部。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The language model generated proof steps and complete natural-language proofs conditioned on mathematical references, with optional constrained decoding to enforce reference use.
+    zh-CN: >-
+      语言模型在数学参考资料条件下生成证明步骤和完整自然语言证明，并可通过约束解码强化对参考资料的使用。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the grounding and decoding methods, assembled the generation datasets and evaluation setup, and university-level mathematics students evaluated proof quality and next-step usefulness.
+    zh-CN: >-
+      研究者设计 grounding 与解码方法、构建生成数据与评测流程，并由具有大学数学背景的学生评估证明质量和下一步建议的有效性。
+
+systems: [naturalprover, naturalproofs]
+organizations: [university-of-washington, allen-institute-for-ai]
+people: [sean-welleck, jiacheng-liu, ximing-lu, hannaneh-hajishirzi, yejin-choi]
+problems: [natural-language-theorem-proving, proof-step-generation]
+methods: [language-model-generation, retrieval-augmented-generation, constrained-decoding, reference-grounding]
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: "2022-05-25"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The paper publicly reported the grounded proof-generation tasks, model and evaluation results. This research record alone does not imply independent verification of generated proofs.
+        zh-CN: >-
+          论文公开报告了 grounded proof generation 任务、模型与评测结果；该研究记录本身不表示生成证明已获得独立验证。
+    - date: "2022-06-03"
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          The authors released a public repository containing NaturalProofs-Gen data, training and generation code, evaluation tooling and model assets. E3 records artifact inspectability, not mathematical certification of the generated proofs.
+        zh-CN: >-
+          作者公开仓库，包含 NaturalProofs-Gen 数据、训练与生成代码、评测工具和模型资源。E3 表示产物可检查，并不等同于对生成证明的数学正确性认证。
+
+sources:
+  - id: arxiv-naturalprover-2205.12910
+    tier: S1
+    type: paper
+    title: "NaturalProver: Grounded Mathematical Proof Generation with Language Models"
+    url: https://arxiv.org/abs/2205.12910
+    primary: true
+    published_date: "2022-05-25"
+    accessed_at: "2026-09-11"
+  - id: neurips-naturalprover-2022
+    tier: S1
+    type: paper
+    title: "NaturalProver: Grounded Mathematical Proof Generation with Language Models — NeurIPS 2022"
+    url: https://proceedings.neurips.cc/paper_files/paper/2022/hash/1fc548a8243ad06616eee731e0572927-Abstract-Conference.html
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-11"
+  - id: github-naturalprover
+    tier: S1
+    type: repository
+    title: NaturalProver code, data, evaluation and model repository
+    url: https://github.com/wellecks/naturalprover
+    primary: true
+    published_date: "2022-06-03"
+    accessed_at: "2026-09-11"
+
+artifacts:
+  - id: naturalprover-repository
+    kind: code
+    title: NaturalProver code, NaturalProofs-Gen data and released model assets
+    url: https://github.com/wellecks/naturalprover
+
+relationships:
+  predecessors: []
+  successors: []
+  related: [evt-2022-minerva]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [natural-language-proof, language-model, retrieval, grounded-generation, theorem-proving]
+
+editorial:
+  created_at: "2026-09-11"
+  last_reviewed: "2026-09-11"
+  reviewers: [Charlie-Wang-03]
+
+corrections: []

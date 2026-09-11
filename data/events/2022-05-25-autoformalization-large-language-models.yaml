@@ -1,0 +1,129 @@
+schema_version: 1
+id: evt-2022-autoformalization-llm
+slug: autoformalization-large-language-models
+
+title:
+  en: Large language models show practical progress on mathematical autoformalization
+  zh-CN: 大语言模型在数学自动形式化上展示实用进展
+
+dates:
+  event: "2022-05-25"
+  first_public_claim: "2022-05-25"
+  paper_release: "2022-05-25"
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: "2026-09-11"
+  last_updated: "2026-09-11"
+
+event_types: [formalization, system]
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The work established an early large-language-model route from informal competition mathematics to proof-assistant specifications and showed that generated formal statements could improve downstream theorem proving, helping make autoformalization a concrete AI4Math research direction.
+    zh-CN: >-
+      该工作较早建立了从非形式化竞赛数学到证明助手形式规范的大语言模型路线，并展示生成的形式陈述可以提升后续定理证明，使自动形式化成为更具体的 AI4Math 研究方向。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces: [informal, formal, hybrid]
+
+claim:
+  en: >-
+    The paper reported that large language models correctly translated 25.3% of sampled mathematical competition problems into Isabelle/HOL formal specifications, and that training a neural theorem prover on autoformalized theorems increased its miniF2F proof rate from 29.6% to 35.2%.
+  zh-CN: >-
+    论文报告称，大语言模型能够将抽样数学竞赛题中的 25.3% 正确翻译为 Isabelle/HOL 形式规范；使用自动形式化生成的定理训练神经定理证明器后，其 miniF2F 证明率从 29.6% 提升到 35.2%。
+
+summary:
+  en: >-
+    Researchers used few-shot prompting to ask large language models to translate informal mathematical statements into Isabelle/HOL. The generated formalizations were then used as additional training data for a neural theorem prover, linking informal-language translation with formal proof search in one pipeline.
+  zh-CN: >-
+    研究者通过 few-shot prompting 让大语言模型把非形式化数学陈述翻译为 Isabelle/HOL，并将生成的形式化结果进一步作为神经定理证明器的训练数据，把自然语言翻译与形式证明搜索连接到同一流程中。
+
+why_it_matters:
+  en: >-
+    The result provided an early empirical bridge between modern language models and proof assistants: autoformalization was not only evaluated as translation accuracy, but also shown to create training data that improved a downstream prover. This became an important precursor to later autoformalization benchmarks and synthetic formal-mathematics pipelines.
+  zh-CN: >-
+    这一结果较早建立了现代语言模型与证明助手之间的经验性桥梁：自动形式化不仅以翻译准确率评估，而且被证明能够生成可提升下游证明器的数据，成为后来自动形式化基准与合成形式数学管线的重要前序。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The language model generated candidate Isabelle/HOL formal specifications from informal problem statements; those generated statements were also used to augment theorem-prover training.
+    zh-CN: >-
+      语言模型从非形式化题目陈述生成候选 Isabelle/HOL 形式规范，并将这些生成的形式陈述用于扩充定理证明器训练数据。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the prompting and evaluation protocol, assessed formalization correctness, integrated generated statements into theorem-prover training and measured the resulting miniF2F performance.
+    zh-CN: >-
+      研究者设计提示与评测协议、判断形式化是否正确、将生成陈述接入定理证明器训练，并测量其在 miniF2F 上的表现。
+
+systems: [isabelle-hol]
+organizations: [google-research, university-of-cambridge]
+people: [yuhuai-wu, albert-qiaochu-jiang, wenda-li, markus-rabe, charles-staats, mateja-jamnik, christian-szegedy]
+problems: [autoformalization, minif2f]
+methods: [large-language-model, few-shot-prompting, autoformalization, synthetic-training-data]
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+    - date: "2022-05-25"
+      status: paper_released
+      evidence_level: E2
+      note:
+        en: >-
+          The research paper publicly reported the Isabelle/HOL autoformalization and miniF2F results. E2 records a public research record and does not imply independent reproduction or verification.
+        zh-CN: >-
+          研究论文公开报告了 Isabelle/HOL 自动形式化与 miniF2F 结果。E2 表示已有公开研究记录，并不意味着已经获得独立复现或验证。
+
+sources:
+  - id: arxiv-autoformalization-2205.12615
+    tier: S1
+    type: paper
+    title: Autoformalization with Large Language Models
+    url: https://arxiv.org/abs/2205.12615
+    primary: true
+    published_date: "2022-05-25"
+    accessed_at: "2026-09-11"
+  - id: neurips-autoformalization-2022
+    tier: S1
+    type: paper
+    title: Autoformalization with Large Language Models — NeurIPS 2022
+    url: https://proceedings.neurips.cc/paper_files/paper/2022/hash/d0c6bc641a56bebee9d985b937307367-Abstract-Conference.html
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-11"
+  - id: google-research-autoformalization-2022
+    tier: S2
+    type: official_announcement
+    title: Autoformalization with Large Language Models
+    url: https://research.google/pubs/autoformalization-with-large-language-models/
+    primary: true
+    published_date: null
+    accessed_at: "2026-09-11"
+
+artifacts: []
+
+relationships:
+  predecessors: [evt-2021-minif2f]
+  successors: [evt-2023-proofnet]
+  related: [evt-2022-draft-sketch-prove]
+
+timeline:
+  featured: true
+  significance: primary
+
+tags: [autoformalization, large-language-model, isabelle, miniF2F, formal-mathematics]
+
+editorial:
+  created_at: "2026-09-11"
+  last_reviewed: "2026-09-11"
+  reviewers: [Charlie-Wang-03]
+
+corrections: []
