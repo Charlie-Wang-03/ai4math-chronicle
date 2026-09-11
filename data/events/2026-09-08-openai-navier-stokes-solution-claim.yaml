@@ -97,8 +97,10 @@ verification:
     status: disputed
     evidence_level: E3
     note:
-      en: Axios independently documented Buckmaster and Alpöge's provenance and credit concerns and reported OpenAI's explicit boundary: the company says it did not access their specific user data for the proof, while acknowledging that it cannot fully rule out de-identified data from their product usage having indirectly improved its models. This sharpens the provenance record without establishing that such indirect use occurred.
-      zh-CN: Axios 独立记录了 Buckmaster 与 Alpöge 对来源和署名的担忧，并报道了 OpenAI 给出的明确边界：公司称证明过程中没有访问两人的特定用户数据，但承认无法完全排除来自其产品使用的去标识化数据曾间接改善模型。这一证据进一步明确了 provenance 记录，但并不能证明这种间接使用确实发生。
+      en: >-
+        Axios independently documented Buckmaster and Alpöge's provenance and credit concerns and reported OpenAI's explicit boundary: the company says it did not access their specific user data for the proof, while acknowledging that it cannot fully rule out de-identified data from their product usage having indirectly improved its models. This sharpens the provenance record without establishing that such indirect use occurred.
+      zh-CN: >-
+        Axios 独立记录了 Buckmaster 与 Alpöge 对来源和署名的担忧，并报道了 OpenAI 给出的明确边界：公司称证明过程中没有访问两人的特定用户数据，但承认无法完全排除来自其产品使用的去标识化数据曾间接改善模型。这一证据进一步明确了 provenance 记录，但并不能证明这种间接使用确实发生。
 sources:
 - id: openai-navier-stokes-2026
   tier: S2
