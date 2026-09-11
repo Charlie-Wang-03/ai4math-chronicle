@@ -1,0 +1,150 @@
+schema_version: 1
+id: evt-2020-skip-tree
+slug: skip-tree-self-supervised-math
+
+title:
+  en: Skip-tree training brings structure-aware self-supervision to formal mathematical reasoning
+  zh-CN: Skip-tree 将结构感知的自监督训练引入形式数学推理
+
+dates:
+  event: '2020-06-08'
+  first_public_claim: '2020-06-08'
+  paper_release: '2020-06-08'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Skip-tree training was an early structure-aware self-supervised objective for formal mathematics, showing that language-model pretraining over mathematical expression trees could support several downstream reasoning tasks and useful conjecture generation.
+    zh-CN: >-
+      Skip-tree training 是较早面向形式数学结构设计的自监督目标之一，展示了对数学表达式树进行语言模型预训练可以支持多类下游推理任务，并生成具有可证明性和可用性的 conjecture。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The authors introduced the skip-tree pretraining task for formal mathematical expressions and reported that skip-tree-trained models outperformed standard skip-sequence training on tasks including type inference, missing-assumption prediction and equality completion, while also producing conjectures evaluated for provability and usefulness.
+  zh-CN: >-
+    作者提出面向形式数学表达式的 skip-tree 预训练任务，并报告该方法在类型推断、缺失假设预测和等式补全等任务上优于标准 skip-sequence 训练，同时还能生成并按可证明性与可用性评估 conjecture。
+
+summary:
+  en: >-
+    Rather than masking only a flat token span, skip-tree training removes a subtree from a structured mathematical expression and trains a model to reconstruct it, encouraging representations that reflect the compositional structure of formal mathematics.
+  zh-CN: >-
+    Skip-tree 不只遮蔽扁平 token 序列，而是从结构化数学表达式中移除一个子树并要求模型重建，从而促使表示学习利用形式数学的组合结构。
+
+why_it_matters:
+  en: >-
+    The work helped establish self-supervised pretraining on formal mathematical corpora as a distinct route to reusable reasoning representations before later large-scale formal-math language models and proof-oriented pretraining pipelines.
+  zh-CN: >-
+    该工作在后续大规模形式数学语言模型与证明导向预训练管线出现之前，较早展示了在形式数学语料上进行自监督预训练、学习可复用推理表示的技术路线。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Language models learn representations from self-supervised reconstruction of formal expressions and are evaluated on mathematical reasoning and conjecture-generation tasks.
+    zh-CN: >-
+      语言模型通过对形式表达式进行自监督重建来学习表示，并在数学推理与 conjecture generation 任务上接受评测。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the skip-tree objective, downstream tasks, formal-mathematics corpus processing and evaluation methodology.
+    zh-CN: >-
+      研究者设计 skip-tree 目标、下游任务、形式数学语料处理和评测方法。
+
+systems:
+- skip-tree
+organizations:
+- google-research
+people:
+- markus-n-rabe
+- dennis-lee
+- kshitij-bansal
+- christian-szegedy
+problems: []
+methods:
+- self-supervised-learning
+- skip-tree-training
+- formal-math-pretraining
+- conjecture-generation
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2020-06-08'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The Chronicle records the method and reported results from the arXiv research record, later accepted at ICLR 2021; no directly inspectable public implementation artifact is recorded here.
+      zh-CN: >-
+        Chronicle 根据 arXiv 研究记录及其后 ICLR 2021 接收记录记载该方法与报告结果；本记录目前未收录可直接检查的公开实现产物。
+
+sources:
+- id: arxiv-skip-tree-2006.04757
+  tier: S1
+  type: paper
+  title: Mathematical Reasoning via Self-supervised Skip-tree Training
+  url: https://arxiv.org/abs/2006.04757
+  primary: true
+  published_date: '2020-06-08'
+  accessed_at: '2026-09-11'
+- id: openreview-skip-tree-iclr2021
+  tier: S1
+  type: paper
+  title: Mathematical Reasoning via Self-supervised Skip-tree Training — ICLR 2021
+  url: https://openreview.net/forum?id=YmqAnY0CMEy
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: google-iclr-2021-skip-tree
+  tier: S2
+  type: official_announcement
+  title: Google at ICLR 2021
+  url: https://research.google/blog/google-at-iclr-2021/
+  primary: false
+  published_date: '2021-05-03'
+  accessed_at: '2026-09-11'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2021-pact
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- formal-mathematics
+- self-supervision
+- mathematical-reasoning
+- pretraining
+- conjecture-generation
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

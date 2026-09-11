@@ -1,0 +1,163 @@
+schema_version: 1
+id: evt-2020-tactician
+slug: tactician-coq-tactic-learning
+
+title:
+  en: Tactician integrates adaptive tactic learning and proof synthesis into Coq
+  zh-CN: Tactician 将自适应 tactic 学习与证明合成直接集成进 Coq
+
+dates:
+  event: '2020-07-31'
+  first_public_claim: '2020-07-31'
+  paper_release: '2020-07-31'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-11'
+  last_updated: '2026-09-11'
+
+event_types:
+- proof
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Tactician turned learned tactic prediction into an integrated, interactive Coq workflow that could learn from existing developments, suggest the next tactic or synthesize a proof, and continue adapting as users worked across package dependencies.
+    zh-CN: >-
+      Tactician 将学习式 tactic 预测发展为直接嵌入 Coq 的交互工作流：它可以从既有开发中学习、建议下一步 tactic 或自动合成证明，并在跨 package dependency 的实际使用中持续适应。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Tactician provided a Coq plugin that learns from previously written tactic scripts and can either recommend the next tactic interactively or perform automated tactic-level proof synthesis, with tooling designed to learn across installed Coq developments.
+  zh-CN: >-
+    Tactician 提供 Coq 插件，从已有 tactic script 中学习，既能交互式推荐下一步 tactic，也能执行 tactic 层面的自动证明合成，并支持从已安装的 Coq 开发中持续学习。
+
+summary:
+  en: >-
+    The project combines online tactic learning, proof search and package-aware instrumentation so machine-learning assistance lives inside the proof assistant rather than as a detached benchmark-only experiment.
+  zh-CN: >-
+    该项目把在线 tactic 学习、证明搜索与 package-aware instrumentation 结合起来，使机器学习辅助直接存在于证明助手工作流中，而不是停留在独立的 benchmark 实验里。
+
+why_it_matters:
+  en: >-
+    It is an early example of a maintained proof-assistant-native learning platform, anticipating later AI theorem-proving infrastructure that exposes interactive proof states to continuously improving learned agents.
+  zh-CN: >-
+    它是较早的、持续维护的 proof-assistant-native 学习平台之一，预示了后来把交互式证明状态暴露给持续改进学习 Agent 的 AI 定理证明基础设施路线。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Learned models rank tactic choices and drive tactic-level proof search while remaining embedded in a human-controlled Coq proof-development loop.
+    zh-CN: >-
+      学习模型对 tactic 选择进行排序并驱动 tactic 层面的证明搜索，同时仍嵌入由人控制的 Coq 证明开发循环。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the learning and search machinery, implemented the Coq plugin and dependency-aware instrumentation, and human Coq developments provide the tactic traces from which the system learns.
+    zh-CN: >-
+      研究者设计学习与搜索机制、实现 Coq 插件及 dependency-aware instrumentation；人工编写的 Coq 开发则提供系统学习所需的 tactic 轨迹。
+
+systems:
+- tactician
+- coq
+organizations: []
+people:
+- lasse-blaauwbroek
+- josef-urban
+- herman-geuvers
+problems: []
+methods:
+- tactic-learning
+- proof-search
+- online-learning
+- proof-synthesis
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2020-07-31'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv extended paper and CICM publication record establish the Tactician system and its integration model for Coq.
+      zh-CN: >-
+        arXiv 扩展论文与 CICM 正式发表记录确立了 Tactician 系统及其 Coq 集成方式。
+  - date: '2026-09-11'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The Chronicle linked the maintained public Tactician repository as a directly inspectable implementation artifact. E3 denotes artifact availability and does not imply independent verification of research-performance claims.
+      zh-CN: >-
+        Chronicle 补入持续维护的 Tactician 公开仓库作为可直接检查的实现产物。E3 表示 artifact 可用，并不等同于对研究性能主张的独立验证。
+
+sources:
+- id: arxiv-tactician-2008.00120
+  tier: S1
+  type: paper
+  title: 'The Tactician (extended version): A Seamless, Interactive Tactic Learner and Prover for Coq'
+  url: https://arxiv.org/abs/2008.00120
+  primary: true
+  published_date: '2020-07-31'
+  accessed_at: '2026-09-11'
+- id: doi-tactician-cicm2020
+  tier: S1
+  type: paper
+  title: 'The Tactician: A Seamless, Interactive Tactic Learner and Prover for Coq — CICM 2020'
+  url: https://doi.org/10.1007/978-3-030-53518-6_17
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+- id: github-coq-tactician
+  tier: S1
+  type: repository
+  title: Tactician Coq plugin and prover repository
+  url: https://github.com/coq-tactician/coq-tactician
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-11'
+
+artifacts:
+- id: coq-tactician-repository
+  kind: code
+  title: Tactician Coq plugin, tests and proof-learning implementation
+  url: https://github.com/coq-tactician/coq-tactician
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2023-leandojo
+  - evt-2023-copra
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- coq
+- theorem-proving
+- tactic-learning
+- proof-assistant
+- interactive-proving
+
+editorial:
+  created_at: '2026-09-11'
+  last_reviewed: '2026-09-11'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
