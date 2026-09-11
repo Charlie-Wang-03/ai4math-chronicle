@@ -53,7 +53,7 @@ The validator reports shared source URLs as warnings because legitimate related 
 
 ## Search and exploration
 
-Pagefind runs after Astro renders `dist/`. The browser search API is configured with the Project Pages base URL, so result links remain valid under `/ai4math-chronicle/`. The npm Pagefind package uses the extended binary and supports Chinese/Japanese indexing.
+Pagefind runs after Astro renders `dist/`. Its CLI glob indexes only bilingual Event Detail routes under `**/events/**/*.html`, so Timeline, Explore, Methodology, Data, and other non-Event pages never appear as search results. The browser search API is configured with the Project Pages base URL, so result links remain valid under `/ai4math-chronicle/`. The npm Pagefind package uses the extended binary and supports Chinese/Japanese indexing.
 
 The UI separates two discovery modes:
 

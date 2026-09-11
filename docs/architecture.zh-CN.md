@@ -53,7 +53,7 @@ Canonical YAML Event
 
 ## 搜索与探索
 
-Pagefind 在 Astro 渲染 `dist/` 之后运行。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
+Pagefind 在 Astro 渲染 `dist/` 之后运行。其 CLI glob 只索引 `**/events/**/*.html` 下的中英文 Event Detail 路由，因此 Timeline、Explore、Methodology、Data 等非事件页面不会出现在搜索结果中。浏览器侧搜索 API 使用 Project Pages base URL，因此搜索结果链接在 `/ai4math-chronicle/` 下仍然有效。npm Pagefind package 使用 extended binary，并支持中文 / 日文索引。
 
 UI 明确区分两种发现方式：
 
