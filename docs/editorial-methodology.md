@@ -14,7 +14,7 @@ Candidate discovery may be broad, but published Chronicle events must be dedupli
 - **H2 — Field Milestone:** clear significance to an important AI4Math subfield or technical direction, including math-specific systems, benchmarks, datasets, proof-search methods, formalization infrastructure, and competition results that materially advance the field without constituting a top-level historical turning point.
 - **H3 — Context Event:** primarily historical context rather than a substantive AI4Math milestone. General-purpose model releases belong here when mathematics is mainly used as a capability benchmark and the event does not itself contribute new mathematics or a math-specific system.
 
-The v0.1 corpus contains **11 H1 / 38 H2 / 2 H3** events. H3 is intentionally narrow: being a benchmark, dataset, infrastructure contribution, or specialized mathematical system is not by itself a reason to classify an event as H3.
+The `v0.1.1` release snapshot contains **11 H1 / 38 H2 / 2 H3** events. Live `main` may continue to evolve between citable release snapshots. H3 is intentionally narrow: being a benchmark, dataset, infrastructure contribution, or specialized mathematical system is not by itself a reason to classify an event as H3.
 
 No public 0–100 “mathematical importance” score is used.
 
