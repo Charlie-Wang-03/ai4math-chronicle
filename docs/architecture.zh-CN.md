@@ -62,7 +62,7 @@ Event Detail 页面会从 canonical record 写入 Pagefind filter metadata。当
 UI 明确区分两种发现方式：
 
 - **Timeline：** 时间顺序始终是产品的主要阅读表面。搜索加上年份、事件类型、重要性和验证状态的多选筛选，只收窄当前可见时间线，不改变历史顺序。年份 chips 同样支持多年份同时激活，并与年份 facet 保持同步。
-- **Explore：** 面向定向检索与比较。全文搜索、基础多选 facets、扩展后的高级 facets、排序、逐值可移除的当前条件 chips 与 URL 查询状态共同作用于同一个事件结果集。
+- **Explore：** 面向定向检索与比较。全文搜索、基础多选 facets、高级 facets、排序、逐值可移除的当前条件 chips 与 URL 查询状态共同作用于同一个事件结果集。高级筛选进一步按四类语义分组：**事件属性、AI 与数学、主体与对象、证据与验证**，避免随着 corpus 增长形成难以扫描的扁平控件墙。
 
 Explore 使用可重复的 URL query parameters 持久化多选状态，因此筛选后的视图可以直接分享或重新访问，不需要 backend。整个交互仍然保持 static / client-side。
 
