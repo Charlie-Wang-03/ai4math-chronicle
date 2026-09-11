@@ -1,29 +1,99 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { href, localePath } from '../lib/site';
+import { absolute, href, localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
 const zh = locale === 'zh-CN';
-const title = zh ? '公开数据 — AI4Math 大事记' : 'Public Data — AI4Math Chronicle';
-const desc = zh ? '从 canonical YAML 自动生成的 JSON、NDJSON、RSS 与 JSON Schema。' : 'JSON, NDJSON, RSS, and JSON Schema generated from canonical YAML event records.';
+const title = zh ? '数据与订阅 — AI4Math 大事记' : 'Data & Feeds — AI4Math Chronicle';
+const desc = zh ? '面向研究、分析与 AI 工作流的 JSON、NDJSON、Schema、RSS、Sitemap、llms.txt 与 canonical YAML。' : 'JSON, NDJSON, Schema, RSS, Sitemap, llms.txt, and canonical YAML for research, analysis, and AI workflows.';
+const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
+const eventsJsonUrl = absolute('data/events.json');
 const links = [
-  ['events.json', 'JSON', zh ? '完整事件数组，适合一般机器消费。' : 'Complete event collection for general machine consumption.'],
-  ['events.ndjson', 'NDJSON', zh ? '每行一个事件，适合流式处理。' : 'One event per line for streaming workflows.'],
-  ['schema/event.schema.json', 'JSON Schema', zh ? 'Event v0.1 的正式结构约束。' : 'Formal structural contract for Event v0.1.'],
+  {
+    href: href('data/events.json'),
+    label: 'JSON',
+    title: zh ? '下载完整 Chronicle' : 'Download the full Chronicle',
+    note: zh ? '完整事件数组，适合整体分析、Notebook 与一般机器消费。' : 'Complete event collection for analysis, notebooks, and general machine consumption.',
+  },
+  {
+    href: href('data/events.ndjson'),
+    label: 'NDJSON',
+    title: zh ? '逐条处理事件' : 'Process events line by line',
+    note: zh ? '每行一个事件，适合 shell、流式处理与 Agent ingestion。' : 'One event per line for shell tools, streaming workflows, and agent ingestion.',
+  },
+  {
+    href: href('data/schema/event.schema.json'),
+    label: 'JSON Schema',
+    title: zh ? '验证 Event 结构' : 'Validate Event structure',
+    note: zh ? 'Event v0.1 的正式结构约束，适合 validation、tooling 与数据生成。' : 'Formal Event v0.1 structural contract for validation, tooling, and data generation.',
+  },
+  {
+    href: href('feed.xml'),
+    label: 'RSS',
+    title: zh ? '订阅 Chronicle 更新' : 'Subscribe to Chronicle updates',
+    note: zh ? '按事件时间输出的公开 feed，可接入阅读器或自动化流程。' : 'Public feed ordered by event chronology for readers and automation.',
+  },
+  {
+    href: href('sitemap.xml'),
+    label: 'Sitemap',
+    title: zh ? '供搜索引擎与 crawler 发现' : 'Support search engines and crawlers',
+    note: zh ? '静态页面与事件页面索引。' : 'Index of static and event pages.',
+  },
+  {
+    href: href('llms.txt'),
+    label: 'llms.txt',
+    title: zh ? '供 LLM / AI 工具发现' : 'Support LLM and AI discovery',
+    note: zh ? '面向 AI crawler 与检索工具的公开入口说明。' : 'Public discovery hints for AI crawlers and retrieval tools.',
+  },
 ];
 ---
 <BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'data')} alternatePath={localePath(zh ? 'en':'zh-CN','data')}>
   <article class="prose">
-    <p class="eyebrow">Machine-readable</p>
-    <h1>{zh ? '公开数据接口' : 'Public data interface'}</h1>
-    <p class="lede">{zh ? '网站没有 API server。所有公开接口都是由同一份 canonical Event YAML 静态派生的版本化文件。' : 'There is no API server. Every public interface is a static derivative of the same canonical Event YAML records.'}</p>
+    <p class="eyebrow">{zh ? '数据与订阅' : 'Data & Feeds'}</p>
+    <h1>{zh ? '复用 AI4Math Chronicle' : 'Reuse AI4Math Chronicle'}</h1>
+    <p class="lede">{zh ? 'Chronicle 的机器可读输出面向研究、数据分析、检索、AI 工具与二次开发。网站没有 API server；所有公开接口都由同一份 canonical Event YAML 静态派生。' : 'The Chronicle exposes machine-readable outputs for research, data analysis, retrieval, AI tools, and downstream reuse. There is no API server; every public interface is a static derivative of the same canonical Event YAML records.'}</p>
+
+    <h2>{zh ? '按用途选择入口' : 'Choose an interface by task'}</h2>
     <div class="data-links">
-      {links.map(([path,label,note]) => <a class="data-link" href={href(`data/${path}`)}><strong>{label}</strong><span>{note}</span></a>)}
-      <a class="data-link" href={href('feed.xml')}><strong>RSS</strong><span>{zh ? '按事件时间发布的 Chronicle feed。' : 'Chronicle feed ordered by event chronology.'}</span></a>
-      <a class="data-link" href={href('sitemap.xml')}><strong>Sitemap</strong><span>{zh ? '静态页面与事件页面索引。' : 'Index of static and event pages.'}</span></a>
+      {links.map((item) => (
+        <a class="data-link" href={item.href}>
+          <strong>{item.title}</strong>
+          <span><code>{item.label}</code> · {item.note}</span>
+        </a>
+      ))}
+      <a class="data-link" href={`${repositoryUrl}/tree/main/data/events`} rel="noreferrer">
+        <strong>{zh ? '审计 canonical records' : 'Audit canonical records'}</strong>
+        <span><code>YAML</code> · {zh ? '查看最原始、可审计、GitHub diff-friendly 的事件记录。' : 'Inspect the original auditable, GitHub diff-friendly Event records.'}</span>
+      </a>
     </div>
-    <h2>{zh ? 'Canonical source' : 'Canonical source'}</h2>
-    <p><code>data/events/*.yaml</code> → validation → static HTML / JSON / NDJSON / RSS / sitemap.</p>
-    <p>{zh ? 'English canonical identifiers 与双语展示字段共同存在于同一记录中，不维护两套事实数据库。' : 'English canonical identifiers and bilingual presentation fields coexist in each record; there are no separate factual databases per language.'}</p>
+
+    <h2>{zh ? '数据如何生成' : 'How the data is produced'}</h2>
+    <p>{zh ? 'Chronicle 遵循“一件事件，一份 canonical record，多种消费方式”。网页、搜索、订阅与数据导出都从同一事实来源生成，不维护独立副本。' : 'The Chronicle follows “one event, one canonical record, many ways to consume it.” Pages, search, feeds, and exports derive from the same factual source rather than maintaining separate copies.'}</p>
+    <pre><code>{`Canonical YAML
+      ↓
+ validation
+      ↓
+HTML · Search · JSON · NDJSON · RSS · Sitemap`}</code></pre>
+
+    <h2>{zh ? '快速开始' : 'Quick start'}</h2>
+    <p>{zh ? '下载完整 JSON：' : 'Download the complete JSON collection:'}</p>
+    <pre><code>{`curl -L ${eventsJsonUrl}`}</code></pre>
+    <p>{zh ? '使用 Python 标准库读取：' : 'Read it with the Python standard library:'}</p>
+    <pre><code>{`import json
+from urllib.request import urlopen
+
+with urlopen("${eventsJsonUrl}") as response:
+    events = json.load(response)
+
+print(len(events))`}</code></pre>
+
+    <h2>{zh ? '版本、引用与许可' : 'Versions, citation, and licensing'}</h2>
+    <p>{zh ? '网站与 main 分支是持续演进的 living corpus；GitHub Releases 提供更适合引用和复现的版本快照。若在论文、报告或研究项目中使用 Chronicle，建议记录使用的 release 或访问日期。' : 'The website and main branch form a continuously evolving living corpus; GitHub Releases provide more reproducible version snapshots for citation. For papers, reports, or research projects, record the release used or the access date.'}</p>
+    <div class="data-links">
+      <a class="data-link" href={`${repositoryUrl}/releases`} rel="noreferrer"><strong>{zh ? '版本快照' : 'Version snapshots'}</strong><span>{zh ? '查看可引用的 GitHub Releases。' : 'Browse citable GitHub Releases.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/blob/main/CITATION.cff`} rel="noreferrer"><strong>{zh ? '引用信息' : 'Citation'}</strong><span>{zh ? '查看 CITATION.cff 中的项目引用元数据。' : 'Open the project citation metadata in CITATION.cff.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/blob/main/LICENSE-CONTENT.md`} rel="noreferrer"><strong>{zh ? '内容与数据许可' : 'Content & data license'}</strong><span>{zh ? 'Chronicle 原创编辑内容与数据汇编采用 CC BY 4.0。' : 'Original Chronicle editorial content and data compilation are available under CC BY 4.0.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/blob/main/LICENSE`} rel="noreferrer"><strong>{zh ? '代码许可' : 'Code license'}</strong><span>{zh ? '网站源代码采用 MIT License。' : 'Website source code is licensed under MIT.'}</span></a>
+    </div>
   </article>
 </BaseLayout>
