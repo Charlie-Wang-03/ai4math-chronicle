@@ -3,8 +3,8 @@ import type { Locale } from '../lib/types';
 import { BASE_URL } from '../lib/site';
 const { locale } = Astro.props as { locale: Locale };
 const t = locale === 'zh-CN'
-  ? { placeholder: '搜索事件、系统、问题或方法…', hint: '至少输入 2 个字符。搜索索引由 Pagefind 在构建时生成。', unavailable: '搜索索引仅在生产构建后可用。', label: '站内搜索' }
-  : { placeholder: 'Search events, systems, problems, or methods…', hint: 'Type at least 2 characters. The Pagefind index is generated at build time.', unavailable: 'Search index is available after a production build.', label: 'Site search' };
+  ? { placeholder: '搜索事件、系统、问题或方法…', hint: '至少输入 2 个字符；仅搜索事件记录。', unavailable: '搜索索引仅在生产构建后可用。', label: '事件搜索' }
+  : { placeholder: 'Search events, systems, problems, or methods…', hint: 'Type at least 2 characters; searches event records only.', unavailable: 'Search index is available after a production build.', label: 'Event search' };
 ---
 <section class="panel search-panel" aria-label={t.label} data-pagefind-ignore>
   <input class="search-input" id={`site-search-${locale}`} type="search" autocomplete="off" placeholder={t.placeholder} aria-label={t.placeholder} />
@@ -32,7 +32,7 @@ const t = locale === 'zh-CN'
       const query = input.value.trim();
       list.replaceChildren();
       if (query.length < 2) {
-        status.textContent = locale === 'zh-CN' ? '至少输入 2 个字符。' : 'Type at least 2 characters.';
+        status.textContent = locale === 'zh-CN' ? '至少输入 2 个字符；仅搜索事件记录。' : 'Type at least 2 characters; searches event records only.';
         return;
       }
       try {
