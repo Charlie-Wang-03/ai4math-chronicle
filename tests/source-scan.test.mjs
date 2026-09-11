@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import {
   arxivIdFromUrl,
   buildArxivUrl,
+  loadChannels,
   normalizeArxivId,
   parseArxivAtom,
   validateDate,
@@ -54,4 +55,32 @@ test('validateDate rejects malformed and impossible dates', () => {
   assert.equal(validateDate('2026-09-11', 'date'), '2026-09-11');
   assert.throws(() => validateDate('2026/09/11', 'date'));
   assert.throws(() => validateDate('2026-02-30', 'date'));
+});
+
+test('source channel registry has unique, actionable channel definitions', () => {
+  const { config } = loadChannels();
+  const allowedTiers = new Set(['S1', 'S2', 'S3', 'S4', 'S5']);
+  const ids = config.channels.map((channel) => channel.id);
+
+  assert.equal(new Set(ids).size, ids.length, 'channel IDs must be unique');
+  assert.ok(config.channels.some((channel) => channel.enabled && channel.mode === 'machine'), 'at least one enabled machine channel is required');
+
+  for (const channel of config.channels) {
+    assert.match(channel.id, /^[a-z0-9][a-z0-9-]*$/, `invalid channel ID: ${channel.id}`);
+    assert.ok(['machine', 'manual'].includes(channel.mode), `invalid mode for ${channel.id}`);
+    assert.ok(allowedTiers.has(channel.default_source_tier), `invalid source tier for ${channel.id}`);
+    assert.ok(typeof channel.purpose === 'string' && channel.purpose.length > 0, `missing purpose for ${channel.id}`);
+
+    if (channel.mode === 'machine') {
+      assert.equal(channel.adapter, 'arxiv_api', `unsupported machine adapter for ${channel.id}`);
+      assert.ok(typeof channel.query === 'string' && channel.query.trim().length > 0, `missing query for ${channel.id}`);
+      assert.ok(Number.isInteger(channel.max_results) && channel.max_results > 0 && channel.max_results <= 2000, `invalid max_results for ${channel.id}`);
+    } else {
+      assert.equal(channel.adapter, 'direct_url', `unsupported manual adapter for ${channel.id}`);
+      assert.doesNotThrow(() => {
+        const url = new URL(channel.url);
+        assert.equal(url.protocol, 'https:');
+      }, `invalid direct URL for ${channel.id}`);
+    }
+  }
 });
