@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: "Deterministic source discovery / 确定性信源发现"
+    url: "https://github.com/Charlie-Wang-03/ai4math-chronicle/blob/main/docs/deterministic-source-discovery.md"
+    about: "Repeatable source-channel scans and the boundary between deterministic enumeration and AI triage. / 可重复信源扫描，以及确定性候选枚举与 AI triage 的边界。"
   - name: "Source intake workflow / 信源收集工作流"
     url: "https://github.com/Charlie-Wang-03/ai4math-chronicle/blob/main/docs/source-intake.md"
     about: "How raw source leads are triaged before Event proposals or canonical updates. / 原始信源如何在进入 Event proposal 或 canonical 更新前被 triage。"
