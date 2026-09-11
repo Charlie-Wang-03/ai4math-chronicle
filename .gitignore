@@ -2,6 +2,7 @@ node_modules/
 dist/
 .astro/
 pagefind/
+source-scan-output/
 .DS_Store
 .env
 .env.*
