@@ -16,10 +16,6 @@ on:
         required: false
         default: "80"
         type: string
-  # Temporary branch smoke trigger; removed before merge after live validation.
-  push:
-    branches:
-      - editorial/deterministic-source-scan
 
 permissions:
   contents: read
@@ -40,15 +36,12 @@ jobs:
       - name: Install dependencies
         run: npm ci --no-audit --no-fund
       - name: Run deterministic source scan
-        env:
-          INPUT_START: ${{ inputs.start_date }}
-          INPUT_END: ${{ inputs.end_date }}
-          INPUT_MAX: ${{ inputs.max_results }}
-        run: |
-          START="${INPUT_START:-2026-09-01}"
-          END="${INPUT_END:-2026-09-11}"
-          MAX="${INPUT_MAX:-80}"
-          npm run scan:sources -- --start "$START" --end "$END" --max-results "$MAX" --output source-scan-output
+        run: >-
+          npm run scan:sources --
+          --start "${{ inputs.start_date }}"
+          --end "${{ inputs.end_date }}"
+          --max-results "${{ inputs.max_results }}"
+          --output source-scan-output
       - name: Upload scan artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
