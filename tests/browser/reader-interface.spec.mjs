@@ -79,7 +79,7 @@ test('Explore defaults text queries to relevance while preserving an explicit us
   await page.goto(projectPath('en/explore/'));
 
   const search = page.getByRole('searchbox', { name: 'Search' });
-  const sort = page.getByLabel('Sort');
+  const sort = page.getByLabel('Sort', { exact: true });
   await expect(sort).toHaveValue('newest');
 
   await search.fill('Lean');
