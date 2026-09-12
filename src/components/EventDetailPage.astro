@@ -48,16 +48,31 @@ const navSecondary = [
   ['verification-history', labels.history],
   ['corrections', labels.corrections],
 ] as const;
+const chronicleOrganization = {
+  '@type': 'Organization',
+  name: 'AI4Math Chronicle',
+  url: absolute(localePath(locale, 'about')),
+};
 const articleJsonLd = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: eventTitle,
   description,
-  datePublished: event.dates.event,
+  url: absolute(canonicalPath),
+  identifier: event.id,
+  inLanguage: locale,
+  datePublished: event.dates.added_to_chronicle,
   dateModified: event.dates.last_updated,
   mainEntityOfPage: absolute(canonicalPath),
+  articleSection: event.event_types,
   about: [...event.systems, ...event.problems, ...event.methods],
   citation: event.sources.map((source) => source.url),
-  author: { '@type': 'Organization', name: 'AI4Math Chronicle' },
+  author: chronicleOrganization,
+  publisher: chronicleOrganization,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'AI4Math Chronicle',
+    url: absolute(localePath(locale)),
+  },
 };
 const breadcrumbJsonLd = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
