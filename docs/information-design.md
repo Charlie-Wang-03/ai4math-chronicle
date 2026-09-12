@@ -243,6 +243,16 @@ This mapping is explanatory, not ordinal. No dimension is more trustworthy becau
 - The same semantic mapping must survive light and dark themes.
 - Mathematical / AI ornament, hero artwork, and logo redesign remain outside R1.2B.
 
+## 14. R1.2C signature mathematical ornament
+
+The owner-approved R1.2C ornament language is defined in [`ornament-language.md`](./ornament-language.md). It is a subordinate visual-identity contract inside the same R1 information system.
+
+- Ornament is an **identity layer, not an information layer**. It may reinforce AI × Mathematics × Scholarly Archive identity, but it must not replace semantic hierarchy, status/evidence cues, Timeline meaning, navigation, or task-first viewport budgets.
+- The approved motif families are **Chronicle Graph**, **Mathematical Construction Geometry**, and **Scholarly Marginalia**.
+- Dense reading and retrieval surfaces remain ornament-free by default; identity treatments concentrate on high-negative-space anchor surfaces such as the Home hero, Standards & Methodology top, and About top.
+- The approved H1/H2/H3 Timeline significance gradients are semantic hierarchy rather than ornament. They remain governed by Timeline/significance rules and must not be treated as decorative motif usage.
+- R1.2C-A defines the language only. Production SVGs, components, and page treatments belong to later controlled implementation waves and require visual QA.
+
 ---
 
 R1 is a focused reader-experience refinement inside v0.1.x maintenance. It does not authorize a new feature family, backend, knowledge graph, or autonomous change to the Product Specification.

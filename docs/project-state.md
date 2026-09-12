@@ -11,7 +11,7 @@ This file records the **approved semantic state** that a future conversation nee
 
 The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model; it does not create a new product phase or change the canonical Event model, editorial boundaries, or human-review gates.
 
-The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase.
+The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase. The owner-approved R1.2C-A signature-ornament language is recorded in [`ornament-language.md`](./ornament-language.md) as a subordinate visual-identity contract; it defines future ornament boundaries but does not itself authorize a broader redesign or new product phase.
 
 The public v0.1 line is already launched. Ordinary maintenance, incremental Event additions, corrections, evidence improvements, metadata, dependency work, and focused UI / UX / SEO / GEO improvements may continue without creating a new product phase as long as they remain inside the active v0.1 contract.
 
@@ -53,7 +53,7 @@ The following decisions are approved product state:
 
 ### Approved R1 reader-information model
 
-R1 refines how the approved R0 product model is visually expressed. The durable implementation rules are documented in [`information-design.md`](./information-design.md).
+R1 refines how the approved R0 product model is visually expressed. The durable implementation rules are documented in [`information-design.md`](./information-design.md), with signature ornament rules in [`ornament-language.md`](./ornament-language.md).
 
 - **Visual direction = Modern Scholarly Editorial.** Prefer academic, archival, precise, quiet, dense-but-readable presentation over SaaS/dashboard or decorative AI styling.
 - **Page roles have different hierarchy.** Timeline is chronology-first, Event Detail is record/insight-first, Search & Explore is utility-first, Standards & Methodology is reference-first, and About is project-orientation/action-first.
@@ -63,7 +63,8 @@ R1 refines how the approved R0 product model is visually expressed. The durable 
 - **Timeline reads as historical chapters.** Years are visible chapter markers as well as chronology anchors, while Event records remain compact and evidence remains low-friction.
 - **Standards & Methodology introduces four independent trust dimensions.** Significance, evidence, verification, and formal assurance are explained before detailed taxonomies and are never collapsed into a single trust score.
 - **Typography is bilingual and role-aware.** English and Simplified Chinese use appropriate editorial/interface stacks, long record titles are more compact than display headings, and reading measure remains restrained.
-- **The palette, logo, and dark/light theme are not redesign targets by default.** Future visual work should extend the established information system rather than restart branding.
+- **Visual identity uses a controlled ornament layer.** The owner-approved R1.2C-A language defines Chronicle Graph, Mathematical Construction Geometry, and Scholarly Marginalia as reusable identity motifs. Ornament remains subordinate to content, may disappear without semantic loss, and is forbidden from turning dense reading/retrieval areas into decorative AI surfaces.
+- **Logo redesign remains a separate decision.** The current logo is not treated as a constitutional palette or ornament source and may be revisited independently.
 
 ## Currently tracked editorial concern
 
@@ -116,7 +117,7 @@ Instead:
 When the owner gives a broad instruction such as “continue AI4Math Chronicle”:
 
 1. execute the state-recovery protocol in `gpt-project-governance.md`;
-2. read the frozen v0.1 Product Specification, the ratified R0 amendment, and the R1 information-design contract;
+2. read the frozen v0.1 Product Specification, the ratified R0 amendment, the R1 information-design contract, and the R1.2C ornament-language contract when visual-identity work is relevant;
 3. re-check live Issues / PRs / recent commits and this semantic state;
 4. continue an existing approved objective or standing maintenance task if one is clearly actionable;
 5. if none exists, do not invent a new phase — surface candidate next milestones for owner selection.
