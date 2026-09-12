@@ -21,13 +21,13 @@ const relationGroups = [
 ] as const;
 const labels = zh
   ? {
-      atGlance: '证据与状态一览', significance: '重要性', verification: '验证状态', evidence: '证据等级', aiRole: 'AI 角色', assurance: '形式保障',
+      atGlance: '证据与状态一览', significance: '重要性', verification: '验证状态', evidence: '证据等级', aiRole: 'AI 角色', assurance: '形式保障', trustGuide: '如何理解这些标签？',
       onPage: '本页导航', startHere: '先读', deeper: '深入记录',
       what: '发生了什么？', why: '为什么重要？', primaryEvidence: '主要证据', contribution: '贡献与验证', technical: '技术细节', sources: '全部来源与工件', relationships: '历史脉络', history: '验证历史', corrections: '更正',
       rationale: '重要性说明：', novelty: '数学新颖性', interface: '接口', aiContribution: 'AI 贡献', humanContribution: '人类贡献', lastReviewed: '最后审阅', systems: '系统', organizations: '机构', problems: '数学问题', methods: '方法', accessed: '访问于', artifact: '工件', noCorrections: '当前没有记录的更正。',
     }
   : {
-      atGlance: 'Evidence & status at a glance', significance: 'Significance', verification: 'Verification', evidence: 'Evidence level', aiRole: 'AI role', assurance: 'Formal assurance',
+      atGlance: 'Evidence & status at a glance', significance: 'Significance', verification: 'Verification', evidence: 'Evidence level', aiRole: 'AI role', assurance: 'Formal assurance', trustGuide: 'How should these labels be read?',
       onPage: 'On this page', startHere: 'Start here', deeper: 'Detailed record',
       what: 'What happened?', why: 'Why it matters', primaryEvidence: 'Primary evidence', contribution: 'Contribution & verification', technical: 'Technical details', sources: 'Sources & artifacts', relationships: 'Historical context', history: 'Verification history', corrections: 'Corrections',
       rationale: 'Significance rationale: ', novelty: 'Mathematical novelty', interface: 'Interface', aiContribution: 'AI contribution', humanContribution: 'Human contribution', lastReviewed: 'Last reviewed', systems: 'Systems', organizations: 'Organizations', problems: 'Problems', methods: 'Methods', accessed: 'accessed', artifact: 'Artifact', noCorrections: 'No corrections recorded.',
@@ -128,6 +128,7 @@ const breadcrumbJsonLd = {
           <div class="event-glance-item"><dt>{labels.aiRole}</dt><dd>{presentationLabel('ai_role', event.ai_role.level, locale)}</dd></div>
           <div class="event-glance-item"><dt>{labels.assurance}</dt><dd>{presentationLabel('formal_assurance', event.verification.formal_assurance, locale)}</dd></div>
         </dl>
+        <p><a class="details-link" href={href(localePath(locale, 'methodology'))}>{labels.trustGuide} →</a></p>
       </section>
 
       <section id="contribution-verification" class="event-section event-section-secondary"><h2>{labels.contribution}</h2>
