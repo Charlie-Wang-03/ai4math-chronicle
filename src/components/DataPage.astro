@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllEvents } from '../lib/events';
 import { absolute, href, localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
@@ -8,6 +9,62 @@ const title = zh ? '数据与订阅 — AI4Math 大事记' : 'Data & Feeds — A
 const desc = zh ? '面向研究、分析与 AI 工作流的 JSON、NDJSON、Schema、RSS、Sitemap、llms.txt 与 canonical YAML。' : 'JSON, NDJSON, Schema, RSS, Sitemap, llms.txt, and canonical YAML for research, analysis, and AI workflows.';
 const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
 const eventsJsonUrl = absolute('data/events.json');
+const eventsNdjsonUrl = absolute('data/events.ndjson');
+const schemaUrl = absolute('data/schema/event.schema.json');
+const events = getAllEvents();
+const eventDates = events.map((event) => event.dates.event).sort();
+const lastUpdated = events.map((event) => event.dates.last_updated).sort().at(-1);
+const datasetJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Dataset',
+  name: zh ? 'AI4Math 大事记 canonical Event corpus' : 'AI4Math Chronicle canonical Event corpus',
+  alternateName: ['AI4Math Chronicle', 'AI4Math 大事记'],
+  description: desc,
+  url: absolute(localePath(locale, 'data')),
+  identifier: repositoryUrl,
+  sameAs: [repositoryUrl],
+  inLanguage: ['en', 'zh-CN'],
+  isAccessibleForFree: true,
+  license: 'https://creativecommons.org/licenses/by/4.0/',
+  creator: {
+    '@type': 'Organization',
+    name: 'AI4Math Chronicle',
+    url: absolute(localePath(locale, 'about')),
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'AI4Math Chronicle',
+    url: absolute(localePath(locale)),
+  },
+  keywords: [
+    'AI for Mathematics',
+    'AI4Math',
+    'mathematical reasoning',
+    'theorem proving',
+    'autoformalization',
+    'formal mathematics',
+    'AI agents',
+  ],
+  temporalCoverage: eventDates.length ? `${eventDates.at(0)}/${eventDates.at(-1)}` : undefined,
+  dateModified: lastUpdated,
+  distribution: [
+    {
+      '@type': 'DataDownload',
+      encodingFormat: 'application/json',
+      contentUrl: eventsJsonUrl,
+    },
+    {
+      '@type': 'DataDownload',
+      encodingFormat: 'application/x-ndjson',
+      contentUrl: eventsNdjsonUrl,
+    },
+    {
+      '@type': 'DataDownload',
+      encodingFormat: 'application/schema+json',
+      contentUrl: schemaUrl,
+    },
+  ],
+};
 const links = [
   {
     href: href('data/events.json'),
@@ -47,7 +104,7 @@ const links = [
   },
 ];
 ---
-<BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'data')} alternatePath={localePath(zh ? 'en':'zh-CN','data')}>
+<BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'data')} alternatePath={localePath(zh ? 'en':'zh-CN','data')} jsonLd={datasetJsonLd}>
   <article class="prose">
     <p class="eyebrow">{zh ? '数据与订阅' : 'Data & Feeds'}</p>
     <h1>{zh ? '复用 AI4Math Chronicle' : 'Reuse AI4Math Chronicle'}</h1>
