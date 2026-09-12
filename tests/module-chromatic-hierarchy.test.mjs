@@ -43,10 +43,25 @@ test('module chroma maps domain meaning to restrained Paper-led surfaces', async
 test('high-emphasis modules provide inset and restrained radius instead of edge-hugging bands', async () => {
   const css = await read('src/styles/r1-module-chroma.css');
 
-  assert.match(css, /body \.event-card\.H1\s*\{[\s\S]*?border-radius:\s*var\(--module-radius\)[\s\S]*?padding-inline:\s*var\(--module-inset-x\)/);
+  assert.match(css, /body \.event-card\.H1\s*\{[\s\S]*?border-radius:\s*var\(--module-radius-compact\)[\s\S]*?padding-inline:\s*\.75rem/);
   assert.match(css, /body #historical-context,[\s\S]*?body #primary-evidence\s*\{[\s\S]*?padding:\s*var\(--module-inset-y\) var\(--module-inset-x\)/);
   assert.match(css, /body \.trust-model-overview\s*\{[\s\S]*?gap:\s*\.75rem[\s\S]*?background:\s*transparent/);
   assert.match(css, /body \.trust-dimension,[\s\S]*?border-radius:\s*var\(--module-radius\)[\s\S]*?padding:\s*1rem/);
+});
+
+test('H1 stays in the same Timeline record family instead of becoming a dominant category card', async () => {
+  const css = await read('src/styles/r1-module-chroma.css');
+
+  assert.match(css, /body \.event-card\.H1\s*\{[\s\S]*?border-left:\s*2px solid[\s\S]*?background-color:\s*color-mix\(in srgb, var\(--paper\) 94%, var\(--context-milestone\)\)/);
+  assert.match(css, /body \.event-card\.H1:hover\s*\{[\s\S]*?background-color:\s*color-mix\(in srgb, var\(--paper\) 90%, var\(--context-milestone\)\)/);
+});
+
+test('Event Detail keeps breathing room between major evidence and trust modules', async () => {
+  const css = await read('src/styles/r1-module-chroma.css');
+
+  assert.match(css, /body #evidence-status\s*\{[\s\S]*?margin-top:\s*\.75rem/);
+  assert.match(css, /body #evidence-status \.event-glance-primary:first-of-type\s*\{[\s\S]*?margin-right:\s*\.35rem/);
+  assert.match(css, /body #evidence-status \.event-glance-primary:nth-of-type\(2\)\s*\{[\s\S]*?margin-left:\s*\.35rem/);
 });
 
 test('trust reference keeps significance, evidence, verification, and assurance visually distinct', async () => {
