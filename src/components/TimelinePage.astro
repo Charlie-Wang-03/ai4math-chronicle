@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import EventCollection from './EventCollection.astro';
 import ChronicleGraph from './ornament/ChronicleGraph.astro';
 import ConstructionGeometry from './ornament/ConstructionGeometry.astro';
-import MarginaliaMark from './ornament/MarginaliaMark.astro';
 import '../styles/timeline.css';
 import { getAllEvents } from '../lib/events';
 import { localePath, absolute, href } from '../lib/site';
@@ -102,10 +101,6 @@ const websiteJsonLd = {
       <li>{copy.trustOpen}</li>
     </ul>
   </header>
-
-  <div class="ornament-transition ornament-transition--chronology" aria-hidden="true" data-ornament-transition="chronology">
-    <MarginaliaMark variant="reference" />
-  </div>
 
   <EventCollection events={events} locale={locale} mode="timeline" />
 </BaseLayout>
