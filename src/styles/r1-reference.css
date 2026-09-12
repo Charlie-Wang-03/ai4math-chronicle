@@ -29,7 +29,7 @@ body .trust-dimension-kicker {
   text-transform: uppercase;
 }
 
-body .trust-dimension h2 {
+body .trust-dimension h3 {
   margin: .24rem 0 .35rem;
   font-family: var(--font-editorial);
   font-size: 1.05rem;
