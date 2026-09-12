@@ -55,3 +55,17 @@ test('R1B gives Event semantics distinct lineage, trust, and contribution hierar
   const gridColumnEnd = await contribution.evaluate((element) => getComputedStyle(element).gridColumnEnd);
   expect(gridColumnEnd).toBe('-1');
 });
+
+test('R1C exposes chronology as visible year chapters without losing Event scanning', async ({ page }) => {
+  await page.goto(projectPath('en/'));
+
+  const yearLabels = page.locator('.timeline-year-label');
+  await expect(yearLabels.first()).toBeVisible();
+  expect(await yearLabels.count()).toBeGreaterThan(1);
+  await expect(yearLabels.first()).toHaveText(/^20\d{2}$/);
+
+  const firstCard = page.locator('.timeline-item [data-event-card]').first();
+  await expect(firstCard).toBeVisible();
+  const sourceLayout = await firstCard.locator('.source-shortcuts').evaluate((element) => getComputedStyle(element).gridTemplateColumns);
+  expect(sourceLayout).not.toBe('none');
+});
