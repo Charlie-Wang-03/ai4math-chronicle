@@ -39,3 +39,53 @@ test('R1.2C ornament language is explicit and discoverable', async () => {
   assert.match(state, /ornament-language\.md/);
   assert.match(agents, /docs\/ornament-language\.md/);
 });
+
+test('R1.2C-B implements only the approved identity anchors with reusable decorative SVG', async () => {
+  const [
+    entry,
+    ornamentCss,
+    timeline,
+    methodology,
+    about,
+    chronicleGraph,
+    constructionGeometry,
+    marginalia,
+  ] = await Promise.all([
+    read('src/styles/information-design.css'),
+    read('src/styles/r1-ornament.css'),
+    read('src/components/TimelinePage.astro'),
+    read('src/components/MethodologyPage.astro'),
+    read('src/components/AboutPage.astro'),
+    read('src/components/ornament/ChronicleGraph.astro'),
+    read('src/components/ornament/ConstructionGeometry.astro'),
+    read('src/components/ornament/MarginaliaMark.astro'),
+  ]);
+
+  const imports = [...entry.matchAll(/@import '\.\/(.*?)';/g)].map((match) => match[1]);
+  assert.equal(imports.at(-1), 'r1-ornament.css');
+
+  assert.match(timeline, /data-ornament-anchor="home"/);
+  assert.match(timeline, /<ChronicleGraph variant="hero" \/>/);
+  assert.match(timeline, /<ConstructionGeometry variant="hero" \/>/);
+  assert.ok(timeline.indexOf('data-ornament-anchor="home"') < timeline.indexOf('<EventCollection'));
+
+  assert.match(methodology, /data-ornament-anchor="methodology"/);
+  assert.match(methodology, /<ConstructionGeometry variant="compact" \/>/);
+  assert.match(methodology, /<MarginaliaMark variant="reference" \/>/);
+
+  assert.match(about, /data-ornament-anchor="about"/);
+  assert.match(about, /<ChronicleGraph variant="compact" \/>/);
+  assert.match(about, /<MarginaliaMark variant="project" \/>/);
+
+  for (const component of [chronicleGraph, constructionGeometry, marginalia]) {
+    assert.match(component, /aria-hidden="true"/);
+    assert.match(component, /focusable="false"/);
+    assert.doesNotMatch(component, /<text\b/);
+  }
+
+  assert.match(ornamentCss, /pointer-events: none/);
+  assert.match(ornamentCss, /@media \(forced-colors: active\)/);
+  assert.match(ornamentCss, /@media \(max-width: 760px\)/);
+  assert.doesNotMatch(ornamentCss, /filter:\s*(blur|drop-shadow)/);
+  assert.doesNotMatch(ornamentCss, /animation\s*:/);
+});
