@@ -11,7 +11,7 @@ AI4Math Chronicle is a timeline-first, evidence-backed archive of major mileston
 Before substantive work in a fresh conversation, read and reconcile:
 
 1. [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) — agent authority, state recovery, hard gates, and handoff;
-2. [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) — frozen v0.1 product contract;
+2. [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) together with any ratified amendment named by [`docs/project-state.md`](docs/project-state.md) — active v0.1 product contract;
 3. [`docs/project-state.md`](docs/project-state.md) — approved semantic phase and active mainline;
 4. live GitHub repository state — current HEAD, branches, PRs, Issues, releases, files, and task-relevant CI.
 
