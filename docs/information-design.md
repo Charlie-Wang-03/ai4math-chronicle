@@ -210,6 +210,39 @@ Legacy variables such as `--bg`, `--surface`, `--accent`, and `--h1` are compati
 
 R1.2A establishes the palette architecture and global tonal separation only. Page/module-specific chromatic hierarchy and mathematical editorial ornament belong to later controlled work; they must not be smuggled into this foundation pass.
 
+## 13. R1.2B module chromatic hierarchy
+
+R1.2B applies the semantic palette to reader modules so color communicates information role rather than acting as decoration.
+
+### Mapping
+
+- **Chronology / historical structure → Archive.** Visible year chapters and the timeline spine may use Archive Gold; historical-lineage sections use the Archive context surface.
+- **Historical significance → Milestone.** H1 records and significance-oriented emphasis may use Milestone Violet and the Milestone context surface.
+- **Primary evidence / provenance → Evidence.** Primary-evidence sections, source shortcuts, and provenance markers may use Evidence Green and the Evidence context surface.
+- **Retrieval / query tooling → Research.** Timeline query controls and Search & Explore use Research Blue and the Research context surface.
+- **Verification / trust structure → Neutral + status semantics.** The trust summary uses a neutral structured surface. Verification must continue to use its own status label semantics rather than being recolored as an editorial category.
+- **AI / human contribution → Research context.** Contribution prose may use a quiet research surface because it explains the research process rather than a verification verdict.
+
+### Methodology reference
+
+The four trust dimensions may be differentiated as a reference aid without implying a combined score:
+
+1. Significance → Milestone context;
+2. Evidence → Evidence context;
+3. Verification → Neutral context;
+4. Formal assurance → Research context.
+
+This mapping is explanatory, not ordinal. No dimension is more trustworthy because its color is more saturated or visually prominent.
+
+### Guardrails
+
+- Semantic color supplements headings, labels, borders, and content structure; color is never the sole carrier of meaning.
+- Do not substitute `status-good`, `status-warn`, or `status-danger` for Archive, Milestone, Evidence, or Research roles.
+- Ordinary Timeline records remain restrained; R1.2B does not turn every Event into a filled category card.
+- Surfaces remain low-chroma and flat: no heavy elevation, glow, or decorative gradient system.
+- The same semantic mapping must survive light and dark themes.
+- Mathematical / AI ornament, hero artwork, and logo redesign remain outside R1.2B.
+
 ---
 
 R1 is a focused reader-experience refinement inside v0.1.x maintenance. It does not authorize a new feature family, backend, knowledge graph, or autonomous change to the Product Specification.
