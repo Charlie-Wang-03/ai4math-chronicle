@@ -11,6 +11,8 @@ This file records the **approved semantic state** that a future conversation nee
 
 The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model; it does not create a new product phase or change the canonical Event model, editorial boundaries, or human-review gates.
 
+The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase.
+
 The public v0.1 line is already launched. Ordinary maintenance, incremental Event additions, corrections, evidence improvements, metadata, dependency work, and focused UI / UX / SEO / GEO improvements may continue without creating a new product phase as long as they remain inside the active v0.1 contract.
 
 ## Approved active mainline
@@ -31,13 +33,14 @@ Maintain AI4Math Chronicle as a trustworthy, living historical archive while pre
 - one canonical Event record per event;
 - insight-first Event Detail reading with historical context surfaced early;
 - low-friction primary-evidence access;
-- stable bilingual presentation;
+- task-aware page hierarchy and modular scholarly information presentation;
+- stable, language-aware bilingual typography and responsive density;
 - auditable verification and correction history;
 - a static, maintainable GitHub-native architecture.
 
 ### Approved R0 product-coherence model
 
-The following decisions are now approved product state:
+The following decisions are approved product state:
 
 - **Timeline = browse history.** It preserves chronology and uses only lightweight refinement; year controls are chronology anchors rather than duplicate filter state.
 - **Search & Explore = find events.** It owns richer structured retrieval. Text queries default contextually to relevance, while no-query views default to newest-first; explicit user sorting is preserved.
@@ -47,6 +50,20 @@ The following decisions are now approved product state:
 - **Standards & Methodology owns the complete trust explanation.** Core reading surfaces should expose necessary status/evidence signals without repeatedly reproducing the full taxonomy.
 - **Advanced facet expansion is frozen by default.** New reader-facing facets require a concrete user retrieval job rather than merely a corresponding schema field.
 - Major visual redesign is not an active priority; visual work should support product coherence, readability, and accessibility rather than restart the visual system.
+
+### Approved R1 reader-information model
+
+R1 refines how the approved R0 product model is visually expressed. The durable implementation rules are documented in [`information-design.md`](./information-design.md).
+
+- **Visual direction = Modern Scholarly Editorial.** Prefer academic, archival, precise, quiet, dense-but-readable presentation over SaaS/dashboard or decorative AI styling.
+- **Page roles have different hierarchy.** Timeline is chronology-first, Event Detail is record/insight-first, Search & Explore is utility-first, Standards & Methodology is reference-first, and About is project-orientation/action-first.
+- **Mobile presentation is task-first.** Core Timeline, Search & Explore, and Event Detail tasks should begin within the first representative mobile viewport rather than spending the first screen on decorative or explanatory prelude.
+- **Event Detail uses semantic information primitives.** What happened, significance, historical relationships, primary evidence, trust state, AI/human contribution, and provenance should have distinct visual grammar while continuing to derive from one canonical Event record.
+- **Trust summary is hierarchical.** Significance and verification are primary quick-read dimensions; evidence level, AI role, and formal assurance are secondary interpretive dimensions.
+- **Timeline reads as historical chapters.** Years are visible chapter markers as well as chronology anchors, while Event records remain compact and evidence remains low-friction.
+- **Standards & Methodology introduces four independent trust dimensions.** Significance, evidence, verification, and formal assurance are explained before detailed taxonomies and are never collapsed into a single trust score.
+- **Typography is bilingual and role-aware.** English and Simplified Chinese use appropriate editorial/interface stacks, long record titles are more compact than display headings, and reading measure remains restrained.
+- **The palette, logo, and dark/light theme are not redesign targets by default.** Future visual work should extend the established information system rather than restart branding.
 
 ## Currently tracked editorial concern
 
@@ -60,7 +77,7 @@ Without a new phase decision, agents may continue:
 
 - scoped website bug fixes and UX improvements;
 - accessibility, SEO, GEO, structured-data, search, and navigation maintenance;
-- incremental work that reinforces the approved R0 product-coherence model;
+- incremental work that reinforces the approved R0 product-coherence and R1 information-design models;
 - dependency and GitHub Pages maintenance;
 - schema, CI, documentation, and data-quality improvements;
 - candidate event discovery and source collection;
@@ -81,7 +98,7 @@ The standing hard gates are defined canonically in [`gpt-project-governance.md`]
 - an unresolved mathematical-correctness / priority adjudication;
 - a new product phase, scope change, governance amendment, or weakened human gate.
 
-The R0 product-coherence decisions listed above have already been explicitly approved by the owner and therefore are not open human gates.
+The R0 product-coherence and R1 reader-information decisions listed above have already been explicitly approved by the owner and therefore are not open human gates.
 
 ## No-autonomous-agenda rule
 
@@ -99,7 +116,7 @@ Instead:
 When the owner gives a broad instruction such as “continue AI4Math Chronicle”:
 
 1. execute the state-recovery protocol in `gpt-project-governance.md`;
-2. read both the frozen v0.1 Product Specification and the ratified R0 amendment;
+2. read the frozen v0.1 Product Specification, the ratified R0 amendment, and the R1 information-design contract;
 3. re-check live Issues / PRs / recent commits and this semantic state;
 4. continue an existing approved objective or standing maintenance task if one is clearly actionable;
 5. if none exists, do not invent a new phase — surface candidate next milestones for owner selection.
