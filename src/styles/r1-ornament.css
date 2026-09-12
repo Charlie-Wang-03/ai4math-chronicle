@@ -218,6 +218,10 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
     opacity: .26;
   }
 
+  body .ornament-anchor--methodology {
+    right: 0;
+  }
+
   body .ornament-anchor--methodology .ornament-construction-geometry,
   body .ornament-anchor--about .ornament-chronicle-graph {
     display: none;
