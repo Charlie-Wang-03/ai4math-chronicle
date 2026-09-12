@@ -59,6 +59,15 @@ body .event-detail-main .event-section-secondary > p {
   max-width: var(--measure-reading);
 }
 
+/* Retrieval records preserve canonical text in the DOM but cap the visual
+   scan cost of long summaries. Event Detail remains the full-reading surface. */
+body .explore-summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 /* Retrieval pages should expose the task before the explanation. */
 body .explore-hero {
   margin-bottom: 1.1rem;
@@ -167,6 +176,11 @@ body .timeline-trust {
     font-size: .78rem;
   }
 
+  body .breadcrumbs .breadcrumb-separator,
+  body .breadcrumbs .breadcrumb-current {
+    display: none;
+  }
+
   body .event-detail-layout {
     gap: .55rem;
   }
@@ -185,17 +199,17 @@ body .timeline-trust {
   }
 
   body .event-section-nav-group ul {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: .9rem;
-    overflow-x: auto;
-    padding-bottom: .1rem;
-    scrollbar-width: thin;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .32rem .8rem;
+    overflow: visible;
+    padding-bottom: 0;
   }
 
   body .event-section-nav a {
-    white-space: nowrap;
+    white-space: normal;
     font-size: .75rem;
+    line-height: 1.3;
   }
 
   body .event-detail-main .event-section-primary:first-child {
