@@ -108,7 +108,7 @@ test('R1.2C-C extends identity only into approved structural accents', async () 
   assert.match(layout, /data-ornament-anchor="footer"/);
   assert.match(layout, /<ChronicleGraph variant="compact" \/>/);
 
-  assert.match(ornamentCss, /explore-directory-stage:has\(\.explore-table-wrap:not\(:has\(\[data-event-item\]:not\(\.hidden\)\)\)\)/);
+  assert.match(ornamentCss, /explore-table-wrap:not\(:has\(\[data-event-item\]:not\(\.hidden\)\)\) \+ \.empty-state \+ \.ornament-anchor--explore-empty/);
   assert.match(ornamentCss, /ornament-transition--chronology/);
   assert.match(ornamentCss, /ornament-anchor--footer/);
   assert.match(ornamentCss, /body \.ornament-transition--chronology \{[\s\S]*?opacity: \.42/);
