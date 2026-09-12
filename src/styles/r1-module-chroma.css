@@ -1,0 +1,216 @@
+/* R1.2B — module chromatic hierarchy.
+   Apply the R1.2A semantic palette to existing reader modules without
+   introducing a saturated category-card system or changing layout semantics. */
+
+/* Timeline / chronology --------------------------------------------------- */
+body .timeline-tools {
+  background-color: var(--context-research);
+  border-top-color: color-mix(in srgb, var(--research) 42%, var(--rule));
+  border-bottom-color: color-mix(in srgb, var(--research) 26%, var(--rule));
+  box-shadow: inset 0 2px 0 color-mix(in srgb, var(--research) 72%, transparent);
+}
+
+body .timeline-year-anchor {
+  border-top-color: color-mix(in srgb, var(--archive) 48%, var(--rule-strong));
+}
+
+body .timeline-year-label {
+  color: var(--archive);
+}
+
+body .timeline::before {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--archive) 72%, var(--ink)) 0,
+    color-mix(in srgb, var(--archive) 38%, var(--rule-strong)) 12%,
+    var(--rule) 88%,
+    transparent
+  );
+}
+
+body .event-card.H1 {
+  border-top-color: color-mix(in srgb, var(--milestone) 72%, var(--rule));
+  background-color: var(--context-milestone);
+  background-image: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--milestone-soft) 78%, transparent) 0,
+    transparent 62%
+  );
+  box-shadow: inset 2px 0 0 color-mix(in srgb, var(--milestone) 68%, transparent);
+}
+
+body .event-card.H1 .badge.significance,
+body .badge.significance.H1 {
+  color: var(--milestone);
+  border-color: color-mix(in srgb, var(--milestone) 62%, var(--rule));
+  background-color: color-mix(in srgb, var(--milestone-soft) 72%, transparent);
+}
+
+body .source-shortcuts {
+  border-left-color: color-mix(in srgb, var(--evidence) 72%, var(--rule-strong));
+}
+
+body .source-shortcuts-label,
+body .source-shortcut-kind {
+  color: var(--evidence);
+}
+
+body .source-shortcut {
+  text-decoration-color: color-mix(in srgb, var(--evidence) 58%, var(--rule));
+}
+
+/* Event Detail ------------------------------------------------------------ */
+body #why-it-matters {
+  border-left-color: var(--milestone);
+  background-color: color-mix(in srgb, var(--context-milestone) 78%, var(--paper));
+}
+
+body #why-it-matters > h2 {
+  color: color-mix(in srgb, var(--milestone) 74%, var(--ink));
+}
+
+body #historical-context {
+  padding-left: .85rem;
+  padding-right: .75rem;
+  background-color: var(--context-archive);
+  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--archive) 72%, transparent);
+}
+
+body #historical-context > h2 {
+  color: color-mix(in srgb, var(--archive) 76%, var(--ink));
+}
+
+body #historical-context .relationships {
+  border-top-color: color-mix(in srgb, var(--archive) 54%, var(--rule-strong));
+}
+
+body #historical-context .relationships > div {
+  border-bottom-color: color-mix(in srgb, var(--archive) 18%, var(--rule));
+}
+
+body #primary-evidence {
+  padding-left: .85rem;
+  padding-right: .75rem;
+  background-color: var(--context-evidence);
+  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--evidence) 72%, transparent);
+}
+
+body #primary-evidence > h2 {
+  color: color-mix(in srgb, var(--evidence) 78%, var(--ink));
+}
+
+body #primary-evidence .evidence-list li::before {
+  color: var(--evidence);
+}
+
+body #evidence-status {
+  padding-left: .85rem;
+  padding-right: .85rem;
+  background-color: var(--context-neutral);
+  border-top-color: var(--rule-strong);
+  border-bottom-color: var(--rule-strong);
+}
+
+body #evidence-status .event-glance-primary:first-of-type {
+  background-color: color-mix(in srgb, var(--context-milestone) 74%, var(--paper));
+  box-shadow: inset 0 2px 0 color-mix(in srgb, var(--milestone) 64%, transparent);
+}
+
+body #evidence-status .event-glance-primary:nth-of-type(2) {
+  background-color: color-mix(in srgb, var(--paper) 78%, var(--context-neutral));
+  box-shadow: inset 0 2px 0 var(--rule-strong);
+}
+
+body #evidence-status .event-glance-primary {
+  padding-top: .55rem;
+  padding-bottom: .45rem;
+}
+
+body #contribution-verification .fact-grid .fact:nth-child(3),
+body #contribution-verification .fact-grid .fact:nth-child(4) {
+  border-left-color: var(--research);
+  background-color: color-mix(in srgb, var(--context-research) 78%, var(--paper));
+  padding-right: .8rem;
+}
+
+body #verification-history .evidence-list li::before,
+body #corrections .evidence-list li::before {
+  background: var(--evidence);
+}
+
+/* Search & Explore -------------------------------------------------------- */
+body .explore-filter-panel {
+  background-color: var(--context-research);
+  border-top-color: var(--research);
+  border-bottom-color: color-mix(in srgb, var(--research) 28%, var(--rule));
+}
+
+body .explore-filter-panel .search-input,
+body .explore-filter-panel select,
+body .explore-filter-panel .multi-filter-menu > summary,
+body .explore-filter-panel .multi-filter-options {
+  background-color: var(--paper);
+}
+
+body .explore-filter-panel .search-input:focus,
+body .explore-filter-panel select:focus-visible,
+body .explore-filter-panel .multi-filter-menu > summary:focus-visible {
+  border-color: var(--research);
+}
+
+body .explore-table-wrap {
+  background-color: var(--paper);
+  border-top-color: var(--research-strong);
+}
+
+body .explore-table th {
+  background-color: color-mix(in srgb, var(--context-research) 76%, var(--paper));
+}
+
+body .explore-table tbody tr:hover {
+  background-color: color-mix(in srgb, var(--context-research) 58%, transparent);
+}
+
+body .explore-evidence {
+  color: var(--evidence);
+}
+
+/* Standards & Methodology ------------------------------------------------ */
+body .trust-model-overview {
+  border-top-color: var(--ink);
+  background-color: var(--paper);
+}
+
+body .trust-dimension:nth-of-type(1) {
+  background-color: var(--context-milestone);
+  box-shadow: inset 0 3px 0 var(--milestone);
+}
+
+body .trust-dimension:nth-of-type(2) {
+  background-color: var(--context-evidence);
+  box-shadow: inset 0 3px 0 var(--evidence);
+}
+
+body .trust-dimension:nth-of-type(3) {
+  background-color: var(--context-neutral);
+  box-shadow: inset 0 3px 0 var(--rule-strong);
+}
+
+body .trust-dimension:nth-of-type(4) {
+  background-color: var(--context-research);
+  box-shadow: inset 0 3px 0 var(--research);
+}
+
+body .trust-dimension:nth-of-type(1) .trust-dimension-kicker { color: var(--milestone); }
+body .trust-dimension:nth-of-type(2) .trust-dimension-kicker { color: var(--evidence); }
+body .trust-dimension:nth-of-type(3) .trust-dimension-kicker { color: var(--ink-muted); }
+body .trust-dimension:nth-of-type(4) .trust-dimension-kicker { color: var(--research); }
+
+@media (max-width: 620px) {
+  body #historical-context,
+  body #primary-evidence,
+  body #evidence-status {
+    padding-left: .65rem;
+    padding-right: .65rem;
+  }
+}
