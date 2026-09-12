@@ -191,18 +191,21 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
 }
 
 @media (max-width: 760px) {
+  /* Compact layouts use a broad background trace rather than shrinking the
+     identity artwork into a top-right badge. Keep only the primary mobile motif,
+     but give it enough horizontal footprint to read as page structure. */
   body .ornament-anchor--home {
-    top: -.2rem;
-    right: -1.4rem;
-    width: 42vw;
-    height: 7.5rem;
+    top: -.1rem;
+    right: -8vw;
+    width: 76vw;
+    height: 8.6rem;
     opacity: .38;
   }
 
   body .ornament-anchor--home .ornament-chronicle-graph {
-    top: -1.6rem;
-    right: -2rem;
-    width: 150%;
+    top: -1rem;
+    right: -4%;
+    width: 116%;
   }
 
   body .ornament-anchor--home .ornament-construction-geometry {
@@ -211,15 +214,15 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
 
   body .ornament-anchor--methodology,
   body .ornament-anchor--about {
-    top: -.05rem;
-    right: -.7rem;
-    width: 7rem;
-    height: 4.5rem;
+    top: .05rem;
+    right: -3vw;
+    width: 54vw;
+    height: 6.35rem;
     opacity: .36;
   }
 
   body .ornament-anchor--methodology {
-    right: 0;
+    right: -1vw;
   }
 
   body .ornament-anchor--methodology .ornament-construction-geometry,
@@ -229,28 +232,48 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
 
   body .ornament-anchor--methodology .ornament-marginalia,
   body .ornament-anchor--about .ornament-marginalia {
-    top: 0;
+    top: -.15rem;
     right: 0;
-    width: 100%;
+    width: 88%;
   }
 
   html:root[data-theme='dark'] body .ornament-anchor--home,
   html:root[data-theme='dark'] body .ornament-anchor--methodology,
   html:root[data-theme='dark'] body .ornament-anchor--about {
-    opacity: .34;
+    opacity: .36;
   }
 }
 
 @media (max-width: 480px) {
   body .ornament-anchor--home {
-    width: 36vw;
-    opacity: .36;
+    top: .05rem;
+    right: -8vw;
+    width: 82vw;
+    height: 8.2rem;
+    opacity: .38;
+  }
+
+  body .ornament-anchor--home .ornament-chronicle-graph {
+    top: -.85rem;
+    right: -5%;
+    width: 114%;
   }
 
   body .ornament-anchor--methodology,
   body .ornament-anchor--about {
-    width: 5.6rem;
-    opacity: .34;
+    right: -2vw;
+    width: 58vw;
+    height: 6.25rem;
+    opacity: .36;
+  }
+
+  body .ornament-anchor--methodology {
+    right: 0;
+  }
+
+  body .ornament-anchor--methodology .ornament-marginalia,
+  body .ornament-anchor--about .ornament-marginalia {
+    width: 86%;
   }
 }
 
