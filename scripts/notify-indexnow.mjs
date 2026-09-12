@@ -8,17 +8,22 @@ export const INDEXNOW_KEY_FILE = '1f461c7e615ee1a096d24986265d7fda.txt';
 export const INDEXNOW_KEY = INDEXNOW_KEY_FILE.replace(/\.txt$/, '');
 export const INDEXNOW_KEY_LOCATION = `${SITE_BASE}/${INDEXNOW_KEY_FILE}`;
 
+const XML_ENTITIES = {
+  amp: '&',
+  lt: '<',
+  gt: '>',
+  quot: '"',
+  apos: "'",
+};
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+function decodeXmlEntitiesOnce(value) {
+  return value.replace(/&(amp|lt|gt|quot|apos);/g, (_match, entity) => XML_ENTITIES[entity]);
+}
+
 export function extractSitemapUrls(xml) {
-  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) =>
-    match[1]
-      .replaceAll('&amp;', '&')
-      .replaceAll('&lt;', '<')
-      .replaceAll('&gt;', '>')
-      .replaceAll('&quot;', '"')
-      .replaceAll('&apos;', "'"),
-  );
+  const urls = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => decodeXmlEntitiesOnce(match[1]));
 
   return [...new Set(urls)].filter((value) => {
     try {
