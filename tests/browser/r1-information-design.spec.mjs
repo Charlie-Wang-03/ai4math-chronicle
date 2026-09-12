@@ -20,6 +20,14 @@ async function backgroundColor(locator) {
   return locator.evaluate((element) => getComputedStyle(element).backgroundColor);
 }
 
+async function backgroundImage(locator) {
+  return locator.evaluate((element) => getComputedStyle(element).backgroundImage);
+}
+
+async function borderTopColor(locator) {
+  return locator.evaluate((element) => getComputedStyle(element).borderTopColor);
+}
+
 async function color(locator) {
   return locator.evaluate((element) => getComputedStyle(element).color);
 }
@@ -126,39 +134,44 @@ test('R1D makes the four-dimensional trust model a scannable semantic reference 
   await expect(dimensions.nth(3)).toContainText('Formal assurance');
 });
 
-test('R1.2B renders domain-semantic chromatic hierarchy as inset editorial modules', async ({ page }) => {
+test('R1.2B restores graduated Timeline gradients and rule-led Event Detail hierarchy', async ({ page }) => {
   const eventHref = await firstEventHref(page);
 
   const yearLabel = page.locator('.timeline-year-label').first();
   const timelineTools = page.locator('.timeline-tools');
   const h1Card = page.locator('.event-card.H1').first();
-  const ordinaryCard = page.locator('.event-card.H2').first();
+  const h2Card = page.locator('.event-card.H2').first();
+  const h3Card = page.locator('.event-card.H3').first();
   await expect(timelineTools).toBeVisible();
   await expect(h1Card).toBeVisible();
-  await expect(ordinaryCard).toBeVisible();
-  expect(await backgroundColor(timelineTools)).not.toBe(await backgroundColor(ordinaryCard));
-  expect(await backgroundColor(h1Card)).not.toBe(await backgroundColor(ordinaryCard));
+  await expect(h2Card).toBeVisible();
+  await expect(h3Card).toBeVisible();
+
+  const tierGradients = await Promise.all([h1Card, h2Card, h3Card].map((locator) => backgroundImage(locator)));
+  for (const gradient of tierGradients) expect(gradient).toContain('linear-gradient');
+  expect(new Set(tierGradients).size).toBe(3);
   expect(await color(yearLabel)).not.toBe(await color(page.locator('body')));
   expect(await stylePx(timelineTools, 'paddingLeft')).toBeGreaterThanOrEqual(12);
   expect(await stylePx(timelineTools, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
-  expect(await stylePx(h1Card, 'paddingLeft')).toBeGreaterThanOrEqual(12);
-  expect(await stylePx(h1Card, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
-  expect(await stylePx(h1Card, 'borderLeftWidth')).toBeLessThanOrEqual(2);
+  for (const card of [h1Card, h2Card, h3Card]) {
+    expect(await stylePx(card, 'paddingLeft')).toBe(0);
+    expect(await stylePx(card, 'borderTopLeftRadius')).toBe(0);
+    expect(await stylePx(card, 'borderLeftWidth')).toBe(0);
+  }
 
   await page.goto(eventHref);
+  const why = page.locator('#why-it-matters');
   const historical = page.locator('#historical-context');
   const primaryEvidence = page.locator('#primary-evidence');
   const trust = page.locator('#evidence-status');
-  const historicalBg = await backgroundColor(historical);
-  const evidenceBg = await backgroundColor(primaryEvidence);
-  const trustBg = await backgroundColor(trust);
-  expect(new Set([historicalBg, evidenceBg, trustBg]).size).toBe(3);
-  expect(historicalBg).not.toBe('rgba(0, 0, 0, 0)');
-  expect(evidenceBg).not.toBe('rgba(0, 0, 0, 0)');
-  expect(await stylePx(historical, 'paddingLeft')).toBeGreaterThanOrEqual(12);
-  expect(await stylePx(primaryEvidence, 'paddingLeft')).toBeGreaterThanOrEqual(12);
-  expect(await stylePx(trust, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
-  expect(await stylePx(trust, 'marginTop')).toBeGreaterThanOrEqual(8);
+  for (const section of [why, historical, primaryEvidence, trust]) {
+    expect(await backgroundColor(section)).toBe('rgba(0, 0, 0, 0)');
+    expect(await stylePx(section, 'borderTopLeftRadius')).toBe(0);
+    expect(await stylePx(section, 'paddingLeft')).toBe(0);
+    expect(await stylePx(section, 'borderLeftWidth')).toBe(0);
+    expect(await stylePx(section, 'borderTopWidth')).toBeGreaterThanOrEqual(2);
+  }
+  expect(new Set(await Promise.all([why, historical, primaryEvidence].map((section) => borderTopColor(section)))).size).toBe(3);
 
   const primaryTrustCells = trust.locator('.event-glance-primary');
   const firstTrustBox = await primaryTrustCells.nth(0).boundingBox();
@@ -166,6 +179,10 @@ test('R1.2B renders domain-semantic chromatic hierarchy as inset editorial modul
   expect(firstTrustBox).not.toBeNull();
   expect(secondTrustBox).not.toBeNull();
   expect(secondTrustBox.x - (firstTrustBox.x + firstTrustBox.width)).toBeGreaterThanOrEqual(8);
+  expect(await backgroundColor(primaryTrustCells.nth(0))).toBe('rgba(0, 0, 0, 0)');
+  expect(await backgroundColor(primaryTrustCells.nth(1))).toBe('rgba(0, 0, 0, 0)');
+  expect(await stylePx(primaryTrustCells.nth(0), 'borderTopLeftRadius')).toBe(0);
+  expect(await stylePx(primaryTrustCells.nth(1), 'borderTopLeftRadius')).toBe(0);
 
   await page.goto(projectPath('en/explore/'));
   const filterPanel = page.locator('.explore-filter-panel');
@@ -183,15 +200,30 @@ test('R1.2B renders domain-semantic chromatic hierarchy as inset editorial modul
   expect(await stylePx(dimensions.first(), 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
 });
 
-test('R1.2B keeps semantic module separation in dark mode', async ({ page }) => {
-  await page.goto(projectPath(`en/events/${worstCaseSlug}/`));
+test('R1.2B keeps gradient and rule semantics legible in dark mode', async ({ page }) => {
+  await page.goto(projectPath('en/'));
   await page.evaluate(() => {
     document.documentElement.dataset.theme = 'dark';
     document.documentElement.style.colorScheme = 'dark';
   });
 
-  const historicalBg = await backgroundColor(page.locator('#historical-context'));
-  const evidenceBg = await backgroundColor(page.locator('#primary-evidence'));
-  const trustBg = await backgroundColor(page.locator('#evidence-status'));
-  expect(new Set([historicalBg, evidenceBg, trustBg]).size).toBe(3);
+  const tierGradients = await Promise.all([
+    page.locator('.event-card.H1').first(),
+    page.locator('.event-card.H2').first(),
+    page.locator('.event-card.H3').first(),
+  ].map((locator) => backgroundImage(locator)));
+  expect(new Set(tierGradients).size).toBe(3);
+
+  await page.goto(projectPath(`en/events/${worstCaseSlug}/`));
+  await page.evaluate(() => {
+    document.documentElement.dataset.theme = 'dark';
+    document.documentElement.style.colorScheme = 'dark';
+  });
+  const historical = page.locator('#historical-context');
+  const evidence = page.locator('#primary-evidence');
+  const trust = page.locator('#evidence-status');
+  expect(await backgroundColor(historical)).toBe('rgba(0, 0, 0, 0)');
+  expect(await backgroundColor(evidence)).toBe('rgba(0, 0, 0, 0)');
+  expect(await backgroundColor(trust)).toBe('rgba(0, 0, 0, 0)');
+  expect(await borderTopColor(historical)).not.toBe(await borderTopColor(evidence));
 });
