@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import '../styles/event-detail.css';
 import { formatDate, getEventById, text } from '../lib/events';
-import { presentationLabel } from '../lib/presentation';
+import { presentationExcerpt, presentationLabel } from '../lib/presentation';
 import { absolute, href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { event, locale } = Astro.props as { event: ChronicleEvent; locale: Locale };
@@ -11,6 +11,8 @@ const other = zh ? 'en' : 'zh-CN';
 const canonicalPath = localePath(locale, `events/${event.slug}`);
 const eventTitle = text(event.title, locale);
 const description = text(event.summary, locale);
+const leadSummary = presentationExcerpt(description, locale, 'record_lede');
+const summaryIsCondensed = leadSummary !== description;
 const primary = event.sources.filter((source) => source.primary || source.tier === 'S1');
 const sourceTypes = [...new Set(event.sources.map((source) => source.type))];
 const artifactKinds = [...new Set(event.artifacts.map((artifact) => artifact.kind))];
@@ -85,11 +87,11 @@ const breadcrumbJsonLd = {
     {event.tags.map((value) => <span data-pagefind-filter={`tag:${value}`}></span>)}
   </div>
 
-  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={href(localePath(locale))}>{zh ? '时间线' : 'Timeline'}</a><span>/</span><span>{eventTitle}</span></nav>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href={href(localePath(locale))}>{zh ? '时间线' : 'Timeline'}</a><span class="breadcrumb-separator">/</span><span class="breadcrumb-current">{eventTitle}</span></nav>
   <header class="event-header event-detail-header">
     <p class="eyebrow"><time datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time></p>
     <h1>{eventTitle}</h1>
-    <p class="lede">{description}</p>
+    <p class="lede">{leadSummary}</p>
   </header>
 
   <div class="event-detail-layout">
@@ -108,7 +110,7 @@ const breadcrumbJsonLd = {
     </nav>
 
     <div class="event-detail-main">
-      <section id="what-happened" class="event-section event-section-primary"><h2>{labels.what}</h2><p>{text(event.claim, locale)}</p></section>
+      <section id="what-happened" class="event-section event-section-primary"><h2>{labels.what}</h2><p>{text(event.claim, locale)}</p>{summaryIsCondensed && <p class="event-summary-detail">{description}</p>}</section>
       <section id="why-it-matters" class="event-section event-section-primary"><h2>{labels.why}</h2><p>{text(event.why_it_matters, locale)}</p><p class="event-rationale"><strong>{labels.rationale}</strong>{text(event.significance.rationale, locale)}</p></section>
 
       <section id="historical-context" class="event-section event-section-primary"><h2>{labels.relationships}</h2>
