@@ -81,6 +81,10 @@ test('R1.2C-C keeps structural accents bounded to chronology transition, zero-re
   await expect(emptyState).toBeVisible({ timeout: 10_000 });
   await expect(emptyOrnament).toBeVisible();
   await expectDecorativeSvg(emptyOrnament.locator('[data-ornament="construction-geometry"]'));
+  expect(await emptyState.evaluate((element) => getComputedStyle(element).zIndex)).toBe('auto');
+  expect(await emptyOrnament.evaluate((element) => getComputedStyle(element).zIndex)).toBe('1');
+  const resetAction = emptyState.getByRole('link');
+  expect(await resetAction.evaluate((element) => getComputedStyle(element).zIndex)).toBe('2');
   await expect(page.locator('.explore-filter-panel [data-ornament], .explore-table-wrap [data-ornament]')).toHaveCount(0);
 });
 
