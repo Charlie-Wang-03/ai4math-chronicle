@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ExploreDirectory from './ExploreDirectory.astro';
+import ConstructionGeometry from './ornament/ConstructionGeometry.astro';
 import { getAllEvents } from '../lib/events';
 import { localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
@@ -37,5 +38,10 @@ const c = locale === 'zh-CN'
       <p>{c.note}</p>
     </details>
   </header>
-  <ExploreDirectory events={events} locale={locale} />
+  <div class="explore-directory-stage">
+    <ExploreDirectory events={events} locale={locale} />
+    <div class="ornament-anchor ornament-anchor--explore-empty" aria-hidden="true" data-ornament-anchor="explore-empty">
+      <ConstructionGeometry variant="compact" />
+    </div>
+  </div>
 </BaseLayout>
