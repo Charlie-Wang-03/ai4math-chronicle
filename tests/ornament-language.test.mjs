@@ -93,24 +93,23 @@ test('R1.2C-B implements only the approved identity anchors with reusable decora
   assert.doesNotMatch(ornamentCss, /animation\s*:/);
 });
 
-test('R1.2C-C extends identity only into approved structural accents', async () => {
-  const [timeline, explore, layout, ornamentCss] = await Promise.all([
+test('R1.2C-C owner review retains the global footer echo and rejects ineffective structural accents', async () => {
+  const [timeline, explore, layout, ornamentCss, state] = await Promise.all([
     read('src/components/TimelinePage.astro'),
     read('src/components/ExplorePage.astro'),
     read('src/layouts/BaseLayout.astro'),
     read('src/styles/r1-ornament.css'),
+    read('docs/project-state.md'),
   ]);
 
-  assert.match(timeline, /data-ornament-transition="chronology"/);
-  assert.match(timeline, /<MarginaliaMark variant="reference" \/>/);
-  assert.match(explore, /data-ornament-anchor="explore-empty"/);
-  assert.match(explore, /<ConstructionGeometry variant="compact" \/>/);
+  assert.doesNotMatch(timeline, /data-ornament-transition="chronology"/);
+  assert.doesNotMatch(explore, /data-ornament-anchor="explore-empty"/);
   assert.match(layout, /data-ornament-anchor="footer"/);
   assert.match(layout, /<ChronicleGraph variant="compact" \/>/);
 
-  assert.match(ornamentCss, /explore-table-wrap:not\(:has\(\[data-event-item\]:not\(\.hidden\)\)\) \+ \.empty-state ~ \.ornament-anchor--explore-empty/);
-  assert.match(ornamentCss, /ornament-transition--chronology/);
+  assert.doesNotMatch(ornamentCss, /ornament-transition--chronology/);
+  assert.doesNotMatch(ornamentCss, /ornament-anchor--explore-empty/);
   assert.match(ornamentCss, /ornament-anchor--footer/);
-  assert.match(ornamentCss, /body \.ornament-transition--chronology \{[\s\S]*?opacity: \.42/);
-  assert.match(ornamentCss, /@media \(max-width: 760px\) \{[\s\S]*?body \.ornament-transition--chronology \{\s*display: none;/);
+  assert.match(state, /R1\.2C-C visual review did not accept the chronology transition or Search & Explore zero-result ornament/);
+  assert.match(state, /global footer Chronicle Graph echo remains approved/);
 });
