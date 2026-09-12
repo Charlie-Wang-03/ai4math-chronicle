@@ -188,7 +188,9 @@ body .ornament-transition--chronology .ornament-marginalia {
 }
 
 /* Explore remains ornament-free during active retrieval. Construction geometry
-   appears only when the real zero-result state replaces the result surface. */
+   appears only when the real zero-result state replaces the result surface.
+   The panel background stays below the ornament while its direct content stays
+   above it, preserving both identity and reset-action readability. */
 body .explore-directory-stage {
   position: relative;
   isolation: isolate;
@@ -196,11 +198,17 @@ body .explore-directory-stage {
 
 body .explore-directory-stage .empty-state {
   position: relative;
-  z-index: 1;
+  z-index: auto;
+}
+
+body .explore-directory-stage .empty-state > * {
+  position: relative;
+  z-index: 2;
 }
 
 body .ornament-anchor--explore-empty {
   display: none;
+  z-index: 1;
   right: .9rem;
   bottom: .35rem;
   width: min(29vw, 270px);
