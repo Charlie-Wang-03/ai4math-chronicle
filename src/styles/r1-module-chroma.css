@@ -1,13 +1,23 @@
-/* R1.2B — module chromatic hierarchy.
-   Apply the R1.2A semantic palette to existing reader modules without
-   introducing a saturated category-card system or changing layout semantics. */
+/* R1.2B — module chromatic hierarchy, corrected after visual QA.
+   Semantic color should read as an editorial cue inside a Paper-led interface,
+   not as full-bleed category bands. Modules use restrained tint, visible inset,
+   modest radius, and no elevation. */
+
+html:root {
+  --module-radius: 8px;
+  --module-radius-compact: 6px;
+  --module-inset-x: 1rem;
+  --module-inset-y: .9rem;
+}
 
 /* Timeline / chronology --------------------------------------------------- */
 body .timeline-tools {
-  background-color: var(--context-research);
-  border-top-color: color-mix(in srgb, var(--research) 42%, var(--rule));
-  border-bottom-color: color-mix(in srgb, var(--research) 26%, var(--rule));
-  box-shadow: inset 0 2px 0 color-mix(in srgb, var(--research) 72%, transparent);
+  background-color: color-mix(in srgb, var(--paper) 78%, var(--context-research));
+  border: 1px solid color-mix(in srgb, var(--research) 24%, var(--rule));
+  border-top-color: color-mix(in srgb, var(--research) 46%, var(--rule));
+  border-radius: var(--module-radius);
+  padding-inline: var(--module-inset-x);
+  box-shadow: none;
 }
 
 body .timeline-year-anchor {
@@ -29,21 +39,26 @@ body .timeline::before {
 }
 
 body .event-card.H1 {
-  border-top-color: color-mix(in srgb, var(--milestone) 72%, var(--rule));
-  background-color: var(--context-milestone);
-  background-image: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--milestone-soft) 78%, transparent) 0,
-    transparent 62%
-  );
-  box-shadow: inset 2px 0 0 color-mix(in srgb, var(--milestone) 68%, transparent);
+  border: 1px solid color-mix(in srgb, var(--milestone) 30%, var(--rule));
+  border-left: 3px solid color-mix(in srgb, var(--milestone) 78%, var(--rule));
+  border-radius: var(--module-radius);
+  background-color: color-mix(in srgb, var(--paper) 84%, var(--context-milestone));
+  background-image: none;
+  padding-inline: var(--module-inset-x);
+  box-shadow: none;
+}
+
+body .event-card.H1:hover {
+  border-color: color-mix(in srgb, var(--milestone) 46%, var(--rule));
+  border-left-color: var(--milestone);
+  background-color: color-mix(in srgb, var(--paper) 78%, var(--context-milestone));
 }
 
 body .event-card.H1 .badge.significance,
 body .badge.significance.H1 {
   color: var(--milestone);
   border-color: color-mix(in srgb, var(--milestone) 62%, var(--rule));
-  background-color: color-mix(in srgb, var(--milestone-soft) 72%, transparent);
+  background-color: color-mix(in srgb, var(--paper) 62%, var(--milestone-soft));
 }
 
 body .source-shortcuts {
@@ -60,9 +75,19 @@ body .source-shortcut {
 }
 
 /* Event Detail ------------------------------------------------------------ */
+body #why-it-matters,
+body #historical-context,
+body #primary-evidence {
+  margin-top: .65rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--module-radius);
+  padding: var(--module-inset-y) var(--module-inset-x) 1rem;
+  box-shadow: none;
+}
+
 body #why-it-matters {
-  border-left-color: var(--milestone);
-  background-color: color-mix(in srgb, var(--context-milestone) 78%, var(--paper));
+  border-left: 3px solid var(--milestone);
+  background-color: color-mix(in srgb, var(--paper) 84%, var(--context-milestone));
 }
 
 body #why-it-matters > h2 {
@@ -70,10 +95,8 @@ body #why-it-matters > h2 {
 }
 
 body #historical-context {
-  padding-left: .85rem;
-  padding-right: .75rem;
-  background-color: var(--context-archive);
-  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--archive) 72%, transparent);
+  border-left: 3px solid var(--archive);
+  background-color: color-mix(in srgb, var(--paper) 86%, var(--context-archive));
 }
 
 body #historical-context > h2 {
@@ -89,10 +112,8 @@ body #historical-context .relationships > div {
 }
 
 body #primary-evidence {
-  padding-left: .85rem;
-  padding-right: .75rem;
-  background-color: var(--context-evidence);
-  box-shadow: inset 3px 0 0 color-mix(in srgb, var(--evidence) 72%, transparent);
+  border-left: 3px solid var(--evidence);
+  background-color: color-mix(in srgb, var(--paper) 84%, var(--context-evidence));
 }
 
 body #primary-evidence > h2 {
@@ -104,33 +125,37 @@ body #primary-evidence .evidence-list li::before {
 }
 
 body #evidence-status {
-  padding-left: .85rem;
-  padding-right: .85rem;
-  background-color: var(--context-neutral);
-  border-top-color: var(--rule-strong);
-  border-bottom-color: var(--rule-strong);
+  border: 1px solid color-mix(in srgb, var(--rule-strong) 72%, var(--rule));
+  border-radius: var(--module-radius);
+  padding: .95rem var(--module-inset-x) 1rem;
+  background-color: color-mix(in srgb, var(--paper) 86%, var(--context-neutral));
 }
 
 body #evidence-status .event-glance-primary:first-of-type {
-  background-color: color-mix(in srgb, var(--context-milestone) 74%, var(--paper));
+  border-radius: var(--module-radius-compact);
+  background-color: color-mix(in srgb, var(--paper) 80%, var(--context-milestone));
   box-shadow: inset 0 2px 0 color-mix(in srgb, var(--milestone) 64%, transparent);
 }
 
 body #evidence-status .event-glance-primary:nth-of-type(2) {
-  background-color: color-mix(in srgb, var(--paper) 78%, var(--context-neutral));
+  border-radius: var(--module-radius-compact);
+  background-color: color-mix(in srgb, var(--paper) 92%, var(--context-neutral));
   box-shadow: inset 0 2px 0 var(--rule-strong);
 }
 
 body #evidence-status .event-glance-primary {
   padding-top: .55rem;
   padding-bottom: .45rem;
+  padding-right: .7rem;
 }
 
 body #contribution-verification .fact-grid .fact:nth-child(3),
 body #contribution-verification .fact-grid .fact:nth-child(4) {
-  border-left-color: var(--research);
-  background-color: color-mix(in srgb, var(--context-research) 78%, var(--paper));
-  padding-right: .8rem;
+  border: 1px solid color-mix(in srgb, var(--research) 18%, var(--rule));
+  border-left: 3px solid color-mix(in srgb, var(--research) 68%, var(--rule));
+  border-radius: var(--module-radius-compact);
+  background-color: color-mix(in srgb, var(--paper) 88%, var(--context-research));
+  padding: .75rem .9rem .82rem;
 }
 
 body #verification-history .evidence-list li::before,
@@ -140,9 +165,11 @@ body #corrections .evidence-list li::before {
 
 /* Search & Explore -------------------------------------------------------- */
 body .explore-filter-panel {
-  background-color: var(--context-research);
-  border-top-color: var(--research);
-  border-bottom-color: color-mix(in srgb, var(--research) 28%, var(--rule));
+  background-color: color-mix(in srgb, var(--paper) 76%, var(--context-research));
+  border: 1px solid color-mix(in srgb, var(--research) 24%, var(--rule));
+  border-top: 2px solid color-mix(in srgb, var(--research) 72%, var(--rule));
+  border-radius: var(--module-radius);
+  box-shadow: none;
 }
 
 body .explore-filter-panel .search-input,
@@ -159,16 +186,19 @@ body .explore-filter-panel .multi-filter-menu > summary:focus-visible {
 }
 
 body .explore-table-wrap {
+  overflow: hidden;
   background-color: var(--paper);
-  border-top-color: var(--research-strong);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--research-strong);
+  border-radius: var(--module-radius);
 }
 
 body .explore-table th {
-  background-color: color-mix(in srgb, var(--context-research) 76%, var(--paper));
+  background-color: color-mix(in srgb, var(--paper) 78%, var(--context-research));
 }
 
 body .explore-table tbody tr:hover {
-  background-color: color-mix(in srgb, var(--context-research) 58%, transparent);
+  background-color: color-mix(in srgb, var(--paper) 78%, var(--context-research));
 }
 
 body .explore-evidence {
@@ -177,28 +207,37 @@ body .explore-evidence {
 
 /* Standards & Methodology ------------------------------------------------ */
 body .trust-model-overview {
-  border-top-color: var(--ink);
-  background-color: var(--paper);
+  gap: .75rem;
+  border: 0;
+  background: transparent;
+}
+
+body .trust-dimension,
+body .trust-dimension + .trust-dimension {
+  border: 1px solid var(--rule);
+  border-radius: var(--module-radius);
+  padding: 1rem;
+  box-shadow: none;
 }
 
 body .trust-dimension:nth-of-type(1) {
-  background-color: var(--context-milestone);
-  box-shadow: inset 0 3px 0 var(--milestone);
+  border-top: 3px solid var(--milestone);
+  background-color: color-mix(in srgb, var(--paper) 82%, var(--context-milestone));
 }
 
 body .trust-dimension:nth-of-type(2) {
-  background-color: var(--context-evidence);
-  box-shadow: inset 0 3px 0 var(--evidence);
+  border-top: 3px solid var(--evidence);
+  background-color: color-mix(in srgb, var(--paper) 82%, var(--context-evidence));
 }
 
 body .trust-dimension:nth-of-type(3) {
-  background-color: var(--context-neutral);
-  box-shadow: inset 0 3px 0 var(--rule-strong);
+  border-top: 3px solid var(--rule-strong);
+  background-color: color-mix(in srgb, var(--paper) 88%, var(--context-neutral));
 }
 
 body .trust-dimension:nth-of-type(4) {
-  background-color: var(--context-research);
-  box-shadow: inset 0 3px 0 var(--research);
+  border-top: 3px solid var(--research);
+  background-color: color-mix(in srgb, var(--paper) 82%, var(--context-research));
 }
 
 body .trust-dimension:nth-of-type(1) .trust-dimension-kicker { color: var(--milestone); }
@@ -207,10 +246,50 @@ body .trust-dimension:nth-of-type(3) .trust-dimension-kicker { color: var(--ink-
 body .trust-dimension:nth-of-type(4) .trust-dimension-kicker { color: var(--research); }
 
 @media (max-width: 620px) {
+  html:root {
+    --module-inset-x: .8rem;
+    --module-inset-y: .78rem;
+  }
+
+  body .timeline-tools {
+    border-radius: var(--module-radius-compact);
+    padding-inline: .75rem;
+  }
+
+  body .event-card.H1 {
+    border-radius: var(--module-radius-compact);
+    padding-inline: .75rem;
+  }
+
+  body #why-it-matters,
   body #historical-context,
   body #primary-evidence,
   body #evidence-status {
-    padding-left: .65rem;
-    padding-right: .65rem;
+    border-radius: var(--module-radius-compact);
+    padding-left: .8rem;
+    padding-right: .8rem;
   }
+
+  body .explore-filter-panel,
+  body .explore-table-wrap {
+    border-radius: var(--module-radius-compact);
+  }
+
+  body .trust-model-overview {
+    gap: .6rem;
+  }
+
+  body .trust-dimension,
+  body .trust-dimension + .trust-dimension,
+  body .trust-dimension:nth-child(3),
+  body .trust-dimension:nth-child(4) {
+    border: 1px solid var(--rule);
+    border-radius: var(--module-radius-compact);
+    padding: .85rem;
+  }
+
+  body .trust-dimension:nth-of-type(1) { border-top: 3px solid var(--milestone); }
+  body .trust-dimension:nth-of-type(2) { border-top: 3px solid var(--evidence); }
+  body .trust-dimension:nth-of-type(3) { border-top: 3px solid var(--rule-strong); }
+  body .trust-dimension:nth-of-type(4) { border-top: 3px solid var(--research); }
 }
