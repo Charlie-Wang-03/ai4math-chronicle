@@ -20,6 +20,7 @@ Do not treat old chat summaries, memory, copied commit SHAs, or stale branch nam
 ## Read before changing
 
 - Website / build work: [`docs/development.md`](docs/development.md) and [`docs/architecture.md`](docs/architecture.md)
+- Reader-facing UI / information design: [`docs/information-design.md`](docs/information-design.md)
 - Event data / classification / verification: [`docs/editorial-methodology.md`](docs/editorial-methodology.md)
 - Candidate/source discovery: [`docs/deterministic-source-discovery.md`](docs/deterministic-source-discovery.md) and [`docs/source-intake.md`](docs/source-intake.md)
 - Long-term cadence / dependency maintenance / release snapshots: [`docs/maintenance.md`](docs/maintenance.md)

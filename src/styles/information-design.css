@@ -1,0 +1,7 @@
+/* Canonical reader-facing information-design entry point.
+   R1 layers refine the established editorial publication system without
+   replacing the global theme, brand, or responsive accessibility contracts. */
+
+@import './r1-foundations.css';
+@import './r1-event-modules.css';
+@import './r1-reference.css';

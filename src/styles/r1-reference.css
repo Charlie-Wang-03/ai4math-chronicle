@@ -1,0 +1,87 @@
+/* R1D — reference-page modules for explaining the Chronicle's trust model. */
+
+body .trust-model-overview {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 1.4rem 0 2rem;
+  border-top: 2px solid var(--text);
+  border-bottom: 1px solid var(--border-strong);
+}
+
+body .trust-dimension {
+  min-width: 0;
+  padding: .85rem .9rem .9rem 0;
+}
+
+body .trust-dimension + .trust-dimension {
+  border-left: 1px solid var(--border);
+  padding-left: .9rem;
+}
+
+body .trust-dimension-kicker {
+  display: block;
+  color: var(--muted);
+  font-family: var(--font-metadata);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+body .trust-dimension h2 {
+  margin: .24rem 0 .35rem;
+  font-family: var(--font-editorial);
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+
+body .trust-dimension p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.48;
+}
+
+body .methodology-principle {
+  max-width: var(--measure-reading);
+  margin: -.7rem 0 2rem;
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+@media (max-width: 820px) {
+  body .trust-model-overview {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body .trust-dimension:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding-left: 0;
+  }
+
+  body .trust-dimension:nth-child(4) {
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 520px) {
+  body .trust-model-overview {
+    grid-template-columns: 1fr;
+    margin-top: 1rem;
+  }
+
+  body .trust-dimension,
+  body .trust-dimension + .trust-dimension,
+  body .trust-dimension:nth-child(3),
+  body .trust-dimension:nth-child(4) {
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding: .72rem 0;
+  }
+
+  body .trust-dimension:first-child {
+    border-top: 0;
+  }
+}

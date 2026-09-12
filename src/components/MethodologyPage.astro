@@ -6,12 +6,36 @@ const { locale } = Astro.props as { locale: Locale };
 const zh = locale === 'zh-CN';
 const title = zh ? '标准与方法 — AI4Math 大事记' : 'Standards & Methodology — AI4Math Chronicle';
 const desc = zh ? '理解 AI4Math 大事记如何收录事件、判断历史重要性、组织来源与证据、表达验证状态并处理更正。' : 'How AI4Math Chronicle selects events, assesses historical significance, organizes evidence, communicates verification, and handles corrections.';
+const trustDimensions = zh
+  ? [
+      ['01', '重要性', '历史上有多重要？', 'H1–H3 描述事件在 AI4Math 历史或重要技术路线中的长期位置。'],
+      ['02', '证据', '公开证据有多成熟？', '来源层级与 E0–E4 记录 claim、研究记录、可检查工件与独立检查的发展程度。'],
+      ['03', '验证状态', '核心事件描述被佐证到什么程度？', 'Verification 描述 Chronicle 当前对“发生了什么”的事件级证据状态，而不是裁决最终数学真伪。'],
+      ['04', '形式保障', '形式化工件被检查到什么程度？', 'Formal Assurance 区分无工件、工件可用、机器检查与独立 replay。'],
+    ]
+  : [
+      ['01', 'Significance', 'How important is this historically?', 'H1–H3 describes the event’s durable place in AI4Math history or an important technical direction.'],
+      ['02', 'Evidence', 'How mature is the public evidence?', 'Source tiers and E0–E4 track the progression from claims and research records to inspectable artifacts and independent checks.'],
+      ['03', 'Verification', 'How far is the core event description corroborated?', 'Verification records the Chronicle’s current event-level evidence state for what happened; it is not a verdict on ultimate mathematical truth.'],
+      ['04', 'Formal assurance', 'How far has a formal artifact been checked?', 'Formal Assurance distinguishes no artifact, artifact availability, machine checking, and independent replay.'],
+    ];
 ---
 <BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'methodology')} alternatePath={localePath(zh ? 'en':'zh-CN','methodology')}>
   <article class="prose">
     <p class="eyebrow">{zh ? '标准与方法' : 'Standards & Methodology'}</p>
     <h1>{zh ? '如何理解与核查 Chronicle' : 'How to read and evaluate the Chronicle'}</h1>
     <p class="lede">{zh ? 'AI4Math 大事记不是新闻流或论文数据库。它把多个公开来源组织成稳定的历史事件记录，并把历史重要性、证据强度、验证状态与形式化保障分开表达。' : 'AI4Math Chronicle is not a news feed or paper database. It organizes public sources into stable historical event records and keeps historical significance, evidence strength, verification status, and formal assurance separate.'}</p>
+
+    <section class="trust-model-overview" aria-label={zh ? 'Chronicle 可信度模型四个维度' : 'Four dimensions of the Chronicle trust model'}>
+      {trustDimensions.map(([number, name, question, explanation]) => (
+        <article class="trust-dimension" data-trust-dimension>
+          <span class="trust-dimension-kicker">{number} · {name}</span>
+          <h2>{question}</h2>
+          <p>{explanation}</p>
+        </article>
+      ))}
+    </section>
+    <p class="methodology-principle">{zh ? '这四个维度相互独立，不会被压缩成一个“可信度总分”。来源层级用于解释证据从哪里来，也不替代重要性、验证状态或数学正确性判断。' : 'These four dimensions remain independent rather than collapsing into one “trust score.” Source tiers explain where evidence comes from; they do not replace significance, verification state, or mathematical correctness judgments.'}</p>
 
     <h2>{zh ? '1. 什么会进入 Chronicle？' : '1. What enters the Chronicle?'}</h2>
     <p>{zh ? '采用“宽发现、严收录”：候选可以来自论文、正式证明工件、实验室公告、GitHub、学术讨论或社区信号，但只有具有历史或领域意义的 canonical event 才进入公开 Chronicle。' : 'The Chronicle uses broad discovery and strict publication gates: candidates may come from papers, formal proof artifacts, lab announcements, GitHub, scholarly discussion, or community signals, but only historically or field-significant canonical events enter the published record.'}</p>
