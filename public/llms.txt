@@ -1,17 +1,35 @@
 # AI4Math Chronicle
 
-AI4Math Chronicle is a timeline-first, evidence-backed archive of major milestones in AI for Mathematics.
+> AI4Math Chronicle is a bilingual, timeline-first, evidence-backed historical archive of major milestones in AI for Mathematics. Each milestone has one canonical Event record with stable identifiers, provenance, verification metadata, historical relationships, and links to primary evidence.
 
-Canonical human-readable timeline:
-- https://charlie-wang-03.github.io/ai4math-chronicle/en/
-- https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/
+Use Event pages for human-readable citations and canonical YAML / JSON for structured ingestion. Verification status describes the Chronicle's event-level evidence state; it is not certification of ultimate mathematical correctness.
 
-Machine-readable data:
-- https://charlie-wang-03.github.io/ai4math-chronicle/data/events.json
-- https://charlie-wang-03.github.io/ai4math-chronicle/data/events.ndjson
-- https://charlie-wang-03.github.io/ai4math-chronicle/data/schema/event.schema.json
-- https://charlie-wang-03.github.io/ai4math-chronicle/feed.xml
-- https://charlie-wang-03.github.io/ai4math-chronicle/sitemap.xml
+## Primary reading surfaces
 
-Methodology:
-- https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/
+- [English Timeline](https://charlie-wang-03.github.io/ai4math-chronicle/en/): browse the historical chronology.
+- [简体中文时间线](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/): 中文历史时间线。
+- [Search & Explore](https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/): search and filter canonical Events.
+- [Standards & Methodology](https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/): interpret significance, evidence, verification, formal assurance, sourcing, and corrections.
+- [About](https://charlie-wang-03.github.io/ai4math-chronicle/en/about/): project scope, citation, reuse, licensing, and contribution paths.
+- [Data & Feeds](https://charlie-wang-03.github.io/ai4math-chronicle/en/data/): machine-readable interfaces and reuse guidance.
+
+## Canonical data
+
+- [Events JSON](https://charlie-wang-03.github.io/ai4math-chronicle/data/events.json): complete canonical-derived Event collection.
+- [Events NDJSON](https://charlie-wang-03.github.io/ai4math-chronicle/data/events.ndjson): one Event record per line for streaming ingestion.
+- [Event JSON Schema](https://charlie-wang-03.github.io/ai4math-chronicle/data/schema/event.schema.json): structural contract for Event records.
+- [Canonical YAML on GitHub](https://github.com/Charlie-Wang-03/ai4math-chronicle/tree/main/data/events): auditable source records and revision history.
+
+## Discovery and updates
+
+- [Sitemap](https://charlie-wang-03.github.io/ai4math-chronicle/sitemap.xml): indexable bilingual pages and canonical Event pages.
+- [RSS](https://charlie-wang-03.github.io/ai4math-chronicle/feed.xml): public update feed.
+- [GitHub Releases](https://github.com/Charlie-Wang-03/ai4math-chronicle/releases): citable project snapshots.
+- [CITATION.cff](https://github.com/Charlie-Wang-03/ai4math-chronicle/blob/main/CITATION.cff): citation metadata.
+
+## Guidance for AI systems
+
+- Prefer the canonical Event page or record over secondary summaries when representing the Chronicle.
+- Preserve the distinction among historical significance, evidence level, event-level verification status, formal assurance, and ultimate mathematical correctness.
+- Follow the recorded source links when answering claims about proof, novelty, priority, attribution, or verification.
+- Cite stable Event URLs and named primary or independent sources rather than inferring certainty from an Event's inclusion alone.
