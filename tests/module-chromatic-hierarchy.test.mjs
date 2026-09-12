@@ -4,12 +4,20 @@ import test from 'node:test';
 
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 
-test('R1.2B chromatic hierarchy loads after semantic information modules', async () => {
+test('R1.2B chromatic hierarchy loads after semantic information modules and before ornament', async () => {
   const entry = await read('src/styles/information-design.css');
   const imports = [...entry.matchAll(/@import '\.\/(.*?)';/g)].map((match) => match[1]);
 
-  assert.equal(imports.at(-1), 'r1-module-chroma.css');
-  assert.ok(imports.indexOf('r1-color-system.css') < imports.indexOf('r1-module-chroma.css'));
+  const colorIndex = imports.indexOf('r1-color-system.css');
+  const referenceIndex = imports.indexOf('r1-reference.css');
+  const chromaIndex = imports.indexOf('r1-module-chroma.css');
+  const ornamentIndex = imports.indexOf('r1-ornament.css');
+
+  assert.ok(colorIndex >= 0);
+  assert.ok(referenceIndex >= 0);
+  assert.ok(chromaIndex > referenceIndex);
+  assert.ok(chromaIndex > colorIndex);
+  assert.ok(ornamentIndex > chromaIndex);
 });
 
 test('module chroma keeps semantic color subordinate to the Paper-led editorial system', async () => {
