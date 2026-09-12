@@ -25,6 +25,7 @@ test('Event Detail keeps a compact evidence-and-status summary without putting i
   assert.match(detail, /presentationLabel\('evidence_level'/);
   assert.match(detail, /presentationLabel\('ai_role'/);
   assert.match(detail, /presentationLabel\('formal_assurance'/);
+  assert.match(detail, /localePath\(locale, 'methodology'\)/);
 
   const what = detail.indexOf('id="what-happened"');
   const why = detail.indexOf('id="why-it-matters"');
