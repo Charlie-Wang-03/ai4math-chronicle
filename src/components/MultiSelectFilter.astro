@@ -41,7 +41,7 @@ const {
     display: block;
     margin: 0 0 .25rem;
     color: var(--muted);
-    font-size: .78rem;
+    font-size: .76rem;
     font-weight: 680;
   }
   .multi-filter-menu { position: relative; }
@@ -55,11 +55,11 @@ const {
     cursor: pointer;
     list-style: none;
     border: 1px solid var(--border-strong);
-    border-radius: 9px;
+    border-radius: 3px;
     background: var(--surface);
     color: var(--text);
     padding: .65rem .8rem;
-    font-size: .92rem;
+    font-size: .9rem;
     user-select: none;
   }
   .multi-filter-menu > summary::-webkit-details-marker { display: none; }
@@ -67,40 +67,41 @@ const {
     content: '▾';
     flex: 0 0 auto;
     color: var(--muted);
-    font-size: .78rem;
+    font-size: .74rem;
     transition: transform .14s ease;
   }
   .multi-filter-menu[open] > summary::after { transform: rotate(180deg); }
   .multi-filter-menu > summary:focus-visible {
     outline: 3px solid color-mix(in srgb, var(--accent) 18%, transparent);
+    outline-offset: 1px;
     border-color: var(--accent);
   }
   .multi-filter-menu[open] > summary { border-color: var(--accent); }
   .multi-filter-options {
     position: absolute;
     z-index: 8;
-    top: calc(100% + .35rem);
+    top: calc(100% + .3rem);
     left: 0;
     right: 0;
     max-height: 260px;
     overflow-y: auto;
     border: 1px solid var(--border-strong);
-    border-radius: 10px;
+    border-radius: 3px;
     background: var(--surface);
-    padding: .35rem;
-    box-shadow: 0 12px 34px rgba(24, 32, 51, .14);
+    padding: .3rem;
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--text) 13%, transparent);
   }
   .multi-filter-option {
     display: flex;
     align-items: flex-start;
     gap: .55rem;
-    border-radius: 7px;
+    border-radius: 2px;
     padding: .42rem .48rem;
     color: var(--text);
-    font-size: .86rem;
+    font-size: .84rem;
     cursor: pointer;
   }
-  .multi-filter-option:hover { background: var(--accent-soft); }
+  .multi-filter-option:hover { background: color-mix(in srgb, var(--accent-soft) 62%, transparent); }
   .multi-filter-option input { flex: 0 0 auto; margin-top: .18rem; accent-color: var(--accent); }
   .multi-filter-option span { min-width: 0; overflow-wrap: anywhere; }
 </style>

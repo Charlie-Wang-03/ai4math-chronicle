@@ -87,6 +87,23 @@
   }
 }
 
+@media (max-width: 620px) {
+  body .timeline-date {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  body .timeline-dot {
+    left: 0;
+    top: .45rem;
+  }
+
+  body .timeline-item:has(.event-card.H1) .timeline-dot {
+    left: 0;
+    top: .37rem;
+  }
+}
+
 @media (max-width: 420px) {
   .js .nav[data-open='true'] {
     grid-template-columns: 1fr;
