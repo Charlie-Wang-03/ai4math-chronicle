@@ -1,0 +1,100 @@
+/* R1.2A — semantic color architecture.
+   Color roles are independent from the current logo artwork so a future logo
+   refinement does not require reworking the reader-interface palette. */
+
+html:root {
+  /* Foundational surfaces */
+  --canvas: #e7ebf0;
+  --paper: #fbfcfe;
+  --context-neutral: #f1f3f6;
+  --context-research: #edf3fb;
+  --context-archive: #f7f1e4;
+  --context-milestone: #f1edf9;
+  --context-evidence: #eaf4f0;
+
+  /* Ink and rules */
+  --ink: #172033;
+  --ink-muted: #566174;
+  --rule: #c8d1de;
+  --rule-strong: #aab6c7;
+
+  /* Product-semantic accents */
+  --research: #2f5fb3;
+  --research-strong: #24498e;
+  --research-soft: #e5edfb;
+  --milestone: #7251b7;
+  --milestone-soft: #efe9fa;
+  --archive: #845d0d;
+  --archive-soft: #f7f0df;
+  --evidence: #2f6d5b;
+  --evidence-soft: #e8f3ef;
+
+  /* Status colors remain separate from editorial/brand meaning. */
+  --status-good: #1f6f4e;
+  --status-warn: #8a620e;
+  --status-danger: #a63f4d;
+
+  /* Compatibility aliases used by the existing v0.1 reader interface. */
+  --bg: var(--canvas);
+  --surface: var(--paper);
+  --surface-2: var(--context-neutral);
+  --text: var(--ink);
+  --muted: var(--ink-muted);
+  --border: var(--rule);
+  --border-strong: var(--rule-strong);
+  --accent: var(--research);
+  --accent-strong: var(--research-strong);
+  --accent-soft: var(--research-soft);
+  --h1: var(--milestone);
+  --h1-soft: var(--milestone-soft);
+  --good: var(--status-good);
+  --warn: var(--status-warn);
+  --danger: var(--status-danger);
+  --theme-gradient-start: var(--canvas);
+}
+
+html:root[data-theme='dark'] {
+  --canvas: #0b1020;
+  --paper: #162032;
+  --context-neutral: #1c293d;
+  --context-research: #162b4b;
+  --context-archive: #2a2418;
+  --context-milestone: #261f38;
+  --context-evidence: #162a27;
+
+  --ink: #e9eef7;
+  --ink-muted: #acb8c9;
+  --rule: #35465f;
+  --rule-strong: #586a83;
+
+  --research: #91adff;
+  --research-strong: #b5c6ff;
+  --research-soft: #1d3156;
+  --milestone: #c6a7ff;
+  --milestone-soft: #2d2442;
+  --archive: #e6b85c;
+  --archive-soft: #342b1c;
+  --evidence: #79d7ae;
+  --evidence-soft: #19332e;
+
+  --status-good: #79d7ae;
+  --status-warn: #e6b85c;
+  --status-danger: #f08a9a;
+
+  --bg: var(--canvas);
+  --surface: var(--paper);
+  --surface-2: var(--context-neutral);
+  --text: var(--ink);
+  --muted: var(--ink-muted);
+  --border: var(--rule);
+  --border-strong: var(--rule-strong);
+  --accent: var(--research);
+  --accent-strong: var(--research-strong);
+  --accent-soft: var(--research-soft);
+  --h1: var(--milestone);
+  --h1-soft: var(--milestone-soft);
+  --good: var(--status-good);
+  --warn: var(--status-warn);
+  --danger: var(--status-danger);
+  --theme-gradient-start: var(--canvas);
+}
