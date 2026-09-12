@@ -15,6 +15,13 @@ type PresentationCategory =
   | 'source_tier'
   | 'artifact_kind';
 
+type SummarySurface = 'collection' | 'record_lede';
+
+const SUMMARY_BUDGETS: Record<SummarySurface, Record<Locale, number>> = {
+  collection: { en: 210, 'zh-CN': 120 },
+  record_lede: { en: 300, 'zh-CN': 180 },
+};
+
 const LABELS: Record<PresentationCategory, Record<string, LabelPair>> = {
   event_type: {
     discovery: { en: 'Discovery', 'zh-CN': '数学发现' },
@@ -118,4 +125,24 @@ export function presentationLabel(category: PresentationCategory, value: string,
 
 export function presentationOptions(category: PresentationCategory, values: string[], locale: Locale) {
   return values.map((value) => ({ value, label: presentationLabel(category, value, locale) }));
+}
+
+export function presentationExcerpt(value: string, locale: Locale, surface: SummarySurface = 'collection'): string {
+  const normalized = value.replace(/\s+/gu, ' ').trim();
+  const limit = SUMMARY_BUDGETS[surface][locale];
+  if (normalized.length <= limit) return normalized;
+
+  const sentenceEnd = /[.!?。！？]/u;
+  const minimumCompleteSentence = Math.floor(limit * 0.45);
+  let lastSentenceEnd = -1;
+  for (let index = 0; index < limit; index += 1) {
+    if (sentenceEnd.test(normalized[index] ?? '')) lastSentenceEnd = index + 1;
+  }
+  if (lastSentenceEnd >= minimumCompleteSentence) return normalized.slice(0, lastSentenceEnd).trim();
+
+  const candidate = normalized.slice(0, limit);
+  const breakCharacters = [' ', '，', '；', ',', ';', '：', ':'];
+  const preferredBreak = Math.max(...breakCharacters.map((character) => candidate.lastIndexOf(character)));
+  const cut = preferredBreak >= Math.floor(limit * 0.65) ? preferredBreak : limit;
+  return `${normalized.slice(0, cut).trimEnd().replace(/[,:;，；：]+$/u, '')}…`;
 }

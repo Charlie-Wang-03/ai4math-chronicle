@@ -1,13 +1,14 @@
 ---
 import '../styles/reader-interface.css';
 import { formatDate, text } from '../lib/events';
-import { presentationLabel } from '../lib/presentation';
+import { presentationExcerpt, presentationLabel } from '../lib/presentation';
 import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { event, locale, showDate = false } = Astro.props as { event: ChronicleEvent; locale: Locale; showDate?: boolean };
 const preferredSources = event.sources.filter((source) => source.primary || source.tier === 'S1');
 const primarySources = (preferredSources.length > 0 ? preferredSources : event.sources.filter((source) => source.tier === 'S1' || source.tier === 'S2')).slice(0, 3);
 const typeLabels = event.event_types.slice(0, 2).map((type) => presentationLabel('event_type', type, locale));
+const summary = presentationExcerpt(text(event.summary, locale), locale, 'collection');
 const labels = locale === 'zh-CN'
   ? { evidence: '主要证据', evidenceLevel: '证据', details: '查看事件详情 →' }
   : { evidence: 'Primary evidence', evidenceLevel: 'Evidence', details: 'View event details →' };
@@ -19,7 +20,7 @@ const labels = locale === 'zh-CN'
     <span class="badge significance">{presentationLabel('significance', event.significance.tier, locale)}</span>
     <span class={`badge ${event.verification.status}`}>{presentationLabel('verification', event.verification.status, locale)}</span>
   </div>
-  <p>{text(event.summary, locale)}</p>
+  <p>{summary}</p>
   {(event.organizations.length > 0 || event.systems.length > 0) && <div class="result-count event-card-entities">{[...event.organizations, ...event.systems].join(' · ')}</div>}
   <div class="event-card-secondary-meta">
     {typeLabels.length > 0 && <span>{typeLabels.join(' · ')}</span>}

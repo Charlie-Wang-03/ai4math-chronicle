@@ -26,11 +26,12 @@ const trustDimensions = zh
     <h1>{zh ? '如何理解与核查 Chronicle' : 'How to read and evaluate the Chronicle'}</h1>
     <p class="lede">{zh ? 'AI4Math 大事记不是新闻流或论文数据库。它把多个公开来源组织成稳定的历史事件记录，并把历史重要性、证据强度、验证状态与形式化保障分开表达。' : 'AI4Math Chronicle is not a news feed or paper database. It organizes public sources into stable historical event records and keeps historical significance, evidence strength, verification status, and formal assurance separate.'}</p>
 
-    <section class="trust-model-overview" aria-label={zh ? 'Chronicle 可信度模型四个维度' : 'Four dimensions of the Chronicle trust model'}>
+    <section class="trust-model-overview" aria-labelledby="trust-model-overview-heading">
+      <h2 id="trust-model-overview-heading" class="sr-only">{zh ? 'Chronicle 可信度模型四个维度' : 'Four dimensions of the Chronicle trust model'}</h2>
       {trustDimensions.map(([number, name, question, explanation]) => (
         <article class="trust-dimension" data-trust-dimension>
           <span class="trust-dimension-kicker">{number} · {name}</span>
-          <h2>{question}</h2>
+          <h3>{question}</h3>
           <p>{explanation}</p>
         </article>
       ))}

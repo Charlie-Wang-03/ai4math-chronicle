@@ -22,6 +22,15 @@ body #what-happened > p {
   line-height: 1.68;
 }
 
+body #what-happened .event-summary-detail {
+  margin-top: .85rem;
+  padding-top: .72rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: .94rem;
+  line-height: 1.6;
+}
+
 body #why-it-matters {
   padding-left: 1rem;
   border-left: 2px solid var(--accent);

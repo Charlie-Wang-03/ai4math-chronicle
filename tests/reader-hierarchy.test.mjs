@@ -17,6 +17,20 @@ test('Event Card prioritizes title, significance, and verification over secondar
   assert.doesNotMatch(source, /<span class="badge">\{presentationLabel\('evidence_level'/);
 });
 
+test('R1.1 derives collection and record-lede summaries without forking canonical Event data', async () => {
+  const card = await read('src/components/EventCard.astro');
+  const detail = await read('src/components/EventDetailPage.astro');
+  const presentation = await read('src/lib/presentation.ts');
+
+  assert.match(presentation, /type SummarySurface = 'collection' \| 'record_lede'/);
+  assert.match(presentation, /collection: \{ en: 210, 'zh-CN': 120 \}/);
+  assert.match(presentation, /record_lede: \{ en: 300, 'zh-CN': 180 \}/);
+  assert.match(card, /presentationExcerpt\(text\(event\.summary, locale\), locale, 'collection'\)/);
+  assert.doesNotMatch(card, /<p>\{text\(event\.summary, locale\)\}<\/p>/);
+  assert.match(detail, /presentationExcerpt\(description, locale, 'record_lede'\)/);
+  assert.match(detail, /summaryIsCondensed && <p class="event-summary-detail">\{description\}<\/p>/);
+});
+
 test('primary evidence shortcuts expose discriminating source identity', async () => {
   const source = await read('src/components/EventCard.astro');
 

@@ -163,6 +163,21 @@ npm run test:browser
 
 The browser suite protects critical responsive/accessibility behavior plus the R1 task-first viewport and semantic-hierarchy contracts. Visual review remains necessary for aesthetics, bilingual typography, unusual long titles, and information density that cannot be reduced to automated assertions.
 
+## 11. R1.1 information budgets and edge cases
+
+Canonical prose remains the factual source; reader surfaces may derive shorter presentation excerpts when a full canonical summary would overwhelm the job of that surface.
+
+- Do not add parallel factual fields such as `timeline_summary` or `mobile_summary` merely to solve density problems.
+- Timeline / collection records may use a deterministic presentation excerpt derived from the canonical `summary`.
+- Event Detail may use a somewhat longer lead excerpt, but when condensation occurs the complete canonical `summary` must remain visibly available in the Event reading flow.
+- Search & Explore may visually clamp summary text for scanning while retaining the canonical text in semantic HTML and the canonical Event Detail page.
+- Presentation excerpting should prefer complete sentences; if no reasonable sentence boundary exists, cut at a safe word or punctuation boundary and mark the omission with an ellipsis.
+- The implementation budgets are intentionally language-aware rather than assuming English and Simplified Chinese consume equal horizontal space.
+- Mobile regression coverage must include both `en` and `zh-CN` plus at least one maintained long-title / long-summary edge-case Event. Do not satisfy the task-first budget by weakening the viewport threshold.
+- Mobile breadcrumbs should not repeat a full long Event title immediately before the H1, and primary in-page navigation should expose its options without relying on undiscoverable horizontal scrolling.
+
+These are presentation rules only. They do not change canonical Event prose, search indexing of Event Detail pages, Event IDs, or the editorial meaning of `summary`.
+
 ---
 
 R1 is a focused reader-experience refinement inside v0.1.x maintenance. It does not authorize a new feature family, backend, knowledge graph, or autonomous change to the Product Specification.
