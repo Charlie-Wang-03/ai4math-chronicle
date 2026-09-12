@@ -24,6 +24,10 @@ async function color(locator) {
   return locator.evaluate((element) => getComputedStyle(element).color);
 }
 
+async function stylePx(locator, property) {
+  return locator.evaluate((element, propertyName) => parseFloat(getComputedStyle(element)[propertyName]) || 0, property);
+}
+
 test('R1A keeps core bilingual mobile tasks inside the first viewport budget', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
 
@@ -122,7 +126,7 @@ test('R1D makes the four-dimensional trust model a scannable semantic reference 
   await expect(dimensions.nth(3)).toContainText('Formal assurance');
 });
 
-test('R1.2B renders domain-semantic chromatic hierarchy instead of one neutral surface band', async ({ page }) => {
+test('R1.2B renders domain-semantic chromatic hierarchy as inset editorial modules', async ({ page }) => {
   const eventHref = await firstEventHref(page);
 
   const yearLabel = page.locator('.timeline-year-label').first();
@@ -135,6 +139,10 @@ test('R1.2B renders domain-semantic chromatic hierarchy instead of one neutral s
   expect(await backgroundColor(timelineTools)).not.toBe(await backgroundColor(ordinaryCard));
   expect(await backgroundColor(h1Card)).not.toBe(await backgroundColor(ordinaryCard));
   expect(await color(yearLabel)).not.toBe(await color(page.locator('body')));
+  expect(await stylePx(timelineTools, 'paddingLeft')).toBeGreaterThanOrEqual(12);
+  expect(await stylePx(timelineTools, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
+  expect(await stylePx(h1Card, 'paddingLeft')).toBeGreaterThanOrEqual(12);
+  expect(await stylePx(h1Card, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
 
   await page.goto(eventHref);
   const historical = page.locator('#historical-context');
@@ -146,16 +154,24 @@ test('R1.2B renders domain-semantic chromatic hierarchy instead of one neutral s
   expect(new Set([historicalBg, evidenceBg, trustBg]).size).toBe(3);
   expect(historicalBg).not.toBe('rgba(0, 0, 0, 0)');
   expect(evidenceBg).not.toBe('rgba(0, 0, 0, 0)');
+  expect(await stylePx(historical, 'paddingLeft')).toBeGreaterThanOrEqual(12);
+  expect(await stylePx(primaryEvidence, 'paddingLeft')).toBeGreaterThanOrEqual(12);
+  expect(await stylePx(trust, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
 
   await page.goto(projectPath('en/explore/'));
   const filterPanel = page.locator('.explore-filter-panel');
   const resultsSurface = page.locator('.explore-table-wrap');
   expect(await backgroundColor(filterPanel)).not.toBe(await backgroundColor(resultsSurface));
+  expect(await stylePx(filterPanel, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
 
   await page.goto(projectPath('en/methodology/'));
+  const overview = page.locator('.trust-model-overview');
   const dimensions = page.locator('[data-trust-dimension]');
   const dimensionBackgrounds = await dimensions.evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).backgroundColor));
   expect(new Set(dimensionBackgrounds).size).toBe(4);
+  expect(await stylePx(overview, 'columnGap')).toBeGreaterThanOrEqual(8);
+  expect(await stylePx(dimensions.first(), 'paddingLeft')).toBeGreaterThanOrEqual(12);
+  expect(await stylePx(dimensions.first(), 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
 });
 
 test('R1.2B keeps semantic module separation in dark mode', async ({ page }) => {
