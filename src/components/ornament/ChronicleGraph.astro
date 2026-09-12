@@ -1,0 +1,34 @@
+---
+interface Props {
+  variant?: 'hero' | 'compact';
+}
+
+const { variant = 'compact' } = Astro.props as Props;
+---
+
+<svg
+  class={`ornament-svg ornament-chronicle-graph ornament-chronicle-graph--${variant}`}
+  viewBox="0 0 520 260"
+  aria-hidden="true"
+  focusable="false"
+  data-ornament="chronicle-graph"
+>
+  <path class="ornament-stroke ornament-stroke-neutral" d="M36 140H160C194 140 204 94 238 94H322C352 94 366 126 396 126H484" />
+  <path class="ornament-stroke ornament-stroke-neutral" d="M160 140C188 140 194 188 222 188H302" />
+  <path class="ornament-stroke ornament-stroke-neutral" d="M322 94C350 94 354 52 382 52H456" />
+  <path class="ornament-stroke ornament-stroke-neutral ornament-stroke-faint" d="M238 94V44M302 188V226M396 126V190" />
+
+  <circle class="ornament-node ornament-node-archive" cx="72" cy="140" r="6" />
+  <circle class="ornament-node ornament-node-neutral" cx="160" cy="140" r="5" />
+  <circle class="ornament-node ornament-node-research" cx="238" cy="94" r="7" />
+  <circle class="ornament-node ornament-node-neutral" cx="222" cy="188" r="5" />
+  <circle class="ornament-node ornament-node-milestone" cx="322" cy="94" r="8" />
+  <circle class="ornament-node ornament-node-neutral" cx="302" cy="188" r="5" />
+  <circle class="ornament-node ornament-node-research" cx="396" cy="126" r="6" />
+  <circle class="ornament-node ornament-node-neutral" cx="456" cy="52" r="4" />
+  <circle class="ornament-node ornament-node-archive" cx="470" cy="126" r="5" />
+
+  <circle class="ornament-node ornament-node-hollow" cx="238" cy="44" r="5" />
+  <circle class="ornament-node ornament-node-hollow" cx="302" cy="226" r="5" />
+  <circle class="ornament-node ornament-node-hollow" cx="396" cy="190" r="5" />
+</svg>
