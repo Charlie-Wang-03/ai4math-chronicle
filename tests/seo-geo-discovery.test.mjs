@@ -14,6 +14,30 @@ test('Event Article metadata uses Chronicle publication semantics and stable ide
   assert.match(source, /inLanguage:\s*locale/);
   assert.match(source, /publisher:\s*chronicleOrganization/);
   assert.match(source, /'@type': 'WebSite'/);
+  assert.match(source, /ogType="article"/);
+  assert.match(source, /publishedTime=\{event\.dates\.added_to_chronicle\}/);
+  assert.match(source, /modifiedTime=\{event\.dates\.last_updated\}/);
+});
+
+test('Base layout keeps HTML locale metadata reciprocal and page-specific', async () => {
+  const source = await read('src/layouts/BaseLayout.astro');
+
+  assert.match(source, /<link rel="alternate" hreflang=\{locale\} href=\{absolute\(canonicalPath\)\} \/>/);
+  assert.match(source, /<link rel="alternate" hreflang=\{other\} href=\{absolute\(alternate\)\} \/>/);
+  assert.match(source, /const englishPath = locale === 'en' \? canonicalPath : alternate/);
+  assert.match(source, /hreflang="x-default" href=\{absolute\(englishPath\)\}/);
+  assert.doesNotMatch(source, /hreflang="x-default" href=\{absolute\(localePath\('en'\)\)\}/);
+  assert.match(source, /<meta property="og:locale:alternate" content=\{ogAlternateLocale\} \/>/);
+});
+
+test('Event pages can emit article-specific Open Graph dates', async () => {
+  const source = await read('src/layouts/BaseLayout.astro');
+
+  assert.match(source, /ogType\?: 'website' \| 'article'/);
+  assert.match(source, /ogType = 'website'/);
+  assert.match(source, /<meta property="og:type" content=\{ogType\} \/>/);
+  assert.match(source, /article:published_time/);
+  assert.match(source, /article:modified_time/);
 });
 
 test('Data & Feeds publishes Dataset and DataDownload structured data', async () => {

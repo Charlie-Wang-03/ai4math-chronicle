@@ -14,8 +14,21 @@ interface Props {
   canonicalPath: string;
   alternatePath?: string;
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
 }
-const { locale, title, description, canonicalPath, alternatePath, jsonLd } = Astro.props;
+const {
+  locale,
+  title,
+  description,
+  canonicalPath,
+  alternatePath,
+  jsonLd,
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
+} = Astro.props;
 const other = otherLocale(locale);
 const labels = locale === 'zh-CN'
   ? {
@@ -37,6 +50,9 @@ const labels = locale === 'zh-CN'
       footerData: 'Data & feeds'
     };
 const alternate = alternatePath ?? localePath(other);
+const englishPath = locale === 'en' ? canonicalPath : alternate;
+const ogLocale = locale === 'zh-CN' ? 'zh_CN' : 'en_US';
+const ogAlternateLocale = other === 'zh-CN' ? 'zh_CN' : 'en_US';
 const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
 ---
 <!doctype html>
@@ -69,16 +85,20 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
       })();
     </script>
     <link rel="canonical" href={absolute(canonicalPath)} />
+    <link rel="alternate" hreflang={locale} href={absolute(canonicalPath)} />
     <link rel="alternate" hreflang={other} href={absolute(alternate)} />
-    <link rel="alternate" hreflang="x-default" href={absolute(localePath('en'))} />
+    <link rel="alternate" hreflang="x-default" href={absolute(englishPath)} />
     <link rel="alternate" type="application/rss+xml" title="AI4Math Chronicle RSS" href={absolute('feed.xml')} />
     <link rel="icon" type="image/svg+xml" href={href('favicon.svg')} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content="AI4Math Chronicle" />
-    <meta property="og:locale" content={locale === 'zh-CN' ? 'zh_CN' : 'en_US'} />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogAlternateLocale} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={absolute(canonicalPath)} />
+    {ogType === 'article' && publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {ogType === 'article' && modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

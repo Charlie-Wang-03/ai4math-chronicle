@@ -81,7 +81,7 @@ const breadcrumbJsonLd = {
   ]
 };
 ---
-<BaseLayout locale={locale} title={`${eventTitle} — AI4Math Chronicle`} description={description} canonicalPath={canonicalPath} alternatePath={localePath(other, `events/${event.slug}`)} jsonLd={[articleJsonLd,breadcrumbJsonLd]}>
+<BaseLayout locale={locale} title={`${eventTitle} — AI4Math Chronicle`} description={description} canonicalPath={canonicalPath} alternatePath={localePath(other, `events/${event.slug}`)} jsonLd={[articleJsonLd,breadcrumbJsonLd]} ogType="article" publishedTime={event.dates.added_to_chronicle} modifiedTime={event.dates.last_updated}>
   <div class="sr-only" data-pagefind-ignore aria-hidden="true">
     <span data-pagefind-filter={`year:${event.dates.event.slice(0, 4)}`}></span>
     {event.event_types.map((value) => <span data-pagefind-filter={`type:${value}`}></span>)}
