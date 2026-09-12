@@ -25,6 +25,8 @@ test('mobile header is compact, keyboard-operable, and restores focus on Escape'
   await page.keyboard.press('Enter');
   await expect(toggle).toHaveAttribute('aria-expanded', 'true');
   await expect(nav).toBeVisible();
+  await expect(nav.getByRole('link', { name: 'Search & Explore' })).toHaveAttribute('href', /\/en\/explore\/$/);
+  await expect(nav.getByRole('link', { name: 'About' })).toHaveAttribute('href', /\/en\/about\/$/);
 
   await page.keyboard.press('Escape');
   await expect(toggle).toHaveAttribute('aria-expanded', 'false');
@@ -73,6 +75,26 @@ test('Explore is mobile-native and its multi-select is keyboard-operable', async
   await expect(page.locator('[data-active-filters]')).toBeVisible();
 });
 
+test('Explore defaults text queries to relevance while preserving an explicit user sort', async ({ page }) => {
+  await page.goto(projectPath('en/explore/'));
+
+  const search = page.getByRole('searchbox', { name: 'Search' });
+  const sort = page.getByLabel('Sort');
+  await expect(sort).toHaveValue('newest');
+
+  await search.fill('Lean');
+  await expect(sort).toHaveValue('relevance');
+  await expect(page).not.toHaveURL(/sort=/);
+
+  await sort.selectOption('newest');
+  await expect(sort).toHaveValue('newest');
+  await expect(page).toHaveURL(/sort=newest/);
+
+  await search.fill('proof');
+  await expect(sort).toHaveValue('newest');
+  await expect(page).toHaveURL(/sort=newest/);
+});
+
 test('Explore exposes an explicit zero-results recovery path', async ({ page }) => {
   await page.goto(projectPath('en/explore/'));
 
@@ -119,7 +141,7 @@ test('theme preference cycles accessibly and persists across reloads', async ({ 
   await expect(page.getByRole('button', { name: 'Theme: Dark' })).toBeVisible();
 });
 
-test('core reader landmarks and Event Detail navigation survive real browser rendering', async ({ page }) => {
+test('core reader landmarks and insight-first Event Detail navigation survive real browser rendering', async ({ page }) => {
   await page.goto(projectPath('en/'));
 
   const skip = page.getByRole('link', { name: 'Skip to main content' });
@@ -132,10 +154,19 @@ test('core reader landmarks and Event Detail navigation survive real browser ren
   await expect(firstEvent).toBeVisible();
   await firstEvent.click();
 
-  await expect(page.getByRole('heading', { name: 'At a glance' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Evidence & status at a glance' })).toBeVisible();
   const sectionNav = page.getByRole('navigation', { name: 'On this page' });
   await expect(sectionNav).toBeVisible();
   await expect(sectionNav.getByRole('link', { name: 'What happened?' })).toHaveAttribute('href', '#what-happened');
+  await expect(sectionNav.getByRole('link', { name: 'Historical context' })).toHaveAttribute('href', '#historical-context');
   await expect(page.locator('#what-happened')).toBeVisible();
+  await expect(page.locator('#historical-context')).toBeVisible();
+  await expect(page.locator('#evidence-status')).toBeVisible();
   await expect(page.locator('#verification-history')).toBeVisible();
+
+  const order = await page.locator('.event-detail-main').evaluate((root) => {
+    const ids = ['what-happened', 'why-it-matters', 'historical-context', 'primary-evidence', 'evidence-status'];
+    return ids.map((id) => [...root.children].findIndex((element) => element.id === id));
+  });
+  expect(order).toEqual([0, 1, 2, 3, 4]);
 });
