@@ -1,3 +1,5 @@
+@import './r1-timeline.css';
+
 /* R1B — semantic visual primitives for canonical Event records.
    Reuse the existing R0 section IDs instead of duplicating Event content. */
 
@@ -31,7 +33,6 @@ body #why-it-matters .event-rationale {
   border-top: 1px solid var(--border);
 }
 
-/* Historical relationships behave like lineage, not three equal cards. */
 body #historical-context .relationships {
   display: grid;
   grid-template-columns: 1fr;
@@ -97,7 +98,6 @@ body #historical-context .relationships p {
   font-size: .72rem;
 }
 
-/* Primary evidence reads as numbered citations rather than a generic list. */
 body #primary-evidence .evidence-list {
   counter-reset: evidence-citation;
 }
@@ -126,8 +126,6 @@ body #primary-evidence .evidence-list a strong {
   line-height: 1.35;
 }
 
-/* Trust is hierarchical: significance and verification lead, then the
-   three interpretive dimensions follow as a quieter secondary row. */
 body #evidence-status .event-glance-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -152,8 +150,6 @@ body #evidence-status .event-glance-item:nth-child(n + 3) {
   padding-top: .65rem;
 }
 
-/* AI and human contribution are prose-bearing modules, not equal-sized
-   metadata cells. */
 body #contribution-verification .fact-grid .fact:nth-child(3),
 body #contribution-verification .fact-grid .fact:nth-child(4) {
   grid-column: 1 / -1;
@@ -167,7 +163,6 @@ body #contribution-verification .fact-grid .fact:nth-child(4) dd {
   line-height: 1.55;
 }
 
-/* Verification and correction history read as provenance logs. */
 body #verification-history .evidence-list li,
 body #corrections .evidence-list li {
   position: relative;
