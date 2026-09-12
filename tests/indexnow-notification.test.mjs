@@ -40,6 +40,18 @@ test('IndexNow sitemap extraction keeps only canonical Project Pages URLs', () =
   ]);
 });
 
+test('IndexNow sitemap extraction decodes XML entities exactly once', () => {
+  const xml = `<urlset>
+    <url><loc>https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/?a=1&amp;b=2</loc></url>
+    <url><loc>https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/?literal=%26amp%3B</loc></url>
+  </urlset>`;
+
+  assert.deepEqual(extractSitemapUrls(xml), [
+    'https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/?a=1&b=2',
+    'https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/?literal=%26amp%3B',
+  ]);
+});
+
 test('IndexNow payload uses explicit keyLocation and rejects invalid batch sizes', () => {
   const urlList = ['https://charlie-wang-03.github.io/ai4math-chronicle/en/'];
   assert.deepEqual(buildIndexNowPayload(urlList), {
