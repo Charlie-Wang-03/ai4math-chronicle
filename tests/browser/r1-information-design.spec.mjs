@@ -69,3 +69,19 @@ test('R1C exposes chronology as visible year chapters without losing Event scann
   const sourceLayout = await firstCard.locator('.source-shortcuts').evaluate((element) => getComputedStyle(element).gridTemplateColumns);
   expect(sourceLayout).not.toBe('none');
 });
+
+test('R1D makes the four-dimensional trust model a scannable reference near the top', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(projectPath('en/methodology/'));
+
+  const overview = page.locator('.trust-model-overview');
+  await expect(overview).toBeVisible();
+  await expectStartsInFirstViewport(overview);
+
+  const dimensions = page.locator('[data-trust-dimension]');
+  await expect(dimensions).toHaveCount(4);
+  await expect(dimensions.nth(0)).toContainText('Significance');
+  await expect(dimensions.nth(1)).toContainText('Evidence');
+  await expect(dimensions.nth(2)).toContainText('Verification');
+  await expect(dimensions.nth(3)).toContainText('Formal assurance');
+});
