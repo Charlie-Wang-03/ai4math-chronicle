@@ -46,7 +46,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
     <meta name="description" content={description} />
     <meta name="application-name" content="AI4Math Chronicle" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#f6f7fa" />
+    <meta name="theme-color" content="#e7ebf0" />
     <script is:inline>document.documentElement.classList.add('js');</script>
     <script is:inline>
       (() => {
@@ -64,7 +64,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
         root.dataset.themePreference = preference;
         root.style.colorScheme = resolved;
         const meta = document.querySelector('meta[name="theme-color"]');
-        if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0b1020' : '#f6f7fa');
+        if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0b1020' : '#e7ebf0');
       })();
     </script>
     <link rel="canonical" href={absolute(canonicalPath)} />
@@ -201,7 +201,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
           root.dataset.themePreference = preference;
           root.style.colorScheme = resolved;
           updateButtonLabel(preference);
-          if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0b1020' : '#f6f7fa');
+          if (meta) meta.setAttribute('content', resolved === 'dark' ? '#0b1020' : '#e7ebf0');
           if (persist) {
             try { localStorage.setItem(key, preference); } catch {}
           }

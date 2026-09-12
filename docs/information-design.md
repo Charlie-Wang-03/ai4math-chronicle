@@ -2,7 +2,7 @@
 
 **Status:** Active v0.1.x implementation contract  
 **Established:** 2026-09-12  
-**Scope:** Reader-facing information hierarchy, typography, modular presentation, and responsive density
+**Scope:** Reader-facing information hierarchy, typography, modular presentation, responsive density, and semantic color architecture
 
 This document records the information-design system established by the owner-approved R1 work. It is an implementation contract inside the active v0.1.x product model; it does not amend the Product Specification, canonical Event model, editorial methodology, or governance protocol.
 
@@ -10,7 +10,7 @@ The visual direction is:
 
 > **Modern Scholarly Editorial** — academic, archival, precise, quiet, dense-but-readable, and evidence-backed.
 
-The site should look like a maintained scholarly archive and research publication, not a generic SaaS dashboard or a decorative “AI website.” Typography, whitespace, rules, evidence presentation, and historical structure should carry more hierarchy than rounded cards, gradients, shadows, icons, or animation.
+The site should look like a maintained scholarly archive and research publication, not a generic SaaS dashboard or a decorative “AI website.” Typography, whitespace, rules, evidence presentation, historical structure, and restrained semantic color should carry more hierarchy than rounded cards, gradients, shadows, icons, or animation.
 
 ## 1. Page roles
 
@@ -131,7 +131,8 @@ Prefer:
 - semantic modules;
 - citation-like evidence presentation;
 - compact, legible metadata;
-- restrained status accents.
+- restrained status and editorial accents;
+- perceptible but quiet surface separation.
 
 Avoid by default:
 
@@ -141,9 +142,10 @@ Avoid by default:
 - neon or cyberpunk AI styling;
 - decorative gradients as the primary hierarchy device;
 - equal visual weight for every taxonomy field;
-- gratuitous icons or animations.
+- gratuitous icons or animations;
+- assigning every module a saturated category color.
 
-The existing palette, logo, and light/dark theme are not targets for redesign merely because information-design work is underway.
+Typography and information hierarchy remain stable while visual-identity work is underway. Color should clarify the established information system rather than replace it.
 
 ## 9. CSS composition
 
@@ -161,7 +163,7 @@ npm run build
 npm run test:browser
 ```
 
-The browser suite protects critical responsive/accessibility behavior plus the R1 task-first viewport and semantic-hierarchy contracts. Visual review remains necessary for aesthetics, bilingual typography, unusual long titles, and information density that cannot be reduced to automated assertions.
+The browser suite protects critical responsive/accessibility behavior plus the R1 task-first viewport and semantic-hierarchy contracts. Visual review remains necessary for aesthetics, bilingual typography, unusual long titles, information density, and chromatic hierarchy that cannot be reduced to automated assertions.
 
 ## 11. R1.1 information budgets and edge cases
 
@@ -177,6 +179,36 @@ Canonical prose remains the factual source; reader surfaces may derive shorter p
 - Mobile breadcrumbs should not repeat a full long Event title immediately before the H1, and primary in-page navigation should expose its options without relying on undiscoverable horizontal scrolling.
 
 These are presentation rules only. They do not change canonical Event prose, search indexing of Event Detail pages, Event IDs, or the editorial meaning of `summary`.
+
+## 12. R1.2A semantic color architecture
+
+Color is a reader-interface semantic system, not a derivative of the current logo artwork. The existing logo remains an editable brand asset and does not define the constitutional palette.
+
+### Surface roles
+
+The light and dark themes expose the same semantic hierarchy:
+
+- **Canvas** — the outer archival workspace;
+- **Paper** — the clearest reading / control surface;
+- **Neutral context** — structured interface material without a domain-specific meaning;
+- **Research context** — retrieval, links, sources, and research-oriented emphasis;
+- **Archive context** — chronology and historical-context emphasis;
+- **Milestone context** — historical-significance emphasis;
+- **Evidence context** — inspectable evidence / provenance emphasis.
+
+Canvas and Paper must remain visibly distinguishable in both light and dark modes. Context surfaces should be quieter than status colors and should never turn the archive into a set of saturated dashboard cards.
+
+### Accent roles
+
+- **Research blue** is the primary interaction / retrieval accent.
+- **Milestone violet** represents historical-significance emphasis, especially H1 presentation.
+- **Archive gold** is reserved for chronology / historical editorial meaning; it is not the warning color.
+- **Evidence green** is available for evidence / provenance meaning; it is distinct from verification-state semantics.
+- **Status good / warning / danger** remain separate state colors and must not be inferred from the editorial accents above.
+
+Legacy variables such as `--bg`, `--surface`, `--accent`, and `--h1` are compatibility aliases only. New color work should use the semantic tokens defined in `src/styles/r1-color-system.css`.
+
+R1.2A establishes the palette architecture and global tonal separation only. Page/module-specific chromatic hierarchy and mathematical editorial ornament belong to later controlled work; they must not be smuggled into this foundation pass.
 
 ---
 
