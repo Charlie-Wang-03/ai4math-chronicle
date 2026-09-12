@@ -35,6 +35,7 @@ test('R1.2C ornament language is explicit and discoverable', async () => {
   assert.match(ornament, /random equations or mathematical-symbol wallpaper/);
   assert.match(ornament, /R1\.2C-B — Identity anchor surfaces/);
   assert.match(ornament, /R1\.2C-C — Structural accents/);
+  assert.match(ornament, /R1\.2C-D — Visual QA and stabilization/);
 
   assert.match(informationDesign, /ornament-language\.md/);
   assert.match(informationDesign, /identity layer, not an information layer/);
@@ -112,4 +113,14 @@ test('R1.2C-C owner review retains the global footer echo and rejects ineffectiv
   assert.match(ornamentCss, /ornament-anchor--footer/);
   assert.match(state, /R1\.2C-C visual review did not accept the chronology transition or Search & Explore zero-result ornament/);
   assert.match(state, /global footer Chronicle Graph echo remains approved/);
+});
+
+test('R1.2C-D freezes the accepted production ornament profile after matrix QA', async () => {
+  const state = await read('docs/project-state.md');
+
+  assert.match(state, /R1\.2C-D visual QA and stabilization is complete/);
+  assert.match(state, /three owner-approved R1\.2C-B identity anchors plus the retained global Footer echo/);
+  assert.match(state, /English \/ Simplified Chinese, light \/ dark, desktop \/ representative mobile/);
+  assert.match(state, /D required no further production CSS change/);
+  assert.match(state, /no new ornament surface may be created, without another explicit owner decision/);
 });
