@@ -1,7 +1,7 @@
 /* R1.2B — module chromatic hierarchy, corrected after visual QA.
-   Semantic color should read as an editorial cue inside a Paper-led interface,
-   not as full-bleed category bands. Modules use restrained tint, visible inset,
-   modest radius, and no elevation. */
+   Timeline significance uses graduated editorial gradients inside one shared
+   record geometry. Event Detail stays Paper-led and uses strong section rules
+   rather than boxed chromatic modules. */
 
 html:root {
   --module-radius: 8px;
@@ -38,20 +38,70 @@ body .timeline::before {
   );
 }
 
-body .event-card.H1 {
-  border: 1px solid color-mix(in srgb, var(--milestone) 14%, var(--rule));
-  border-left: 2px solid color-mix(in srgb, var(--milestone) 60%, var(--rule));
-  border-radius: var(--module-radius-compact);
-  background-color: color-mix(in srgb, var(--paper) 94%, var(--context-milestone));
-  background-image: none;
-  padding-inline: .75rem;
+body .event-card.H1,
+body .event-card.H2,
+body .event-card.H3 {
+  border-left: 0;
+  border-radius: 0;
+  padding-inline: 0;
   box-shadow: none;
 }
 
+body .event-card.H1 {
+  border-top-color: color-mix(in srgb, var(--milestone) 62%, var(--rule));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--milestone-soft) 48%, transparent) 0,
+    color-mix(in srgb, var(--milestone-soft) 20%, transparent) 24%,
+    transparent 46%
+  );
+}
+
+body .event-card.H2 {
+  border-top-color: color-mix(in srgb, var(--research) 42%, var(--rule));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--research-soft) 32%, transparent) 0,
+    color-mix(in srgb, var(--research-soft) 12%, transparent) 20%,
+    transparent 38%
+  );
+}
+
+body .event-card.H3 {
+  border-top-color: color-mix(in srgb, var(--rule-strong) 72%, var(--rule));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--context-neutral) 38%, transparent) 0,
+    color-mix(in srgb, var(--context-neutral) 12%, transparent) 16%,
+    transparent 30%
+  );
+}
+
 body .event-card.H1:hover {
-  border-color: color-mix(in srgb, var(--milestone) 26%, var(--rule));
-  border-left-color: color-mix(in srgb, var(--milestone) 76%, var(--rule));
-  background-color: color-mix(in srgb, var(--paper) 90%, var(--context-milestone));
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--milestone-soft) 58%, transparent) 0,
+    color-mix(in srgb, var(--milestone-soft) 24%, transparent) 26%,
+    transparent 48%
+  );
+}
+
+body .event-card.H2:hover {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--research-soft) 40%, transparent) 0,
+    color-mix(in srgb, var(--research-soft) 16%, transparent) 22%,
+    transparent 40%
+  );
+}
+
+body .event-card.H3:hover {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--context-neutral) 48%, transparent) 0,
+    color-mix(in srgb, var(--context-neutral) 16%, transparent) 18%,
+    transparent 32%
+  );
 }
 
 body .event-card.H1 .badge.significance,
@@ -59,6 +109,12 @@ body .badge.significance.H1 {
   color: var(--milestone);
   border-color: color-mix(in srgb, var(--milestone) 62%, var(--rule));
   background-color: color-mix(in srgb, var(--paper) 62%, var(--milestone-soft));
+}
+
+body .event-card.H3 .badge.significance {
+  color: var(--ink-muted);
+  border-color: color-mix(in srgb, var(--rule-strong) 78%, var(--rule));
+  background-color: color-mix(in srgb, var(--paper) 78%, var(--context-neutral));
 }
 
 body .source-shortcuts {
@@ -75,19 +131,34 @@ body .source-shortcut {
 }
 
 /* Event Detail ------------------------------------------------------------ */
+body .event-detail-main .event-section-primary,
+body .event-detail-main .event-section-secondary {
+  border-bottom: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body .event-detail-main .event-section + .event-section {
+  border-top: 1px solid var(--rule-strong);
+}
+
 body #why-it-matters,
 body #historical-context,
-body #primary-evidence {
-  margin-top: .65rem;
-  border: 1px solid var(--rule);
-  border-radius: var(--module-radius);
-  padding: var(--module-inset-y) var(--module-inset-x) 1rem;
+body #primary-evidence,
+body #evidence-status {
+  margin-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
   box-shadow: none;
 }
 
 body #why-it-matters {
-  border-left: 3px solid var(--milestone);
-  background-color: color-mix(in srgb, var(--paper) 84%, var(--context-milestone));
+  border-top: 2px solid color-mix(in srgb, var(--milestone) 76%, var(--rule-strong));
 }
 
 body #why-it-matters > h2 {
@@ -95,8 +166,7 @@ body #why-it-matters > h2 {
 }
 
 body #historical-context {
-  border-left: 3px solid var(--archive);
-  background-color: color-mix(in srgb, var(--paper) 86%, var(--context-archive));
+  border-top: 2px solid color-mix(in srgb, var(--archive) 72%, var(--rule-strong));
 }
 
 body #historical-context > h2 {
@@ -104,7 +174,7 @@ body #historical-context > h2 {
 }
 
 body #historical-context .relationships {
-  border-top-color: color-mix(in srgb, var(--archive) 54%, var(--rule-strong));
+  border-top-color: color-mix(in srgb, var(--archive) 42%, var(--rule-strong));
 }
 
 body #historical-context .relationships > div {
@@ -112,8 +182,7 @@ body #historical-context .relationships > div {
 }
 
 body #primary-evidence {
-  border-left: 3px solid var(--evidence);
-  background-color: color-mix(in srgb, var(--paper) 84%, var(--context-evidence));
+  border-top: 2px solid color-mix(in srgb, var(--evidence) 76%, var(--rule-strong));
 }
 
 body #primary-evidence > h2 {
@@ -125,40 +194,29 @@ body #primary-evidence .evidence-list li::before {
 }
 
 body #evidence-status {
-  margin-top: .75rem;
-  border: 1px solid color-mix(in srgb, var(--rule-strong) 72%, var(--rule));
-  border-radius: var(--module-radius);
-  padding: .95rem var(--module-inset-x) 1rem;
-  background-color: color-mix(in srgb, var(--paper) 86%, var(--context-neutral));
+  border-top: 2px solid var(--rule-strong);
 }
 
 body #evidence-status .event-glance-primary:first-of-type {
   margin-right: .35rem;
-  border-radius: var(--module-radius-compact);
-  background-color: color-mix(in srgb, var(--paper) 80%, var(--context-milestone));
-  box-shadow: inset 0 2px 0 color-mix(in srgb, var(--milestone) 64%, transparent);
+  border-top: 2px solid color-mix(in srgb, var(--milestone) 64%, var(--rule));
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 body #evidence-status .event-glance-primary:nth-of-type(2) {
   margin-left: .35rem;
-  border-radius: var(--module-radius-compact);
-  background-color: color-mix(in srgb, var(--paper) 92%, var(--context-neutral));
-  box-shadow: inset 0 2px 0 var(--rule-strong);
+  border-top: 2px solid var(--rule-strong);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 body #evidence-status .event-glance-primary {
   padding-top: .55rem;
   padding-bottom: .45rem;
   padding-right: .7rem;
-}
-
-body #contribution-verification .fact-grid .fact:nth-child(3),
-body #contribution-verification .fact-grid .fact:nth-child(4) {
-  border: 1px solid color-mix(in srgb, var(--research) 18%, var(--rule));
-  border-left: 3px solid color-mix(in srgb, var(--research) 68%, var(--rule));
-  border-radius: var(--module-radius-compact);
-  background-color: color-mix(in srgb, var(--paper) 88%, var(--context-research));
-  padding: .75rem .9rem .82rem;
 }
 
 body #verification-history .evidence-list li::before,
@@ -259,22 +317,20 @@ body .trust-dimension:nth-of-type(4) .trust-dimension-kicker { color: var(--rese
     padding-inline: .75rem;
   }
 
-  body .event-card.H1 {
-    border-radius: var(--module-radius-compact);
-    padding-inline: .75rem;
+  body .event-card.H1,
+  body .event-card.H2,
+  body .event-card.H3 {
+    border-radius: 0;
+    padding-inline: 0;
   }
 
   body #why-it-matters,
   body #historical-context,
   body #primary-evidence,
   body #evidence-status {
-    border-radius: var(--module-radius-compact);
-    padding-left: .8rem;
-    padding-right: .8rem;
-  }
-
-  body #evidence-status {
-    margin-top: .65rem;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   body #evidence-status .event-glance-primary:first-of-type {
