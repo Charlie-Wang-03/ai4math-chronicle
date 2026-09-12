@@ -21,27 +21,28 @@ const relationGroups = [
 ] as const;
 const labels = zh
   ? {
-      atGlance: '一览', significance: '重要性', verification: '验证状态', evidence: '证据等级', aiRole: 'AI 角色', assurance: '形式保障',
+      atGlance: '证据与状态一览', significance: '重要性', verification: '验证状态', evidence: '证据等级', aiRole: 'AI 角色', assurance: '形式保障',
       onPage: '本页导航', startHere: '先读', deeper: '深入记录',
-      what: '发生了什么？', why: '为什么重要？', primaryEvidence: '主要证据', contribution: '贡献与验证', technical: '技术细节', sources: '全部来源与工件', relationships: '历史关系', history: '验证历史', corrections: '更正',
+      what: '发生了什么？', why: '为什么重要？', primaryEvidence: '主要证据', contribution: '贡献与验证', technical: '技术细节', sources: '全部来源与工件', relationships: '历史脉络', history: '验证历史', corrections: '更正',
       rationale: '重要性说明：', novelty: '数学新颖性', interface: '接口', aiContribution: 'AI 贡献', humanContribution: '人类贡献', lastReviewed: '最后审阅', systems: '系统', organizations: '机构', problems: '数学问题', methods: '方法', accessed: '访问于', artifact: '工件', noCorrections: '当前没有记录的更正。',
     }
   : {
-      atGlance: 'At a glance', significance: 'Significance', verification: 'Verification', evidence: 'Evidence level', aiRole: 'AI role', assurance: 'Formal assurance',
+      atGlance: 'Evidence & status at a glance', significance: 'Significance', verification: 'Verification', evidence: 'Evidence level', aiRole: 'AI role', assurance: 'Formal assurance',
       onPage: 'On this page', startHere: 'Start here', deeper: 'Detailed record',
-      what: 'What happened?', why: 'Why it matters', primaryEvidence: 'Primary evidence', contribution: 'Contribution & verification', technical: 'Technical details', sources: 'Sources & artifacts', relationships: 'Historical relationships', history: 'Verification history', corrections: 'Corrections',
+      what: 'What happened?', why: 'Why it matters', primaryEvidence: 'Primary evidence', contribution: 'Contribution & verification', technical: 'Technical details', sources: 'Sources & artifacts', relationships: 'Historical context', history: 'Verification history', corrections: 'Corrections',
       rationale: 'Significance rationale: ', novelty: 'Mathematical novelty', interface: 'Interface', aiContribution: 'AI contribution', humanContribution: 'Human contribution', lastReviewed: 'Last reviewed', systems: 'Systems', organizations: 'Organizations', problems: 'Problems', methods: 'Methods', accessed: 'accessed', artifact: 'Artifact', noCorrections: 'No corrections recorded.',
     };
 const navPrimary = [
   ['what-happened', labels.what],
   ['why-it-matters', labels.why],
+  ['historical-context', labels.relationships],
   ['primary-evidence', labels.primaryEvidence],
 ] as const;
 const navSecondary = [
+  ['evidence-status', labels.atGlance],
   ['contribution-verification', labels.contribution],
   ['technical-details', labels.technical],
   ['sources-artifacts', labels.sources],
-  ['historical-relationships', labels.relationships],
   ['verification-history', labels.history],
   ['corrections', labels.corrections],
 ] as const;
@@ -89,17 +90,6 @@ const breadcrumbJsonLd = {
     <p class="eyebrow"><time datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time></p>
     <h1>{eventTitle}</h1>
     <p class="lede">{description}</p>
-
-    <section class="event-at-a-glance" aria-labelledby="event-at-a-glance-heading">
-      <h2 id="event-at-a-glance-heading" class="event-at-a-glance-title">{labels.atGlance}</h2>
-      <dl class="event-glance-grid">
-        <div class="event-glance-item event-glance-primary"><dt>{labels.significance}</dt><dd><span class="badge significance">{presentationLabel('significance', event.significance.tier, locale)}</span></dd></div>
-        <div class="event-glance-item event-glance-primary"><dt>{labels.verification}</dt><dd><span class={`badge ${event.verification.status}`}>{presentationLabel('verification', event.verification.status, locale)}</span></dd></div>
-        <div class="event-glance-item"><dt>{labels.evidence}</dt><dd>{presentationLabel('evidence_level', event.verification.evidence_level, locale)}</dd></div>
-        <div class="event-glance-item"><dt>{labels.aiRole}</dt><dd>{presentationLabel('ai_role', event.ai_role.level, locale)}</dd></div>
-        <div class="event-glance-item"><dt>{labels.assurance}</dt><dd>{presentationLabel('formal_assurance', event.verification.formal_assurance, locale)}</dd></div>
-      </dl>
-    </section>
   </header>
 
   <div class="event-detail-layout">
@@ -121,8 +111,23 @@ const breadcrumbJsonLd = {
       <section id="what-happened" class="event-section event-section-primary"><h2>{labels.what}</h2><p>{text(event.claim, locale)}</p></section>
       <section id="why-it-matters" class="event-section event-section-primary"><h2>{labels.why}</h2><p>{text(event.why_it_matters, locale)}</p><p class="event-rationale"><strong>{labels.rationale}</strong>{text(event.significance.rationale, locale)}</p></section>
 
+      <section id="historical-context" class="event-section event-section-primary"><h2>{labels.relationships}</h2>
+        <div class="relationships">{relationGroups.map(([label, ids]) => <div class="fact"><strong>{label}</strong>{ids.length ? <ul>{ids.map((id) => { const related = getEventById(id); return related ? <li><a href={href(localePath(locale, `events/${related.slug}`))}>{text(related.title, locale)}</a></li> : null; })}</ul> : <p>—</p>}</div>)}</div>
+      </section>
+
       <section id="primary-evidence" class="event-section event-section-primary"><h2>{labels.primaryEvidence}</h2>
         <ul class="evidence-list">{primary.map((source) => <li><a href={source.url} rel="noreferrer"><strong>{source.title}</strong></a><div class="source-tier">{presentationLabel('source_tier', source.tier, locale)} · {presentationLabel('source_type', source.type, locale)}{source.published_date ? ` · ${source.published_date}` : ''}</div></li>)}</ul>
+      </section>
+
+      <section id="evidence-status" class="event-section event-section-secondary event-at-a-glance" aria-labelledby="event-at-a-glance-heading">
+        <h2 id="event-at-a-glance-heading" class="event-at-a-glance-title">{labels.atGlance}</h2>
+        <dl class="event-glance-grid">
+          <div class="event-glance-item event-glance-primary"><dt>{labels.significance}</dt><dd><span class="badge significance">{presentationLabel('significance', event.significance.tier, locale)}</span></dd></div>
+          <div class="event-glance-item event-glance-primary"><dt>{labels.verification}</dt><dd><span class={`badge ${event.verification.status}`}>{presentationLabel('verification', event.verification.status, locale)}</span></dd></div>
+          <div class="event-glance-item"><dt>{labels.evidence}</dt><dd>{presentationLabel('evidence_level', event.verification.evidence_level, locale)}</dd></div>
+          <div class="event-glance-item"><dt>{labels.aiRole}</dt><dd>{presentationLabel('ai_role', event.ai_role.level, locale)}</dd></div>
+          <div class="event-glance-item"><dt>{labels.assurance}</dt><dd>{presentationLabel('formal_assurance', event.verification.formal_assurance, locale)}</dd></div>
+        </dl>
       </section>
 
       <section id="contribution-verification" class="event-section event-section-secondary"><h2>{labels.contribution}</h2>
@@ -148,10 +153,6 @@ const breadcrumbJsonLd = {
       <section id="sources-artifacts" class="event-section event-section-secondary"><h2>{labels.sources}</h2>
         <ul class="evidence-list">{event.sources.map((source) => <li><a href={source.url} rel="noreferrer">{source.title}</a><div class="source-tier">{presentationLabel('source_tier', source.tier, locale)} · {presentationLabel('source_type', source.type, locale)} · {labels.accessed} {source.accessed_at}</div></li>)}</ul>
         {event.artifacts.length > 0 && <ul class="evidence-list">{event.artifacts.map((artifact) => <li><a href={artifact.url} rel="noreferrer">{artifact.title}</a><div class="source-tier">{labels.artifact} · {presentationLabel('artifact_kind', artifact.kind, locale)}</div></li>)}</ul>}
-      </section>
-
-      <section id="historical-relationships" class="event-section event-section-secondary"><h2>{labels.relationships}</h2>
-        <div class="relationships">{relationGroups.map(([label, ids]) => <div class="fact"><strong>{label}</strong>{ids.length ? <ul>{ids.map((id) => { const related = getEventById(id); return related ? <li><a href={href(localePath(locale, `events/${related.slug}`))}>{text(related.title, locale)}</a></li> : null; })}</ul> : <p>—</p>}</div>)}</div>
       </section>
 
       <section id="verification-history" class="event-section event-section-secondary"><h2>{labels.history}</h2>
