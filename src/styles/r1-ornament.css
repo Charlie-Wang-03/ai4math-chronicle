@@ -215,7 +215,7 @@ body .ornament-anchor--explore-empty .ornament-construction-geometry {
   height: auto;
 }
 
-body .explore-directory-stage:has(.explore-table-wrap:not(:has([data-event-item]:not(.hidden)))) .ornament-anchor--explore-empty {
+body .explore-table-wrap:not(:has([data-event-item]:not(.hidden))) + .empty-state + .ornament-anchor--explore-empty {
   display: block;
 }
 
