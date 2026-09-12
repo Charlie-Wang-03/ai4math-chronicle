@@ -1,4 +1,4 @@
-/* R1.2C — controlled signature and structural ornament surfaces.
+/* R1.2C — controlled signature ornament surfaces.
    Ornament is decorative only: it must disappear without semantic loss and
    remain subordinate to the existing R1 hierarchy, chronology, and trust UI. */
 
@@ -167,68 +167,9 @@ body .ornament-anchor--about .ornament-marginalia {
   opacity: .9;
 }
 
-/* R1.2C-C — one restrained transition between the identity hero and the
-   chronology controls. It is intentionally desktop/tablet only so it never
-   spends the compact first-screen budget. */
-body .ornament-transition--chronology {
-  position: relative;
-  height: 1.15rem;
-  margin: -.15rem 0 .55rem;
-  overflow: hidden;
-  pointer-events: none;
-  user-select: none;
-  opacity: .42;
-}
-
-body .ornament-transition--chronology .ornament-marginalia {
-  top: -2.05rem;
-  right: .1rem;
-  width: 9.25rem;
-  height: auto;
-}
-
-/* Explore remains ornament-free during active retrieval. Construction geometry
-   appears only when the real zero-result state replaces the result surface.
-   The panel background stays below the ornament while its direct content stays
-   above it, preserving both identity and reset-action readability. */
-body .explore-directory-stage {
-  position: relative;
-  isolation: isolate;
-}
-
-body .explore-directory-stage .empty-state {
-  position: relative;
-  z-index: auto;
-}
-
-body .explore-directory-stage .empty-state > * {
-  position: relative;
-  z-index: 2;
-}
-
-body .ornament-anchor--explore-empty {
-  display: none;
-  z-index: 1;
-  right: .9rem;
-  bottom: .35rem;
-  width: min(29vw, 270px);
-  height: 8rem;
-  opacity: .3;
-}
-
-body .ornament-anchor--explore-empty .ornament-construction-geometry {
-  right: -.8rem;
-  bottom: -2.2rem;
-  width: 100%;
-  height: auto;
-}
-
-body .explore-table-wrap:not(:has([data-event-item]:not(.hidden))) + .empty-state ~ .ornament-anchor--explore-empty {
-  display: block;
-}
-
-/* Footer — O1 identity echo only. The graph stays behind the existing footer
-   content and never creates a second hero or a navigation cue. */
+/* R1.2C-C owner review retained only the global O1 footer echo. The graph
+   stays behind the existing footer content and never creates a second hero or
+   a navigation cue. */
 body .site-footer {
   position: relative;
   isolation: isolate;
@@ -263,10 +204,6 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
   opacity: .61;
 }
 
-html:root[data-theme='dark'] body .ornament-anchor--explore-empty {
-  opacity: .25;
-}
-
 html:root[data-theme='dark'] body .ornament-anchor--footer {
   opacity: .16;
 }
@@ -283,10 +220,6 @@ html:root[data-theme='dark'] body .ornament-anchor--footer {
     right: -2.6rem;
     width: min(40vw, 330px);
     opacity: .5;
-  }
-
-  body .ornament-anchor--explore-empty {
-    width: min(38vw, 250px);
   }
 
   body .ornament-anchor--footer {
@@ -342,18 +275,6 @@ html:root[data-theme='dark'] body .ornament-anchor--footer {
     width: 88%;
   }
 
-  body .ornament-transition--chronology {
-    display: none;
-  }
-
-  body .ornament-anchor--explore-empty {
-    right: -.4rem;
-    bottom: .15rem;
-    width: 52vw;
-    height: 6.8rem;
-    opacity: .27;
-  }
-
   body .ornament-anchor--footer {
     top: .65rem;
     right: -7vw;
@@ -366,10 +287,6 @@ html:root[data-theme='dark'] body .ornament-anchor--footer {
   html:root[data-theme='dark'] body .ornament-anchor--methodology,
   html:root[data-theme='dark'] body .ornament-anchor--about {
     opacity: .36;
-  }
-
-  html:root[data-theme='dark'] body .ornament-anchor--explore-empty {
-    opacity: .24;
   }
 
   html:root[data-theme='dark'] body .ornament-anchor--footer {
@@ -409,25 +326,19 @@ html:root[data-theme='dark'] body .ornament-anchor--footer {
     width: 86%;
   }
 
-  body .ornament-anchor--explore-empty {
-    width: 58vw;
-  }
-
   body .ornament-anchor--footer {
     width: 68vw;
   }
 }
 
 @media (forced-colors: active) {
-  body .ornament-anchor,
-  body .ornament-transition {
+  body .ornament-anchor {
     display: none;
   }
 }
 
 @media print {
-  body .ornament-anchor,
-  body .ornament-transition {
+  body .ornament-anchor {
     display: none;
   }
 }
