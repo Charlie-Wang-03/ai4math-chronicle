@@ -1,0 +1,235 @@
+/* R1B — semantic visual primitives for canonical Event records.
+   Reuse the existing R0 section IDs instead of duplicating Event content. */
+
+body #what-happened {
+  position: relative;
+  padding-left: 1rem;
+}
+
+body #what-happened::before {
+  content: '';
+  position: absolute;
+  inset: 1.35rem auto 1.45rem 0;
+  width: 3px;
+  background: var(--text);
+}
+
+body #what-happened > p {
+  color: var(--text);
+  font-size: 1.08rem;
+  line-height: 1.68;
+}
+
+body #why-it-matters {
+  padding-left: 1rem;
+  border-left: 2px solid var(--accent);
+}
+
+body #why-it-matters .event-rationale {
+  margin-top: .75rem !important;
+  padding-top: .65rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Historical relationships behave like lineage, not three equal cards. */
+body #historical-context .relationships {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border-top: 2px solid var(--border-strong);
+}
+
+body #historical-context .relationships > div {
+  display: grid;
+  grid-template-columns: minmax(8rem, .32fr) minmax(0, 1fr);
+  gap: .7rem 1rem;
+  align-items: start;
+  border-top: 0;
+  border-bottom: 1px solid var(--border);
+  padding: .75rem 0;
+}
+
+body #historical-context .relationships > div > strong {
+  color: var(--muted);
+  font-family: var(--font-metadata);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .055em;
+  text-transform: uppercase;
+}
+
+body #historical-context .relationships ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .45rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body #historical-context .relationships li {
+  min-width: 0;
+}
+
+body #historical-context .relationships li + li {
+  margin-top: 0;
+}
+
+body #historical-context .relationships a {
+  color: var(--text);
+  font-family: var(--font-editorial);
+  font-size: .94rem;
+  font-weight: 620;
+  line-height: 1.35;
+  text-decoration: none;
+}
+
+body #historical-context .relationships a:hover,
+body #historical-context .relationships a:focus-visible {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+body #historical-context .relationships p {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--font-metadata);
+  font-size: .72rem;
+}
+
+/* Primary evidence reads as numbered citations rather than a generic list. */
+body #primary-evidence .evidence-list {
+  counter-reset: evidence-citation;
+}
+
+body #primary-evidence .evidence-list li {
+  position: relative;
+  counter-increment: evidence-citation;
+  padding-left: 2rem;
+}
+
+body #primary-evidence .evidence-list li::before {
+  content: counter(evidence-citation, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: .8rem;
+  color: var(--muted);
+  font-family: var(--font-metadata);
+  font-size: .64rem;
+}
+
+body #primary-evidence .evidence-list a strong {
+  color: var(--text);
+  font-family: var(--font-editorial);
+  font-size: .98rem;
+  font-weight: 620;
+  line-height: 1.35;
+}
+
+/* Trust is hierarchical: significance and verification lead, then the
+   three interpretive dimensions follow as a quieter secondary row. */
+body #evidence-status .event-glance-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: .7rem 0;
+}
+
+body #evidence-status .event-glance-primary {
+  grid-column: span 3;
+}
+
+body #evidence-status .event-glance-item:not(.event-glance-primary) {
+  grid-column: span 2;
+}
+
+body #evidence-status .event-glance-item:nth-child(3) {
+  border-left: 0;
+  padding-left: 0;
+}
+
+body #evidence-status .event-glance-item:nth-child(n + 3) {
+  border-top: 1px solid var(--border);
+  padding-top: .65rem;
+}
+
+/* AI and human contribution are prose-bearing modules, not equal-sized
+   metadata cells. */
+body #contribution-verification .fact-grid .fact:nth-child(3),
+body #contribution-verification .fact-grid .fact:nth-child(4) {
+  grid-column: 1 / -1;
+  border-left: 2px solid var(--border-strong);
+  padding-left: .75rem;
+}
+
+body #contribution-verification .fact-grid .fact:nth-child(3) dd,
+body #contribution-verification .fact-grid .fact:nth-child(4) dd {
+  max-width: var(--measure-reading);
+  line-height: 1.55;
+}
+
+/* Verification and correction history read as provenance logs. */
+body #verification-history .evidence-list li,
+body #corrections .evidence-list li {
+  position: relative;
+  padding-left: 1rem;
+}
+
+body #verification-history .evidence-list li::before,
+body #corrections .evidence-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--border-strong);
+}
+
+@media (max-width: 760px) {
+  body #what-happened {
+    padding-left: .75rem;
+  }
+
+  body #what-happened::before {
+    inset-block: 1.05rem 1.2rem;
+    width: 2px;
+  }
+
+  body #what-happened > p {
+    font-size: 1rem;
+  }
+
+  body #why-it-matters {
+    padding-left: .75rem;
+  }
+
+  body #historical-context .relationships > div {
+    grid-template-columns: 1fr;
+    gap: .35rem;
+  }
+
+  body #historical-context .relationships ul {
+    grid-template-columns: 1fr;
+  }
+
+  body #evidence-status .event-glance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body #evidence-status .event-glance-primary,
+  body #evidence-status .event-glance-item:not(.event-glance-primary) {
+    grid-column: span 1;
+  }
+
+  body #evidence-status .event-glance-item:nth-child(4) {
+    border-left: 1px solid var(--border);
+    padding-left: .8rem;
+  }
+
+  body #evidence-status .event-glance-item:nth-child(5) {
+    grid-column: 1 / -1;
+    border-left: 0;
+    padding-left: 0;
+  }
+}

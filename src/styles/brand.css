@@ -1,4 +1,5 @@
 @import './r1-foundations.css';
+@import './r1-event-modules.css';
 
 .brand {
   display: inline-flex;
