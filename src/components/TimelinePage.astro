@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EventCollection from './EventCollection.astro';
+import ChronicleGraph from './ornament/ChronicleGraph.astro';
+import ConstructionGeometry from './ornament/ConstructionGeometry.astro';
 import '../styles/timeline.css';
 import { getAllEvents } from '../lib/events';
 import { localePath, absolute, href } from '../lib/site';
@@ -60,6 +62,11 @@ const websiteJsonLd = {
 ---
 <BaseLayout locale={locale} title={copy.title} description={copy.desc} canonicalPath={localePath(locale)} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en')} jsonLd={websiteJsonLd}>
   <header class="timeline-hero">
+    <div class="ornament-anchor ornament-anchor--home" aria-hidden="true" data-ornament-anchor="home">
+      <ChronicleGraph variant="hero" />
+      <ConstructionGeometry variant="hero" />
+    </div>
+
     <div class="hero-copy">
       <p class="eyebrow">{copy.eyebrow}</p>
       <h1>{copy.heading}</h1>
