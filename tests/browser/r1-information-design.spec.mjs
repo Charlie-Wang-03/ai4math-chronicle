@@ -1,6 +1,7 @@
 import { expect, test } from '@playwright/test';
 
 const projectPath = (path = '') => `/ai4math-chronicle/${path.replace(/^\//, '')}`;
+const worstCaseSlug = 'openai-navier-stokes-solution-claim';
 
 async function expectStartsInFirstViewport(locator, viewportHeight = 844) {
   const box = await locator.boundingBox();
@@ -8,24 +9,50 @@ async function expectStartsInFirstViewport(locator, viewportHeight = 844) {
   expect(box.y, 'primary task should begin within the first mobile viewport').toBeLessThan(viewportHeight);
 }
 
-async function firstEventHref(page) {
-  await page.goto(projectPath('en/'));
+async function firstEventHref(page, locale = 'en') {
+  await page.goto(projectPath(`${locale}/`));
   const href = await page.locator('[data-event-card] h3 a').first().getAttribute('href');
   expect(href).toBeTruthy();
   return href;
 }
 
-test('R1A keeps core mobile tasks inside the first viewport budget', async ({ page }) => {
+test('R1A keeps core bilingual mobile tasks inside the first viewport budget', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
 
-  const eventHref = await firstEventHref(page);
-  await expectStartsInFirstViewport(page.locator('[data-event-card]').first());
+  for (const locale of ['en', 'zh-CN']) {
+    const eventHref = await firstEventHref(page, locale);
+    await expectStartsInFirstViewport(page.locator('[data-event-card]').first());
 
-  await page.goto(projectPath('en/explore/'));
-  await expectStartsInFirstViewport(page.getByRole('searchbox', { name: 'Search' }));
+    await page.goto(projectPath(`${locale}/explore/`));
+    await expectStartsInFirstViewport(page.getByRole('searchbox', { name: locale === 'zh-CN' ? '搜索' : 'Search' }));
 
-  await page.goto(eventHref);
-  await expectStartsInFirstViewport(page.locator('#what-happened'));
+    await page.goto(eventHref);
+    await expectStartsInFirstViewport(page.locator('#what-happened'));
+  }
+});
+
+test('R1.1 protects the longest bilingual Event from information-budget regression', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+
+  for (const [locale, leadLimit] of [['en', 300], ['zh-CN', 180]]) {
+    await page.goto(projectPath(`${locale}/events/${worstCaseSlug}/`));
+
+    const lead = page.locator('.event-detail-header .lede');
+    const fullSummary = page.locator('#what-happened .event-summary-detail');
+    await expect(lead).toBeVisible();
+    await expect(fullSummary).toBeVisible();
+    await expectStartsInFirstViewport(page.locator('#what-happened'));
+
+    const leadText = (await lead.textContent())?.trim() ?? '';
+    const fullText = (await fullSummary.textContent())?.trim() ?? '';
+    expect(leadText.length).toBeLessThanOrEqual(leadLimit);
+    expect(fullText.length).toBeGreaterThan(leadText.length);
+
+    await expect(page.locator('.breadcrumb-current')).toBeHidden();
+    const primaryNav = page.locator('.event-section-nav-group').first().locator('ul');
+    expect(await primaryNav.evaluate((element) => getComputedStyle(element).gridTemplateColumns)).not.toBe('none');
+    expect(await primaryNav.evaluate((element) => getComputedStyle(element).overflowX)).not.toBe('auto');
+  }
 });
 
 test('R1A preserves language-aware editorial typography hooks', async ({ page }) => {
@@ -70,17 +97,18 @@ test('R1C exposes chronology as visible year chapters without losing Event scann
   expect(sourceLayout).not.toBe('none');
 });
 
-test('R1D makes the four-dimensional trust model a scannable reference near the top', async ({ page }) => {
+test('R1D makes the four-dimensional trust model a scannable semantic reference near the top', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(projectPath('en/methodology/'));
 
   const overview = page.locator('.trust-model-overview');
   await expect(overview).toBeVisible();
   await expectStartsInFirstViewport(overview);
+  await expect(overview.getByRole('heading', { level: 2, name: 'Four dimensions of the Chronicle trust model' })).toBeAttached();
 
   const dimensions = page.locator('[data-trust-dimension]');
   await expect(dimensions).toHaveCount(4);
-  await expect(dimensions.nth(0)).toContainText('Significance');
+  await expect(dimensions.nth(0).getByRole('heading', { level: 3 })).toContainText('How important');
   await expect(dimensions.nth(1)).toContainText('Evidence');
   await expect(dimensions.nth(2)).toContainText('Verification');
   await expect(dimensions.nth(3)).toContainText('Formal assurance');
