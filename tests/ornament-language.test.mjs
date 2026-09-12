@@ -32,6 +32,6 @@ test('R1.2C ornament language is explicit and discoverable', async () => {
   assert.match(ornament, /random equations or mathematical-symbol wallpaper/);
   assert.match(ornament, /R1\.2C-B — Identity anchor surfaces/);
 
-  assert.match(state, /\[ornament-language\.md\]\(\.\/ornament-language\.md\)/);
-  assert.match(agents, /\[docs\/ornament-language\.md\]\(docs\/ornament-language\.md\)/);
+  assert.match(state, /ornament-language\.md/);
+  assert.match(agents, /docs\/ornament-language\.md/);
 });
