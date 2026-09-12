@@ -63,7 +63,7 @@ const controlIds = {
       const startsYear = year !== previousYear;
       return (
         <>
-          {startsYear && <li class="timeline-year-anchor" id={`timeline-year-${year}`} aria-hidden="true"></li>}
+          {startsYear && <li class="timeline-year-anchor" id={`timeline-year-${year}`} role="presentation"><span class="timeline-year-label">{year}</span></li>}
           <li class="timeline-item" data-event-item data-event-url={eventUrl}><time class="timeline-date" datetime={event.dates.event}>{formatDate(event.dates.event, locale)}</time><span class="timeline-dot" aria-hidden="true"></span><EventCard event={event} locale={locale} /></li>
         </>
       );
