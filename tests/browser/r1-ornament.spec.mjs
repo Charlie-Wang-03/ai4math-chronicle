@@ -17,6 +17,12 @@ async function expectDecorativeSvg(locator) {
   await expect(locator).toHaveAttribute('focusable', 'false');
 }
 
+async function expectMobileOrnamentContrast(locator) {
+  const opacity = parseFloat(await locator.evaluate((element) => getComputedStyle(element).opacity));
+  expect(opacity).toBeGreaterThanOrEqual(0.32);
+  expect(opacity).toBeLessThan(0.4);
+}
+
 test('R1.2C-B renders the approved motif families on the three identity anchors only', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
 
@@ -43,14 +49,14 @@ test('R1.2C-B renders the approved motif families on the three identity anchors 
   await expect(page.locator('[data-ornament-anchor]')).toHaveCount(0);
 });
 
-test('R1.2C-B keeps ornament peripheral, non-interactive, and task-safe on mobile', async ({ page }) => {
+test('R1.2C-B keeps ornament peripheral, legible, non-interactive, and task-safe on mobile', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
 
   await page.goto(projectPath('en/'));
   const homeAnchor = page.locator('[data-ornament-anchor="home"]');
   await expect(homeAnchor).toBeVisible();
   expect(await homeAnchor.evaluate((element) => getComputedStyle(element).pointerEvents)).toBe('none');
-  expect(parseFloat(await homeAnchor.evaluate((element) => getComputedStyle(element).opacity))).toBeLessThan(0.4);
+  await expectMobileOrnamentContrast(homeAnchor);
   await expect(page.locator('[data-ornament-anchor="home"] [data-ornament="construction-geometry"]')).toBeHidden();
   const firstEvent = await page.locator('[data-event-card]').first().boundingBox();
   expect(firstEvent).not.toBeNull();
@@ -60,6 +66,7 @@ test('R1.2C-B keeps ornament peripheral, non-interactive, and task-safe on mobil
   await page.goto(projectPath('en/methodology/'));
   const methodologyAnchor = page.locator('[data-ornament-anchor="methodology"]');
   await expect(methodologyAnchor).toBeVisible();
+  await expectMobileOrnamentContrast(methodologyAnchor);
   await expect(methodologyAnchor.locator('[data-ornament="construction-geometry"]')).toBeHidden();
   const overview = await page.locator('.trust-model-overview').boundingBox();
   expect(overview).not.toBeNull();
@@ -69,6 +76,7 @@ test('R1.2C-B keeps ornament peripheral, non-interactive, and task-safe on mobil
   await page.goto(projectPath('zh-CN/about/'));
   const aboutAnchor = page.locator('[data-ornament-anchor="about"]');
   await expect(aboutAnchor).toBeVisible();
+  await expectMobileOrnamentContrast(aboutAnchor);
   await expect(aboutAnchor.locator('[data-ornament="chronicle-graph"]')).toBeHidden();
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expectNoHorizontalOverflow(page);

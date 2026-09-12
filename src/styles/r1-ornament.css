@@ -196,7 +196,7 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
     right: -1.4rem;
     width: 42vw;
     height: 7.5rem;
-    opacity: .28;
+    opacity: .38;
   }
 
   body .ornament-anchor--home .ornament-chronicle-graph {
@@ -215,7 +215,7 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
     right: -.7rem;
     width: 7rem;
     height: 4.5rem;
-    opacity: .26;
+    opacity: .36;
   }
 
   body .ornament-anchor--methodology {
@@ -237,20 +237,20 @@ html:root[data-theme='dark'] body .ornament-anchor--home {
   html:root[data-theme='dark'] body .ornament-anchor--home,
   html:root[data-theme='dark'] body .ornament-anchor--methodology,
   html:root[data-theme='dark'] body .ornament-anchor--about {
-    opacity: .24;
+    opacity: .34;
   }
 }
 
 @media (max-width: 480px) {
   body .ornament-anchor--home {
     width: 36vw;
-    opacity: .22;
+    opacity: .36;
   }
 
   body .ornament-anchor--methodology,
   body .ornament-anchor--about {
     width: 5.6rem;
-    opacity: .2;
+    opacity: .34;
   }
 }
 
