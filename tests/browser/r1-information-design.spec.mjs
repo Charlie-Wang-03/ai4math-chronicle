@@ -16,6 +16,14 @@ async function firstEventHref(page, locale = 'en') {
   return href;
 }
 
+async function backgroundColor(locator) {
+  return locator.evaluate((element) => getComputedStyle(element).backgroundColor);
+}
+
+async function color(locator) {
+  return locator.evaluate((element) => getComputedStyle(element).color);
+}
+
 test('R1A keeps core bilingual mobile tasks inside the first viewport budget', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
 
@@ -112,4 +120,53 @@ test('R1D makes the four-dimensional trust model a scannable semantic reference 
   await expect(dimensions.nth(1)).toContainText('Evidence');
   await expect(dimensions.nth(2)).toContainText('Verification');
   await expect(dimensions.nth(3)).toContainText('Formal assurance');
+});
+
+test('R1.2B renders domain-semantic chromatic hierarchy instead of one neutral surface band', async ({ page }) => {
+  const eventHref = await firstEventHref(page);
+
+  const yearLabel = page.locator('.timeline-year-label').first();
+  const timelineTools = page.locator('.timeline-tools');
+  const h1Card = page.locator('.event-card.H1').first();
+  const ordinaryCard = page.locator('.event-card.H2').first();
+  await expect(timelineTools).toBeVisible();
+  await expect(h1Card).toBeVisible();
+  await expect(ordinaryCard).toBeVisible();
+  expect(await backgroundColor(timelineTools)).not.toBe(await backgroundColor(ordinaryCard));
+  expect(await backgroundColor(h1Card)).not.toBe(await backgroundColor(ordinaryCard));
+  expect(await color(yearLabel)).not.toBe(await color(page.locator('body')));
+
+  await page.goto(eventHref);
+  const historical = page.locator('#historical-context');
+  const primaryEvidence = page.locator('#primary-evidence');
+  const trust = page.locator('#evidence-status');
+  const historicalBg = await backgroundColor(historical);
+  const evidenceBg = await backgroundColor(primaryEvidence);
+  const trustBg = await backgroundColor(trust);
+  expect(new Set([historicalBg, evidenceBg, trustBg]).size).toBe(3);
+  expect(historicalBg).not.toBe('rgba(0, 0, 0, 0)');
+  expect(evidenceBg).not.toBe('rgba(0, 0, 0, 0)');
+
+  await page.goto(projectPath('en/explore/'));
+  const filterPanel = page.locator('.explore-filter-panel');
+  const resultsSurface = page.locator('.explore-table-wrap');
+  expect(await backgroundColor(filterPanel)).not.toBe(await backgroundColor(resultsSurface));
+
+  await page.goto(projectPath('en/methodology/'));
+  const dimensions = page.locator('[data-trust-dimension]');
+  const dimensionBackgrounds = await dimensions.evaluateAll((nodes) => nodes.map((node) => getComputedStyle(node).backgroundColor));
+  expect(new Set(dimensionBackgrounds).size).toBe(4);
+});
+
+test('R1.2B keeps semantic module separation in dark mode', async ({ page }) => {
+  await page.goto(projectPath(`en/events/${worstCaseSlug}/`));
+  await page.evaluate(() => {
+    document.documentElement.dataset.theme = 'dark';
+    document.documentElement.style.colorScheme = 'dark';
+  });
+
+  const historicalBg = await backgroundColor(page.locator('#historical-context'));
+  const evidenceBg = await backgroundColor(page.locator('#primary-evidence'));
+  const trustBg = await backgroundColor(page.locator('#evidence-status'));
+  expect(new Set([historicalBg, evidenceBg, trustBg]).size).toBe(3);
 });
