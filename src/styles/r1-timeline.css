@@ -94,10 +94,11 @@ body .timeline-item .details-link {
     margin: 1.1rem 0 .3rem;
   }
 
-  /* The first visible year is orientation, not prelude. Keep it visually
-     present without spending another mobile viewport row before Event 1. */
+  /* The first visible year is orientation, not prelude. Pull only that
+     first chapter marker into the tools' trailing whitespace so Event 1
+     remains inside the task-first mobile viewport budget. */
   body .timeline-year-anchor:first-child {
-    margin-top: -.5rem;
+    margin-top: -1.6rem;
     margin-bottom: 0;
   }
 
