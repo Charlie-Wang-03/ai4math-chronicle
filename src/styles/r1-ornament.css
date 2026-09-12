@@ -1,0 +1,263 @@
+/* R1.2C-B — identity-anchor ornament surfaces.
+   Ornament is decorative only: it must disappear without semantic loss and
+   remain subordinate to the existing R1 hierarchy, chronology, and trust UI. */
+
+body .timeline-hero,
+body .methodology-page,
+body .about-identity-anchor {
+  position: relative;
+  isolation: isolate;
+}
+
+body .timeline-hero,
+body .about-identity-anchor {
+  overflow: hidden;
+}
+
+body .timeline-hero > :not(.ornament-anchor),
+body .methodology-page > :not(.ornament-anchor),
+body .about-identity-anchor > :not(.ornament-anchor) {
+  position: relative;
+  z-index: 1;
+}
+
+body .ornament-anchor {
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+body .ornament-svg {
+  position: absolute;
+  display: block;
+  max-width: none;
+  fill: none;
+  overflow: visible;
+}
+
+body .ornament-stroke {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+}
+
+body .ornament-stroke-neutral {
+  stroke: var(--rule-strong);
+}
+
+body .ornament-stroke-research {
+  stroke: var(--research);
+}
+
+body .ornament-stroke-archive {
+  stroke: var(--archive);
+}
+
+body .ornament-stroke-faint {
+  opacity: .58;
+}
+
+body .ornament-node {
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+body .ornament-node-neutral {
+  fill: var(--rule-strong);
+  stroke: var(--paper);
+}
+
+body .ornament-node-research {
+  fill: var(--research);
+  stroke: var(--paper);
+}
+
+body .ornament-node-milestone {
+  fill: var(--milestone);
+  stroke: var(--paper);
+}
+
+body .ornament-node-archive {
+  fill: var(--archive);
+  stroke: var(--paper);
+}
+
+body .ornament-node-hollow {
+  fill: var(--paper);
+  stroke: var(--rule-strong);
+}
+
+/* Home / Timeline hero — O3 desktop signature, kept to the right edge so the
+   title, corpus summary, and primary actions remain the dominant reading path. */
+body .ornament-anchor--home {
+  top: -1.15rem;
+  right: -2.7rem;
+  width: min(45vw, 590px);
+  height: 15rem;
+  opacity: .72;
+}
+
+body .ornament-anchor--home .ornament-chronicle-graph {
+  top: -.3rem;
+  right: -1rem;
+  width: 100%;
+  height: auto;
+}
+
+body .ornament-anchor--home .ornament-construction-geometry {
+  top: 3.55rem;
+  right: 1.2rem;
+  width: 58%;
+  height: auto;
+  opacity: .42;
+}
+
+/* Standards & Methodology — O2 reference accent. Geometry provides the
+   mathematical construction cue while marginalia keeps the surface editorial. */
+body .ornament-anchor--methodology {
+  top: -.65rem;
+  right: -1.4rem;
+  width: min(34vw, 360px);
+  height: 11.5rem;
+  opacity: .67;
+}
+
+body .ornament-anchor--methodology .ornament-construction-geometry {
+  top: .25rem;
+  right: -.4rem;
+  width: 92%;
+  height: auto;
+  opacity: .54;
+}
+
+body .ornament-anchor--methodology .ornament-marginalia {
+  top: .5rem;
+  right: .2rem;
+  width: 34%;
+  height: auto;
+  opacity: .88;
+}
+
+/* About — O2 project-identity accent. The graph is deliberately abbreviated
+   so this page does not become a second Home hero. */
+body .ornament-anchor--about {
+  top: -.55rem;
+  right: -1.8rem;
+  width: min(38vw, 430px);
+  height: 11rem;
+  opacity: .64;
+}
+
+body .ornament-anchor--about .ornament-chronicle-graph {
+  top: -.85rem;
+  right: -1.1rem;
+  width: 100%;
+  height: auto;
+}
+
+body .ornament-anchor--about .ornament-marginalia {
+  top: .7rem;
+  right: .25rem;
+  width: 29%;
+  height: auto;
+  opacity: .9;
+}
+
+html:root[data-theme='dark'] body .ornament-anchor {
+  opacity: .58;
+}
+
+html:root[data-theme='dark'] body .ornament-anchor--home {
+  opacity: .61;
+}
+
+@media (max-width: 900px) {
+  body .ornament-anchor--home {
+    right: -3.6rem;
+    width: min(48vw, 500px);
+    opacity: .5;
+  }
+
+  body .ornament-anchor--methodology,
+  body .ornament-anchor--about {
+    right: -2.6rem;
+    width: min(40vw, 330px);
+    opacity: .5;
+  }
+}
+
+@media (max-width: 760px) {
+  body .ornament-anchor--home {
+    top: -.2rem;
+    right: -1.4rem;
+    width: 42vw;
+    height: 7.5rem;
+    opacity: .28;
+  }
+
+  body .ornament-anchor--home .ornament-chronicle-graph {
+    top: -1.6rem;
+    right: -2rem;
+    width: 150%;
+  }
+
+  body .ornament-anchor--home .ornament-construction-geometry {
+    display: none;
+  }
+
+  body .ornament-anchor--methodology,
+  body .ornament-anchor--about {
+    top: -.05rem;
+    right: -.7rem;
+    width: 7rem;
+    height: 4.5rem;
+    opacity: .26;
+  }
+
+  body .ornament-anchor--methodology .ornament-construction-geometry,
+  body .ornament-anchor--about .ornament-chronicle-graph {
+    display: none;
+  }
+
+  body .ornament-anchor--methodology .ornament-marginalia,
+  body .ornament-anchor--about .ornament-marginalia {
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  html:root[data-theme='dark'] body .ornament-anchor--home,
+  html:root[data-theme='dark'] body .ornament-anchor--methodology,
+  html:root[data-theme='dark'] body .ornament-anchor--about {
+    opacity: .24;
+  }
+}
+
+@media (max-width: 480px) {
+  body .ornament-anchor--home {
+    width: 36vw;
+    opacity: .22;
+  }
+
+  body .ornament-anchor--methodology,
+  body .ornament-anchor--about {
+    width: 5.6rem;
+    opacity: .2;
+  }
+}
+
+@media (forced-colors: active) {
+  body .ornament-anchor {
+    display: none;
+  }
+}
+
+@media print {
+  body .ornament-anchor {
+    display: none;
+  }
+}
