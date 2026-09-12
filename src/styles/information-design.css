@@ -2,6 +2,7 @@
    R1 layers refine the established editorial publication system without
    replacing the global theme, brand, or responsive accessibility contracts. */
 
+@import './r1-color-system.css';
 @import './r1-foundations.css';
 @import './r1-event-modules.css';
 @import './r1-reference.css';
