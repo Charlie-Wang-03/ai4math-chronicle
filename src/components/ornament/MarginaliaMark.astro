@@ -1,0 +1,22 @@
+---
+interface Props {
+  variant?: 'reference' | 'project';
+}
+
+const { variant = 'reference' } = Astro.props as Props;
+---
+
+<svg
+  class={`ornament-svg ornament-marginalia ornament-marginalia--${variant}`}
+  viewBox="0 0 140 84"
+  aria-hidden="true"
+  focusable="false"
+  data-ornament="marginalia"
+>
+  <path class="ornament-stroke ornament-stroke-neutral" d="M18 14V70M18 14H42M18 70H42" />
+  <path class="ornament-stroke ornament-stroke-neutral ornament-stroke-faint" d="M58 22H122M58 42H108M58 62H128" />
+  <path class="ornament-stroke ornament-stroke-archive" d="M50 22H54M50 42H54M50 62H54" />
+  <circle class="ornament-node ornament-node-research" cx="122" cy="22" r="3.5" />
+  <circle class="ornament-node ornament-node-hollow" cx="108" cy="42" r="3.5" />
+  <circle class="ornament-node ornament-node-archive" cx="128" cy="62" r="3.5" />
+</svg>

@@ -1,0 +1,28 @@
+---
+interface Props {
+  variant?: 'hero' | 'compact';
+}
+
+const { variant = 'compact' } = Astro.props as Props;
+---
+
+<svg
+  class={`ornament-svg ornament-construction-geometry ornament-construction-geometry--${variant}`}
+  viewBox="0 0 360 220"
+  aria-hidden="true"
+  focusable="false"
+  data-ornament="construction-geometry"
+>
+  <circle class="ornament-stroke ornament-stroke-neutral ornament-stroke-faint" cx="116" cy="112" r="72" />
+  <path class="ornament-stroke ornament-stroke-neutral" d="M44 112H314" />
+  <path class="ornament-stroke ornament-stroke-neutral ornament-stroke-faint" d="M76 178L248 48" />
+  <path class="ornament-stroke ornament-stroke-research" d="M116 40A72 72 0 0 1 178 148" />
+  <path class="ornament-stroke ornament-stroke-archive" d="M178 148C214 176 258 176 302 150" />
+  <path class="ornament-stroke ornament-stroke-neutral ornament-stroke-faint" d="M248 48V184M302 150V194" />
+
+  <circle class="ornament-node ornament-node-research" cx="116" cy="112" r="5" />
+  <circle class="ornament-node ornament-node-neutral" cx="178" cy="148" r="4" />
+  <circle class="ornament-node ornament-node-archive" cx="248" cy="48" r="5" />
+  <circle class="ornament-node ornament-node-hollow" cx="302" cy="150" r="5" />
+  <circle class="ornament-node ornament-node-hollow" cx="248" cy="184" r="4" />
+</svg>

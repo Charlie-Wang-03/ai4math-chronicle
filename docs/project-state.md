@@ -64,6 +64,8 @@ R1 refines how the approved R0 product model is visually expressed. The durable 
 - **Standards & Methodology introduces four independent trust dimensions.** Significance, evidence, verification, and formal assurance are explained before detailed taxonomies and are never collapsed into a single trust score.
 - **Typography is bilingual and role-aware.** English and Simplified Chinese use appropriate editorial/interface stacks, long record titles are more compact than display headings, and reading measure remains restrained.
 - **Visual identity uses a controlled ornament layer.** The owner-approved R1.2C-A language defines Chronicle Graph, Mathematical Construction Geometry, and Scholarly Marginalia as reusable identity motifs. Ornament remains subordinate to content, may disappear without semantic loss, and is forbidden from turning dense reading/retrieval areas into decorative AI surfaces.
+- **R1.2C-B is the approved controlled identity-anchor rollout.** Ornament is limited to the Home hero, Standards & Methodology top, and About top. Timeline Event records, active Search & Explore retrieval, and Event Detail reading remain ornament-free (`O0`).
+- **R1.2C-C is gated by owner visual review of deployed R1.2C-B.** Do not extend ornament into structural accents, section transitions, or footer identity until the deployed Home / Methodology / About anchors have been visually reviewed and the owner explicitly approves continuation.
 - **Logo redesign remains a separate decision.** The current logo is not treated as a constitutional palette or ornament source and may be revisited independently.
 
 ## Currently tracked editorial concern
@@ -99,7 +101,7 @@ The standing hard gates are defined canonically in [`gpt-project-governance.md`]
 - an unresolved mathematical-correctness / priority adjudication;
 - a new product phase, scope change, governance amendment, or weakened human gate.
 
-The R0 product-coherence and R1 reader-information decisions listed above have already been explicitly approved by the owner and therefore are not open human gates.
+The R0 product-coherence and R1 reader-information decisions listed above have already been explicitly approved by the owner and therefore are not open human gates. The R1.2C-B identity-anchor implementation is approved, but the next ornament rollout step (R1.2C-C) remains paused at the explicit visual-review checkpoint above.
 
 ## No-autonomous-agenda rule
 

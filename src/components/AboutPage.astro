@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ChronicleGraph from './ornament/ChronicleGraph.astro';
+import MarginaliaMark from './ornament/MarginaliaMark.astro';
 import { href, localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
 
@@ -94,7 +96,12 @@ const copy = zh
   canonicalPath={localePath(locale, 'about')}
   alternatePath={localePath(zh ? 'en' : 'zh-CN', 'about')}
 >
-  <header class="prose">
+  <header class="prose about-identity-anchor">
+    <div class="ornament-anchor ornament-anchor--about" aria-hidden="true" data-ornament-anchor="about">
+      <ChronicleGraph variant="compact" />
+      <MarginaliaMark variant="project" />
+    </div>
+
     <p class="eyebrow">{copy.eyebrow}</p>
     <h1>{copy.heading}</h1>
     <p class="lede">{copy.lede}</p>
