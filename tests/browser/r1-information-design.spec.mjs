@@ -143,6 +143,7 @@ test('R1.2B renders domain-semantic chromatic hierarchy as inset editorial modul
   expect(await stylePx(timelineTools, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
   expect(await stylePx(h1Card, 'paddingLeft')).toBeGreaterThanOrEqual(12);
   expect(await stylePx(h1Card, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
+  expect(await stylePx(h1Card, 'borderLeftWidth')).toBeLessThanOrEqual(2);
 
   await page.goto(eventHref);
   const historical = page.locator('#historical-context');
@@ -157,6 +158,14 @@ test('R1.2B renders domain-semantic chromatic hierarchy as inset editorial modul
   expect(await stylePx(historical, 'paddingLeft')).toBeGreaterThanOrEqual(12);
   expect(await stylePx(primaryEvidence, 'paddingLeft')).toBeGreaterThanOrEqual(12);
   expect(await stylePx(trust, 'borderTopLeftRadius')).toBeGreaterThanOrEqual(6);
+  expect(await stylePx(trust, 'marginTop')).toBeGreaterThanOrEqual(8);
+
+  const primaryTrustCells = trust.locator('.event-glance-primary');
+  const firstTrustBox = await primaryTrustCells.nth(0).boundingBox();
+  const secondTrustBox = await primaryTrustCells.nth(1).boundingBox();
+  expect(firstTrustBox).not.toBeNull();
+  expect(secondTrustBox).not.toBeNull();
+  expect(secondTrustBox.x - (firstTrustBox.x + firstTrustBox.width)).toBeGreaterThanOrEqual(8);
 
   await page.goto(projectPath('en/explore/'));
   const filterPanel = page.locator('.explore-filter-panel');
