@@ -33,7 +33,7 @@ async function expectMobileOrnamentPresentation(page, locator, minVisibleWidthRa
   expect(visibleWidth).toBeGreaterThanOrEqual(viewport.width * minVisibleWidthRatio);
 }
 
-test('R1.2C-B renders the approved motif families on the three identity anchors only', async ({ page }) => {
+test('R1.2C-B renders the approved motif families on the three identity anchors', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
 
   await page.goto(projectPath('en/'));
@@ -54,9 +54,34 @@ test('R1.2C-B renders the approved motif families on the three identity anchors 
   await expect(aboutAnchor).toBeVisible();
   await expectDecorativeSvg(aboutAnchor.locator('[data-ornament="chronicle-graph"]'));
   await expectDecorativeSvg(aboutAnchor.locator('[data-ornament="marginalia"]'));
+});
+
+test('R1.2C-C keeps structural accents bounded to chronology transition, zero-result state, and footer', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 900 });
+
+  await page.goto(projectPath('en/'));
+  const transition = page.locator('[data-ornament-transition="chronology"]');
+  await expect(transition).toBeVisible();
+  await expectDecorativeSvg(transition.locator('[data-ornament="marginalia"]'));
+  await expect(page.locator('[data-event-card] [data-ornament]')).toHaveCount(0);
+
+  const footer = page.locator('[data-ornament-anchor="footer"]');
+  await expect(footer).toBeVisible();
+  await expectDecorativeSvg(footer.locator('[data-ornament="chronicle-graph"]'));
+  const footerOpacity = parseFloat(await footer.evaluate((element) => getComputedStyle(element).opacity));
+  expect(footerOpacity).toBeLessThanOrEqual(0.2);
 
   await page.goto(projectPath('en/explore/'));
-  await expect(page.locator('[data-ornament-anchor]')).toHaveCount(0);
+  const emptyOrnament = page.locator('[data-ornament-anchor="explore-empty"]');
+  await expect(emptyOrnament).toBeHidden();
+  await expect(page.locator('.explore-filter-panel [data-ornament], .explore-table-wrap [data-ornament]')).toHaveCount(0);
+
+  await page.locator('[data-query]').fill('zxq-no-event-match');
+  const emptyState = page.locator('[data-empty-state]');
+  await expect(emptyState).toBeVisible({ timeout: 10_000 });
+  await expect(emptyOrnament).toBeVisible();
+  await expectDecorativeSvg(emptyOrnament.locator('[data-ornament="construction-geometry"]'));
+  await expect(page.locator('.explore-filter-panel [data-ornament], .explore-table-wrap [data-ornament]')).toHaveCount(0);
 });
 
 test('R1.2C-B keeps ornament broad, legible, non-interactive, and task-safe on mobile', async ({ page }) => {
@@ -68,6 +93,7 @@ test('R1.2C-B keeps ornament broad, legible, non-interactive, and task-safe on m
   expect(await homeAnchor.evaluate((element) => getComputedStyle(element).pointerEvents)).toBe('none');
   await expectMobileOrnamentPresentation(page, homeAnchor, 0.65);
   await expect(page.locator('[data-ornament-anchor="home"] [data-ornament="construction-geometry"]')).toBeHidden();
+  await expect(page.locator('[data-ornament-transition="chronology"]')).toBeHidden();
   const firstEvent = await page.locator('[data-event-card]').first().boundingBox();
   expect(firstEvent).not.toBeNull();
   expect(firstEvent.y).toBeLessThan(844);
@@ -90,9 +116,13 @@ test('R1.2C-B keeps ornament broad, legible, non-interactive, and task-safe on m
   await expect(aboutAnchor.locator('[data-ornament="chronicle-graph"]')).toBeHidden();
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
   await expectNoHorizontalOverflow(page);
+
+  const footer = page.locator('[data-ornament-anchor="footer"]');
+  await expect(footer).toBeVisible();
+  expect(parseFloat(await footer.evaluate((element) => getComputedStyle(element).opacity))).toBeLessThanOrEqual(0.16);
 });
 
-test('R1.2C-B uses the semantic palette without glow or filter effects in dark mode', async ({ page }) => {
+test('R1.2C uses the semantic palette without glow or filter effects in dark mode', async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 900 });
   await page.goto(projectPath('en/'));
   await page.evaluate(() => {
