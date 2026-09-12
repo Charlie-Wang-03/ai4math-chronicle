@@ -5,8 +5,9 @@ import { readFile } from 'node:fs/promises';
 const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 
 test('R1.2C ornament language is explicit and discoverable', async () => {
-  const [ornament, state, agents] = await Promise.all([
+  const [ornament, informationDesign, state, agents] = await Promise.all([
     read('docs/ornament-language.md'),
+    read('docs/information-design.md'),
     read('docs/project-state.md'),
     read('AGENTS.md'),
   ]);
@@ -32,6 +33,9 @@ test('R1.2C ornament language is explicit and discoverable', async () => {
   assert.match(ornament, /random equations or mathematical-symbol wallpaper/);
   assert.match(ornament, /R1\.2C-B — Identity anchor surfaces/);
 
+  assert.match(informationDesign, /ornament-language\.md/);
+  assert.match(informationDesign, /identity layer, not an information layer/);
+  assert.match(informationDesign, /Timeline significance gradients are semantic hierarchy rather than ornament/);
   assert.match(state, /ornament-language\.md/);
   assert.match(agents, /docs\/ornament-language\.md/);
 });
