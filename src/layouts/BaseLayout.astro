@@ -18,7 +18,7 @@ const { locale, title, description, canonicalPath, alternatePath, jsonLd } = Ast
 const other = otherLocale(locale);
 const labels = locale === 'zh-CN'
   ? {
-      timeline: '时间线', explore: '探索', methodology: '标准与方法', use: '使用与共建', data: '数据与订阅', github: 'GitHub', switch: 'English',
+      timeline: '时间线', explore: '搜索与探索', methodology: '标准与方法', about: '关于', data: '数据与订阅', github: 'GitHub', switch: 'English',
       theme: '主题', system: '跟随系统', light: '浅色', dark: '深色', menu: '菜单',
       nav: '主导航', skip: '跳到主要内容',
       footerMission: '一个以时间线为核心、基于证据、可审计且可修正的 AI for Mathematics 历史档案。Canonical YAML 同时生成静态网页与机器可读数据。',
@@ -27,7 +27,7 @@ const labels = locale === 'zh-CN'
       footerData: '数据与订阅'
     }
   : {
-      timeline: 'Timeline', explore: 'Explore', methodology: 'Standards & Methodology', use: 'Use & Contribute', data: 'Data & Feeds', github: 'GitHub', switch: '简体中文',
+      timeline: 'Timeline', explore: 'Search & Explore', methodology: 'Standards & Methodology', about: 'About', data: 'Data & Feeds', github: 'GitHub', switch: '简体中文',
       theme: 'Theme', system: 'System', light: 'Light', dark: 'Dark', menu: 'Menu',
       nav: 'Primary navigation', skip: 'Skip to main content',
       footerMission: 'A timeline-first, evidence-backed, auditable, and correctable historical archive for AI for Mathematics. Canonical YAML drives both static pages and machine-readable data.',
@@ -105,7 +105,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
           <a href={href(localePath(locale))}>{labels.timeline}</a>
           <a href={href(localePath(locale, 'explore'))}>{labels.explore}</a>
           <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
-          <a href={href(localePath(locale, 'use'))}>{labels.use}</a>
+          <a href={href(localePath(locale, 'about'))}>{labels.about}</a>
           <a href={repositoryUrl} rel="noreferrer">{labels.github}</a>
           <button
             class="theme-toggle"
@@ -152,7 +152,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
             <a href={href(localePath(locale))}>{labels.timeline}</a>
             <a href={href(localePath(locale, 'explore'))}>{labels.explore}</a>
             <a href={href(localePath(locale, 'methodology'))}>{labels.methodology}</a>
-            <a href={href(localePath(locale, 'use'))}>{labels.use}</a>
+            <a href={href(localePath(locale, 'about'))}>{labels.about}</a>
             <a href={href(localePath(locale, 'data'))}>{labels.footerData}</a>
           </div>
           <div class="footer-group">

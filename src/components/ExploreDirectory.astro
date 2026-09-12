@@ -232,6 +232,7 @@ const optionize = (values: string[]) => values.map((value) => ({ value }));
       year: 'year', type: 'eventTypes', significance: 'significance', verification: 'verification', system: 'systems', ai_role: 'aiRole', interface: 'interfaces', evidence: 'evidence', formal_assurance: 'formalAssurance', novelty: 'novelty', organization: 'organizations', person: 'people', problem: 'problems', method: 'methods', source_type: 'sourceTypes', artifact_kind: 'artifactKinds', tag: 'tags'
     };
     let relevanceRank = new Map();
+    let sortExplicit = false;
     let timer;
     let requestId = 0;
 
@@ -286,8 +287,16 @@ const optionize = (values: string[]) => values.map((value) => ({ value }));
         setGroupValues(group.dataset.filter, values);
       }
       const sortValue = params.get('sort') || '';
-      if (sort && [...sort.options].some((option) => option.value === sortValue)) sort.value = sortValue;
+      if (sort && [...sort.options].some((option) => option.value === sortValue)) {
+        sort.value = sortValue;
+        sortExplicit = true;
+      }
       if (advanced && [...advancedKeys].some((key) => filters[key]?.length)) advanced.open = true;
+    }
+
+    function syncContextualSort(hasTextQuery) {
+      if (!sort || sortExplicit) return;
+      sort.value = hasTextQuery ? 'relevance' : 'newest';
     }
 
     function syncUrlState() {
@@ -295,7 +304,7 @@ const optionize = (values: string[]) => values.map((value) => ({ value }));
       const query = input?.value.trim() || '';
       if (query.length >= 2) params.set('q', query);
       for (const [key, values] of Object.entries(filters)) for (const value of values) params.append(key, value);
-      if (sort?.value && sort.value !== 'newest') params.set('sort', sort.value);
+      if (sortExplicit && sort?.value) params.set('sort', sort.value);
       const queryString = params.toString();
       const next = `${window.location.pathname}${queryString ? `?${queryString}` : ''}${window.location.hash}`;
       window.history.replaceState(null, '', next);
@@ -371,6 +380,7 @@ const optionize = (values: string[]) => values.map((value) => ({ value }));
       const pagefindFilters = pagefindFilterState();
       const hasConditions = Boolean(query) || Object.keys(pagefindFilters).length > 0;
       relevanceRank = new Map();
+      syncContextualSort(Boolean(query));
 
       if (!hasConditions) {
         setVisibility(() => true);
@@ -430,6 +440,7 @@ const optionize = (values: string[]) => values.map((value) => ({ value }));
     input?.addEventListener('focus', () => { void getPagefind().catch(() => {}); }, { once: true });
     input?.addEventListener('input', scheduleApply);
     sort?.addEventListener('change', () => {
+      sortExplicit = true;
       sortRows();
       syncUrlState();
     });
@@ -448,6 +459,7 @@ const optionize = (values: string[]) => values.map((value) => ({ value }));
     clearButton?.addEventListener('click', () => {
       if (input) input.value = '';
       for (const group of groups) setGroupValues(group.dataset.filter, []);
+      sortExplicit = false;
       if (sort) sort.value = 'newest';
       if (advanced) advanced.open = false;
       void apply();

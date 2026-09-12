@@ -7,23 +7,32 @@ const read = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 const sectionIds = [
   'what-happened',
   'why-it-matters',
+  'historical-context',
   'primary-evidence',
+  'evidence-status',
   'contribution-verification',
   'technical-details',
   'sources-artifacts',
-  'historical-relationships',
   'verification-history',
   'corrections',
 ];
 
-test('Event Detail exposes a compact at-a-glance status summary', async () => {
+test('Event Detail keeps a compact evidence-and-status summary without putting it before narrative insight', async () => {
   const detail = await read('src/components/EventDetailPage.astro');
-  assert.match(detail, /class="event-at-a-glance"/);
+  assert.match(detail, /class="event-section event-section-secondary event-at-a-glance"/);
   assert.match(detail, /presentationLabel\('significance'/);
   assert.match(detail, /presentationLabel\('verification'/);
   assert.match(detail, /presentationLabel\('evidence_level'/);
   assert.match(detail, /presentationLabel\('ai_role'/);
   assert.match(detail, /presentationLabel\('formal_assurance'/);
+  assert.match(detail, /localePath\(locale, 'methodology'\)/);
+
+  const what = detail.indexOf('id="what-happened"');
+  const why = detail.indexOf('id="why-it-matters"');
+  const history = detail.indexOf('id="historical-context"');
+  const evidence = detail.indexOf('id="primary-evidence"');
+  const trust = detail.indexOf('id="evidence-status"');
+  assert.ok(what < why && why < history && history < evidence && evidence < trust, 'primary reading flow should be insight-first before trust taxonomy');
 });
 
 test('Event Detail section navigation targets every visible record section', async () => {
@@ -33,6 +42,19 @@ test('Event Detail section navigation targets every visible record section', asy
     assert.ok(detail.includes(`id="${id}"`), `missing visible section id: ${id}`);
     assert.ok(detail.includes(`'${id}'`), `missing navigation target: ${id}`);
   }
+});
+
+test('historical context is part of the Start here flow rather than deep metadata', async () => {
+  const detail = await read('src/components/EventDetailPage.astro');
+  const primaryBlock = detail.match(/const navPrimary = \[[\s\S]*?\] as const;/)?.[0];
+  const secondaryBlock = detail.match(/const navSecondary = \[[\s\S]*?\] as const;/)?.[0];
+  assert.ok(primaryBlock, 'primary Event Detail navigation should exist');
+  assert.ok(secondaryBlock, 'secondary Event Detail navigation should exist');
+  assert.match(primaryBlock, /'historical-context'/);
+  assert.doesNotMatch(secondaryBlock, /historical-context/);
+  assert.match(detail, /event\.relationships\.predecessors/);
+  assert.match(detail, /event\.relationships\.successors/);
+  assert.match(detail, /event\.relationships\.related/);
 });
 
 test('Event Detail keeps canonical sections visible while differentiating reading priority', async () => {

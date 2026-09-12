@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { href, localePath } from '../lib/site';
+import type { Locale } from '../lib/types';
+
+const { locale } = Astro.props as { locale: Locale };
+const zh = locale === 'zh-CN';
+const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
+const title = zh ? '关于 — AI4Math 大事记' : 'About — AI4Math Chronicle';
+const desc = zh
+  ? '了解 AI4Math 大事记是什么、如何阅读与核查，并获取研究引用、机器复用、开放共建和项目维护入口。'
+  : 'Understand what AI4Math Chronicle is, how to read and evaluate it, and how to cite, reuse, contribute to, or inspect the project.';
+
+const copy = zh
+  ? {
+      eyebrow: '关于 AI4Math 大事记',
+      heading: '一个以时间线为核心的 AI for Mathematics 历史档案',
+      lede: 'AI4Math 大事记把论文、正式证明工件、研究仓库、机构公告与独立佐证组织成稳定的 canonical Event，让重要进展更容易被发现、放回历史脉络，并进一步核查其证据。',
+      identityHeading: '这个网站解决什么问题？',
+      identityText: 'Chronicle 不是新闻流、论文数据库、排行榜或 Awesome List。它优先记录具有历史或领域意义的 AI4Math 事件，并长期保留事件的重要性、AI 与人类贡献、来源、验证状态、历史关系与修订记录。',
+      modelHeading: '如何使用这个网站',
+      modelNote: '三个核心阅读入口分别承担不同任务：浏览历史、定位事件、理解可信度。',
+      timelineTitle: '时间线：浏览历史',
+      timelineText: '按事件发生时间阅读 AI4Math 的演进。搜索和轻量筛选不会改变历史顺序，年份用于快速跳转。',
+      timelineAction: '打开时间线 →',
+      exploreTitle: '搜索与探索：定位事件',
+      exploreText: '通过全文搜索、结构化多选筛选与排序定位具体系统、人物、问题、方法或证据条件。',
+      exploreAction: '搜索与探索 →',
+      methodologyTitle: '标准与方法：理解可信度',
+      methodologyText: '了解收录边界、H1–H3、S1–S5、E0–E4、验证状态、形式保障、不确定性与更正机制。',
+      methodologyAction: '查看标准与方法 →',
+      useHeading: '引用、复用与共建',
+      useNote: 'About 同时集中保留原“使用与共建”页面的职责：研究引用、机器复用和公共维护。',
+      citationTitle: '引用与研究',
+      citationText: '在论文、报告、课程材料或研究项目中引用 Chronicle。需要可复现版本时，优先使用 GitHub Release snapshot 或记录明确访问日期。',
+      citationAction: '查看引用信息 →',
+      dataTitle: '数据与 AI 工作流',
+      dataText: '使用 JSON、NDJSON、JSON Schema、RSS、Sitemap、llms.txt 与 canonical YAML 做分析、检索、知识整理或 AI-assisted workflows。',
+      dataAction: '打开数据与订阅 →',
+      contributeTitle: '参与共建',
+      contributeText: '提交遗漏事件、来源线索、事实纠错、验证更新、翻译修正或网站改进。贡献流程保持 GitHub-native、可审查、可追溯。',
+      contributeAction: '阅读贡献指南 →',
+      projectHeading: '开放项目与长期维护',
+      projectText: '网站与 main 分支组成持续演进的 living corpus；GitHub Releases 提供更适合引用和复现的版本快照。代码采用 MIT License，Chronicle 原创编辑内容与数据汇编采用 CC BY 4.0。',
+      boundaryHeading: '开放，但不是无门槛发布',
+      boundaryText: '所有公开贡献都遵循既有编辑标准与 human-in-the-loop review。提交 Issue 或 Pull Request 不保证纳入 Chronicle；H1、争议性验证状态以及重大数学正确性 / 优先权判断继续受既有人工 gate 约束。',
+      sourceLead: '提交来源线索',
+      eventProposal: '提议遗漏事件',
+      correction: '报告事实或来源错误',
+      bug: '报告网站问题',
+    }
+  : {
+      eyebrow: 'About AI4Math Chronicle',
+      heading: 'A timeline-first historical archive for AI for Mathematics',
+      lede: 'AI4Math Chronicle organizes papers, formal proof artifacts, research repositories, institutional announcements, and independent corroboration into stable canonical Events so major developments are easier to discover, place in historical context, and verify against evidence.',
+      identityHeading: 'What problem does the Chronicle solve?',
+      identityText: 'The Chronicle is not a news feed, paper database, leaderboard, or Awesome List. It prioritizes historically or field-significant AI4Math events and preserves significance, AI and human contribution, sources, verification state, historical relationships, and revision history over time.',
+      modelHeading: 'How to use the site',
+      modelNote: 'The three core reading surfaces serve distinct jobs: browse history, find events, and interpret trust.',
+      timelineTitle: 'Timeline: browse history',
+      timelineText: 'Read AI4Math chronologically. Search and lightweight refinement never reorder history, while year controls provide fast chronology jumps.',
+      timelineAction: 'Open the timeline →',
+      exploreTitle: 'Search & Explore: find events',
+      exploreText: 'Use full-text search, structured multi-select facets, and sorting to locate systems, people, problems, methods, or evidence conditions.',
+      exploreAction: 'Search & Explore →',
+      methodologyTitle: 'Standards & Methodology: interpret trust',
+      methodologyText: 'Understand inclusion boundaries, H1–H3, S1–S5, E0–E4, verification states, formal assurance, uncertainty, and corrections.',
+      methodologyAction: 'Read standards & methodology →',
+      useHeading: 'Cite, reuse, and contribute',
+      useNote: 'About also retains the responsibilities of the former Use & Contribute hub: research citation, machine reuse, and public maintenance.',
+      citationTitle: 'Citation & research',
+      citationText: 'Cite the Chronicle in papers, reports, teaching materials, or research projects. For reproducible work, prefer a GitHub Release snapshot or record an explicit access date.',
+      citationAction: 'View citation metadata →',
+      dataTitle: 'Data & AI workflows',
+      dataText: 'Use JSON, NDJSON, JSON Schema, RSS, Sitemap, llms.txt, and canonical YAML for analysis, retrieval, knowledge workflows, or AI-assisted research.',
+      dataAction: 'Open Data & Feeds →',
+      contributeTitle: 'Contribute',
+      contributeText: 'Submit missing events, source leads, factual corrections, verification updates, translation fixes, or website improvements through a GitHub-native, reviewable workflow.',
+      contributeAction: 'Read the contribution guide →',
+      projectHeading: 'Open project and long-term maintenance',
+      projectText: 'The website and main branch form an evolving living corpus; GitHub Releases provide more reproducible snapshots for citation. Source code uses the MIT License, while original Chronicle editorial content and data compilation use CC BY 4.0.',
+      boundaryHeading: 'Open does not mean automatic publication',
+      boundaryText: 'All public contributions remain subject to the existing editorial standards and human-in-the-loop review. Opening an Issue or Pull Request does not guarantee inclusion; H1 decisions, high-risk verification states, and material mathematical-correctness or priority judgments remain behind the established human gates.',
+      sourceLead: 'Submit a source lead',
+      eventProposal: 'Propose a missing event',
+      correction: 'Report a factual or sourcing problem',
+      bug: 'Report a website problem',
+    };
+---
+<BaseLayout
+  locale={locale}
+  title={title}
+  description={desc}
+  canonicalPath={localePath(locale, 'about')}
+  alternatePath={localePath(zh ? 'en' : 'zh-CN', 'about')}
+>
+  <header class="prose">
+    <p class="eyebrow">{copy.eyebrow}</p>
+    <h1>{copy.heading}</h1>
+    <p class="lede">{copy.lede}</p>
+  </header>
+
+  <section class="prose">
+    <h2>{copy.identityHeading}</h2>
+    <p>{copy.identityText}</p>
+  </section>
+
+  <section class="participation-section" aria-labelledby="about-reading-model">
+    <div class="participation-header">
+      <div>
+        <p class="eyebrow">{zh ? '阅读模型' : 'Reading model'}</p>
+        <h2 id="about-reading-model">{copy.modelHeading}</h2>
+      </div>
+      <p>{copy.modelNote}</p>
+    </div>
+    <div class="participation-grid">
+      <article class="participation-card">
+        <h3>{copy.timelineTitle}</h3>
+        <p>{copy.timelineText}</p>
+        <a href={href(localePath(locale))}>{copy.timelineAction}</a>
+      </article>
+      <article class="participation-card">
+        <h3>{copy.exploreTitle}</h3>
+        <p>{copy.exploreText}</p>
+        <a href={href(localePath(locale, 'explore'))}>{copy.exploreAction}</a>
+      </article>
+      <article class="participation-card">
+        <h3>{copy.methodologyTitle}</h3>
+        <p>{copy.methodologyText}</p>
+        <a href={href(localePath(locale, 'methodology'))}>{copy.methodologyAction}</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="participation-section" aria-labelledby="about-use-paths">
+    <div class="participation-header">
+      <div>
+        <p class="eyebrow">{zh ? '使用与共建' : 'Use & contribute'}</p>
+        <h2 id="about-use-paths">{copy.useHeading}</h2>
+      </div>
+      <p>{copy.useNote}</p>
+    </div>
+    <div class="participation-grid">
+      <article class="participation-card">
+        <h3>{copy.citationTitle}</h3>
+        <p>{copy.citationText}</p>
+        <a href={`${repositoryUrl}/blob/main/CITATION.cff`} rel="noreferrer">{copy.citationAction}</a>
+      </article>
+      <article class="participation-card">
+        <h3>{copy.dataTitle}</h3>
+        <p>{copy.dataText}</p>
+        <a href={href(localePath(locale, 'data'))}>{copy.dataAction}</a>
+      </article>
+      <article class="participation-card">
+        <h3>{copy.contributeTitle}</h3>
+        <p>{copy.contributeText}</p>
+        <a href={`${repositoryUrl}/blob/main/CONTRIBUTING${zh ? '.zh-CN' : ''}.md`} rel="noreferrer">{copy.contributeAction}</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="prose">
+    <h2>{copy.projectHeading}</h2>
+    <p>{copy.projectText}</p>
+    <div class="data-links">
+      <a class="data-link" href={repositoryUrl} rel="noreferrer"><strong>GitHub</strong><span>{zh ? '源代码、canonical Event 数据与项目历史。' : 'Source code, canonical Event data, and project history.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/releases`} rel="noreferrer"><strong>GitHub Releases</strong><span>{zh ? '用于引用和复现的版本快照。' : 'Version snapshots for citation and reproducibility.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/blob/main/CITATION.cff`} rel="noreferrer"><strong>CITATION.cff</strong><span>{zh ? '项目引用元数据。' : 'Project citation metadata.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/blob/main/LICENSE-CONTENT.md`} rel="noreferrer"><strong>CC BY 4.0</strong><span>{zh ? 'Chronicle 原创编辑内容与数据汇编许可。' : 'License for original Chronicle editorial content and data compilation.'}</span></a>
+    </div>
+
+    <h2>{zh ? '参与公共维护' : 'Participate in public maintenance'}</h2>
+    <div class="data-links">
+      <a class="data-link" href={`${repositoryUrl}/issues/new?template=source-lead.yml`} rel="noreferrer"><strong>{copy.sourceLead}</strong><span>{zh ? '记录值得后续 triage 的论文、仓库、公告或独立分析。' : 'Record a paper, repository, announcement, or independent analysis worth later triage.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/issues/new?template=event-proposal.yml`} rel="noreferrer"><strong>{copy.eventProposal}</strong><span>{zh ? '提出 Chronicle 可能遗漏的历史或领域级 milestone。' : 'Propose a historical or field milestone that may be missing from the Chronicle.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/issues/new?template=correction.yml`} rel="noreferrer"><strong>{copy.correction}</strong><span>{zh ? '报告日期、事实、来源、翻译、重要性或验证信息问题。' : 'Report problems with dates, facts, sources, translations, significance, or verification information.'}</span></a>
+      <a class="data-link" href={`${repositoryUrl}/issues/new?template=bug-report.yml`} rel="noreferrer"><strong>{copy.bug}</strong><span>{zh ? '报告导航、搜索、筛选、渲染、可访问性、导出或构建问题。' : 'Report navigation, search, filtering, rendering, accessibility, export, or build problems.'}</span></a>
+    </div>
+
+    <h2>{copy.boundaryHeading}</h2>
+    <p>{copy.boundaryText}</p>
+  </section>
+</BaseLayout>

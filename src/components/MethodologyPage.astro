@@ -56,7 +56,7 @@ const desc = zh ? '理解 AI4Math 大事记如何收录事件、判断历史重�
 
     <h2>{zh ? '5. 如果记录有误或遗漏，如何处理？' : '5. What happens when a record is wrong or incomplete?'}</h2>
     <p>{zh ? 'Chronicle 使用稳定 Event ID，并通过 verification history 与 corrections 保留可审计修订轨迹。事实变化时应更新 canonical YAML，而不是静默改写历史。纠错、来源线索、遗漏事件提议与网站问题都通过公开、可追踪的 GitHub 工作流进入审核。' : 'Chronicle uses stable Event IDs and preserves auditable revision trails through verification history and corrections. When facts change, the canonical YAML should be updated rather than silently rewriting history. Corrections, source leads, missing-event proposals, and website problems enter review through public, traceable GitHub workflows.'}</p>
-    <p>{zh ? '本页负责解释为什么 Chronicle 可被修正，以及修订如何进入可信度模型；具体提交入口集中在“使用与共建”页面，避免标准说明页与行动入口重复。' : 'This page explains why the Chronicle is correctable and how revision fits the trust model. The practical submission paths are centralized on Use & Contribute so the standards page does not duplicate action workflows.'}</p>
-    <p><a class="button-link" href={href(localePath(locale, 'use'))}>{zh ? '前往使用与共建 →' : 'Go to Use & Contribute →'}</a></p>
+    <p>{zh ? '本页负责解释为什么 Chronicle 可被修正，以及修订如何进入可信度模型；项目介绍、使用方式与具体提交入口集中在“关于”页面，避免标准说明页与行动入口重复。' : 'This page explains why the Chronicle is correctable and how revision fits the trust model. Project orientation, usage paths, and practical submission actions are centralized on About so the standards page does not duplicate them.'}</p>
+    <p><a class="button-link" href={href(localePath(locale, 'about'))}>{zh ? '前往关于 →' : 'Go to About →'}</a></p>
   </article>
 </BaseLayout>

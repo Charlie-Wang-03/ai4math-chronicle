@@ -9,22 +9,22 @@ const { locale } = Astro.props as { locale: Locale };
 const events = getAllEvents();
 const c = locale === 'zh-CN'
  ? {
-     title: '事件探索 — AI4Math 大事记',
+     title: '搜索与探索事件 — AI4Math 大事记',
      desc: '使用全文搜索、多选结构化筛选与排序来定位和比较 AI4Math Chronicle 的 canonical event records。',
-     eyebrow: '事件探索',
+     eyebrow: '搜索与探索',
      heading: '搜索、组合条件并比较事件',
      lede: `时间线用于理解历史演进；这里把 ${events.length} 条 canonical event records 作为一个可查询目录，可按系统、机构、人物、问题、方法、数学新颖性、证据与工件等字段组合检索。`,
      noteTitle: '这里与时间线有什么不同？',
-     note: 'Timeline 回答“接下来发生了什么”，并始终保持历史顺序；Explore 回答“哪些事件符合这些条件”。同一字段内可以多选并按 OR 合并，不同字段之间按 AND 组合，查询仍可通过 URL 分享。',
+     note: 'Timeline 回答“接下来发生了什么”，并始终保持历史顺序；Search & Explore 回答“哪些事件符合这些条件”。同一字段内可以多选并按 OR 合并，不同字段之间按 AND 组合，查询仍可通过 URL 分享。',
    }
  : {
-     title: 'Explore Events — AI4Math Chronicle',
+     title: 'Search & Explore Events — AI4Math Chronicle',
      desc: 'Use full-text search, multi-select structured filters, and sorting to locate and compare canonical AI4Math Chronicle event records.',
-     eyebrow: 'Event exploration',
+     eyebrow: 'Search & explore',
      heading: 'Search, combine conditions, and compare events',
      lede: `The timeline is for understanding historical progression. This page treats all ${events.length} canonical event records as one queryable directory across systems, organizations, people, problems, methods, mathematical novelty, evidence, and artifacts.`,
      noteTitle: 'How is this different from the timeline?',
-     note: 'Timeline answers “what happened next?” and preserves chronology. Explore answers “which events match these conditions?” Multiple selections within one facet are OR; different facets combine with AND, and the query remains shareable by URL.',
+     note: 'Timeline answers “what happened next?” and preserves chronology. Search & Explore answers “which events match these conditions?” Multiple selections within one facet are OR; different facets combine with AND, and the query remains shareable by URL.',
    };
 ---
 <BaseLayout locale={locale} title={c.title} description={c.desc} canonicalPath={localePath(locale,'explore')} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en','explore')}>

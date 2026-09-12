@@ -2,7 +2,7 @@ import { getAllEvents } from '../lib/events';
 import { absolute, localePath } from '../lib/site';
 
 export function GET() {
-  const staticPages = ['','explore','methodology','use','data'];
+  const staticPages = ['','explore','methodology','about','data'];
   const urls: Array<{ loc: string; lastmod?: string }> = [];
   for (const locale of ['en','zh-CN'] as const) {
     for (const page of staticPages) urls.push({ loc: absolute(localePath(locale, page)) });
