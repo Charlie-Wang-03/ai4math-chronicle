@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ConstructionGeometry from './ornament/ConstructionGeometry.astro';
+import MarginaliaMark from './ornament/MarginaliaMark.astro';
 import { href, localePath } from '../lib/site';
 import type { Locale } from '../lib/types';
 const { locale } = Astro.props as { locale: Locale };
@@ -21,7 +23,12 @@ const trustDimensions = zh
     ];
 ---
 <BaseLayout locale={locale} title={title} description={desc} canonicalPath={localePath(locale,'methodology')} alternatePath={localePath(zh ? 'en':'zh-CN','methodology')}>
-  <article class="prose">
+  <article class="prose methodology-page">
+    <div class="ornament-anchor ornament-anchor--methodology" aria-hidden="true" data-ornament-anchor="methodology">
+      <ConstructionGeometry variant="compact" />
+      <MarginaliaMark variant="reference" />
+    </div>
+
     <p class="eyebrow">{zh ? '标准与方法' : 'Standards & Methodology'}</p>
     <h1>{zh ? '如何理解与核查 Chronicle' : 'How to read and evaluate the Chronicle'}</h1>
     <p class="lede">{zh ? 'AI4Math 大事记不是新闻流或论文数据库。它把多个公开来源组织成稳定的历史事件记录，并把历史重要性、证据强度、验证状态与形式化保障分开表达。' : 'AI4Math Chronicle is not a news feed or paper database. It organizes public sources into stable historical event records and keeps historical significance, evidence strength, verification status, and formal assurance separate.'}</p>
