@@ -94,6 +94,13 @@ body .timeline-item .details-link {
     margin: 1.1rem 0 .3rem;
   }
 
+  /* The first visible year is orientation, not prelude. Keep it visually
+     present without spending another mobile viewport row before Event 1. */
+  body .timeline-year-anchor:first-child {
+    margin-top: -.5rem;
+    margin-bottom: 0;
+  }
+
   body .timeline-year-label {
     top: -.67rem;
     font-size: 1.05rem;
