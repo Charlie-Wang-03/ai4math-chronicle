@@ -225,7 +225,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
           if ((root.dataset.themePreference || 'system') === 'system') apply('system');
         };
         if ('addEventListener' in media) media.addEventListener('change', handleSystemChange);
-        else if ('addListener' in media) media.addListener('change', handleSystemChange);
+        else if ('addListener' in media) media.addListener(handleSystemChange);
       })();
     </script>
     <script is:inline>
@@ -255,7 +255,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
           if (!compact.matches) setOpen(false);
         };
         if ('addEventListener' in compact) compact.addEventListener('change', handleViewportChange);
-        else if ('addListener' in compact) compact.addListener('change', handleViewportChange);
+        else if ('addListener' in compact) compact.addListener(handleViewportChange);
       })();
     </script>
   </body>
