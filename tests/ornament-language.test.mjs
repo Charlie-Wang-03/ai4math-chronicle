@@ -27,11 +27,14 @@ test('R1.2C ornament language is explicit and discoverable', async () => {
   assert.match(ornament, /Home hero/);
   assert.match(ornament, /Standards & Methodology top/);
   assert.match(ornament, /About top/);
+  assert.match(ornament, /Search & Explore empty \/ no-result state/);
+  assert.match(ornament, /Footer/);
   assert.match(ornament, /Ornament is an \*\*identity layer\*\*, not an information layer/);
   assert.match(ornament, /R1\.2C-A does not authorize decorative animation/);
   assert.match(ornament, /robot heads, brains, humanoid AI mascots/);
   assert.match(ornament, /random equations or mathematical-symbol wallpaper/);
   assert.match(ornament, /R1\.2C-B — Identity anchor surfaces/);
+  assert.match(ornament, /R1\.2C-C — Structural accents/);
 
   assert.match(informationDesign, /ornament-language\.md/);
   assert.match(informationDesign, /identity layer, not an information layer/);
@@ -88,4 +91,26 @@ test('R1.2C-B implements only the approved identity anchors with reusable decora
   assert.match(ornamentCss, /@media \(max-width: 760px\)/);
   assert.doesNotMatch(ornamentCss, /filter:\s*(blur|drop-shadow)/);
   assert.doesNotMatch(ornamentCss, /animation\s*:/);
+});
+
+test('R1.2C-C extends identity only into approved structural accents', async () => {
+  const [timeline, explore, layout, ornamentCss] = await Promise.all([
+    read('src/components/TimelinePage.astro'),
+    read('src/components/ExplorePage.astro'),
+    read('src/layouts/BaseLayout.astro'),
+    read('src/styles/r1-ornament.css'),
+  ]);
+
+  assert.match(timeline, /data-ornament-transition="chronology"/);
+  assert.match(timeline, /<MarginaliaMark variant="reference" \/>/);
+  assert.match(explore, /data-ornament-anchor="explore-empty"/);
+  assert.match(explore, /<ConstructionGeometry variant="compact" \/>/);
+  assert.match(layout, /data-ornament-anchor="footer"/);
+  assert.match(layout, /<ChronicleGraph variant="compact" \/>/);
+
+  assert.match(ornamentCss, /explore-directory-stage:has\(\.explore-table-wrap:not\(:has\(\[data-event-item\]:not\(\.hidden\)\)\)\)/);
+  assert.match(ornamentCss, /ornament-transition--chronology/);
+  assert.match(ornamentCss, /ornament-anchor--footer/);
+  assert.match(ornamentCss, /body \.ornament-transition--chronology \{[\s\S]*?opacity: \.42/);
+  assert.match(ornamentCss, /@media \(max-width: 760px\) \{[\s\S]*?body \.ornament-transition--chronology \{\s*display: none;/);
 });
