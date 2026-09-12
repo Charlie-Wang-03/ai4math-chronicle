@@ -1,0 +1,118 @@
+/* R1C — chronological chapter markers and denser Event records. */
+
+body .timeline-year-anchor {
+  position: relative;
+  margin: 1.35rem 0 .45rem 9.2rem;
+  border-top: 1px solid var(--border-strong);
+  scroll-margin-top: 86px;
+}
+
+body .timeline-year-anchor:first-child {
+  margin-top: .35rem;
+}
+
+body .timeline-year-label {
+  position: relative;
+  top: -.72rem;
+  display: inline-block;
+  background: var(--bg);
+  color: var(--text);
+  padding: 0 .65rem 0 0;
+  font-family: var(--font-editorial);
+  font-size: 1.18rem;
+  font-weight: 650;
+  letter-spacing: -.015em;
+}
+
+body .timeline-item {
+  margin-bottom: .52rem;
+}
+
+body .timeline-item .event-card {
+  padding: .68rem 0 .82rem;
+}
+
+body .timeline-item .event-card h3 {
+  margin: .16rem 0 .34rem;
+  font-size: 1.1rem;
+}
+
+body .timeline-item .event-card-primary-status {
+  margin: .2rem 0 .35rem;
+}
+
+body .timeline-item .event-card p {
+  margin: .3rem 0;
+  line-height: 1.5;
+}
+
+body .timeline-item .event-card-entities {
+  margin-top: .28rem;
+  font-size: .68rem;
+}
+
+body .timeline-item .event-card-secondary-meta {
+  margin-top: .38rem;
+  padding-top: .32rem;
+  font-size: .65rem;
+}
+
+body .timeline-item .event-card-footer {
+  margin-top: .38rem;
+  padding-top: .22rem;
+  gap: .7rem;
+}
+
+body .timeline-item .source-shortcuts {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: baseline;
+  gap: .3rem .6rem;
+}
+
+body .timeline-item .source-shortcuts-label {
+  white-space: nowrap;
+}
+
+body .timeline-item .source-shortcuts-list {
+  gap: .2rem .6rem;
+}
+
+body .timeline-item .source-shortcut {
+  font-size: .72rem;
+}
+
+body .timeline-item .source-shortcut-kind {
+  font-size: .62rem;
+}
+
+body .timeline-item .details-link {
+  font-size: .68rem;
+}
+
+@media (max-width: 620px) {
+  body .timeline-year-anchor {
+    margin: 1.1rem 0 .3rem;
+  }
+
+  body .timeline-year-label {
+    top: -.67rem;
+    font-size: 1.05rem;
+  }
+
+  body .timeline-item {
+    margin-bottom: .4rem;
+  }
+
+  body .timeline-item .event-card {
+    padding-top: .58rem;
+  }
+
+  body .timeline-item .source-shortcuts {
+    grid-template-columns: 1fr;
+    gap: .18rem;
+  }
+
+  body .timeline-item .event-card-footer {
+    gap: .35rem;
+  }
+}
