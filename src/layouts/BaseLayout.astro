@@ -3,6 +3,7 @@ import '../styles/global.css';
 import '../styles/theme.css';
 import '../styles/brand.css';
 import '../styles/responsive.css';
+import ChronicleGraph from '../components/ornament/ChronicleGraph.astro';
 import { absolute, href, localePath, otherLocale } from '../lib/site';
 import type { Locale } from '../lib/types';
 
@@ -138,6 +139,9 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
       <slot />
     </main>
     <footer class="site-footer" data-pagefind-ignore>
+      <div class="ornament-anchor ornament-anchor--footer" aria-hidden="true" data-ornament-anchor="footer">
+        <ChronicleGraph variant="compact" />
+      </div>
       <div class="site-shell footer-grid">
         <div class="footer-brand">
           <div class="footer-brand-lockup">

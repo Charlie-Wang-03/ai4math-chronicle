@@ -11,7 +11,7 @@ This file records the **approved semantic state** that a future conversation nee
 
 The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model; it does not create a new product phase or change the canonical Event model, editorial boundaries, or human-review gates.
 
-The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase. The owner-approved R1.2C-A signature-ornament language is recorded in [`ornament-language.md`](./ornament-language.md) as a subordinate visual-identity contract; it defines future ornament boundaries but does not itself authorize a broader redesign or new product phase.
+The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase. The owner-approved R1.2C-A signature-ornament language is recorded in [`ornament-language.md`](./ornament-language.md) as a subordinate visual-identity contract; it defines ornament boundaries without authorizing a broader redesign or new product phase.
 
 The public v0.1 line is already launched. Ordinary maintenance, incremental Event additions, corrections, evidence improvements, metadata, dependency work, and focused UI / UX / SEO / GEO improvements may continue without creating a new product phase as long as they remain inside the active v0.1 contract.
 
@@ -64,8 +64,9 @@ R1 refines how the approved R0 product model is visually expressed. The durable 
 - **Standards & Methodology introduces four independent trust dimensions.** Significance, evidence, verification, and formal assurance are explained before detailed taxonomies and are never collapsed into a single trust score.
 - **Typography is bilingual and role-aware.** English and Simplified Chinese use appropriate editorial/interface stacks, long record titles are more compact than display headings, and reading measure remains restrained.
 - **Visual identity uses a controlled ornament layer.** The owner-approved R1.2C-A language defines Chronicle Graph, Mathematical Construction Geometry, and Scholarly Marginalia as reusable identity motifs. Ornament remains subordinate to content, may disappear without semantic loss, and is forbidden from turning dense reading/retrieval areas into decorative AI surfaces.
-- **R1.2C-B is the approved controlled identity-anchor rollout.** Ornament is limited to the Home hero, Standards & Methodology top, and About top. Timeline Event records, active Search & Explore retrieval, and Event Detail reading remain ornament-free (`O0`).
-- **R1.2C-C is gated by owner visual review of deployed R1.2C-B.** Do not extend ornament into structural accents, section transitions, or footer identity until the deployed Home / Methodology / About anchors have been visually reviewed and the owner explicitly approves continuation.
+- **R1.2C-B identity anchors passed owner visual review.** Home hero, Standards & Methodology top, and About top use the approved ornament language; the compact mobile compositions were explicitly tuned and then accepted by the owner. Timeline Event records, active Search & Explore retrieval, and Event Detail reading remain ornament-free (`O0`).
+- **R1.2C-C structural accents are owner-approved.** The controlled rollout may add only restrained structural echoes: a non-mobile chronology transition between the Home/Timeline identity surface and chronology controls, an ornament visible only in the Search & Explore zero-result state, and a low-strength global footer echo. These accents must not enter Timeline Event records, active retrieval results/filters, or Event Detail reading content.
+- **R1.2C-D remains stabilization, not expansion.** After C-C, final visual QA may tune or remove approved ornaments across light/dark, English/Chinese, and desktop/mobile, but it must not create new ornament surfaces without another explicit owner decision.
 - **Logo redesign remains a separate decision.** The current logo is not treated as a constitutional palette or ornament source and may be revisited independently.
 
 ## Currently tracked editorial concern
@@ -101,7 +102,7 @@ The standing hard gates are defined canonically in [`gpt-project-governance.md`]
 - an unresolved mathematical-correctness / priority adjudication;
 - a new product phase, scope change, governance amendment, or weakened human gate.
 
-The R0 product-coherence and R1 reader-information decisions listed above have already been explicitly approved by the owner and therefore are not open human gates. The R1.2C-B identity-anchor implementation is approved, but the next ornament rollout step (R1.2C-C) remains paused at the explicit visual-review checkpoint above.
+The R0 product-coherence and R1 reader-information decisions listed above have already been explicitly approved by the owner and therefore are not open human gates. R1.2C-B has passed the required owner visual review, and the owner has explicitly approved R1.2C-C within the bounded structural-accent scope above. Broader ornament expansion remains outside the approved mainline.
 
 ## No-autonomous-agenda rule
 
