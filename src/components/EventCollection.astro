@@ -7,7 +7,7 @@ import { href, localePath } from '../lib/site';
 import type { ChronicleEvent, Locale } from '../lib/types';
 const { events, locale, mode = 'timeline' } = Astro.props as { events: ChronicleEvent[]; locale: Locale; mode?: 'timeline' | 'grid' };
 const years = [...new Set(events.map((event) => event.dates.event.slice(0, 4)))].sort((a,b) => b.localeCompare(a));
-const eventTypes = ['discovery', 'proof', 'formalization', 'competition', 'system', 'benchmark', 'dataset', 'infrastructure', 'controversy'];
+const eventTypes = ['discovery', 'proof', 'formalization', 'competition', 'system', 'benchmark', 'dataset', 'infrastructure', 'field_building', 'controversy'];
 const significance = ['H1', 'H2', 'H3'];
 const labels = locale === 'zh-CN'
   ? {
