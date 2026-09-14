@@ -1,7 +1,7 @@
 # AI4Math Chronicle — Current Project State
 
 **Status:** Canonical semantic operational state  
-**Last governance review:** 2026-09-12
+**Last governance review:** 2026-09-14
 
 This file records the **approved semantic state** that a future conversation needs in order to resume work. It intentionally does not mirror volatile GitHub facts such as commit SHAs, branch lists, corpus counts, workflow-run IDs, or temporary implementation details.
 
@@ -9,7 +9,7 @@ This file records the **approved semantic state** that a future conversation nee
 
 **Post-launch v0.1.x maintenance and corpus stewardship** under the v0.1 product/editorial contract.
 
-The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model; it does not create a new product phase or change the canonical Event model, editorial boundaries, or human-review gates.
+The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md) and [`product-spec-v0.1-field-building-amendment.md`](./product-spec-v0.1-field-building-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model. The field-building amendment extends the inclusion boundary and canonical taxonomy to cover historically significant formation, institutionalization, norms, governance, and scholarly-infrastructure milestones in AI4Math without creating a new product phase.
 
 The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase. The owner-approved R1.2C-A signature-ornament language is recorded in [`ornament-language.md`](./ornament-language.md) as a subordinate visual-identity contract; it defines ornament boundaries without authorizing a broader redesign or new product phase.
 
@@ -37,6 +37,17 @@ Maintain AI4Math Chronicle as a trustworthy, living historical archive while pre
 - stable, language-aware bilingual typography and responsive density;
 - auditable verification and correction history;
 - a static, maintainable GitHub-native architecture.
+
+### Approved field-building extension
+
+The following owner-approved rules are now part of the active v0.1 contract:
+
+- `field_building` is a canonical Event Type for historically significant milestones in the formation, institutionalization, norms, governance, or scholarly infrastructure of AI4Math as a research field.
+- Durable AI4Math-specific journals / conferences and materially norm-setting community statements are valid candidate classes, but ordinary petitions, individual opinion pieces, one-off workshops, routine special issues, local symposia, and ephemeral community activity remain excluded by default.
+- `infrastructure` continues to mean technical or research infrastructure; it must not be used as a proxy for institutional field building.
+- Pure field-building events may use `not_applicable` for mathematical novelty, AI role, and mathematical interface when those dimensions genuinely do not apply. `not_applicable` is restricted to events containing `field_building`; for interfaces it must be exclusive.
+- Field-building events use the existing H1 / H2 / H3, source, evidence, verification, formal-assurance, correction, and human-gate frameworks. H1 remains human-gated.
+- Inclusion records historical significance and evidence; it does not endorse a community statement's normative position or a scholarly venue's prestige.
 
 ### Approved R0 product-coherence model
 
@@ -84,8 +95,8 @@ Without a new phase decision, agents may continue:
 - incremental work that reinforces the approved R0 product-coherence and R1 information-design models;
 - dependency and GitHub Pages maintenance;
 - schema, CI, documentation, and data-quality improvements;
-- candidate event discovery and source collection;
-- ordinary H2/H3 Event creation when evidence and scope rules are satisfied;
+- candidate event discovery and source collection, including `field_building` candidates under the approved amendment;
+- ordinary H2/H3 Event creation when evidence and scope rules are satisfied, including ordinary H2/H3 `field_building` records;
 - routine evidence-level and lower-risk verification updates;
 - relationship, metadata, translation, and provenance maintenance;
 - focused correction preparation up to any human hard gate.
@@ -102,7 +113,7 @@ The standing hard gates are defined canonically in [`gpt-project-governance.md`]
 - an unresolved mathematical-correctness / priority adjudication;
 - a new product phase, scope change, governance amendment, or weakened human gate.
 
-The R0 product-coherence and R1 reader-information decisions listed above have already been explicitly approved by the owner and therefore are not open human gates. R1.2C-B has passed the required owner visual review. For R1.2C-C, owner visual review retained only the global footer echo; the chronology transition and Search & Explore zero-result ornament are not approved production surfaces. R1.2C-D has completed stabilization of that accepted profile without expanding it. Broader ornament expansion remains outside the approved mainline.
+The field-building inclusion-boundary and schema extension listed above has already been explicitly approved by the owner and therefore is not an open human gate. The R0 product-coherence and R1 reader-information decisions listed above have likewise already been explicitly approved. R1.2C-B has passed the required owner visual review. For R1.2C-C, owner visual review retained only the global footer echo; the chronology transition and Search & Explore zero-result ornament are not approved production surfaces. R1.2C-D has completed stabilization of that accepted profile without expanding it. Broader ornament expansion remains outside the approved mainline.
 
 ## No-autonomous-agenda rule
 
@@ -120,7 +131,7 @@ Instead:
 When the owner gives a broad instruction such as “continue AI4Math Chronicle”:
 
 1. execute the state-recovery protocol in `gpt-project-governance.md`;
-2. read the frozen v0.1 Product Specification, the ratified R0 amendment, the R1 information-design contract, and the R1.2C ornament-language contract when visual-identity work is relevant;
+2. read the frozen v0.1 Product Specification, all owner-approved amendments named in this file, the R1 information-design contract, and the R1.2C ornament-language contract when visual-identity work is relevant;
 3. re-check live Issues / PRs / recent commits and this semantic state;
 4. continue an existing approved objective or standing maintenance task if one is clearly actionable;
 5. if none exists, do not invent a new phase — surface candidate next milestones for owner selection.
