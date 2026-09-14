@@ -32,6 +32,7 @@ const LABELS: Record<PresentationCategory, Record<string, LabelPair>> = {
     benchmark: { en: 'Benchmark', 'zh-CN': '基准' },
     dataset: { en: 'Dataset', 'zh-CN': '数据集' },
     infrastructure: { en: 'Infrastructure', 'zh-CN': '基础设施' },
+    field_building: { en: 'Field building', 'zh-CN': '领域建构' },
     controversy: { en: 'Controversy', 'zh-CN': '争议' },
   },
   significance: {
@@ -71,6 +72,7 @@ const LABELS: Record<PresentationCategory, Record<string, LabelPair>> = {
     rediscovery: { en: 'Rediscovery', 'zh-CN': '重新发现' },
     benchmark_result: { en: 'Benchmark result', 'zh-CN': '基准结果' },
     tooling_only: { en: 'Tooling only', 'zh-CN': '工具性进展' },
+    not_applicable: { en: 'Not applicable', 'zh-CN': '不适用' },
   },
   ai_role: {
     autonomous_primary: { en: 'Autonomous primary role', 'zh-CN': 'AI 自主主导' },
@@ -81,6 +83,7 @@ const LABELS: Record<PresentationCategory, Record<string, LabelPair>> = {
     computation_only: { en: 'Computation only', 'zh-CN': '仅计算支持' },
     literature_assistance: { en: 'Literature assistance', 'zh-CN': '文献辅助' },
     unclear: { en: 'Unclear', 'zh-CN': '尚不明确' },
+    not_applicable: { en: 'Not applicable', 'zh-CN': '不适用' },
   },
   interface: {
     informal: { en: 'Informal', 'zh-CN': '非形式化' },
@@ -88,6 +91,7 @@ const LABELS: Record<PresentationCategory, Record<string, LabelPair>> = {
     symbolic: { en: 'Symbolic', 'zh-CN': '符号' },
     numeric: { en: 'Numeric', 'zh-CN': '数值' },
     hybrid: { en: 'Hybrid', 'zh-CN': '混合' },
+    not_applicable: { en: 'Not applicable', 'zh-CN': '不适用' },
   },
   source_type: {
     paper: { en: 'Paper', 'zh-CN': '论文' },

@@ -11,12 +11,26 @@ Candidate discovery may be broad, but published Chronicle events must be dedupli
 ## Significance
 
 - **H1 — Historical Milestone:** a durable turning point in AI for Mathematics. This includes major new mathematical results or algorithms discovered with substantive AI involvement, landmark formalization achievements, and competition or research breakthroughs that materially change the historical picture of what AI systems can do in mathematics. H1 measures historical significance, not verification status; an H1 event may still carry unresolved questions about the scope, attribution, reception, or correctness of an underlying research claim.
-- **H2 — Field Milestone:** clear significance to an important AI4Math subfield or technical direction, including math-specific systems, benchmarks, datasets, proof-search methods, formalization infrastructure, and competition results that materially advance the field without constituting a top-level historical turning point.
+- **H2 — Field Milestone:** clear significance to an important AI4Math subfield, technical direction, or field-building process, including math-specific systems, benchmarks, datasets, proof-search methods, formalization infrastructure, competition results, durable scholarly venues, and norm-setting institutional milestones that materially advance or organize the field without constituting a top-level historical turning point.
 - **H3 — Context Event:** primarily historical context rather than a substantive AI4Math milestone. General-purpose model releases belong here when mathematics is mainly used as a capability benchmark and the event does not itself contribute new mathematics or a math-specific system.
 
-The `v0.1.1` release snapshot contains **11 H1 / 38 H2 / 2 H3** events. Live `main` may continue to evolve between citable release snapshots. H3 is intentionally narrow: being a benchmark, dataset, infrastructure contribution, or specialized mathematical system is not by itself a reason to classify an event as H3.
+The `v0.1.1` release snapshot contains **11 H1 / 38 H2 / 2 H3** events. Live `main` may continue to evolve between citable release snapshots. H3 is intentionally narrow: being a benchmark, dataset, infrastructure contribution, specialized mathematical system, or field-building event is not by itself a reason to classify an event as H3.
 
 No public 0–100 “mathematical importance” score is used.
+
+## Field-building events
+
+`field_building` records historically significant milestones in the formation, institutionalization, norms, governance, or scholarly infrastructure of AI for Mathematics as a research field. It is distinct from technical `infrastructure`.
+
+Strong candidates include durable AI4Math-specific peer-reviewed journals or conferences, and community statements that materially shape AI4Math research norms, attribution, verification, disclosure, ethics, venue policy, or scholarly governance. A high-signature petition, individual opinion piece, one-off workshop, ordinary special issue, local symposium, or ephemeral community campaign is excluded by default unless later evidence shows durable field-level significance.
+
+For venues, prefer the date on which scholarly operation actually begins—such as an inaugural conference, first issue, or equivalent formal launch—when that differs materially from an earlier aspirational announcement.
+
+A field-building event may also carry another Event Type when warranted, for example `field_building + controversy`.
+
+Some purely institutional events do not have an applicable mathematical-novelty class, AI role, or mathematical interface. Such records use `not_applicable` rather than forcing misleading values such as `tooling_only`, `unclear`, or `informal`. `not_applicable` is permitted only when `event_types` includes `field_building`; for interfaces it must be used alone. If a field-building event genuinely includes a technical mathematical contribution, use the ordinary applicable taxonomy values instead.
+
+Inclusion records the historical event, not endorsement of a statement's normative position, a venue's prestige, or the quality of every work associated with an institution.
 
 ## Evidence hierarchy
 
@@ -26,7 +40,7 @@ No public 0–100 “mathematical importance” score is used.
 - **S4:** reputable secondary media.
 - **S5:** community discovery signal only.
 
-Every published MVP event must have at least one S1 or S2 source. Major historical claims should preferentially resolve to primary evidence in one click from the event page/card.
+Every published MVP event must have at least one S1 or S2 source. Major historical claims should preferentially resolve to primary evidence in one click from the event page/card. For field-building events, authoritative evidence may be institutional rather than a research paper, such as an official venue page, society announcement, published statement, governance document, proceedings record, or journal launch record.
 
 ## What verification means
 
@@ -46,6 +60,8 @@ Evidence level (`E0`–`E4`), verification status, formal assurance, and signifi
 - `retracted` — the originating claim or research record has been withdrawn or retracted.
 
 `independently_verified` is therefore an **event-level evidence label**, not a declaration that the underlying mathematics has been finally proved correct. Likewise, `machine_checked` or `independently_replayed` describes formal artifacts and does not by itself settle mathematical novelty, faithfulness, priority, or the truth of informal claims.
+
+For field-building events, verification concerns whether the statement, venue, governance change, or institutional event occurred as recorded and whether its documented historical effects are supported. It does not turn the Chronicle into an arbiter of normative positions or venue prestige.
 
 Status changes must append to `verification.history`. Factual corrections belong in `corrections` and should cite the relevant source IDs.
 
@@ -74,7 +90,7 @@ Detailed cross-conversation authority and state-recovery rules are defined in [`
 
 ## Historical record versus endorsement
 
-Chronicle inclusion records that a historically relevant event, result, or claim occurred and evaluates its significance in AI4Math history. It does not automatically endorse the ultimate mathematical correctness of every underlying claim. This distinction is especially important for open or disputed research claims: the event may be real and historically important even while the mathematics remains contested.
+Chronicle inclusion records that a historically relevant event, result, claim, or field-building milestone occurred and evaluates its significance in AI4Math history. It does not automatically endorse the ultimate mathematical correctness of every underlying claim, the normative position of a community statement, or the prestige of a scholarly venue. This distinction is especially important for open or disputed research claims and institutional developments: the event may be real and historically important while its interpretation remains contested.
 
 ## Corrections policy
 

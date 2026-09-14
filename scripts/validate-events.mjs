@@ -53,6 +53,21 @@ for (const { name, data } of files) {
     failed = true;
     console.error(`${name}: last_updated predates added_to_chronicle.`);
   }
+
+  const eventTypes = data?.event_types ?? [];
+  const usesNotApplicable = data?.mathematical_novelty?.type === 'not_applicable'
+    || data?.ai_role?.level === 'not_applicable'
+    || (data?.interfaces ?? []).includes('not_applicable');
+
+  if (usesNotApplicable && !eventTypes.includes('field_building')) {
+    failed = true;
+    console.error(`${name}: not_applicable taxonomy values require event_types to include 'field_building'.`);
+  }
+
+  if ((data?.interfaces ?? []).includes('not_applicable') && data.interfaces.length !== 1) {
+    failed = true;
+    console.error(`${name}: interfaces 'not_applicable' must be used alone.`);
+  }
 }
 
 const knownIds = new Set(ids.keys());
@@ -73,4 +88,4 @@ for (const { name, data } of files) {
 }
 
 if (failed) process.exit(1);
-console.log(`Validated ${files.length} event records: schema, IDs, dates, sources, and relationships PASS.`);
+console.log(`Validated ${files.length} event records: schema, IDs, dates, sources, taxonomy semantics, and relationships PASS.`);
