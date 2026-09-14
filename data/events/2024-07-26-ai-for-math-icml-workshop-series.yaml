@@ -1,0 +1,162 @@
+schema_version: 1
+id: evt-2024-ai-for-math-icml
+slug: ai-for-math-icml-workshop-series
+
+title:
+  en: AI for Math @ ICML establishes a recurring AI4Math workshop series
+  zh-CN: AI for Math @ ICML 建立持续性的 AI4Math workshop 系列
+
+dates:
+  event: '2024-07-26'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-14'
+  last_updated: '2026-09-14'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      AI for Math @ ICML is a field-building milestone because the 2024 inaugural workshop developed into three consecutive ICML editions through 2026 with a stable AI4Math identity, reviewed submissions, OpenReview records, paper awards and recurring challenge activity. That combination provides evidence of an organized scholarly venue rather than a one-off session attached to a general machine-learning conference.
+    zh-CN: >-
+      AI for Math @ ICML 构成领域建构里程碑，因为 2024 年首届 workshop 已发展为持续至 2026 年的三届 ICML 系列，并保持稳定的 AI4Math 身份、投稿评审、OpenReview 记录、论文奖项与持续性 challenge 活动。这些机制共同表明其已经形成组织化学术 venue，而不是依附于通用机器学习会议的一次性 session。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    The first AI for Math Workshop was held at ICML 2024 in Vienna on 26 July 2024. The series returned as the 2nd AI for Math Workshop at ICML 2025 and the 3rd edition at ICML 2026 on 11 July 2026. Across the later editions it used OpenReview-based paper submission and review, presented accepted research, awarded papers and operated AI4Math challenges, while focusing on theorem proving, autoformalization, mathematical reasoning, scientific problem solving and human-AI collaboration.
+  zh-CN: >-
+    首届 AI for Math Workshop 于 2024 年 7 月 26 日在维也纳 ICML 2024 举行。该系列随后以第二届 AI for Math Workshop @ ICML 2025 与 2026 年 7 月 11 日第三届 workshop 持续举办。后续各届通过 OpenReview 进行论文投稿与评审，展示录用研究、设置论文奖项并运行 AI4Math challenges，主题覆盖定理证明、自动形式化、数学推理、科学问题求解与人机协作。
+
+summary:
+  en: >-
+    The workshop series was created specifically around AI technologies for mathematical reasoning and discovery. By its third edition, the venue reported hundreds of submissions and accepted papers, a multi-level program committee, paper awards and four challenge tracks covering autoformalization alignment, theoretical-computer-science proving, visual scientific reasoning and end-to-end Lean proof generation.
+  zh-CN: >-
+    该 workshop 系列从建立之初就以面向数学推理与数学发现的 AI 技术为核心。到第三届时，官方统计已记录数百篇投稿与录用论文、多层级 program committee、论文奖项，以及覆盖自动形式化语义对齐、理论计算机科学证明、视觉科学推理与端到端 Lean 证明生成的四个 challenge track。
+
+why_it_matters:
+  en: >-
+    AI for Math @ ICML shows the consolidation of AI4Math as a recognizable research community inside a major machine-learning conference. Its recurring review process, paper program and challenge infrastructure provide a venue for work that spans informal reasoning, formal theorem proving and scientific agents, helping institutionalize AI4Math beyond individual papers or model releases.
+  zh-CN: >-
+    AI for Math @ ICML 表明 AI4Math 已在大型机器学习会议内部逐步凝结为可识别的研究共同体。其持续性的投稿评审、论文计划与 challenge 基础设施，为非形式推理、形式定理证明和科学 Agent 等工作提供共同 venue，使 AI4Math 的制度化不再依赖单篇论文或单次模型发布。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records the establishment and continuity of a scholarly venue rather than an AI system performing mathematical work, so an operative AI role is not applicable.
+    zh-CN: >-
+      本事件记录的是学术 venue 的建立与持续运行，而不是某个 AI 系统执行数学工作，因此不存在适用的具体 AI role。
+
+human_contribution:
+  description:
+    en: >-
+      Human organizers and reviewers established the workshop, built the program and review process, selected papers and awards, operated challenge tracks and sustained the series across three ICML editions.
+    zh-CN: >-
+      人类组织者与评审者建立 workshop、构建议程与评审流程、筛选论文和奖项、运行 challenge tracks，并在三届 ICML 中持续维护该系列。
+
+systems: []
+organizations:
+- icml
+people: []
+problems: []
+methods:
+- scholarly-venue
+- ai4math-community
+- workshop-challenges
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2024-07-26'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The official ICML 2024 schedule records the inaugural AI for Math Workshop on 26 July 2024.
+      zh-CN: >-
+        ICML 2024 官方日程记录了 2024 年 7 月 26 日举行的首届 AI for Math Workshop。
+  - date: '2026-09-14'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The official 2025 and 2026 workshop records document the second and third editions, OpenReview-based paper workflow, awards, challenges and a three-edition history, supporting the Chronicle's durability assessment.
+      zh-CN: >-
+        2025 与 2026 年官方 workshop 记录明确记载第二、第三届会议、基于 OpenReview 的论文流程、奖项、challenges 与三届历史，由此支持 Chronicle 对该系列持续性的判断。
+
+sources:
+- id: icml-2024-ai-for-math-schedule
+  tier: S2
+  type: official_announcement
+  title: ICML 2024 Schedule — AI for Math Workshop
+  url: https://icml.cc/virtual/2024/calendar
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: icml-2025-ai-for-math
+  tier: S2
+  type: official_announcement
+  title: 2nd AI for Math Workshop @ ICML 2025
+  url: https://icml.cc/virtual/2025/workshop/39979
+  primary: false
+  published_date: '2025-07-18'
+  accessed_at: '2026-09-14'
+- id: ai4math-icml-2026-official
+  tier: S2
+  type: official_announcement
+  title: 3rd AI for Math Workshop @ ICML 2026
+  url: https://ai4math2026.github.io/
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: ai4math-icml-2026-stats
+  tier: S2
+  type: official_announcement
+  title: AI4Math @ ICML 2026 — Statistics across three editions
+  url: https://ai4math2026.github.io/stats.html
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-14'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- ai-for-math
+- ai4math
+- field-building
+- workshop-series
+- icml
+- theorem-proving
+- autoformalization
+- mathematical-reasoning
+- scientific-agents
+
+editorial:
+  created_at: '2026-09-14'
+  last_reviewed: '2026-09-14'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
