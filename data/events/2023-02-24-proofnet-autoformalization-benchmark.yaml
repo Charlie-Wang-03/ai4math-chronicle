@@ -66,8 +66,10 @@ verification:
     status: paper_released
     evidence_level: E2
     note:
-      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
-      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+      en: >-
+        The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: >-
+        Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
   - date: '2026-09-11'
     status: paper_released
     evidence_level: E3
@@ -102,7 +104,8 @@ relationships:
   predecessors:
   - evt-2021-minif2f
   - evt-2022-draft-sketch-prove
-  successors: []
+  successors:
+  - evt-2026-stochbench
   related: []
 timeline:
   featured: true
