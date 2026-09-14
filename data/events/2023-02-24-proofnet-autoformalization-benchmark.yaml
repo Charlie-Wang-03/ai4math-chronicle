@@ -11,7 +11,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-10'
-  last_updated: '2026-09-11'
+  last_updated: '2026-09-14'
 event_types:
 - benchmark
 - dataset
@@ -102,7 +102,8 @@ relationships:
   predecessors:
   - evt-2021-minif2f
   - evt-2022-draft-sketch-prove
-  successors: []
+  successors:
+  - evt-2026-stochbench
   related: []
 timeline:
   featured: true
@@ -114,7 +115,7 @@ tags:
 - undergraduate-math
 editorial:
   created_at: '2026-09-10'
-  last_reviewed: '2026-09-11'
+  last_reviewed: '2026-09-14'
   reviewers:
   - Charlie-Wang-03
 corrections: []

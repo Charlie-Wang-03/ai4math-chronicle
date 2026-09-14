@@ -1,0 +1,139 @@
+schema_version: 1
+id: evt-2026-magenta
+slug: magenta-lean-verification-loop
+
+title:
+  en: Magenta closes the loop between informal mathematical reasoning and Lean verification
+  zh-CN: Magenta 打通非形式数学推理与 Lean 验证闭环
+
+dates:
+  event: '2026-09-10'
+  first_public_claim: '2026-09-10'
+  paper_release: '2026-09-10'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-14'
+  last_updated: '2026-09-14'
+
+event_types:
+- system
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Magenta is a field-level milestone in verifier-guided mathematical agents because it integrates informal problem solving, Lean statement construction, statement-faithfulness judging, proof search and error attribution into one feedback loop instead of treating formalization and proving as isolated stages.
+    zh-CN: >-
+      Magenta 是验证器引导数学 Agent 路线上的领域级里程碑：它把非形式解题、Lean 命题构造、命题忠实性判断、证明搜索与错误归因整合为同一反馈闭环，而不是把形式化和证明视为彼此孤立的阶段。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    The Magenta paper introduced a training-free agentic pipeline that starts from a natural-language problem, derives an answer, formalizes the statement in Lean 4 and constructs a machine-checked proof; the authors report 100% accuracy on their evaluated Olympiad benchmarks and, with K2-Horizon-7B as the reasoner, successful proofs for all six IMO 2026 problems.
+  zh-CN: >-
+    Magenta 论文提出一个无需额外训练的 Agent 管线：从自然语言问题出发，先得到答案，再将命题形式化为 Lean 4，并构造机器检查证明；作者报告该系统在其评测的奥赛基准上达到 100% 准确率，并在使用 K2-Horizon-7B 作为推理模型时完成 IMO 2026 全部 6 道题的证明。
+
+summary:
+  en: >-
+    Magenta uses a statement judge to check whether a generated Lean statement preserves the original informal problem and an error-attribution judge to decide whether a failed attempt should return to mathematical re-derivation or local Lean repair. The paper reports that this feedback-guided correction loop outperforms independent resampling on difficult problems.
+  zh-CN: >-
+    Magenta 使用 statement judge 检查生成的 Lean 命题是否保持原始非形式问题的含义，并使用 error-attribution judge 判断失败尝试应回到数学推导还是进行局部 Lean 修复。论文报告称，这种基于反馈的纠错闭环在困难问题上优于独立重采样。
+
+why_it_matters:
+  en: >-
+    The work makes formal verification an active part of mathematical reasoning rather than only a final certificate. In particular, it addresses a central failure mode of end-to-end autoformalization systems: a prover can certify the wrong formal statement unless the pipeline also checks whether that statement faithfully represents the human problem.
+  zh-CN: >-
+    该工作把形式验证变成数学推理过程中的主动反馈，而不只是最终证书。尤其是，它直接处理端到端自动形式化的核心失效模式：如果系统不检查形式命题是否忠实表达原始人类问题，那么证明器可能只是正确证明了错误的形式化目标。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Language-model agents perform the mathematical derivation, translate the result into Lean, construct proofs, judge statement fidelity and route failures between mathematical re-reasoning and Lean repair inside the evaluated pipeline.
+    zh-CN: >-
+      在评测管线中，语言模型 Agent 承担数学推导、Lean 形式化、证明构造、命题忠实性判断，并在失败时决定进入重新数学推理还是 Lean 修复。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the multi-stage pipeline, judges, routing logic and evaluation protocol, selected the underlying reasoners and benchmarks, and analyzed the failure and correction behavior.
+    zh-CN: >-
+      研究者设计多阶段管线、判断器、错误路由逻辑与评测协议，选择底层推理模型和基准，并分析系统的失败与纠错行为。
+
+systems:
+- magenta
+- lean
+- k2-horizon-7b
+organizations: []
+people: []
+problems:
+- olympiad-mathematics
+- imo-2026
+methods:
+- agentic-theorem-proving
+- autoformalization
+- statement-verification
+- error-attribution
+- lean-feedback
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-09-10'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record describes the Magenta pipeline and reports the benchmark and IMO 2026 results. The paper states that successful outputs are checked in Lean 4; no independent replay or public proof artifact is recorded by the Chronicle at this stage.
+      zh-CN: >-
+        arXiv 研究记录描述了 Magenta 管线，并报告其基准与 IMO 2026 结果。论文称成功输出由 Lean 4 检查；Chronicle 当前尚未记录独立重放或公开证明产物。
+
+sources:
+- id: arxiv-magenta-2609.11319
+  tier: S1
+  type: paper
+  title: 'Magenta: Closing the Loop Between Mathematical Reasoning and Lean Verification'
+  url: https://arxiv.org/abs/2609.11319
+  primary: true
+  published_date: '2026-09-10'
+  accessed_at: '2026-09-14'
+
+artifacts: []
+
+relationships:
+  predecessors:
+  - evt-2025-mathesis
+  successors: []
+  related:
+  - evt-2026-aimo-proof-pilot
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- magenta
+- lean
+- autoformalization
+- theorem-proving
+- agent
+- olympiad
+- imo-2026
+
+editorial:
+  created_at: '2026-09-14'
+  last_reviewed: '2026-09-14'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
