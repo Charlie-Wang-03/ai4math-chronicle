@@ -1,0 +1,175 @@
+schema_version: 1
+id: evt-2026-leiden-declaration
+slug: leiden-declaration-ai-mathematics
+
+title:
+  en: The Leiden Declaration sets community principles for AI in mathematical research
+  zh-CN: Leiden Declaration 为数学研究中的 AI 使用提出共同体原则
+
+dates:
+  event: '2026-06-02'
+  first_public_claim: '2026-06-02'
+  paper_release: null
+  artifact_release: '2026-06-02'
+  independently_verified: null
+  added_to_chronicle: '2026-09-14'
+  last_updated: '2026-09-14'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The Leiden Declaration is a field-building milestone because it turned a broad, cross-institutional consultation into an AI4Math-specific set of recommendations on transparency, attribution, verification, research autonomy, publication practice and scholarly governance. Its endorsement by the International Mathematical Union, independent scholarly discussion in Nature, and presentation at ICM 2026 provide evidence of field-level institutional significance beyond signatory count or short-lived media attention.
+    zh-CN: >-
+      Leiden Declaration 构成领域建构里程碑，因为它把广泛、跨机构的共同体讨论凝结为一套面向 AI4Math 的具体建议，涉及透明度、署名与归属、验证、研究自主性、出版实践和学术治理。International Mathematical Union 的正式 endorsement、Nature 的独立学术讨论以及 ICM 2026 的公开讨论，表明其领域级制度影响并非仅来自签名数量或短期媒体热度。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    On 2 June 2026, a 16-author international working group published the Leiden Declaration on Artificial Intelligence and Mathematics after a consultation process that grew from the 2025 Mechanization and Mathematical Research meeting in Leiden. The International Mathematical Union endorsed the declaration on publication. The document calls for explicit norms around AI use in mathematical research, including transparency and disclosure, attribution, independent verification, open scholarly practice, research autonomy and institutional responsibility.
+  zh-CN: >-
+    2026 年 6 月 2 日，一个由 16 位作者组成的国际工作组发布 Leiden Declaration on Artificial Intelligence and Mathematics；该声明源于 2025 年在 Leiden 举行的 Mechanization and Mathematical Research 会议，并经过后续共同体咨询形成。International Mathematical Union 在声明发布时给予正式 endorsement。该文件围绕数学研究中的 AI 使用提出明确规范，包括透明度与披露、署名与归属、独立验证、开放学术实践、研究自主性与机构责任。
+
+summary:
+  en: >-
+    The declaration grew from a September 2025 Lorentz Center meeting of around 60 participants from 10 countries spanning mathematics, computer science, philosophy, history, social science, industry and government. A smaller working group developed the text over the following months with extensive community feedback. The declaration was archived on Zenodo with a DOI, endorsed by the IMU, later discussed at ICM 2026, and the subject of supportive editorials and reporting in major scientific publications.
+  zh-CN: >-
+    该声明源于 2025 年 9 月 Lorentz Center 举办的一次会议，约 60 名参与者来自 10 个国家，背景覆盖数学、计算机科学、哲学、历史、社会科学、产业与政府。随后较小的工作组在数月内结合广泛共同体反馈形成文本。声明以 DOI 形式存档于 Zenodo，获得 IMU endorsement，之后在 ICM 2026 公开讨论，并受到主要科学出版物的社论与报道关注。
+
+why_it_matters:
+  en: >-
+    As AI systems became more capable participants in mathematical research, the declaration moved the discussion from isolated reactions to an explicit community-governance agenda. It supplies a durable reference point for questions that recur across AI4Math results: how AI use should be disclosed, how credit and training data should be handled, what independent verification requires, and how mathematical institutions should preserve rigor, access and human judgment while adopting new tools.
+  zh-CN: >-
+    随着 AI 系统越来越深地参与数学研究，该声明把零散的个体反应推进为明确的共同体治理议程。它为 AI4Math 中反复出现的问题提供了持续性的参考点：应如何披露 AI 使用、如何处理署名与训练数据、独立验证意味着什么，以及数学机构在采用新工具时如何维护严谨性、可访问性与人类判断。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records a human-authored community governance statement about AI in mathematics rather than an AI system performing mathematical work, so an operative AI role is not applicable.
+    zh-CN: >-
+      本事件记录的是人类共同体围绕数学中的 AI 制定治理与规范声明，而不是 AI 系统执行数学工作，因此不存在适用的具体 AI role。
+
+human_contribution:
+  description:
+    en: >-
+      Human participants convened the preceding interdisciplinary meeting, formed the working group, drafted and revised the declaration through community feedback, published the citable record, and sought institutional discussion and endorsement.
+    zh-CN: >-
+      人类参与者组织前期跨学科会议、组成工作组、依据共同体反馈起草和修订声明、发布可引用记录，并推动机构层面的讨论与 endorsement。
+
+systems: []
+organizations:
+- international-mathematical-union
+- lorentz-center
+people: []
+problems: []
+methods:
+- community-governance
+- research-integrity
+- ai-disclosure
+- open-science
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-06-02'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The declaration website and Zenodo record establish the published text, authorship, date and DOI; the IMU publicly records its endorsement.
+      zh-CN: >-
+        声明官网与 Zenodo 记录确认了正式文本、作者、发布日期与 DOI；IMU 公开记录其 endorsement。
+  - date: '2026-09-14'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        Nature and Nature Machine Intelligence editorials, together with the declaration's official update record, document substantial scholarly reception and later discussion at ICM 2026. The Chronicle records this reception as significance evidence without treating endorsement as proof that every normative recommendation is universally accepted.
+      zh-CN: >-
+        Nature 与 Nature Machine Intelligence 的社论以及声明官方更新记录显示，该文件获得了显著的学术共同体关注，并在 ICM 2026 继续公开讨论。Chronicle 将这些材料用于支持历史重要性判断，但不把 endorsement 解释为所有规范建议已经获得普遍共识。
+
+sources:
+- id: leiden-declaration-official
+  tier: S2
+  type: community
+  title: Leiden Declaration on Artificial Intelligence and Mathematics
+  url: https://leidendeclaration.ai/
+  primary: true
+  published_date: '2026-06-02'
+  accessed_at: '2026-09-14'
+- id: leiden-declaration-zenodo
+  tier: S2
+  type: other
+  title: Leiden Declaration on Artificial Intelligence and Mathematics — Zenodo record
+  url: https://zenodo.org/doi/10.5281/zenodo.20302944
+  primary: true
+  published_date: '2026-06-02'
+  accessed_at: '2026-09-14'
+- id: imu-leiden-endorsement
+  tier: S2
+  type: official_announcement
+  title: 'IMU News 137: the IMU endorses the Leiden Declaration on Artificial Intelligence and Mathematics'
+  url: https://www.mathunion.org/imu-news/archive/2026/imu-news-137-may-2026
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: nature-leiden-editorial
+  tier: S3
+  type: independent_analysis
+  title: Mathematicians are developing rules for AI use — other fields should follow
+  url: https://www.nature.com/articles/d41586-026-01881-2
+  primary: false
+  published_date: '2026-06-16'
+  accessed_at: '2026-09-14'
+- id: nature-machine-intelligence-leiden-editorial
+  tier: S3
+  type: independent_analysis
+  title: Solutions, challenges and rising tensions in AI and mathematics
+  url: https://www.nature.com/articles/s42256-026-01269-x
+  primary: false
+  published_date: '2026-06-23'
+  accessed_at: '2026-09-14'
+
+artifacts:
+- id: leiden-declaration-pdf-record
+  kind: other
+  title: Leiden Declaration on Artificial Intelligence and Mathematics — citable Zenodo record
+  url: https://zenodo.org/doi/10.5281/zenodo.20302944
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- leiden-declaration
+- field-building
+- community-governance
+- research-integrity
+- attribution
+- verification
+- ai-disclosure
+- open-science
+
+editorial:
+  created_at: '2026-09-14'
+  last_reviewed: '2026-09-14'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

@@ -1,0 +1,155 @@
+schema_version: 1
+id: evt-2016-aitp
+slug: aitp-conference-inaugural
+
+title:
+  en: The first AITP conference establishes a recurring AI-and-theorem-proving forum
+  zh-CN: 首届 AITP 会议建立 AI 与定理证明的持续性学术论坛
+
+dates:
+  event: '2016-04-03'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-14'
+  last_updated: '2026-09-14'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      AITP is a field-building milestone because its 2016 inaugural meeting created a dedicated scholarly forum at the intersection of artificial intelligence, automated and interactive theorem proving, machine learning, proof assistants and computer-understandable mathematics. The series then continued annually through 2026, with a 2027 edition announced, demonstrating durable institutional continuity rather than a one-off workshop.
+    zh-CN: >-
+      AITP 构成领域建构里程碑，因为其 2016 年首届会议建立了一个专门连接人工智能、自动与交互式定理证明、机器学习、证明助手和机器可理解数学的学术论坛。该系列随后持续每年举办至 2026 年，并已公布 2027 年会议，体现出持续性的学术制度化，而非一次性 workshop。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    The first Conference on Artificial Intelligence and Theorem Proving (AITP) was held in Obergurgl, Austria, on 3–7 April 2016. Its program combined invited and contributed work on AI for automated and interactive theorem proving, machine learning for proof guidance, computer understanding of mathematics, and related topics; contributed abstracts were selected through a program committee. By 2026 the conference had continued as an annual series, with AITP 2027 already announced.
+  zh-CN: >-
+    首届 Artificial Intelligence and Theorem Proving Conference（AITP）于 2016 年 4 月 3–7 日在奥地利 Obergurgl 举行。会议议程结合邀请报告与投稿报告，主题覆盖面向自动与交互式定理证明的 AI、机器学习证明引导、机器理解数学等方向，投稿摘要由 program committee 进行筛选。到 2026 年，该会议已连续发展为年度系列，并已公布 AITP 2027。
+
+summary:
+  en: >-
+    AITP 2016 explicitly positioned itself as a forum for combining AI and reasoning methods over large mathematical and scientific corpora. The inaugural program included focused sessions on AI for ATP/ITP and mathematics, informal and semi-formal mathematical understanding, modern AI methods, and contributed talks. Its official series record documents yearly meetings from 2016 through 2026.
+  zh-CN: >-
+    AITP 2016 明确将自身定位为讨论如何把 AI 与推理方法用于大规模数学和科学语料的论坛。首届议程设置了面向 ATP / ITP 与数学的 AI、非形式与半形式数学理解、现代 AI 方法等专题，并包含投稿报告。官方系列记录显示会议从 2016 年起持续每年举办至 2026 年。
+
+why_it_matters:
+  en: >-
+    Before the recent LLM-centered wave of AI4Math, AITP provided a durable meeting point for researchers working across machine learning, automated reasoning, proof assistants and mathematical knowledge. Its continuity makes the inaugural conference useful historical evidence of the institutional formation of an AI-for-theorem-proving community.
+  zh-CN: >-
+    在近年来以 LLM 为中心的 AI4Math 浪潮之前，AITP 已为机器学习、自动推理、证明助手与数学知识处理研究者提供了持续性的共同交流场所。其多年连续举办，使首届会议成为 AI 定理证明共同体制度化形成的重要历史证据。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records the establishment of a scholarly community venue rather than an AI system performing mathematical work, so an operative AI role is not applicable.
+    zh-CN: >-
+      本事件记录的是学术共同体 venue 的建立，而不是某个 AI 系统执行数学工作，因此不存在适用的具体 AI role。
+
+human_contribution:
+  description:
+    en: >-
+      Human organizers established the conference, assembled the program committee and invited program, selected contributed abstracts, hosted the inaugural meeting, and sustained the recurring series.
+    zh-CN: >-
+      人类组织者建立会议、组建 program committee 与邀请报告体系、筛选投稿摘要、举办首届会议，并持续维护后续年度系列。
+
+systems: []
+organizations:
+- university-of-innsbruck
+people:
+- thomas-c-hales
+- cezary-kaliszyk
+- stephan-schulz
+- josef-urban
+problems: []
+methods:
+- scholarly-venue
+- theorem-proving-community
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2016-04-03'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The official AITP 2016 page and conference proceedings establish the inaugural meeting, its dates, program committee, review process and AI/theorem-proving scope.
+      zh-CN: >-
+        AITP 2016 官方页面与会议 proceedings 记录了首届会议、日期、program committee、投稿筛选流程以及 AI / 定理证明主题范围。
+  - date: '2026-09-14'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The official AITP series page documents annual editions from 2016 through 2026 and an announced 2027 edition, supporting the Chronicle's durability assessment without implying endorsement of venue prestige.
+      zh-CN: >-
+        AITP 官方系列页面记录了 2016–2026 年逐年举办的会议以及已公布的 2027 年会议，从而支持 Chronicle 对其持续性的判断，但不代表对 venue 声望作出背书。
+
+sources:
+- id: aitp-2016-official
+  tier: S2
+  type: official_announcement
+  title: 'AITP 2016: 1st Conference on Artificial Intelligence and Theorem Proving'
+  url: https://aitp-conference.org/2016/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: aitp-2016-proceedings
+  tier: S1
+  type: other
+  title: 'AITP 2016: The First Conference on Artificial Intelligence and Theorem Proving — Abstracts of the talks'
+  url: https://aitp-conference.org/2016/aitp_proceedings.pdf
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: aitp-series-official
+  tier: S2
+  type: official_announcement
+  title: Conference on Artificial Intelligence and Theorem Proving — AITP series
+  url: https://aitp-conference.org/
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-14'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- aitp
+- field-building
+- conference
+- theorem-proving
+- automated-reasoning
+- proof-assistants
+- machine-learning
+
+editorial:
+  created_at: '2026-09-14'
+  last_reviewed: '2026-09-14'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
