@@ -145,7 +145,8 @@ relationships:
   predecessors:
   - evt-2022-autoformalization-llm
   - evt-2023-proofnet
-  successors: []
+  successors:
+  - evt-2026-magenta
   related:
   - evt-2025-deepseek-prover-v2
 
