@@ -293,6 +293,7 @@
           "benchmark",
           "dataset",
           "infrastructure",
+          "field_building",
           "controversy"
         ]
       }
@@ -333,7 +334,8 @@
             "formalization_of_known_result",
             "rediscovery",
             "benchmark_result",
-            "tooling_only"
+            "tooling_only",
+            "not_applicable"
           ]
         }
       }
@@ -348,7 +350,8 @@
           "formal",
           "symbolic",
           "numeric",
-          "hybrid"
+          "hybrid",
+          "not_applicable"
         ]
       }
     },
@@ -378,7 +381,8 @@
             "ai_minor_support",
             "computation_only",
             "literature_assistance",
-            "unclear"
+            "unclear",
+            "not_applicable"
           ]
         },
         "description": {
