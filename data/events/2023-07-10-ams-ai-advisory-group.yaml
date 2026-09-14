@@ -1,0 +1,164 @@
+schema_version: 1
+id: evt-2023-ams-ai-advisory
+slug: ams-ai-advisory-group
+
+title:
+  en: AMS establishes an AI advisory group for the mathematical community
+  zh-CN: AMS 建立面向数学共同体的 AI 咨询组
+
+dates:
+  event: '2023-07-10'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-14'
+  last_updated: '2026-09-14'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The American Mathematical Society's 2023 Advisory Group on Artificial Intelligence and the Mathematical Community is a field-building milestone because it created a formal society-level mechanism specifically for AI's effects on mathematical research, publication, education and the profession. The group subsequently produced policy-oriented white papers on publishing, professional practice, education, equity and science policy, showing institutional follow-through rather than a temporary discussion response.
+    zh-CN: >-
+      American Mathematical Society 于 2023 年建立的 Advisory Group on Artificial Intelligence and the Mathematical Community 构成领域建构里程碑，因为它首次以正式学会机制持续处理 AI 对数学研究、出版、教育与职业共同体的影响。该小组随后形成面向出版、职业实践、教育、公平与科学政策的系列 white papers，体现出制度性后续行动，而非短期讨论响应。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    AMS President Bryna Kra authorized the Advisory Group on Artificial Intelligence and the Mathematical Community on 10 July 2023. Its charge covered the role of mathematics in AI development and deployment, AI's impact on mathematical research, use of AI in publications, education and research, and effects on the mathematical community. The group later produced an AMS White Paper on AI and committee-specific papers, including a January 2024 paper on publishing in mathematics that examined peer review, research integrity, copyright, training data and attribution.
+  zh-CN: >-
+    AMS 主席 Bryna Kra 于 2023 年 7 月 10 日授权成立 Advisory Group on Artificial Intelligence and the Mathematical Community。其职责涵盖数学在 AI 开发与部署中的作用、AI 对数学研究的影响、AI 在出版 / 教育 / 研究中的使用，以及 AI 对数学共同体的影响。该小组随后形成 AMS White Paper on AI 与面向不同委员会的专题文件，其中 2024 年 1 月的数学出版 white paper 讨论了同行评审、研究诚信、版权、训练数据与归属等问题。
+
+summary:
+  en: >-
+    The AMS response developed during the first year of widespread generative-AI use. A Notices article records that the Society had already amended its Ethical Guidelines and Journal Policies in June 2023 to adopt the COPE position that AI tools cannot be authors and AI use must be disclosed. The July advisory group then broadened the response from immediate journal rules to sustained governance questions for mathematical research and the profession. Its 2024 white papers were explicitly intended as living resources for AMS policy committees and the wider community.
+  zh-CN: >-
+    AMS 的这套响应形成于生成式 AI 广泛进入学术活动的第一年。Notices 文章记录，AMS 已在 2023 年 6 月修订 Ethical Guidelines and Journal Policies，采纳 COPE 关于 AI 工具不能作为作者、AI 使用必须披露的立场。7 月建立的咨询组则把响应从即时 journal rules 扩展为对数学研究与职业共同体的持续治理议题；其 2024 年 white papers 被明确设计为供 AMS 政策委员会与更广泛共同体持续更新使用的资源。
+
+why_it_matters:
+  en: >-
+    This event marks an early transition from generic publisher responses to AI toward mathematics-specific institutional governance. It put research practice, publication, attribution, education and community effects into one formal agenda, creating a documented predecessor to later community-wide efforts such as the Leiden Declaration.
+  zh-CN: >-
+    本事件标志着数学共同体开始从通用出版机构的 AI 响应转向数学领域自身的制度治理：研究实践、出版、归属、教育和共同体影响被纳入同一个正式议程，并成为后来 Leiden Declaration 等更广泛共同体规范工作的可追溯前史节点。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records mathematical-community governance of AI use rather than an AI system performing mathematical work, so an operative AI role is not applicable.
+    zh-CN: >-
+      本事件记录的是数学共同体对 AI 使用的治理，而不是某个 AI 系统执行数学工作，因此不存在适用的具体 AI role。
+
+human_contribution:
+  description:
+    en: >-
+      AMS leadership, advisory-group members and policy committees defined the governance agenda, consulted the community, drafted committee-specific white papers and developed publication and professional guidance for mathematicians.
+    zh-CN: >-
+      AMS 领导层、咨询组成员与政策委员会界定治理议程、征询共同体意见、起草各委员会专题 white papers，并形成面向数学研究者的出版与职业实践指导。
+
+systems: []
+organizations:
+- american-mathematical-society
+people:
+- bryna-kra
+- akshay-venkatesh
+problems: []
+methods:
+- scholarly-governance
+- publication-policy
+- attribution-policy
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2023-07-10'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        An AMS Notices communication records the advisory group's authorization by AMS President Bryna Kra on 10 July 2023 and quotes its charge concerning research, publications, education and the mathematical community.
+      zh-CN: >-
+        AMS Notices 的专题文章记录了 Bryna Kra 主席于 2023 年 7 月 10 日授权该咨询组，并直接说明其围绕研究、出版、教育与数学共同体的职责范围。
+  - date: '2026-09-14'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        AMS governance records and the Society's 2024 AI white papers document continued committee activity and concrete outputs on publishing, professional practice, education, equity and science policy, supporting the Chronicle's durability assessment.
+      zh-CN: >-
+        AMS 治理记录与 2024 年 AI white papers 记录了该机制持续运作，并在出版、职业实践、教育、公平与科学政策方面形成具体产出，由此支持 Chronicle 对其持续性的判断。
+
+sources:
+- id: ams-notices-generative-ai-2024
+  tier: S2
+  type: official_announcement
+  title: Using Generative AI for Mathematics and Science
+  url: https://www.ams.org/notices/202401/rnoti-p93.pdf
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: ams-ai-advisory-governance
+  tier: S2
+  type: official_announcement
+  title: AMS Advisory Group on Artificial Intelligence and the Mathematical Community
+  url: https://www.ams.org/about-us/governance/committees/artificial-intelligence
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: ams-ai-publishing-white-paper-2024
+  tier: S2
+  type: other
+  title: 'Artificial Intelligence: Publishing in Mathematics'
+  url: https://www.ams.org/about-us/CPub_AI-WhitePaper.pdf
+  primary: false
+  published_date: '2024-01-30'
+  accessed_at: '2026-09-14'
+- id: ams-white-paper-ai-2024
+  tier: S2
+  type: other
+  title: AMS White Paper on AI
+  url: https://www.ams.org/about-us/AMSWhitePaperonAI.pdf
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-14'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2026-leiden-declaration
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- american-mathematical-society
+- ams
+- field-building
+- ai-governance
+- publication-policy
+- attribution
+- research-integrity
+- mathematical-community
+
+editorial:
+  created_at: '2026-09-14'
+  last_reviewed: '2026-09-14'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
