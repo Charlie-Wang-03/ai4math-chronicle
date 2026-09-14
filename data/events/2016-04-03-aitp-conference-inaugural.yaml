@@ -130,7 +130,8 @@ artifacts: []
 
 relationships:
   predecessors: []
-  successors: []
+  successors:
+  - evt-2021-math-ai-workshop
   related: []
 
 timeline:

@@ -148,7 +148,8 @@ artifacts:
   url: https://zenodo.org/doi/10.5281/zenodo.20302944
 
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2023-ams-ai-advisory
   successors: []
   related: []
 
