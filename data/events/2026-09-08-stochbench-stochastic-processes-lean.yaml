@@ -1,0 +1,159 @@
+schema_version: 1
+id: evt-2026-stochbench
+slug: stochbench-stochastic-processes-lean
+
+title:
+  en: StochBench brings graduate stochastic processes into Lean theorem-proving evaluation
+  zh-CN: StochBench 将研究生随机过程引入 Lean 定理证明评测
+
+dates:
+  event: '2026-09-08'
+  first_public_claim: '2026-09-08'
+  paper_release: '2026-09-08'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-14'
+  last_updated: '2026-09-14'
+
+event_types:
+- benchmark
+- dataset
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      StochBench is a field-level benchmark milestone because it moves Lean theorem-proving evaluation beyond predominantly competition and textbook-style mathematics into a broad graduate applied-mathematics domain, while explicitly representing the gap between direct formalization and abstraction needed when library support is incomplete.
+    zh-CN: >-
+      StochBench 是领域级基准里程碑，因为它把 Lean 定理证明评测从以竞赛题和教材型数学为主的场景扩展到广泛的研究生应用数学领域，并显式区分在形式库支持不足时所需的直接形式化与抽象化表达。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    The StochBench paper introduced 450 Lean 4 problems in graduate stochastic processes paired with natural-language sources; the authors report that an Opus 4.8-based proof agent solved 157 of 450 targets within a 15-minute per-problem budget, a 34.9% proof rate.
+  zh-CN: >-
+    StochBench 论文发布了 450 道研究生随机过程 Lean 4 问题，并与自然语言来源配对；作者报告一个基于 Opus 4.8 的证明 Agent 在每题 15 分钟预算下完成 157/450 个目标，证明率为 34.9%。
+
+summary:
+  en: >-
+    The benchmark covers Markov chains, renewal processes, random walks, martingales, stopping times, queues, Brownian motion, stochastic calculus, weak convergence, Poisson processes and continuous-time Markov processes. Its released dataset distinguishes 114 direct formalizations from 336 abstracted targets that expose assumptions explicitly when the required stochastic-process infrastructure is not available in the fixed Lean/Mathlib environment.
+  zh-CN: >-
+    该基准覆盖马尔可夫链、更新过程、随机游走、鞅、停时、排队论、布朗运动、随机微积分、弱收敛、泊松过程与连续时间马尔可夫过程。公开数据集区分 114 个直接形式化目标与 336 个抽象化目标：当固定 Lean / Mathlib 环境缺少所需随机过程基础设施时，后者会把必要性质显式写入假设。
+
+why_it_matters:
+  en: >-
+    Formal theorem-proving benchmarks can overstate general mathematical coverage when they concentrate on domains already well represented in proof libraries. StochBench makes domain breadth and library-support limitations part of the evaluation surface, providing a harder test of whether proof agents can operate in applied mathematics with substantial formalization gaps.
+  zh-CN: >-
+    如果形式定理证明基准主要集中在证明库已充分覆盖的领域，就可能高估系统对一般数学的覆盖能力。StochBench 把领域广度与形式库支持不足本身纳入评测面，为证明 Agent 能否在存在显著形式化缺口的应用数学中工作提供更严格的测试。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      An Opus 4.8-based formalizer assisted in expressing human-written benchmark problems as Lean statements, with Lean feedback and human revision, and an Opus 4.8-based proof agent supplied the reported baseline proofs.
+    zh-CN: >-
+      一个基于 Opus 4.8 的形式化器协助把人工编写的基准问题表达为 Lean 命题，并结合 Lean 反馈与人工修订；另一个基于 Opus 4.8 的证明 Agent 生成论文报告的基线证明结果。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers selected and wrote the benchmark-specific problems, definitions, hypotheses and evaluation protocol, reviewed the formal statements against their source problems, fixed the Lean/Mathlib environment and analyzed the baseline results by topic and representation.
+    zh-CN: >-
+      研究者选择并编写基准专用问题、定义、假设与评测协议，对照来源问题审查形式命题，固定 Lean / Mathlib 环境，并按主题和形式化表示分析基线结果。
+
+systems:
+- stochbench
+- lean
+organizations:
+- case-western-reserve-university
+people: []
+problems:
+- stochastic-processes
+- graduate-applied-mathematics
+methods:
+- benchmarking
+- lean-formalization
+- proof-agents
+- autoformalization
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-09-08'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record defines the 450-problem benchmark, its stochastic-process scope and the reported 157/450 baseline under a 15-minute per-problem budget.
+      zh-CN: >-
+        arXiv 研究记录定义了 450 题基准、随机过程覆盖范围，以及在每题 15 分钟预算下报告的 157/450 基线结果。
+  - date: '2026-09-14'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public StochBench dataset exposes the informal statements, Lean statements, representation labels and stored proof records. E3 records artifact-level inspectability and does not imply an independent replay of the full baseline evaluation.
+      zh-CN: >-
+        StochBench 公开数据集提供自然语言陈述、Lean 命题、表示类别与已存储证明记录。E3 表示证据达到可检查 artifact 层级，并不表示完整基线评测已被独立重放。
+
+sources:
+- id: arxiv-stochbench-2609.09264
+  tier: S1
+  type: paper
+  title: 'StochBench: A Domain-Specific Benchmark for Stochastic Processes in Lean'
+  url: https://arxiv.org/abs/2609.09264
+  primary: true
+  published_date: '2026-09-08'
+  accessed_at: '2026-09-14'
+- id: huggingface-stochbench
+  tier: S1
+  type: dataset
+  title: StochBench dataset
+  url: https://huggingface.co/datasets/IdanDavidovich/StochBench
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+
+artifacts:
+- id: stochbench-dataset
+  kind: benchmark
+  title: StochBench Lean 4 benchmark dataset
+  url: https://huggingface.co/datasets/IdanDavidovich/StochBench
+
+relationships:
+  predecessors:
+  - evt-2023-proofnet
+  successors: []
+  related:
+  - evt-2025-mathesis
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- stochbench
+- lean
+- benchmark
+- stochastic-processes
+- theorem-proving
+- autoformalization
+- applied-mathematics
+
+editorial:
+  created_at: '2026-09-14'
+  last_reviewed: '2026-09-14'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
