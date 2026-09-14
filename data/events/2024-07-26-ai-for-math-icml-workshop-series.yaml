@@ -112,7 +112,7 @@ sources:
   title: 2nd AI for Math Workshop @ ICML 2025
   url: https://icml.cc/virtual/2025/workshop/39979
   primary: false
-  published_date: '2025-07-18'
+  published_date: null
   accessed_at: '2026-09-14'
 - id: ai4math-icml-2026-official
   tier: S2
