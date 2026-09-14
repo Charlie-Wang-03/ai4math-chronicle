@@ -9,6 +9,8 @@ body:
 
         Please prioritize primary or official evidence. Community discussion alone is not sufficient for publication. / 请优先提供一手研究记录或官方来源；仅有社区讨论不足以支持正式收录。
 
+        The Chronicle also accepts high-significance **field-building** candidates, such as durable AI4Math-specific journals/conferences or community statements that materially shape research norms. Ordinary petitions, one-off workshops, routine special issues, and ephemeral community activity remain out of scope by default. / Chronicle 也接受高重要性的 **领域建构（field_building）** 候选，例如具有持续性的 AI4Math 专门期刊/会议，或真正改变研究规范的共同体声明；普通联署、一次性 workshop、普通 special issue 与短暂社区活动默认不收录。
+
         If you only found a potentially useful source and cannot yet identify a complete milestone, use the **Source lead / 信源线索** form instead: https://github.com/Charlie-Wang-03/ai4math-chronicle/issues/new?template=source-lead.yml / 如果你目前只有一个值得跟踪的信源，还无法形成完整事件提案，请改用 **Source lead / 信源线索** 表单。
   - type: input
     id: event-name
@@ -21,7 +23,7 @@ body:
     id: date
     attributes:
       label: "Event date / 事件日期"
-      description: "Prefer YYYY-MM-DD when known. / 已知时优先使用 YYYY-MM-DD。"
+      description: "Prefer YYYY-MM-DD when known. For a venue, prefer the inaugural conference / first issue / formal scholarly launch when materially different from an earlier announcement. / 已知时优先使用 YYYY-MM-DD；对于学术 venue，如与早期 announcement 明显不同，优先填写 inaugural conference、first issue 或正式学术启动日期。"
     validations:
       required: true
   - type: textarea
@@ -35,14 +37,14 @@ body:
     id: ai-human
     attributes:
       label: "AI and human contribution / AI 与人类贡献"
-      description: "What did the AI system do, and what did humans do? / AI 系统与人类分别完成了什么？"
+      description: "What did the AI system do, and what did humans do? For a pure field-building event with no operative AI role, say that AI role is not applicable and describe the human/community/institutional action. / AI 系统与人类分别完成了什么？如果是没有实际 AI 行为的纯 field-building 事件，请明确说明 AI role 不适用，并描述人类、共同体或机构完成的行动。"
     validations:
       required: true
   - type: textarea
     id: evidence
     attributes:
       label: "Primary or official evidence / 一手或官方证据"
-      description: "Provide paper, repository, official lab/institution announcement, competition record, or equivalent S1/S2 sources. / 请提供论文、代码仓库、研究机构官方公告、竞赛记录等 S1/S2 来源。"
+      description: "Provide paper, repository, official lab/institution/venue announcement, published statement, proceedings or journal record, competition record, or equivalent S1/S2 sources. / 请提供论文、代码仓库、研究机构或学术 venue 官方公告、正式声明、proceedings / 期刊记录、竞赛记录等 S1/S2 来源。"
       placeholder: |
         - https://...
         - https://...
@@ -52,7 +54,7 @@ body:
     id: independent
     attributes:
       label: "Independent verification or context / 独立验证或补充背景"
-      description: "Optional S3/S4 evidence, especially for major or disputed claims. / 可选；重大或争议 claim 建议提供 S3/S4 来源。"
+      description: "Optional S3/S4 evidence, especially for major, disputed, or claimed field-level influence. / 可选；重大、争议事件或声称具有领域级影响的 field-building 候选建议提供 S3/S4 来源。"
   - type: dropdown
     id: significance
     attributes:
