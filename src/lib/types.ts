@@ -1,11 +1,13 @@
 export type Locale = 'en' | 'zh-CN';
 export type LocalizedText = Record<Locale, string>;
-export type EventType = 'discovery' | 'proof' | 'formalization' | 'competition' | 'system' | 'benchmark' | 'dataset' | 'infrastructure' | 'controversy';
+export type EventType = 'discovery' | 'proof' | 'formalization' | 'competition' | 'system' | 'benchmark' | 'dataset' | 'infrastructure' | 'field_building' | 'controversy';
 export type Significance = 'H1' | 'H2' | 'H3';
 export type VerificationStatus = 'claimed' | 'paper_released' | 'under_verification' | 'partially_verified' | 'independently_verified' | 'disputed' | 'corrected' | 'retracted';
 export type EvidenceLevel = 'E0' | 'E1' | 'E2' | 'E3' | 'E4';
 export type FormalAssurance = 'none' | 'artifact_available' | 'machine_checked' | 'independently_replayed';
-export type AiRole = 'autonomous_primary' | 'ai_primary_human_verified' | 'human_ai_collaboration' | 'ai_substantive_support' | 'ai_minor_support' | 'computation_only' | 'literature_assistance' | 'unclear';
+export type AiRole = 'autonomous_primary' | 'ai_primary_human_verified' | 'human_ai_collaboration' | 'ai_substantive_support' | 'ai_minor_support' | 'computation_only' | 'literature_assistance' | 'unclear' | 'not_applicable';
+export type MathematicalNovelty = 'new_result' | 'new_proof' | 'new_algorithm' | 'new_conjecture' | 'formalization_of_known_result' | 'rediscovery' | 'benchmark_result' | 'tooling_only' | 'not_applicable';
+export type MathematicalInterface = 'informal' | 'formal' | 'symbolic' | 'numeric' | 'hybrid' | 'not_applicable';
 
 export interface ChronicleSource {
   id: string;
@@ -41,8 +43,8 @@ export interface ChronicleEvent {
   };
   event_types: EventType[];
   significance: { tier: Significance; rationale: LocalizedText };
-  mathematical_novelty: { type: string };
-  interfaces: string[];
+  mathematical_novelty: { type: MathematicalNovelty };
+  interfaces: MathematicalInterface[];
   claim: LocalizedText;
   summary: LocalizedText;
   why_it_matters: LocalizedText;
