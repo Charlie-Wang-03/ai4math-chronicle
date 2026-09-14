@@ -1,0 +1,154 @@
+schema_version: 1
+id: evt-2021-math-ai-workshop
+slug: math-ai-workshop-series
+
+title:
+  en: MATH-AI begins a recurring workshop series on mathematical reasoning and AI
+  zh-CN: MATH-AI 开启数学推理与 AI 的持续性 workshop 系列
+
+dates:
+  event: '2021-05-07'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-14'
+  last_updated: '2026-09-14'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      MATH-AI is a field-building milestone because its 2021 inaugural ICLR workshop created a dedicated, reviewed forum around mathematical reasoning as an AI research problem, with explicit participation from machine learning, automated theorem proving, cognitive science and mathematics. The series then continued through five held editions from 2021 to 2025, with a sixth NeurIPS workshop accepted and scheduled for 2026, demonstrating durable community continuity rather than a one-off meeting.
+    zh-CN: >-
+      MATH-AI 构成领域建构里程碑，因为其 2021 年首届 ICLR workshop 建立了一个专门讨论“数学推理作为 AI 研究问题”的投稿评审论坛，并明确连接机器学习、自动定理证明、认知科学与数学共同体。该系列随后在 2021–2025 年连续举办五届，第六届也已被 NeurIPS 2026 接收并排期，体现出持续性的共同体建设而非一次性会议。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    The first MATH-AI workshop, The Role of Mathematical Reasoning in General Artificial Intelligence, was held at ICLR on 7 May 2021. Its double-blind call for papers sought work on mathematical reasoning, theorem proving, informal and formal mathematics, datasets and related reasoning problems. Official MATH-AI records document successive editions at NeurIPS in 2022, 2023, 2024 and 2025, and a sixth edition accepted for NeurIPS 2026.
+  zh-CN: >-
+    首届 MATH-AI workshop“ The Role of Mathematical Reasoning in General Artificial Intelligence”于 2021 年 5 月 7 日在 ICLR 举行。其双盲征稿面向数学推理、定理证明、非形式与形式数学、数据集及相关推理问题。MATH-AI 官方记录显示，该系列随后于 2022、2023、2024、2025 年连续在 NeurIPS 举办，并已有第六届获得 NeurIPS 2026 接收。
+
+summary:
+  en: >-
+    MATH-AI began as a cross-disciplinary workshop asking how mathematical reasoning could illuminate general AI. The inaugural program combined invited talks, contributed papers, poster sessions and a discussion panel, while its review process used anonymized submissions. Across later editions the series evolved with the field toward large language models, theorem proving, autoformalization, mathematical discovery and agentic AI while retaining a dedicated mathematical-reasoning identity.
+  zh-CN: >-
+    MATH-AI 最初以跨学科 workshop 形式讨论数学推理如何帮助理解一般人工智能。首届议程结合邀请报告、投稿论文、poster session 与讨论 panel，并采用匿名投稿评审。随着领域演化，后续各届逐步覆盖大语言模型、定理证明、自动形式化、数学发现与 Agentic AI，同时保持以数学推理为核心的专门学术身份。
+
+why_it_matters:
+  en: >-
+    A durable workshop series is evidence that AI4Math had begun to organize as a recurring scholarly community before the current wave of frontier research claims. MATH-AI also links an earlier theorem-proving and mathematical-reasoning community to the later LLM-centered AI4Math ecosystem, making its inaugural edition a useful institutional milestone in the field's recent history.
+  zh-CN: >-
+    一个持续举办的专门 workshop 系列表明，在当前前沿 AI4Math 研究 claim 大量出现之前，AI4Math 已开始形成重复运作的学术共同体。MATH-AI 还连接了较早的定理证明 / 数学推理社区与后来以 LLM 为中心的 AI4Math 生态，因此其首届会议具有明确的领域制度史意义。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records the formation of a recurring scholarly venue rather than an AI system performing mathematical work, so an operative AI role is not applicable.
+    zh-CN: >-
+      本事件记录的是持续性学术 venue 的形成，而不是某个 AI 系统执行数学工作，因此不存在适用的具体 AI role。
+
+human_contribution:
+  description:
+    en: >-
+      Human organizers established the workshop, recruited speakers and program-committee members, ran a double-blind submission process, selected contributed work and sustained the series across successive ICLR and NeurIPS editions.
+    zh-CN: >-
+      人类组织者建立 workshop、邀请报告人与 program committee 成员、运行双盲投稿评审、筛选投稿成果，并在 ICLR 与后续 NeurIPS 多届会议中持续维护该系列。
+
+systems: []
+organizations:
+- iclr
+- neurips
+people: []
+problems: []
+methods:
+- scholarly-venue
+- mathematical-reasoning-community
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2021-05-07'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The official ICLR 2021 MATH-AI pages establish the inaugural workshop date, mathematical-reasoning scope, organizers, program committee, accepted papers and double-blind review process.
+      zh-CN: >-
+        ICLR 2021 MATH-AI 官方页面记录了首届 workshop 日期、数学推理主题范围、组织者、program committee、录用论文与双盲评审流程。
+  - date: '2026-09-14'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The official sixth-workshop site lists the five earlier editions from 2021 through 2025 and records the accepted NeurIPS 2026 edition, supporting the Chronicle's durability assessment without treating future attendance or impact as already observed.
+      zh-CN: >-
+        第六届 workshop 官方网站列出了 2021–2025 年五届既有会议，并记录已获接收的 NeurIPS 2026 第六届，由此支持 Chronicle 对系列持续性的判断；该记录不把尚未发生的 2026 参会情况或影响视为既成事实。
+
+sources:
+- id: math-ai-2021-official
+  tier: S2
+  type: official_announcement
+  title: 'MATH-AI: The Role of Mathematical Reasoning in General Artificial Intelligence'
+  url: https://mathai-iclr.github.io/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: math-ai-2021-cfp
+  tier: S2
+  type: official_announcement
+  title: MATH-AI ICLR 2021 Call for Papers
+  url: https://mathai-iclr.github.io/cfp/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-14'
+- id: math-ai-2026-series
+  tier: S2
+  type: official_announcement
+  title: 6th MATH-AI Workshop at NeurIPS 2026
+  url: https://mathai-2026.github.io/
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-14'
+
+artifacts: []
+
+relationships:
+  predecessors:
+  - evt-2016-aitp
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- math-ai
+- field-building
+- workshop-series
+- mathematical-reasoning
+- theorem-proving
+- autoformalization
+- iclr
+- neurips
+
+editorial:
+  created_at: '2026-09-14'
+  last_reviewed: '2026-09-14'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
