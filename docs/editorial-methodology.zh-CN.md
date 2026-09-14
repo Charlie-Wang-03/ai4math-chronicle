@@ -11,12 +11,26 @@
 ## 重要性分级
 
 - **H1 — Historical Milestone / 历史级里程碑：** AI for Mathematics 中具有长期历史意义的转折点，包括 AI 实质参与得到的重大新数学结果或新算法、标志性形式化成果，以及真正改变“AI 在数学上能做到什么”这一历史判断的竞赛或研究突破。H1 衡量历史重要性，而不是 verification status；H1 事件的底层研究 claim 仍可能在范围、归属、接受度或正确性上存在未决问题。
-- **H2 — Field Milestone / 领域级里程碑：** 对重要 AI4Math 子领域或技术方向具有明确实质影响，包括数学专项系统、benchmark、dataset、proof-search 方法、形式化基础设施，以及显著推进领域能力但尚不足以构成顶层历史转折点的竞赛结果。
+- **H2 — Field Milestone / 领域级里程碑：** 对重要 AI4Math 子领域、技术方向或领域建构过程具有明确实质影响，包括数学专项系统、benchmark、dataset、proof-search 方法、形式化基础设施、重要竞赛结果、持续性学术 venue，以及显著组织或推进领域但尚不足以构成顶层历史转折点的规范建构里程碑。
 - **H3 — Context Event / 背景事件：** 主要用于补充历史上下文，而不是实质性的 AI4Math 里程碑。当某个通用模型发布中数学主要只是能力 benchmark，且事件本身没有贡献新数学或数学专项系统时，归入 H3。
 
-`v0.1.1` 发布快照包含 **11 H1 / 38 H2 / 2 H3**；可持续更新的 `main` 可能在两个可引用 release snapshot 之间继续变化。H3 被刻意定义得很窄：一条事件属于 benchmark、dataset、基础设施或数学专项系统，本身并不是降为 H3 的理由。
+`v0.1.1` 发布快照包含 **11 H1 / 38 H2 / 2 H3**；可持续更新的 `main` 可能在两个可引用 release snapshot 之间继续变化。H3 被刻意定义得很窄：一条事件属于 benchmark、dataset、基础设施、数学专项系统或领域建构事件，本身并不是降为 H3 的理由。
 
 项目不使用公开的 0–100 “数学重要性”打分。
+
+## 领域建构事件
+
+`field_building` 用于记录 AI for Mathematics 作为研究领域在共同体形成、制度化、学术规范、治理或学术基础设施方面具有历史意义的里程碑。它与技术意义上的 `infrastructure` 明确区分。
+
+强候选包括具有持续性的 AI4Math 专门同行评议期刊 / 会议，以及对 AI4Math 研究规范、署名、验证、披露、伦理、venue 政策或学术治理产生实质影响的共同体声明。高签名数量本身不足以构成收录理由；普通联署、个人意见文章、一次性 workshop、普通 special issue、地方 symposium 或短暂社区活动默认不收录，除非后续证据表明其具有持续的领域级影响。
+
+对于 venue，如果最初 announcement 与真正开始学术运作的时间明显不同，优先使用 inaugural conference、first issue 或等价正式启动日期作为主历史日期。
+
+一条 field-building 事件如确实同时涉及其他维度，可以使用多个 Event Type，例如 `field_building + controversy`。
+
+部分纯制度性事件不存在适用的 mathematical novelty、AI role 或 mathematical interface。此时 canonical record 使用 `not_applicable`，而不是勉强填入 `tooling_only`、`unclear` 或 `informal`。`not_applicable` 只允许在 `event_types` 包含 `field_building` 时使用；对于 interfaces，`not_applicable` 必须独占。若某条 field-building 事件本身确实包含技术性数学贡献，则仍应使用正常的适用 taxonomy 值。
+
+收录这类事件表示 Chronicle 记录其历史发生与影响，不表示项目赞同一份声明的规范立场，也不表示项目为某个 venue 的声望或其全部论文质量背书。
 
 ## 证据层级
 
@@ -26,7 +40,7 @@
 - **S4：** 高质量二手媒体。
 - **S5：** 仅作为社区发现信号。
 
-每条正式发布的 MVP 事件至少必须包含一个 S1 或 S2 来源。重大历史性陈述应尽可能让读者从事件卡片或详情页一次点击到主要证据。
+每条正式发布的 MVP 事件至少必须包含一个 S1 或 S2 来源。重大历史性陈述应尽可能让读者从事件卡片或详情页一次点击到主要证据。对于 field-building 事件，权威证据可能是机构记录而非研究论文，例如官方 venue 页面、学会公告、正式发布的声明、治理文件、proceedings 记录或期刊创刊记录。
 
 ## Verification 的含义
 
@@ -46,6 +60,8 @@ Evidence level（`E0`–`E4`）、verification status、formal assurance 与 sig
 - `retracted` —— 原始 claim 或研究记录已经被撤回或正式撤稿。
 
 因此，`independently_verified` 是一个**事件级证据标签**，不表示 Chronicle 宣布底层数学已经最终证明正确。同样，`machine_checked` 或 `independently_replayed` 描述的是形式化 artifact 的检查状态，本身不能自动解决数学 novelty、忠实性、优先权或非形式化 claim 真伪等问题。
+
+对于 field-building 事件，verification 核验的是声明、venue、治理变化或制度事件是否如记录所述发生，以及所声称的历史影响是否有证据支持；它不会让 Chronicle 变成规范立场或 venue 声望的裁判。
 
 状态变化必须追加到 `verification.history`。事实纠正应写入 `corrections`，并引用相关 source IDs。
 
@@ -72,9 +88,9 @@ v0.1 的 significance 终审是在人工整体验收并显式授权分类调整�
 
 跨对话的 AI 权限、state recovery 与 hard-gate 规则，以 [`gpt-project-governance.md`](./gpt-project-governance.md) 为准。
 
-## 历史记录不等于正确性背书
+## 历史记录不等于正确性或制度背书
 
-Chronicle 收录一条事件，表示该事件、结果或 claim 真实进入了 AI4Math 的历史记录，并对其历史重要性作出编辑判断；这不自动意味着项目认可所有底层数学结论已经最终正确。对于开放、争议或仍在审查中的研究 claim，尤其需要区分“事件真实且重要”与“数学结论最终被共同体接受”。
+Chronicle 收录一条事件，表示该事件、结果、claim 或领域建构里程碑真实进入了 AI4Math 的历史记录，并对其历史重要性作出编辑判断；这不自动意味着项目认可所有底层数学结论已经最终正确，也不表示项目赞同共同体声明的规范立场或为学术 venue 的声望背书。对于开放、争议或仍在审查中的研究 claim 与制度发展，尤其需要区分“事件真实且重要”与“Chronicle 对其价值判断表示赞同”。
 
 ## 纠错政策
 
