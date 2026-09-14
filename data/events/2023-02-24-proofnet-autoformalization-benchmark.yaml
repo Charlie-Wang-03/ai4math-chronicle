@@ -11,7 +11,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-10'
-  last_updated: '2026-09-11'
+  last_updated: '2026-09-14'
 event_types:
 - benchmark
 - dataset
@@ -66,10 +66,8 @@ verification:
     status: paper_released
     evidence_level: E2
     note:
-      en: >-
-        The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
-      zh-CN: >-
-        Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
+      en: The Chronicle records this event from the cited primary or official source; the status does not imply independent Chronicle verification.
+      zh-CN: Chronicle 依据所引 primary / official source 记录该事件；该状态不表示 Chronicle 已完成独立验证。
   - date: '2026-09-11'
     status: paper_released
     evidence_level: E3
@@ -117,7 +115,7 @@ tags:
 - undergraduate-math
 editorial:
   created_at: '2026-09-10'
-  last_reviewed: '2026-09-11'
+  last_reviewed: '2026-09-14'
   reviewers:
   - Charlie-Wang-03
 corrections: []
