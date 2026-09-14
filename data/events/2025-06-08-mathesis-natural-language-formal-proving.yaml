@@ -13,7 +13,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-11'
-  last_updated: '2026-09-11'
+  last_updated: '2026-09-14'
 
 event_types:
 - formalization
@@ -164,7 +164,7 @@ tags:
 
 editorial:
   created_at: '2026-09-11'
-  last_reviewed: '2026-09-11'
+  last_reviewed: '2026-09-14'
   reviewers:
   - Charlie-Wang-03
 
