@@ -1,0 +1,113 @@
+schema_version: 1
+id: evt-1956-logic-theorist
+slug: logic-theorist
+
+title:
+  en: Logic Theorist demonstrates machine-generated proofs in symbolic logic
+  zh-CN: Logic Theorist 展示机器生成的符号逻辑证明
+
+dates:
+  event: '1956-09-10'
+  first_public_claim: '1956-09-10'
+  paper_release: '1956-09-10'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: Logic Theorist is a foundational early example of artificial intelligence applied directly to mathematical proof, using heuristic search to construct proofs of symbolic-logic propositions.
+    zh-CN: Logic Theorist 是人工智能直接用于数学证明的奠基性早期案例之一，通过启发式搜索构造符号逻辑命题的证明。
+
+mathematical_novelty:
+  type: rediscovery
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Newell, Shaw and Simon presented the Logic Theory Machine in 1956 as a program that searched for proofs of propositions from Principia Mathematica using symbolic representations and heuristics.
+  zh-CN: Newell、Shaw 与 Simon 于 1956 年公开 Logic Theory Machine，通过符号表示与启发式搜索为《Principia Mathematica》中的命题寻找证明。
+
+summary:
+  en: The system encoded logical expressions and searched a space of permissible transformations, prioritizing promising branches with heuristics rather than exhaustive enumeration.
+  zh-CN: 系统编码逻辑表达式并搜索允许的变换空间，利用启发式优先探索更有希望的分支，而非完全穷举。
+
+why_it_matters:
+  en: It established mathematical theorem proving as one of the earliest concrete demonstrations of symbolic AI and set a durable precedent for treating proof search as intelligent problem solving.
+  zh-CN: 它把数学定理证明确立为符号 AI 最早的具体展示场景之一，并为把证明搜索视作智能问题求解建立了长期先例。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: The program selected transformations and assembled proofs through automated heuristic search.
+    zh-CN: 程序通过自动启发式搜索选择变换并组装证明。
+
+human_contribution:
+  description:
+    en: Researchers designed the representation, heuristics, search procedure and evaluation corpus.
+    zh-CN: 研究者设计符号表示、启发式、搜索过程与评测命题。
+
+systems:
+- logic-theorist
+organizations:
+- rand-corporation
+- carnegie-tech
+people:
+- allen-newell
+- cliff-shaw
+- herbert-simon
+problems:
+- symbolic-logic-theorem-proving
+methods:
+- heuristic-search
+- symbolic-reasoning
+- proof-search
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1956-09-10'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: RAND P-868 records the 1956 Logic Theory Machine and its symposium presentation.
+      zh-CN: RAND P-868 记录了 1956 年 Logic Theory Machine 及其研讨会发表。
+
+sources:
+- id: rand-logic-theory-machine-p868
+  tier: S1
+  type: paper
+  title: The Logic Theory Machine — A Complex Information Processing System
+  url: https://www.rand.org/pubs/papers/P868.html
+  primary: true
+  published_date: '1956-09-10'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- logic-theorist
+- symbolic-ai
+- theorem-proving
+- heuristic-search
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

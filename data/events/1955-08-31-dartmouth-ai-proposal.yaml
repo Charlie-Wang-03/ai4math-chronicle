@@ -1,0 +1,106 @@
+schema_version: 1
+id: evt-1955-dartmouth-ai-proposal
+slug: dartmouth-ai-proposal
+
+title:
+  en: The Dartmouth proposal frames artificial intelligence as a research program
+  zh-CN: 达特茅斯提案将“人工智能”明确提出为研究计划
+
+dates:
+  event: '1955-08-31'
+  first_public_claim: '1955-08-31'
+  paper_release: '2006-12-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- field_building
+
+significance:
+  tier: H3
+  rationale:
+    en: The Dartmouth proposal is broad AI history rather than a mathematics-specific result, but it supplies the field-formation context from which symbolic reasoning, theorem proving and machine mathematical problem solving soon emerged.
+    zh-CN: 达特茅斯提案属于广义人工智能史而非数学专属成果，但它提供了符号推理、自动定理证明与机器数学求解随后发展的学科起点背景。
+
+mathematical_novelty:
+  type: not_applicable
+interfaces:
+- not_applicable
+
+claim:
+  en: The proposal dated 31 August 1955 proposed a 1956 Dartmouth summer research project under the name “artificial intelligence” and treated learning, abstraction, reasoning and problem solving as machine-research problems.
+  zh-CN: 1955 年 8 月 31 日的提案为 1956 年达特茅斯夏季研究计划提出“人工智能”这一名称，并把学习、抽象、推理与问题求解作为机器智能研究问题。
+
+summary:
+  en: The proposal did not establish AI4Math as a separate field. It established the broader AI research frame within which mathematical reasoning became one of the earliest domains for testing machine intelligence.
+  zh-CN: 该提案并未建立独立的 AI4Math 领域，但确立了更广义的 AI 研究框架，而数学推理很快成为检验机器智能的早期核心场景之一。
+
+why_it_matters:
+  en: It provides the historical vocabulary and institutional starting point for understanding why Logic Theorist and other early mathematical reasoning programs were regarded as artificial-intelligence research.
+  zh-CN: 它提供了理解 Logic Theorist 等早期数学推理程序为何被视为人工智能研究的历史术语与制度起点。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: This is a field-formation event; no AI system performed mathematical work in the event itself.
+    zh-CN: 这是领域形成事件；事件本身没有 AI 系统执行数学任务。
+
+human_contribution:
+  description:
+    en: John McCarthy, Marvin Minsky, Nathaniel Rochester and Claude Shannon formulated the proposal and organized the research program.
+    zh-CN: John McCarthy、Marvin Minsky、Nathaniel Rochester 与 Claude Shannon 制订提案并组织研究计划。
+
+systems: []
+organizations:
+- dartmouth-college
+people:
+- john-mccarthy
+- marvin-minsky
+- nathaniel-rochester
+- claude-shannon
+problems: []
+methods: []
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2006-12-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The AI Magazine archival publication reproduces and dates the original Dartmouth proposal.
+      zh-CN: AI Magazine 的档案性发表重现并明确标注了原始达特茅斯提案日期。
+
+sources:
+- id: aimag-dartmouth-proposal
+  tier: S1
+  type: paper
+  title: A Proposal for the Dartmouth Summer Research Project on Artificial Intelligence
+  url: https://doi.org/10.1609/aimag.v27i4.1904
+  primary: true
+  published_date: '2006-12-01'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: false
+  significance: context
+tags:
+- artificial-intelligence
+- dartmouth
+- field-formation
+- history-of-ai
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

@@ -1,0 +1,123 @@
+schema_version: 1
+id: evt-1973-pltp
+slug: pltp-boyer-moore-induction
+
+title:
+  en: The Edinburgh Pure Lisp Theorem Prover brings automated induction to program reasoning
+  zh-CN: Edinburgh Pure Lisp Theorem Prover 将自动归纳推理用于程序性质证明
+
+dates:
+  event: '1973-08-20'
+  first_public_claim: '1973-08-20'
+  paper_release: '1973-08-20'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: Boyer and Moore's PLTP established a durable automated-induction lineage for reasoning about recursive Lisp functions, preceding the later Boyer–Moore prover, NQTHM and ACL2.
+    zh-CN: Boyer 与 Moore 的 PLTP 建立了面向递归 Lisp 函数的自动归纳推理谱系，并成为后来的 Boyer–Moore prover、NQTHM 与 ACL2 的前史。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Boyer and Moore presented “Proving Theorems about LISP Functions” at IJCAI-73, documenting the Edinburgh Pure Lisp Theorem Prover developed in 1972–1973 and its automated use of induction, rewriting and symbolic evaluation.
+  zh-CN: Boyer 与 Moore 在 IJCAI-73 发表“Proving Theorems about LISP Functions”，公开记录 1972–1973 年开发的 Edinburgh Pure Lisp Theorem Prover 及其自动归纳、重写与符号求值方法。
+
+summary:
+  en: PLTP targeted properties of recursively defined programs that resolution-based first-order provers handled poorly, using domain-specific proof procedures centered on simplification and induction.
+  zh-CN: PLTP 面向基于归结的一阶证明器难以处理的递归程序性质，采用以化简与归纳为核心的专门证明过程。
+
+why_it_matters:
+  en: It established a long-running architecture for automated inductive theorem proving and program verification that evolved into influential later systems.
+  zh-CN: 它建立了长期发展的自动归纳定理证明与程序验证架构，并演化为多个重要后续系统。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: The prover automatically simplified formulas, selected induction schemes and searched for proofs of recursive-function properties.
+    zh-CN: 证明器自动化简公式、选择归纳方案并搜索递归函数性质的证明。
+
+human_contribution:
+  description:
+    en: Robert Boyer and J Strother Moore designed and implemented the logic, heuristics and proof procedures.
+    zh-CN: Robert Boyer 与 J Strother Moore 设计并实现逻辑、启发式与证明过程。
+
+systems:
+- pltp
+organizations:
+- university-of-edinburgh
+people:
+- robert-s-boyer
+- j-strother-moore
+problems:
+- inductive-theorem-proving
+- program-verification
+methods:
+- mathematical-induction
+- rewriting
+- symbolic-evaluation
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '1973-08-20'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The IJCAI-73 paper documents PLTP and its theorem-proving methods.
+      zh-CN: IJCAI-73 论文记录了 PLTP 及其定理证明方法。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: The UT Austin PLTP archive preserves original 1973 source listings and modern transcriptions/reconstructions.
+      zh-CN: UT Austin 的 PLTP 档案保存 1973 年原始源代码清单以及现代转录与重建版本。
+
+sources:
+- id: ut-pltp-archive
+  tier: S1
+  type: repository
+  title: The PLTP Archive
+  url: https://www.cs.utexas.edu/~moore/best-ideas/pltp/index.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: pltp-1973-source-archive
+  kind: code
+  title: PLTP 1973 source listings and reconstructions
+  url: https://www.cs.utexas.edu/~moore/best-ideas/pltp/index.html
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- boyer-moore
+- pltp
+- induction
+- theorem-proving
+- program-verification
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

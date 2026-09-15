@@ -1,0 +1,110 @@
+schema_version: 1
+id: evt-1973-mizar
+slug: mizar-ideology
+
+title:
+  en: The Mizar program begins a long-running machine-readable formal mathematics project
+  zh-CN: Mizar 理念开启长期机器可读形式数学工程
+
+dates:
+  event: '1973-11-14'
+  first_public_claim: '1973-11-14'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- infrastructure
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: Mizar established a durable program for writing mathematics in a formal language close to mathematical practice and for accumulating a machine-checkable mathematical library.
+    zh-CN: Mizar 建立了长期工程：以贴近数学实践的形式语言书写数学，并持续积累机器可检查的数学知识库。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Mizar's official historical record dates Andrzej Trybulec's first public presentation of the Mizar ideology to 14 November 1973.
+  zh-CN: Mizar 官方历史记录把 Andrzej Trybulec 首次公开介绍 Mizar 理念的日期标为 1973 年 11 月 14 日。
+
+summary:
+  en: Mizar developed a formal mathematical language, checker and library model aimed at building a cumulative body of computer-verifiable mathematics.
+  zh-CN: Mizar 发展形式数学语言、检查器与数学库模式，目标是形成可累积的计算机可验证数学体系。
+
+why_it_matters:
+  en: The Mizar Mathematical Library later became a major formal corpus for automated reasoning and machine-learning research, including DeepMath and neural autoformalization.
+  zh-CN: Mizar Mathematical Library 后来成为自动推理与机器学习研究的重要形式语料，包括 DeepMath 与神经自动形式化路线。
+
+ai_role:
+  level: computation_only
+  description:
+    en: The system mechanically checks formal mathematical texts; the historical milestone is the formal knowledge infrastructure rather than autonomous discovery.
+    zh-CN: 系统机械检查形式数学文本；该历史节点的核心是形式知识基础设施，而非自主发现。
+
+human_contribution:
+  description:
+    en: Andrzej Trybulec and the Mizar community designed the language, verification discipline and growing formal library.
+    zh-CN: Andrzej Trybulec 与 Mizar 社群设计语言、验证规范并建设持续增长的形式数学库。
+
+systems:
+- mizar
+organizations: []
+people:
+- andrzej-trybulec
+problems:
+- formal-mathematical-knowledge
+methods:
+- formalization
+- proof-checking
+- mathematical-library
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '1973-11-14'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: The official Mizar historical archive records the first public presentation date and the project's origins.
+      zh-CN: Mizar 官方历史档案记录了首次公开介绍日期与项目起源。
+
+sources:
+- id: mizar-official-history
+  tier: S2
+  type: official_announcement
+  title: Mizar project history
+  url: https://mizar.uwb.edu.pl/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- mizar
+- formalization
+- mathematical-library
+- proof-checking
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

@@ -1,0 +1,110 @@
+schema_version: 1
+id: evt-1971-macsyma
+slug: macsyma-symbolic-mathematics
+
+title:
+  en: MACSYMA consolidates symbolic mathematical manipulation into an AI-era system
+  zh-CN: MACSYMA 将符号数学操作整合为 AI 时代的通用系统
+
+dates:
+  event: '1971-03-23'
+  first_public_claim: '1971-03-23'
+  paper_release: '1971-03-23'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: MACSYMA turned a broad range of symbolic algebra and calculus operations into a reusable computer mathematics system developed within MIT's Project MAC AI environment, forming an important bridge between symbolic AI and computer algebra.
+    zh-CN: MACSYMA 把广泛的符号代数与微积分操作整合为可复用的计算机数学系统，并诞生于 MIT Project MAC 的 AI 研究环境，成为符号 AI 与计算机代数之间的重要桥梁。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- symbolic
+
+claim:
+  en: The 23 March 1971 system paper documented MACSYMA as a Project MAC system for symbolic manipulation of algebraic expressions, after development had begun in the late 1960s.
+  zh-CN: 1971 年 3 月 23 日的系统论文公开记录 MACSYMA：Project MAC 开发的代数表达式符号操作系统，其研发始于 1960 年代末。
+
+summary:
+  en: MACSYMA integrated rational functions, algebraic simplification, calculus and related symbolic operations within an interactive extensible system.
+  zh-CN: MACSYMA 在可交互、可扩展系统中整合有理函数、代数化简、微积分及相关符号运算。
+
+why_it_matters:
+  en: It demonstrated that substantial bodies of mathematical manipulation could be delegated to general-purpose symbolic software and influenced the subsequent computer-algebra ecosystem.
+  zh-CN: 它展示了大规模数学符号操作可以交由通用软件完成，并影响后续计算机代数生态。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: The system automatically carried out symbolic mathematical transformations requested by users.
+    zh-CN: 系统自动执行用户请求的符号数学变换。
+
+human_contribution:
+  description:
+    en: MIT researchers designed and implemented the algebraic representations, algorithms, simplification rules and interactive system.
+    zh-CN: MIT 研究者设计并实现代数表示、算法、化简规则与交互系统。
+
+systems:
+- macsyma
+organizations:
+- mit-project-mac
+people:
+- william-a-martin
+- richard-fateman
+problems:
+- symbolic-mathematics
+methods:
+- computer-algebra
+- symbolic-manipulation
+- algebraic-simplification
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1971-03-23'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The ACM SYMSAC system paper documents MACSYMA's goals, design and achieved symbolic capabilities.
+      zh-CN: ACM SYMSAC 系统论文记录了 MACSYMA 的目标、设计与已实现符号能力。
+
+sources:
+- id: acm-macsyma-system-1971
+  tier: S1
+  type: paper
+  title: The MACSYMA system
+  url: https://doi.org/10.1145/800204.806267
+  primary: true
+  published_date: '1971-03-23'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- macsyma
+- symbolic-mathematics
+- computer-algebra
+- project-mac
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []
