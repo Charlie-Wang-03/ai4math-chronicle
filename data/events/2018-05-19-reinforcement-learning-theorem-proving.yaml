@@ -86,16 +86,16 @@ methods:
 verification:
   evidence_level: E2
   status: paper_released
-  formal_assurance: machine_checked
+  formal_assurance: none
   history:
   - date: '2018-05-19'
     status: paper_released
     evidence_level: E2
     note:
       en: >-
-        The arXiv and NeurIPS research records establish the reinforcement-learning proof-search algorithm and the reported large-corpus evaluation. Machine checking refers to formal derivations produced by the automated prover and does not imply independent reproduction of the reported benchmark improvement.
+        The arXiv and NeurIPS research records establish the reinforcement-learning proof-search algorithm and the reported large-corpus evaluation. The Chronicle does not record a directly inspectable proof artifact or independent replay for this event, so formal assurance remains `none`.
       zh-CN: >-
-        arXiv 与 NeurIPS 研究记录确认了强化学习证明搜索算法及论文报告的大规模语料评测。machine_checked 仅指自动证明器产生形式推导，并不表示论文报告的性能提升已获得独立复现。
+        arXiv 与 NeurIPS 研究记录确认了强化学习证明搜索算法及论文报告的大规模语料评测。Chronicle 当前未记录可直接检查的证明 artifact 或独立 replay，因此 formal assurance 保持为 `none`。
 
 sources:
 - id: arxiv-rl-theorem-proving-1805.07563
