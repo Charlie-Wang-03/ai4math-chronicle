@@ -101,7 +101,8 @@ sources:
 
 artifacts: []
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-1979-edinburgh-lcf
   successors: []
   related: []
 timeline:
