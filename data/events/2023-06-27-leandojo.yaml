@@ -116,6 +116,7 @@ artifacts:
 
 relationships:
   predecessors:
+  - evt-2017-mathlib3
   - evt-2019-coqgym
   - evt-2020-gpt-f
   - evt-2021-minif2f
