@@ -1,0 +1,157 @@
+schema_version: 1
+id: evt-2016-holophrasm
+slug: holophrasm-neural-theorem-prover
+
+title:
+  en: Holophrasm builds a neural end-to-end theorem prover for Metamath
+  zh-CN: Holophrasm 构建面向 Metamath 的神经端到端定理证明器
+
+dates:
+  event: '2016-08-08'
+  first_public_claim: '2016-08-08'
+  paper_release: '2016-08-08'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Holophrasm was an important early neural theorem prover that moved beyond premise scoring to search over complete formal proof trees in Metamath. It combined learned proof-step generation, neural evaluation and bandit-style search in one system, creating a direct historical precursor to later Metamath neural provers and synthetic-data systems such as MetaGen.
+    zh-CN: >-
+      Holophrasm 是较早具有代表性的神经定理证明器之一，从前提评分进一步走向在 Metamath 中搜索完整形式证明树。它把学习式证明步骤生成、神经评估与 bandit 风格搜索整合到统一系统中，成为后来 Metamath 神经证明器以及 MetaGen 等合成数据系统的直接历史前序。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Daniel Whalen introduced Holophrasm, a neural automated theorem prover for Metamath that explored partial proof trees with a neural-network-augmented bandit algorithm and used a sequence-to-sequence model to enumerate proof actions. The paper reported proving about 14% of its held-out test theorems from Metamath's `set.mm` corpus.
+  zh-CN: >-
+    Daniel Whalen 提出 Holophrasm：一个面向 Metamath 的神经自动定理证明器，使用神经网络增强的 bandit 算法探索部分证明树，并利用序列到序列模型枚举证明动作。论文报告其在 Metamath `set.mm` 留出测试定理上证明了约 14%。
+
+summary:
+  en: >-
+    Holophrasm parses Metamath statements into tree structures, learns neural models for proof-step generation and proof-state evaluation, and combines them with search over candidate proof trees. The public release includes model-training and proof-search code, saved proof outputs, and instructions for replaying generated proofs through Metamath's verifier.
+  zh-CN: >-
+    Holophrasm 将 Metamath 陈述解析为树结构，训练用于证明步骤生成与证明状态评估的神经模型，并与候选证明树搜索结合。公开版本包含模型训练与证明搜索代码、保存的证明结果，以及通过 Metamath verifier 重放和检查生成证明的说明。
+
+why_it_matters:
+  en: >-
+    The project demonstrated a pre-Transformer route to neural proof generation in which learned models actively construct formal proof steps rather than only rank premises. Its Metamath data-processing and prover structure were reused by later work, including MetaGen, making it a durable part of the lineage of neural formal theorem proving.
+  zh-CN: >-
+    该项目在 Transformer 时代之前就展示了一条神经证明生成路线：学习模型主动构造形式证明步骤，而不仅仅为前提排序。其 Metamath 数据处理与证明器结构后来被包括 MetaGen 在内的工作继续使用，因此成为神经形式定理证明演化中的重要前序。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Learned neural models proposed proof actions and evaluated proof states while the search procedure assembled complete formal proofs; successful outputs could then be checked by Metamath without human step-by-step proof construction.
+    zh-CN: >-
+      学习式神经模型负责提出证明动作并评估证明状态，搜索过程组装完整形式证明；成功输出随后可由 Metamath 检查，无需人类逐步构造证明。
+
+human_contribution:
+  description:
+    en: >-
+      The researcher designed the Metamath parser, neural models, search algorithm, training pipeline and evaluation protocol, and packaged the generated proofs for replay and verification.
+    zh-CN: >-
+      研究者设计 Metamath 解析器、神经模型、搜索算法、训练流程和评测协议，并将生成证明整理为可重放和验证的形式。
+
+systems:
+- holophrasm
+- metamath
+organizations: []
+people:
+- daniel-whalen
+problems:
+- metamath-theorem-proving
+- automated-theorem-proving
+methods:
+- neural-theorem-proving
+- sequence-to-sequence-generation
+- bandit-search
+- proof-tree-search
+- proof-step-generation
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2016-08-08'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record establishes Holophrasm, its neural proof-search architecture and the reported Metamath evaluation. Machine checking refers to formal proofs that can be replayed through Metamath and does not imply independent reproduction of the paper's aggregate success rate.
+      zh-CN: >-
+        arXiv 研究记录确认了 Holophrasm、其神经证明搜索架构以及论文报告的 Metamath 评测。machine_checked 仅指形式证明可通过 Metamath 重放检查，并不表示论文报告的整体成功率已得到独立复现。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public Holophrasm repository exposes training and search code, saved proof outputs and explicit Metamath verification instructions. E3 denotes inspectable artifacts rather than an independent rerun of the complete experiment.
+      zh-CN: >-
+        公开 Holophrasm 仓库提供训练与搜索代码、保存的证明输出以及明确的 Metamath 验证说明。E3 表示存在可直接检查的研究产物，而不是 Chronicle 已独立重跑完整实验。
+
+sources:
+- id: arxiv-holophrasm-1608.02644
+  tier: S1
+  type: paper
+  title: 'Holophrasm: a neural Automated Theorem Prover for higher-order logic'
+  url: https://arxiv.org/abs/1608.02644
+  primary: true
+  published_date: '2016-08-08'
+  accessed_at: '2026-09-15'
+- id: github-dwhalen-holophrasm
+  tier: S1
+  type: repository
+  title: Holophrasm neural Metamath prover implementation
+  url: https://github.com/dwhalen/holophrasm
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: holophrasm-repository
+  kind: code
+  title: Holophrasm code, proof search and verification workflow
+  url: https://github.com/dwhalen/holophrasm
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2020-metagen
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- holophrasm
+- metamath
+- theorem-proving
+- neural-theorem-proving
+- proof-generation
+- proof-search
+- deep-learning
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
