@@ -1,0 +1,183 @@
+schema_version: 1
+id: evt-2017-holstep
+slug: holstep-machine-learning-dataset
+
+title:
+  en: HolStep establishes a large machine-learning benchmark from real HOL Light proofs
+  zh-CN: HolStep 从真实 HOL Light 证明中建立大规模机器学习基准
+
+dates:
+  event: '2017-03-01'
+  first_public_claim: '2017-03-01'
+  paper_release: '2017-03-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- benchmark
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      HolStep turned large-scale HOL Light proof traces into a public machine-learning dataset and benchmark with millions of labeled proof-step examples. By making premise usefulness and proof-step relevance measurable on real higher-order-logic mathematics, it supplied an early common substrate for neural theorem-proving research and directly enabled later work such as FormulaNet while anticipating richer HOL Light learning environments such as HOList.
+    zh-CN: >-
+      HolStep 将大规模 HOL Light 证明轨迹整理为公开机器学习数据集与 benchmark，包含数百万个带标签的证明步骤样本。它把真实高阶逻辑数学中的前提有用性与证明步骤相关性转化为可统一评测的问题，为早期神经定理证明研究提供了公共基础，并直接支撑 FormulaNet 等后续工作，也预示了 HOList 这类更完整的 HOL Light 学习环境。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Cezary Kaliszyk, François Chollet and Christian Szegedy released HolStep, a BSD-licensed dataset derived from 11,400 HOL Light proofs with more than two million labeled training and test proof-step examples, together with benchmark tasks and baseline logistic-regression, convolutional and recurrent neural models for classifying useful proof steps.
+  zh-CN: >-
+    Cezary Kaliszyk、François Chollet 与 Christian Szegedy 发布 HolStep：一个基于 11,400 条 HOL Light 证明构建、采用 BSD 许可的数据集，包含超过两百万个带标签的训练与测试证明步骤样本，并配套定义证明步骤有用性等 benchmark 任务以及逻辑回归、卷积网络和循环神经网络基线。
+
+summary:
+  en: >-
+    HolStep extracts intermediate statements and conjectures from HOL Light proofs, canonicalizes their textual representation and pairs useful proof steps with negative examples. The release defines conditioned and unconditioned proof-step classification tasks and provides baseline code so researchers can compare learned representations and relevance models on a common formal-mathematics corpus.
+  zh-CN: >-
+    HolStep 从 HOL Light 证明中抽取中间陈述与 conjecture，对文本表示进行规范化，并把实际使用的证明步骤与负样本配对。该发布定义 conditioned 与 unconditioned proof-step classification 等任务，并提供基线代码，使研究者能够在统一的形式数学语料上比较学习式表示与相关性模型。
+
+why_it_matters:
+  en: >-
+    The project helped shift machine learning for theorem proving from small bespoke experiments toward reusable datasets and reproducible evaluation. HolStep subsequently became a benchmark for neural architectures and an important historical precursor to later environment-plus-benchmark systems for formal mathematics.
+  zh-CN: >-
+    该项目推动定理证明机器学习从小规模、定制化实验走向可复用数据集与可复现评测。HolStep 随后成为多种神经架构的 benchmark，并成为后来“交互环境 + benchmark”形式数学系统的重要历史前序。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Machine-learning models were trained to classify proof-step usefulness and related tasks on the extracted HOL corpus; the historical milestone is the benchmark and dataset rather than an AI-generated mathematical result.
+    zh-CN: >-
+      机器学习模型在抽取的 HOL 语料上训练，用于判断证明步骤有用性等任务；该历史节点的核心贡献是 benchmark 与数据集，而不是 AI 生成的新数学结果。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers extracted and normalized the HOL Light proof corpus, designed positive and negative examples, defined benchmark tasks, released the dataset and implemented baseline models and evaluation.
+    zh-CN: >-
+      研究者抽取并规范化 HOL Light 证明语料、设计正负样本、定义 benchmark 任务、发布数据集，并实现基线模型与评测流程。
+
+systems:
+- holstep
+- hol-light
+organizations:
+- university-of-innsbruck
+- google-research
+people:
+- cezary-kaliszyk
+- francois-chollet
+- christian-szegedy
+problems:
+- higher-order-logic-theorem-proving
+- premise-selection
+methods:
+- proof-trace-extraction
+- proof-step-classification
+- premise-selection
+- convolutional-neural-network
+- recurrent-neural-network
+- benchmarking
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2017-03-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and ICLR research records establish the HolStep dataset, benchmark tasks and reported baseline experiments.
+      zh-CN: >-
+        arXiv 与 ICLR 研究记录确认了 HolStep 数据集、benchmark 任务以及论文报告的基线实验。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public Deepmath repository retains HolStep baseline code and the original research record identifies the public dataset release. E3 records artifact-level inspectability rather than independent reproduction of every reported baseline result.
+      zh-CN: >-
+        公开 Deepmath 仓库仍保留 HolStep 基线代码，原始研究记录也明确给出公开数据集入口。E3 表示 artifact 可直接检查，并不代表论文报告的全部基线结果已获得独立复现。
+
+sources:
+- id: arxiv-holstep-1703.00426
+  tier: S1
+  type: paper
+  title: 'HolStep: A Machine Learning Dataset for Higher-order Logic Theorem Proving'
+  url: https://arxiv.org/abs/1703.00426
+  primary: true
+  published_date: '2017-03-01'
+  accessed_at: '2026-09-15'
+- id: openreview-holstep-iclr2017
+  tier: S1
+  type: paper
+  title: 'HolStep: A Machine Learning Dataset for Higher-order Logic Theorem Proving — ICLR 2017'
+  url: https://openreview.net/pdf?id=ryuxYmvel
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: google-research-holstep
+  tier: S2
+  type: official_announcement
+  title: HolStep — Google Research publication record
+  url: https://research.google/pubs/holstep-a-machine-learning-dataset-for-higher-order-logic-theorem-proving/
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-deepmath-holstep
+  tier: S1
+  type: repository
+  title: Deepmath HolStep baseline implementation
+  url: https://github.com/tensorflow/deepmath/tree/master/deepmath/holstep_baselines
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: holstep-dataset
+  kind: dataset
+  title: HolStep higher-order-logic theorem-proving dataset
+  url: http://cl-informatik.uibk.ac.at/cek/holstep/
+- id: holstep-baseline-code
+  kind: code
+  title: HolStep baseline models in Deepmath
+  url: https://github.com/tensorflow/deepmath/tree/master/deepmath/holstep_baselines
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2019-holist
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- holstep
+- hol-light
+- theorem-proving
+- benchmark
+- dataset
+- premise-selection
+- proof-steps
+- machine-learning
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
