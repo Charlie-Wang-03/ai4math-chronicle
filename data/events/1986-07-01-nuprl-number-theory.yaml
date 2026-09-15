@@ -23,8 +23,10 @@ event_types:
 significance:
   tier: H2
   rationale:
-    en: Nuprl established a constructive type-theoretic proof-development environment in which formal proofs could carry computational content and support program extraction. Its early use on substantial number theory showed that interactive proof development could serve formal mathematics, not only program verification.
-    zh-CN: Nuprl 建立了构造类型论证明开发环境，使形式证明能够携带计算内容并支持程序抽取；其早期在实质性数论上的应用表明，交互式证明开发不仅可用于程序验证，也能够承载形式数学。
+    en: >-
+      Nuprl established a constructive type-theoretic proof-development environment in which formal proofs could carry computational content and support program extraction. Its early use on substantial number theory showed that interactive proof development could serve formal mathematics, not only program verification.
+    zh-CN: >-
+      Nuprl 建立了构造类型论证明开发环境，使形式证明能够携带计算内容并支持程序抽取；其早期在实质性数论上的应用表明，交互式证明开发不仅可用于程序验证，也能够承载形式数学。
 
 mathematical_novelty:
   type: tooling_only
@@ -33,27 +35,37 @@ interfaces:
 - symbolic
 
 claim:
-  en: The CADE-8 proceedings, published on 1 July 1986, included Douglas Howe's experiment using Nuprl together with simple proof-assisting programs to constructively prove a substantial theorem of number theory. Cornell's official Nuprl documentation states that the system had been in use since June 1984 and was already accumulating a library of formal algorithmic mathematics.
-  zh-CN: 1986 年 7 月 1 日出版的 CADE-8 proceedings 收录 Douglas Howe 的实验：使用 Nuprl 与一组简单 proof-assisting programs，对一个实质性数论定理进行构造性形式证明。Cornell 官方 Nuprl 文档同时记载，该系统自 1984 年 6 月起已投入使用，并开始积累形式化算法数学库。
+  en: >-
+    The CADE-8 proceedings, published on 1 July 1986, included Douglas Howe's experiment using Nuprl together with simple proof-assisting programs to constructively prove a substantial theorem of number theory. Cornell's official Nuprl documentation states that the system had been in use since June 1984 and was already accumulating a library of formal algorithmic mathematics.
+  zh-CN: >-
+    1986 年 7 月 1 日出版的 CADE-8 proceedings 收录 Douglas Howe 的实验：使用 Nuprl 与一组简单 proof-assisting programs，对一个实质性数论定理进行构造性形式证明。Cornell 官方 Nuprl 文档同时记载，该系统自 1984 年 6 月起已投入使用，并开始积累形式化算法数学库。
 
 summary:
-  en: Nuprl combined constructive type theory, refinement-style proof development, tactics and computational interpretation of proofs. Complete proofs could be used to obtain programs meeting formal specifications, linking theorem proving, formal mathematics and verified programming in a single environment.
-  zh-CN: Nuprl 将构造类型论、refinement 式证明开发、tactics 与证明的计算解释结合起来；完整证明可以用于提取满足形式规格的程序，从而在同一环境中连接定理证明、形式数学与 verified programming。
+  en: >-
+    Nuprl combined constructive type theory, refinement-style proof development, tactics and computational interpretation of proofs. Complete proofs could be used to obtain programs meeting formal specifications, linking theorem proving, formal mathematics and verified programming in a single environment.
+  zh-CN: >-
+    Nuprl 将构造类型论、refinement 式证明开发、tactics 与证明的计算解释结合起来；完整证明可以用于提取满足形式规格的程序，从而在同一环境中连接定理证明、形式数学与 verified programming。
 
 why_it_matters:
-  en: Nuprl represents a distinct foundational branch of machine-checked mathematics: rather than only certifying propositions, its constructive type theory treats proofs as computational objects. This lineage influenced proof assistants and formal-mathematics systems built around dependent and constructive type theories.
-  zh-CN: Nuprl 代表机器检查数学的一条重要基础路线：它不只验证命题，还在构造类型论中把证明视为具有计算含义的对象。这一路线影响了后来基于依赖类型与构造类型论的证明助手和形式数学系统。
+  en: >-
+    Nuprl represents a distinct foundational branch of machine-checked mathematics: rather than only certifying propositions, its constructive type theory treats proofs as computational objects. This lineage influenced proof assistants and formal-mathematics systems built around dependent and constructive type theories.
+  zh-CN: >-
+    Nuprl 代表机器检查数学的一条重要基础路线：它不只验证命题，还在构造类型论中把证明视为具有计算含义的对象。这一路线影响了后来基于依赖类型与构造类型论的证明助手和形式数学系统。
 
 ai_role:
   level: human_ai_collaboration
   description:
-    en: Human users guided formal developments while Nuprl and auxiliary proof-assisting programs applied refinement rules, tactics and mechanical checking to construct certified proofs and computational content.
-    zh-CN: 人类用户主导形式化开发，Nuprl 与辅助证明程序则应用 refinement rules、tactics 与机械检查来构造经认证的证明及其计算内容。
+    en: >-
+      Human users guided formal developments while Nuprl and auxiliary proof-assisting programs applied refinement rules, tactics and mechanical checking to construct certified proofs and computational content.
+    zh-CN: >-
+      人类用户主导形式化开发，Nuprl 与辅助证明程序则应用 refinement rules、tactics 与机械检查来构造经认证的证明及其计算内容。
 
 human_contribution:
   description:
-    en: Robert Constable and the Cornell PRL group designed and implemented the Nuprl proof-development environment; Douglas Howe conducted the early number-theory experiment documented at CADE-8.
-    zh-CN: Robert Constable 与 Cornell PRL 团队设计并实现 Nuprl 证明开发环境；Douglas Howe 完成了 CADE-8 所记录的早期数论实验。
+    en: >-
+      Robert Constable and the Cornell PRL group designed and implemented the Nuprl proof-development environment; Douglas Howe conducted the early number-theory experiment documented at CADE-8.
+    zh-CN: >-
+      Robert Constable 与 Cornell PRL 团队设计并实现 Nuprl 证明开发环境；Douglas Howe 完成了 CADE-8 所记录的早期数论实验。
 
 systems:
 - nuprl
@@ -82,8 +94,10 @@ verification:
     status: paper_released
     evidence_level: E2
     note:
-      en: The CADE-8 proceedings provide an exact publication anchor for the Nuprl number-theory experiment; Cornell's project documentation independently records that Nuprl had been used since June 1984.
-      zh-CN: CADE-8 proceedings 为 Nuprl 数论实验提供精确出版锚点；Cornell 项目文档则独立记录 Nuprl 自 1984 年 6 月起已投入使用。
+      en: >-
+        The CADE-8 proceedings provide an exact publication anchor for the Nuprl number-theory experiment; Cornell's project documentation independently records that Nuprl had been used since June 1984.
+      zh-CN: >-
+        CADE-8 proceedings 为 Nuprl 数论实验提供精确出版锚点；Cornell 项目文档则独立记录 Nuprl 自 1984 年 6 月起已投入使用。
 
 sources:
 - id: cade8-howe-nuprl-1986
