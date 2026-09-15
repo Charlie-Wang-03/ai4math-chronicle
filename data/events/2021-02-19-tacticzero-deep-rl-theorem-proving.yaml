@@ -109,6 +109,7 @@ artifacts: []
 
 relationships:
   predecessors:
+  - evt-2018-tactictoe
   - evt-2019-holist
   - evt-2020-gpt-f
   successors: [evt-2022-htps]
