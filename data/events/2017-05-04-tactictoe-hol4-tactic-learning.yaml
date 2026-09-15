@@ -151,7 +151,8 @@ relationships:
   predecessors: []
   successors:
   - evt-2021-tacticzero
-  related: []
+  related:
+  - evt-2018-rl-theorem-proving
 
 timeline:
   featured: true
