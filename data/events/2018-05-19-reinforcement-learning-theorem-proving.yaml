@@ -1,0 +1,144 @@
+schema_version: 1
+id: evt-2018-rl-theorem-proving
+slug: reinforcement-learning-theorem-proving
+
+title:
+  en: Reinforcement learning guides large-scale automated theorem-proving search
+  zh-CN: 强化学习用于引导大规模自动定理证明搜索
+
+dates:
+  event: '2018-05-19'
+  first_public_claim: '2018-05-19'
+  paper_release: '2018-05-19'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Reinforcement Learning of Theorem Proving established a prominent large-scale route in which an automated prover improves search guidance from its own previous proof attempts rather than relying primarily on hand-built domain heuristics. It helped make reinforcement learning over broad formal-theorem corpora a concrete AI4Math research program before later proof-assistant-native RL systems.
+    zh-CN: >-
+      Reinforcement Learning of Theorem Proving 建立了一条具有代表性的大规模路线：自动证明器从此前的证明尝试中学习搜索引导，而不是主要依赖人工编写的领域启发式。它在后续证明助手原生强化学习系统出现之前，推动面向大规模形式定理语料的强化学习成为具体的 AI4Math 研究方向。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Cezary Kaliszyk, Josef Urban, Henryk Michalewski and Mirek Olšák introduced a connection-style theorem prover whose Monte Carlo simulations were guided by reinforcement learning from previous proof attempts. The paper reported that its strongest trained configuration solved more than 40% more previously unseen problems than a baseline prover under the same inference budget.
+  zh-CN: >-
+    Cezary Kaliszyk、Josef Urban、Henryk Michalewski 与 Mirek Olšák 提出一种 connection-style 定理证明器，使用从此前证明尝试中学习的强化学习策略引导蒙特卡洛模拟。论文报告称，在相同推理预算下，最强训练配置在此前未见问题上比基线证明器多解决超过 40% 的问题。
+
+summary:
+  en: >-
+    The system repeatedly performs proof-search simulations, turns successful and failed attempts into learning signals, and retrains guidance used in subsequent searches. The approach was evaluated over a large formal-mathematics problem corpus, emphasizing learned search control rather than theorem-specific handwritten heuristics.
+  zh-CN: >-
+    该系统反复执行证明搜索模拟，把成功与失败的尝试转化为学习信号，并重新训练后续搜索所使用的引导策略。方法在大型形式数学问题语料上进行评测，重点是学习式搜索控制，而非针对具体定理手写启发式规则。
+
+why_it_matters:
+  en: >-
+    The work showed that theorem proving could be organized as an iterative learning-and-search loop at substantial corpus scale. This helped connect automated theorem proving with modern reinforcement-learning methodology and supplied historical context for later self-improving and interactive proof-search agents.
+  zh-CN: >-
+    该工作展示了定理证明可以在相当规模的语料上组织为“学习—搜索—再学习”的迭代循环，推动自动定理证明与现代强化学习方法结合，并为后来的自我改进式和交互式证明搜索智能体提供历史前序。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The learned policy guided proof-search simulations and was updated from prior proof attempts; the automated prover carried out the search and produced successful formal derivations without human step-by-step tactic selection.
+    zh-CN: >-
+      学习式策略引导证明搜索模拟，并根据此前证明尝试持续更新；自动证明器执行搜索并产生成功的形式推导，不需要人类逐步选择证明动作。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the connection-style prover, reinforcement-learning loop, search features, training/evaluation corpus and experimental protocol.
+    zh-CN: >-
+      研究者设计 connection-style 证明器、强化学习循环、搜索特征、训练与评测语料以及实验协议。
+
+systems:
+- rl-theorem-prover
+organizations:
+- university-of-innsbruck
+people:
+- cezary-kaliszyk
+- josef-urban
+- henryk-michalewski
+- mirek-olsak
+problems:
+- automated-theorem-proving
+methods:
+- reinforcement-learning
+- monte-carlo-search
+- connection-tableaux
+- proof-search
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2018-05-19'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and NeurIPS research records establish the reinforcement-learning proof-search algorithm and the reported large-corpus evaluation. Machine checking refers to formal derivations produced by the automated prover and does not imply independent reproduction of the reported benchmark improvement.
+      zh-CN: >-
+        arXiv 与 NeurIPS 研究记录确认了强化学习证明搜索算法及论文报告的大规模语料评测。machine_checked 仅指自动证明器产生形式推导，并不表示论文报告的性能提升已获得独立复现。
+
+sources:
+- id: arxiv-rl-theorem-proving-1805.07563
+  tier: S1
+  type: paper
+  title: Reinforcement Learning of Theorem Proving
+  url: https://arxiv.org/abs/1805.07563
+  primary: true
+  published_date: '2018-05-19'
+  accessed_at: '2026-09-15'
+- id: neurips-rl-theorem-proving-2018
+  tier: S1
+  type: paper
+  title: Reinforcement Learning of Theorem Proving — NeurIPS 2018
+  url: https://proceedings.neurips.cc/paper/2018/hash/55acf8539596d25624059980986aaa78-Abstract.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2018-tactictoe
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- theorem-proving
+- reinforcement-learning
+- automated-theorem-proving
+- monte-carlo-search
+- proof-search
+- formal-mathematics
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
