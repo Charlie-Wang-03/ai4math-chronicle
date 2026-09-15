@@ -1,0 +1,150 @@
+schema_version: 1
+id: evt-1992-isabelle
+slug: isabelle-generic-theorem-prover
+
+title:
+  en: Isabelle-91 consolidates a generic theorem prover across multiple object logics
+  zh-CN: Isabelle-91 确立跨多种对象逻辑的通用定理证明器架构
+
+dates:
+  event: '1992-05-27'
+  first_public_claim: null
+  paper_release: '1992-05-27'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: Isabelle generalized the LCF tradition by representing inference rules of different object logics inside a meta-logic and applying higher-order unification and resolution uniformly. This generic architecture let one proof environment support multiple logical foundations and later became a major platform for formalized mathematics.
+    zh-CN: Isabelle 将 LCF 传统进一步通用化：把不同对象逻辑的推理规则表示在 meta-logic 中，并统一使用高阶合一与归结进行推理。该架构使一个证明环境能够承载多种逻辑基础，并最终发展为形式化数学的重要平台。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Lawrence Paulson records that Isabelle first appeared in 1986. The Isabelle-91 system paper, included in the CADE-11 proceedings published on 27 May 1992, documents the mature generic architecture: object logics are formalized in Isabelle's higher-order meta-logic and proofs use generalized resolution with higher-order unification; Isabelle-91 also added order-sorted polymorphism and overloading.
+  zh-CN: Lawrence Paulson 记载 Isabelle 最早出现于 1986 年。收录于 1992 年 5 月 27 日出版的 CADE-11 proceedings 中的 Isabelle-91 系统论文记录了更成熟的通用架构：对象逻辑被形式化在 Isabelle 的高阶 meta-logic 中，证明通过结合高阶合一的广义归结执行；Isabelle-91 还加入 order-sorted polymorphism 与重载支持。
+
+summary:
+  en: Isabelle treats logical rules as data in a meta-logic rather than hard-coding a single object logic into the prover. Higher-order unification instantiates schematic rules, while tactic-oriented interactive proof lets users combine generic inference machinery with logic-specific libraries.
+  zh-CN: Isabelle 并非把单一对象逻辑硬编码进证明器，而是把逻辑规则作为 meta-logic 中的形式对象处理；高阶合一用于实例化 schematic rules，而基于 tactic 的交互式证明把通用推理机制与具体逻辑库结合起来。
+
+why_it_matters:
+  en: The generic-prover design made Isabelle unusually adaptable and supported the later Isabelle/HOL ecosystem and Archive of Formal Proofs. Those large checked corpora and automation interfaces subsequently became important substrates for machine-learning and AI-assisted theorem proving.
+  zh-CN: 通用证明器设计使 Isabelle 具有很强的逻辑适配能力，并支撑后来的 Isabelle/HOL 生态与 Archive of Formal Proofs；这些大规模机器检查语料与自动化接口又成为机器学习和 AI 辅助定理证明的重要基础。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: Human users selected goals, object logics and proof strategies while Isabelle applied higher-order unification, resolution and tactics to construct and check formal derivations.
+    zh-CN: 人类用户选择证明目标、对象逻辑与证明策略，Isabelle 则使用高阶合一、归结与 tactics 构造并检查形式推导。
+
+human_contribution:
+  description:
+    en: Lawrence Paulson created Isabelle and developed its generic meta-logical architecture; Tobias Nipkow and collaborators subsequently became central contributors to Isabelle-91 and the broader Isabelle ecosystem.
+    zh-CN: Lawrence Paulson 创建 Isabelle 并发展其通用 meta-logic 架构；Tobias Nipkow 与合作者随后成为 Isabelle-91 及更广泛 Isabelle 生态的核心贡献者。
+
+systems:
+- isabelle
+- isabelle-91
+organizations:
+- university-of-cambridge
+- technical-university-of-munich
+people:
+- lawrence-paulson
+- tobias-nipkow
+problems:
+- generic-theorem-proving
+- formal-mathematical-knowledge
+methods:
+- meta-logic
+- higher-order-unification
+- resolution
+- order-sorted-polymorphism
+- tactics
+- interactive-theorem-proving
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1992-05-27'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The CADE-11 proceedings supply an exact publication anchor for Isabelle-91, while official Cambridge material records Isabelle's earlier 1986 origin.
+      zh-CN: CADE-11 proceedings 为 Isabelle-91 提供精确出版锚点；Cambridge 官方资料则记录 Isabelle 更早的 1986 年起点。
+
+sources:
+- id: cade11-isabelle91-1992
+  tier: S1
+  type: paper
+  title: Isabelle-91
+  url: https://doi.org/10.1007/3-540-55602-8_201
+  primary: true
+  published_date: '1992-05-27'
+  accessed_at: '2026-09-15'
+- id: springer-cade11-proceedings-1992
+  tier: S1
+  type: paper
+  title: Automated Deduction — CADE-11 Proceedings
+  url: https://doi.org/10.1007/3-540-55602-8
+  primary: false
+  published_date: '1992-05-27'
+  accessed_at: '2026-09-15'
+- id: tum-isabelle91-record
+  tier: S2
+  type: official_announcement
+  title: Isabelle-91 — Technical University of Munich research record
+  url: https://portal.fis.tum.de/en/publications/isabelle-91/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: paulson-isabelle-history
+  tier: S2
+  type: official_announcement
+  title: Lawrence C. Paulson — Isabelle history
+  url: https://www.cl.cam.ac.uk/~lp15/
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors:
+  - evt-1979-edinburgh-lcf
+  successors: []
+  related:
+  - evt-1988-hol
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- isabelle
+- proof-assistant
+- generic-theorem-prover
+- higher-order-unification
+- formalization
+- interactive-theorem-proving
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
