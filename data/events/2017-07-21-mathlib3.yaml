@@ -1,0 +1,132 @@
+schema_version: 1
+id: evt-2017-mathlib3
+slug: mathlib3-formal-mathematics-library
+
+title:
+  en: Mathlib3 creates a shared Lean library for collaborative formal mathematics
+  zh-CN: Mathlib3 建立面向协作式形式数学的共享 Lean 数学库
+
+dates:
+  event: '2017-07-21'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: '2017-07-21'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: Mathlib transformed Lean from a proof-assistant platform into a growing shared corpus of reusable formal mathematics. The library's scale, collaborative development model and machine-readable theorem/proof data later made it central infrastructure for Lean-based AI theorem proving and benchmark construction.
+    zh-CN: Mathlib 把 Lean 从证明助手平台进一步发展为持续增长、可复用的共享形式数学语料库；其规模、协作开发模式以及机器可读的定理与证明数据，后来使其成为基于 Lean 的 AI 定理证明和基准构建的核心基础设施。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Lean's official history records that the Mathlib3 mathematical library was created in July 2017. The preserved leanprover-community/mathlib3 repository was created on GitHub on 21 July 2017, providing the exact artifact anchor used for this Event.
+  zh-CN: Lean 官方历史记载 Mathlib3 数学库创建于 2017 年 7 月；保留至今的 leanprover-community/mathlib3 GitHub 仓库创建时间为 2017 年 7 月 21 日，因此本 Event 以该精确 artifact 时间作为 canonical 锚点。
+
+summary:
+  en: Mathlib organized community-authored Lean definitions, theorems, proofs and tactics into a common mathematical library spanning algebra, analysis, topology, number theory and other areas. Shared APIs and review practices made formal developments composable rather than isolated project artifacts.
+  zh-CN: Mathlib 将社群编写的 Lean 定义、定理、证明与 tactics 组织为共享数学库，逐步覆盖代数、分析、拓扑、数论等领域；统一 API 与协作审查实践使形式化成果能够相互复用，而非停留在彼此隔离的项目中。
+
+why_it_matters:
+  en: Modern learning-based theorem provers need not only a proof checker but also large libraries of formal statements, proof states and dependencies. Mathlib became precisely that substrate for Lean, later underpinning environments and datasets such as LeanDojo and a wide range of LLM-based formal-math systems.
+  zh-CN: 现代学习式定理证明不仅需要证明检查器，也需要大规模形式陈述、证明状态与依赖关系语料。Mathlib 正是 Lean 生态中的这一基础层，后来直接支撑 LeanDojo 等环境、数据集以及大量基于 LLM 的形式数学系统。
+
+ai_role:
+  level: computation_only
+  description:
+    en: The mathematical library was primarily authored and reviewed by humans, while Lean mechanically checked the formal content; the Event concerns creation of machine-readable proof infrastructure rather than autonomous AI discovery.
+    zh-CN: 数学库内容主要由人类编写与审查，Lean 负责机械检查；本 Event 记录的是机器可读证明基础设施的形成，而非自主 AI 数学发现。
+
+human_contribution:
+  description:
+    en: The Lean mathematical community collaboratively developed, reviewed and maintained reusable formal definitions, theorems, proofs and automation in a shared repository.
+    zh-CN: Lean 数学社群以协作方式在共享仓库中开发、审查并维护可复用的形式定义、定理、证明与自动化工具。
+
+systems:
+- lean
+- mathlib3
+organizations:
+- leanprover-community
+people: []
+problems:
+- formal-mathematical-knowledge
+methods:
+- mathematical-library
+- collaborative-formalization
+- proof-checking
+- interactive-theorem-proving
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: artifact_available
+  history:
+  - date: '2017-07-21'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: Lean's official history places Mathlib3's creation in July 2017, and the preserved public repository provides an exact GitHub creation timestamp and directly inspectable formal artifact.
+      zh-CN: Lean 官方历史把 Mathlib3 的创建时间定位于 2017 年 7 月；保留的公开仓库提供精确 GitHub 创建时间戳以及可直接检查的形式化 artifact。
+
+sources:
+- id: lean-official-history-mathlib3
+  tier: S2
+  type: official_announcement
+  title: A Brief History of Lean
+  url: https://lean-lang.org/fro/about/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-mathlib3-repository
+  tier: S1
+  type: repository
+  title: leanprover-community/mathlib3 repository
+  url: https://github.com/leanprover-community/mathlib3
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: mathlib3-repository
+  kind: code
+  title: Lean 3 mathlib repository
+  url: https://github.com/leanprover-community/mathlib3
+
+relationships:
+  predecessors:
+  - evt-2015-lean
+  successors:
+  - evt-2023-leandojo
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- lean
+- mathlib
+- formal-mathematics
+- mathematical-library
+- proof-assistant
+- open-source
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
