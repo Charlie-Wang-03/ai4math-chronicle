@@ -1,0 +1,119 @@
+schema_version: 1
+id: evt-2015-ai4reason
+slug: ai4reason-project-launch
+
+title:
+  en: AI4REASON launches a research program coupling machine learning with large-scale automated reasoning
+  zh-CN: AI4REASON 启动机器学习与大规模自动推理融合研究计划
+
+dates:
+  event: '2015-09-01'
+  first_public_claim: '2015-09-01'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The ERC-funded AI4REASON project institutionalized a multi-year research agenda explicitly combining machine learning, automated reasoning and self-improving deduction–learning loops over large formal, semi-formal and informal corpora.
+    zh-CN: >-
+      ERC 资助的 AI4REASON 将机器学习、自动推理及面向大型形式/半形式/非形式语料的自我改进“演绎—学习”循环制度化为多年研究议程。
+
+mathematical_novelty:
+  type: not_applicable
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    The European Commission records AI4REASON as starting on 1 September 2015 with the goal of developing AI methods that combine automated reasoning and machine learning into independent self-improving systems.
+  zh-CN: >-
+    欧盟委员会记录 AI4REASON 于 2015 年 9 月 1 日启动，其目标是开发把自动推理与机器学习结合成独立自我改进系统的 AI 方法。
+
+summary:
+  en: >-
+    The project focused on large and complex theories, learning from reasoning traces, feedback loops between deduction and learning, and knowledge accumulation across multiple mathematical representation styles.
+  zh-CN: >-
+    项目聚焦大型复杂理论、从推理轨迹学习、演绎与学习之间的反馈循环，以及跨多种数学表示风格积累推理知识。
+
+why_it_matters:
+  en: >-
+    AI4REASON helped consolidate learning-guided automated reasoning into a sustained, explicitly named AI research program immediately before the deep-learning theorem-proving wave represented by DeepMath and related systems.
+  zh-CN: >-
+    AI4REASON 在 DeepMath 等深度学习定理证明浪潮之前，把学习引导自动推理整合为持续且明确命名的 AI 研究计划。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records the launch of a research program rather than a single AI system executing a mathematical task.
+    zh-CN: >-
+      该事件记录研究计划启动，而非某个单一 AI 系统执行数学任务。
+
+human_contribution:
+  description:
+    en: >-
+      Josef Urban and project collaborators formulated and executed the research agenda with ERC support.
+    zh-CN: >-
+      Josef Urban 与项目合作者在 ERC 支持下制定并推进研究议程。
+
+systems: []
+organizations:
+- czech-technical-university
+- european-research-council
+people:
+- josef-urban
+problems: []
+methods: []
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2015-09-01'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The European Commission CORDIS project record supplies the exact start date, funding context and technical research objectives.
+      zh-CN: >-
+        欧盟委员会 CORDIS 项目记录提供精确启动日期、资助背景与技术研究目标。
+
+sources:
+- id: cordis-ai4reason
+  tier: S2
+  type: official_announcement
+  title: Artificial Intelligence for Large-Scale Computer-Assisted Reasoning
+  url: https://cordis.europa.eu/project/id/649043
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- ai4reason
+- field-building
+- machine-learning
+- automated-reasoning
+- large-theory-reasoning
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

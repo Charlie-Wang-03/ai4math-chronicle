@@ -1,0 +1,146 @@
+schema_version: 1
+id: evt-2014-flyspeck-completion
+slug: flyspeck-kepler-completion
+
+title:
+  en: Flyspeck completes a formal proof of the Kepler conjecture
+  zh-CN: Flyspeck 完成克卜勒猜想形式证明
+
+dates:
+  event: '2014-08-10'
+  first_public_claim: '2014-08-10'
+  paper_release: '2015-01-09'
+  artifact_release: '2014-08-10'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Completion of Flyspeck demonstrated that an exceptionally large research proof combining hundreds of pages of mathematics and extensive computation could be reconstructed as a proof-assistant-checked formal development.
+    zh-CN: >-
+      Flyspeck 的完成展示了：一个结合数百页数学文本与大量计算的超大型研究证明，可以被重构为由证明助手完整检查的形式工程。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The Flyspeck project records 10 August 2014 as its completion date after constructing a formal proof of the Kepler conjecture using HOL Light and Isabelle; the official paper was released on 9 January 2015.
+  zh-CN: >-
+    Flyspeck 项目将 2014 年 8 月 10 日记录为完成日期；项目使用 HOL Light 与 Isabelle 构建克卜勒猜想形式证明，官方论文于 2015 年 1 月 9 日发布。
+
+summary:
+  en: >-
+    The completed development formalized both the mathematical text and the large computational components needed for the Kepler-conjecture proof.
+  zh-CN: >-
+    完成后的工程同时形式化克卜勒猜想证明的数学文本与大型计算部分。
+
+why_it_matters:
+  en: >-
+    Flyspeck became a benchmark for the scale, collaboration and engineering required to make complex research mathematics fully machine-checkable.
+  zh-CN: >-
+    Flyspeck 成为衡量复杂研究数学实现全面机器可检查所需规模、协作与工程能力的重要参照。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Human formalizers constructed the development while HOL Light and Isabelle executed trusted proof checking and verified computations.
+    zh-CN: >-
+      人类形式化者构建工程，HOL Light 与 Isabelle 执行可信证明检查与验证计算。
+
+human_contribution:
+  description:
+    en: >-
+      Thomas Hales and a large international team formalized the proof, mathematical libraries and computational verification components over more than a decade.
+    zh-CN: >-
+      Thomas Hales 与大型国际团队历时十余年形式化证明、数学库及计算验证组件。
+
+systems:
+- flyspeck
+- hol-light
+- isabelle
+organizations: []
+people:
+- thomas-hales
+problems:
+- kepler-conjecture
+methods:
+- formalization
+- proof-checking
+- verified-computation
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2014-08-10'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: >-
+        The public Flyspeck repository records the project completion date and exposes the formal development.
+      zh-CN: >-
+        Flyspeck 公开仓库记录项目完成日期并提供形式化工程。
+  - date: '2015-01-09'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The official research paper documents the completed formal proof. E3 reflects inspectable artifacts and does not mean Chronicle independently replayed the entire development.
+      zh-CN: >-
+        官方研究论文记录完成后的形式证明。E3 表示存在可检查 artifacts，并不意味着 Chronicle 独立重放整个工程。
+
+sources:
+- id: github-flyspeck-completion
+  tier: S1
+  type: repository
+  title: The Flyspeck Project repository
+  url: https://github.com/flyspeck/flyspeck
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: arxiv-flyspeck-1501.02155
+  tier: S1
+  type: paper
+  title: A formal proof of the Kepler conjecture
+  url: https://arxiv.org/abs/1501.02155
+  primary: true
+  published_date: '2015-01-09'
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: flyspeck-formal-development
+  kind: proof
+  title: Flyspeck formal proof repository
+  url: https://github.com/flyspeck/flyspeck
+relationships:
+  predecessors:
+  - evt-2003-flyspeck-launch
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- flyspeck
+- kepler-conjecture
+- formalization
+- machine-checked-proof
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

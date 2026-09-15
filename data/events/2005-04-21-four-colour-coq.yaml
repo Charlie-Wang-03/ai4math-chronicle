@@ -1,0 +1,132 @@
+schema_version: 1
+id: evt-2005-four-colour-coq
+slug: four-colour-theorem-coq
+
+title:
+  en: Coq fully checks a formal proof of the Four Colour Theorem
+  zh-CN: Coq 完整检查四色定理形式证明
+
+dates:
+  event: '2005-04-21'
+  first_public_claim: '2005-04-21'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Gonthier's Coq development showed that a celebrated theorem whose earlier proof depended on extensive custom computation could be recast as a fully machine-checked formal proof covering both mathematical and computational reasoning.
+    zh-CN: >-
+      Gonthier 的 Coq 工程展示了：一个此前高度依赖定制计算的著名定理，可以被重构为同时覆盖数学论证与计算部分的完整机器检查形式证明。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    By 21 April 2005, Georges Gonthier's report “A computer-checked proof of the Four Colour Theorem” was publicly circulating and described a successful formalization fully checked by Coq v7.3.1.
+  zh-CN: >-
+    至 2005 年 4 月 21 日，Georges Gonthier 的“A computer-checked proof of the Four Colour Theorem”报告已公开传播，其中描述了由 Coq v7.3.1 完整检查的成功形式化证明。
+
+summary:
+  en: >-
+    The formal development encoded the combinatorial argument and computational case checking inside Coq so that correctness reduced to the proof assistant's general verification mechanisms rather than theorem-specific external programs.
+  zh-CN: >-
+    该形式化把组合论证与计算机分类检查都纳入 Coq，使正确性依赖通用证明助手验证机制，而非四色定理专用外部程序。
+
+why_it_matters:
+  en: >-
+    It became a landmark demonstration that large computer-assisted proofs could be transformed into auditable machine-checked mathematics.
+  zh-CN: >-
+    它成为大型计算机辅助证明可以转化为可审计机器检查数学的标志性示范。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Humans engineered the formal proof while Coq executed and checked all formal logical and computational steps.
+    zh-CN: >-
+      人类设计形式证明工程，Coq 执行并检查全部形式逻辑与计算步骤。
+
+human_contribution:
+  description:
+    en: >-
+      Georges Gonthier designed and implemented the formalization, proof scripts, tactics and mathematical encodings.
+    zh-CN: >-
+      Georges Gonthier 设计并实现形式化、证明脚本、tactics 与数学编码。
+
+systems:
+- coq
+organizations:
+- microsoft-research
+people:
+- georges-gonthier
+problems:
+- four-colour-theorem
+methods:
+- formalization
+- proof-checking
+- verified-computation
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2005-04-21'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The primary report states that the proof was fully checked by Coq; the dated independent announcement establishes that the report was publicly available by 21 April 2005.
+      zh-CN: >-
+        原始报告明确说明证明由 Coq 完整检查；带日期的独立公开记录确认该报告至迟于 2005 年 4 月 21 日已经公开。
+
+sources:
+- id: gonthier-four-colour-report
+  tier: S1
+  type: paper
+  title: A computer-checked proof of the Four Colour Theorem
+  url: https://www.cl.cam.ac.uk/~lp15/Pages/4colproof.pdf
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: zach-four-colour-coq-2005
+  tier: S3
+  type: community
+  title: Four Color Theorem Verified in Coq
+  url: https://richardzach.org/2005/04/four-color-theorem-verified-in-coq/
+  primary: false
+  published_date: '2005-04-21'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- four-colour-theorem
+- coq
+- formalization
+- machine-checked-proof
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

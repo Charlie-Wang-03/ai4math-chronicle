@@ -1,0 +1,131 @@
+schema_version: 1
+id: evt-1998-hr
+slug: hr-automated-theory-formation
+
+title:
+  en: HR automates mathematical concept formation and theory exploration
+  zh-CN: HR 自动化数学概念形成与理论探索
+
+dates:
+  event: '1998-07-26'
+  first_public_claim: '1998-07-26'
+  paper_release: '1998-07-26'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- discovery
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      HR extended automated mathematical discovery from heuristic conjecturing toward a broader theory-formation loop that invents concepts, calculates examples, formulates conjectures and later integrates theorem proving and model finding.
+    zh-CN: >-
+      HR 将自动数学发现从启发式猜想生成进一步推进为更完整的 theory-formation 循环，包括创造概念、计算例子、形成猜想，并在后续系统中结合定理证明与模型查找。
+
+mathematical_novelty:
+  type: new_conjecture
+interfaces:
+- symbolic
+
+claim:
+  en: >-
+    Simon Colton presented HR at AAAI/IAAI 1998 as a system for automatically producing, assessing and displaying concepts in finite algebras; subsequent HR work expanded the same system into conjecturing and theorem-settling workflows.
+  zh-CN: >-
+    Simon Colton 在 AAAI/IAAI 1998 展示 HR：系统能够在有限代数中自动产生、评估与展示概念；后续 HR 工作又把同一系统扩展到猜想形成与定理判定流程。
+
+summary:
+  en: >-
+    HR searches a space of mathematical concepts, evaluates their interest and uses generated concepts to drive further examples, classifications and conjectures.
+  zh-CN: >-
+    HR 搜索数学概念空间、评估概念的有趣程度，并利用生成概念继续驱动例子、分类与猜想探索。
+
+why_it_matters:
+  en: >-
+    HR is a direct historical precursor to contemporary AI systems aimed at open-ended mathematical discovery rather than only proving supplied statements.
+  zh-CN: >-
+    HR 是当代开放式 AI 数学发现系统的直接历史前序之一，其目标并非只证明给定命题，而是参与形成数学理论本身。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The system autonomously generated and assessed mathematical concepts and used them to structure subsequent theory exploration.
+    zh-CN: >-
+      系统自主生成并评估数学概念，并利用这些概念组织后续理论探索。
+
+human_contribution:
+  description:
+    en: >-
+      Simon Colton and collaborators designed the production rules, interestingness measures, domain representations and later theorem-proving integrations.
+    zh-CN: >-
+      Simon Colton 与合作者设计概念生成规则、有趣度指标、领域表示及后续定理证明集成。
+
+systems:
+- hr
+organizations:
+- university-of-edinburgh
+people:
+- simon-colton
+problems:
+- automated-mathematical-discovery
+methods:
+- concept-formation
+- automated-theory-formation
+- conjecture-generation
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1998-07-26'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The AAAI/IAAI 1998 proceedings establish the early HR concept-formation system; later publications document its broader automated theory-formation capabilities.
+      zh-CN: >-
+        AAAI/IAAI 1998 proceedings 确认早期 HR 概念形成系统；后续论文记录其更完整的自动理论形成能力。
+
+sources:
+- id: aaai-hr-1998
+  tier: S1
+  type: paper
+  title: HR - Automatic Concept Formation in Finite Algebras
+  url: https://auld.aaai.org/Library/AAAI/aaai98contents.php
+  primary: true
+  published_date: '1998-07-26'
+  accessed_at: '2026-09-15'
+- id: liep-hr-theory-formation-2000
+  tier: S1
+  type: paper
+  title: Automated Theory Formation Applied to Four Learning Tasks
+  url: https://www.ida.liu.se/ext/epa/cis/2000/038/cover.bak
+  primary: true
+  published_date: '2000-12-30'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- hr
+- mathematical-discovery
+- concept-formation
+- automated-theory-formation
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []
