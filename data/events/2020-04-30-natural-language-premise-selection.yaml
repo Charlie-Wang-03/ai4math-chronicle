@@ -1,0 +1,173 @@
+schema_version: 1
+id: evt-2020-nl-premise-selection
+slug: natural-language-premise-selection
+
+title:
+  en: Natural-language premise selection turns mathematical reference retrieval into a benchmark task
+  zh-CN: 自然语言前提选择将数学参考资料检索转化为基准任务
+
+dates:
+  event: '2020-04-30'
+  first_public_claim: '2020-04-30'
+  paper_release: '2020-04-30'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- benchmark
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Natural Language Premise Selection made retrieval of supporting definitions and propositions from ordinary mathematical text an explicit machine-learning task and released a ProofWiki-derived dataset for evaluating it. This supplied an early benchmark for reasoning over mixed prose and formulae before later natural-language theorem-proving datasets and grounded proof-generation systems.
+    zh-CN: >-
+      Natural Language Premise Selection 将从普通数学文本中检索相关定义与命题明确建模为机器学习任务，并发布源自 ProofWiki 的评测数据集。它为同时处理数学自然语言与公式的推理提供了较早 benchmark，并早于后来的自然语言定理证明数据集与 grounded proof generation 系统。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- symbolic
+
+claim:
+  en: >-
+    Deborah Ferreira and André Freitas introduced the natural-language premise-selection task, in which a system receives a mathematical conjecture expressed through prose and formulae and must retrieve definitions or propositions likely to support a proof, together with a ProofWiki-derived dataset and reproducible extraction pipeline.
+  zh-CN: >-
+    Deborah Ferreira 与 André Freitas 提出自然语言前提选择任务：系统接收由数学文字与公式共同表达的 conjecture，并检索最可能支持其证明的定义或命题；作者同时发布源自 ProofWiki 的数据集与可复现的数据抽取流程。
+
+summary:
+  en: >-
+    The work treated mathematical discourse as a retrieval problem rather than only an answer-generation problem. Its dataset captures links among conjectures, definitions and supporting propositions in ProofWiki, while accompanying baselines and later graph-based experiments measured how effectively models could recover proof-relevant references.
+  zh-CN: >-
+    该工作把数学语篇理解明确表述为检索问题，而不仅是答案生成问题。其数据集记录 ProofWiki 中 conjecture、定义与支持命题之间的关系，并通过基线方法及后续图模型实验衡量模型恢复证明相关参考资料的能力。
+
+why_it_matters:
+  en: >-
+    Reference selection is a core bottleneck in both informal and formal mathematical reasoning. By defining a benchmark directly on human-facing mathematical text, this work provided a bridge from earlier formal premise-selection research toward later NaturalProofs-style retrieval and reference-grounded proof generation.
+  zh-CN: >-
+    参考资料选择是非形式与形式数学推理中的共同瓶颈。该工作直接在面向人类的数学文本上定义 benchmark，为更早的形式化 premise selection 研究通向后来 NaturalProofs 式检索与参考资料约束的证明生成提供了桥梁。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Machine-learning and retrieval models were trained and evaluated to rank proof-relevant mathematical statements; the task definition, ProofWiki extraction and relevance labels were constructed by researchers from existing human-authored mathematical material.
+    zh-CN: >-
+      机器学习与检索模型被训练和评测，用于排序与证明相关的数学陈述；任务定义、ProofWiki 数据抽取与相关性关系由研究者从既有人工数学材料中构建。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers defined the task, built the ProofWiki-derived corpus and extraction pipeline, designed evaluation splits and baselines, and analyzed the difficulty of retrieving mathematically relevant premises from mixed prose and formulae.
+    zh-CN: >-
+      研究者定义任务、构建源自 ProofWiki 的语料与抽取管线、设计评测划分和基线，并分析从数学文字与公式混合语篇中检索相关前提的难点。
+
+systems:
+- nl-ps
+- ps-proofwiki
+organizations:
+- university-of-manchester
+people:
+- deborah-ferreira
+- andre-freitas
+problems:
+- natural-language-premise-selection
+methods:
+- premise-selection
+- information-retrieval
+- mathematical-language-processing
+- dataset-construction
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2020-04-30'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and LREC research records establish the natural-language premise-selection task and the released ProofWiki-derived dataset.
+      zh-CN: >-
+        arXiv 与 LREC 研究记录确认了自然语言前提选择任务以及公开的 ProofWiki 衍生数据集。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public nl-ps repository exposes the dataset, extraction pipeline and baseline tooling. E3 records artifact-level inspectability rather than independent validation of every reported retrieval result.
+      zh-CN: >-
+        公开 nl-ps 仓库提供数据集、抽取管线与基线工具。E3 表示 artifact 可直接检查，并不代表论文报告的全部检索结果已获得独立验证。
+
+sources:
+- id: arxiv-nl-premise-selection-2004.14959
+  tier: S1
+  type: paper
+  title: 'Natural Language Premise Selection: Finding Supporting Statements for Mathematical Text'
+  url: https://arxiv.org/abs/2004.14959
+  primary: true
+  published_date: '2020-04-30'
+  accessed_at: '2026-09-15'
+- id: acl-lrec-nl-premise-selection-2020
+  tier: S1
+  type: paper
+  title: 'Natural Language Premise Selection: Finding Supporting Statements for Mathematical Text — LREC 2020'
+  url: https://aclanthology.org/2020.lrec-1.266/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: acl-premise-selection-math-texts-2020
+  tier: S1
+  type: paper
+  title: 'Premise Selection in Natural Language Mathematical Texts — ACL 2020'
+  url: https://aclanthology.org/2020.acl-main.657/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-nl-ps
+  tier: S1
+  type: repository
+  title: PS-ProofWiki dataset generation and baseline repository
+  url: https://github.com/debymf/nl-ps
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: nl-ps-repository
+  kind: dataset
+  title: PS-ProofWiki dataset, extraction pipeline and baselines
+  url: https://github.com/debymf/nl-ps
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2022-naturalprover
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- natural-language-premise-selection
+- proofwiki
+- premise-selection
+- mathematical-language-processing
+- benchmark
+- dataset
+- retrieval
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
