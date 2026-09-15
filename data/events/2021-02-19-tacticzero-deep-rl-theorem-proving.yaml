@@ -13,7 +13,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-11'
-  last_updated: '2026-09-11'
+  last_updated: '2026-09-15'
 
 event_types:
 - proof
@@ -108,7 +108,9 @@ sources:
 artifacts: []
 
 relationships:
-  predecessors: [evt-2020-gpt-f]
+  predecessors:
+  - evt-2019-holist
+  - evt-2020-gpt-f
   successors: [evt-2022-htps]
   related: [evt-2021-pact, evt-2021-minif2f]
 
@@ -120,7 +122,7 @@ tags: [hol4, theorem-proving, reinforcement-learning, proof-search, tactics]
 
 editorial:
   created_at: '2026-09-11'
-  last_reviewed: '2026-09-11'
+  last_reviewed: '2026-09-15'
   reviewers: [Charlie-Wang-03]
 
 corrections: []
