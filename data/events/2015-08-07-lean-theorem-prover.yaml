@@ -3,13 +3,13 @@ id: evt-2015-lean
 slug: lean-theorem-prover-cade-2015
 
 title:
-  en: Lean enters the automated-deduction literature as an open theorem prover for formal mathematics
-  zh-CN: Lean 作为面向形式数学的开放证明器进入自动演绎研究记录
+  en: Lean is presented at CADE-25 as an open theorem prover for formal mathematics
+  zh-CN: Lean 在 CADE-25 作为面向形式数学的开放证明器公开展示
 
 dates:
   event: '2015-08-07'
   first_public_claim: null
-  paper_release: '2015-08-07'
+  paper_release: '2015-07-30'
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-15'
@@ -36,9 +36,9 @@ interfaces:
 
 claim:
   en: >-
-    At CADE-25 on 7 August 2015, Leonardo de Moura and collaborators presented Lean as a new open-source theorem prover with a small trusted kernel based on dependent type theory and an explicit goal of bridging interactive and automated theorem proving. The official Lean history records the first repository commit in July 2013 and the official Lean 0.1 release in June 2014; because those earlier records are month-precision only, this Event uses the exact CADE presentation date as its canonical public anchor.
+    At CADE-25 on 7 August 2015, Leonardo de Moura and collaborators presented Lean as a new open-source theorem prover with a small trusted kernel based on dependent type theory and an explicit goal of bridging interactive and automated theorem proving. The Springer CADE-25 proceedings containing the system description were published on 30 July 2015. The official Lean history records the first repository commit in July 2013 and the official Lean 0.1 release in June 2014; because those earlier records are month-precision only, this Event uses the exact CADE presentation date as its canonical public anchor.
   zh-CN: >-
-    2015 年 8 月 7 日 CADE-25 上，Leonardo de Moura 与合作者将 Lean 公开描述为一种新的开源定理证明器：它采用基于依赖类型理论的小型可信内核，并明确以连接交互式与自动定理证明为目标。Lean 官方历史记录其仓库首次 commit 于 2013 年 7 月、Lean 0.1 正式发布于 2014 年 6 月；由于这些更早记录仅精确到月份，本条采用具有精确日期的 CADE 展示作为 canonical 公开锚点。
+    2015 年 8 月 7 日 CADE-25 上，Leonardo de Moura 与合作者将 Lean 公开描述为一种新的开源定理证明器：它采用基于依赖类型理论的小型可信内核，并明确以连接交互式与自动定理证明为目标。收录该系统论文的 Springer CADE-25 proceedings 于 2015 年 7 月 30 日出版。Lean 官方历史记录其仓库首次 commit 于 2013 年 7 月、Lean 0.1 正式发布于 2014 年 6 月；由于这些更早记录仅精确到月份，本条采用具有精确日期的 CADE 展示作为 canonical 公开锚点。
 
 summary:
   en: >-
@@ -92,22 +92,22 @@ verification:
   status: paper_released
   formal_assurance: artifact_available
   history:
-  - date: '2015-08-07'
+  - date: '2015-07-30'
     status: paper_released
     evidence_level: E2
     note:
       en: >-
-        The CADE-25 system description and official presentation document Lean's architecture, goals and use in formal mathematics.
+        Springer published the CADE-25 proceedings containing the Lean system description, documenting the architecture, goals and use of the prover in formal mathematics.
       zh-CN: >-
-        CADE-25 系统论文与官方展示材料记录了 Lean 的架构、目标及其在形式数学中的使用。
+        Springer 出版收录 Lean 系统论文的 CADE-25 proceedings，记录其架构、目标及在形式数学中的使用。
   - date: '2015-08-07'
     status: paper_released
     evidence_level: E3
     note:
       en: >-
-        The official project history and preserved open-source Lean 3 repository make the early system lineage and implementation directly inspectable. The exact June 2014 Lean 0.1 release day is not inferred from month-only historical metadata.
+        The official CADE presentation, official project history and preserved open-source Lean 3 repository make the early system lineage and implementation directly inspectable. The exact June 2014 Lean 0.1 release day is not inferred from month-only historical metadata.
       zh-CN: >-
-        官方项目历史与保留的开源 Lean 3 仓库使早期系统谱系与实现可直接检查；本记录不根据只有月份精度的历史元数据推断 2014 年 6 月 Lean 0.1 的具体发布日期。
+        CADE 官方展示、项目官方历史与保留的开源 Lean 3 仓库使早期系统谱系与实现可直接检查；本记录不根据只有月份精度的历史元数据推断 2014 年 6 月 Lean 0.1 的具体发布日期。
 
 sources:
 - id: cade-lean-system-2015
@@ -116,7 +116,7 @@ sources:
   title: The Lean Theorem Prover (System Description)
   url: https://doi.org/10.1007/978-3-319-21401-6_26
   primary: true
-  published_date: '2015-08-07'
+  published_date: '2015-07-30'
   accessed_at: '2026-09-15'
 - id: lean-cade-presentation-2015
   tier: S2
