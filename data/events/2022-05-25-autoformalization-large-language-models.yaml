@@ -13,7 +13,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: "2026-09-11"
-  last_updated: "2026-09-11"
+  last_updated: "2026-09-15"
 
 event_types: [formalization, system]
 
@@ -111,7 +111,7 @@ sources:
 artifacts: []
 
 relationships:
-  predecessors: [evt-2021-minif2f]
+  predecessors: [evt-2018-neural-mizar-autoformalization, evt-2021-minif2f]
   successors: [evt-2023-proofnet]
   related: [evt-2022-draft-sketch-prove]
 
@@ -123,7 +123,7 @@ tags: [autoformalization, large-language-model, isabelle, miniF2F, formal-mathem
 
 editorial:
   created_at: "2026-09-11"
-  last_reviewed: "2026-09-11"
+  last_reviewed: "2026-09-15"
   reviewers: [Charlie-Wang-03]
 
 corrections: []
