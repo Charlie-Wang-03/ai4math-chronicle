@@ -1,0 +1,169 @@
+schema_version: 1
+id: evt-2020-isarstep
+slug: isarstep-high-level-reasoning
+
+title:
+  en: IsarStep benchmarks high-level mathematical reasoning from human-written Isabelle proofs
+  zh-CN: IsarStep 以人工 Isabelle 证明建立高层数学推理基准
+
+dates:
+  event: '2020-06-13'
+  first_public_claim: '2020-06-13'
+  paper_release: '2020-06-13'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- benchmark
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      IsarStep created a large non-synthetic benchmark from human-written Isabelle proofs and focused evaluation on recovering missing intermediate propositions rather than only predicting low-level tactics. It helped establish high-level proof-step generation over real formal mathematics as a distinct learning problem before later language-model theorem-proving systems scaled similar ideas.
+    zh-CN: >-
+      IsarStep 从人工编写的 Isabelle 证明中构建大规模非合成 benchmark，并把评测重点放在恢复缺失的中间命题，而不只是预测低层 tactic。它推动“在真实形式数学中生成高层证明步骤”成为独立学习问题，早于后来语言模型定理证明系统对类似路线的扩展。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Wenda Li, Lei Yu, Yuhuai Wu and Lawrence C. Paulson introduced IsarStep, a benchmark mined from Isabelle's Archive of Formal Proofs in which models must predict a missing intermediate proposition from surrounding proof context, covering undergraduate- and research-level mathematics and computer science material.
+  zh-CN: >-
+    Wenda Li、Lei Yu、Yuhuai Wu 与 Lawrence C. Paulson 提出 IsarStep：一个从 Isabelle Archive of Formal Proofs 中抽取的 benchmark，要求模型根据周围证明上下文预测缺失的中间命题，覆盖本科与研究级数学及计算机科学形式化内容。
+
+summary:
+  en: >-
+    IsarStep converts declarative Isar proofs into sequence-to-sequence examples where a proof fragment has an intermediate proposition removed. The task tests whether a model can reconstruct a semantically useful bridge between surrounding proof states, and the authors evaluated Transformer-based baselines including a hierarchical architecture designed for long proof context.
+  zh-CN: >-
+    IsarStep 将声明式 Isar 证明转换为序列到序列样本，并移除其中的中间命题。任务要求模型重建连接前后证明状态的语义桥梁；作者评测了 Transformer 类基线，并设计面向长证明上下文的分层架构。
+
+why_it_matters:
+  en: >-
+    The benchmark shifted part of learned theorem proving toward human-readable intermediate reasoning over real proof corpora. Together with contemporaneous formal-math pretraining work, it supplied an important pre-LLM testbed for learning reusable mathematical representations and proof steps from mature proof-assistant libraries.
+  zh-CN: >-
+    该 benchmark 将部分学习式定理证明研究从低层动作预测推进到真实证明语料上的可读中间推理。它与同期形式数学预训练研究一起，为后来的 LLM 时代之前从成熟证明助手数学库学习可复用数学表示与证明步骤提供了重要试验场。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Neural sequence models were trained and evaluated to predict missing formal propositions from proof context; the underlying Isabelle developments, benchmark extraction and evaluation protocol were human-authored or researcher-designed.
+    zh-CN: >-
+      神经序列模型被训练和评测，用于根据证明上下文预测缺失的形式命题；底层 Isabelle 证明、benchmark 抽取和评测协议由人类编写或研究者设计。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers mined and processed the Isabelle proof corpus, defined the missing-proposition task and data splits, designed sequence-to-sequence and hierarchical Transformer baselines, and evaluated model generalization on held-out proofs.
+    zh-CN: >-
+      研究者抽取并处理 Isabelle 证明语料、定义缺失命题任务与数据划分、设计序列到序列及分层 Transformer 基线，并在留出证明上评估模型泛化能力。
+
+systems:
+- isarstep
+- isabelle
+organizations:
+- university-of-cambridge
+people:
+- wenda-li
+- lei-yu
+- yuhuai-wu
+- lawrence-c-paulson
+problems:
+- high-level-mathematical-reasoning
+- missing-proposition-generation
+methods:
+- sequence-to-sequence-learning
+- hierarchical-transformer
+- proof-corpus-mining
+- benchmarking
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2020-06-13'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record establishes the IsarStep task, Isabelle-derived dataset and reported neural sequence-model experiments.
+      zh-CN: >-
+        arXiv 研究记录确认了 IsarStep 任务、源自 Isabelle 的数据集以及论文报告的神经序列模型实验。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public IsarStep repository exposes the code and links to the released dataset, hierarchical Transformer implementation and test suite. E3 records artifact-level inspectability rather than independent reproduction of every reported result.
+      zh-CN: >-
+        公开 IsarStep 仓库提供代码，并链接已发布的数据集、分层 Transformer 实现与测试集。E3 表示 artifact 可直接检查，并不代表论文报告的全部结果已获得独立复现。
+
+sources:
+- id: arxiv-isarstep-2006.09265
+  tier: S1
+  type: paper
+  title: 'IsarStep: a Benchmark for High-level Mathematical Reasoning'
+  url: https://arxiv.org/abs/2006.09265
+  primary: true
+  published_date: '2020-06-13'
+  accessed_at: '2026-09-15'
+- id: openreview-isarstep-iclr2021
+  tier: S1
+  type: paper
+  title: 'IsarStep: a Benchmark for High-level Mathematical Reasoning — ICLR 2021'
+  url: https://openreview.net/forum?id=Pzj6fzU6wkj
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-isarstep
+  tier: S1
+  type: repository
+  title: IsarStep code, dataset and HAT resources
+  url: https://github.com/Wenda302/IsarStep
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: isarstep-repository
+  kind: benchmark
+  title: IsarStep benchmark code, dataset links and hierarchical Transformer resources
+  url: https://github.com/Wenda302/IsarStep
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2020-skip-tree
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- isarstep
+- isabelle
+- theorem-proving
+- mathematical-reasoning
+- benchmark
+- dataset
+- transformer
+- formal-mathematics
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

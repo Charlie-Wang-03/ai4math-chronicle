@@ -13,7 +13,7 @@ dates:
   artifact_release: "2022-06-03"
   independently_verified: null
   added_to_chronicle: "2026-09-11"
-  last_updated: "2026-09-11"
+  last_updated: "2026-09-15"
 
 event_types: [proof, system]
 
@@ -123,7 +123,8 @@ artifacts:
     url: https://github.com/wellecks/naturalprover
 
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2020-nl-premise-selection
   successors: []
   related: [evt-2022-minerva]
 
@@ -135,7 +136,7 @@ tags: [natural-language-proof, language-model, retrieval, grounded-generation, t
 
 editorial:
   created_at: "2026-09-11"
-  last_reviewed: "2026-09-11"
+  last_reviewed: "2026-09-15"
   reviewers: [Charlie-Wang-03]
 
 corrections: []
