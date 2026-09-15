@@ -1,0 +1,131 @@
+schema_version: 1
+id: evt-2007-mptp-challenge
+slug: mptp-large-theory-challenge
+
+title:
+  en: The MPTP Challenge benchmarks AI-assisted automated reasoning in large mathematical theories
+  zh-CN: MPTP Challenge 对大型数学理论中的 AI 辅助自动推理进行统一评测
+
+dates:
+  event: '2007-07-16'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: '2007-07-16'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- competition
+- benchmark
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The MPTP Challenge created a large-theory competition setting where systems could exploit complementary AI methods, including learning from previous solutions, over a shared corpus derived from formal mathematics.
+    zh-CN: >-
+      MPTP Challenge 建立大型理论竞赛环境，允许系统在共享形式数学语料上使用包括“从此前解答学习”在内的互补 AI 方法。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The official MPTP Challenge page records accumulated results on 16 July 2007 for 252 large-theory problems, under rules that explicitly allowed systems to retune and learn during execution.
+  zh-CN: >-
+    MPTP Challenge 官方页面记录了 2007 年 7 月 16 日对 252 个大型理论问题的累计结果，其规则明确允许系统在执行过程中重新调节并学习。
+
+summary:
+  en: >-
+    The challenge supplied common Mizar-derived problems, public rules and a total resource budget intended to make learning, premise selection and other large-theory reasoning strategies directly comparable.
+  zh-CN: >-
+    竞赛提供统一的 Mizar 衍生问题、公开规则与总资源预算，使学习、前提选择和其他大型理论推理策略能够直接比较。
+
+why_it_matters:
+  en: >-
+    It helped establish large-theory theorem proving as a benchmarked AI problem rather than only a collection of isolated prover demonstrations.
+  zh-CN: >-
+    它推动大型理论定理证明从零散证明器展示转向可统一 benchmark 的 AI 研究问题。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Automated reasoning systems solved formal problems and could use machine learning from prior solutions; the Event's historical contribution is the evaluation setting.
+    zh-CN: >-
+      自动推理系统求解形式问题，并可从此前解答进行机器学习；该事件的历史贡献主要在统一评测环境。
+
+human_contribution:
+  description:
+    en: >-
+      Josef Urban and Geoff Sutcliffe organized the challenge, problem corpus, rules and result collection.
+    zh-CN: >-
+      Josef Urban 与 Geoff Sutcliffe 组织竞赛、问题语料、规则与结果收集。
+
+systems:
+- mptp
+organizations: []
+people:
+- josef-urban
+- geoff-sutcliffe
+problems:
+- large-theory-theorem-proving
+methods:
+- benchmarking
+- premise-selection
+- machine-learning
+- automated-theorem-proving
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: artifact_available
+  history:
+  - date: '2007-07-16'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: >-
+        The official challenge page preserves the rules, problem setup and accumulated results, making the benchmark artifact directly inspectable.
+      zh-CN: >-
+        官方 Challenge 页面保留规则、问题设置与累计结果，使 benchmark artifact 可直接检查。
+
+sources:
+- id: mptp-challenge-official
+  tier: S1
+  type: benchmark
+  title: The MPTP Challenges
+  url: https://tptp.org/Challenges/MPTPChallenge/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: mptp-challenge-benchmark
+  kind: benchmark
+  title: MPTP Challenge problems and results
+  url: https://tptp.org/Challenges/MPTPChallenge/
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2007-malarea
+timeline:
+  featured: true
+  significance: primary
+tags:
+- mptp
+- competition
+- benchmark
+- large-theory-reasoning
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

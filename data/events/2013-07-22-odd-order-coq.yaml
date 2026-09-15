@@ -1,0 +1,126 @@
+schema_version: 1
+id: evt-2013-odd-order-coq
+slug: odd-order-theorem-coq
+
+title:
+  en: Coq completes a machine-checked formal proof of the Odd Order Theorem
+  zh-CN: Coq 完成奇数阶定理的机器检查形式证明
+
+dates:
+  event: '2013-07-22'
+  first_public_claim: '2013-07-22'
+  paper_release: '2013-07-22'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The six-year Coq formalization of the Feit–Thompson Odd Order Theorem demonstrated that proof assistants could sustain a deep research-level argument while simultaneously building reusable libraries across finite group theory, algebra and number systems.
+    zh-CN: >-
+      历时六年的 Feit–Thompson 奇数阶定理 Coq 形式化展示了证明助手能够承载深层研究级数学论证，并同时建设有限群论、代数和数系等可复用形式库。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The ITP 2013 paper reports a complete constructive formalization of the Feit–Thompson Odd Order Theorem in Coq, relying only on the axioms and rules of Coq's foundational framework.
+  zh-CN: >-
+    ITP 2013 论文报告在 Coq 中完成 Feit–Thompson 奇数阶定理的完整构造性形式化，其证明只依赖 Coq 基础框架中的公理与规则。
+
+summary:
+  en: >-
+    The project formalized the theorem together with a substantial mathematical library spanning group theory, linear algebra, Galois theory and real/complex algebraic numbers.
+  zh-CN: >-
+    项目在形式化定理本身的同时，建立了覆盖群论、线性代数、Galois 理论及实/复代数数的大规模数学库。
+
+why_it_matters:
+  en: >-
+    It raised the demonstrated scale and depth of machine-checked research mathematics and strengthened the library infrastructure later available to automation and AI systems.
+  zh-CN: >-
+    它显著提高机器检查研究数学所展示的规模与深度，并强化了后来可供自动化与 AI 系统使用的形式库基础设施。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Human authors constructed the formal proof while Coq checked every formal inference under its foundational rules.
+    zh-CN: >-
+      人类作者构造形式证明，Coq 按其基础规则检查每一步形式推理。
+
+human_contribution:
+  description:
+    en: >-
+      The collaboration formalized the mathematics, engineered reusable libraries and developed proof methodology and tooling needed for the large project.
+    zh-CN: >-
+      协作团队形式化数学内容、建设可复用形式库，并开发大型工程所需的证明方法与工具。
+
+systems:
+- coq
+organizations:
+- microsoft-research
+- inria
+people:
+- georges-gonthier
+- jeremy-avigad
+problems:
+- odd-order-theorem
+methods:
+- formalization
+- proof-checking
+- mathematical-library
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2013-07-22'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The peer-reviewed ITP paper documents the complete Coq formalization; machine checking reflects Coq verification and does not mean Chronicle independently replayed the full development.
+      zh-CN: >-
+        ITP 同行评议论文记录了完整 Coq 形式化；machine_checked 表示由 Coq 完成验证，并不表示 Chronicle 独立重放全部工程。
+
+sources:
+- id: itp-odd-order-2013
+  tier: S1
+  type: paper
+  title: A Machine-Checked Proof of the Odd Order Theorem
+  url: https://doi.org/10.1007/978-3-642-39634-2_14
+  primary: true
+  published_date: '2013-07-22'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- odd-order-theorem
+- coq
+- formalization
+- machine-checked-proof
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

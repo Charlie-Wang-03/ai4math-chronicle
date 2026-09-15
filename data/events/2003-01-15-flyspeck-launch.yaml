@@ -1,0 +1,134 @@
+schema_version: 1
+id: evt-2003-flyspeck-launch
+slug: flyspeck-project-launch
+
+title:
+  en: Flyspeck launches a long-term formal proof of the Kepler conjecture
+  zh-CN: Flyspeck 启动克卜勒猜想长期形式化证明工程
+
+dates:
+  event: '2003-01-15'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Flyspeck turned the verification of a major, computer-intensive mathematical proof into a long-running collaborative formalization project spanning proof text, computation and reusable proof-assistant infrastructure.
+    zh-CN: >-
+      Flyspeck 将一个重要且高度依赖计算的数学证明验证问题转化为长期协作形式化工程，同时覆盖数学文本、计算过程与可复用证明助手基础设施。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Thomas Hales announced the Flyspeck project at the January 15–18, 2003 Joint Mathematics Meetings in Baltimore with the goal of producing a fully formal proof of the Kepler conjecture; because the exact announcement day is not preserved in the cited record, the canonical date uses the meeting opening day.
+  zh-CN: >-
+    Thomas Hales 在 2003 年 1 月 15–18 日巴尔的摩 Joint Mathematics Meetings 上宣布 Flyspeck，目标是给出克卜勒猜想的完整形式证明；由于所引史料未保留具体宣布日，本条以会议开幕日作为 canonical 日期锚点。
+
+summary:
+  en: >-
+    The project aimed to formalize both the written mathematical argument and the computer calculations underlying Hales's proof, eventually using HOL Light and Isabelle.
+  zh-CN: >-
+    项目计划同时形式化 Hales 证明中的书面数学论证与计算机计算部分，最终主要使用 HOL Light 与 Isabelle 完成。
+
+why_it_matters:
+  en: >-
+    Flyspeck became a defining large-scale demonstration that proof assistants could audit extremely complex research mathematics end to end.
+  zh-CN: >-
+    Flyspeck 后来成为大型证明助手工程的代表案例，展示形式系统能够端到端审计极其复杂的研究数学。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Humans led the formalization while proof assistants executed trusted inference, proof checking and large verified computations.
+    zh-CN: >-
+      人类主导形式化，证明助手执行可信推理、证明检查与大规模验证计算。
+
+human_contribution:
+  description:
+    en: >-
+      Hales and an international collaboration organized the formalization, decomposed the original proof and implemented the formal libraries and verification pipeline.
+    zh-CN: >-
+      Hales 与国际协作团队组织形式化、拆解原始证明，并实现形式库与验证流程。
+
+systems:
+- flyspeck
+- hol-light
+- isabelle
+organizations: []
+people:
+- thomas-hales
+problems:
+- kepler-conjecture
+methods:
+- formalization
+- proof-checking
+- verified-computation
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2003-01-15'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The official published Flyspeck account states that Hales announced the project at the January 2003 Joint Mathematics Meetings; the AMS archive fixes the meeting to January 15–18.
+      zh-CN: >-
+        Flyspeck 官方发表记录说明 Hales 在 2003 年 1 月 Joint Mathematics Meetings 宣布该项目；AMS 档案确认会议日期为 1 月 15–18 日。
+
+sources:
+- id: flyspeck-official-account-2017
+  tier: S1
+  type: paper
+  title: A formal proof of the Kepler conjecture
+  url: https://arxiv.org/abs/1501.02155
+  primary: true
+  published_date: '2015-01-09'
+  accessed_at: '2026-09-15'
+- id: ams-jmm-baltimore-2003
+  tier: S2
+  type: official_announcement
+  title: Joint Mathematics Meetings Baltimore 2003 program
+  url: https://jointmathematicsmeetings.org/meetings/national/jmm-archive/2074_program_saturday.html
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors:
+  - evt-2014-flyspeck-completion
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- flyspeck
+- kepler-conjecture
+- formalization
+- proof-assistant
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

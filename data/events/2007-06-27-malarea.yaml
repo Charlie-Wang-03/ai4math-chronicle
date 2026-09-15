@@ -1,0 +1,126 @@
+schema_version: 1
+id: evt-2007-malarea
+slug: malarea-learning-reasoning-loop
+
+title:
+  en: MaLARea closes a machine-learning and theorem-proving feedback loop over large theories
+  zh-CN: MaLARea 在大型理论上建立机器学习与定理证明反馈循环
+
+dates:
+  event: '2007-06-27'
+  first_public_claim: '2007-06-27'
+  paper_release: '2007-06-27'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      MaLARea made large-theory reasoning explicitly iterative: machine learning selects useful knowledge, ATP systems attempt proofs, and successful results are fed back into the learner for subsequent problems.
+    zh-CN: >-
+      MaLARea 将大型理论推理明确组织为迭代循环：机器学习选择有用知识，ATP 尝试证明，成功结果再反馈给学习器用于后续问题。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Josef Urban's MaLARea paper was published with the ESARLT 2007 workshop proceedings on 27 June 2007 and described a metasystem combining machine learning, automated theorem proving and model finding for large theories.
+  zh-CN: >-
+    Josef Urban 的 MaLARea 论文于 2007 年 6 月 27 日随 ESARLT 2007 proceedings 发布，描述一个结合机器学习、自动定理证明与模型查找的大型理论元系统。
+
+summary:
+  en: >-
+    The system repeatedly trains relevance models from existing proofs, invokes automated provers on selected premises and incorporates newly found proofs into subsequent learning rounds.
+  zh-CN: >-
+    系统反复从已有证明训练相关性模型，在筛选前提上调用自动证明器，并把新找到的证明纳入后续学习轮次。
+
+why_it_matters:
+  en: >-
+    The deduction–learning feedback loop became a core pattern for later self-improving theorem-proving systems and anticipated modern search-and-learning agents for formal mathematics.
+  zh-CN: >-
+    “演绎—学习”反馈循环后来成为自我改进式定理证明系统的核心范式，并预示现代形式数学中的 search-and-learning agents。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Learned premise-selection models and automated provers interacted in an autonomous loop that improved from previous proof results.
+    zh-CN: >-
+      学习式前提选择模型与自动证明器在自主循环中协作，并从此前证明结果持续改进。
+
+human_contribution:
+  description:
+    en: >-
+      Josef Urban designed the metasystem, learning/reasoning loop, data interfaces and experiments.
+    zh-CN: >-
+      Josef Urban 设计元系统、学习/推理循环、数据接口与实验。
+
+systems:
+- malarea
+organizations:
+- charles-university
+people:
+- josef-urban
+problems:
+- large-theory-theorem-proving
+methods:
+- machine-learning
+- premise-selection
+- automated-theorem-proving
+- model-finding
+- feedback-loop
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2007-06-27'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The CEUR proceedings establish the MaLARea system and its learning/reasoning architecture.
+      zh-CN: >-
+        CEUR proceedings 确认 MaLARea 系统及其学习/推理架构。
+
+sources:
+- id: ceur-malarea-2007
+  tier: S1
+  type: paper
+  title: 'MaLARea: a Metasystem for Automated Reasoning in Large Theories'
+  url: https://ceur-ws.org/Vol-257/05_Urban.pdf
+  primary: true
+  published_date: '2007-06-27'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2007-mptp-challenge
+timeline:
+  featured: true
+  significance: primary
+tags:
+- malarea
+- machine-learning
+- theorem-proving
+- large-theory-reasoning
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

@@ -1,0 +1,126 @@
+schema_version: 1
+id: evt-2010-sledgehammer
+slug: sledgehammer-isabelle-atp
+
+title:
+  en: Sledgehammer makes external automated provers practical inside Isabelle
+  zh-CN: Sledgehammer 将外部自动证明器实用化地接入 Isabelle
+
+dates:
+  event: '2010-07-14'
+  first_public_claim: null
+  paper_release: '2010-07-14'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Sledgehammer established a practical architecture for combining an interactive proof assistant with powerful external ATP systems, automatically selecting relevant facts and turning external search into proof-assistant-native progress.
+    zh-CN: >-
+      Sledgehammer 建立了交互式证明助手与强大外部 ATP 的实用结合架构，自动选择相关事实，并把外部搜索转化为证明助手内部可用的证明进展。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    At PAAR-2010 on 14 July 2010, Lawrence Paulson and Jasmin Blanchette presented three years of experience with Sledgehammer as a practical link between Isabelle and automatic theorem provers.
+  zh-CN: >-
+    Lawrence Paulson 与 Jasmin Blanchette 在 2010 年 7 月 14 日 PAAR-2010 报告三年 Sledgehammer 使用经验，将其定位为 Isabelle 与自动定理证明器之间的实用桥梁。
+
+summary:
+  en: >-
+    Sledgehammer selects relevant Isabelle facts, translates proof obligations to external ATPs and uses the returned information to help construct proof-assistant-checked proofs.
+  zh-CN: >-
+    Sledgehammer 自动选择 Isabelle 相关事实，将证明义务翻译给外部 ATP，并利用返回结果帮助构造由证明助手检查的证明。
+
+why_it_matters:
+  en: >-
+    The system made strong automation accessible in routine interactive proving and became an important precedent for later AI assistants that orchestrate external search while retaining trusted proof checking.
+  zh-CN: >-
+    该系统让强自动化进入日常交互式证明流程，并成为后来“外部搜索 + 可信证明检查”AI 助手的重要前史。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Automated premise selection and external provers supplied substantial proof search, while Isabelle retained the trusted formal proof environment.
+    zh-CN: >-
+      自动前提选择与外部证明器承担大量证明搜索，Isabelle 保留可信形式证明环境。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the translation, relevance filtering, prover orchestration and proof reconstruction mechanisms; users supplied formal goals and integrated resulting proof steps.
+    zh-CN: >-
+      研究者设计翻译、相关性筛选、证明器编排与证明重建机制；用户提供形式目标并整合所得证明步骤。
+
+systems:
+- sledgehammer
+- isabelle
+organizations:
+- university-of-cambridge
+people:
+- lawrence-paulson
+- jasmin-blanchette
+problems:
+- interactive-theorem-proving
+methods:
+- premise-selection
+- automated-theorem-proving
+- proof-reconstruction
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2010-07-14'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The PAAR-2010 program and proceedings document Sledgehammer's practical Isabelle/ATP workflow; machine checking refers to proof-assistant validation of reconstructed formal proofs, not independent reproduction of reported usage results.
+      zh-CN: >-
+        PAAR-2010 议程与 proceedings 记录了 Sledgehammer 的 Isabelle/ATP 工作流；machine_checked 指重建形式证明由证明助手验证，并不表示 Chronicle 独立复现使用结果。
+
+sources:
+- id: paar-sledgehammer-2010
+  tier: S1
+  type: paper
+  title: Three Years of Experience with Sledgehammer, a Practical Link between Automatic and Interactive Theorem Provers
+  url: https://www.eprover.org/EVENTS/PAAR-2010/paar-2010.html
+  primary: true
+  published_date: '2010-07-14'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- sledgehammer
+- isabelle
+- automated-theorem-proving
+- interactive-theorem-proving
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

@@ -1,0 +1,128 @@
+schema_version: 1
+id: evt-2013-holyhammer
+slug: holyhammer-hol-light-ai-atp
+
+title:
+  en: HOL(y)Hammer combines learned premise selection with ATPs for HOL Light
+  zh-CN: HOL(y)Hammer 将学习式前提选择与 ATP 接入 HOL Light
+
+dates:
+  event: '2013-09-19'
+  first_public_claim: '2013-09-19'
+  paper_release: '2013-09-19'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      HOL(y)Hammer deployed machine-learned premise selection and multiple automated reasoning systems as an online service for large HOL Light developments, bringing large-theory AI/ATP methods into routine formal mathematics workflows.
+    zh-CN: >-
+      HOL(y)Hammer 将机器学习前提选择与多个自动推理系统部署为面向大型 HOL Light 工程的在线服务，使 large-theory AI/ATP 方法进入日常形式数学流程。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Kaliszyk and Urban released HOL(y)Hammer as an online AI/ATP service on 19 September 2013, combining several premise-selection methods trained on project proofs with multiple automated theorem provers.
+  zh-CN: >-
+    Kaliszyk 与 Urban 于 2013 年 9 月 19 日发布 HOL(y)Hammer，将基于项目证明训练的多种前提选择方法与多个自动定理证明器结合为在线 AI/ATP 服务。
+
+summary:
+  en: >-
+    Users could upload HOL Light developments and ask the service to attack new conjectures using learned relevance models, parallel ATP combinations and decision procedures.
+  zh-CN: >-
+    用户可以上传 HOL Light 工程，并让服务使用学习式相关性模型、并行 ATP 组合与决策过程处理新猜想。
+
+why_it_matters:
+  en: >-
+    It provided an early mature example of machine learning embedded in a proof-assistant service over substantial formal mathematical libraries.
+  zh-CN: >-
+    它较早展示了机器学习如何作为成熟服务嵌入证明助手，并在大规模形式数学库上工作。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Learned models selected premises and automated provers searched for proofs, while users supplied target conjectures inside HOL Light projects.
+    zh-CN: >-
+      学习模型选择前提，自动证明器搜索证明，用户在 HOL Light 工程中提供目标猜想。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers engineered the service, learning methods, ATP portfolio, project processing and interfaces.
+    zh-CN: >-
+      研究者工程化实现服务、学习方法、ATP 组合、项目处理与交互接口。
+
+systems:
+- holyhammer
+- hol-light
+organizations:
+- university-of-innsbruck
+people:
+- cezary-kaliszyk
+- josef-urban
+problems:
+- higher-order-logic-theorem-proving
+methods:
+- machine-learning
+- premise-selection
+- automated-theorem-proving
+- portfolio-reasoning
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2013-09-19'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record establishes the service architecture and reported HOL Light deployment.
+      zh-CN: >-
+        arXiv 研究记录确认服务架构及论文报告的 HOL Light 部署。
+
+sources:
+- id: arxiv-holyhammer-1309.4962
+  tier: S1
+  type: paper
+  title: 'HOL(y)Hammer: Online ATP Service for HOL Light'
+  url: https://arxiv.org/abs/1309.4962
+  primary: true
+  published_date: '2013-09-19'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- holyhammer
+- hol-light
+- premise-selection
+- machine-learning
+- automated-theorem-proving
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

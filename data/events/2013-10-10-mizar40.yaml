@@ -1,0 +1,129 @@
+schema_version: 1
+id: evt-2013-mizar40
+slug: mizar40-ai-atp
+
+title:
+  en: MizAR 40 scales AI/ATP methods across the full Mizar Mathematical Library
+  zh-CN: MizAR 40 将 AI/ATP 方法扩展到完整 Mizar Mathematical Library
+
+dates:
+  event: '2013-10-10'
+  first_public_claim: '2013-10-10'
+  paper_release: '2013-10-10'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- benchmark
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      MizAR 40 demonstrated that a suite of learned premise-selection and ATP methods could operate at the scale of the entire Mizar Mathematical Library, turning large formal mathematics into an online AI-assisted reasoning service and corpus-wide evaluation surface.
+    zh-CN: >-
+      MizAR 40 展示多种学习式前提选择与 ATP 方法能够在完整 Mizar Mathematical Library 规模上运行，把大型形式数学转化为在线 AI 辅助推理服务与全库评测面。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The 10 October 2013 paper reported an AI/ATP system that automatically proved 40% of the theorems in the then-current Mizar Mathematical Library within 30 seconds on a 14-CPU machine.
+  zh-CN: >-
+    2013 年 10 月 10 日论文报告一个 AI/ATP 系统，在 14 CPU 机器上以 30 秒限制自动证明当时 Mizar Mathematical Library 中 40% 的定理。
+
+summary:
+  en: >-
+    The system scaled fast learned relevance methods over roughly 150,000 MML formulas and deployed them within the MizAR online reasoning service.
+  zh-CN: >-
+    系统把快速学习式相关性方法扩展到约 15 万条 MML 公式，并部署到 MizAR 在线推理服务。
+
+why_it_matters:
+  en: >-
+    The work made corpus-scale formal mathematics a practical target for integrated machine learning and automated reasoning rather than a small benchmark exercise.
+  zh-CN: >-
+    该工作使全库规模的形式数学成为机器学习与自动推理集成的实际目标，而不再只是小型 benchmark 实验。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Learned relevance methods selected useful formulas and ATP systems attempted proofs across the library at scale.
+    zh-CN: >-
+      学习式相关性方法选择有用公式，ATP 系统在全库规模上自动尝试证明。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers engineered and optimized the learning methods, ATP portfolio, Mizar translations and online service.
+    zh-CN: >-
+      研究者设计并优化学习方法、ATP 组合、Mizar 翻译与在线服务。
+
+systems:
+- mizar
+- mizar40
+- mizar-online-reasoning
+organizations:
+- university-of-innsbruck
+people:
+- cezary-kaliszyk
+- josef-urban
+problems:
+- large-theory-theorem-proving
+methods:
+- machine-learning
+- premise-selection
+- automated-theorem-proving
+- large-theory-reasoning
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2013-10-10'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv paper establishes the system and reports the corpus-scale evaluation; Chronicle does not treat the percentage as independently reproduced.
+      zh-CN: >-
+        arXiv 论文确认系统并报告全库评测；Chronicle 不把该百分比视为独立复现结果。
+
+sources:
+- id: arxiv-mizar40-1310.2805
+  tier: S1
+  type: paper
+  title: MizAR 40 for Mizar 40
+  url: https://arxiv.org/abs/1310.2805
+  primary: true
+  published_date: '2013-10-10'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- mizar
+- mizar40
+- machine-learning
+- automated-theorem-proving
+- large-theory-reasoning
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []
