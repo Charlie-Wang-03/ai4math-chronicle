@@ -130,7 +130,8 @@ sources:
 artifacts: []
 
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2016-deepmath
   successors:
   - evt-2018-rl-theorem-proving
   related: []
