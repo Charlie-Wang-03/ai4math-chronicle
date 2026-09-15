@@ -118,7 +118,8 @@ sources:
 artifacts: []
 
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2017-deep-network-guided-proof-search
   successors: []
   related:
   - evt-2018-tactictoe
