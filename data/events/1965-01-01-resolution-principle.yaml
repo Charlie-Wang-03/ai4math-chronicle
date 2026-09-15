@@ -1,0 +1,108 @@
+schema_version: 1
+id: evt-1965-resolution-principle
+slug: resolution-principle
+
+title:
+  en: Robinson's resolution principle establishes a machine-oriented foundation for automated deduction
+  zh-CN: Robinson 归结原理建立面向机器的自动演绎基础
+
+dates:
+  event: '1965-01-01'
+  first_public_claim: '1965-01-01'
+  paper_release: '1965-01-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: Robinson's resolution principle supplied a machine-oriented inference rule and unification-centered framework that became foundational to automated first-order theorem proving.
+    zh-CN: Robinson 的归结原理提供面向机器的推理规则与以合一为核心的框架，成为一阶自动定理证明的基础方法之一。
+
+mathematical_novelty:
+  type: new_algorithm
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: J. A. Robinson introduced a resolution-based procedure for first-order predicate logic designed to improve the efficiency and practical applicability of machine theorem proving.
+  zh-CN: J. A. Robinson 提出面向一阶谓词逻辑的归结式过程，旨在提升机器定理证明的效率与实际适用范围。
+
+summary:
+  en: The method combines substitution through unification with a single resolution inference scheme, replacing less efficient alternating procedures used in earlier machine theorem proving.
+  zh-CN: 该方法通过合一处理代换，并使用统一的归结推理模式，取代早期机器定理证明中效率较低的交替过程。
+
+why_it_matters:
+  en: Resolution became one of the central algorithmic foundations of automated deduction, logic programming and many later theorem-proving systems.
+  zh-CN: 归结后来成为自动演绎、逻辑程序设计及大量后续定理证明系统的核心算法基础之一。
+
+ai_role:
+  level: computation_only
+  description:
+    en: The event concerns an algorithmic inference method designed for machine reasoning rather than an AI system producing a new mathematical theorem.
+    zh-CN: 该事件的核心是为机器推理设计的算法推理方法，而非 AI 系统产生新的数学定理。
+
+human_contribution:
+  description:
+    en: J. A. Robinson developed and analyzed the resolution principle and its machine-oriented logical formulation.
+    zh-CN: J. A. Robinson 提出并分析归结原理及其面向机器的逻辑形式。
+
+systems: []
+organizations:
+- argonne-national-laboratory
+people:
+- j-a-robinson
+problems:
+- first-order-theorem-proving
+methods:
+- resolution
+- unification
+- automated-deduction
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1965-01-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The JACM research record establishes the resolution principle and its machine-theorem-proving motivation.
+      zh-CN: JACM 研究记录确认了归结原理及其机器定理证明动机。
+
+sources:
+- id: acm-robinson-resolution-1965
+  tier: S1
+  type: paper
+  title: A Machine-Oriented Logic Based on the Resolution Principle
+  url: https://doi.org/10.1145/321250.321253
+  primary: true
+  published_date: '1965-01-01'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- resolution
+- unification
+- automated-deduction
+- theorem-proving
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

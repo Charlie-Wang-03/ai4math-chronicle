@@ -1,0 +1,110 @@
+schema_version: 1
+id: evt-1960-geometry-theorem-machine
+slug: geometry-theorem-machine
+
+title:
+  en: The Geometry Theorem Machine demonstrates heuristic proof search in Euclidean geometry
+  zh-CN: Geometry Theorem Machine 展示欧氏几何中的启发式证明搜索
+
+dates:
+  event: '1960-05-03'
+  first_public_claim: '1960-05-03'
+  paper_release: '1960-05-03'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: Gelernter's Geometry Theorem Machine extended early symbolic AI from propositional-style proof search to diagram-grounded Euclidean geometry and documented machine solutions to textbook and examination problems.
+    zh-CN: Gelernter 的 Geometry Theorem Machine 将早期符号 AI 从命题式证明搜索推进到结合图形信息的欧氏几何，并记录了机器解决教材与考试几何题的能力。
+
+mathematical_novelty:
+  type: rediscovery
+interfaces:
+- symbolic
+- hybrid
+
+claim:
+  en: The 1960 public evaluation documented that the IBM 704 Geometry Theorem Machine had begun proving elementary Euclidean geometry theorems in spring 1959 and subsequently solved a range of textbook and examination problems.
+  zh-CN: 1960 年公开评估记录表明，IBM 704 上的 Geometry Theorem Machine 在 1959 年春已开始证明初等欧氏几何定理，随后解决了多类教材与考试问题。
+
+summary:
+  en: The system combined symbolic deduction with geometric information to prune implausible proof paths, demonstrating an early form of domain-informed heuristic reasoning.
+  zh-CN: 系统把符号演绎与几何信息结合，用于剪除不合理的证明路径，展示了早期的领域知识驱动启发式推理。
+
+why_it_matters:
+  en: It broadened the scope of AI theorem proving beyond formal logic exercises and showed how mathematical structure and auxiliary representations could guide search.
+  zh-CN: 它把 AI 定理证明从形式逻辑练习扩展到几何问题，并展示数学结构与辅助表示如何引导搜索。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: The program selected deductions and searched for geometry proofs using symbolic and geometric heuristics.
+    zh-CN: 程序利用符号与几何启发式自动选择推导并搜索几何证明。
+
+human_contribution:
+  description:
+    en: Herbert Gelernter and collaborators designed the representation, heuristics, implementation and evaluation problems.
+    zh-CN: Herbert Gelernter 与合作者设计问题表示、启发式、实现与评测题目。
+
+systems:
+- geometry-theorem-machine
+organizations:
+- ibm-research
+people:
+- herbert-gelernter
+problems:
+- euclidean-geometry-theorem-proving
+methods:
+- heuristic-search
+- symbolic-reasoning
+- geometric-reasoning
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1960-05-03'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: IBM and the published research record document the system and its 1959–1960 geometry experiments.
+      zh-CN: IBM 与公开研究记录确认了该系统及其 1959–1960 年几何实验。
+
+sources:
+- id: ibm-geometry-theorem-machine-1960
+  tier: S1
+  type: paper
+  title: Empirical Explorations of the Geometry Theorem Machine
+  url: https://research.ibm.com/publications/empirical-explorations-of-the-geometry-theorem-machine
+  primary: true
+  published_date: '1960-05-03'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- geometry
+- theorem-proving
+- symbolic-ai
+- heuristic-search
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

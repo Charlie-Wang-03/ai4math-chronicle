@@ -1,0 +1,111 @@
+schema_version: 1
+id: evt-1972-lcf
+slug: lcf-proof-checker
+
+title:
+  en: LCF establishes an implemented proof-checking architecture for formal reasoning
+  zh-CN: LCF 建立可实现的形式推理证明检查架构
+
+dates:
+  event: '1972-01-01'
+  first_public_claim: '1972-01-01'
+  paper_release: '1972-01-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- infrastructure
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: Robin Milner's implemented Logic for Computable Functions proof checker established an influential architecture for interactive theorem proving and later trusted-kernel proof assistants.
+    zh-CN: Robin Milner 实现的 Logic for Computable Functions 证明检查器建立了影响深远的交互式定理证明架构，并成为后续可信内核证明助手的重要前史。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Milner's 1972 publication described an implemented proof-checker for Scott's Logic for Computable Functions and demonstrated formal reasoning about recursively defined programs.
+  zh-CN: Milner 1972 年的论文描述了 Scott 的 Logic for Computable Functions 的已实现证明检查器，并展示对递归程序进行形式推理。
+
+summary:
+  en: LCF combined a formal logic with a programmatic proof-checking environment, helping establish the design pattern later associated with ML tactics and a small trusted inference kernel.
+  zh-CN: LCF 将形式逻辑与可编程证明检查环境结合，推动形成后来与 ML tactics 和小型可信推理内核相关的设计范式。
+
+why_it_matters:
+  en: The LCF lineage strongly influenced HOL, Isabelle and other proof assistants that later became central infrastructure for formalized mathematics and AI theorem proving.
+  zh-CN: LCF 谱系深刻影响 HOL、Isabelle 等证明助手，而这些系统后来成为形式化数学与 AI 定理证明的核心基础设施。
+
+ai_role:
+  level: computation_only
+  description:
+    en: The implemented system checked and supported formal derivations; humans still supplied substantial proof guidance.
+    zh-CN: 已实现系统负责检查并支持形式推导；人类仍提供大量证明引导。
+
+human_contribution:
+  description:
+    en: Robin Milner designed and implemented the proof-checking system and formalized example reasoning tasks.
+    zh-CN: Robin Milner 设计并实现证明检查系统，并形式化示例推理任务。
+
+systems:
+- lcf
+organizations:
+- university-of-edinburgh
+people:
+- robin-milner
+problems:
+- program-verification
+methods:
+- proof-checking
+- interactive-theorem-proving
+- typed-lambda-calculus
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1972-01-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The University of Edinburgh and ACM research record documents the implemented LCF proof checker.
+      zh-CN: 爱丁堡大学与 ACM 研究记录确认了已实现的 LCF 证明检查器。
+
+sources:
+- id: edinburgh-lcf-1972
+  tier: S1
+  type: paper
+  title: Implementation and Applications of Scott's Logic for Computable Functions
+  url: https://doi.org/10.1145/800235.807067
+  primary: true
+  published_date: '1972-01-01'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- lcf
+- proof-assistant
+- proof-checking
+- formal-methods
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

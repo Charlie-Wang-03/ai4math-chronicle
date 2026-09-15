@@ -1,0 +1,118 @@
+schema_version: 1
+id: evt-1977-am
+slug: am-automated-mathematician
+
+title:
+  en: AM explores automated mathematical concept formation and conjecture discovery
+  zh-CN: AM 探索自动数学概念形成与猜想发现
+
+dates:
+  event: '1977-08-22'
+  first_public_claim: '1977-08-22'
+  paper_release: '1977-08-22'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- discovery
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: Douglas Lenat's AM made automated mathematical discovery an explicit AI research program by using heuristic search to invent and prioritize mathematical concepts and formulate conjectures.
+    zh-CN: Douglas Lenat 的 AM 把自动数学发现明确发展为 AI 研究方向，通过启发式搜索创造和筛选数学概念并形成猜想。
+
+mathematical_novelty:
+  type: new_conjecture
+interfaces:
+- symbolic
+- informal
+
+claim:
+  en: At IJCAI-77, Lenat described AM, a program that conducted elementary mathematical exploration by defining new concepts, studying their properties and formulating conjectures under hundreds of heuristic rules.
+  zh-CN: Lenat 在 IJCAI-77 介绍 AM：该程序在数百条启发式规则引导下定义新概念、研究其性质并形成猜想，从而执行初等数学探索。
+
+summary:
+  en: AM maintained an agenda of potentially interesting mathematical tasks and used general heuristics to decide which concepts, examples and conjectures to explore next.
+  zh-CN: AM 维护潜在有趣数学任务的 agenda，并利用通用启发式决定下一步探索哪些概念、例子与猜想。
+
+why_it_matters:
+  en: It is an early direct ancestor of modern AI-for-mathematical-discovery work because the machine was tasked not merely with proving supplied statements but with shaping what mathematical objects and conjectures to investigate.
+  zh-CN: 它是现代 AI 数学发现的重要早期前史，因为机器不仅证明给定命题，还参与决定应该研究哪些数学对象与猜想。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: AM autonomously selected exploration tasks, generated concepts and formulated candidate conjectures using heuristic search.
+    zh-CN: AM 通过启发式搜索自主选择探索任务、生成概念并形成候选猜想。
+
+human_contribution:
+  description:
+    en: Douglas Lenat designed the representation, agenda mechanism and roughly 250 heuristic rules that structured AM's search.
+    zh-CN: Douglas Lenat 设计表示、agenda 机制以及约 250 条用于组织 AM 搜索的启发式规则。
+
+systems:
+- am
+organizations:
+- stanford-ai-lab
+people:
+- douglas-lenat
+problems:
+- automated-mathematical-discovery
+methods:
+- heuristic-search
+- concept-formation
+- conjecture-generation
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1977-08-22'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The IJCAI-77 proceedings and later Artificial Intelligence article document AM and its heuristic mathematical-discovery behavior.
+      zh-CN: IJCAI-77 proceedings 与后续 Artificial Intelligence 论文记录了 AM 及其启发式数学发现行为。
+
+sources:
+- id: ijcai-am-1977
+  tier: S1
+  type: paper
+  title: Automated Theory Formation in Mathematics
+  url: https://www.ijcai.org/Proceedings/77-2/Papers/094.pdf
+  primary: true
+  published_date: '1977-08-22'
+  accessed_at: '2026-09-15'
+- id: artint-lenat-ubiquity-discovery
+  tier: S1
+  type: paper
+  title: The ubiquity of discovery
+  url: https://doi.org/10.1016/0004-3702(77)90024-8
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- automated-mathematician
+- discovery
+- conjecture-generation
+- heuristic-search
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

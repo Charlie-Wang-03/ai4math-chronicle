@@ -1,0 +1,107 @@
+schema_version: 1
+id: evt-1961-saint
+slug: saint-symbolic-integration
+
+title:
+  en: SAINT applies heuristic AI to symbolic integration
+  zh-CN: SAINT 将启发式人工智能用于符号积分
+
+dates:
+  event: '1961-05-10'
+  first_public_claim: '1961-05-10'
+  paper_release: '1961-05-10'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: SAINT was an early AI system for mathematical problem solving that used heuristic search to perform symbolic integration rather than relying only on a fixed algebraic procedure.
+    zh-CN: SAINT 是早期 AI 数学问题求解系统之一，通过启发式搜索执行符号积分，而非仅依赖固定代数算法。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- symbolic
+
+claim:
+  en: James Slagle's Symbolic Automatic INTegrator applied heuristic problem-solving strategies to freshman-calculus integration problems and documented the system in a Lincoln Laboratory report dated 10 May 1961.
+  zh-CN: James Slagle 的 Symbolic Automatic INTegrator 将启发式问题求解策略用于大学基础微积分积分题，并在 1961 年 5 月 10 日的 Lincoln Laboratory 报告中记录该系统。
+
+summary:
+  en: SAINT represented integration as a search problem, using rules of thumb to choose transformations and substitutions that reduced an integral toward solvable forms.
+  zh-CN: SAINT 将积分表示为搜索问题，利用经验规则选择变换与代换，把积分逐步化为可求解形式。
+
+why_it_matters:
+  en: It is an early bridge between symbolic mathematics and AI-style heuristic reasoning, anticipating later symbolic mathematical problem-solving systems.
+  zh-CN: 它是符号数学与 AI 式启发推理之间的早期桥梁，并预示了后来的符号数学问题求解系统。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: The program chose integration transformations through automated heuristic search.
+    zh-CN: 程序通过自动启发式搜索选择积分变换。
+
+human_contribution:
+  description:
+    en: James Slagle designed the heuristic knowledge, search strategy, implementation and evaluation.
+    zh-CN: James Slagle 设计启发知识、搜索策略、实现与评测。
+
+systems:
+- saint
+organizations:
+- mit-lincoln-laboratory
+people:
+- james-slagle
+problems:
+- symbolic-integration
+methods:
+- heuristic-search
+- symbolic-computation
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1961-05-10'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The Lincoln Laboratory report and later JACM paper document SAINT and its integration experiments.
+      zh-CN: Lincoln Laboratory 报告与后续 JACM 论文记录了 SAINT 及其积分实验。
+
+sources:
+- id: acm-saint-symbolic-integration
+  tier: S1
+  type: paper
+  title: A Heuristic Program that Solves Symbolic Integration Problems in Freshman Calculus
+  url: https://doi.org/10.1145/321186.321193
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- saint
+- symbolic-integration
+- heuristic-search
+- symbolic-ai
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []
