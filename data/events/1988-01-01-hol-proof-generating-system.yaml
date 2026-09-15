@@ -1,0 +1,120 @@
+schema_version: 1
+id: evt-1988-hol
+slug: hol-proof-generating-system
+
+title:
+  en: HOL consolidates LCF-style mechanized proof for higher-order logic
+  zh-CN: HOL 将 LCF 式机械证明体系扩展并整合到高阶逻辑
+
+dates:
+  event: '1988-01-01'
+  first_public_claim: null
+  paper_release: '1988-01-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: HOL adapted the LCF architecture to classical higher-order logic and became a major proof-assistant family supporting mechanized mathematics, hardware verification and later AI theorem-proving research.
+    zh-CN: HOL 将 LCF 架构应用于经典高阶逻辑，发展为重要证明助手家族，承载机械化数学、硬件验证以及后来的 AI 定理证明研究。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Mike Gordon's public system descriptions documented HOL as an LCF-derived proof-generating system for higher-order logic; the 1988 archival chapter provides a precise publication anchor after the January 1987 Cambridge technical report.
+  zh-CN: Mike Gordon 的公开系统文献将 HOL 描述为源自 LCF 的高阶逻辑 proof-generating system；1988 年档案性章节为 1987 年 1 月 Cambridge technical report 之后的系统记录提供精确出版锚点。
+
+summary:
+  en: HOL combined a small trusted logical basis, ML programming and tactics/tacticals for goal-directed interactive proof in higher-order logic.
+  zh-CN: HOL 结合小型可信逻辑基础、ML 编程与 tactics/tacticals，在高阶逻辑中支持目标驱动的交互式证明。
+
+why_it_matters:
+  en: HOL and its descendants supplied formal corpora and interactive environments later used by systems such as TacticToe, HOL(y)Hammer and learning-based theorem provers.
+  zh-CN: HOL 及其后继系统提供的形式语料与交互环境后来被 TacticToe、HOL(y)Hammer 等学习式定理证明系统广泛使用。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: Humans directed proofs through tactics while the system mechanically executed inference and checked resulting derivations.
+    zh-CN: 人类通过 tactics 引导证明，系统机械执行推理并检查最终推导。
+
+human_contribution:
+  description:
+    en: Mike Gordon and the HOL/LCF community designed the logic, trusted implementation and tactic-based interaction model.
+    zh-CN: Mike Gordon 与 HOL/LCF 社群设计逻辑、可信实现及基于 tactic 的交互模式。
+
+systems:
+- hol
+- lcf
+organizations:
+- university-of-cambridge
+people:
+- mike-gordon
+problems:
+- higher-order-logic-theorem-proving
+methods:
+- interactive-theorem-proving
+- tactics
+- trusted-kernel
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1988-01-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The archival HOL chapter and Cambridge technical-report record establish the system architecture and higher-order logic implementation.
+      zh-CN: HOL 档案章节与 Cambridge technical-report 记录确认了系统架构与高阶逻辑实现。
+
+sources:
+- id: hol-proof-generating-system-1988
+  tier: S1
+  type: paper
+  title: 'HOL: A Proof Generating System for Higher-Order Logic'
+  url: https://doi.org/10.1007/978-1-4613-2007-4_3
+  primary: true
+  published_date: '1988-01-01'
+  accessed_at: '2026-09-15'
+- id: cambridge-hol-tr103
+  tier: S1
+  type: paper
+  title: 'HOL: A proof generating system for higher-order logic — Technical Report 103'
+  url: https://www.cl.cam.ac.uk/techreports/UCAM-CL-TR-103.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- hol
+- proof-assistant
+- higher-order-logic
+- formalization
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

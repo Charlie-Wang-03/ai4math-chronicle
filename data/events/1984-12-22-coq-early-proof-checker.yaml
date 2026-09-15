@@ -1,0 +1,113 @@
+schema_version: 1
+id: evt-1984-coq
+slug: coq-early-proof-checker
+
+title:
+  en: The Calculus of Constructions proof checker begins the Coq lineage
+  zh-CN: Calculus of Constructions 证明检查器开启 Coq 谱系
+
+dates:
+  event: '1984-12-22'
+  first_public_claim: '1984-12-22'
+  paper_release: null
+  artifact_release: '1984-12-22'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: The early Calculus of Constructions checker became the direct lineage of Coq, establishing dependent-type proof checking as a durable platform for formal mathematics and mechanized reasoning.
+    zh-CN: 早期 Calculus of Constructions 检查器直接发展为 Coq，建立了依赖类型证明检查这一长期用于形式数学与机械推理的平台路线。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: The official Coq/Rocq history records version 1.10 as frozen on 22 December 1984, during the initial implementation of a Calculus of Constructions proof checker by Thierry Coquand and Gérard Huet.
+  zh-CN: Coq/Rocq 官方历史记录显示，Thierry Coquand 与 Gérard Huet 初步实现 Calculus of Constructions 证明检查器期间，版本 1.10 于 1984 年 12 月 22 日冻结。
+
+summary:
+  en: The system provided machine checking for proofs in the Calculus of Constructions and evolved through successive implementations into Coq and later Rocq.
+  zh-CN: 该系统为 Calculus of Constructions 中的证明提供机器检查，并经过持续演化成为 Coq，后更名为 Rocq。
+
+why_it_matters:
+  en: Coq later supported major formalized-mathematics achievements and became an important environment for machine-learning and AI-assisted theorem proving.
+  zh-CN: Coq 后来承载多项重要形式化数学成果，并成为机器学习与 AI 辅助定理证明的重要环境。
+
+ai_role:
+  level: computation_only
+  description:
+    en: The system mechanically checked formal proof terms; humans supplied the formal statements and proof constructions.
+    zh-CN: 系统机械检查形式证明项；形式陈述与证明构造主要由人类提供。
+
+human_contribution:
+  description:
+    en: Thierry Coquand, Gérard Huet and collaborators designed the type theory and implemented the early checker.
+    zh-CN: Thierry Coquand、Gérard Huet 及合作者设计类型理论并实现早期检查器。
+
+systems:
+- coq
+- calculus-of-constructions
+organizations:
+- inria
+people:
+- thierry-coquand
+- gerard-huet
+problems:
+- formal-proof-checking
+methods:
+- dependent-type-theory
+- proof-checking
+- calculus-of-constructions
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '1984-12-22'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: The official project history supplies the dated version record and describes the initial Calculus of Constructions implementation.
+      zh-CN: 官方项目历史提供了带日期的版本记录，并描述初始 Calculus of Constructions 实现。
+
+sources:
+- id: rocq-official-history-1984
+  tier: S2
+  type: official_announcement
+  title: Coq / Rocq historical notes
+  url: https://rocq-prover.org/doc/V8.20.1/refman/history.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- coq
+- proof-assistant
+- dependent-types
+- formalization
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []
