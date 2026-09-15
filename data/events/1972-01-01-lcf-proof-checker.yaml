@@ -3,8 +3,8 @@ id: evt-1972-lcf
 slug: lcf-proof-checker
 
 title:
-  en: LCF establishes an implemented proof-checking architecture for formal reasoning
-  zh-CN: LCF 建立可实现的形式推理证明检查架构
+  en: Stanford LCF demonstrates interactive machine checking for Scott's Logic for Computable Functions
+  zh-CN: Stanford LCF 展示 Scott 可计算函数逻辑的交互式机器证明检查
 
 dates:
   event: '1972-01-01'
@@ -23,8 +23,8 @@ event_types:
 significance:
   tier: H2
   rationale:
-    en: Robin Milner's implemented Logic for Computable Functions proof checker established an influential architecture for interactive theorem proving and later trusted-kernel proof assistants.
-    zh-CN: Robin Milner 实现的 Logic for Computable Functions 证明检查器建立了影响深远的交互式定理证明架构，并成为后续可信内核证明助手的重要前史。
+    en: Stanford LCF implemented Dana Scott's Logic for Computable Functions as an interactive proof checker with subgoaling and simplification, establishing practical experience that directly motivated the later Edinburgh LCF architecture.
+    zh-CN: Stanford LCF 将 Dana Scott 的 Logic for Computable Functions 实现为带有子目标分解与化简机制的交互式证明检查器，为后来 Edinburgh LCF 的架构创新提供了直接实践基础。
 
 mathematical_novelty:
   type: tooling_only
@@ -33,39 +33,44 @@ interfaces:
 - symbolic
 
 claim:
-  en: Milner's 1972 publication described an implemented proof-checker for Scott's Logic for Computable Functions and demonstrated formal reasoning about recursively defined programs.
-  zh-CN: Milner 1972 年的论文描述了 Scott 的 Logic for Computable Functions 的已实现证明检查器，并展示对递归程序进行形式推理。
+  en: Robin Milner's January 1972 publication described an implemented proof checker for Scott's Logic for Computable Functions and showed formal reasoning about recursively defined programs; contemporary and retrospective records identify this system as Stanford LCF, developed at Stanford in 1971–1972 with Richard Weyhrauch and Malcolm Newey.
+  zh-CN: Robin Milner 于 1972 年 1 月发表的论文描述了 Scott 的 Logic for Computable Functions 的已实现证明检查器，并展示了对递归定义程序的形式推理；同期与后来的历史资料均将这一系统识别为 Stanford LCF，由 Milner、Richard Weyhrauch 与 Malcolm Newey 于 1971–1972 年在 Stanford 开发。
 
 summary:
-  en: LCF combined a formal logic with a programmatic proof-checking environment, helping establish the design pattern later associated with ML tactics and a small trusted inference kernel.
-  zh-CN: LCF 将形式逻辑与可编程证明检查环境结合，推动形成后来与 ML tactics 和小型可信推理内核相关的设计范式。
+  en: Stanford LCF let users state proof goals, decompose them into subgoals and apply simplification and inference commands while the machine checked the resulting formal derivations. It predated the extensible ML metalanguage, abstract theorem type and programmable tactics that characterized Edinburgh LCF.
+  zh-CN: Stanford LCF 允许用户提出证明目标、分解子目标，并通过化简与推理命令构造由机器检查的形式推导。它早于 Edinburgh LCF 中可扩展的 ML 元语言、抽象 theorem 类型与可编程 tactics。
 
 why_it_matters:
-  en: The LCF lineage strongly influenced HOL, Isabelle and other proof assistants that later became central infrastructure for formalized mathematics and AI theorem proving.
-  zh-CN: LCF 谱系深刻影响 HOL、Isabelle 等证明助手，而这些系统后来成为形式化数学与 AI 定理证明的核心基础设施。
+  en: The system made interactive machine-assisted proof concrete and exposed limitations in memory use and fixed proof commands. Those limitations became design targets for Edinburgh LCF, which in turn shaped the trusted-kernel architecture of many later proof assistants.
+  zh-CN: 该系统把交互式机器辅助证明落实为可运行工具，同时暴露了证明对象占用内存以及证明命令固定等限制；这些问题随后成为 Edinburgh LCF 的直接设计目标，并间接塑造大量后续证明助手的可信内核架构。
 
 ai_role:
   level: computation_only
   description:
-    en: The implemented system checked and supported formal derivations; humans still supplied substantial proof guidance.
-    zh-CN: 已实现系统负责检查并支持形式推导；人类仍提供大量证明引导。
+    en: The machine checked formal derivations and provided subgoaling and simplification support, while users supplied substantial proof direction.
+    zh-CN: 机器负责检查形式推导并提供子目标分解与化简支持，证明方向仍主要由用户给出。
 
 human_contribution:
   description:
-    en: Robin Milner designed and implemented the proof-checking system and formalized example reasoning tasks.
-    zh-CN: Robin Milner 设计并实现证明检查系统，并形式化示例推理任务。
+    en: Robin Milner, Richard Weyhrauch, Malcolm Newey and collaborators developed the Stanford LCF proof-checking system and its applications to reasoning about programs.
+    zh-CN: Robin Milner、Richard Weyhrauch、Malcolm Newey 与合作者开发 Stanford LCF 证明检查系统及其程序推理应用。
 
 systems:
+- stanford-lcf
 - lcf
 organizations:
-- university-of-edinburgh
+- stanford-university
 people:
 - robin-milner
+- richard-weyhrauch
+- malcolm-newey
 problems:
 - program-verification
 methods:
 - proof-checking
 - interactive-theorem-proving
+- subgoaling
+- simplification
 - typed-lambda-calculus
 
 verification:
@@ -77,11 +82,11 @@ verification:
     status: paper_released
     evidence_level: E2
     note:
-      en: The University of Edinburgh and ACM research record documents the implemented LCF proof checker.
-      zh-CN: 爱丁堡大学与 ACM 研究记录确认了已实现的 LCF 证明检查器。
+      en: The ACM publication documents the implemented proof checker, while Milner's later historical account distinguishes the 1971–1972 Stanford LCF system from the Edinburgh LCF project that began in 1974.
+      zh-CN: ACM 论文记录了已实现的证明检查器；Milner 后来的历史回顾则明确区分 1971–1972 年的 Stanford LCF 与 1974 年开始的 Edinburgh LCF 项目。
 
 sources:
-- id: edinburgh-lcf-1972
+- id: acm-stanford-lcf-1972
   tier: S1
   type: paper
   title: Implementation and Applications of Scott's Logic for Computable Functions
@@ -89,16 +94,26 @@ sources:
   primary: true
   published_date: '1972-01-01'
   accessed_at: '2026-09-15'
+- id: milner-how-ml-evolved-1982
+  tier: S2
+  type: paper
+  title: How ML Evolved
+  url: https://www.pure.ed.ac.uk/ws/portalfiles/portal/17084823/Milner_R_1982_How_ML_Evolved.pdf
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
 
 artifacts: []
 relationships:
   predecessors: []
-  successors: []
+  successors:
+  - evt-1979-edinburgh-lcf
   related: []
 timeline:
   featured: true
   significance: primary
 tags:
+- stanford-lcf
 - lcf
 - proof-assistant
 - proof-checking
@@ -108,4 +123,11 @@ editorial:
   last_reviewed: '2026-09-15'
   reviewers:
   - Charlie-Wang-03
-corrections: []
+corrections:
+- date: '2026-09-15'
+  summary:
+    en: The record was narrowed from a generic LCF/trusted-kernel account to Stanford LCF. ML, the abstract theorem type and programmable tactics belong to the later Edinburgh LCF lineage rather than the 1972 Stanford system.
+    zh-CN: 本记录由笼统的 LCF / trusted-kernel 叙述校准为 Stanford LCF；ML、抽象 theorem 类型与可编程 tactics 属于后来的 Edinburgh LCF 谱系，而非 1972 年 Stanford 系统。
+  source_ids:
+  - acm-stanford-lcf-1972
+  - milner-how-ml-evolved-1982
