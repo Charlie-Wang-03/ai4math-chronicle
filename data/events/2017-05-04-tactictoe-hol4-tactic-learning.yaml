@@ -1,0 +1,184 @@
+schema_version: 1
+id: evt-2018-tactictoe
+slug: tactictoe-hol4-tactic-learning
+
+title:
+  en: TacticToe learns tactic-level proof search from human HOL4 proofs
+  zh-CN: TacticToe 从人工 HOL4 证明中学习 tactic 级证明搜索
+
+dates:
+  event: '2017-05-04'
+  first_public_claim: '2017-05-04'
+  paper_release: '2017-05-04'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      TacticToe was an important early proof-assistant-native learning system that used recorded human HOL4 proofs to guide tactic-level proof search directly inside a mature interactive theorem prover. The initial LPAR-21 publication combined learned tactic and premise selection with modified A* search; an expanded 2018 study developed the same system further with Monte Carlo tree search. Together the work established a line later continued by reinforcement-learning systems such as TacticZero.
+    zh-CN: >-
+      TacticToe 是较早具有代表性的证明助手原生学习系统之一，利用既有人工 HOL4 证明，在成熟交互式定理证明器内部直接引导 tactic 级证明搜索。LPAR-21 的初始版本将学习式 tactic / premise selection 与改进 A* 搜索结合，2018 年扩展研究又进一步以蒙特卡洛树搜索发展同一系统；这一路线后来由 TacticZero 等强化学习系统继续推进。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Thibault Gauthier, Cezary Kaliszyk and Josef Urban introduced TacticToe in the LPAR-21 proceedings published on 4 May 2017. The system learned tactic and premise choices from previous HOL4 proofs and used modified A* search to explore tactic-level proof paths, re-proving 39% of 7,902 HOL4 theorems within five seconds in the reported evaluation. A later expanded study published in 2018 replaced the search with Monte Carlo tree search and reported stronger results on the HOL4 standard library.
+  zh-CN: >-
+    Thibault Gauthier、Cezary Kaliszyk 与 Josef Urban 在 2017 年 5 月 4 日发布的 LPAR-21 proceedings 中提出 TacticToe。系统从既有 HOL4 证明中学习 tactic 与前提选择，并使用改进 A* 搜索探索 tactic 级证明路径；论文报告在五秒限制下重新证明了 7,902 个 HOL4 定理中的 39%。2018 年发布的扩展研究进一步把搜索机制发展为蒙特卡洛树搜索，并在 HOL4 标准库上报告了更强结果。
+
+summary:
+  en: >-
+    TacticToe records tactic-level proof information from HOL4, learns which proof actions are promising in a new goal state, and searches over complete tactic sequences directly in higher-order logic rather than translating every problem to first-order logic. The 2017 system used a modified A*-style search with tactic prediction and small-scale hammering; the later expanded implementation developed the search machinery further and remains available in the HOL4 repository.
+  zh-CN: >-
+    TacticToe 从 HOL4 中记录 tactic 级证明信息，学习在新目标状态下哪些证明动作更有希望，并直接在高阶逻辑环境中搜索完整 tactic 序列，而不是把每个问题都翻译到一阶逻辑。2017 年系统采用改进 A* 风格搜索并结合 tactic prediction 与小规模 hammering；后续扩展实现进一步发展搜索机制，相关代码至今仍可在 HOL4 仓库中检查。
+
+why_it_matters:
+  en: >-
+    The work demonstrated that machine learning could guide proof-assistant-native tactic search rather than only premise filtering for an external automated prover. This combination of learned action prediction, search and kernel-checked proof construction became a recurring design pattern in later neural interactive theorem proving.
+  zh-CN: >-
+    该工作展示了机器学习可以直接引导证明助手原生的 tactic 搜索，而不仅仅为外部自动证明器筛选前提。“学习式动作预测 + 搜索 + 内核检查证明”的组合后来成为神经交互式定理证明中反复出现的设计范式。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Learned predictors ranked tactics and supporting premises while the search algorithm explored proof paths; successful proof scripts were constructed and checked inside HOL4.
+    zh-CN: >-
+      学习式预测器负责排序 tactics 与支持前提，搜索算法负责探索证明路径；成功的证明脚本最终在 HOL4 内构造并接受检查。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the proof-trace recording, learned predictors, tactic-level search procedure, HOL4 integration and evaluation protocol, while the learning signal came from existing human-written HOL4 proofs.
+    zh-CN: >-
+      研究者设计证明轨迹记录、学习式预测器、tactic 级搜索机制、HOL4 集成与评测协议；学习信号来自既有人工编写的 HOL4 证明。
+
+systems:
+- tactictoe
+- hol4
+organizations: []
+people:
+- thibault-gauthier
+- cezary-kaliszyk
+- josef-urban
+- ramana-kumar
+- michael-norrish
+problems:
+- hol4-theorem-proving
+methods:
+- tactic-prediction
+- premise-selection
+- a-star-search
+- monte-carlo-tree-search
+- proof-search
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2017-05-04'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The LPAR-21 proceedings establish the initial public TacticToe system, its learned tactic-level proof search and the reported HOL4 evaluation. Machine checking refers to proof scripts accepted by HOL4 and does not imply independent reproduction of the reported success rate.
+      zh-CN: >-
+        LPAR-21 proceedings 确认了首次公开的 TacticToe 系统、其学习式 tactic 级证明搜索以及论文报告的 HOL4 评测。machine_checked 仅指证明脚本通过 HOL4 检查，并不表示论文报告的成功率已获得独立复现。
+  - date: '2018-04-02'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The expanded 2018 research record documents the later Monte Carlo tree-search version and stronger HOL4 standard-library evaluation without changing the identity of the underlying TacticToe milestone.
+      zh-CN: >-
+        2018 年扩展研究记录描述了后续蒙特卡洛树搜索版本及更强的 HOL4 标准库评测，但并未构成另一个独立的 TacticToe 历史事件。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The maintained public HOL4 repository contains the TacticToe implementation, recording workflow, evaluation support and usage instructions. E3 denotes inspectable artifacts rather than independent verification of every experimental claim.
+      zh-CN: >-
+        持续维护的 HOL4 公开仓库包含 TacticToe 实现、证明记录流程、评测支持与使用说明。E3 表示存在可直接检查的 artifacts，而非对全部实验结论的独立验证。
+
+sources:
+- id: easychair-tactictoe-lpar2017
+  tier: S1
+  type: paper
+  title: 'TacticToe: Learning to Reason with HOL4 Tactics — LPAR-21'
+  url: https://easychair.org/publications/paper/WsM
+  primary: true
+  published_date: '2017-05-04'
+  accessed_at: '2026-09-15'
+- id: arxiv-tactictoe-1804.00596
+  tier: S1
+  type: paper
+  title: 'TacticToe: Learning to Prove with Tactics'
+  url: https://arxiv.org/abs/1804.00596
+  primary: true
+  published_date: '2018-04-02'
+  accessed_at: '2026-09-15'
+- id: github-hol4-tactictoe
+  tier: S1
+  type: repository
+  title: HOL4 TacticToe implementation
+  url: https://github.com/HOL-Theorem-Prover/HOL/tree/develop/src/tactictoe
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: tactictoe-hol4-code
+  kind: code
+  title: TacticToe implementation in the HOL4 repository
+  url: https://github.com/HOL-Theorem-Prover/HOL/tree/develop/src/tactictoe
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2021-tacticzero
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- tactictoe
+- hol4
+- theorem-proving
+- tactic-learning
+- premise-selection
+- proof-search
+- machine-learning
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections:
+- date: '2026-09-15'
+  summary:
+    en: >-
+      Corrected the canonical event date from 2018-04-02 to 2017-05-04 after locating the LPAR-21 proceedings publication of the initial TacticToe system, and revised the record to distinguish the 2017 A*-guided version from the expanded 2018 Monte Carlo tree-search study while preserving the stable Event ID.
+    zh-CN: >-
+      在确认 LPAR-21 proceedings 已于 2017-05-04 公开初始 TacticToe 系统后，将 canonical event date 从 2018-04-02 纠正为 2017-05-04，并区分 2017 年 A* 引导版本与 2018 年蒙特卡洛树搜索扩展研究，同时保留稳定 Event ID。
+  source_ids:
+  - easychair-tactictoe-lpar2017
+  - arxiv-tactictoe-1804.00596
