@@ -100,9 +100,11 @@ sources:
 
 artifacts: []
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-1979-edinburgh-lcf
   successors: []
-  related: []
+  related:
+  - evt-1988-hol
 timeline:
   featured: true
   significance: primary

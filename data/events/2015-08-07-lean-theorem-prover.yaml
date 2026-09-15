@@ -151,7 +151,8 @@ artifacts:
 
 relationships:
   predecessors: []
-  successors: []
+  successors:
+  - evt-2017-mathlib3
   related: []
 
 timeline:

@@ -1,0 +1,160 @@
+schema_version: 1
+id: evt-1979-edinburgh-lcf
+slug: edinburgh-lcf-trusted-kernel-tactics
+
+title:
+  en: Edinburgh LCF consolidates the trusted-kernel, ML and tactics architecture for interactive theorem proving
+  zh-CN: Edinburgh LCF 确立可信内核、ML 与 tactics 的交互式定理证明架构
+
+dates:
+  event: '1979-12-01'
+  first_public_claim: null
+  paper_release: '1979-12-01'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Edinburgh LCF turned lessons from Stanford LCF into a durable proof-assistant architecture: a small trusted inference interface protected by an abstract theorem type, an ML metalanguage for extending proof procedures, and tactics/tacticals for programmable goal-directed proof. These ideas became architectural foundations for HOL, Isabelle and many later interactive theorem provers.
+    zh-CN: >-
+      Edinburgh LCF 将 Stanford LCF 的实践经验发展为持久的证明助手架构：以抽象 theorem 类型保护小型可信推理接口，以 ML 元语言扩展证明过程，并用 tactics / tacticals 编排目标驱动证明。这些思想后来成为 HOL、Isabelle 等大量交互式定理证明器的架构基础。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The Springer monograph Edinburgh LCF: A Mechanized Logic of Computation, published on 1 December 1979, documented the Edinburgh LCF system and its ML-based proof environment. Milner's retrospective account dates the Edinburgh LCF project to 1974 and explains that ML was created as a metalanguage for machine-assisted proof after experience with Stanford LCF.
+  zh-CN: >-
+    Springer 专著 Edinburgh LCF: A Mechanized Logic of Computation 于 1979 年 12 月 1 日出版，系统记录 Edinburgh LCF 及其基于 ML 的证明环境。Milner 的历史回顾把 Edinburgh LCF 项目的启动时间定在 1974 年，并说明 ML 是在 Stanford LCF 实践基础上为机器辅助证明设计的元语言。
+
+summary:
+  en: >-
+    Edinburgh LCF avoided retaining complete proof objects by exposing theorem values through a restricted abstract interface whose constructors corresponded to axioms and inference rules. Users could write higher-level proof procedures in the typed functional language ML, while tactics and tacticals supported reusable backward proof strategies.
+  zh-CN: >-
+    Edinburgh LCF 不再依赖保存完整证明对象，而是通过受限的抽象接口产生 theorem 值，其构造操作对应公理与推理规则。用户可以在有类型函数式语言 ML 中编写高层证明过程，并利用 tactics 与 tacticals 复用和组合反向证明策略。
+
+why_it_matters:
+  en: >-
+    This separation between a small trusted logical core and powerful untrusted proof automation became one of the central engineering patterns of proof assistants. It made extensible automation compatible with strong assurance and created the lineage from LCF to HOL and Isabelle that later supplied machine-readable formal environments for AI theorem proving.
+  zh-CN: >-
+    这种“小型可信逻辑核心 + 强大但无需纳入可信基的证明自动化”分层成为证明助手最核心的工程范式之一，使可扩展自动化与高可信验证能够共存，并形成 LCF → HOL / Isabelle 的谱系，为后来的 AI 定理证明提供机器可读形式环境。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Humans formulated goals and wrote or selected tactics, while the system executed tactic programs, performed inference and admitted theorem values only through the trusted logical interface.
+    zh-CN: >-
+      人类提出目标并编写或选择 tactics，系统执行 tactic 程序与推理，并只允许通过可信逻辑接口产生 theorem 值。
+
+human_contribution:
+  description:
+    en: >-
+      Robin Milner and the Edinburgh LCF team, including Michael Gordon, Christopher Wadsworth, Malcolm Newey and Lockwood Morris, designed the trusted architecture, ML metalanguage and tactic-based interaction model.
+    zh-CN: >-
+      Robin Milner 与 Edinburgh LCF 团队，包括 Michael Gordon、Christopher Wadsworth、Malcolm Newey 和 Lockwood Morris，设计可信架构、ML 元语言与基于 tactic 的交互模式。
+
+systems:
+- edinburgh-lcf
+- lcf
+organizations:
+- university-of-edinburgh
+people:
+- robin-milner
+- mike-gordon
+- christopher-wadsworth
+- malcolm-newey
+- lockwood-morris
+problems:
+- interactive-theorem-proving
+- program-verification
+methods:
+- trusted-kernel
+- abstract-theorem-type
+- ml
+- tactics
+- tacticals
+- interactive-theorem-proving
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1979-12-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        Springer's archival monograph supplies an exact publication anchor for the mature Edinburgh LCF system; Milner's retrospective history distinguishes its 1974 project origin from Stanford LCF in 1971–1972.
+      zh-CN: >-
+        Springer 档案专著为成熟 Edinburgh LCF 系统提供精确出版锚点；Milner 的历史回顾则明确区分其 1974 年项目起点与 1971–1972 年的 Stanford LCF。
+
+sources:
+- id: springer-edinburgh-lcf-1979
+  tier: S1
+  type: paper
+  title: 'Edinburgh LCF: A Mechanized Logic of Computation'
+  url: https://doi.org/10.1007/3-540-09724-4
+  primary: true
+  published_date: '1979-12-01'
+  accessed_at: '2026-09-15'
+- id: milner-how-ml-evolved-1982
+  tier: S2
+  type: paper
+  title: How ML Evolved
+  url: https://www.pure.ed.ac.uk/ws/portalfiles/portal/17084823/Milner_R_1982_How_ML_Evolved.pdf
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: gordon-lcf-commentary-2015
+  tier: S3
+  type: independent_analysis
+  title: Tactics for mechanized reasoning — commentary on Milner's LCF architecture
+  url: https://pmc.ncbi.nlm.nih.gov/articles/PMC4360087/
+  primary: false
+  published_date: '2015-04-13'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors:
+  - evt-1972-lcf
+  successors:
+  - evt-1988-hol
+  - evt-1988-isabelle
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- edinburgh-lcf
+- lcf
+- ml
+- tactics
+- trusted-kernel
+- proof-assistant
+- interactive-theorem-proving
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
