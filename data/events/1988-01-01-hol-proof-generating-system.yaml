@@ -8,7 +8,7 @@ title:
 
 dates:
   event: '1988-01-01'
-  first_public_claim: '1987-01-01'
+  first_public_claim: null
   paper_release: '1988-01-01'
   artifact_release: null
   independently_verified: null
