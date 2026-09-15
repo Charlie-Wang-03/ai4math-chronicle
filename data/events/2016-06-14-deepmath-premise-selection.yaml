@@ -1,0 +1,172 @@
+schema_version: 1
+id: evt-2016-deepmath
+slug: deepmath-premise-selection
+
+title:
+  en: DeepMath brings deep sequence models to large-scale premise selection
+  zh-CN: DeepMath 将深度序列模型引入大规模前提选择
+
+dates:
+  event: '2016-06-14'
+  first_public_claim: '2016-06-14'
+  paper_release: '2016-06-14'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      DeepMath was an important early large-scale application of deep neural sequence models to premise selection over formal mathematics. By learning directly from Mizar theorem and proof corpora without relying on the hand-engineered feature pipelines that dominated earlier systems, it helped establish deep learning as a practical representation-and-ranking approach for large-theory theorem proving and directly preceded neural guidance inside prover search.
+    zh-CN: >-
+      DeepMath 是较早把深度神经序列模型大规模应用于形式数学前提选择的重要工作。它直接从 Mizar 定理与证明语料中学习，而不再主要依赖此前系统中的人工特征工程，为大型理论定理证明建立了深度学习表示与排序的具体路线，并直接早于后来把神经引导接入证明器内部搜索的工作。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Alexander A. Alemi, François Chollet, Niklas Eén, Geoffrey Irving, Christian Szegedy and Josef Urban trained neural sequence models to rank candidate premises for Mizar conjectures. The paper reported competitive large-scale premise-selection results using a two-stage architecture that avoided the hand-engineered features used by earlier state-of-the-art systems.
+  zh-CN: >-
+    Alexander A. Alemi、François Chollet、Niklas Eén、Geoffrey Irving、Christian Szegedy 与 Josef Urban 训练神经序列模型，为 Mizar 猜想排序候选前提。论文报告其两阶段架构在大规模前提选择上取得有竞争力的结果，同时避免了此前先进系统所依赖的人工设计特征。
+
+summary:
+  en: >-
+    DeepMath encodes conjectures and candidate premises with recurrent and convolutional neural architectures and learns whether a premise is useful for a target theorem. The release turned large formal proof corpora into training data for neural relevance models, making representation learning a central component of automated theorem-proving pipelines.
+  zh-CN: >-
+    DeepMath 使用循环与卷积神经架构编码猜想和候选前提，并学习判断某个前提是否有助于目标定理。该工作把大型形式证明语料转化为神经相关性模型的训练数据，使表示学习成为自动定理证明流程中的核心组件之一。
+
+why_it_matters:
+  en: >-
+    Premise selection is a major bottleneck when automated provers operate over large mathematical libraries. DeepMath showed that neural models could learn useful relevance signals at this scale, supplying a methodological bridge from earlier feature-based learning to later neural proof-search guidance, graph representations and learned retrieval systems for formal mathematics.
+  zh-CN: >-
+    当自动证明器面对大型数学库时，前提选择是关键瓶颈之一。DeepMath 展示了神经模型能够在这一规模上学习有效的相关性信号，为从早期特征工程式学习走向后来的神经证明搜索引导、图表示与形式数学学习式检索系统提供了方法桥梁。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Neural models ranked candidate formal premises for target conjectures, supplying learned guidance to downstream automated theorem proving rather than constructing complete proofs by themselves.
+    zh-CN: >-
+      神经模型为目标猜想排序候选形式前提，为后续自动定理证明提供学习式引导，而不是独立构造完整证明。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the premise-selection task formulation, neural sequence architectures, training corpus construction, evaluation protocol and integration with large-theory theorem-proving workflows.
+    zh-CN: >-
+      研究者设计前提选择任务、神经序列架构、训练语料构建、评测协议以及与大型理论自动定理证明流程的集成方式。
+
+systems:
+- deepmath
+- mizar
+organizations:
+- google-research
+- czech-technical-university
+people:
+- alexander-a-alemi
+- francois-chollet
+- niklas-een
+- geoffrey-irving
+- christian-szegedy
+- josef-urban
+problems:
+- premise-selection
+- automated-theorem-proving
+- mizar-theorem-proving
+methods:
+- neural-premise-selection
+- sequence-modeling
+- convolutional-neural-network
+- recurrent-neural-network
+- representation-learning
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2016-06-14'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and NeurIPS research records establish the DeepMath premise-selection approach and the reported Mizar evaluation. This records the public research claim and does not imply independent reproduction of the reported metrics.
+      zh-CN: >-
+        arXiv 与 NeurIPS 研究记录确认了 DeepMath 的前提选择方法及论文报告的 Mizar 评测。这一记录确认公开研究主张，并不表示论文报告的指标已获得独立复现。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public TensorFlow Deepmath repository retains the `deepmath/premises` implementation with neural premise-selection models. E3 denotes inspectable research code rather than independent reproduction of the published benchmark results.
+      zh-CN: >-
+        TensorFlow 公开 Deepmath 仓库保留 `deepmath/premises` 前提选择实现及相关神经模型。E3 表示存在可直接检查的研究代码，而非论文 benchmark 结果已获独立复现。
+
+sources:
+- id: arxiv-deepmath-1606.04442
+  tier: S1
+  type: paper
+  title: DeepMath - Deep Sequence Models for Premise Selection
+  url: https://arxiv.org/abs/1606.04442
+  primary: true
+  published_date: '2016-06-14'
+  accessed_at: '2026-09-15'
+- id: neurips-deepmath-2016
+  tier: S1
+  type: paper
+  title: DeepMath - Deep Sequence Models for Premise Selection — NIPS 2016
+  url: https://proceedings.neurips.cc/paper/2016/hash/f197002b9a0853eca5e046d9ca4663d5-Abstract.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-tensorflow-deepmath-premises
+  tier: S1
+  type: repository
+  title: TensorFlow Deepmath premise-selection implementation
+  url: https://github.com/tensorflow/deepmath/tree/master/deepmath/premises
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: deepmath-premise-selection-code
+  kind: code
+  title: Deepmath neural premise-selection implementation
+  url: https://github.com/tensorflow/deepmath/tree/master/deepmath/premises
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2017-deep-network-guided-proof-search
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- deepmath
+- premise-selection
+- mizar
+- theorem-proving
+- deep-learning
+- formal-mathematics
+- sequence-models
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

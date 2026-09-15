@@ -1,0 +1,150 @@
+schema_version: 1
+id: evt-2016-semantic-parsing-math
+slug: semantic-parsing-mathematics
+
+title:
+  en: Statistical and semantic parsing advances early mathematical autoformalization
+  zh-CN: 统计与语义解析推进早期数学自动形式化
+
+dates:
+  event: '2016-11-29'
+  first_public_claim: '2016-11-29'
+  paper_release: '2016-11-29'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      This work was an important early autoformalization milestone because it treated the mapping from ambiguous, informalized mathematical expressions to formal syntax as a learnable parsing problem and combined statistical structure prediction with formal semantic checks. It established a concrete pre-neural-machine-translation route from informal mathematical text toward machine-checkable representations and directly preceded later Mizar autoformalization systems.
+    zh-CN: >-
+      该工作是早期自动形式化的重要里程碑之一：它把从带歧义的 informalized 数学表达映射到形式语法的问题明确建模为可学习的解析任务，并将统计结构预测与形式语义检查结合。它在神经机器翻译路线之前就建立了从非形式数学文本走向机器可检查表示的具体方案，并直接早于后来的 Mizar 自动形式化系统。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    Cezary Kaliszyk, Josef Urban and Jiří Vyskočil proposed a context-based parser for mathematical expressions that learned deep parse trees from aligned informal/formal corpora and pruned candidate parses using type checking and large-theory automated theorem proving. The paper reported substantial improvements over earlier parsing results on the Flyspeck-derived evaluation.
+  zh-CN: >-
+    Cezary Kaliszyk、Josef Urban 与 Jiří Vyskočil 提出一种面向数学表达的上下文解析方法：从对齐的 informal / formal 语料中学习深层解析树，并利用类型检查与大型理论自动定理证明对候选解析进行语义剪枝。论文报告该方法在基于 Flyspeck 的评测上显著改善了此前的解析结果。
+
+summary:
+  en: >-
+    The system learns how ambiguous mathematical notation is parsed from aligned corpora and then uses formal semantic constraints to reject syntactically plausible but mathematically ill-typed or unsupported interpretations. This creates a hybrid statistical-symbolic pipeline in which learning proposes formal structures and theorem-proving machinery helps validate them.
+  zh-CN: >-
+    该系统从对齐语料中学习如何解析有歧义的数学记号，再使用形式语义约束排除语法上合理但类型不成立或缺乏支持的解释。由此形成统计学习与符号推理结合的混合流程：学习模型提出形式结构，类型检查和定理证明机制帮助筛选与验证候选。
+
+why_it_matters:
+  en: >-
+    Autoformalization depends on bridging human mathematical notation and formal proof languages. This work showed before modern neural translation and LLMs that aligned mathematical corpora plus formal semantic feedback could make that interface empirically tractable, establishing a lineage that later moved toward neural translation and large-language-model formalization.
+  zh-CN: >-
+    自动形式化的核心难点之一，是连接人类数学记号与形式证明语言。该工作在现代神经翻译和 LLM 之前就展示了：对齐数学语料与形式语义反馈可以把这一接口问题转化为可实验研究任务，并形成后来走向神经翻译与大语言模型形式化的历史谱系。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Statistical learning produced candidate formal parse trees from informalized mathematical expressions, while type checking and automated theorem proving supplied machine-executable semantic filtering of those candidates.
+    zh-CN: >-
+      统计学习模型从 informalized 数学表达生成候选形式解析树，类型检查与自动定理证明则为这些候选提供机器可执行的语义筛选。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers constructed aligned corpora, designed the context-based parser and semantic-pruning pipeline, selected formal checking components and evaluated the resulting system on Flyspeck-derived material.
+    zh-CN: >-
+      研究者构建对齐语料、设计上下文解析器与语义剪枝流程、选择形式检查组件，并在 Flyspeck 衍生数据上评测系统。
+
+systems:
+- semantic-parsing-math
+- hol-light
+organizations:
+- university-of-innsbruck
+- czech-technical-university
+people:
+- cezary-kaliszyk
+- josef-urban
+- jiri-vyskocil
+problems:
+- mathematical-autoformalization
+- mathematical-semantic-parsing
+methods:
+- statistical-parsing
+- context-based-learning
+- aligned-corpus-learning
+- type-checking
+- automated-theorem-proving
+- semantic-pruning
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2016-11-29'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record establishes the context-based mathematical parsing method and the reported Flyspeck-derived evaluation. E2 records a public research result and does not imply independent reproduction or validation of every generated parse.
+      zh-CN: >-
+        arXiv 研究记录确认了上下文数学解析方法以及论文报告的 Flyspeck 衍生评测。E2 表示已有公开研究结果，并不表示所有生成解析都获得独立复现或验证。
+
+sources:
+- id: arxiv-semantic-parsing-math-1611.09703
+  tier: S1
+  type: paper
+  title: Semantic Parsing of Mathematics by Context-based Learning from Aligned Corpora and Theorem Proving
+  url: https://arxiv.org/abs/1611.09703
+  primary: true
+  published_date: '2016-11-29'
+  accessed_at: '2026-09-15'
+- id: ai4reason-semantic-parsing-2016
+  tier: S2
+  type: official_announcement
+  title: AI4REASON 2016 publication record — Semantic Parsing of Mathematics
+  url: https://ai4reason.org/activities.html
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2018-neural-mizar-autoformalization
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- autoformalization
+- semantic-parsing
+- informal-mathematics
+- formal-mathematics
+- flyspeck
+- statistical-learning
+- theorem-proving
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

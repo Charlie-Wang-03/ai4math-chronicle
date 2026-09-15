@@ -118,7 +118,8 @@ sources:
 artifacts: []
 
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2016-semantic-parsing-math
   successors:
   - evt-2022-autoformalization-llm
   related: []
