@@ -1,0 +1,174 @@
+schema_version: 1
+id: evt-2015-lean
+slug: lean-theorem-prover-cade-2015
+
+title:
+  en: Lean is presented at CADE-25 as an open theorem prover for formal mathematics
+  zh-CN: Lean 在 CADE-25 作为面向形式数学的开放证明器公开展示
+
+dates:
+  event: '2015-08-07'
+  first_public_claim: null
+  paper_release: '2015-07-30'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- infrastructure
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Lean established a new dependent-type proof-assistant platform explicitly designed to combine interactive theorem proving with automation, laying the technical foundation for the later Lean/mathlib ecosystem and a major share of modern AI-assisted formal mathematics.
+    zh-CN: >-
+      Lean 建立了新的依赖类型证明助手平台，并从设计上明确结合交互式定理证明与自动化，为后来的 Lean/mathlib 生态以及现代 AI 辅助形式数学的重要路线奠定技术基础。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    At CADE-25 on 7 August 2015, Leonardo de Moura and collaborators presented Lean as a new open-source theorem prover with a small trusted kernel based on dependent type theory and an explicit goal of bridging interactive and automated theorem proving. The Springer CADE-25 proceedings containing the system description were published on 30 July 2015. The official Lean history records the first repository commit in July 2013 and the official Lean 0.1 release in June 2014; because those earlier records are month-precision only, this Event uses the exact CADE presentation date as its canonical public anchor.
+  zh-CN: >-
+    2015 年 8 月 7 日 CADE-25 上，Leonardo de Moura 与合作者将 Lean 公开描述为一种新的开源定理证明器：它采用基于依赖类型理论的小型可信内核，并明确以连接交互式与自动定理证明为目标。收录该系统论文的 Springer CADE-25 proceedings 于 2015 年 7 月 30 日出版。Lean 官方历史记录其仓库首次 commit 于 2013 年 7 月、Lean 0.1 正式发布于 2014 年 6 月；由于这些更早记录仅精确到月份，本条采用具有精确日期的 CADE 展示作为 canonical 公开锚点。
+
+summary:
+  en: >-
+    Lean combined a small proof-checking kernel, an expressive dependent type theory, interactive proof development and extensible automation in one open platform intended for formalized mathematics as well as verification.
+  zh-CN: >-
+    Lean 在一个开放平台中结合小型证明检查内核、富表达力的依赖类型理论、交互式证明开发与可扩展自动化，并同时面向形式化数学与验证任务。
+
+why_it_matters:
+  en: >-
+    The system became a durable substrate for large formal mathematical libraries and later learning-based theorem provers, making its pre-2016 introduction essential historical context for the Chronicle's later Lean-centered AI4Math milestones.
+  zh-CN: >-
+    该系统后来成为大型形式数学库与学习式定理证明器的长期基础，因此其 2016 年以前的形成是理解 Chronicle 后续大量 Lean 相关 AI4Math 里程碑所必需的历史背景。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Lean's trusted kernel mechanically checks formal proof terms, while its proof language and automation support construction of proofs; humans supplied the mathematical statements, formalizations and system design.
+    zh-CN: >-
+      Lean 的可信内核机械检查形式证明项，其证明语言与自动化支持证明构造；数学陈述、形式化内容与系统设计主要由人类提供。
+
+human_contribution:
+  description:
+    en: >-
+      Leonardo de Moura, Soonho Kong, Jeremy Avigad, Floris van Doorn, Jakob von Raumer and collaborators designed and implemented the early Lean system, its kernel, elaborator, automation interfaces and mathematical applications.
+    zh-CN: >-
+      Leonardo de Moura、Soonho Kong、Jeremy Avigad、Floris van Doorn、Jakob von Raumer 与合作者设计并实现早期 Lean 系统，包括内核、elaborator、自动化接口及数学应用。
+
+systems:
+- lean
+organizations:
+- microsoft-research
+- carnegie-mellon-university
+people:
+- leonardo-de-moura
+- soonho-kong
+- jeremy-avigad
+- floris-van-doorn
+- jakob-von-raumer
+problems:
+- formal-mathematical-knowledge
+- interactive-theorem-proving
+methods:
+- dependent-type-theory
+- proof-checking
+- interactive-theorem-proving
+- automated-theorem-proving
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2015-07-30'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        Springer published the CADE-25 proceedings containing the Lean system description, documenting the architecture, goals and use of the prover in formal mathematics.
+      zh-CN: >-
+        Springer 出版收录 Lean 系统论文的 CADE-25 proceedings，记录其架构、目标及在形式数学中的使用。
+  - date: '2015-08-07'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The official CADE presentation, official project history and preserved open-source Lean 3 repository make the early system lineage and implementation directly inspectable. The exact June 2014 Lean 0.1 release day is not inferred from month-only historical metadata.
+      zh-CN: >-
+        CADE 官方展示、项目官方历史与保留的开源 Lean 3 仓库使早期系统谱系与实现可直接检查；本记录不根据只有月份精度的历史元数据推断 2014 年 6 月 Lean 0.1 的具体发布日期。
+
+sources:
+- id: cade-lean-system-2015
+  tier: S1
+  type: paper
+  title: The Lean Theorem Prover (System Description)
+  url: https://doi.org/10.1007/978-3-319-21401-6_26
+  primary: true
+  published_date: '2015-07-30'
+  accessed_at: '2026-09-15'
+- id: lean-cade-presentation-2015
+  tier: S2
+  type: official_announcement
+  title: The Lean Theorem Prover — CADE 2015 presentation
+  url: https://lean-lang.org/presentations/20150807_CADE
+  primary: true
+  published_date: '2015-08-07'
+  accessed_at: '2026-09-15'
+- id: lean-official-history
+  tier: S2
+  type: official_announcement
+  title: A Brief History of Lean
+  url: https://lean-lang.org/fro/about/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: lean3-repository
+  tier: S1
+  type: repository
+  title: Lean 3 theorem prover repository
+  url: https://github.com/leanprover/lean3
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: lean3-source
+  kind: code
+  title: Lean 3 theorem prover source repository
+  url: https://github.com/leanprover/lean3
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- lean
+- proof-assistant
+- dependent-types
+- automated-theorem-proving
+- formalization
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
