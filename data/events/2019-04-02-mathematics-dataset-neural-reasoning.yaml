@@ -1,0 +1,167 @@
+schema_version: 1
+id: evt-2019-mathematics-dataset
+slug: mathematics-dataset-neural-reasoning
+
+title:
+  en: Mathematics Dataset establishes a large synthetic benchmark for neural mathematical reasoning
+  zh-CN: Mathematics Dataset 建立大规模合成神经数学推理基准
+
+dates:
+  event: '2019-04-02'
+  first_public_claim: '2019-04-02'
+  paper_release: '2019-04-02'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- benchmark
+- dataset
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Mathematics Dataset was an early large-scale benchmark built specifically to measure neural mathematical reasoning across arithmetic, algebra, calculus, probability and related school-level domains. Its generated training data and explicit interpolation/extrapolation tests made mathematical generalization a concrete evaluation target before later language-model benchmarks such as MATH and GSM8K.
+    zh-CN: >-
+      Mathematics Dataset 是较早专门用于衡量神经网络数学推理能力的大规模基准之一，覆盖算术、代数、微积分、概率等学校数学领域。它通过大规模生成式训练数据以及明确的插值 / 外推测试，把数学泛化能力转化为可系统评测的研究目标，并早于后来的 MATH、GSM8K 等语言模型数学基准。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- symbolic
+- numeric
+
+claim:
+  en: >-
+    DeepMind researchers released a task suite and generator for free-form textual mathematics questions spanning arithmetic, algebra, calculus, comparison, measurement, number theory-like elementary tasks, polynomials and probability, together with interpolation and extrapolation tests designed to measure both in-distribution performance and generalization beyond training difficulty.
+  zh-CN: >-
+    DeepMind 研究者发布了一套以自由文本问答表示的数学任务与生成器，覆盖算术、代数、微积分、比较、度量、初等数论类任务、多项式和概率，并设计插值与外推测试，用于同时衡量分布内表现以及超出训练难度的泛化能力。
+
+summary:
+  en: >-
+    The original release provided millions of generated question-answer pairs per module and evaluated contemporary sequence-to-sequence neural architectures on both ordinary test splits and extrapolation settings. The accompanying open-source generator made it possible to reproduce and extend the task distribution rather than treating the benchmark as a fixed static question list.
+  zh-CN: >-
+    原始版本为每个模块提供数百万规模的生成式问答样本，并在常规测试划分与外推设置上评估当时的序列到序列神经网络。配套开源生成器使研究者能够复现并扩展任务分布，而不仅依赖固定的静态题目列表。
+
+why_it_matters:
+  en: >-
+    The benchmark helped establish mathematical reasoning as a distinct neural-model evaluation problem with controlled difficulty and generalization tests. It provides an important pre-LLM reference point for the later progression from synthetic school mathematics to human-written word problems and competition mathematics.
+  zh-CN: >-
+    该基准推动数学推理成为具有受控难度和泛化测试的独立神经模型评测问题，并为后来从合成学校数学走向人工编写文字题和竞赛数学的 benchmark 演化提供了重要的前 LLM 历史参照。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      Neural sequence models were trained and evaluated on generated mathematics questions; the benchmark generator, task design, splits and evaluation methodology were created by researchers rather than discovered by an AI system.
+    zh-CN: >-
+      神经序列模型在生成式数学问题上训练与评测；基准生成器、任务设计、数据划分和评测方法由研究者构建，并非 AI 自主发现的数学成果。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the mathematical modules and generators, constructed interpolation and extrapolation regimes, released the code and data, and analyzed model performance and failure modes.
+    zh-CN: >-
+      研究者设计数学模块与生成器、构建插值和外推设置、发布代码与数据，并分析模型表现及失效模式。
+
+systems:
+- mathematics-dataset
+organizations:
+- deepmind
+people:
+- david-saxton
+- edward-grefenstette
+- felix-hill
+- pushmeet-kohli
+problems:
+- school-level-mathematical-reasoning
+methods:
+- synthetic-data-generation
+- sequence-to-sequence-learning
+- benchmarking
+- extrapolation-testing
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2019-04-02'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and ICLR research records establish the task suite, evaluation design and reported neural-model experiments.
+      zh-CN: >-
+        arXiv 与 ICLR 研究记录确认了任务套件、评测设计以及论文报告的神经模型实验。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The maintained public DeepMind repository exposes the dataset generator, pre-generated-data references and version-1.0 task structure. E3 records artifact-level inspectability rather than independent reproduction of every reported model result.
+      zh-CN: >-
+        持续公开的 DeepMind 仓库提供数据生成器、预生成数据入口与 Version 1.0 任务结构。E3 表示存在可直接检查的 artifact，并不代表论文报告的全部模型结果都已获得独立复现。
+
+sources:
+- id: arxiv-mathematics-dataset-1904.01557
+  tier: S1
+  type: paper
+  title: Analysing Mathematical Reasoning Abilities of Neural Models
+  url: https://arxiv.org/abs/1904.01557
+  primary: true
+  published_date: '2019-04-02'
+  accessed_at: '2026-09-15'
+- id: openreview-mathematics-dataset-iclr2019
+  tier: S1
+  type: paper
+  title: Analysing Mathematical Reasoning Abilities of Neural Models — ICLR 2019
+  url: https://openreview.net/forum?id=H1gR5iR5FX
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-deepmind-mathematics-dataset
+  tier: S1
+  type: repository
+  title: DeepMind Mathematics Dataset generator and release
+  url: https://github.com/google-deepmind/mathematics_dataset
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: mathematics-dataset-repository
+  kind: dataset
+  title: Mathematics Dataset generator and pre-generated-data release
+  url: https://github.com/google-deepmind/mathematics_dataset
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2021-math-benchmark
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- mathematics-dataset
+- benchmark
+- dataset
+- mathematical-reasoning
+- synthetic-data
+- generalization
+- neural-networks
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

@@ -13,7 +13,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: "2026-09-10"
-  last_updated: "2026-09-10"
+  last_updated: "2026-09-15"
 
 event_types: [infrastructure, dataset, system, formalization]
 
@@ -115,7 +115,10 @@ artifacts:
     url: https://github.com/lean-dojo/LeanDojo
 
 relationships:
-  predecessors: [evt-2020-gpt-f, evt-2021-minif2f]
+  predecessors:
+  - evt-2019-coqgym
+  - evt-2020-gpt-f
+  - evt-2021-minif2f
   successors: [evt-2024-deepseek-prover-v1-5, evt-2026-alphaproof-nexus]
   related: [evt-2023-copra]
 
@@ -127,7 +130,7 @@ tags: [lean, theorem-proving, retrieval, infrastructure, benchmark, open-source]
 
 editorial:
   created_at: "2026-09-10"
-  last_reviewed: '2026-09-11'
+  last_reviewed: '2026-09-15'
   reviewers: [Charlie-Wang-03]
 
 corrections: []

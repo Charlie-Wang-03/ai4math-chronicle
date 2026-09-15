@@ -1,0 +1,171 @@
+schema_version: 1
+id: evt-2019-coqgym
+slug: coqgym-astactic-theorem-proving
+
+title:
+  en: CoqGym and ASTactic scale learning-based interaction with the Coq proof assistant
+  zh-CN: CoqGym 与 ASTactic 扩展基于学习的 Coq 交互式定理证明
+
+dates:
+  event: '2019-05-21'
+  first_public_claim: '2019-05-21'
+  paper_release: '2019-05-21'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- benchmark
+- dataset
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      CoqGym turned a large collection of real Coq developments into an interactive machine-learning environment containing tens of thousands of human proofs, while ASTactic generated structured tactics rather than choosing only from a fixed tactic vocabulary. The environment became an important early template for later proof-assistant learning infrastructure.
+    zh-CN: >-
+      CoqGym 将大量真实 Coq 工程转化为包含数万条人工证明的交互式机器学习环境；ASTactic 则生成结构化 tactic，而不是只从固定 tactic 集合中选择。该环境成为后来证明助手学习基础设施的重要早期范式之一。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Kaiyu Yang and Jia Deng released CoqGym, a dataset and interactive environment built from 71,000 human-written proofs across 123 Coq projects, together with ASTactic, a deep-learning model that generates tactics as abstract syntax trees and was reported to prove held-out theorems beyond the reach of the compared built-in automated tactics.
+  zh-CN: >-
+    Kaiyu Yang 与 Jia Deng 发布 CoqGym：一个由 123 个 Coq 项目、约 71,000 条人工证明构成的数据集与交互环境，并提出 ASTactic 深度学习模型，以抽象语法树形式生成 tactics；论文报告其能够证明部分比较基线中的内置自动 tactic 无法证明的留出定理。
+
+summary:
+  en: >-
+    CoqGym extracted proof states, environments, goals, tactics and proof trees from open-source Coq projects and exposed them through a programmatic interaction layer. ASTactic learned proof-step generation from this corpus and composed tactics from runtime syntax rather than relying only on a predetermined list of complete tactics.
+  zh-CN: >-
+    CoqGym 从开源 Coq 项目中抽取证明状态、环境、目标、tactics 与证明树，并通过可编程交互层暴露这些信息。ASTactic 从该语料学习生成证明步骤，并基于运行时语法组合 tactics，而不是仅依赖预先固定的完整 tactic 列表。
+
+why_it_matters:
+  en: >-
+    CoqGym made learning-based theorem proving on a mature interactive proof assistant substantially more data-rich and reproducible. Its environment-and-corpus design anticipated later projects such as LeanDojo that similarly expose large proof-assistant libraries as reusable machine-learning infrastructure.
+  zh-CN: >-
+    CoqGym 使成熟交互式证明助手上的学习式定理证明获得更丰富、可复现的数据与交互基础。其“环境 + 大型证明语料”设计预示了 LeanDojo 等后来项目把证明助手数学库封装为可复用机器学习基础设施的路线。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      ASTactic generated structured Coq tactics from proof states and searched for proof scripts, while Coq checked whether generated tactic sequences produced valid formal proofs.
+    zh-CN: >-
+      ASTactic 根据证明状态生成结构化 Coq tactics 并搜索证明脚本，由 Coq 检查生成的 tactic 序列是否构成有效形式证明。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers assembled and instrumented the Coq projects, designed the data extraction and interaction environment, defined train/validation/test splits, built ASTactic and evaluated it against automated tactics and theorem provers.
+    zh-CN: >-
+      研究者整理并改造 Coq 工程、设计数据抽取与交互环境、定义训练 / 验证 / 测试划分、构建 ASTactic，并将其与自动 tactics 和定理证明器进行评测比较。
+
+systems:
+- coqgym
+- astactic
+- coq
+organizations:
+- princeton-university
+people:
+- kaiyu-yang
+- jia-deng
+problems:
+- coq-theorem-proving
+methods:
+- tactic-generation
+- abstract-syntax-tree-generation
+- interactive-theorem-proving
+- supervised-learning
+- benchmarking
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2019-05-21'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and ICML research records establish CoqGym, ASTactic, the dataset scale and the reported held-out theorem-proving experiments. Machine checking refers to proofs accepted by Coq and does not imply independent reproduction of the reported success rates.
+      zh-CN: >-
+        arXiv 与 ICML 研究记录确认了 CoqGym、ASTactic、数据规模及论文报告的留出定理证明实验。machine_checked 仅指生成证明通过 Coq 检查，并不表示论文报告的成功率已得到独立复现。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public CoqGym repository exposes the interaction environment, extraction pipeline, proof corpus tooling and ASTactic implementation. E3 denotes artifact-level inspectability rather than independent verification of every experimental claim.
+      zh-CN: >-
+        公开 CoqGym 仓库提供交互环境、数据抽取管线、证明语料工具与 ASTactic 实现。E3 表示存在可直接检查的 artifacts，而非对全部实验结论的独立验证。
+
+sources:
+- id: arxiv-coqgym-1905.09381
+  tier: S1
+  type: paper
+  title: Learning to Prove Theorems via Interacting with Proof Assistants
+  url: https://arxiv.org/abs/1905.09381
+  primary: true
+  published_date: '2019-05-21'
+  accessed_at: '2026-09-15'
+- id: pmlr-coqgym-icml2019
+  tier: S1
+  type: paper
+  title: Learning to Prove Theorems via Interacting with Proof Assistants — ICML 2019
+  url: https://proceedings.mlr.press/v97/yang19a.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-princeton-coqgym
+  tier: S1
+  type: repository
+  title: CoqGym learning environment and ASTactic implementation
+  url: https://github.com/princeton-vl/CoqGym
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: coqgym-repository
+  kind: code
+  title: CoqGym environment, proof-corpus tooling and ASTactic code
+  url: https://github.com/princeton-vl/CoqGym
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2023-leandojo
+  related:
+  - evt-2019-holist
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- coqgym
+- astactic
+- coq
+- theorem-proving
+- proof-assistant
+- dataset
+- tactic-generation
+- machine-learning
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

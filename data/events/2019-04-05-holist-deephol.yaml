@@ -1,0 +1,193 @@
+schema_version: 1
+id: evt-2019-holist
+slug: holist-deephol-theorem-proving
+
+title:
+  en: HOList and DeepHOL open a reinforcement-learning environment for higher-order theorem proving
+  zh-CN: HOList 与 DeepHOL 建立高阶逻辑强化学习定理证明环境
+
+dates:
+  event: '2019-04-05'
+  first_public_claim: '2019-04-05'
+  paper_release: '2019-04-05'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- benchmark
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      HOList combined an open HOL Light interaction environment, a benchmark drawn from a substantial formal mathematics library, and the DeepHOL neural prover in one reproducible research stack. It became an important early reference point for reinforcement-learning and neural proof guidance inside interactive theorem provers, preceding later systems that learned more of search and tactic selection end to end.
+    zh-CN: >-
+      HOList 将开放的 HOL Light 交互环境、源自大型形式数学库的 benchmark 与 DeepHOL 神经证明器整合为统一研究栈，成为强化学习与神经证明引导进入交互式定理证明的重要早期参照，并为后来更端到端地学习搜索与 tactic 选择的系统提供前史。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Google Research and collaborators released HOList, an open-source reinforcement-learning environment and benchmark built on HOL Light, together with DeepHOL, a deep-learning-driven tactic-based prover trained on human and synthesized proofs and evaluated on theorem corpora including Flyspeck-derived material.
+  zh-CN: >-
+    Google Research 与合作研究者发布 HOList：一个基于 HOL Light 的开源强化学习环境与 benchmark，并配套发布 DeepHOL 深度学习 tactic 证明器；该系统利用人工与合成证明训练，并在包含 Flyspeck 相关内容的定理语料上进行评测。
+
+summary:
+  en: >-
+    HOList instrumented HOL Light so learning systems could interact with proof states and tactics through a machine-learning environment. The benchmark packaged theorem statements from core, complex and Flyspeck corpora with train, validation and test labels, while DeepHOL supplied a neural prover and reinforcement-learning loop for generating additional successful proof traces.
+  zh-CN: >-
+    HOList 对 HOL Light 进行工程化封装，使学习系统能够通过机器学习环境与证明状态和 tactics 交互。其 benchmark 将 core、complex 与 Flyspeck 语料中的定理陈述整理为训练、验证和测试划分；DeepHOL 则提供神经证明器与强化学习循环，用于持续生成新的成功证明轨迹。
+
+why_it_matters:
+  en: >-
+    The release showed how a mature proof assistant and a substantial mathematical library could be exposed as a learning environment rather than only as a static corpus. That environment-plus-benchmark pattern became central to later neural theorem-proving infrastructure and made proof-assistant-native reinforcement learning a concrete experimental program.
+  zh-CN: >-
+    该工作展示了如何把成熟证明助手与大型数学库转化为可交互的学习环境，而不仅是静态语料。此后“环境 + benchmark”的模式成为神经定理证明基础设施的重要范式，并使证明助手原生的强化学习成为可重复研究路线。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      DeepHOL used learned models to guide tactic choice, premise selection and proof search, including reinforcement from synthesized successful proofs; candidate proofs were ultimately checked through the HOL Light environment.
+    zh-CN: >-
+      DeepHOL 使用学习模型引导 tactic 选择、前提选择与证明搜索，并利用合成成功证明进行强化训练；候选证明最终通过 HOL Light 环境接受机械检查。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers built the HOL Light interface, benchmark extraction, training pipeline, proof-search machinery, neural models, reinforcement-learning loop and evaluation protocol.
+    zh-CN: >-
+      研究者构建 HOL Light 交互接口、benchmark 抽取流程、训练管线、证明搜索机制、神经模型、强化学习循环与评测协议。
+
+systems:
+- holist
+- deephol
+- hol-light
+organizations:
+- google-research
+people:
+- kshitij-bansal
+- sarah-loos
+- markus-n-rabe
+- christian-szegedy
+- stewart-wilcox
+problems:
+- higher-order-logic-theorem-proving
+methods:
+- reinforcement-learning
+- tactic-prediction
+- premise-selection
+- proof-search
+- benchmarking
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2019-04-05'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and ICML research records establish HOList, its benchmark and the reported DeepHOL experiments. Machine checking refers to proof traces accepted through HOL Light and does not imply independent reproduction of the reported benchmark performance.
+      zh-CN: >-
+        arXiv 与 ICML 研究记录确认了 HOList、其 benchmark 以及论文报告的 DeepHOL 实验。machine_checked 仅指证明轨迹通过 HOL Light 检查，并不表示论文报告的 benchmark 性能已得到独立复现。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public Deepmath codebase and HOList benchmark site expose the prover code, benchmark definition, model resources and proof-checking workflow. E3 denotes inspectable artifacts rather than independent confirmation of all experimental claims.
+      zh-CN: >-
+        公开的 Deepmath 代码库与 HOList benchmark 网站提供证明器代码、benchmark 定义、模型资源与证明检查流程。E3 表示存在可直接检查的 artifacts，而非对全部实验结论的独立确认。
+
+sources:
+- id: arxiv-holist-1904.03241
+  tier: S1
+  type: paper
+  title: 'HOList: An Environment for Machine Learning of Higher-Order Theorem Proving'
+  url: https://arxiv.org/abs/1904.03241
+  primary: true
+  published_date: '2019-04-05'
+  accessed_at: '2026-09-15'
+- id: pmlr-holist-icml2019
+  tier: S1
+  type: paper
+  title: 'HOList: An Environment for Machine Learning of Higher Order Logic Theorem Proving — ICML 2019'
+  url: https://proceedings.mlr.press/v97/bansal19a.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: google-research-holist
+  tier: S2
+  type: official_announcement
+  title: HOList — Google Research publication record
+  url: https://research.google/pubs/holist-an-environment-for-machine-learning-of-higher-order-logic-theorem-proving/
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: github-deepmath-deephol
+  tier: S1
+  type: repository
+  title: Deepmath repository containing DeepHOL
+  url: https://github.com/tensorflow/deepmath
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: holist-benchmark-site
+  tier: S2
+  type: benchmark
+  title: HOList benchmark and DeepHOL resources
+  url: https://sites.google.com/view/holist/home
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: deephol-code
+  kind: code
+  title: DeepHOL neural theorem prover code
+  url: https://github.com/tensorflow/deepmath
+- id: holist-benchmark
+  kind: benchmark
+  title: HOList higher-order theorem-proving benchmark
+  url: https://sites.google.com/view/holist/home
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2021-tacticzero
+  related:
+  - evt-2019-coqgym
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- holist
+- deephol
+- hol-light
+- theorem-proving
+- reinforcement-learning
+- benchmark
+- proof-search
+- formal-mathematics
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

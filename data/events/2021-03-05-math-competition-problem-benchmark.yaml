@@ -11,7 +11,7 @@ dates:
   artifact_release: null
   independently_verified: null
   added_to_chronicle: '2026-09-10'
-  last_updated: '2026-09-11'
+  last_updated: '2026-09-15'
 event_types:
 - benchmark
 - dataset
@@ -95,7 +95,8 @@ artifacts:
   title: "MATH dataset loaders and evaluation code"
   url: https://github.com/hendrycks/math
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2019-mathematics-dataset
   successors: []
   related: []
 timeline:
@@ -108,7 +109,7 @@ tags:
 - reasoning
 editorial:
   created_at: '2026-09-10'
-  last_reviewed: '2026-09-11'
+  last_reviewed: '2026-09-15'
   reviewers:
   - Charlie-Wang-03
 corrections: []
