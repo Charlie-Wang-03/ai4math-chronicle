@@ -33,8 +33,8 @@ interfaces:
 - symbolic
 
 claim:
-  en: Robin Milner's January 1972 publication described an implemented proof checker for Scott's Logic for Computable Functions and showed formal reasoning about recursively defined programs; contemporary and retrospective records identify this system as Stanford LCF, developed at Stanford in 1971–1972 with Richard Weyhrauch and Malcolm Newey.
-  zh-CN: Robin Milner 于 1972 年 1 月发表的论文描述了 Scott 的 Logic for Computable Functions 的已实现证明检查器，并展示了对递归定义程序的形式推理；同期与后来的历史资料均将这一系统识别为 Stanford LCF，由 Milner、Richard Weyhrauch 与 Malcolm Newey 于 1971–1972 年在 Stanford 开发。
+  en: Robin Milner's January 1972 publication described an implemented proof checker for Scott's Logic for Computable Functions and showed formal reasoning about recursively defined programs; later historical accounts identify this system as Stanford LCF, developed at Stanford in 1971–1972 with Richard Weyhrauch and Malcolm Newey.
+  zh-CN: Robin Milner 于 1972 年 1 月发表的论文描述了 Scott 的 Logic for Computable Functions 的已实现证明检查器，并展示了对递归定义程序的形式推理；后来的历史资料将这一系统识别为 Stanford LCF，由 Milner、Richard Weyhrauch 与 Malcolm Newey 于 1971–1972 年在 Stanford 开发。
 
 summary:
   en: Stanford LCF let users state proof goals, decompose them into subgoals and apply simplification and inference commands while the machine checked the resulting formal derivations. It predated the extensible ML metalanguage, abstract theorem type and programmable tactics that characterized Edinburgh LCF.
@@ -82,8 +82,8 @@ verification:
     status: paper_released
     evidence_level: E2
     note:
-      en: The ACM publication documents the implemented proof checker, while Milner's later historical account distinguishes the 1971–1972 Stanford LCF system from the Edinburgh LCF project that began in 1974.
-      zh-CN: ACM 论文记录了已实现的证明检查器；Milner 后来的历史回顾则明确区分 1971–1972 年的 Stanford LCF 与 1974 年开始的 Edinburgh LCF 项目。
+      en: The ACM publication documents the implemented proof checker, while Mike Gordon's later historical account distinguishes Stanford LCF from its Edinburgh successor and describes the fixed-command and proof-storage limitations that motivated the redesign.
+      zh-CN: ACM 论文记录了已实现的证明检查器；Mike Gordon 后来的历史回顾则区分 Stanford LCF 与其 Edinburgh 后继系统，并说明固定证明命令与保存完整证明带来的限制如何推动后续重构。
 
 sources:
 - id: acm-stanford-lcf-1972
@@ -94,11 +94,11 @@ sources:
   primary: true
   published_date: '1972-01-01'
   accessed_at: '2026-09-15'
-- id: milner-how-ml-evolved-1982
+- id: gordon-lcf-hol-history-2000
   tier: S2
   type: paper
-  title: How ML Evolved
-  url: https://www.pure.ed.ac.uk/ws/portalfiles/portal/17084823/Milner_R_1982_How_ML_Evolved.pdf
+  title: 'From LCF to HOL: A Short History'
+  url: https://www.cl.cam.ac.uk/archive/mjcg/papers/HolHistory.pdf
   primary: false
   published_date: null
   accessed_at: '2026-09-15'
@@ -130,4 +130,4 @@ corrections:
     zh-CN: 本记录由笼统的 LCF / trusted-kernel 叙述校准为 Stanford LCF；ML、抽象 theorem 类型与可编程 tactics 属于后来的 Edinburgh LCF 谱系，而非 1972 年 Stanford 系统。
   source_ids:
   - acm-stanford-lcf-1972
-  - milner-how-ml-evolved-1982
+  - gordon-lcf-hol-history-2000
