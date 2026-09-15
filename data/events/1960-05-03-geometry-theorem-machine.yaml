@@ -92,7 +92,8 @@ sources:
 artifacts: []
 relationships:
   predecessors: []
-  successors: []
+  successors:
+  - evt-1977-wu-method
   related: []
 timeline:
   featured: true

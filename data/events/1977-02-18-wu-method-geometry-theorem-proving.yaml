@@ -1,0 +1,163 @@
+schema_version: 1
+id: evt-1977-wu-method
+slug: wu-method-geometry-theorem-proving
+
+title:
+  en: Wen-Tsun Wu validates the algebraic method that becomes Wu's method for automated geometry theorem proving
+  zh-CN: 吴文俊验证后来被称为“吴方法”的几何定理机器证明代数方法
+
+dates:
+  event: '1977-02-18'
+  first_public_claim: null
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- proof
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Wu's method shifted automated geometry theorem proving from predominantly heuristic search toward an algebraic, algorithmic route: geometric hypotheses and conclusions are translated into polynomial conditions and treated with characteristic-set and elimination techniques. CADE later recognized Wu's work as groundbreaking, and its Herbrand Award record describes the method as a breakthrough that revitalized automated geometry theorem proving.
+    zh-CN: >-
+      吴方法把自动几何定理证明从以启发式搜索为主的路线推进到代数化、算法化路线：将几何条件与结论转写为多项式条件，再利用特征列与消元技术处理。CADE 后来将吴文俊的工作明确评价为几何定理证明中的奠基性贡献，其 Herbrand Award 记录也将该方法视为重新推动自动几何定理证明的重要突破。
+
+mathematical_novelty:
+  type: new_algorithm
+interfaces:
+- symbolic
+
+claim:
+  en: >-
+    Retrospective Chinese Academy of Sciences accounts record that on Lunar New Year's Day in 1977, after several months of hand calculation, Wen-Tsun Wu first successfully verified the feasibility of his mechanical method for proving elementary-geometry theorems. An official 1977 holiday record independently fixes that Lunar New Year's Day to 18 February 1977. Wu published the foundational Chinese paper later that year in Scientia Sinica, volume 20, issue 6, pages 507-516; the English version appeared in 1978.
+  zh-CN: >-
+    中国科学院的回顾性资料记载，经过数月手算后，吴文俊于 1977 年农历大年初一首次成功验证初等几何定理机械化证明方法的可行性；1977 年官方节假日档案独立确认当年农历新年首日为公历 2 月 18 日。吴文俊随后于同年在《中国科学》20 卷第 6 期 507–516 页发表奠基性中文论文，英文版于 1978 年发表。
+
+summary:
+  en: >-
+    The method algebraizes elementary geometry: geometric configurations are encoded as polynomial equations and theorem proving is reduced to symbolic polynomial reasoning. Wu developed the route from Ritt-style characteristic-set ideas and constructive elimination, enabling mechanical proof procedures and explicit treatment of degenerate cases. Later computer implementations proved non-trivial geometry theorems and helped establish algebraic automated deduction in geometry as a durable research program.
+  zh-CN: >-
+    该方法把初等几何代数化：将几何构型编码为多项式方程，并把定理证明转化为符号多项式推理。吴文俊在 Ritt 特征列思想与构造性消元基础上发展出机械化证明路线，并能显式处理退化情形。后续计算机实现证明了多项非平凡几何定理，使代数式自动几何推理成为长期研究方向。
+
+why_it_matters:
+  en: >-
+    The event supplies a missing bridge in the Chronicle between Gelernter's earlier heuristic Geometry Theorem Machine and later mature symbolic-algebra approaches to automated deduction. It also illustrates an important historical form of AI4Math in which the central innovation was not a learned model but a mathematically designed algorithm that made a class of proof tasks mechanically executable.
+  zh-CN: >-
+    该事件补上了 Chronicle 中从 Gelernter 早期启发式 Geometry Theorem Machine 到后来成熟符号代数自动演绎路线之间的重要桥梁。它也体现了一种关键的历史 AI4Math 形态：核心创新并非学习模型，而是把一类证明任务转化为可机械执行过程的数学算法。
+
+ai_role:
+  level: computation_only
+  description:
+    en: >-
+      The central contribution was a human-designed algorithm for mechanical reasoning. Wu first validated the procedure by hand; later implementations executed the algebraic proof procedure on computers. This record does not attribute mathematical discovery to an autonomous AI system.
+    zh-CN: >-
+      核心贡献是由人类设计、面向机械推理的算法。吴文俊先以手算验证过程可行，后续实现再由计算机执行代数证明程序；本记录不把数学发现归因于自主 AI 系统。
+
+human_contribution:
+  description:
+    en: >-
+      Wen-Tsun Wu formulated the algebraization strategy, developed the constructive polynomial machinery, manually tested the method, and subsequently led its computer implementation and broader mathematics-mechanization program.
+    zh-CN: >-
+      吴文俊提出几何代数化路线，发展构造性多项式方法，以手算检验其可行性，并随后推动计算机实现及更广泛的数学机械化研究计划。
+
+systems: []
+organizations:
+- chinese-academy-of-sciences
+people:
+- wen-tsun-wu
+problems:
+- euclidean-geometry-theorem-proving
+methods:
+- characteristic-set-method
+- polynomial-elimination
+- symbolic-reasoning
+- automated-deduction
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '1977-02-18'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        Chinese Academy of Sciences retrospective records date Wu's first successful hand verification to Lunar New Year's Day 1977; an official 1977 holiday calendar independently establishes that day as 18 February 1977. The exact day of the later journal publication is not inferred from issue-level metadata.
+      zh-CN: >-
+        中国科学院回顾性资料把吴文俊首次成功手算验证定在 1977 年农历大年初一；1977 年官方节假日档案独立确认该日为公历 2 月 18 日。本记录不从只有期号精度的期刊元数据推断后续论文的具体出版日。
+
+sources:
+- id: cas-wu-method-lunar-new-year-1977
+  tier: S2
+  type: official_announcement
+  title: Chinese Academy of Sciences retrospective on Wen-Tsun Wu and Wu's method
+  url: https://www.cas.cn/zt/hyzt/ysdh21st/ysfc/202406/t20240621_5022393.shtml
+  primary: true
+  published_date: '2024-06-21'
+  accessed_at: '2026-09-15'
+- id: hk-grs-lunar-new-year-1977
+  tier: S2
+  type: other
+  title: Hong Kong Government Information Services — General Holidays for 1977
+  url: https://search.grs.gov.hk/repository/img?id=IKU2PV9X0p4gkvfn4VhffQ%3D%3D&ori=1
+  primary: false
+  published_date: '1976-01-02'
+  accessed_at: '2026-09-15'
+- id: amss-wu-mechanization-bibliography
+  tier: S2
+  type: official_announcement
+  title: Wen-Tsun Wu memorial bibliography — mathematics mechanization papers
+  url: https://www.amss.cas.cn/wwj/jnwz/201705/t20170506_4784450.html
+  primary: true
+  published_date: '2019-04-30'
+  accessed_at: '2026-09-15'
+- id: cade-herbrand-wu-1997
+  tier: S2
+  type: official_announcement
+  title: CADE Herbrand Award — Wen-Tsun Wu (1997)
+  url: https://cadeinc.org/Herbrand-Award
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+- id: amss-herbrand-wu-citation
+  tier: S2
+  type: official_announcement
+  title: 1997 Herbrand Award citation for Wen-Tsun Wu
+  url: https://www.amss.cas.cn/wwj/xslz/201705/t20170506_4784301.html
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+
+relationships:
+  predecessors:
+  - evt-1960-geometry-theorem-machine
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- wu-method
+- geometry
+- theorem-proving
+- symbolic-ai
+- polynomial-methods
+- mathematics-mechanization
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
