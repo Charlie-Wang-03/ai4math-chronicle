@@ -164,7 +164,8 @@ artifacts:
   url: https://sites.google.com/view/holist/home
 
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2017-holstep
   successors:
   - evt-2021-tacticzero
   related:

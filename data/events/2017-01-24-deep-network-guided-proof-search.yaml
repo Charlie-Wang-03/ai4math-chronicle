@@ -1,0 +1,157 @@
+schema_version: 1
+id: evt-2017-deep-network-guided-proof-search
+slug: deep-network-guided-proof-search
+
+title:
+  en: Deep networks are integrated directly into automated theorem-prover search
+  zh-CN: 深度网络被直接接入自动定理证明器的内部搜索
+
+dates:
+  event: '2017-01-24'
+  first_public_claim: '2017-01-24'
+  paper_release: '2017-01-24'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Deep Network Guided Proof Search was an important early step from learned premise selection toward learned control inside the proof search itself. By training neural models on Mizar-derived proof traces and inserting their predictions into E prover's processed-clause selection, the work established a concrete deep-learning route for internal automated-theorem-prover guidance before later reinforcement-learning and proof-assistant-native systems.
+    zh-CN: >-
+      Deep Network Guided Proof Search 是从“学习式前提选择”进一步走向“直接学习证明器内部搜索控制”的重要早期节点。该工作从 Mizar 衍生的证明轨迹训练神经模型，并把预测直接接入 E prover 的 processed-clause selection，在后来的强化学习与证明助手原生系统出现之前，建立了深度学习引导自动定理证明内部搜索的具体路线。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Sarah Loos, Geoffrey Irving, Christian Szegedy and Cezary Kaliszyk trained deep neural networks on existing automated proofs of Mizar statements and used them to guide processed-clause selection inside E prover. The paper reported finding first-order proofs for a subset of translated Mizar theorems that previously lacked ATP-generated proofs, increasing the corpus coverage with ATP proofs from about 56% to 59%.
+  zh-CN: >-
+    Sarah Loos、Geoffrey Irving、Christian Szegedy 与 Cezary Kaliszyk 使用既有 Mizar 自动证明轨迹训练深度神经网络，并将其用于引导 E prover 内部的 processed-clause selection。论文报告称，该方法为一部分此前没有 ATP 证明的 Mizar 翻译定理找到了新的 first-order proofs，使语料中具有 ATP 证明的覆盖率从约 56% 提升到 59%。
+
+summary:
+  en: >-
+    The system learns from clause-level traces of successful automated proofs and ranks generated clauses during saturation-style proof search. Because neural evaluation is slower than hand-engineered heuristics, the authors used hybrid guidance and a two-phase search strategy that lets the learned model improve the search trajectory before faster conventional heuristics finish the proof attempt.
+  zh-CN: >-
+    该系统从成功自动证明的 clause-level 轨迹中学习，并在 saturation-style proof search 中对生成的 clauses 进行排序。由于神经网络评估慢于人工设计启发式，作者采用混合引导与 two-phase search：先利用学习模型改善搜索轨迹，再由更快的传统启发式完成后续证明尝试。
+
+why_it_matters:
+  en: >-
+    The work demonstrated that neural models could influence the inner loop of a mature automated theorem prover rather than acting only as an upstream filter. That distinction became important in later work on learned clause guidance, reinforcement-learning proof search and search-in-the-loop theorem proving.
+  zh-CN: >-
+    该工作展示了神经模型不仅可以作为上游过滤器，还可以直接影响成熟自动定理证明器的内部搜索循环。这一区别后来成为学习式 clause guidance、强化学习证明搜索以及 search-in-the-loop theorem proving 的重要技术前史。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Learned neural models ranked processed clauses during automated proof search, while E prover carried out the symbolic inference and constructed successful first-order proofs without human step-by-step intervention.
+    zh-CN: >-
+      学习式神经模型在自动证明搜索中排序 processed clauses，由 E prover 执行符号推理并构造成功的一阶逻辑证明，不需要人类逐步干预证明动作。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers designed the neural clause-guidance models, proof-trace training data, hybrid and two-phase search strategy, E-prover integration and evaluation over Mizar-derived problems.
+    zh-CN: >-
+      研究者设计神经 clause-guidance 模型、证明轨迹训练数据、混合与两阶段搜索策略、E prover 集成以及基于 Mizar 衍生问题的评测方案。
+
+systems:
+- e-prover
+- deep-network-guided-proof-search
+organizations:
+- google-research
+- university-of-innsbruck
+people:
+- sarah-loos
+- geoffrey-irving
+- christian-szegedy
+- cezary-kaliszyk
+problems:
+- automated-theorem-proving
+- mizar-theorem-proving
+methods:
+- deep-learning
+- clause-selection
+- proof-search
+- saturation-based-theorem-proving
+- supervised-learning
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2017-01-24'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and LPAR research records establish the neural proof-search guidance method and the reported Mizar-derived theorem-proving results. The Chronicle does not record a directly inspectable proof artifact or independent replay for this event, so formal assurance remains `none`.
+      zh-CN: >-
+        arXiv 与 LPAR 研究记录确认了神经证明搜索引导方法及论文报告的 Mizar 衍生定理证明结果。Chronicle 当前未记录可直接检查的证明 artifact 或独立 replay，因此 formal assurance 保持为 `none`。
+
+sources:
+- id: arxiv-deep-network-proof-search-1701.06972
+  tier: S1
+  type: paper
+  title: Deep Network Guided Proof Search
+  url: https://arxiv.org/abs/1701.06972
+  primary: true
+  published_date: '2017-01-24'
+  accessed_at: '2026-09-15'
+- id: easychair-deep-network-proof-search-lpar2017
+  tier: S1
+  type: paper
+  title: Deep Network Guided Proof Search — LPAR-21
+  url: https://easychair.org/publications/paper/ND13
+  primary: true
+  published_date: '2017-05-04'
+  accessed_at: '2026-09-15'
+- id: google-research-deep-network-proof-search
+  tier: S2
+  type: official_announcement
+  title: Deep Network Guided Proof Search — Google Research publication record
+  url: https://research.google/pubs/deep-network-guided-proof-search-2/
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2018-rl-theorem-proving
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- theorem-proving
+- deep-learning
+- e-prover
+- mizar
+- clause-selection
+- proof-search
+- automated-theorem-proving
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
