@@ -30,8 +30,10 @@ interfaces:
 - not_applicable
 
 claim:
-  en: The manifesto dated 15 May 1994 proposed the QED project: a computer system representing important mathematical knowledge and techniques with strict formal internal representation and mechanical proof checking.
-  zh-CN: 1994 年 5 月 15 日的宣言提出 QED Project：建立表示重要数学知识与技术的计算机系统，内部采用严格形式表示并机械检查证明。
+  en: >-
+    The manifesto dated 15 May 1994 proposed the QED project: a computer system representing important mathematical knowledge and techniques with strict formal internal representation and mechanical proof checking.
+  zh-CN: >-
+    1994 年 5 月 15 日的宣言提出 QED Project：建立表示重要数学知识与技术的计算机系统，内部采用严格形式表示并机械检查证明。
 
 summary:
   en: QED was a field-building vision rather than a single software release, calling for broad cooperation around shared formal mathematical knowledge.
