@@ -1,0 +1,114 @@
+schema_version: 1
+id: evt-1993-tptp
+slug: tptp-problem-library
+
+title:
+  en: TPTP establishes a shared benchmark library for automated theorem proving
+  zh-CN: TPTP 建立自动定理证明共享基准问题库
+
+dates:
+  event: '1993-11-12'
+  first_public_claim: '1993-11-12'
+  paper_release: null
+  artifact_release: '1993-11-12'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- benchmark
+- dataset
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: TPTP standardized a large public problem library for automated theorem proving, enabling repeatable evaluation and meaningful cross-system comparisons over a shared corpus.
+    zh-CN: TPTP 将大型自动定理证明问题库标准化并公开，使可重复评测和跨系统比较建立在共同语料基础上。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: The official TPTP history records the first public TPTP v1.0.0 release on Friday 12 November 1993, containing 2,295 problems across 23 domains.
+  zh-CN: TPTP 官方历史记录显示，首个公开版本 v1.0.0 于 1993 年 11 月 12 日星期五发布，包含 23 个领域、2,295 个问题。
+
+summary:
+  en: TPTP collected ATP test problems into standardized formats with domain classification and release/version discipline so theorem provers could be tested on comparable inputs.
+  zh-CN: TPTP 以统一格式整理 ATP 测试问题，并建立领域分类与版本发布规范，使定理证明器能够在可比较输入上进行测试。
+
+why_it_matters:
+  en: The library became core infrastructure for automated deduction and later supported system competitions, benchmarking and learning-guided theorem proving.
+  zh-CN: 该问题库成为自动演绎核心基础设施，并进一步支撑系统竞赛、benchmark 与学习式定理证明。
+
+ai_role:
+  level: computation_only
+  description:
+    en: AI and ATP systems are evaluated on the library; the milestone itself is benchmark infrastructure rather than an AI-generated mathematical result.
+    zh-CN: AI 与 ATP 系统在该问题库上接受评测；事件本身是 benchmark 基础设施而非 AI 生成数学结果。
+
+human_contribution:
+  description:
+    en: Geoff Sutcliffe, Christian Suttner and contributors curated, normalized and maintained the public problem library.
+    zh-CN: Geoff Sutcliffe、Christian Suttner 与贡献者整理、标准化并维护公共问题库。
+
+systems:
+- tptp
+organizations: []
+people:
+- geoff-sutcliffe
+- christian-suttner
+problems:
+- automated-theorem-proving
+methods:
+- benchmarking
+- standardized-problem-formats
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: artifact_available
+  history:
+  - date: '1993-11-12'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: The official TPTP history and current library make the release chronology and benchmark artifacts directly inspectable.
+      zh-CN: TPTP 官方历史与当前问题库使发布 chronology 与 benchmark artifacts 可直接检查。
+
+sources:
+- id: tptp-official-history
+  tier: S1
+  type: benchmark
+  title: TPTP History
+  url: https://www.cs.miami.edu/home/geoff/Courses/TPTPSYS/TPTPWorld/TPTPHistory.shtml
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: tptp-problem-library
+  kind: benchmark
+  title: TPTP Problem Library
+  url: https://www.tptp.org/
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- tptp
+- benchmark
+- dataset
+- automated-theorem-proving
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

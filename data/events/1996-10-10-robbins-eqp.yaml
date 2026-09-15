@@ -1,0 +1,115 @@
+schema_version: 1
+id: evt-1996-robbins-eqp
+slug: robbins-conjecture-eqp
+
+title:
+  en: EQP finds a proof resolving the Robbins conjecture
+  zh-CN: EQP 找到解决 Robbins 猜想的证明
+
+dates:
+  event: '1996-10-10'
+  first_public_claim: '1996-10-10'
+  paper_release: null
+  artifact_release: '1996-10-10'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- proof
+- discovery
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: EQP's Robbins-algebra proof is a landmark case in which an automated theorem prover produced the key proof of a long-standing open algebraic question, demonstrating ATP as a tool for new mathematical results rather than only benchmark reproving.
+    zh-CN: EQP 对 Robbins algebra 的证明是自动定理证明器解决长期开放代数问题的标志性案例，展示 ATP 不仅可以重新证明已知命题，也能参与获得新的数学结果。
+
+mathematical_novelty:
+  type: new_proof
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: On 10 October 1996, William McCune's EQP found a proof showing that Robbins algebras are Boolean; the proof was subsequently checked with the Otter theorem prover and studied by mathematicians.
+  zh-CN: 1996 年 10 月 10 日，William McCune 的 EQP 找到证明 Robbins algebra 为 Boolean algebra 的证明；随后该证明由 Otter 定理证明器检查并由数学家研究。
+
+summary:
+  en: The automated search produced a compact equational derivation in a problem that had resisted prior human and machine efforts for decades.
+  zh-CN: 自动搜索在一个数十年未解决、长期接受人类与机器尝试的问题上产生了紧凑的等式推导。
+
+why_it_matters:
+  en: The event supplied early evidence that automated theorem proving could contribute directly to unresolved mathematics, a central ambition of modern AI4Math.
+  zh-CN: 该事件较早证明自动定理证明能够直接参与未解决数学问题，这也是现代 AI4Math 的核心目标之一。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: EQP autonomously searched for and found the formal proof; separate automated checking and human mathematical inspection followed.
+    zh-CN: EQP 自主搜索并找到形式证明；之后进行了独立的自动检查与人类数学审阅。
+
+human_contribution:
+  description:
+    en: William McCune developed the prover and search setup; mathematicians contextualized, simplified and communicated the machine-found proof.
+    zh-CN: William McCune 开发证明器与搜索设置；数学家对机器找到的证明进行解释、化简与传播。
+
+systems:
+- eqp
+- otter
+organizations:
+- argonne-national-laboratory
+people:
+- william-mccune
+problems:
+- robbins-conjecture
+methods:
+- equational-theorem-proving
+- automated-proof-search
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '1996-10-10'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: The Argonne technical report records the EQP proof and subsequent Otter verification; machine checking does not convert Chronicle into an independent mathematical-priority arbiter.
+      zh-CN: Argonne 技术报告记录了 EQP 证明及后续 Otter 检查；machine checking 不意味着 Chronicle 自行裁决历史优先权。
+
+sources:
+- id: argonne-robbins-eqp-report
+  tier: S1
+  type: paper
+  title: Solution of the Robbins Problem
+  url: https://ftp.mcs.anl.gov/pub/tech_reports/reports/P642.pdf
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: robbins-eqp-proof-record
+  kind: proof
+  title: EQP Robbins proof record in the Argonne report
+  url: https://ftp.mcs.anl.gov/pub/tech_reports/reports/P642.pdf
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- robbins-conjecture
+- eqp
+- automated-theorem-proving
+- machine-found-proof
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

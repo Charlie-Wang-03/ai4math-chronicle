@@ -1,0 +1,110 @@
+schema_version: 1
+id: evt-1996-casc
+slug: cade-atp-system-competition
+
+title:
+  en: The CADE ATP System Competition institutionalizes head-to-head theorem-prover evaluation
+  zh-CN: CADE ATP System Competition 将定理证明器统一竞赛评测制度化
+
+dates:
+  event: '1996-08-01'
+  first_public_claim: '1996-08-01'
+  paper_release: null
+  artifact_release: '1996-08-01'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- competition
+- benchmark
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: The first CADE ATP System Competition created a recurring common evaluation setting for fully automatic theorem provers, reinforcing TPTP-based benchmarking as field infrastructure.
+    zh-CN: 首届 CADE ATP System Competition 为全自动定理证明器建立持续性的统一评测环境，并强化以 TPTP 为基础的 benchmark 制度。
+
+mathematical_novelty:
+  type: benchmark_result
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: The CADE competition held on 1 August 1996 compared automated theorem-proving systems under common resource limits and problem sets, inaugurating the competition series later known as CASC.
+  zh-CN: 1996 年 8 月 1 日举行的 CADE 竞赛在统一资源限制与问题集下比较自动定理证明系统，并开启后来称为 CASC 的持续竞赛系列。
+
+summary:
+  en: Systems were evaluated in a shared computational environment on standardized theorem-proving problems, making performance comparisons more reproducible and visible.
+  zh-CN: 各系统在共享计算环境与标准化定理证明问题上评测，使性能比较更可复现、更透明。
+
+why_it_matters:
+  en: Recurring competitions helped turn automated theorem proving into a benchmark-driven research community with shared evaluation practices.
+  zh-CN: 持续竞赛推动自动定理证明形成拥有共同评测实践的 benchmark 驱动研究共同体。
+
+ai_role:
+  level: computation_only
+  description:
+    en: Automated theorem provers solved benchmark problems; the Event's primary significance is comparative evaluation and field infrastructure.
+    zh-CN: 自动定理证明器求解 benchmark 问题；该事件的主要意义在统一比较评测与领域基础设施。
+
+human_contribution:
+  description:
+    en: Organizers selected problems, defined divisions and resource limits, and ran systems in the common competition environment.
+    zh-CN: 组织者选择问题、定义组别与资源限制，并在统一竞赛环境中运行各系统。
+
+systems:
+- casc
+organizations:
+- cade
+people: []
+problems:
+- automated-theorem-proving
+methods:
+- benchmarking
+- system-competition
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '1996-08-01'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: The official FLoC/CADE competition page records the date, entrants and evaluation setup.
+      zh-CN: FLoC/CADE 官方竞赛页面记录了日期、参赛系统与评测设置。
+
+sources:
+- id: cade-competition-1996
+  tier: S2
+  type: official_announcement
+  title: CADE ATP System Competition
+  url: https://lics.siglog.org/floc96/cade-comp.html
+  primary: true
+  published_date: '1996-08-01'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- casc
+- cade
+- competition
+- benchmark
+- automated-theorem-proving
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

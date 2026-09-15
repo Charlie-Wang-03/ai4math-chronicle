@@ -1,0 +1,109 @@
+schema_version: 1
+id: evt-1986-graffiti
+slug: graffiti-automated-conjecturing
+
+title:
+  en: Graffiti turns graph-theory conjecture generation into a sustained computer program
+  zh-CN: Graffiti 将图论猜想生成发展为持续运行的计算机计划
+
+dates:
+  event: '1986-06-01'
+  first_public_claim: '1986-06-01'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- discovery
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: Graffiti made automated conjecture generation a sustained research activity in graph theory, producing machine-suggested inequalities and conjectures that mathematicians could investigate.
+    zh-CN: Graffiti 将自动猜想生成发展为持续的图论研究活动，机器提出不等式与猜想，再由数学家研究其真伪与意义。
+
+mathematical_novelty:
+  type: new_conjecture
+interfaces:
+- symbolic
+
+claim:
+  en: Fajtlowicz's Graffiti program generated graph-theoretic conjectures from a library of graphs and numerical invariants; the First Japan Conference on Graph Theory and Applications began on 1 June 1986 and provides the public conference anchor for the early Graffiti record.
+  zh-CN: Fajtlowicz 的 Graffiti 程序从图数据库与数值不变量自动生成图论猜想；1986 年 6 月 1 日开幕的 First Japan Conference on Graph Theory and Applications 为其早期公开记录提供会议锚点。
+
+summary:
+  en: Graffiti evaluated candidate relations between graph invariants, retained statements without known counterexamples and used heuristics to suppress trivial or redundant conjectures.
+  zh-CN: Graffiti 评估图不变量之间的候选关系，保留在已知图中没有反例的陈述，并用启发式删除平凡或重复猜想。
+
+why_it_matters:
+  en: It demonstrated a durable human–machine discovery workflow in which a computer proposes mathematical conjectures and the research community proves, disproves and refines them.
+  zh-CN: 它展示了长期的人机数学发现流程：计算机提出猜想，研究共同体负责证明、反驳与改进。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: The program autonomously generated and filtered candidate graph-theory conjectures from its knowledge base.
+    zh-CN: 程序从其知识库自动生成并筛选图论候选猜想。
+
+human_contribution:
+  description:
+    en: Siemion Fajtlowicz designed the invariant library and conjecturing heuristics, while mathematicians evaluated and developed the generated conjectures.
+    zh-CN: Siemion Fajtlowicz 设计不变量库与猜想启发式，数学家评估并发展机器生成的猜想。
+
+systems:
+- graffiti
+organizations:
+- university-of-houston
+people:
+- siemion-fajtlowicz
+problems:
+- graph-theory-conjecturing
+methods:
+- automated-conjecturing
+- heuristic-filtering
+- graph-invariants
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1988-01-01'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The proceedings article “On Conjectures of Graffiti” documents the system presented in the 1986 Hakone conference series.
+      zh-CN: Proceedings 论文“On Conjectures of Graffiti”记录了在 1986 年箱根会议中展示的系统。
+
+sources:
+- id: graffiti-hakone-proceedings
+  tier: S1
+  type: paper
+  title: On Conjectures of Graffiti
+  url: https://doi.org/10.1016/S0167-5060(08)70776-3
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- graffiti
+- graph-theory
+- conjecture-generation
+- mathematical-discovery
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

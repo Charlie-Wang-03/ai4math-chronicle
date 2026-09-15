@@ -1,0 +1,113 @@
+schema_version: 1
+id: evt-1992-metamath
+slug: metamath-formal-language
+
+title:
+  en: Metamath establishes a minimal formal language and independently checkable proof corpus
+  zh-CN: Metamath 建立极简形式语言与可独立检查证明语料
+
+dates:
+  event: '1992-09-30'
+  first_public_claim: '1992-09-30'
+  paper_release: null
+  artifact_release: '1992-09-30'
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: Metamath created a deliberately small formal proof language and verifier whose transparent proof objects later became a valuable substrate for neural theorem-proving systems such as Holophrasm and MetaGen.
+    zh-CN: Metamath 建立刻意极简的形式证明语言与验证器，其透明证明对象后来成为 Holophrasm、MetaGen 等神经定理证明系统的重要基础。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Metamath was developed in 1992; current official proof records retain exact contribution dates including 30 September 1992 for early corpus material, which provides the canonical historical anchor used here.
+  zh-CN: Metamath 于 1992 年开发；当前官方证明记录保留包括 1992 年 9 月 30 日在内的早期语料精确贡献日期，因此本条以该日期作为 canonical 历史锚点。
+
+summary:
+  en: Metamath separates a very small verifier from explicit proof objects, allowing a large body of formal mathematics to be checked with a minimal trusted mechanism.
+  zh-CN: Metamath 将极小验证器与显式证明对象分离，使大型形式数学语料可以由最小可信机制进行检查。
+
+why_it_matters:
+  en: Its transparent proof format and `set.mm` library later made Metamath attractive for machine learning, proof generation and synthetic theorem-data research.
+  zh-CN: 其透明证明格式与 `set.mm` 数学库后来非常适合机器学习、证明生成与合成定理数据研究。
+
+ai_role:
+  level: computation_only
+  description:
+    en: The verifier mechanically checks formal proof steps; the original formal content is human-authored.
+    zh-CN: 验证器机械检查形式证明步骤；原始形式内容主要由人类编写。
+
+human_contribution:
+  description:
+    en: Norman Megill and contributors designed the language, verifier and formal library.
+    zh-CN: Norman Megill 与贡献者设计语言、验证器与形式数学库。
+
+systems:
+- metamath
+organizations: []
+people:
+- norman-megill
+problems:
+- formal-mathematical-knowledge
+methods:
+- proof-checking
+- formal-proof-language
+- mathematical-library
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: artifact_available
+  history:
+  - date: '1992-09-30'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: The live Metamath proof corpus is directly inspectable and retains historical contribution metadata for early formal content.
+      zh-CN: 当前 Metamath 证明语料可直接检查，并保留早期形式内容的历史贡献元数据。
+
+sources:
+- id: metamath-early-proof-record
+  tier: S1
+  type: formal_artifact
+  title: Metamath Proof Explorer — early proof record
+  url: https://us.metamath.org/mpeuni/id1.html
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: metamath-proof-explorer
+  kind: proof
+  title: Metamath Proof Explorer
+  url: https://us.metamath.org/mpeuni/mmtheorems.html
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- metamath
+- proof-checking
+- formal-mathematics
+- mathematical-library
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

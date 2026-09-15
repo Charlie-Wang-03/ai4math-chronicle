@@ -1,0 +1,101 @@
+schema_version: 1
+id: evt-1994-qed-manifesto
+slug: qed-manifesto
+
+title:
+  en: The QED Manifesto articulates a shared vision for a machine-checked mathematical knowledge base
+  zh-CN: QED Manifesto 提出共享机器检查数学知识库愿景
+
+dates:
+  event: '1994-05-15'
+  first_public_claim: '1994-05-15'
+  paper_release: '1994-05-15'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: The QED Manifesto articulated a collective vision of representing important mathematical knowledge formally and mechanically checking all proofs, making formalized mathematics a community-scale infrastructure goal.
+    zh-CN: QED Manifesto 提出把重要数学知识形式表示并机械检查全部证明的共同愿景，使形式化数学成为共同体规模的基础设施目标。
+
+mathematical_novelty:
+  type: not_applicable
+interfaces:
+- not_applicable
+
+claim:
+  en: The manifesto dated 15 May 1994 proposed the QED project: a computer system representing important mathematical knowledge and techniques with strict formal internal representation and mechanical proof checking.
+  zh-CN: 1994 年 5 月 15 日的宣言提出 QED Project：建立表示重要数学知识与技术的计算机系统，内部采用严格形式表示并机械检查证明。
+
+summary:
+  en: QED was a field-building vision rather than a single software release, calling for broad cooperation around shared formal mathematical knowledge.
+  zh-CN: QED 是领域建构愿景而非单一软件发布，主张围绕共享形式数学知识开展广泛协作。
+
+why_it_matters:
+  en: The manifesto anticipated later large formal libraries, interoperability ambitions and AI systems trained or evaluated over machine-readable mathematics.
+  zh-CN: 该宣言预示了后来的大型形式数学库、互操作愿景以及在机器可读数学上训练和评测的 AI 系统。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: The milestone is a community vision and governance document, not an AI system performing mathematics.
+    zh-CN: 该节点属于共同体愿景与治理文献，不是 AI 系统执行数学任务。
+
+human_contribution:
+  description:
+    en: The QED community formulated the shared vision for formal mathematical knowledge infrastructure.
+    zh-CN: QED 社群提出共享形式数学知识基础设施的愿景。
+
+systems: []
+organizations: []
+people: []
+problems: []
+methods: []
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1994-05-15'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The dated manifesto directly records the proposed QED project and its goals.
+      zh-CN: 带日期的宣言直接记录了 QED 项目及其目标。
+
+sources:
+- id: qed-manifesto-1994
+  tier: S1
+  type: community
+  title: The QED Manifesto
+  url: https://www.cs.ru.nl/~freek/qed/qed.pdf
+  primary: true
+  published_date: '1994-05-15'
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- qed-manifesto
+- field-building
+- formal-mathematics
+- mathematical-knowledge
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []

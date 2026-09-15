@@ -1,0 +1,119 @@
+schema_version: 1
+id: evt-1988-isabelle
+slug: isabelle-generic-theorem-prover
+
+title:
+  en: Isabelle develops a generic theorem-proving framework across object logics
+  zh-CN: Isabelle 建立跨对象逻辑的通用定理证明框架
+
+dates:
+  event: '1988-05-23'
+  first_public_claim: '1986-01-01'
+  paper_release: '1988-05-23'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: Isabelle generalized the LCF tradition into a theorem-proving framework supporting multiple object logics and substantial tactic automation, later becoming a major platform for formal mathematics and AI-assisted proving.
+    zh-CN: Isabelle 将 LCF 传统发展为支持多种对象逻辑与丰富 tactic 自动化的通用定理证明框架，后来成为形式数学与 AI 辅助证明的重要平台。
+
+mathematical_novelty:
+  type: tooling_only
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: Isabelle was first made publicly available in 1986; Paulson's CADE-9 system abstract on 23 May 1988 provides the precise public research anchor used for this canonical Event date.
+  zh-CN: Isabelle 于 1986 年首次公开；Paulson 在 1988 年 5 月 23 日 CADE-9 的系统摘要为本 canonical Event 提供精确公开研究时间锚点。
+
+summary:
+  en: Isabelle used higher-order unification and a generic meta-level architecture to encode and reason within several object logics, with tactics and tacticals providing automation.
+  zh-CN: Isabelle 利用高阶合一与通用元逻辑架构编码多种对象逻辑，并通过 tactics 与 tacticals 提供自动化。
+
+why_it_matters:
+  en: Isabelle later supported major formal verification projects and created the environment in which Sledgehammer and other ATP/ML integrations matured.
+  zh-CN: Isabelle 后来承载大型形式验证工程，并成为 Sledgehammer 等 ATP/ML 融合系统发展的关键环境。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: Users supplied formal goals and guidance while the system executed logical inference, unification and tactic automation.
+    zh-CN: 用户提供形式目标与指导，系统执行逻辑推理、合一与 tactic 自动化。
+
+human_contribution:
+  description:
+    en: Lawrence Paulson and collaborators designed the generic architecture, object-logic encodings and automation mechanisms.
+    zh-CN: Lawrence Paulson 与合作者设计通用架构、对象逻辑编码与自动化机制。
+
+systems:
+- isabelle
+organizations:
+- university-of-cambridge
+people:
+- lawrence-paulson
+problems:
+- generic-theorem-proving
+methods:
+- higher-order-unification
+- tactics
+- interactive-theorem-proving
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '1988-05-23'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: The CADE-9 proceedings establish the public system description; official Isabelle archives corroborate an earlier Isabelle86 release.
+      zh-CN: CADE-9 proceedings 确认了公开系统描述；Isabelle 官方档案同时佐证更早的 Isabelle86 版本。
+
+sources:
+- id: cade9-isabelle-1988
+  tier: S1
+  type: paper
+  title: Isabelle — The Next Seven Hundred Theorem Provers
+  url: https://link.springer.com/book/10.1007/BFb0012819
+  primary: true
+  published_date: '1988-05-23'
+  accessed_at: '2026-09-15'
+- id: isabelle-official-release-archive
+  tier: S2
+  type: official_announcement
+  title: Older Isabelle Releases
+  url: https://isabelle.in.tum.de/download_past.html
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+timeline:
+  featured: true
+  significance: primary
+tags:
+- isabelle
+- proof-assistant
+- generic-theorem-prover
+- formalization
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+corrections: []
