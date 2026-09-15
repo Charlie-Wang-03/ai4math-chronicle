@@ -1,0 +1,161 @@
+schema_version: 1
+id: evt-2018-gamepad
+slug: gamepad-coq-learning-environment
+
+title:
+  en: GamePad exposes Coq proof traces and interaction as a machine-learning environment
+  zh-CN: GamePad 将 Coq 证明轨迹与交互封装为机器学习环境
+
+dates:
+  event: '2018-06-02'
+  first_public_claim: '2018-06-02'
+  paper_release: '2018-06-02'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      GamePad was an early proof-assistant machine-learning environment that exposed Coq proof states, steps, trees and interactive tactic execution through Python. Its environment-plus-proof-trace design directly preceded larger-scale Coq learning infrastructure such as CoqGym, whose paper identifies GamePad as its closest prior work.
+    zh-CN: >-
+      GamePad 是较早面向证明助手机器学习的交互环境之一，通过 Python 暴露 Coq 的证明状态、步骤、证明树与 tactic 交互执行。其“交互环境 + 证明轨迹”设计直接早于更大规模的 Coq 学习基础设施 CoqGym；后者论文明确将 GamePad 称为最接近的前序工作。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Daniel Huang, Prafulla Dhariwal, Dawn Song and Ilya Sutskever released GamePad, a Python environment for extracting and manipulating Coq proof traces and interacting with Coq. The paper used the environment to synthesize proofs for a simple algebraic rewrite task and to train baseline models for position evaluation and tactic prediction on a formalization of the Feit–Thompson theorem.
+  zh-CN: >-
+    Daniel Huang、Prafulla Dhariwal、Dawn Song 与 Ilya Sutskever 发布 GamePad：一个用于抽取和操作 Coq 证明轨迹并与 Coq 交互的 Python 环境。论文使用该环境在简单代数重写任务上合成证明，并基于 Feit–Thompson 定理形式化训练 position evaluation 与 tactic prediction 基线模型。
+
+summary:
+  en: >-
+    GamePad instruments Coq so proof states, proof steps, mid-level and kernel-level terms and proof trees can be represented as Python data structures. A lightweight coqtop wrapper lets learning code send tactics and receive parsed proof states, while released tooling supports extracting data from the Mathematical Components odd-order development.
+  zh-CN: >-
+    GamePad 对 Coq 进行工程化封装，使证明状态、证明步骤、中层与内核级项以及证明树都能表示为 Python 数据结构。轻量级 coqtop wrapper 允许学习代码发送 tactics 并接收解析后的证明状态，公开工具还支持从 Mathematical Components 的 odd-order 工程中抽取数据。
+
+why_it_matters:
+  en: >-
+    The project helped establish proof assistants as interactive machine-learning environments rather than only sources of static theorem corpora. That interface pattern became important for later systems that train models by repeatedly observing proof states and acting inside a trusted prover.
+  zh-CN: >-
+    该项目推动证明助手从静态定理语料来源转变为可供机器学习系统交互的环境。这种接口范式随后成为许多系统的重要基础：模型能够反复观察证明状态，并在可信证明器内部执行动作。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Machine-learning models predicted proof progress and tactics, and the environment supported automated proof synthesis on a simple rewrite task; the main historical contribution was the reusable Coq interaction and trace infrastructure rather than a new mathematical proof.
+    zh-CN: >-
+      机器学习模型预测证明进度与 tactics，环境也支持在简单重写任务上自动合成证明；其主要历史贡献是可复用的 Coq 交互与轨迹基础设施，而不是新的数学证明。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers instrumented Coq, designed the Python representations and interaction API, prepared the Feit–Thompson-derived data workflow, implemented baseline learning tasks and evaluated the environment.
+    zh-CN: >-
+      研究者改造 Coq、设计 Python 表示与交互 API、准备源自 Feit–Thompson 形式化的数据流程、实现基线学习任务并评测该环境。
+
+systems:
+- gamepad
+- coq
+organizations:
+- university-of-california-berkeley
+- openai
+people:
+- daniel-huang
+- prafulla-dhariwal
+- dawn-song
+- ilya-sutskever
+problems:
+- coq-theorem-proving
+methods:
+- interactive-theorem-proving
+- tactic-prediction
+- proof-state-representation
+- proof-trace-extraction
+- machine-learning-environment
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2018-06-02'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv research record establishes GamePad, its Coq interaction design and the reported proof-synthesis and prediction experiments.
+      zh-CN: >-
+        arXiv 研究记录确认了 GamePad、其 Coq 交互设计以及论文报告的证明合成与预测实验。
+  - date: '2026-09-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public GamePad repository exposes the Coq tracing setup, Python interaction library, examples and data/model workflow. E3 records artifact-level inspectability rather than independent reproduction of every experiment.
+      zh-CN: >-
+        公开 GamePad 仓库提供 Coq tracing 配置、Python 交互库、示例以及数据 / 模型流程。E3 表示 artifact 可直接检查，并不代表论文报告的全部实验已获得独立复现。
+
+sources:
+- id: arxiv-gamepad-1806.00608
+  tier: S1
+  type: paper
+  title: 'GamePad: A Learning Environment for Theorem Proving'
+  url: https://arxiv.org/abs/1806.00608
+  primary: true
+  published_date: '2018-06-02'
+  accessed_at: '2026-09-15'
+- id: github-gamepad
+  tier: S1
+  type: repository
+  title: GamePad Coq learning environment
+  url: https://github.com/ml4tp/gamepad
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts:
+- id: gamepad-repository
+  kind: code
+  title: GamePad Coq learning environment and proof-trace tooling
+  url: https://github.com/ml4tp/gamepad
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2019-coqgym
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- gamepad
+- coq
+- theorem-proving
+- machine-learning-environment
+- proof-traces
+- tactic-prediction
+- infrastructure
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

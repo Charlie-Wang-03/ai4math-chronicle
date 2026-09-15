@@ -142,7 +142,8 @@ artifacts:
   url: https://github.com/princeton-vl/CoqGym
 
 relationships:
-  predecessors: []
+  predecessors:
+  - evt-2018-gamepad
   successors:
   - evt-2023-leandojo
   related:

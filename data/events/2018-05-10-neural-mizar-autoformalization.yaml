@@ -1,0 +1,144 @@
+schema_version: 1
+id: evt-2018-neural-mizar-autoformalization
+slug: neural-mizar-autoformalization
+
+title:
+  en: Neural translation establishes an early route from informalized mathematics to formal Mizar
+  zh-CN: 神经翻译建立从非形式化数学文本到形式 Mizar 的早期路线
+
+dates:
+  event: '2018-05-10'
+  first_public_claim: '2018-05-10'
+  paper_release: '2018-05-10'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-15'
+  last_updated: '2026-09-15'
+
+event_types:
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      These experiments were an early neural autoformalization milestone: instead of assuming a formal theorem statement as input, a neural machine-translation model was trained to map natural-looking mathematical text into Mizar statements. The work became an explicit predecessor in later autoformalization research, including the 2022 large-language-model route.
+    zh-CN: >-
+      这些实验是较早具有代表性的神经自动形式化里程碑：系统不再假设输入已经是形式定理陈述，而是训练神经机器翻译模型，把接近自然数学语言的文本映射为 Mizar 形式陈述。后来的自动形式化研究，包括 2022 年的大语言模型路线，也明确把该工作列为前序研究。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    Qingxiang Wang, Cezary Kaliszyk and Josef Urban trained neural machine-translation models on aligned informalized-LaTeX and formal Mizar statements. The paper reported 65.73% exact generation for the best model configuration on its inference data, with the union of evaluated models covering 79.17%.
+  zh-CN: >-
+    Qingxiang Wang、Cezary Kaliszyk 与 Josef Urban 在对齐的 informalized-LaTeX 文本与形式 Mizar 陈述上训练神经机器翻译模型。论文报告称，最佳模型配置在推理数据上的精确生成率为 65.73%，多种评测模型结果的并集覆盖率达到 79.17%。
+
+summary:
+  en: >-
+    The authors constructed a large aligned corpus by informalizing Mizar statements into LaTeX-like mathematical text and trained sequence-to-sequence translation models to reconstruct the formal language. The study evaluated multiple neural translation configurations and used case studies to examine which mathematical structures could be recovered correctly.
+  zh-CN: >-
+    作者通过将 Mizar 陈述 informalize 为类似 LaTeX 的数学文本，构建大规模对齐语料，并训练序列到序列翻译模型重建形式语言。研究比较多种神经翻译配置，并通过案例分析模型能够正确恢复哪些数学结构。
+
+why_it_matters:
+  en: >-
+    Autoformalization is a key interface problem between human mathematical writing and machine-checkable formal mathematics. This work showed, before the modern LLM era, that learned translation could make the informal-to-formal direction a concrete empirical research problem rather than only a long-term aspiration.
+  zh-CN: >-
+    自动形式化是连接人类数学书写与机器可检查形式数学的关键接口问题。该工作在现代 LLM 时代之前就展示了学习式翻译能够把 informal-to-formal 方向转化为可实验评测的具体研究问题，而不仅是长期愿景。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      Neural sequence-to-sequence models generated candidate formal Mizar statements from informalized mathematical input; the models performed the central translation task evaluated in the study.
+    zh-CN: >-
+      神经序列到序列模型从 informalized 数学输入生成候选 Mizar 形式陈述，并承担研究所评测的核心翻译任务。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers created the aligned informal/formal corpus, designed the translation experiments and evaluation methodology, selected model configurations and analyzed generated statements.
+    zh-CN: >-
+      研究者构建 informal / formal 对齐语料、设计翻译实验与评测方法、选择模型配置，并分析生成的形式陈述。
+
+systems:
+- mizar
+organizations:
+- university-of-innsbruck
+people:
+- qingxiang-wang
+- cezary-kaliszyk
+- josef-urban
+problems:
+- mathematical-autoformalization
+methods:
+- neural-machine-translation
+- sequence-to-sequence-learning
+- aligned-corpus-construction
+- autoformalization
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2018-05-10'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv and CICM research records establish the neural informal-to-formal translation experiments and the reported Mizar results. E2 records a public research record and does not imply independent reproduction or semantic validation of every generated statement.
+      zh-CN: >-
+        arXiv 与 CICM 研究记录确认了神经 informal-to-formal 翻译实验及论文报告的 Mizar 结果。E2 表示已有公开研究记录，并不意味着全部生成陈述都获得了独立复现或语义验证。
+
+sources:
+- id: arxiv-neural-mizar-autoformalization-1805.06502
+  tier: S1
+  type: paper
+  title: First Experiments with Neural Translation of Informal to Formal Mathematics
+  url: https://arxiv.org/abs/1805.06502
+  primary: true
+  published_date: '2018-05-10'
+  accessed_at: '2026-09-15'
+- id: doi-cicm-neural-mizar-autoformalization-2018
+  tier: S1
+  type: paper
+  title: First Experiments with Neural Translation of Informal to Formal Mathematics — CICM 2018
+  url: https://doi.org/10.1007/978-3-319-96812-4_22
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-15'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2022-autoformalization-llm
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- autoformalization
+- mizar
+- neural-machine-translation
+- informal-mathematics
+- formal-mathematics
+- sequence-to-sequence
+
+editorial:
+  created_at: '2026-09-15'
+  last_reviewed: '2026-09-15'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
