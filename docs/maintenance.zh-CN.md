@@ -14,8 +14,8 @@ AI4Math 大事记定位为精选历史档案，而不是实时新闻流。因此
 2. 完成去重与 triage，判断信源属于已有 Event、新 candidate、watch item，还是 scope 外 / 重要性不足的条目；
 3. 对成熟 candidate，识别仍缺少哪些证据，并为每条事件或紧密相关事件组准备一个聚焦 PR；
 4. 运行 CI，并完成必要的人工编辑门槛；
-5. 审核后使用 squash merge；
-6. `main` 持续部署到 GitHub Pages。
+5. 在所有 enforced branch-protection / CI 条件以及任何 task-specific human gate 满足后使用 squash merge；
+6. `main` 持续部署到 GitHub Pages 与已经批准的辅助 mirrors。
 
 项目不承诺固定发布 SLA。准确性、可追溯性与历史选择质量优先于速度。
 
@@ -91,7 +91,7 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 - patch / minor 依赖更新在 CI 通过并完成快速兼容性检查后可合并；
 - runtime 或 toolchain major 升级作为专门迁移处理，而不是例行 housekeeping；
 - GitHub Actions 继续固定到 immutable commit SHA；
-- 会影响 production 的 workflow 变化，除了 PR CI，还必须通过合并后的真实 GitHub Pages 部署验证。
+- 会影响 production 的 workflow 变化，除了 PR CI，还必须通过合并后的真实 GitHub Pages 部署验证，并在相关时验证已经批准的辅助 delivery path。
 
 除非通过专门迁移有意修改，当前 runtime baseline 保持 Node 22。
 
@@ -121,21 +121,22 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 
 ## 维护责任模型
 
-项目现在采用 **trusted co-maintainer / 可信共同维护者模式**，以 [`MAINTAINERS.md`](../MAINTAINERS.md)、[co-maintainer governance amendment](./gpt-project-governance-co-maintainer-amendment.md) 与 [Trusted Maintainer 指南](./maintainer-guide.zh-CN.md) 为准。
+项目现在采用已经激活的 **trusted co-maintainer / 可信共同维护者模式**，以 [`MAINTAINERS.md`](../MAINTAINERS.md)、[co-maintainer governance amendment](./gpt-project-governance-co-maintainer-amendment.md) 与 [Trusted Maintainer 指南](./maintainer-guide.zh-CN.md) 为准。
 
-目标运行方式为：
+当前运行方式为：
 
-- trusted maintainers 在项目决策层面拥有基本对等权限；
+- active trusted maintainers 在项目决策层面拥有基本对等权限；
 - 外部贡献者通常通过 Issues、fork 与聚焦 PR 工作；
-- trusted maintainers 可以使用仓库内聚焦 branch，并互相 review PR；
+- trusted maintainers 可以使用仓库内聚焦 branch，在有价值时互相 review，也可以在全部 enforced CI / branch-protection 条件通过后自行合并自己的聚焦 PR；
 - GitHub collaborator 身份本身不自动产生 trusted-maintainer 权限；
-- `CODEOWNERS` 用于把敏感改动路由给 trusted maintainers；
-- 当第二位 trusted maintainer 的具体身份正式激活后，`main` 应要求 1 个 approving review，并对敏感路径启用 Code Owner review，同时保留现有 required CI 与 history protections；
+- `CODEOWNERS` 用于 ownership 与 review routing，但不是统一的跨维护者审批门槛；
+- `main` 必须通过 PR、required CI、strict up-to-date checks、resolved review conversations、squash-only merge、linear history、deletion protection 与 non-fast-forward protection，但对 trusted-maintainer PR 有意不统一强制 approving review 或 Code Owner review；
+- 项目允许把辅助网页 URL、aliases、redirects、mirrors 与部署通知作为普通工程维护，只要保持静态架构与 canonical-origin contract；
 - 如果 trusted maintainers 对宪法性、高风险编辑、项目阶段或 destructive-operation 问题作出实质冲突的明确决定，应由人类维护者协商解决，AI 与自动化不得自行裁决。
 
 GitHub 仓库所有者可能因为平台限制而保留某些账户级权限。这种机械权限差异不构成 trusted maintainers 之间默认的项目议程层级。
 
-建立 co-maintainer 模式本身不选择新的 roadmap。未来具体方向继续由 active Product Specification 与 [`project-state.md`](./project-state.md) 管理。
+建立 co-maintainer 模式本身不选择新的编辑 / UI / 历史关系 roadmap。未来具体方向继续由 active Product Specification 与 [`project-state.md`](./project-state.md) 管理。
 
 仓库设置继续保持最小化：开启 Issues；Projects、Wiki 与 Discussions 保持关闭，直到真实协作规模证明它们有必要。
 
@@ -152,6 +153,7 @@ GitHub 仓库所有者可能因为平台限制而保留某些账户级权限。�
 - 依赖更新受控，不制造 toolchain churn；
 - 公开贡献入口始终可用；
 - trusted maintainers 可以分别从仓库证据恢复出一致的当前项目状态；
+- trusted maintainers 都能在不削弱 human gates 的前提下独立完成约定的 PR / CI / squash workflow；
 - maintainer 之间的分歧会被显式暴露和协商解决，而不是由 AI 静默仲裁；
 - Release 周期性提供可引用快照，同时不会把仓库拖入沉重的 release management；
 - 一个全新的 AI 协作对话可以仅依赖仓库证据恢复当前项目状态，而不依赖陈旧聊天上下文。

@@ -14,8 +14,8 @@ The default operating loop is:
 2. deduplicate and triage whether a source belongs to an existing Event, a new candidate, a watch item, or an out-of-scope / low-significance item;
 3. for mature candidates, identify what evidence is still missing and prepare one focused PR per event or tightly related event cluster;
 4. run CI and complete any required editorial gate;
-5. merge by squash after review;
-6. let `main` deploy continuously to GitHub Pages.
+5. squash-merge after all enforced branch-protection / CI conditions and any task-specific human gate are satisfied;
+6. let `main` deploy continuously to GitHub Pages and any approved auxiliary mirrors.
 
 There is no guaranteed publication SLA. Accuracy, provenance, and historical selectivity take priority over speed.
 
@@ -91,7 +91,7 @@ Routine policy:
 - patch and minor dependency updates may be merged after CI and a quick compatibility review;
 - runtime or toolchain major upgrades are deliberate migrations, not routine housekeeping;
 - GitHub Actions remain pinned to immutable commit SHAs;
-- production-impacting workflow changes should be validated by the post-merge GitHub Pages deployment, not only by PR CI.
+- production-impacting workflow changes should be validated by the post-merge GitHub Pages deployment and, when relevant, the approved auxiliary delivery path, not only by PR CI.
 
 The current runtime baseline is Node 22 unless intentionally changed through a dedicated migration.
 
@@ -121,21 +121,22 @@ Published tags and releases are historical records and should not be moved or re
 
 ## Operational ownership
 
-The project now uses a **trusted co-maintainer model** governed by [`MAINTAINERS.md`](../MAINTAINERS.md), the [co-maintainer governance amendment](./gpt-project-governance-co-maintainer-amendment.md), and the [Trusted Maintainer Guide](./maintainer-guide.md).
+The project uses an active **trusted co-maintainer model** governed by [`MAINTAINERS.md`](../MAINTAINERS.md), the [co-maintainer governance amendment](./gpt-project-governance-co-maintainer-amendment.md), and the [Trusted Maintainer Guide](./maintainer-guide.md).
 
-The intended operating model is:
+The operating model is:
 
-- trusted maintainers have near-peer project decision authority;
+- active trusted maintainers have near-peer project decision authority;
 - external contributors normally work through Issues, forks, and focused PRs;
-- trusted maintainers may work from focused repository branches and review one another's PRs;
+- trusted maintainers may work from focused repository branches, request one another's review when useful, and self-merge their own focused PRs after all enforced CI / branch-protection conditions pass;
 - GitHub collaborator status alone does not create trusted-maintainer authority;
-- `CODEOWNERS` routes sensitive changes for trusted-maintainer attention;
-- once a second trusted maintainer is concretely activated, `main` should require one approving review and Code Owner review for sensitive paths while preserving the existing required CI and history protections;
+- `CODEOWNERS` records ownership and review routing but is not a blanket cross-maintainer approval gate;
+- `main` requires PRs, required CI, strict up-to-date checks, resolved review conversations, squash-only merge, linear history, deletion protection, and non-fast-forward protection, but intentionally does not require a blanket approving review or universal Code Owner review for trusted-maintainer PRs;
+- project-owned auxiliary URLs, aliases, redirects, mirrors, and deployment notifications are allowed as ordinary engineering maintenance when they preserve the static architecture and canonical-origin contract;
 - if trusted maintainers make materially conflicting explicit decisions on a constitutional, high-risk editorial, phase, or destructive-operation question, the disagreement must be reconciled by the humans rather than decided by AI or automation.
 
 The GitHub repository owner may retain account-level controls that the platform cannot fully delegate. This mechanical distinction does not establish a general project-agenda hierarchy among trusted maintainers.
 
-The co-maintainer model does not select a new roadmap. Specific future directions remain governed by the active Product Specification and [`project-state.md`](./project-state.md).
+The co-maintainer model does not select a new editorial / UI / historical-lineage roadmap. Specific future directions remain governed by the active Product Specification and [`project-state.md`](./project-state.md).
 
 Repository settings should remain intentionally minimal: Issues enabled; Projects, Wiki, and Discussions disabled until real collaboration volume justifies them.
 
@@ -152,6 +153,7 @@ The project is healthy when:
 - dependency updates are controlled without creating toolchain churn;
 - public contribution paths remain usable;
 - trusted maintainers can independently recover the same current project state from repository evidence;
+- trusted maintainers can independently complete the agreed PR / CI / squash workflow without weakening human gates;
 - maintainer disagreement is surfaced and reconciled rather than silently arbitrated by AI;
 - releases periodically provide citable snapshots without turning the repository into a release-management burden;
 - a fresh AI-assisted conversation can recover the active project state from repository evidence without depending on stale chat context.

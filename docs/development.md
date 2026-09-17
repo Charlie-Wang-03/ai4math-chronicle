@@ -18,6 +18,8 @@ The v0.1 implementation is intentionally static and GitHub-native:
 
 Do not introduce a backend, CMS, account system, database server, vector database, server API, or unnecessary SSR without a future product-specification change.
 
+Auxiliary project URLs, hostname aliases, redirects, mirrors, and deployment notifications are allowed as ordinary engineering infrastructure when they keep the static build and canonical Event source of truth intact and preserve the active canonical origin. A change that moves the canonical site or changes the product architecture remains a separate migration decision.
+
 ## Local setup
 
 Requires Node.js `>=22.12.0`.
@@ -95,6 +97,8 @@ External link checking should remain non-flaky and should not become a permanent
 The same `main` build is also published to a self-hosted mirror, served on `history.aixmath.org`, `timeline.aixmath.org`, and `news.aixmath.org`. Those hostnames are convenience aliases, not additional sites: the build keeps `site` at the Pages origin and the published HTML keeps a single canonical origin (`https://charlie-wang-03.github.io/ai4math-chronicle/`), so GitHub Pages remains the canonical, indexed home and the aliases consolidate instead of competing in search. The mirror is built outside this repository and does not change the required Project Pages behaviour: `site`, `base`, and every internal link stay exactly as they are for the Pages build.
 
 `.github/workflows/notify-deploy.yml` sends a signed notification to the mirror's deploy API whenever `main` moves, so the mirror rebuilds from the same commit. It is a notification only: it does not gate CI, it is skipped when the `AI4MATH_DEPLOY_WEBHOOK_SECRET` repository secret is absent, and it is independent of the GitHub Pages deployment.
+
+This mirror and the associated project URLs are explicitly allowed under the active trusted-maintainer engineering policy. Extending or maintaining similar auxiliary URLs does not require a Product Specification change as long as the canonical origin and static architecture remain unchanged.
 
 ## UI changes
 

@@ -96,13 +96,13 @@ The conflict becomes a human reconciliation gate.
 
 GitHub collaborator status alone does not create trusted-maintainer authority. A new maintainer must be explicitly designated and recorded in `MAINTAINERS.md` after the concrete GitHub identity is known and repository access has been accepted.
 
-Once a stable second maintainer is activated, the intended `main` protection target is one approving review plus Code Owner review for sensitive paths while retaining the existing required CI, resolved-conversation, squash-only, linear-history, deletion, and non-fast-forward protections.
+The initial collaboration-readiness design proposed one approving review plus Code Owner review for a stable two-maintainer setup. That proposal was later superseded by the explicit activation decision recorded below.
 
 ### Roadmap boundary
 
-This governance transition does **not** approve a new product phase or any particular future workstream.
+This governance transition does **not** approve a new product phase or any particular future editorial, UI / UX, or historical-lineage workstream.
 
-Historical-lineage work, UI / UX optimization, hosting migration, discovery automation, or other future directions remain undecided unless they are already covered by the standing maintenance loops or later receive explicit human approval.
+Specific future directions remain undecided unless they are already covered by the standing maintenance loops or later receive explicit human approval.
 
 ### Consequences
 
@@ -110,6 +110,53 @@ Historical-lineage work, UI / UX optimization, hosting migration, discovery auto
 - `docs/maintenance*.md` no longer describe the repository as a single-maintainer project.
 - `docs/maintainer-guide*.md` provides the operating contract for trusted human maintainers.
 - `AGENTS.md` treats `MAINTAINERS.md` and the co-maintainer amendment as mandatory state-recovery inputs.
-- The second maintainer's concrete GitHub identity, `CODEOWNERS` membership, and multi-maintainer ruleset activation remain explicit follow-up steps after the collaborator invitation is accepted.
+- The second maintainer's concrete GitHub identity, `CODEOWNERS` membership, and multi-maintainer operating model require an explicit activation step.
 
-Future changes to this co-maintainer authority model require an explicit trusted-maintainer governance decision and must follow the conflict rule above.
+## 2026-09-17 — Zecyel activated; trusted-maintainer self-merge model ratified
+
+**Status:** Explicitly approved by `@Charlie-Wang-03`
+
+### Decision
+
+Activate [`@Zecyel`](https://github.com/Zecyel) as the second **trusted co-maintainer** with near-peer project decision authority.
+
+The contribution pattern demonstrated in PR #112 is permitted: a trusted maintainer may create a focused repository branch and PR, request review when useful, wait for the enforced CI / branch-protection conditions to pass, and then squash-merge that same PR without requiring another maintainer's approval unless a specific task, human gate, or explicit maintainer decision makes cross-review mandatory.
+
+Accordingly, the stable two-maintainer protection model is:
+
+- PRs required for `main`;
+- `validate-and-build` required and up to date;
+- review conversations resolved;
+- squash-only merge;
+- linear history;
+- deletion protection;
+- non-fast-forward protection;
+- **no blanket required approving review** for trusted-maintainer PRs;
+- **no blanket Code Owner review requirement**.
+
+`CODEOWNERS` remains useful for ownership and review routing but is not a universal merge gate.
+
+### Allowed URL / mirror engineering
+
+Trusted maintainers may create and maintain project web URLs, hostname aliases, redirects, mirrors, deployment notifications, and similar auxiliary static-delivery infrastructure as ordinary engineering work when those changes:
+
+- remain inside the approved static architecture;
+- preserve canonical Event YAML as the single factual source;
+- preserve the active canonical-site / canonical-origin contract unless a separate migration is explicitly approved;
+- do not silently create a new product phase or second editorial source of truth.
+
+PR #112's self-hosted mirror notification and the auxiliary `aixmath.org` hostnames are approved under this rule. GitHub Pages remains the canonical indexed origin unless a later explicit migration decision changes that contract.
+
+### What remains unchanged
+
+This activation does not approve a specific new historical-lineage, UI / UX, corpus-expansion, or canonical-site migration roadmap.
+
+The existing H1, high-risk verification, mathematical-correctness / attribution / priority, Product Specification, governance, phase, and destructive-operation human gates remain in force. Either active trusted maintainer may satisfy such a gate when no conflicting trusted-maintainer decision is known.
+
+### Consequences
+
+- `@Zecyel` is added to `MAINTAINERS.md` and the relevant `CODEOWNERS` entries.
+- The co-maintainer amendment, maintainer guides, maintenance policy, development documentation, and `project-state.md` must reflect the active self-merge model and approved auxiliary URL / mirror engineering boundary.
+- The existing zero blanket-approval main ruleset is intentional rather than a temporary pre-activation state.
+
+Future changes to this co-maintainer authority or merge model require an explicit trusted-maintainer governance decision and remain subject to the maintainer-conflict rule.

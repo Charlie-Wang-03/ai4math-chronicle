@@ -19,29 +19,33 @@ The public v0.1 line is already launched. Ordinary maintenance, incremental Even
 
 The canonical AI operating protocol remains [`gpt-project-governance.md`](./gpt-project-governance.md), amended by the ratified [`gpt-project-governance-co-maintainer-amendment.md`](./gpt-project-governance-co-maintainer-amendment.md).
 
-The project has approved a **trusted co-maintainer model**:
+The project has an **active trusted co-maintainer model**:
 
-- humans explicitly listed in [`../MAINTAINERS.md`](../MAINTAINERS.md) are trusted maintainers;
-- the GitHub repository owner and an explicitly activated trusted co-maintainer have near-peer project decision authority;
+- the active trusted maintainers are the humans explicitly listed in [`../MAINTAINERS.md`](../MAINTAINERS.md), currently `@Charlie-Wang-03` and `@Zecyel`;
+- the GitHub repository owner and the explicitly activated trusted co-maintainer have near-peer project decision authority;
 - GitHub account-level ownership or security controls that cannot be fully delegated are treated as mechanical platform facts rather than a general project-agenda hierarchy;
 - an explicit approval from an active trusted maintainer may satisfy existing human hard gates when no conflicting trusted-maintainer decision is known;
 - if trusted maintainers issue materially conflicting explicit decisions on a constitutional, high-risk editorial, phase, or destructive-operation question, AI and automation must not choose between them; the humans must reconcile the conflict;
-- collaborator status alone does not create trusted-maintainer authority; activation requires explicit designation and a recorded identity in `MAINTAINERS.md`.
+- collaborator status alone does not create trusted-maintainer authority; activation requires explicit designation and a recorded identity in `MAINTAINERS.md`;
+- substantial trusted-maintainer work uses focused PRs and the protected `main` workflow, but a trusted maintainer may squash-merge their own PR after all enforced CI / branch-protection conditions pass unless a more specific human gate or explicit task decision requires another human review;
+- `CODEOWNERS` records ownership and review routing but is not a blanket cross-maintainer approval gate.
 
-The owner has approved adding a second trusted co-maintainer with near-peer project decision authority. The concrete GitHub identity is intentionally not treated as active until the collaborator has been invited, accepted access, and been recorded in `MAINTAINERS.md` and the relevant review-routing configuration.
+The active `main` protection model intentionally keeps PRs, `validate-and-build`, strict up-to-date checks, resolved review conversations, squash-only merge, linear history, deletion protection, and non-fast-forward protection while **not** imposing a blanket required approving review or universal Code Owner review for trusted-maintainer PRs.
 
-This collaboration transition does **not** select a new product, editorial, UI / UX, historical-lineage, hosting-migration, or other roadmap. Future concrete routes remain undecided unless they are already covered by the standing maintenance loops below or explicitly approved later.
+This collaboration model does **not** select a new editorial, UI / UX, historical-lineage, corpus-program, or canonical-site migration roadmap. Future concrete routes remain undecided unless they are already covered by the standing maintenance loops below or explicitly approved later.
+
+Trusted maintainers are, however, explicitly allowed to create and maintain auxiliary project web URLs, hostname aliases, redirects, mirrors, and deployment notifications as ordinary engineering maintenance when those changes preserve the static architecture, canonical Event source of truth, and active canonical-origin contract. The self-hosted `aixmath.org` mirror path introduced through PR #112 is an approved example; GitHub Pages remains the canonical indexed origin unless a later explicit migration decision changes that contract.
 
 ## Approved active mainline
 
 The approved long-term mainline has two standing tracks:
 
-1. **Product / engineering maintenance** — keep the static GitHub Pages site reliable, discoverable, professional, accessible, coherent, and easy to navigate under the active v0.1 product contract.
+1. **Product / engineering maintenance** — keep the static GitHub Pages site and approved auxiliary delivery infrastructure reliable, discoverable, professional, accessible, coherent, and easy to navigate under the active v0.1 product contract.
 2. **Chronicle / corpus maintenance** — continue evidence-backed candidate intake, deduplication, Event drafting, normal H2/H3 publication, source maintenance, corrections, relationships, and verification follow-up under the Editorial Methodology and Governance Protocol.
 
 These are standing maintenance loops, not authorization to invent a new major feature family or a new product phase.
 
-No additional concrete collaboration workstream is currently approved merely by virtue of the co-maintainer transition.
+No additional concrete collaboration workstream is approved merely by virtue of the co-maintainer transition.
 
 ## Current semantic objective
 
@@ -55,7 +59,8 @@ Maintain AI4Math Chronicle as a trustworthy, living historical archive while pre
 - task-aware page hierarchy and modular scholarly information presentation;
 - stable, language-aware bilingual typography and responsive density;
 - auditable verification and correction history;
-- a static, maintainable GitHub-native architecture;
+- a static, maintainable GitHub-native architecture with GitHub Pages as the canonical indexed origin;
+- approved auxiliary mirrors / URLs remaining subordinate to the same canonical static build and source of truth;
 - repository-native collaboration that does not depend on private chat context or undocumented maintainer hierarchy.
 
 ### Approved field-building extension
@@ -114,6 +119,7 @@ Without a new phase decision, agents may continue:
 - accessibility, SEO, GEO, structured-data, search, and navigation maintenance;
 - incremental work that reinforces the approved R0 product-coherence and R1 information-design models;
 - dependency and GitHub Pages maintenance;
+- maintenance of approved auxiliary URLs, hostname aliases, redirects, mirrors, and deployment notifications that preserve the canonical origin and static architecture;
 - schema, CI, documentation, and data-quality improvements;
 - candidate event discovery and source collection, including `field_building` candidates under the approved amendment;
 - ordinary H2/H3 Event creation when evidence and scope rules are satisfied, including ordinary H2/H3 `field_building` records;
