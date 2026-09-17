@@ -1,3 +1,8 @@
+# Trusted maintainer membership is canonical in /MAINTAINERS.md.
+# Add each active trusted co-maintainer here after the concrete GitHub identity
+# has accepted repository access. Until then, review routing remains with the
+# currently active repository owner to avoid placeholder identities or deadlock.
+
 # Default maintainer review
 * @Charlie-Wang-03
 
@@ -6,3 +11,10 @@
 /schema/ @Charlie-Wang-03
 /docs/editorial-methodology.md @Charlie-Wang-03
 /docs/editorial-methodology.zh-CN.md @Charlie-Wang-03
+
+# Governance / maintainer authority surfaces
+/MAINTAINERS.md @Charlie-Wang-03
+/docs/gpt-project-governance.md @Charlie-Wang-03
+/docs/gpt-project-governance-co-maintainer-amendment.md @Charlie-Wang-03
+/docs/project-state.md @Charlie-Wang-03
+/docs/governance-decisions.md @Charlie-Wang-03
