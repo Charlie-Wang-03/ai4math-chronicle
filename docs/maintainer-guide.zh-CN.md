@@ -6,7 +6,7 @@
 
 它用于说明：如何在多人维护下行使维护权限，同时避免把项目规则退化成依赖私人聊天、口头默契或临时习惯的协作方式。本文补充 Product Specification、GPT Governance Protocol、co-maintainer amendment、Editorial Methodology、Maintenance Policy、Development Guide、Architecture 与 `AGENTS.md`。
 
-本文**不定义新的项目路线图**。协作治理与“下一阶段具体做什么”被明确分离；建立共同维护模式本身，不代表已经批准“历史事件逻辑链条”“网页 UI / UX 优化”“网站迁移”或其他具体路线。
+本文**不定义新的项目路线图**。协作治理与“下一阶段具体做什么”被明确分离；建立共同维护模式本身，不代表已经批准“历史事件逻辑链条”“网页 UI / UX 优化”“canonical-site migration”或其他具体路线。
 
 ## 1. 从仓库真实状态开始
 
@@ -34,6 +34,7 @@ Trusted maintainers 在项目决策层面拥有基本对等的权限。
 - triage source leads、corrections、bugs 与维护任务；
 - 在证据规则满足时发布普通 H2 / H3 Event 改动；
 - 审批或拒绝普通工程 / 编辑 PR；
+- 创建自己的聚焦 PR，并在 enforced branch protection 与 required CI 全部通过后自行 squash merge，除非更具体的 gate 要求另一位人类复核；
 - 在愿意承担该决定责任时，对现有 human hard gate 给出明确批准；
 - 提议并明确批准产品或治理变更，但仍受下文冲突规则约束；
 - 在相同仓库治理规则下协调 AI agents 与自动化。
@@ -71,7 +72,7 @@ GitHub 仓库所有者可能因为平台限制而保留某些无法完全委派�
 4. 由人类维护者协商解决；
 5. 若结果改变长期语义状态，应写回对应 canonical 文档。
 
-对于已批准目标内部的普通实现细节，维护者可以互相委派 task ownership，不需要在仓库既有 PR review 规则之外人为增加重复审批。
+对于已批准目标内部的普通实现细节，维护者可以互相委派 task ownership；除非具体决定或 gate 要求，否则不需要双人 approval。
 
 ## 5. Branch 与 Pull Request 工作流
 
@@ -83,11 +84,13 @@ GitHub 仓库所有者可能因为平台限制而保留某些无法完全委派�
 4. 当 Issue 能增加可追溯性时再关联相关 Issue；
 5. 在 PR body 中说明证据、不确定性与任何 human gate；
 6. 运行相关 validation；
-7. 在 review / CI 条件满足后使用 squash merge。
+7. 在 enforced CI / branch-protection 条件满足后使用 squash merge。
 
 不要因为两位维护者彼此信任，就绕过受保护分支工作流。
 
-第二位 maintainer 正式激活后，`main` 的目标保护模型为：至少 1 个 approving review；敏感路径要求 Code Owner review；同时继续保留既有 required CI 与 history protections。
+当前 `main` 保护模型有意要求 PR 与 deterministic CI，但**不对 trusted-maintainer PR 普遍强制第二人 approval，也不普遍强制 Code Owner review**。Trusted maintainer 可以在 required checks 通过后自行合并自己的聚焦 PR。若 cross-review 能提高质量，应主动请求；只有当具体任务、human gate 或明确的人类决定要求时，该 review 才成为 blocking gate。
+
+`CODEOWNERS` 用于 ownership 与 review routing，本身并不等价于统一的跨维护者审批门槛。
 
 ## 6. Event / 编辑改动
 
@@ -111,7 +114,7 @@ Source Lead Issues 继续只是 operational workflow records，不是第二套�
 对于代码、UI、search、accessibility、SEO / GEO、deployment 与 maintenance：
 
 - 除非 Product Specification 已明确批准变更，否则保持 static Astro + TypeScript 架构；
-- 除非已有迁移决策，否则保持 GitHub Project Pages base-path contract；
+- 除非已有迁移决策，否则保持 GitHub Project Pages base-path 与 canonical-origin contract；
 - canonical Event YAML 始终是唯一事实源；
 - English 与 `zh-CN` 展示继续从同一 canonical record 派生；
 - 行为或操作契约变化时同步更新文档；
@@ -124,6 +127,10 @@ npm run build
 ```
 
 若影响 reader-facing behavior，还应执行 browser-level QA。
+
+Trusted maintainer 可以在不改变静态产品架构、不改变 canonical origin、也不建立第二事实源的前提下，把辅助网页 URL、hostname alias、redirect、mirror 与部署通知作为普通工程工作推进。
+
+当前 self-hosted mirror 是一个已允许的例子：`aixmath.org` 的辅助 hostnames mirror `main` 构建，而 GitHub Pages 继续作为 canonical indexed origin。
 
 ## 8. Release 与 production 改动
 
@@ -139,13 +146,13 @@ GitHub Pages 从 `main` 持续部署；Releases 是可引用快照，而不是�
 
 不得重写已发布 tag 或 Release。
 
-未来 hosting / domain / deployment migration **不会因为 co-maintainer 模式建立而自动获得批准**。任何此类迁移都应根据当时 Product Specification 与 governance 单独评估和批准。
+如果未来 hosting / domain / deployment migration 会改变 canonical site 或产品架构，则仍需单独评估和批准。保持 canonical origin 不变的辅助 mirrors / aliases 属于当前政策允许的普通工程维护。
 
 ## 9. 路线图纪律
 
 Co-maintainer 模式不预先决定维护者下一步应该推进什么。
 
-不要因为某些方向曾被讨论，就把更深的历史 relationships、UI / UX redesign、hosting migration、新 discovery automation 或其他 feature family 当成已批准路线。
+不要因为某些方向曾被讨论，就把更深的历史 relationships、UI / UX redesign、canonical-site migration、新 discovery automation 或其他 feature family 当成已批准路线。
 
 使用 [`project-state.md`](./project-state.md) 区分：
 
@@ -153,21 +160,28 @@ Co-maintainer 模式不预先决定维护者下一步应该推进什么。
 - 明确 active objectives；
 - 仍需人类决定的 candidate directions。
 
-## 10. 激活第二位 trusted maintainer
+## 10. 激活 trusted maintainer
 
-当具体 collaborator 账号准备好后：
+具体 collaborator 满足以下条件后成为 active trusted maintainer：
 
-1. 邀请该账号，并授予与 trusted maintenance 相匹配的 repository access；
-2. 等待其接受邀请；
-3. 将准确 GitHub username 写入 [`MAINTAINERS.md`](../MAINTAINERS.md)；
-4. 将其加入 [`.github/CODEOWNERS`](../.github/CODEOWNERS) 中相应条目；
-5. 更新 `main` ruleset：要求 1 个 approving review，并对敏感路径启用 Code Owner review；
-6. 保留 `validate-and-build`、strict up-to-date checks、resolved review conversations、squash-only merge、linear history、deletion protection 与 non-fast-forward protection；
-7. 实际验证两位维护者都能创建 branch、review PR，并在不造成 protection deadlock 的前提下完成预期 workflow；
-8. 确认新维护者已经阅读 canonical governance 与 maintainer 文档；
-9. 仅在语义维护状态相较已批准 co-maintainer 模式继续发生变化时，再更新 `project-state.md`。
+1. 已有 trusted maintainer 明确指定该账号；
+2. repository access 已接受；
+3. 准确 GitHub username 已写入 [`MAINTAINERS.md`](../MAINTAINERS.md)；
+4. [`.github/CODEOWNERS`](../.github/CODEOWNERS) 已反映预期 ownership / routing；
+5. `main` ruleset 已按约定多人工作流完成复核；
+6. 新维护者已阅读 canonical governance 与 maintainer 文档。
 
-在 collaborator 接受权限之前，不要把占位 GitHub 身份写入 canonical maintainer registry。
+当前双维护者 ruleset 应继续保留：
+
+- `main` 必须通过 PR；
+- `validate-and-build` required 且必须 up to date；
+- review conversations resolved；
+- squash-only merge；
+- linear history；
+- deletion protection；
+- non-fast-forward protection。
+
+它有意**不要求**每个 trusted-maintainer PR 都取得 1 个 approving review 或 Code Owner review。两位维护者都应能够创建 branch、打开 PR、通过 required checks，并在没有 protection deadlock 的情况下完成约定的 self-merge workflow。
 
 ## 11. Offboarding
 
@@ -186,6 +200,7 @@ Co-maintainer 模式不预先决定维护者下一步应该推进什么。
 
 - 任一维护者都能仅依赖仓库恢复项目真实状态；
 - substantial changes 通过聚焦 PR 与 deterministic validation；
+- trusted maintainers 都能够独立完成约定的 PR / CI / squash workflow；
 - 敏感编辑 / 治理决定显式且可审计；
 - 任一维护者都不需要私人聊天上下文才能理解当前规则；
 - 已知人类分歧被明确暴露，而不是交给 AI 仲裁；
