@@ -1,16 +1,21 @@
 name: Notify self-hosted mirror
 
-# The project publishes the same `main` build to a self-hosted mirror served on
-# history.aixmath.org, timeline.aixmath.org, and news.aixmath.org, in addition
-# to GitHub Pages. Those hostnames are convenience aliases; GitHub Pages stays
-# the canonical, indexed home. This workflow sends a signed notification to the
-# mirror's deploy API whenever `main` moves, so the mirror can pull this exact
-# commit, rebuild, and publish atomically.
+# The project publishes the same `main` Chronicle build to self-hosted public
+# entrypoints at history.aixmath.org and timeline.aixmath.org, in addition to
+# GitHub Pages. All three are peer product-facing entrypoints. The rendered build
+# still uses the GitHub Pages URL scope for technical SEO canonicalization until
+# a separate canonical-domain migration is explicitly approved.
 #
-# It is a notification only. It never gates CI, it is skipped when the
-# AI4MATH_DEPLOY_WEBHOOK_SECRET repository secret is not configured, and it is
-# independent of the GitHub Pages deployment. The endpoint is configured through
-# the AI4MATH_DEPLOY_WEBHOOK_URL repository variable.
+# news.aixmath.org is reserved for a possible future AI4Math News product and is
+# not an approved Chronicle entrypoint. Any external routing that still serves
+# the Chronicle there is transitional infrastructure outside this repository.
+#
+# This workflow sends a signed notification to the mirror deploy API whenever
+# `main` moves, so the mirror can pull this exact commit, rebuild, and publish
+# atomically. It is a notification only. It never gates CI, it is skipped when
+# the AI4MATH_DEPLOY_WEBHOOK_SECRET repository secret is not configured, and it
+# is independent of the GitHub Pages deployment. The endpoint is configured
+# through the AI4MATH_DEPLOY_WEBHOOK_URL repository variable.
 
 on:
   push:

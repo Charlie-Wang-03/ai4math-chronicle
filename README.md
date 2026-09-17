@@ -12,7 +12,9 @@
 
 It is built for readers who want to understand how AI4Math has evolved, identify the most consequential milestones, and reach the strongest available evidence without reconstructing the history from scattered papers, announcements, repositories, benchmarks, and social posts.
 
-> **Public site:** [AI4Math Chronicle](https://charlie-wang-03.github.io/ai4math-chronicle/en/)
+> **Official public entrypoints:** [GitHub Pages](https://charlie-wang-03.github.io/ai4math-chronicle/en/) · [history.aixmath.org](https://history.aixmath.org/) · [timeline.aixmath.org](https://timeline.aixmath.org/)
+>
+> These three URLs are peer product-facing entrypoints to the same AI4Math Chronicle. `news.aixmath.org` is reserved for a possible future AI4Math News product and is not a current Chronicle entrypoint.
 
 ## Start exploring
 
@@ -20,6 +22,8 @@ It is built for readers who want to understand how AI4Math has evolved, identify
 - **[Explore events](https://charlie-wang-03.github.io/ai4math-chronicle/en/explore/)** — compare and filter events by year, event type, significance, verification status, and system.
 - **[Methodology](https://charlie-wang-03.github.io/ai4math-chronicle/en/methodology/)** — understand inclusion, significance, evidence, verification, and correction policies.
 - **[Data](https://charlie-wang-03.github.io/ai4math-chronicle/en/data/)** — access machine-readable JSON, NDJSON, schema, RSS, and sitemap outputs.
+
+The deep links above use the current technical canonical URL scope for stability and SEO consolidation. That does not make `history.aixmath.org` or `timeline.aixmath.org` secondary from a product-promotion perspective.
 
 ## Ask an AI with the Chronicle
 
@@ -109,6 +113,6 @@ Third-party papers, announcements, repositories, media, images, quotations, and 
 
 ## Releases and live updates
 
-The public website follows the continuously maintained `main` branch. **GitHub Releases provide citable snapshots** of significant project states, while the live Chronicle continues to evolve between releases as new events, evidence, corrections, and editorial updates are merged.
+The public Chronicle follows the continuously maintained `main` branch across its approved public entrypoints. **GitHub Releases provide citable snapshots** of significant project states, while the live Chronicle continues to evolve between releases as new events, evidence, corrections, and editorial updates are merged.
 
 See the repository's [Releases](https://github.com/Charlie-Wang-03/ai4math-chronicle/releases) for frozen snapshots.

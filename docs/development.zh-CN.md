@@ -18,7 +18,7 @@ v0.1 刻意保持静态、GitHub-native：
 
 除非未来 Product Specification 明确修改方向，否则不要引入 backend、CMS、账号系统、数据库服务器、vector database、server API 或不必要的 SSR。
 
-项目允许把辅助网页 URL、hostname alias、redirect、mirror 与部署通知作为普通工程基础设施，只要保持静态构建与 canonical Event 单一事实源不变，并继续遵守当前 canonical origin。若改动会迁移 canonical site 或改变产品架构，则仍属于需要单独决策的 migration。
+Chronicle 可以通过多个已批准公开入口提供访问，同时继续只使用一份静态构建与一套 canonical Event 单一事实源。当前入口政策以 [`product-spec-v0.1-public-entrypoints-amendment.md`](./product-spec-v0.1-public-entrypoints-amendment.md) 为准。若改动会迁移技术 SEO canonical origin 或改变产品架构，则仍属于需要单独决策的 migration。
 
 ## 本地环境
 
@@ -92,13 +92,21 @@ CI 应保持 deterministic，并至少覆盖：
 
 外部链接检查不应成为长期 flaky CI 来源。
 
-## Self-hosted mirror
+## 正式公开入口与 self-hosted delivery
 
-相同的 `main` 构建还会发布到 self-hosted mirror，并通过 `history.aixmath.org`、`timeline.aixmath.org` 与 `news.aixmath.org` 提供访问。这些 hostname 是 convenience aliases，而不是独立的第二套站点：构建继续把 `site` 保持在 GitHub Pages origin，公开 HTML 也继续使用唯一 canonical origin `https://charlie-wang-03.github.io/ai4math-chronicle/`。因此 GitHub Pages 仍是 canonical、用于索引的主站，辅助 aliases 只用于镜像访问而不与主站竞争搜索信号。
+同一份 `main` Chronicle 构建通过三个已批准的**平级产品公开入口**提供访问：
 
-`.github/workflows/notify-deploy.yml` 会在 `main` 更新时向 mirror deploy API 发送签名通知，使 mirror 从同一 commit 重新构建。该 workflow 只是 notification：它不作为 CI gate；`AI4MATH_DEPLOY_WEBHOOK_SECRET` 缺失时会安全跳过；它也独立于 GitHub Pages deployment。
+- `https://charlie-wang-03.github.io/ai4math-chronicle/`
+- `https://history.aixmath.org/`
+- `https://timeline.aixmath.org/`
 
-该 mirror 与相关项目 URL 已在 active trusted-maintainer engineering policy 下被明确允许。只要 canonical origin 与静态架构保持不变，继续维护或扩展类似的辅助 URL 不需要 Product Specification 变更。
+后两个入口通过 self-hosted delivery 提供服务。它们不是彼此独立的事实站点：三个入口展示的是同一套 Chronicle 产品与 canonical Event corpus。
+
+为了保持技术 SEO 信号聚合，当前构建仍把 `site` 保持在 GitHub Pages origin，公开 HTML 也继续输出 GitHub Pages canonical URL；Sitemap、structured metadata、IndexNow 与机器可读 canonical URL 在另行批准 canonical-domain migration 前也继续使用现有 Pages URL scope。这个技术 canonical 策略**不表示** `history.aixmath.org` 或 `timeline.aixmath.org` 在产品宣传层面属于次级入口。
+
+`.github/workflows/notify-deploy.yml` 会在 `main` 更新时向 self-hosted deploy API 发送签名通知，使 mirror 从同一 commit 重新构建。该 workflow 只是 notification：它不作为 CI gate；`AI4MATH_DEPLOY_WEBHOOK_SECRET` 缺失时会安全跳过；它也独立于 GitHub Pages deployment。
+
+`https://news.aixmath.org/` 暂时保留给未来可能开发的 AI4Math News 产品，不属于当前 Chronicle 入口，也不应作为 Chronicle URL 对外宣传。如果外部基础设施目前仍在该 hostname 上提供 Chronicle 内容，应将其视为过渡状态，直到外部 routing 被停放或重新用途化；该 routing 修改发生在本仓库之外。
 
 ## UI 修改
 

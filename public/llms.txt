@@ -4,6 +4,18 @@
 
 Use Event pages for human-readable citations and canonical YAML / JSON for structured ingestion. Verification status describes the Chronicle's event-level evidence state; it is not certification of ultimate mathematical correctness.
 
+## Official public entrypoints
+
+The following URLs are peer product-facing entrypoints to the same AI4Math Chronicle:
+
+- https://charlie-wang-03.github.io/ai4math-chronicle/
+- https://history.aixmath.org/
+- https://timeline.aixmath.org/
+
+For technical canonical URLs, machine-readable data, sitemap, and search-engine consolidation, the current build continues to use the GitHub Pages URL scope. Product-facing entrypoint parity does not imply multiple competing SEO canonical origins.
+
+`https://news.aixmath.org/` is reserved for a possible future AI4Math News product and is not a current Chronicle entrypoint.
+
 ## Primary reading surfaces
 
 - [English Timeline](https://charlie-wang-03.github.io/ai4math-chronicle/en/): browse the historical chronology.
