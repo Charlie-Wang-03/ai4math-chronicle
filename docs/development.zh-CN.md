@@ -18,6 +18,8 @@ v0.1 刻意保持静态、GitHub-native：
 
 除非未来 Product Specification 明确修改方向，否则不要引入 backend、CMS、账号系统、数据库服务器、vector database、server API 或不必要的 SSR。
 
+项目允许把辅助网页 URL、hostname alias、redirect、mirror 与部署通知作为普通工程基础设施，只要保持静态构建与 canonical Event 单一事实源不变，并继续遵守当前 canonical origin。若改动会迁移 canonical site 或改变产品架构，则仍属于需要单独决策的 migration。
+
 ## 本地环境
 
 需要 Node.js `>=22.12.0`。
@@ -89,6 +91,14 @@ CI 应保持 deterministic，并至少覆盖：
 浏览器 smoke gate 刻意保持窄范围。它保护 compact mobile header、Explore 的 mobile-native 布局、多选控件的键盘操作与 focus visibility、显式零结果恢复、双语路由切换、主题偏好持久化、关键 landmarks 与 Event Detail 页内导航。它不是像素级截图回归、完整 WCAG 认证或跨浏览器兼容性矩阵。
 
 外部链接检查不应成为长期 flaky CI 来源。
+
+## Self-hosted mirror
+
+相同的 `main` 构建还会发布到 self-hosted mirror，并通过 `history.aixmath.org`、`timeline.aixmath.org` 与 `news.aixmath.org` 提供访问。这些 hostname 是 convenience aliases，而不是独立的第二套站点：构建继续把 `site` 保持在 GitHub Pages origin，公开 HTML 也继续使用唯一 canonical origin `https://charlie-wang-03.github.io/ai4math-chronicle/`。因此 GitHub Pages 仍是 canonical、用于索引的主站，辅助 aliases 只用于镜像访问而不与主站竞争搜索信号。
+
+`.github/workflows/notify-deploy.yml` 会在 `main` 更新时向 mirror deploy API 发送签名通知，使 mirror 从同一 commit 重新构建。该 workflow 只是 notification：它不作为 CI gate；`AI4MATH_DEPLOY_WEBHOOK_SECRET` 缺失时会安全跳过；它也独立于 GitHub Pages deployment。
+
+该 mirror 与相关项目 URL 已在 active trusted-maintainer engineering policy 下被明确允许。只要 canonical origin 与静态架构保持不变，继续维护或扩展类似的辅助 URL 不需要 Product Specification 变更。
 
 ## UI 修改
 
