@@ -1,0 +1,165 @@
+schema_version: 1
+id: evt-2026-severe-misalignment-ai-mathematics
+slug: severe-misalignment-ai-mathematics
+
+title:
+  en: Twenty-five Fields Medallists publish A Severe Misalignment of AI in Mathematics
+  zh-CN: 25 位菲尔兹奖得主发布《A Severe Misalignment of AI in Mathematics》声明
+
+dates:
+  event: '2026-09-11'
+  first_public_claim: '2026-09-11'
+  paper_release: null
+  artifact_release: '2026-09-11'
+  independently_verified: null
+  added_to_chronicle: '2026-09-17'
+  last_updated: '2026-09-17'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The statement became more than a short-lived petition because it articulated an AI4Math-specific position on research incentives, mathematical understanding, attribution, unpublished work and the role of human mathematicians, then entered institutional discussion within days. The French Mathematical Society board explicitly cited it in an official position on the OpenAI Navier–Stokes controversy, while IMPA republished the statement for its community. These cross-institutional responses satisfy the Chronicle's field-building publication gate without treating signatory prestige or media attention alone as sufficient evidence.
+    zh-CN: >-
+      这份声明并非仅凭签名人数或短期媒体热度获得收录。它针对 AI4Math 的研究激励、数学理解、归属、未公开工作以及人类数学家的角色提出明确共同体立场，并在数日内进入机构层面的持续讨论。法国数学会理事会在针对 OpenAI Navier–Stokes 争议的正式立场中直接引用该声明，IMPA 也面向其共同体公开转载。由此形成的跨机构响应满足 Chronicle 的领域建构收录门槛。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    On 11 September 2026, a declaration titled A Severe Misalignment of AI in Mathematics was published with 25 initial signatories, all Fields Medallists according to Terence Tao's direct account. The statement argued that using the solution of prominent mathematical problems as an AI-company benchmark can conflict with the goals and norms of mathematical research, and raised concerns about understanding, communication, attribution, research incentives and the stewardship of mathematical knowledge. It invited additional signatures and quickly became a reference point in institutional responses to the September 2026 AI-and-mathematics controversies.
+  zh-CN: >-
+    2026 年 9 月 11 日，《A Severe Misalignment of AI in Mathematics》公开发布。Terence Tao 的直接说明表明，首批共有 25 位签署者且均为菲尔兹奖得主。声明主张，把攻克知名数学问题作为 AI 企业 benchmark 的做法可能与数学研究的目标和规范发生冲突，并讨论数学理解与表达、归属、研究激励以及数学知识传承等问题。声明同时开放后续签署，并迅速成为 2026 年 9 月 AI 与数学争议中机构回应所引用的共同体文本。
+
+summary:
+  en: >-
+    The declaration emerged from discussions among its initial signatories during a week of intense debate over rapidly improving AI systems and high-profile mathematical problem solving. It framed the central concern as a misalignment between benchmark-driven corporate incentives and the mathematical community's emphasis on understanding, communication, attribution, mentorship and durable knowledge. On 14 September, IMPA published the statement on its institutional news surface. On 15 September, the board of the French Mathematical Society cited it in an official position responding to the OpenAI Navier–Stokes announcement and its associated ethical controversy.
+  zh-CN: >-
+    该声明形成于一周内围绕 AI 数学能力快速提升和高关注度数学问题求解展开的密集讨论。其核心框架是：企业以 benchmark 和竞赛式突破为导向的激励，可能与数学共同体重视理解、交流、归属、人才培养和长期知识积累的价值发生错位。9 月 14 日，IMPA 在机构新闻页面转载声明；9 月 15 日，法国数学会理事会在回应 OpenAI Navier–Stokes 公告及相关伦理争议的正式立场中直接引用该声明。
+
+why_it_matters:
+  en: >-
+    The event records a shift from isolated reactions to an explicit, field-specific critique of how advanced AI should interact with mathematical research. In relation to the earlier Leiden Declaration, it sharpened the governance debate around incentives, competition, credit, unpublished work and the preservation of human mathematical culture. Its significance lies in becoming an institutional reference point during a live AI4Math governance dispute, not in the prestige or number of signatories by itself.
+  zh-CN: >-
+    这一事件记录了数学共同体从零散反应转向针对先进 AI 如何参与数学研究的明确领域级批评。相较此前的 Leiden Declaration，它进一步把治理讨论聚焦到研究激励、竞赛式突破、署名与归属、未公开工作以及人类数学文化的保存。其历史意义来自它在正在发生的 AI4Math 治理争议中成为机构引用的参照文本，而非签署者数量或声望本身。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records a human-authored community statement about the governance and social effects of AI in mathematics rather than an AI system performing mathematical work.
+    zh-CN: >-
+      本事件记录的是人类数学共同体围绕 AI 在数学研究中的治理与社会影响发布的声明，而不是 AI 系统执行具体数学工作，因此 AI role 不适用。
+
+human_contribution:
+  description:
+    en: >-
+      The initial signatories discussed, drafted and published the statement, invited broader community endorsement, and mathematical institutions subsequently incorporated it into public discussion of research norms and governance.
+    zh-CN: >-
+      首批签署者讨论、起草并发布声明，邀请更广泛的共同体参与；随后数学机构将该文本纳入关于研究规范与治理的公开讨论。
+
+systems: []
+organizations: []
+people: []
+problems: []
+methods:
+- community-governance
+- research-integrity
+- attribution
+- research-incentives
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-09-11'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The declaration website and Terence Tao's direct post establish the publication, date, initial-signatory count and the stated governance concerns.
+      zh-CN: >-
+        声明官网与 Terence Tao 的直接文章确认了公开发布、日期、首批签署者数量以及声明提出的治理议题。
+  - date: '2026-09-17'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        Institutional responses from IMPA and the French Mathematical Society show that the statement entered field-level discussion beyond its originating signatories. Chronicle records this as significance evidence, not as endorsement of every normative claim in the declaration.
+      zh-CN: >-
+        IMPA 与法国数学会的机构级公开回应表明，该声明已经进入超越首批签署者范围的领域讨论。Chronicle 将其作为历史重要性证据，而不将其解释为对声明中全部规范性主张的背书。
+
+sources:
+- id: severe-misalignment-official
+  tier: S2
+  type: community
+  title: A Severe Misalignment of AI in Mathematics
+  url: https://mathandai.org/
+  primary: true
+  published_date: '2026-09-11'
+  accessed_at: '2026-09-17'
+- id: tao-severe-misalignment
+  tier: S2
+  type: community
+  title: A Severe Misalignment of AI in Mathematics — Terence Tao
+  url: https://terrytao.wordpress.com/2026/09/11/a-severe-misalignment-of-ai-in-mathematics/
+  primary: false
+  published_date: '2026-09-11'
+  accessed_at: '2026-09-17'
+- id: impa-severe-misalignment
+  tier: S2
+  type: official_announcement
+  title: A Severe Misalignment of AI in Mathematics — IMPA
+  url: https://impa.br/notices/a-severe-misalignment-of-ai-in-mathematics/?lang=en
+  primary: false
+  published_date: '2026-09-14'
+  accessed_at: '2026-09-17'
+- id: smf-openai-position
+  tier: S2
+  type: official_announcement
+  title: Position of the SMF board on the recent announcements of OpenAI
+  url: https://smf.emath.fr/index.php/actualites-smf/position-bureau-smf-navier-stokes-et-openai
+  primary: false
+  published_date: '2026-09-15'
+  accessed_at: '2026-09-17'
+
+artifacts:
+- id: severe-misalignment-declaration
+  kind: other
+  title: A Severe Misalignment of AI in Mathematics
+  url: https://mathandai.org/
+
+relationships:
+  predecessors:
+  - evt-2026-leiden-declaration
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- severe-misalignment
+- field-building
+- community-governance
+- research-integrity
+- attribution
+- research-incentives
+- ai-and-mathematics
+
+editorial:
+  created_at: '2026-09-17'
+  last_reviewed: '2026-09-17'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
