@@ -145,7 +145,7 @@ Trusted maintainers may create and maintain project web URLs, hostname aliases, 
 - preserve the active canonical-site / canonical-origin contract unless a separate migration is explicitly approved;
 - do not silently create a new product phase or second editorial source of truth.
 
-PR #112's self-hosted mirror notification and the auxiliary `aixmath.org` hostnames are approved under this rule. GitHub Pages remains the canonical indexed origin unless a later explicit migration decision changes that contract.
+PR #112's self-hosted mirror notification and the auxiliary `aixmath.org` hostnames were approved under this engineering rule. The later public-entrypoint product decision below supersedes the earlier **product-facing** characterization of `history.aixmath.org` and `timeline.aixmath.org` as merely auxiliary, while retaining the existing technical SEO canonical strategy unless separately migrated.
 
 ### What remains unchanged
 
@@ -160,3 +160,40 @@ The existing H1, high-risk verification, mathematical-correctness / attribution 
 - The existing zero blanket-approval main ruleset is intentional rather than a temporary pre-activation state.
 
 Future changes to this co-maintainer authority or merge model require an explicit trusted-maintainer governance decision and remain subject to the maintainer-conflict rule.
+
+## 2026-09-17 — Chronicle peer public entrypoints ratified; `news.aixmath.org` reserved
+
+**Status:** Explicitly approved by `@Charlie-Wang-03`
+
+### Decision
+
+Adopt [`product-spec-v0.1-public-entrypoints-amendment.md`](./product-spec-v0.1-public-entrypoints-amendment.md).
+
+For **product promotion and user access**, AI4Math Chronicle has three peer official public entrypoints:
+
+- `https://charlie-wang-03.github.io/ai4math-chronicle/`;
+- `https://history.aixmath.org/`;
+- `https://timeline.aixmath.org/`.
+
+No one of these three should be presented as an unofficial or merely fallback URL. `history.aixmath.org` and `timeline.aixmath.org` remain delivery aliases for the same static Chronicle build and canonical Event corpus; product-entrypoint parity does not create independent editorial copies.
+
+### SEO / canonical distinction
+
+The product-facing entrypoint decision does **not** automatically create three competing technical canonical origins.
+
+Until a separate canonical-domain migration is explicitly approved, the existing GitHub Pages URL scope may continue to own HTML canonical metadata, sitemap, machine-readable canonical URLs, and IndexNow submission. This preserves search-signal consolidation while allowing the three URLs to be promoted as peer user entrypoints.
+
+### Reserved future news hostname
+
+`https://news.aixmath.org/` is reserved for a possible future AI4Math News product inspired by high-quality AI-news aggregation patterns such as AIHOT.
+
+This reservation does **not** authorize building or launching that product. `news.aixmath.org` is not a current Chronicle entrypoint and should no longer be promoted or intentionally maintained as a Chronicle mirror URL. Any residual external routing that still serves Chronicle content there is an operational cleanup item rather than approved product state.
+
+### Consequences
+
+- bilingual README and AI-facing `llms.txt` should expose the three peer Chronicle entrypoints;
+- Development Guide and deployment documentation should distinguish product-entrypoint parity from SEO canonicalization;
+- `project-state.md` should list the new Product Specification amendment and current URL roles;
+- external infrastructure should park or detach `news.aixmath.org` from Chronicle delivery until a future separately approved product gives that hostname a new role.
+
+This decision does not create a new product phase, does not approve AI4Math News implementation, and does not authorize a canonical-domain migration.
