@@ -12,7 +12,9 @@
 
 它主要面向希望快速理解 AI4Math 历史演进的读者：哪些事件真正重要，它们为什么重要，AI 与人类分别完成了什么，以及最强的一手证据在哪里。
 
-> **公开网站：** [AI4Math 大事记](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/)
+> **正式公开入口：** [GitHub Pages](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/) · [history.aixmath.org](https://history.aixmath.org/) · [timeline.aixmath.org](https://timeline.aixmath.org/)
+>
+> 以上三个 URL 在产品宣传与用户访问层面属于平级入口，指向同一套 AI4Math Chronicle。`news.aixmath.org` 暂时保留给未来可能开发的 AI4Math News 产品，不属于当前 Chronicle 入口。
 
 ## 开始浏览
 
@@ -20,6 +22,8 @@
 - **[探索事件](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/explore/)** —— 按年份、事件类型、重要性、验证状态与系统比较和筛选事件。
 - **[方法论](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/methodology/)** —— 了解收录、重要性、证据、验证与纠错规则。
 - **[数据](https://charlie-wang-03.github.io/ai4math-chronicle/zh-CN/data/)** —— 获取 JSON、NDJSON、Schema、RSS 与 Sitemap 等机器可读输出。
+
+上面的深层链接继续使用当前技术 canonical URL，以保持链接稳定和搜索信号聚合；这不表示 `history.aixmath.org` 或 `timeline.aixmath.org` 在产品宣传层面属于次级入口。
 
 ## 使用 AI 查询大事记
 
@@ -109,6 +113,6 @@ AI4Math 大事记强调可审计与可纠错。如果你发现遗漏的重要事
 
 ## 版本发布与持续更新
 
-公开网站持续跟随维护中的 `main` 分支更新。**GitHub Releases 用于提供可引用的冻结快照**；在两个 Release 之间，随着新事件、证据、纠错和编辑更新被合并，在线 Chronicle 会继续演化。
+公开 Chronicle 在所有已批准入口上持续跟随维护中的 `main` 分支更新。**GitHub Releases 用于提供可引用的冻结快照**；在两个 Release 之间，随着新事件、证据、纠错和编辑更新被合并，在线 Chronicle 会继续演化。
 
 历史快照见仓库的 [Releases](https://github.com/Charlie-Wang-03/ai4math-chronicle/releases)。
