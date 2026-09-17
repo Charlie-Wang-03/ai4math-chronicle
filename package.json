@@ -24,7 +24,7 @@
   "dependencies": {
     "@astrojs/rss": "4.0.19",
     "astro": "7.3.2",
-    "js-yaml": "5.4.1"
+    "js-yaml": "5.4.2"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
