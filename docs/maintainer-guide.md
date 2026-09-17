@@ -34,6 +34,7 @@ A trusted maintainer may ordinarily:
 - triage source leads, corrections, bugs, and maintenance work;
 - publish ordinary H2 / H3 Event changes when the evidence rules are satisfied;
 - approve or reject ordinary engineering / editorial PRs;
+- open a focused PR and, once the enforced branch-protection and CI conditions pass, squash-merge that same PR without requiring another maintainer's approval unless a more specific gate applies;
 - authorize an existing human hard gate when they are comfortable taking responsibility for that decision;
 - propose and explicitly approve product or governance changes, subject to the conflict rule below;
 - coordinate with AI agents or automation under the same repository governance rules.
@@ -71,7 +72,7 @@ If another trusted maintainer has made a materially conflicting explicit decisio
 4. reconcile the decision between the human maintainers;
 5. persist the resolved durable rule in the appropriate canonical document if the semantic project state changed.
 
-For ordinary implementation details, maintainers can delegate ownership of a task to one another and avoid unnecessary dual approval outside the repository's normal PR review rule.
+For ordinary implementation details, maintainers can delegate ownership of a task to one another and do not need dual approval unless a specific decision or gate requires it.
 
 ## 5. Branch and Pull Request workflow
 
@@ -83,11 +84,13 @@ For non-trivial work:
 4. link relevant Issues when they add useful traceability;
 5. explain evidence, uncertainty, and any human gate in the PR body;
 6. run the relevant validation;
-7. use squash merge when the PR is ready and all required review / CI conditions are satisfied.
+7. use squash merge when the PR is ready and all enforced CI / branch-protection conditions are satisfied.
 
 Do not bypass the protected-branch workflow merely because both maintainers trust one another.
 
-After the second maintainer is fully activated, the intended `main` protection model is one approving review plus Code Owner review for sensitive paths, together with the existing required CI and history protections.
+The active `main` protection model intentionally requires PRs and deterministic CI but does **not** impose a blanket second-person approval or universal Code Owner review. A trusted maintainer may self-merge a focused PR after the required checks pass. Request cross-review whenever it adds value, and treat it as blocking only when the task, a human gate, or an explicit maintainer decision says so.
+
+`CODEOWNERS` records ownership and review routing. It is not, by itself, a universal cross-maintainer approval gate.
 
 ## 6. Editorial changes
 
@@ -111,7 +114,7 @@ Source Lead Issues remain operational workflow records, not a second factual dat
 For code, UI, search, accessibility, SEO / GEO, deployment, and maintenance work:
 
 - preserve the static Astro + TypeScript architecture unless a Product Specification change is explicitly approved;
-- preserve the GitHub Project Pages base-path contract unless an approved migration changes it;
+- preserve the GitHub Project Pages base-path and canonical-origin contract unless an approved migration changes it;
 - keep canonical Event YAML as the single factual source;
 - keep English and `zh-CN` presentation derived from shared canonical records;
 - update documentation when behavior or operating contracts change;
@@ -124,6 +127,10 @@ npm run build
 ```
 
 Run browser-level QA when reader-facing behavior changes.
+
+Trusted maintainers may create or maintain auxiliary project URLs, hostname aliases, redirects, mirrors, and deployment notifications as ordinary engineering work when they remain subordinate to the static product architecture, preserve the canonical origin, and do not create a second factual source or an unapproved canonical-site migration.
+
+The current self-hosted mirror is an allowed example: the `aixmath.org` aliases mirror the `main` build while GitHub Pages remains the canonical indexed origin.
 
 ## 8. Releases and production changes
 
@@ -139,13 +146,13 @@ Before a release, verify:
 
 Do not rewrite published tags or releases.
 
-A future hosting / domain / deployment migration is not implicitly authorized by this collaboration setup. Such a migration should be evaluated and approved on its own merits under the active Product Specification and governance rules.
+A future hosting / domain / deployment migration that changes the canonical site or product architecture is not implicitly authorized by this collaboration setup. Such a migration should be evaluated and approved on its own merits. Auxiliary mirrors / aliases that preserve the canonical origin are ordinary engineering maintenance under the active policy.
 
 ## 9. Roadmap discipline
 
 The co-maintainer model does not preselect what the maintainers should work on next.
 
-Do not treat possible future directions—such as deeper historical relationship work, UI / UX redesign, hosting migration, new discovery automation, or another feature family—as approved merely because they have been discussed.
+Do not treat possible future directions—such as deeper historical relationship work, UI / UX redesign, canonical-site migration, new discovery automation, or another feature family—as approved merely because they have been discussed.
 
 Use [`project-state.md`](./project-state.md) to distinguish:
 
@@ -153,21 +160,28 @@ Use [`project-state.md`](./project-state.md) to distinguish:
 - explicit active objectives;
 - candidate directions that still need a human decision.
 
-## 10. Activating a second trusted maintainer
+## 10. Activating a trusted maintainer
 
-When the concrete collaborator account is ready:
+A concrete collaborator becomes active when:
 
-1. invite the account with repository access appropriate to trusted maintenance;
-2. wait until the invitation is accepted;
-3. add the exact GitHub username to [`MAINTAINERS.md`](../MAINTAINERS.md);
-4. add the maintainer to the appropriate entries in [`.github/CODEOWNERS`](../.github/CODEOWNERS);
-5. update the `main` ruleset to require one approving review and Code Owner review for sensitive paths;
-6. retain `validate-and-build`, strict up-to-date checks, resolved review conversations, squash-only merge, linear history, deletion protection, and non-fast-forward protection;
-7. verify that both maintainers can create branches, review PRs, and complete the intended workflow without a protection deadlock;
-8. ensure the new maintainer has read the canonical governance and maintainer documents;
-9. update `project-state.md` only if the semantic maintenance state changed beyond the already-approved co-maintainer model.
+1. an existing trusted maintainer explicitly designates the account;
+2. repository access has been accepted;
+3. the exact GitHub username is added to [`MAINTAINERS.md`](../MAINTAINERS.md);
+4. [`.github/CODEOWNERS`](../.github/CODEOWNERS) reflects the intended ownership / routing;
+5. the `main` ruleset has been reviewed for the agreed multi-maintainer workflow;
+6. the new maintainer has read the canonical governance and maintainer documents.
 
-Do not add a placeholder GitHub identity before the collaborator has accepted access.
+The active two-maintainer ruleset should retain:
+
+- PRs required for `main`;
+- `validate-and-build` required and up to date;
+- resolved review conversations;
+- squash-only merge;
+- linear history;
+- deletion protection;
+- non-fast-forward protection.
+
+It intentionally does **not** require one approving review or Code Owner review for every trusted-maintainer PR. Both maintainers must be able to create a branch, open a PR, pass the required checks, and complete the intended self-merge workflow without protection deadlock.
 
 ## 11. Offboarding
 
@@ -186,6 +200,7 @@ The collaboration model is healthy when:
 
 - either maintainer can recover project state from the repository;
 - substantial changes go through focused PRs and deterministic validation;
+- trusted maintainers can independently complete the agreed PR / CI / squash workflow;
 - sensitive editorial / governance decisions remain explicit and auditable;
 - neither maintainer depends on private chat context to understand the current rules;
 - known human disagreement is surfaced rather than arbitrated by AI;
