@@ -90,6 +90,12 @@ The browser smoke gate is intentionally narrow. It protects the compact mobile h
 
 External link checking should remain non-flaky and should not become a permanent source of false CI failures.
 
+## Self-hosted mirror
+
+The same `main` build is also published to a self-hosted mirror, served on `history.aixmath.org`, `timeline.aixmath.org`, and `news.aixmath.org`. Those hostnames are convenience aliases, not additional sites: the build keeps `site` at the Pages origin and the published HTML keeps a single canonical origin (`https://charlie-wang-03.github.io/ai4math-chronicle/`), so GitHub Pages remains the canonical, indexed home and the aliases consolidate instead of competing in search. The mirror is built outside this repository and does not change the required Project Pages behaviour: `site`, `base`, and every internal link stay exactly as they are for the Pages build.
+
+`.github/workflows/notify-deploy.yml` sends a signed notification to the mirror's deploy API whenever `main` moves, so the mirror rebuilds from the same commit. It is a notification only: it does not gate CI, it is skipped when the `AI4MATH_DEPLOY_WEBHOOK_SECRET` repository secret is absent, and it is independent of the GitHub Pages deployment.
+
 ## UI changes
 
 The product is timeline-first and evidence-first. UI changes should improve discoverability, historical comprehension, evidence access, accessibility, or readability. Avoid cinematic timelines, WebGL, graph visualization, or decorative interaction that makes the archive harder to scan.

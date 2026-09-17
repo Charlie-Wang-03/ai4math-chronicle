@@ -1,0 +1,50 @@
+name: Notify self-hosted mirror
+
+# The project publishes the same `main` build to a self-hosted mirror served on
+# history.aixmath.org, timeline.aixmath.org, and news.aixmath.org, in addition
+# to GitHub Pages. Those hostnames are convenience aliases; GitHub Pages stays
+# the canonical, indexed home. This workflow sends a signed notification to the
+# mirror's deploy API whenever `main` moves, so the mirror can pull this exact
+# commit, rebuild, and publish atomically.
+#
+# It is a notification only. It never gates CI, it is skipped when the
+# AI4MATH_DEPLOY_WEBHOOK_SECRET repository secret is not configured, and it is
+# independent of the GitHub Pages deployment. The endpoint is configured through
+# the AI4MATH_DEPLOY_WEBHOOK_URL repository variable.
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: notify-self-hosted-mirror
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send deploy webhook
+        env:
+          WEBHOOK_URL: ${{ vars.AI4MATH_DEPLOY_WEBHOOK_URL || 'https://api.aixmath.org/webhook/github' }}
+          WEBHOOK_SECRET: ${{ secrets.AI4MATH_DEPLOY_WEBHOOK_SECRET }}
+          REPOSITORY: ${{ github.repository }}
+          REF: ${{ github.ref }}
+          AFTER: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [ -z "${WEBHOOK_SECRET}" ]; then
+            echo "::warning::AI4MATH_DEPLOY_WEBHOOK_SECRET is not configured; skipping the self-hosted mirror notification."
+            exit 0
+          fi
+          payload="$(printf '{"source":"github-actions","repository":"%s","ref":"%s","after":"%s"}' "$REPOSITORY" "$REF" "$AFTER")"
+          signature="sha256=$(printf '%s' "$payload" | openssl dgst -sha256 -hmac "$WEBHOOK_SECRET" | awk '{print $NF}')"
+          curl --fail-with-body -sS -m 30 -X POST "$WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -H "X-AI4Math-Signature: $signature" \
+            --data-binary "$payload"
