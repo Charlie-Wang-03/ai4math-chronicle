@@ -4,9 +4,9 @@
 **Approved by:** Repository owner / current project maintainer  
 **Approved on:** 2026-09-17  
 **Amends:** [`gpt-project-governance.md`](./gpt-project-governance.md)  
-**Scope:** Human maintainer authority, conflict handling, and collaboration activation
+**Scope:** Human maintainer authority, conflict handling, collaboration activation, and trusted-maintainer PR operation
 
-This amendment changes the human-maintainer model from a single-owner decision surface to a **trusted co-maintainer model**. It does **not** create a new product phase, select a new roadmap, or authorize any particular future workstream such as historical-lineage expansion, UI / UX redesign, hosting migration, or another major capability.
+This amendment changes the human-maintainer model from a single-owner decision surface to a **trusted co-maintainer model**. It does **not** create a new product phase or preselect a future editorial / UI / historical-lineage roadmap. It does allow trusted maintainers to carry out ordinary engineering and infrastructure work inside the approved static architecture, including auxiliary project URLs, hostname aliases, redirects, mirrors, and deployment notifications, provided those changes preserve the active canonical-origin and product contracts.
 
 The core operating principle remains:
 
@@ -71,37 +71,43 @@ If another trusted maintainer has already expressed a conflicting standing posit
 
 This rule preserves near-peer human authority without forcing unanimous approval for every routine governance edit, while preventing AI or automation from arbitrating substantive human disagreement.
 
-## 5. Agenda discipline remains unchanged
+## 5. Agenda discipline and allowed engineering scope
 
 Trusted co-maintainership does not itself authorize a new roadmap.
 
 The approved standing mainline remains whatever is recorded in [`project-state.md`](./project-state.md) and the active Product Specification. A trusted maintainer may choose implementation paths and ordinary maintenance priorities inside that state, but a new long-term phase or major feature family still requires an explicit human decision under the existing governance process.
 
-The collaboration-readiness work ratified by this amendment deliberately leaves future concrete routes open.
+The collaboration-readiness work deliberately leaves future concrete editorial, UI / UX, and historical-lineage routes open.
 
-## 6. Activation of a new trusted maintainer
+Ordinary product / engineering maintenance may nevertheless include project-owned web URLs and deployment infrastructure when they remain subordinate to the active architecture. In particular, trusted maintainers may create or maintain auxiliary hostnames, redirects, mirrors, deployment notifications, and similar static-delivery infrastructure without treating each one as a new product phase. Such work must preserve the canonical Event source of truth, security boundaries, and the current canonical-site contract unless a separate migration decision explicitly changes that contract.
+
+The self-hosted mirror notification introduced in PR #112 is an approved example of this allowed engineering scope: GitHub Pages remains the canonical indexed origin while auxiliary `aixmath.org` hostnames mirror the same `main` build.
+
+## 6. Activation and Pull Request operation
 
 A new co-maintainer becomes active only after all of the following are true:
 
 1. an existing trusted maintainer explicitly designates the person as a trusted maintainer;
 2. the person's concrete GitHub identity is recorded in [`MAINTAINERS.md`](../MAINTAINERS.md);
 3. repository access appropriate to the intended maintenance work has been granted and accepted;
-4. `CODEOWNERS` is updated where review routing should include the new maintainer;
+4. `CODEOWNERS` is updated where ownership / review routing should include the new maintainer;
 5. the branch / ruleset configuration is reviewed for multi-maintainer operation;
 6. the new maintainer has read the Product Specification, Governance Protocol plus this amendment, `project-state.md`, `AGENTS.md`, Maintenance Policy, Editorial Methodology, and the Maintainer Guide.
 
-For a stable two-maintainer setup, the intended protection target is:
+For the active trusted-maintainer setup, the required `main` protection model is:
 
 - Pull Requests required for `main`;
-- one approving review required;
-- Code Owner review required for sensitive paths once both maintainers are represented in `CODEOWNERS`;
 - `validate-and-build` required and up to date with the target branch;
 - review conversations resolved;
 - squash merge only;
 - linear history;
 - deletion and non-fast-forward protection retained.
 
-Do not enable a protection rule that would deadlock the repository before the second maintainer has accepted access and can actually review.
+A blanket second-person approval is **not** required for trusted-maintainer PRs. `CODEOWNERS` records ownership and enables review routing, but Code Owner review is not a universal merge gate. An active trusted maintainer may open a focused PR and squash-merge that same PR after all enforced CI and branch-protection conditions pass, unless a specific task, a standing human gate, or an explicit maintainer decision requires another human review.
+
+Requesting another maintainer's review is encouraged when it adds value, especially for high-blast-radius infrastructure, constitutional changes, ambiguous editorial judgments, or unfamiliar subsystems. A requested review does not itself become a blocking gate unless the maintainers explicitly make it one for that change.
+
+The repository ruleset should therefore preserve the existing zero blanket-approval requirement unless the trusted maintainers later explicitly change the review model. This does not weaken the enumerated human hard gates: when such a gate applies, an active trusted maintainer must still make and record the required human decision.
 
 ## 7. Offboarding and authority removal
 
@@ -115,7 +121,7 @@ Removing repository access is not, by itself, a complete governance offboarding 
 
 ## 8. Precedence and unchanged rules
 
-This amendment overrides the core Governance Protocol only where that protocol assumes that the **repository owner is the sole human project authority**.
+This amendment overrides the core Governance Protocol where that protocol assumes that the **repository owner is the sole human project authority**, and it supersedes the earlier collaboration-readiness expectation that every stable two-maintainer PR should require one approving review plus Code Owner review.
 
 All other rules remain unchanged, including:
 
@@ -126,4 +132,4 @@ All other rules remain unchanged, including:
 - repository hygiene, validation, and handoff requirements;
 - the rule that live GitHub state controls mechanical repository facts.
 
-If this amendment and the core Governance Protocol appear to conflict outside the human-maintainer authority change described here, treat that as a governance ambiguity and escalate to a trusted maintainer rather than silently broadening the amendment.
+If this amendment and the core Governance Protocol appear to conflict outside the human-maintainer authority and PR-operation changes described here, treat that as a governance ambiguity and escalate to a trusted maintainer rather than silently broadening the amendment.
