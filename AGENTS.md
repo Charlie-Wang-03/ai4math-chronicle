@@ -10,12 +10,15 @@ AI4Math Chronicle is a timeline-first, evidence-backed archive of major mileston
 
 Before substantive work in a fresh conversation, read and reconcile:
 
-1. [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) — agent authority, state recovery, hard gates, and handoff;
+1. [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) together with the active [`docs/gpt-project-governance-co-maintainer-amendment.md`](docs/gpt-project-governance-co-maintainer-amendment.md) — agent authority, state recovery, trusted-maintainer authority, hard gates, conflict handling, and handoff;
 2. [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) together with any ratified amendment named by [`docs/project-state.md`](docs/project-state.md) — active v0.1 product contract;
-3. [`docs/project-state.md`](docs/project-state.md) — approved semantic phase and active mainline;
-4. live GitHub repository state — current HEAD, branches, PRs, Issues, releases, files, and task-relevant CI.
+3. [`docs/project-state.md`](docs/project-state.md) — approved semantic phase, collaboration state, and active mainline;
+4. [`MAINTAINERS.md`](MAINTAINERS.md) — humans currently holding trusted-maintainer authority;
+5. live GitHub repository state — current HEAD, branches, PRs, Issues, releases, files, and task-relevant CI.
 
-Do not treat old chat summaries, memory, copied commit SHAs, or stale branch names as current repository truth. Historical conversation context may explain rationale but cannot silently override live GitHub facts or the ratified governance contract.
+Do not treat old chat summaries, memory, copied commit SHAs, stale branch names, or GitHub collaborator status as current project-governance truth. Historical conversation context may explain rationale but cannot silently override live GitHub facts or ratified governance.
+
+If trusted maintainers issue materially conflicting explicit decisions at a constitutional, phase, high-risk editorial, or destructive-operation boundary, do not rank the maintainers or choose a winner. Surface the conflict for human reconciliation.
 
 ## Read before changing
 
@@ -25,6 +28,7 @@ Do not treat old chat summaries, memory, copied commit SHAs, or stale branch nam
 - Event data / classification / verification: [`docs/editorial-methodology.md`](docs/editorial-methodology.md)
 - Candidate/source discovery: [`docs/deterministic-source-discovery.md`](docs/deterministic-source-discovery.md) and [`docs/source-intake.md`](docs/source-intake.md)
 - Long-term cadence / dependency maintenance / release snapshots: [`docs/maintenance.md`](docs/maintenance.md)
+- Trusted human maintenance workflow: [`docs/maintainer-guide.md`](docs/maintainer-guide.md)
 - External contributions: [`CONTRIBUTING.md`](CONTRIBUTING.md)
 
 ## Repository invariants
@@ -40,7 +44,7 @@ Do not treat old chat summaries, memory, copied commit SHAs, or stale branch nam
 
 Within an approved mainline, agents have high execution authority: inspect, decompose, implement, validate, open PRs, respond to CI, and complete ordinary maintenance without repeated approval requests.
 
-Agents do **not** have autonomous agenda or constitutional authority. Do not invent a new project phase, major maintained capability, product category, or governance rule merely because it appears useful. Follow the approved mainline in `docs/project-state.md` or the owner's current explicit instruction.
+Agents do **not** have autonomous agenda or constitutional authority. Do not invent a new project phase, major maintained capability, product category, or governance rule merely because it appears useful. Follow the approved mainline in `docs/project-state.md` or the current explicit instruction of an active trusted maintainer.
 
 Use the rule:
 
@@ -56,7 +60,7 @@ Scanner output and Source Lead Issues are operational discovery records, not can
 
 Agents may gather evidence, draft bilingual text, suggest taxonomy, detect duplicates, create ordinary H2/H3 Event records, maintain relationships, and apply lower-risk evidence / verification updates when the documented rule is satisfied and supporting sources are recorded.
 
-The following are standing human hard gates unless the owner has explicitly approved the exact decision or an already-established policy explicitly delegates it:
+The following are standing human hard gates unless an active trusted maintainer has explicitly approved the exact decision or an already-established human policy explicitly delegates it:
 
 - a new or materially changed `H1` classification;
 - finalizing `independently_verified`;
@@ -71,6 +75,8 @@ The following are standing human hard gates unless the owner has explicitly appr
 Agents and the Chronicle must not present the correctness of a new mathematical fact as the project's own adjudication. High-risk wording such as “first”, “solves”, “proves”, or “disproves” should remain source-attributed unless the relevant historical fact is independently established.
 
 Significance, event-level verification, formal assurance, and ultimate mathematical correctness are independent dimensions.
+
+If a human gate appears to have conflicting explicit decisions from active trusted maintainers, do not treat either decision as final until the humans reconcile it.
 
 ## Verification
 
@@ -89,14 +95,14 @@ Do not treat a visually plausible page or an agent-generated record as verified 
 - Use focused branches and reviewable pull requests for non-trivial work.
 - Do not mix unrelated editorial, dependency, UI, and governance changes without a clear reason.
 - Preserve stable Event IDs and explicit correction / verification history.
-- Update `docs/project-state.md` when the semantic phase, approved mainline, standing work loop, blocker, human gate, or next actionable unit changes; do not mirror volatile SHAs or corpus counts there.
+- Update `docs/project-state.md` when the semantic phase, approved mainline, standing work loop, blocker, human gate, trusted-maintainer authority model, or next actionable unit changes; do not mirror volatile SHAs or corpus counts there.
 - Do not commit credentials, secrets, machine-specific private paths, or private source material.
-- Do not force-push shared branches, rewrite published history, delete branches with active work, change repository visibility, or perform other destructive / high-blast-radius operations without explicit human authorization.
+- Do not force-push shared branches, rewrite published history, delete branches with active work, change repository visibility, or perform other destructive / high-blast-radius operations without explicit trusted-maintainer authorization.
 - Do not merge release work to `main` merely because CI is green when a human editorial, governance, or launch gate remains open.
 - Do not move or rewrite published tags or GitHub Releases; treat them as historical snapshots.
 
 ## Definition of done
 
-A change is done only when its intended outcome is implemented, canonical data remains valid, relevant tests/builds pass, documentation is updated when behavior or governance changes, semantic project state is updated when necessary, and any required human editorial / governance / release gate has been explicitly satisfied.
+A change is done only when its intended outcome is implemented, canonical data remains valid, relevant tests/builds pass, documentation is updated when behavior or governance changes, semantic project state is updated when necessary, and any required human editorial / governance / release gate has been explicitly satisfied by an active trusted maintainer.
 
 A future conversation should be able to recover the true project state from repository evidence without depending on the previous chat.

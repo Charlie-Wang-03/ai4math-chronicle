@@ -2,7 +2,7 @@
 
 **English** · [简体中文](./maintenance.zh-CN.md)
 
-This document defines the long-term maintenance rhythm for AI4Math Chronicle after the v0.1.0 public launch. It complements, rather than replaces, the [Editorial Methodology](./editorial-methodology.md), [Source Intake Workflow](./source-intake.md), [Development Guide](./development.md), [GPT Project Governance Protocol](./gpt-project-governance.md), and [Contributing Guide](../CONTRIBUTING.md).
+This document defines the long-term maintenance rhythm for AI4Math Chronicle after the v0.1.0 public launch. It complements, rather than replaces, the [Editorial Methodology](./editorial-methodology.md), [Source Intake Workflow](./source-intake.md), [Development Guide](./development.md), [GPT Project Governance Protocol](./gpt-project-governance.md), [Trusted Co-Maintainer Governance Amendment](./gpt-project-governance-co-maintainer-amendment.md), [Trusted Maintainer Guide](./maintainer-guide.md), and [Contributing Guide](../CONTRIBUTING.md).
 
 ## Maintenance model
 
@@ -72,7 +72,7 @@ The standing human editorial gates are:
 - finalizing `retracted`;
 - resolving a material mathematical-correctness, attribution, or historical-priority dispute on the Chronicle's own authority.
 
-Automation may prepare the evidence, complete the draft patch, and recommend any of these decisions, but the gated status or classification must not be published without direct human approval unless an already-established human policy explicitly delegates that exact class of decision.
+Automation may prepare the evidence, complete the draft patch, and recommend any of these decisions, but the gated status or classification must not be published without direct trusted-maintainer approval unless an already-established human policy explicitly delegates that exact class of decision.
 
 Lower-risk evidence and verification updates may continue autonomously when the documented rule is satisfied and supporting sources are recorded.
 
@@ -121,16 +121,25 @@ Published tags and releases are historical records and should not be moved or re
 
 ## Operational ownership
 
-Until multiple trusted maintainers exist, the repository uses a single-maintainer model:
+The project now uses a **trusted co-maintainer model** governed by [`MAINTAINERS.md`](../MAINTAINERS.md), the [co-maintainer governance amendment](./gpt-project-governance-co-maintainer-amendment.md), and the [Trusted Maintainer Guide](./maintainer-guide.md).
 
+The intended operating model is:
+
+- trusted maintainers have near-peer project decision authority;
 - external contributors normally work through Issues, forks, and focused PRs;
-- `CODEOWNERS` routes sensitive changes for maintainer attention;
-- required approvals remain at zero to avoid deadlocking solo maintenance;
-- when a second stable maintainer exists, the repository may require one approval and Code Owner review for sensitive paths.
+- trusted maintainers may work from focused repository branches and review one another's PRs;
+- GitHub collaborator status alone does not create trusted-maintainer authority;
+- `CODEOWNERS` routes sensitive changes for trusted-maintainer attention;
+- once a second trusted maintainer is concretely activated, `main` should require one approving review and Code Owner review for sensitive paths while preserving the existing required CI and history protections;
+- if trusted maintainers make materially conflicting explicit decisions on a constitutional, high-risk editorial, phase, or destructive-operation question, the disagreement must be reconciled by the humans rather than decided by AI or automation.
+
+The GitHub repository owner may retain account-level controls that the platform cannot fully delegate. This mechanical distinction does not establish a general project-agenda hierarchy among trusted maintainers.
+
+The co-maintainer model does not select a new roadmap. Specific future directions remain governed by the active Product Specification and [`project-state.md`](./project-state.md).
 
 Repository settings should remain intentionally minimal: Issues enabled; Projects, Wiki, and Discussions disabled until real collaboration volume justifies them.
 
-Cross-conversation agent authority, state recovery, and agenda limits are governed by [`gpt-project-governance.md`](./gpt-project-governance.md). The current approved semantic phase and mainline are recorded in [`project-state.md`](./project-state.md).
+Cross-conversation agent authority, state recovery, agenda limits, and trusted-maintainer human-gate authority are governed by [`gpt-project-governance.md`](./gpt-project-governance.md) together with the [Trusted Co-Maintainer Governance Amendment](./gpt-project-governance-co-maintainer-amendment.md). The current approved semantic phase and mainline are recorded in [`project-state.md`](./project-state.md).
 
 ## Definition of healthy maintenance
 
@@ -142,5 +151,7 @@ The project is healthy when:
 - CI, CodeQL, and Pages deployment remain green;
 - dependency updates are controlled without creating toolchain churn;
 - public contribution paths remain usable;
+- trusted maintainers can independently recover the same current project state from repository evidence;
+- maintainer disagreement is surfaced and reconciled rather than silently arbitrated by AI;
 - releases periodically provide citable snapshots without turning the repository into a release-management burden;
 - a fresh AI-assisted conversation can recover the active project state from repository evidence without depending on stale chat context.

@@ -30,11 +30,12 @@
 
 ## Human editorial / governance gates
 
-- [ ] This PR does not finalize a new or materially changed `H1` classification without direct human review or an already-established explicit delegation.
-- [ ] This PR does not finalize `independently_verified`, `disputed`, `corrected` as the current verification status, or `retracted` without direct human editorial approval or an already-established explicit delegation.
+- [ ] This PR does not finalize a new or materially changed `H1` classification without direct trusted-maintainer review or an already-established explicit delegation.
+- [ ] This PR does not finalize `independently_verified`, `disputed`, `corrected` as the current verification status, or `retracted` without direct trusted-maintainer editorial approval or an already-established explicit delegation.
 - [ ] This PR does not adjudicate a material mathematical-correctness, attribution, or historical-priority dispute on Chronicle's own authority.
 - [ ] High-risk wording such as `first`, `solves`, `proves`, or `disproves` is source-attributed unless the historical fact itself is independently established.
-- [ ] Any Product Specification / Governance Protocol / source-of-truth / human-gate change has explicit owner approval.
+- [ ] Any Product Specification / Governance Protocol / source-of-truth / human-gate change has explicit trusted-maintainer approval.
+- [ ] No known materially conflicting trusted-maintainer decision remains unresolved for a constitutional, phase, high-risk editorial, or destructive-operation change in this PR.
 
 ## Licensing
 

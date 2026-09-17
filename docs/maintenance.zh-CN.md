@@ -2,7 +2,7 @@
 
 [English](./maintenance.md) · **简体中文**
 
-本文定义 AI4Math 大事记在 v0.1.0 公开发布后的长期维护节奏。它补充而不替代 [编辑方法论](./editorial-methodology.zh-CN.md)、[信源收集与 Intake 工作流](./source-intake.zh-CN.md)、[开发指南](./development.zh-CN.md)、[GPT 项目治理协议](./gpt-project-governance.md) 与 [贡献指南](../CONTRIBUTING.zh-CN.md)。
+本文定义 AI4Math 大事记在 v0.1.0 公开发布后的长期维护节奏。它补充而不替代 [编辑方法论](./editorial-methodology.zh-CN.md)、[信源收集与 Intake 工作流](./source-intake.zh-CN.md)、[开发指南](./development.zh-CN.md)、[GPT 项目治理协议](./gpt-project-governance.md)、[Trusted Co-Maintainer Governance Amendment](./gpt-project-governance-co-maintainer-amendment.md)、[Trusted Maintainer 指南](./maintainer-guide.zh-CN.md) 与 [贡献指南](../CONTRIBUTING.zh-CN.md)。
 
 ## 维护模型
 
@@ -72,7 +72,7 @@ Candidate 可以直接来自成熟 Event Proposal，也可以由 Source Lead 在
 - 最终确定 `retracted`；
 - 以 Chronicle 自身权威解决存在实质冲突的数学正确性、归属或历史优先权争议。
 
-自动化可以把证据收集、完整 patch 与推荐结论准备到 gate 边界，但除非既有人工政策已经明确授权该类决定，否则不得在没有直接人工批准的情况下正式发布 gated status 或 classification。
+自动化可以把证据收集、完整 patch 与推荐结论准备到 gate 边界，但除非既有人工政策已经明确授权该类决定，否则不得在没有 trusted maintainer 直接批准的情况下正式发布 gated status 或 classification。
 
 较低风险的 evidence / verification 更新，在文档化规则满足且支持来源已记录时仍可高自治推进。
 
@@ -121,16 +121,25 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 
 ## 维护责任模型
 
-在形成多位可信维护者之前，仓库继续采用单 maintainer 模式：
+项目现在采用 **trusted co-maintainer / 可信共同维护者模式**，以 [`MAINTAINERS.md`](../MAINTAINERS.md)、[co-maintainer governance amendment](./gpt-project-governance-co-maintainer-amendment.md) 与 [Trusted Maintainer 指南](./maintainer-guide.zh-CN.md) 为准。
 
-- 外部贡献者通常通过 Issues、fork 和聚焦 PR 工作；
-- `CODEOWNERS` 用于把敏感改动路由给维护者关注；
-- required approvals 保持为 0，避免单人维护被自锁；
-- 当出现第二位稳定 maintainer 后，可以考虑对敏感路径要求 1 个 approval 与 Code Owner review。
+目标运行方式为：
+
+- trusted maintainers 在项目决策层面拥有基本对等权限；
+- 外部贡献者通常通过 Issues、fork 与聚焦 PR 工作；
+- trusted maintainers 可以使用仓库内聚焦 branch，并互相 review PR；
+- GitHub collaborator 身份本身不自动产生 trusted-maintainer 权限；
+- `CODEOWNERS` 用于把敏感改动路由给 trusted maintainers；
+- 当第二位 trusted maintainer 的具体身份正式激活后，`main` 应要求 1 个 approving review，并对敏感路径启用 Code Owner review，同时保留现有 required CI 与 history protections；
+- 如果 trusted maintainers 对宪法性、高风险编辑、项目阶段或 destructive-operation 问题作出实质冲突的明确决定，应由人类维护者协商解决，AI 与自动化不得自行裁决。
+
+GitHub 仓库所有者可能因为平台限制而保留某些账户级权限。这种机械权限差异不构成 trusted maintainers 之间默认的项目议程层级。
+
+建立 co-maintainer 模式本身不选择新的 roadmap。未来具体方向继续由 active Product Specification 与 [`project-state.md`](./project-state.md) 管理。
 
 仓库设置继续保持最小化：开启 Issues；Projects、Wiki 与 Discussions 保持关闭，直到真实协作规模证明它们有必要。
 
-跨对话的 Agent 权限、state recovery 与 agenda 限制以 [`gpt-project-governance.md`](./gpt-project-governance.md) 为准；当前批准的语义阶段与主线记录在 [`project-state.md`](./project-state.md)。
+跨对话 Agent 权限、state recovery、agenda 限制与 trusted-maintainer human-gate authority，以 [`gpt-project-governance.md`](./gpt-project-governance.md) 与 [Trusted Co-Maintainer Governance Amendment](./gpt-project-governance-co-maintainer-amendment.md) 共同为准；当前批准的语义阶段与主线记录在 [`project-state.md`](./project-state.md)。
 
 ## 健康维护的定义
 
@@ -142,5 +151,7 @@ Dependabot 每周检查 npm 与 GitHub Actions。
 - CI、CodeQL 与 Pages deployment 保持绿色；
 - 依赖更新受控，不制造 toolchain churn；
 - 公开贡献入口始终可用；
+- trusted maintainers 可以分别从仓库证据恢复出一致的当前项目状态；
+- maintainer 之间的分歧会被显式暴露和协商解决，而不是由 AI 静默仲裁；
 - Release 周期性提供可引用快照，同时不会把仓库拖入沉重的 release management；
 - 一个全新的 AI 协作对话可以仅依赖仓库证据恢复当前项目状态，而不依赖陈旧聊天上下文。
