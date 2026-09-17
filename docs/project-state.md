@@ -9,7 +9,7 @@ This file records the **approved semantic state** that a future conversation nee
 
 **Post-launch v0.1.x maintenance and corpus stewardship** under the v0.1 product/editorial contract.
 
-The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md) and [`product-spec-v0.1-field-building-amendment.md`](./product-spec-v0.1-field-building-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model. The field-building amendment extends the inclusion boundary and canonical taxonomy to cover historically significant formation, institutionalization, norms, governance, and scholarly-infrastructure milestones in AI4Math without creating a new product phase.
+The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md), [`product-spec-v0.1-field-building-amendment.md`](./product-spec-v0.1-field-building-amendment.md), and [`product-spec-v0.1-public-entrypoints-amendment.md`](./product-spec-v0.1-public-entrypoints-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model. The field-building amendment extends the inclusion boundary and canonical taxonomy to cover historically significant formation, institutionalization, norms, governance, and scholarly-infrastructure milestones in AI4Math without creating a new product phase. The public-entrypoints amendment defines the Chronicle's approved product-facing URL topology without changing its single-source-of-truth architecture.
 
 The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase. The owner-approved R1.2C-A signature-ornament language is recorded in [`ornament-language.md`](./ornament-language.md) as a subordinate visual-identity contract; it defines ornament boundaries without authorizing a broader redesign or new product phase.
 
@@ -32,15 +32,23 @@ The project has an **active trusted co-maintainer model**:
 
 The active `main` protection model intentionally keeps PRs, `validate-and-build`, strict up-to-date checks, resolved review conversations, squash-only merge, linear history, deletion protection, and non-fast-forward protection while **not** imposing a blanket required approving review or universal Code Owner review for trusted-maintainer PRs.
 
-This collaboration model does **not** select a new editorial, UI / UX, historical-lineage, corpus-program, or canonical-site migration roadmap. Future concrete routes remain undecided unless they are already covered by the standing maintenance loops below or explicitly approved later.
+This collaboration model does **not** select a new editorial, UI / UX, historical-lineage, corpus-program, canonical-site migration, or AI4Math News roadmap. Future concrete routes remain undecided unless they are already covered by the standing maintenance loops below or explicitly approved later.
 
-Trusted maintainers are, however, explicitly allowed to create and maintain auxiliary project web URLs, hostname aliases, redirects, mirrors, and deployment notifications as ordinary engineering maintenance when those changes preserve the static architecture, canonical Event source of truth, and active canonical-origin contract. The self-hosted `aixmath.org` mirror path introduced through PR #112 is an approved example; GitHub Pages remains the canonical indexed origin unless a later explicit migration decision changes that contract.
+The Chronicle now has three approved **peer product-facing public entrypoints**:
+
+- `https://charlie-wang-03.github.io/ai4math-chronicle/`;
+- `https://history.aixmath.org/`;
+- `https://timeline.aixmath.org/`.
+
+These entrypoints expose the same Chronicle and canonical Event corpus. Product-facing parity is intentionally distinct from technical SEO canonicalization: until a separate canonical-domain migration is approved, the static build, canonical metadata, sitemap, machine-readable canonical URLs, and IndexNow scope may continue using the GitHub Pages URL space.
+
+`https://news.aixmath.org/` is reserved for a possible future AI4Math News product and is **not** a current Chronicle entrypoint. The reservation does not approve implementation or launch of that future product.
 
 ## Approved active mainline
 
 The approved long-term mainline has two standing tracks:
 
-1. **Product / engineering maintenance** — keep the static GitHub Pages site and approved auxiliary delivery infrastructure reliable, discoverable, professional, accessible, coherent, and easy to navigate under the active v0.1 product contract.
+1. **Product / engineering maintenance** — keep the Chronicle reliable, discoverable, professional, accessible, coherent, and easy to navigate across the three approved public entrypoints under the active v0.1 product contract, while preserving one static product and one canonical Event source of truth.
 2. **Chronicle / corpus maintenance** — continue evidence-backed candidate intake, deduplication, Event drafting, normal H2/H3 publication, source maintenance, corrections, relationships, and verification follow-up under the Editorial Methodology and Governance Protocol.
 
 These are standing maintenance loops, not authorization to invent a new major feature family or a new product phase.
@@ -59,8 +67,9 @@ Maintain AI4Math Chronicle as a trustworthy, living historical archive while pre
 - task-aware page hierarchy and modular scholarly information presentation;
 - stable, language-aware bilingual typography and responsive density;
 - auditable verification and correction history;
-- a static, maintainable GitHub-native architecture with GitHub Pages as the canonical indexed origin;
-- approved auxiliary mirrors / URLs remaining subordinate to the same canonical static build and source of truth;
+- a static, maintainable GitHub-native architecture;
+- three peer product-facing public entrypoints delivering the same Chronicle;
+- one consolidated technical SEO canonical URL strategy until a separate canonical-domain migration is approved;
 - repository-native collaboration that does not depend on private chat context or undocumented maintainer hierarchy.
 
 ### Approved field-building extension
@@ -119,7 +128,8 @@ Without a new phase decision, agents may continue:
 - accessibility, SEO, GEO, structured-data, search, and navigation maintenance;
 - incremental work that reinforces the approved R0 product-coherence and R1 information-design models;
 - dependency and GitHub Pages maintenance;
-- maintenance of approved auxiliary URLs, hostname aliases, redirects, mirrors, and deployment notifications that preserve the canonical origin and static architecture;
+- maintenance of `history.aixmath.org` and `timeline.aixmath.org` as approved peer Chronicle entrypoints while preserving the single static build and current technical canonical strategy;
+- parking / detaching `news.aixmath.org` from Chronicle delivery so the hostname remains reserved for a future separately approved product;
 - schema, CI, documentation, and data-quality improvements;
 - candidate event discovery and source collection, including `field_building` candidates under the approved amendment;
 - ordinary H2/H3 Event creation when evidence and scope rules are satisfied, including ordinary H2/H3 `field_building` records;
@@ -141,7 +151,7 @@ The standing hard gates are defined canonically in [`gpt-project-governance.md`]
 
 Any active trusted maintainer may provide the explicit human approval required by these gates when no conflicting trusted-maintainer decision is known. Known material disagreement between trusted maintainers is itself a human reconciliation gate.
 
-The field-building inclusion-boundary and schema extension listed above has already been explicitly approved and therefore is not an open human gate. The R0 product-coherence and R1 reader-information decisions listed above have likewise already been explicitly approved. R1.2C-B has passed the required owner visual review. For R1.2C-C, owner visual review retained only the global footer echo; the chronology transition and Search & Explore zero-result ornament are not approved production surfaces. R1.2C-D has completed stabilization of that accepted profile without expanding it. Broader ornament expansion remains outside the approved mainline.
+The field-building inclusion-boundary and schema extension listed above has already been explicitly approved and therefore is not an open human gate. The R0 product-coherence, public-entrypoint, and R1 reader-information decisions listed above have likewise already been explicitly approved. The public-entrypoint amendment does not approve implementation of AI4Math News or a technical canonical-domain migration. R1.2C-B has passed the required owner visual review. For R1.2C-C, owner visual review retained only the global footer echo; the chronology transition and Search & Explore zero-result ornament are not approved production surfaces. R1.2C-D has completed stabilization of that accepted profile without expanding it. Broader ornament expansion remains outside the approved mainline.
 
 ## No-autonomous-agenda rule
 
