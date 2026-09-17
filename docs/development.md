@@ -18,7 +18,7 @@ The v0.1 implementation is intentionally static and GitHub-native:
 
 Do not introduce a backend, CMS, account system, database server, vector database, server API, or unnecessary SSR without a future product-specification change.
 
-Auxiliary project URLs, hostname aliases, redirects, mirrors, and deployment notifications are allowed as ordinary engineering infrastructure when they keep the static build and canonical Event source of truth intact and preserve the active canonical origin. A change that moves the canonical site or changes the product architecture remains a separate migration decision.
+The Chronicle may be delivered through multiple approved public entrypoints while still using one static build and one canonical Event source of truth. The active public-entrypoint policy is defined by [`product-spec-v0.1-public-entrypoints-amendment.md`](./product-spec-v0.1-public-entrypoints-amendment.md). A change that moves the technical SEO canonical origin or changes the product architecture remains a separate migration decision.
 
 ## Local setup
 
@@ -92,13 +92,21 @@ The browser smoke gate is intentionally narrow. It protects the compact mobile h
 
 External link checking should remain non-flaky and should not become a permanent source of false CI failures.
 
-## Self-hosted mirror
+## Public entrypoints and self-hosted delivery
 
-The same `main` build is also published to a self-hosted mirror, served on `history.aixmath.org`, `timeline.aixmath.org`, and `news.aixmath.org`. Those hostnames are convenience aliases, not additional sites: the build keeps `site` at the Pages origin and the published HTML keeps a single canonical origin (`https://charlie-wang-03.github.io/ai4math-chronicle/`), so GitHub Pages remains the canonical, indexed home and the aliases consolidate instead of competing in search. The mirror is built outside this repository and does not change the required Project Pages behaviour: `site`, `base`, and every internal link stay exactly as they are for the Pages build.
+The same `main` Chronicle build is published through three approved **peer product-facing public entrypoints**:
 
-`.github/workflows/notify-deploy.yml` sends a signed notification to the mirror's deploy API whenever `main` moves, so the mirror rebuilds from the same commit. It is a notification only: it does not gate CI, it is skipped when the `AI4MATH_DEPLOY_WEBHOOK_SECRET` repository secret is absent, and it is independent of the GitHub Pages deployment.
+- `https://charlie-wang-03.github.io/ai4math-chronicle/`
+- `https://history.aixmath.org/`
+- `https://timeline.aixmath.org/`
 
-This mirror and the associated project URLs are explicitly allowed under the active trusted-maintainer engineering policy. Extending or maintaining similar auxiliary URLs does not require a Product Specification change as long as the canonical origin and static architecture remain unchanged.
+The latter two are served through self-hosted delivery. They are not separate factual sites: all three entrypoints expose the same Chronicle product and canonical Event corpus.
+
+For technical SEO consolidation, the build currently keeps `site` at the GitHub Pages origin and the rendered HTML continues to emit GitHub Pages canonical URLs. Sitemap, structured metadata, IndexNow, and machine-readable canonical URLs therefore remain on the existing Pages URL scope until a separate canonical-domain migration is explicitly approved. This technical canonicalization does not make the `history.aixmath.org` or `timeline.aixmath.org` entrypoints secondary in product communication.
+
+`.github/workflows/notify-deploy.yml` sends a signed notification to the self-hosted deploy API whenever `main` moves, so the mirror can rebuild from the same commit. It is a notification only: it does not gate CI, it is skipped when the `AI4MATH_DEPLOY_WEBHOOK_SECRET` repository secret is absent, and it is independent of the GitHub Pages deployment.
+
+`https://news.aixmath.org/` is reserved for a possible future AI4Math News product. It is not a current Chronicle entrypoint and should not be promoted as one. If external infrastructure still serves the Chronicle on that hostname, treat that state as transitional until the external routing is parked or repurposed; that routing change occurs outside this repository.
 
 ## UI changes
 
