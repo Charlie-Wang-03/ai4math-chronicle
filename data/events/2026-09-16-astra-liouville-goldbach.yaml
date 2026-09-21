@@ -1,0 +1,273 @@
+schema_version: 1
+id: evt-2026-astra-liouville-goldbach
+slug: astra-liouville-goldbach
+
+title:
+  en: Captain Sude credits GPT-6 Astra with an unconditional proof of the Liouville–Goldbach problem
+  zh-CN: Captain Sude 将 Liouville–Goldbach 问题的无条件证明归因于 GPT-6 Astra
+
+dates:
+  event: '2026-09-16'
+  first_public_claim: '2026-09-16'
+  paper_release: '2026-09-16'
+  artifact_release: '2026-09-16'
+  independently_verified: null
+  added_to_chronicle: '2026-09-21'
+  last_updated: '2026-09-21'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The release addresses a named open Liouville–Goldbach problem by giving an
+      unconditional all-even theorem where the closest direct predecessor required
+      GRH and sufficiently large even inputs. The result is accompanied by a complete
+      Lean formalization and an independent technical replay, making it a substantive
+      AI-associated research milestone while remaining distinct from the classical
+      binary Goldbach conjecture and below the Chronicle's H1 historical threshold.
+    zh-CN: >-
+      该成果针对一个已有明确记录的 Liouville–Goldbach 开放问题，给出覆盖全部偶数的
+      无条件定理，而最直接的前驱结果仍依赖 GRH 且只适用于充分大的偶数。公开成果同时
+      提供完整 Lean 形式化，并已有独立技术重放，因此足以构成实质性的 AI 参与研究里程碑；
+      但它不同于经典二元哥德巴赫猜想，且目前尚不足以达到 Chronicle 的 H1 历史级门槛。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    Captain Sude publicly attributed to GPT-6 Astra an unconditional proof that every
+    even integer N > 2 can be written as N = a + b with positive integers a and b
+    satisfying lambda(a) = lambda(b) = -1. The released paper and Lean theorem state
+    this all-even result without GRH or a sufficiently-large restriction. This is a
+    Liouville analogue of binary Goldbach, not a proof of the classical Goldbach conjecture.
+  zh-CN: >-
+    Captain Sude 公开将一项无条件证明归因于 GPT-6 Astra：对每个大于 2 的偶数 N，
+    都存在正整数 a、b，使 N = a + b 且 lambda(a) = lambda(b) = -1。公开论文与
+    Lean 定理均陈述这一覆盖全部偶数的结论，不依赖 GRH，也没有“充分大”限制。
+    这是二元哥德巴赫问题的 Liouville 类比，并非经典哥德巴赫猜想的证明。
+
+summary:
+  en: >-
+    The public project supplies an authorless mathematical paper, a complete Lean 4
+    formalization against mathlib's Liouville function, pinned toolchain metadata,
+    build and axiom audits, and proof-route checks. A separate audit repository
+    independently rebuilt the frozen v1.0.0 artifact on Linux, matched the source
+    hashes, repeated the axiom and route audits, and reported no sorry, custom theorem
+    axiom, or native_decide. The public paper and repository do not preserve a detailed
+    model–human derivation trace, so the precise division of intellectual labor remains
+    source-attributed rather than independently reconstructed by the Chronicle.
+  zh-CN: >-
+    公开项目提供一篇未署名数学论文、基于 mathlib Liouville 函数的完整 Lean 4
+    形式化、固定工具链元数据、构建与公理审计以及证明路线检查。另一个独立审计仓库
+    在 Linux 上重新构建冻结的 v1.0.0 产物，对照源码哈希并重复公理与路线审计，
+    报告未发现 sorry、自定义定理公理或 native_decide。由于公开论文和仓库没有保存
+    详细的模型—人类推导轨迹，Chronicle 对具体智力分工只做来源归因，不作独立重建。
+
+why_it_matters:
+  en: >-
+    Mangerel's 2024 Shusterman paper obtained the same (-1,-1) sign-pattern conclusion
+    only under GRH and for sufficiently large even N. The new release claims to remove
+    both restrictions and packages the argument as a reproducible formal artifact.
+    If the mathematical novelty and reported Astra provenance continue to withstand
+    specialist scrutiny, it is evidence of AI participation in resolving a concrete
+    open research problem rather than merely improving a benchmark.
+  zh-CN: >-
+    Mangerel 2024 年关于 Shusterman 问题的论文，只在 GRH 假设下并对充分大的偶数 N
+    得到相同的 (-1,-1) 符号模式结论。此次发布声称同时去掉这两个限制，并把论证
+    封装为可复现的形式化产物。如果其数学新颖性与 Astra 来源归因继续经受专业审查，
+    该事件将体现 AI 参与解决具体开放研究问题，而不是仅仅提升基准成绩。
+
+ai_role:
+  level: unclear
+  description:
+    en: >-
+      Captain Sude publicly attributes the proof discovery to GPT-6 Astra, including
+      a first multiples-of-four argument followed by a new route covering every even
+      integer greater than two. The released paper and repository do not document
+      enough interaction provenance to independently separate model-generated ideas
+      from human problem selection, prompting, editing, proof repair, or formalization work.
+    zh-CN: >-
+      Captain Sude 公开将证明发现归因于 GPT-6 Astra，包括先得到 4 的倍数情形，
+      随后找到覆盖全部大于 2 偶数的新路线。但公开论文与仓库没有记录足够详细的
+      交互 provenance，无法独立区分模型生成思想与人类的问题选择、提示、编辑、
+      证明修复或形式化工作。
+
+human_contribution:
+  description:
+    en: >-
+      Captain Sude maintained and released the public project materials and publicly
+      described the Astra attribution. The released record does not document the exact
+      human contribution to target selection, prompting, manuscript editing, Lean proof
+      repair, or verification, so those roles are not inferred more specifically here.
+    zh-CN: >-
+      Captain Sude 维护并发布公开项目材料，同时公开说明 Astra 的归因。现有记录没有
+      具体说明人类在目标选择、提示、论文编辑、Lean 证明修复或验证中的精确贡献，
+      因此本记录不对这些角色作进一步推断。
+
+systems:
+- gpt-6-astra
+- lean
+
+organizations: []
+people: []
+
+problems:
+- liouville-goldbach-problem
+
+methods:
+- multiplicative-functions
+- finite-field-symmetry
+- descent
+- quadratic-reciprocity
+- formalization
+
+verification:
+  evidence_level: E4
+  status: partially_verified
+  formal_assurance: independently_replayed
+  history:
+  - date: '2026-09-16'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The public repository released the mathematical paper and a complete Lean
+        formalization whose final theorem matches the stated all-even Liouville–Goldbach
+        claim. The project records successful local build, axiom, and proof-route audits.
+      zh-CN: >-
+        公开仓库发布数学论文与完整 Lean 形式化，最终定理与所述覆盖全部偶数的
+        Liouville–Goldbach 主张一致；项目同时记录了成功的本地构建、公理审计和
+        证明路线审计。
+  - date: '2026-09-17'
+    status: partially_verified
+    evidence_level: E4
+    note:
+      en: >-
+        An independent audit repository reports a Linux rebuild of the frozen v1.0.0
+        release, zero source-hash mismatches, a fresh axiom audit, a successful route
+        audit, and no sorry, custom theorem axiom, or native_decide. This supports
+        independently_replayed formal assurance but is explicitly a technical
+        reproduction rather than independent mathematical peer review or priority adjudication.
+      zh-CN: >-
+        一个独立审计仓库报告对冻结的 v1.0.0 版本完成 Linux 重建，源码哈希零差异，
+        重新执行公理审计和证明路线审计，并未发现 sorry、自定义定理公理或 native_decide。
+        这些证据支持 independently_replayed 的形式保障，但该审计明确属于技术复现，
+        并非独立数学同行评议或历史优先权裁决。
+
+sources:
+- id: captain-sude-liouville-goldbach-repository
+  tier: S1
+  type: repository
+  title: A Goldbach theorem for the Liouville function
+  url: https://github.com/CaptainSude/Liouville-Goldbach
+  primary: true
+  published_date: '2026-09-16'
+  accessed_at: '2026-09-21'
+
+- id: captain-sude-liouville-goldbach-paper
+  tier: S1
+  type: paper
+  title: A Goldbach theorem for the Liouville function
+  url: https://github.com/CaptainSude/Liouville-Goldbach/blob/main/paper/liouville-goldbach.pdf
+  primary: true
+  published_date: '2026-09-16'
+  accessed_at: '2026-09-21'
+
+- id: captain-sude-astra-liouville-goldbach-announcement
+  tier: S2
+  type: official_announcement
+  title: Captain Sude announcement attributing the Liouville–Goldbach proof to GPT-6 Astra
+  url: https://x.com/captain_sude/status/2100277626120163664
+  primary: true
+  published_date: '2026-09-16'
+  accessed_at: '2026-09-21'
+
+- id: sunnyspot-liouville-goldbach-independent-audit
+  tier: S3
+  type: independent_analysis
+  title: Liouville–Goldbach Independent Audit Bundle
+  url: https://github.com/sunnyspot114514/Liouville-Goldbach-audit
+  primary: false
+  published_date: '2026-09-17'
+  accessed_at: '2026-09-21'
+
+- id: mangerel-shusterman-liouville-goldbach
+  tier: S1
+  type: paper
+  title: On Shusterman's Goldbach-type problem for sign patterns of the Liouville function
+  url: https://arxiv.org/abs/2412.17199
+  primary: false
+  published_date: '2024-12-23'
+  accessed_at: '2026-09-21'
+
+- id: mangerel-goldbach-liouville-correlation
+  tier: S1
+  type: paper
+  title: On a Goldbach-type problem for the Liouville function
+  url: https://arxiv.org/abs/2404.12117
+  primary: false
+  published_date: '2024-04-18'
+  accessed_at: '2026-09-21'
+
+- id: mathoverflow-liouville-goldbach-2018
+  tier: S5
+  type: community
+  title: Goldbach's conjecture for the Liouville function
+  url: https://mathoverflow.net/questions/307479/goldbachs-conjecture-for-the-liouville-function
+  primary: false
+  published_date: '2018-08-03'
+  accessed_at: '2026-09-21'
+
+artifacts:
+- id: liouville-goldbach-lean-proof
+  kind: proof
+  title: Complete Lean 4 formalization of the Liouville–Goldbach theorem
+  url: https://github.com/CaptainSude/Liouville-Goldbach/tree/main/lean
+
+- id: liouville-goldbach-final-theorem
+  kind: proof
+  title: LiouvilleGoldbach.liouville_goldbach
+  url: https://github.com/CaptainSude/Liouville-Goldbach/blob/main/lean/LiouvilleGoldbach/Main.lean
+
+- id: liouville-goldbach-independent-replay
+  kind: supplement
+  title: Independent Linux replay and audit bundle
+  url: https://github.com/sunnyspot114514/Liouville-Goldbach-audit
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2026-openai-ten-advances
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- liouville-function
+- goldbach-type-problem
+- number-theory
+- gpt-6-astra
+- lean
+- ai-generated-mathematics
+
+editorial:
+  created_at: '2026-09-21'
+  last_reviewed: '2026-09-21'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
