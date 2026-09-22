@@ -1,0 +1,266 @@
+schema_version: 1
+id: evt-2026-agmai-advisory-group
+slug: agmai-advisory-group
+
+title:
+  en: Independent Advisory Group on Mathematics and Artificial Intelligence launches at IAS
+  zh-CN: 独立的数学与人工智能顾问组在 IAS 成立
+
+dates:
+  event: '2026-09-21'
+  first_public_claim: '2026-09-21'
+  paper_release: null
+  artifact_release: '2026-09-21'
+  independently_verified: null
+  added_to_chronicle: '2026-09-22'
+  last_updated: '2026-09-22'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The Advisory Group on Mathematics and Artificial Intelligence is a field-building
+      milestone because it creates a standing, institutionally hosted channel between
+      mathematicians and AI companies for the review, presentation and dissemination of
+      AI-generated mathematical results. Its independence rules, public-recommendation
+      commitment, ability to advise any AI company with substantial mathematical impact,
+      IAS hosting and open community-input mechanism make it more durable than a one-off
+      company panel or petition. The group also represents a concrete institutional
+      response to the September 2026 debate over research incentives, attribution and
+      the release of AI-generated mathematics.
+    zh-CN: >-
+      Advisory Group on Mathematics and Artificial Intelligence 构成领域建构里程碑，
+      因为它建立了一个由学术机构承载、连接数学家与 AI 企业的持续性机制，用于讨论
+      AI 生成数学成果的审查、呈现与发布。该组织明确规定独立运作、公开发布建议、
+      可面向任何对数学产生重大影响的 AI 企业提供意见，并由 IAS 承载且开放共同体
+      意见入口，因此其制度持续性明显高于一次性的企业顾问委员会或联署声明。
+      它同时也是 2026 年 9 月围绕研究激励、归属与 AI 数学成果发布方式争论后出现的
+      具体制度回应。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    On 21 September 2026, the Advisory Group on Mathematics and Artificial Intelligence
+    announced its creation, hosted at the Institute for Advanced Study. The group states
+    that it operates independently of AI companies, its members accept no payment for
+    this work, it will publish recommendations to AI companies, and it may advise any
+    company whose models are likely to have a significant impact on mathematics. It has
+    no decision-making power at AI companies. OpenAI states that the group will advise
+    on reviewing and communicating emerging mathematical results, coordinating
+    dissemination, academic and professional standards, and tools for mathematical
+    research and learning; OpenAI also states that the group will not advise on the pace
+    of its internal mathematical progress.
+  zh-CN: >-
+    2026 年 9 月 21 日，Advisory Group on Mathematics and Artificial Intelligence
+    宣布成立，并由 Institute for Advanced Study 承载。该组织声明其独立于 AI 企业
+    运作，成员不因这项工作接受 AI 企业付款，将公开向 AI 企业提出的建议，并可为任何
+    其模型可能对数学产生重大影响的企业提供意见；该组织不拥有 AI 企业内部决策权。
+    OpenAI 表示，该组织将就新数学成果的审查与沟通、发布协调、数学研究的学术与职业
+    规范，以及支持数学研究和学习的工具提供建议；同时，OpenAI 明确表示该组织不负责
+    就其内部数学研究进展的速度提出建议。
+
+summary:
+  en: >-
+    The group says it formed after OpenAI approached some future members about creating
+    an external advisory board; in agreement with OpenAI, those mathematicians instead
+    formed an independent group and invited additional members. Its initial membership
+    consists of François Charles, Camillo De Lellis, Timothy Gowers, Martin Hairer,
+    Nikhil Srivastava, Ulrike Tillmann, Ravi Vakil, Edward Witten and Melanie Matchett
+    Wood. The group's first stated task is to advise OpenAI on coordinating the release
+    of a large number of significant mathematical results that OpenAI reports were
+    produced by an internal model. OpenAI's announcement explicitly cites A Severe
+    Misalignment of AI in Mathematics as part of the context for creating this bridge
+    to the mathematical community.
+  zh-CN: >-
+    该组织说明，其形成始于 OpenAI 接触部分后来的成员，希望建立外部顾问委员会；
+    在与 OpenAI 沟通后，这些数学家决定改为成立一个独立组织并邀请其他成员加入。
+    首批成员包括 François Charles、Camillo De Lellis、Timothy Gowers、Martin Hairer、
+    Nikhil Srivastava、Ulrike Tillmann、Ravi Vakil、Edward Witten 与
+    Melanie Matchett Wood。该组织当前明确的首项任务，是就 OpenAI 所称由内部模型
+    产生的大量重要数学成果如何协调发布向其提供建议。OpenAI 的公告同时明确引用
+    《A Severe Misalignment of AI in Mathematics》，将其列为建立这一数学共同体
+    沟通渠道的直接背景之一。
+
+why_it_matters:
+  en: >-
+    Earlier AI-and-mathematics governance efforts largely took the form of professional
+    society committees, declarations or publication policies. This event adds a different
+    institutional layer: an independent group of research mathematicians positioned
+    specifically between frontier AI companies and the mathematical community, with a
+    public-accountability commitment and a remit extending beyond one company. It turns
+    the 2026 governance debate from statements of principle into an operating interface
+    for reviewing and releasing AI-associated mathematical research.
+  zh-CN: >-
+    此前 AI 与数学治理工作主要表现为专业学会委员会、共同体声明或出版政策。
+    本事件增加了另一种制度层：一个由研究数学家组成、明确位于前沿 AI 企业与数学
+    共同体之间的独立组织，并承诺公开建议且职责范围不限于单一企业。它把 2026 年
+    围绕 AI4Math 的治理争论，从原则性声明进一步推进为处理 AI 参与数学研究审查与
+    发布问题的实际运作接口。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records a human-created governance institution concerning AI and
+      mathematical research rather than an AI system performing mathematical work, so
+      an operative AI role is not applicable.
+    zh-CN: >-
+      本事件记录的是人类建立的 AI 与数学研究治理机制，而不是某个 AI 系统执行具体
+      数学工作，因此不存在适用的具体 AI role。
+
+human_contribution:
+  description:
+    en: >-
+      The founding mathematicians established the independent group, defined its
+      independence and transparency principles, accepted institutional hosting at IAS,
+      opened a channel for community input and undertook to formulate public advice for
+      AI companies. OpenAI initiated contact with some members and is the group's first
+      stated advisee, while responsibility for company decisions remains with OpenAI.
+    zh-CN: >-
+      创始数学家建立独立组织、制定独立性与透明度原则、接受 IAS 的机构承载、开放
+      共同体意见渠道，并承诺形成面向 AI 企业的公开建议。OpenAI 最初接触了部分成员，
+      也是该组织当前首个明确的建议对象；企业决策责任仍由 OpenAI 自身承担。
+
+systems: []
+
+organizations:
+- advisory-group-on-mathematics-and-artificial-intelligence
+- institute-for-advanced-study
+- openai
+
+people:
+- francois-charles
+- camillo-de-lellis
+- timothy-gowers
+- martin-hairer
+- nikhil-srivastava
+- ulrike-tillmann
+- ravi-vakil
+- edward-witten
+- melanie-matchett-wood
+
+problems: []
+
+methods:
+- scholarly-governance
+- community-industry-interface
+- research-dissemination
+- academic-standards
+- public-accountability
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-09-21'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The advisory group's own site and direct guest announcement establish its
+        purpose, independence rules, membership, OpenAI origin story and current task.
+        OpenAI's announcement independently records the collaboration and the limits of
+        the group's role inside the company.
+      zh-CN: >-
+        顾问组官网及其直接发布的客座公告确认了组织目的、独立性规则、成员构成、
+        与 OpenAI 接触的形成过程以及当前任务；OpenAI 的公告另行记录了双方合作关系
+        与该组织在公司内部职责的边界。
+  - date: '2026-09-22'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The Institute for Advanced Study lists the advisory group as an FY26 Spring
+        Award project of its Nelson Center for Collaborative Research, naming Camillo
+        De Lellis and Edward Witten as principal investigators and reproducing the
+        group's field-facing purpose and membership. This corroborates institutional
+        hosting and durability without implying endorsement of any AI company's
+        mathematical claims.
+      zh-CN: >-
+        Institute for Advanced Study 将该顾问组列为 Nelson Center for Collaborative
+        Research 的 FY26 Spring Award 项目，列出 Camillo De Lellis 与 Edward Witten
+        为 principal investigators，并记录该组织面向数学共同体的目的与成员构成。
+        这为其机构承载与持续性提供佐证，但不表示 IAS 对任何 AI 企业的数学成果主张
+        作出背书。
+
+sources:
+- id: agmai-official
+  tier: S2
+  type: official_announcement
+  title: Advisory Group on Mathematics and Artificial Intelligence
+  url: https://agmai.org/
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-22'
+
+- id: openai-agmai-announcement
+  tier: S2
+  type: official_announcement
+  title: Advisory Group on Mathematics and Artificial Intelligence
+  url: https://openai.com/index/advisory-group-on-mathematics-and-ai/
+  primary: true
+  published_date: '2026-09-21'
+  accessed_at: '2026-09-22'
+
+- id: ias-agmai-project
+  tier: S2
+  type: official_announcement
+  title: Advisory Group on Mathematics and Artificial Intelligence — IAS Nelson Center project
+  url: https://www.ias.edu/nccr/projects
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-22'
+
+- id: tao-agmai-guest-announcement
+  tier: S2
+  type: community
+  title: Announcing the Advisory Group on Mathematics and Artificial Intelligence
+  url: https://terrytao.wordpress.com/2026/09/21/advisory-group-on-mathematics-and-artificial-intelligence/
+  primary: false
+  published_date: '2026-09-21'
+  accessed_at: '2026-09-22'
+
+artifacts:
+- id: agmai-public-site
+  kind: other
+  title: Advisory Group on Mathematics and Artificial Intelligence public site
+  url: https://agmai.org/
+
+relationships:
+  predecessors:
+  - evt-2026-severe-misalignment-ai-mathematics
+  successors: []
+  related:
+  - evt-2023-ams-ai-advisory
+  - evt-2026-leiden-declaration
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- advisory-group
+- field-building
+- ai-governance
+- mathematical-community
+- research-integrity
+- research-dissemination
+- academic-standards
+- institute-for-advanced-study
+
+editorial:
+  created_at: '2026-09-22'
+  last_reviewed: '2026-09-22'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
