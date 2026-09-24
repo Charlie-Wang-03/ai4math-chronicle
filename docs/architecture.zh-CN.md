@@ -101,6 +101,8 @@ Event Detail 的所有主要 section 都具有稳定页内 anchor。宽屏下 se
 
 同一 canonical data 还会生成 JSON、NDJSON、RSS 与 sitemap。这些机器可读表面被视为一级发布产物，而不是事后附加的导出功能。
 
+面向 AI 检索与引用工作流，数据生成器还会发布轻量 Event discovery index：`/data/events/index.json`，并为每个 Event 生成一份精确的 canonical-derived JSON：`/data/events/{slug}.json`。Event Detail HTML 会通过 `application/json` alternate link 与 schema.org `encoding` metadata 显式关联对应 JSON。这些仍然只是既有 canonical YAML 的派生物，不构成第二套事实源。Discovery index 只保留路由 / trust metadata 与主要证据提示，使 Agent 可以先选择相关 Event，再获取完整单条记录。
+
 ## 双语架构
 
 Canonical identifiers、source metadata、relationships 与 taxonomies 在两种语言之间共享。面向读者的事件字段在同一 YAML record 内同时保存 `en` 与 `zh-CN`。这样可以避免英文站与中文站逐渐演变成两套不同的事实数据库。
