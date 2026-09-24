@@ -17,6 +17,7 @@ interface Props {
   ogType?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  machineReadableUrl?: string;
 }
 const {
   locale,
@@ -28,6 +29,7 @@ const {
   ogType = 'website',
   publishedTime,
   modifiedTime,
+  machineReadableUrl,
 } = Astro.props;
 const other = otherLocale(locale);
 const labels = locale === 'zh-CN'
@@ -85,6 +87,7 @@ const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
       })();
     </script>
     <link rel="canonical" href={absolute(canonicalPath)} />
+    {machineReadableUrl && <link rel="alternate" type="application/json" href={machineReadableUrl} title="Canonical Event JSON" />}
     <link rel="alternate" hreflang={locale} href={absolute(canonicalPath)} />
     <link rel="alternate" hreflang={other} href={absolute(alternate)} />
     <link rel="alternate" hreflang="x-default" href={absolute(englishPath)} />
