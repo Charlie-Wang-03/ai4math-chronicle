@@ -11,6 +11,7 @@ const other = zh ? 'en' : 'zh-CN';
 const canonicalPath = localePath(locale, `events/${event.slug}`);
 const eventTitle = text(event.title, locale);
 const description = text(event.summary, locale);
+const eventJsonUrl = absolute(`data/events/${event.slug}.json`);
 const leadSummary = presentationExcerpt(description, locale, 'record_lede');
 const summaryIsCondensed = leadSummary !== description;
 const primary = event.sources.filter((source) => source.primary || source.tier === 'S1');
@@ -48,11 +49,25 @@ const navSecondary = [
   ['verification-history', labels.history],
   ['corrections', labels.corrections],
 ] as const;
+const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
 const chronicleOrganization = {
   '@type': 'Organization',
+  '@id': `${absolute('')}#organization`,
   name: 'AI4Math Chronicle',
-  url: absolute(localePath(locale, 'about')),
+  alternateName: 'AI4Math 大事记',
+  url: absolute(localePath('en', 'about')),
+  sameAs: [
+    repositoryUrl,
+    'https://history.aixmath.org/',
+    'https://timeline.aixmath.org/',
+  ],
 };
+const citationJsonLd = event.sources.map((source) => ({
+  '@type': 'CreativeWork',
+  name: source.title,
+  url: source.url,
+  ...(source.published_date ? { datePublished: source.published_date } : {}),
+}));
 const articleJsonLd = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: eventTitle,
@@ -65,13 +80,20 @@ const articleJsonLd = {
   mainEntityOfPage: absolute(canonicalPath),
   articleSection: event.event_types,
   about: [...event.systems, ...event.problems, ...event.methods],
-  citation: event.sources.map((source) => source.url),
+  citation: citationJsonLd,
+  isBasedOn: primary.map((source) => source.url),
+  encoding: {
+    '@type': 'MediaObject',
+    contentUrl: eventJsonUrl,
+    encodingFormat: 'application/json',
+  },
   author: chronicleOrganization,
   publisher: chronicleOrganization,
   isPartOf: {
     '@type': 'WebSite',
+    '@id': `${absolute('')}#website`,
     name: 'AI4Math Chronicle',
-    url: absolute(localePath(locale)),
+    url: absolute(localePath('en')),
   },
 };
 const breadcrumbJsonLd = {
@@ -81,7 +103,7 @@ const breadcrumbJsonLd = {
   ]
 };
 ---
-<BaseLayout locale={locale} title={`${eventTitle} — AI4Math Chronicle`} description={description} canonicalPath={canonicalPath} alternatePath={localePath(other, `events/${event.slug}`)} jsonLd={[articleJsonLd,breadcrumbJsonLd]} ogType="article" publishedTime={event.dates.added_to_chronicle} modifiedTime={event.dates.last_updated}>
+<BaseLayout locale={locale} title={`${eventTitle} — AI4Math Chronicle`} description={description} canonicalPath={canonicalPath} alternatePath={localePath(other, `events/${event.slug}`)} jsonLd={[articleJsonLd,breadcrumbJsonLd]} ogType="article" publishedTime={event.dates.added_to_chronicle} modifiedTime={event.dates.last_updated} machineReadableUrl={eventJsonUrl}>
   <div class="sr-only" data-pagefind-ignore aria-hidden="true">
     <span data-pagefind-filter={`year:${event.dates.event.slice(0, 4)}`}></span>
     {event.event_types.map((value) => <span data-pagefind-filter={`type:${value}`}></span>)}

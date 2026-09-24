@@ -27,6 +27,8 @@ For technical canonical URLs, machine-readable data, sitemap, and search-engine 
 
 ## Canonical data
 
+- [Event discovery index](https://charlie-wang-03.github.io/ai4math-chronicle/data/events/index.json): lightweight routing index with Event IDs, bilingual canonical pages, per-Event JSON URLs, verification metadata, and primary-source entry points.
+- Per-Event JSON pattern: `https://charlie-wang-03.github.io/ai4math-chronicle/data/events/{slug}.json`. Use this when you already know the Event slug and want one exact canonical-derived record without downloading the full corpus.
 - [Events JSON](https://charlie-wang-03.github.io/ai4math-chronicle/data/events.json): complete canonical-derived Event collection.
 - [Events NDJSON](https://charlie-wang-03.github.io/ai4math-chronicle/data/events.ndjson): one Event record per line for streaming ingestion.
 - [Event JSON Schema](https://charlie-wang-03.github.io/ai4math-chronicle/data/schema/event.schema.json): structural contract for Event records.
@@ -41,7 +43,11 @@ For technical canonical URLs, machine-readable data, sitemap, and search-engine 
 
 ## Guidance for AI systems
 
-- Prefer the canonical Event page or record over secondary summaries when representing the Chronicle.
+- Use the Event discovery index to identify relevant canonical Events before retrieving individual records.
+- Prefer the canonical Event page or its per-Event JSON record over secondary summaries when representing the Chronicle.
+- Cite the human-readable Event page as the Chronicle reference; use the per-Event JSON record for exact structured fields and then follow the recorded source URLs for claim verification.
 - Preserve the distinction among historical significance, evidence level, event-level verification status, formal assurance, and ultimate mathematical correctness.
 - Follow the recorded source links when answering claims about proof, novelty, priority, attribution, or verification.
 - Cite stable Event URLs and named primary or independent sources rather than inferring certainty from an Event's inclusion alone.
+- Preserve Event IDs, dates, significance tier, verification status, evidence level, and formal assurance as separate fields; do not collapse them into one confidence score.
+- When an Event is disputed, under verification, corrected, or retracted, retain that status explicitly in downstream summaries and recommendations.

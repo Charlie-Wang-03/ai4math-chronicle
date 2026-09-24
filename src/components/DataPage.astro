@@ -9,6 +9,7 @@ const title = zh ? '数据与订阅 — AI4Math 大事记' : 'Data & Feeds — A
 const desc = zh ? '面向研究、分析与 AI 工作流的 JSON、NDJSON、Schema、RSS、Sitemap、llms.txt 与 canonical YAML。' : 'JSON, NDJSON, Schema, RSS, Sitemap, llms.txt, and canonical YAML for research, analysis, and AI workflows.';
 const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
 const eventsJsonUrl = absolute('data/events.json');
+const eventsIndexUrl = absolute('data/events/index.json');
 const eventsNdjsonUrl = absolute('data/events.ndjson');
 const schemaUrl = absolute('data/schema/event.schema.json');
 const events = getAllEvents();
@@ -28,13 +29,18 @@ const datasetJsonLd = {
   license: 'https://creativecommons.org/licenses/by/4.0/',
   creator: {
     '@type': 'Organization',
+    '@id': `${absolute('')}#organization`,
     name: 'AI4Math Chronicle',
-    url: absolute(localePath(locale, 'about')),
+    alternateName: 'AI4Math 大事记',
+    url: absolute(localePath('en', 'about')),
+    sameAs: [
+      repositoryUrl,
+      'https://history.aixmath.org/',
+      'https://timeline.aixmath.org/',
+    ],
   },
   publisher: {
-    '@type': 'Organization',
-    name: 'AI4Math Chronicle',
-    url: absolute(localePath(locale)),
+    '@id': `${absolute('')}#organization`,
   },
   keywords: [
     'AI for Mathematics',
@@ -50,6 +56,13 @@ const datasetJsonLd = {
   distribution: [
     {
       '@type': 'DataDownload',
+      name: 'AI4Math Chronicle Event discovery index',
+      encodingFormat: 'application/json',
+      contentUrl: eventsIndexUrl,
+    },
+    {
+      '@type': 'DataDownload',
+      name: 'AI4Math Chronicle complete Event collection',
       encodingFormat: 'application/json',
       contentUrl: eventsJsonUrl,
     },
@@ -66,6 +79,12 @@ const datasetJsonLd = {
   ],
 };
 const links = [
+  {
+    href: href('data/events/index.json'),
+    label: 'Event index',
+    title: zh ? '发现单条 Event 机器入口' : 'Discover per-Event machine endpoints',
+    note: zh ? '轻量索引，给出 Event ID、双语页面、独立 JSON、验证状态与主要证据入口。' : 'Lightweight routing index with Event IDs, bilingual pages, per-Event JSON, verification state, and primary-evidence entry points.',
+  },
   {
     href: href('data/events.json'),
     label: 'JSON',

@@ -13,6 +13,10 @@ test('Event Article metadata uses Chronicle publication semantics and stable ide
   assert.match(source, /identifier:\s*event\.id/);
   assert.match(source, /inLanguage:\s*locale/);
   assert.match(source, /publisher:\s*chronicleOrganization/);
+  assert.match(source, /citation:\s*citationJsonLd/);
+  assert.match(source, /isBasedOn:\s*primary\.map/);
+  assert.match(source, /encodingFormat:\s*'application\/json'/);
+  assert.match(source, /machineReadableUrl=\{eventJsonUrl\}/);
   assert.match(source, /'@type': 'WebSite'/);
   assert.match(source, /ogType="article"/);
   assert.match(source, /publishedTime=\{event\.dates\.added_to_chronicle\}/);
@@ -28,6 +32,8 @@ test('Base layout keeps HTML locale metadata reciprocal and page-specific', asyn
   assert.match(source, /hreflang="x-default" href=\{absolute\(englishPath\)\}/);
   assert.doesNotMatch(source, /hreflang="x-default" href=\{absolute\(localePath\('en'\)\)\}/);
   assert.match(source, /<meta property="og:locale:alternate" content=\{ogAlternateLocale\} \/>/);
+  assert.match(source, /machineReadableUrl\?: string/);
+  assert.match(source, /rel="alternate" type="application\/json"/);
 });
 
 test('Event pages can emit article-specific Open Graph dates', async () => {
@@ -45,6 +51,7 @@ test('Data & Feeds publishes Dataset and DataDownload structured data', async ()
 
   assert.match(source, /'@type': 'Dataset'/);
   assert.match(source, /'@type': 'DataDownload'/);
+  assert.match(source, /contentUrl:\s*eventsIndexUrl/);
   assert.match(source, /contentUrl:\s*eventsJsonUrl/);
   assert.match(source, /contentUrl:\s*eventsNdjsonUrl/);
   assert.match(source, /contentUrl:\s*schemaUrl/);
@@ -65,6 +72,8 @@ test('llms discovery index exposes canonical, trust, and update entry points', a
   const source = await read('public/llms.txt');
 
   for (const expected of [
+    'Event discovery index',
+    'Per-Event JSON pattern',
     'Events JSON',
     'Events NDJSON',
     'Event JSON Schema',
@@ -78,4 +87,16 @@ test('llms discovery index exposes canonical, trust, and update entry points', a
     assert.ok(source.includes(expected), `llms.txt should include ${expected}`);
   }
   assert.match(source, /ultimate mathematical correctness/);
+  assert.match(source, /do not collapse them into one confidence score/);
+});
+
+test('homepage structured data keeps one Chronicle entity identity across public entrypoints', async () => {
+  const source = await read('src/components/TimelinePage.astro');
+
+  assert.match(source, /organizationId/);
+  assert.match(source, /websiteId/);
+  assert.match(source, /publisher: \{ '@id': organizationId \}/);
+  assert.match(source, /https:\/\/history\.aixmath\.org\//);
+  assert.match(source, /https:\/\/timeline\.aixmath\.org\//);
+  assert.match(source, /jsonLd=\{\[websiteJsonLd, organizationJsonLd\]\}/);
 });
