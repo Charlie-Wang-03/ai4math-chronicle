@@ -101,6 +101,8 @@ Event pages render semantic, visible sections for date, claim, historical contex
 
 The same canonical data also generates JSON, NDJSON, RSS, and sitemap outputs. These machine-readable surfaces are treated as first-class publication outputs rather than post-processing extras.
 
+For AI retrieval and citation workflows, the data generator additionally publishes a lightweight Event discovery index at `/data/events/index.json` and one exact canonical-derived JSON document per Event at `/data/events/{slug}.json`. Event Detail HTML advertises its corresponding JSON document with an `application/json` alternate link and schema.org `encoding` metadata. These are derivatives of the existing canonical YAML records, not a second factual store. The discovery index intentionally carries only routing/trust metadata and primary-source hints so an agent can select a relevant Event before fetching the complete per-Event record.
+
 ## Bilingual architecture
 
 Canonical identifiers, source metadata, relationships, and taxonomies are shared across languages. Human-facing event fields contain both `en` and `zh-CN` values in the same YAML record. This prevents English and Chinese pages from drifting into separate factual datasets.
