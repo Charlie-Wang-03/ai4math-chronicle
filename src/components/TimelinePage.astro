@@ -15,6 +15,8 @@ const h3Count = events.filter((event) => event.significance.tier === 'H3').lengt
 const eventYears = events.map((event) => event.dates.event.slice(0, 4)).sort();
 const yearRange = `${eventYears.at(0)}–${eventYears.at(-1)}`;
 const repositoryUrl = 'https://github.com/Charlie-Wang-03/ai4math-chronicle';
+const organizationId = `${absolute('')}#organization`;
+const websiteId = `${absolute('')}#website`;
 const copy = locale === 'zh-CN'
   ? {
       title: 'AI4Math 大事记 — AI for Mathematics 重大进展时间线',
@@ -48,19 +50,38 @@ const copy = locale === 'zh-CN'
       trustCanonical: 'Canonical records',
       trustOpen: 'Open corrections',
     };
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': organizationId,
+  name: 'AI4Math Chronicle',
+  alternateName: 'AI4Math 大事记',
+  url: absolute(localePath('en', 'about')),
+  sameAs: [
+    repositoryUrl,
+    'https://history.aixmath.org/',
+    'https://timeline.aixmath.org/',
+  ],
+};
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': websiteId,
   name: 'AI4Math Chronicle',
   alternateName: 'AI4Math 大事记',
-  url: absolute(localePath(locale)),
+  url: absolute(localePath('en')),
   description: copy.desc,
   isAccessibleForFree: true,
   license: 'https://creativecommons.org/licenses/by/4.0/',
-  sameAs: [repositoryUrl],
+  publisher: { '@id': organizationId },
+  sameAs: [
+    repositoryUrl,
+    'https://history.aixmath.org/',
+    'https://timeline.aixmath.org/',
+  ],
 };
 ---
-<BaseLayout locale={locale} title={copy.title} description={copy.desc} canonicalPath={localePath(locale)} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en')} jsonLd={websiteJsonLd}>
+<BaseLayout locale={locale} title={copy.title} description={copy.desc} canonicalPath={localePath(locale)} alternatePath={localePath(locale === 'en' ? 'zh-CN' : 'en')} jsonLd={[websiteJsonLd, organizationJsonLd]}>
   <header class="timeline-hero">
     <div class="ornament-anchor ornament-anchor--home" aria-hidden="true" data-ornament-anchor="home">
       <ChronicleGraph variant="hero" />
