@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "4.0.19",
-    "astro": "7.3.2",
+    "astro": "7.3.3",
     "js-yaml": "5.4.2"
   },
   "devDependencies": {
