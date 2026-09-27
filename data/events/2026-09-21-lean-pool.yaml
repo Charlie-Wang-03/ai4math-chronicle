@@ -187,7 +187,8 @@ relationships:
   predecessors:
   - evt-2017-mathlib3
   successors: []
-  related: []
+  related:
+  - evt-2026-palomar-registry
 
 timeline:
   featured: true
