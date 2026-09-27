@@ -1,0 +1,212 @@
+schema_version: 1
+id: evt-2026-lean-pool
+slug: lean-pool-ai-maintained-archive
+
+title:
+  en: Lean Pool publishes an AI-maintained archive for large-scale formalized mathematics
+  zh-CN: Lean Pool 发布面向大规模形式化数学的 AI 维护档案库
+
+dates:
+  event: '2026-09-21'
+  first_public_claim: '2026-09-21'
+  paper_release: '2026-09-21'
+  artifact_release: '2026-09-21'
+  independently_verified: null
+  added_to_chronicle: '2026-09-27'
+  last_updated: '2026-09-27'
+
+event_types:
+- infrastructure
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Lean Pool is a field milestone in AI-maintained formal-mathematics infrastructure
+      because it turns a large collection of independent Lean developments into an
+      actively maintained archive with deterministic quality gates, LLM-assisted
+      admission review, documentation, semantic search and a kernel-checked challenge
+      workflow. Its significance is the operating model for maintaining formalized
+      mathematics at scale with AI agents rather than a claim that every archived
+      project was discovered or authored by AI.
+    zh-CN: >-
+      Lean Pool 构成 AI 维护形式数学基础设施方向的领域级里程碑：它把大量独立 Lean
+      开发组织为持续维护的档案库，并配套确定性质量门禁、LLM 辅助准入审查、文档、
+      语义检索以及由 kernel 检查的 challenge 工作流。其历史意义在于展示 AI Agent
+      如何参与大规模形式化数学维护，而不是声称库内每个项目都由 AI 发现或编写。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+
+claim:
+  en: >-
+    Lean Pool presents a repository of formalized mathematics that is grown, maintained
+    and optimized with AI agents. The project accepts completed Lean developments that
+    pass repository-wide build, linter, style and proof-integrity gates, supplements
+    deterministic checks with LLM review, and maintains accepted projects against
+    evolving Lean and Mathlib versions. Its separate challenge workflow uses Comparator
+    to compare problem and solution statements and replay proofs through Lean's kernel.
+  zh-CN: >-
+    Lean Pool 将自身定位为由 AI Agent 扩展、维护和优化的形式化数学仓库。项目接收已完成
+    的 Lean 开发，并要求通过全库构建、linter、风格和证明完整性门禁；确定性检查之外
+    还加入 LLM 审查，并持续把已收录项目迁移到新的 Lean 与 Mathlib 版本。其独立
+    challenge 工作流使用 Comparator 对照题目与解答陈述，并通过 Lean kernel 重放证明。
+
+summary:
+  en: >-
+    The archive occupies a deliberately different position from Mathlib: it accepts
+    independent completed formalization projects that may not fit Mathlib's tightly
+    integrated library scope, while imposing automated maintenance and quality checks.
+    The public repository reports that project imports are still selected by humans,
+    while AI systems participate materially in review, maintenance and optimization.
+    The corpus size changes continuously and is therefore not treated as a frozen
+    historical claim in this Event.
+  zh-CN: >-
+    该档案库有意采用不同于 Mathlib 的定位：它接收可能不适合 Mathlib 高度整合式库结构
+    的独立完整形式化项目，同时施加自动化维护与质量检查。公开仓库说明，目前项目导入
+    仍由人类选择，而 AI 系统实质参与审查、维护与优化。由于库规模持续变化，本 Event
+    不把某一时点的项目数或代码行数作为冻结的历史主张。
+
+why_it_matters:
+  en: >-
+    As AI-generated and AI-assisted Lean projects proliferate, preservation and
+    maintenance become bottlenecks distinct from proving individual theorems. Lean Pool
+    supplies an AI-assisted archival layer between highly curated integrated libraries
+    and loose standalone repositories, making maintenance, search, quality gates and
+    challenge verification part of the AI4Math infrastructure problem.
+  zh-CN: >-
+    随着 AI 生成和 AI 辅助的 Lean 项目增多，保存与维护开始成为不同于“证明单个定理”
+    的新瓶颈。Lean Pool 在高度精选的一体化数学库与松散独立仓库之间提供 AI 辅助档案层，
+    把版本维护、检索、质量门禁与 challenge 验证都纳入 AI4Math 基础设施问题。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      AI agents materially support repository growth, maintenance, optimization and
+      admission review. The repository explicitly states that projects have so far been
+      selected and added by humans, and many archived formalizations are human-authored,
+      so the archive should not be described as wholly AI-authored mathematics.
+    zh-CN: >-
+      AI Agent 实质参与仓库扩展、维护、优化与准入审查。仓库同时明确说明，目前项目仍由
+      人类选择并加入，而且其中许多形式化本身由人类编写，因此不能把整个档案库描述为
+      完全由 AI 创作的数学。
+
+human_contribution:
+  description:
+    en: >-
+      Human maintainers created the archive, choose candidate projects, define review and
+      quality policies, maintain governance and can intervene in integration work; the
+      project was created at the UW Lean Hackathon by Vasily Ilin and Justin Asher.
+    zh-CN: >-
+      人类维护者建立档案库、选择候选项目、制定审查与质量政策、维护治理并可参与集成工作；
+      项目由 Vasily Ilin 与 Justin Asher 在 UW Lean Hackathon 期间创建。
+
+systems:
+- lean-pool
+- lean
+- gpt-6-astra
+- comparator
+
+organizations: []
+
+people:
+- vasily-ilin
+- justin-asher
+
+problems: []
+
+methods:
+- ai-assisted-maintenance
+- formal-mathematics-archiving
+- llm-review
+- semantic-search
+- proof-integrity-checking
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-09-21'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The arXiv record and public repository establish the archive's stated AI-maintained
+        operating model and expose its CI, review and challenge-verification machinery.
+        Reservoir independently indexes the Lean package and reports build results for
+        repository revisions. These sources corroborate the existence and operation of
+        the infrastructure but do not certify the mathematical semantics or novelty of
+        every project contained in the evolving archive.
+      zh-CN: >-
+        arXiv 记录与公开仓库确认了该档案库所述 AI 维护运作模式，并公开其 CI、审查和
+        challenge 验证机制。Reservoir 独立索引该 Lean package，并报告仓库版本的构建
+        结果。这些证据佐证基础设施的存在与运行，但并不认证持续变化的档案中每个项目
+        的数学语义或新颖性。
+
+sources:
+- id: lean-pool-arxiv-2026
+  tier: S1
+  type: paper
+  title: 'Lean Pool: An AI-Maintained Archive of Formalized Mathematics'
+  url: https://arxiv.org/abs/2609.25199
+  primary: true
+  published_date: '2026-09-21'
+  accessed_at: '2026-09-27'
+
+- id: lean-pool-github
+  tier: S1
+  type: repository
+  title: Lean Pool
+  url: https://github.com/Vilin97/lean-pool
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-27'
+
+- id: lean-pool-reservoir
+  tier: S3
+  type: independent_analysis
+  title: lean-pool package record on Reservoir
+  url: https://reservoir.lean-lang.org/@Vilin97/lean-pool
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-27'
+
+artifacts:
+- id: lean-pool-repository
+  kind: code
+  title: Lean Pool repository
+  url: https://github.com/Vilin97/lean-pool
+
+relationships:
+  predecessors:
+  - evt-2017-mathlib3
+  successors: []
+  related:
+  - evt-2026-palomar-registry
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- lean-pool
+- lean
+- formalized-mathematics
+- infrastructure
+- ai-maintenance
+- proof-archive
+- comparator
+
+editorial:
+  created_at: '2026-09-27'
+  last_reviewed: '2026-09-27'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
