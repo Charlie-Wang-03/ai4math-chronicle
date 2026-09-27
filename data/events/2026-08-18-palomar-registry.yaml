@@ -1,0 +1,222 @@
+schema_version: 1
+id: evt-2026-palomar-registry
+slug: palomar-lean-verified-mathematics-registry
+
+title:
+  en: Palomar opens a public registry for Lean-verified mathematics
+  zh-CN: Palomar 开放面向 Lean 验证数学的公共注册库
+
+dates:
+  event: '2026-08-18'
+  first_public_claim: '2026-08-18'
+  paper_release: null
+  artifact_release: '2026-08-18'
+  independently_verified: null
+  added_to_chronicle: '2026-09-27'
+  last_updated: '2026-09-27'
+
+event_types:
+- infrastructure
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Palomar is a field milestone because it creates durable institutional and
+      technical infrastructure for recording Lean-verified research results at fixed
+      source revisions. Its workflow separates proof replay from semantic and provenance
+      review, publishes exact statements and dependencies, and responds directly to the
+      rapid growth of AI-assisted and AI-generated formal mathematics. The registry
+      materially organizes the field without claiming to replace mathematical peer
+      review or certify novelty.
+    zh-CN: >-
+      Palomar 构成领域级里程碑，因为它为固定源码版本上的 Lean 验证研究成果建立了持续性的
+      制度与技术注册基础设施。其工作流把 proof replay 与语义、provenance 审查分离，
+      公开精确定理陈述和依赖关系，并直接回应 AI 辅助及 AI 生成形式数学快速增长带来的
+      记录与核验问题。该注册库显著组织了领域实践，但并不声称替代数学同行评议或认证新颖性。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- formal
+
+claim:
+  en: >-
+    On 18 August 2026, Palomar opened for submissions as a public registry of
+    Lean-verified mathematics, jointly incubated by the Lean Focused Research
+    Organization and ICARM. Each registered result is tied to a fixed public source
+    revision and records the exact formal statement, dependencies and verification
+    metadata. Palomar uses Comparator for statement/proof separation and proof replay,
+    rechecks exported proofs with Lean's kernel and NanoDa, requires
+    formalization.yaml provenance disclosures, and applies an automated semantic review
+    without presenting registration as a certificate of novelty or mathematical importance.
+  zh-CN: >-
+    2026 年 8 月 18 日，Palomar 作为 Lean 验证数学的公共注册库开放投稿，由 Lean
+    Focused Research Organization 与 ICARM 共同孵化。每个注册结果都绑定固定的公开
+    源码版本，并记录精确形式陈述、依赖和验证元数据。Palomar 使用 Comparator 分离
+    statement 与 proof 并重放证明，同时通过 Lean kernel 与 NanoDa 再检查导出的证明，
+    要求提交 formalization.yaml provenance 信息，并加入自动语义审查；注册本身不被
+    表述为对新颖性或数学重要性的认证。
+
+summary:
+  en: >-
+    Palomar was created in response to the increasing volume of machine-assisted and
+    machine-generated mathematics and the difficulty of auditing claims scattered across
+    repositories and announcements. Its public statement positions the service as
+    analogous to a preprint or repository layer for formalizations: it provides an
+    immutable, searchable and inspectable record of what was mechanically checked while
+    leaving novelty, relevance and deeper mathematical judgment to the research community.
+  zh-CN: >-
+    Palomar 的设立背景是 machine-assisted / machine-generated mathematics 数量快速增加，
+    而成果分散在代码仓库和公告中，外部读者难以核查。其公开声明把该服务定位为形式化成果
+    的 preprint / repository 层：提供不可变、可搜索、可检查的机械验证记录，同时把新颖性、
+    相关性和更深层数学判断留给研究共同体。
+
+why_it_matters:
+  en: >-
+    Formal proof checking alone does not establish that a public theorem statement
+    faithfully represents the informal research claim, nor does a repository URL create
+    a stable scholarly record. Palomar makes these boundaries explicit and turns
+    statement identity, proof replay, AI-use disclosure and source pinning into reusable
+    infrastructure for an era of high-volume AI-assisted formalization.
+  zh-CN: >-
+    单纯的形式证明检查不能保证公开形式定理忠实表达非形式研究主张，一个代码仓库链接也不能
+    自动形成稳定学术记录。Palomar 明确这些边界，并把 statement identity、proof replay、
+    AI 使用披露和源码固定版本转化为可复用基础设施，以适应高产量 AI 辅助形式化时代。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      AI is part of Palomar's operating workflow through automated semantic review of
+      whether a formal statement reasonably matches the informal claim and through
+      provenance fields for AI-assisted work. Deterministic proof checking remains
+      separate from this probabilistic review.
+    zh-CN: >-
+      AI 通过自动语义审查参与 Palomar 的运作，用于判断形式 statement 是否合理对应
+      非形式主张；系统也专门记录 AI 辅助工作的 provenance。确定性的证明检查与这种
+      概率式语义审查保持分离。
+
+human_contribution:
+  description:
+    en: >-
+      Human mathematicians and maintainers designed the registry policies, review
+      boundaries and governance, while submitters remain responsible for the informal
+      claims, provenance disclosures and public source artifacts attached to registrations.
+    zh-CN: >-
+      人类数学家与维护者设计注册库政策、审查边界和治理结构；提交者仍对非形式主张、
+      provenance 披露和注册所依赖的公开源码产物负责。
+
+systems:
+- palomar-registry
+- lean
+- comparator
+- nanoda
+
+organizations:
+- lean-fro
+- icarm
+
+people:
+- jeremy-avigad
+- matthew-ballard
+- jaume-de-dios
+- nestor-guillen
+- bryna-kra
+- kim-morrison
+- terence-tao
+- ravi-vakil
+- akshay-venkatesh
+
+problems: []
+
+methods:
+- formal-proof-registry
+- independent-kernel-replay
+- statement-proof-separation
+- provenance-metadata
+- automated-semantic-review
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-08-18'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: >-
+        Palomar's own public statement and service document the registry rules and
+        machine-readable records. Terence Tao's announcement establishes the 18 August
+        opening date, and ICARM independently documents the launch and three-part
+        automated checking workflow. This verifies the infrastructure event, not every
+        registered mathematical result.
+      zh-CN: >-
+        Palomar 官方声明和服务页面记录注册规则及机器可读记录；Terence Tao 的公告确认
+        8 月 18 日开放日期，ICARM 另行记录发布及三部分自动检查工作流。这些证据支持
+        基础设施事件本身，并不等于验证其中每一条注册数学结果。
+
+sources:
+- id: palomar-statement-2026
+  tier: S2
+  type: official_announcement
+  title: 'Palomar: a registry of Lean-verified mathematics'
+  url: https://palomar-registry.org/statement
+  primary: true
+  published_date: '2026-08-18'
+  accessed_at: '2026-09-27'
+
+- id: tao-palomar-launch-2026
+  tier: S2
+  type: community
+  title: Palomar – a registry of Lean verified mathematics
+  url: https://terrytao.wordpress.com/2026/08/18/palomar-a-registry-of-lean-verified-mathematics/
+  primary: true
+  published_date: '2026-08-18'
+  accessed_at: '2026-09-27'
+
+- id: icarm-palomar-2026
+  tier: S2
+  type: official_announcement
+  title: Announcing Palomar, a registry of Lean verified mathematics
+  url: https://icarm.io/news/announcing-palomar-a-registry-of-lean-verified-mathematics/
+  primary: false
+  published_date: '2026-08-21'
+  accessed_at: '2026-09-27'
+
+artifacts:
+- id: palomar-registry-site
+  kind: other
+  title: Palomar Registry
+  url: https://palomar-registry.org/
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2026-lean-pool
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- palomar
+- lean
+- formal-verification
+- proof-registry
+- field-building
+- provenance
+- comparator
+- nanoda
+
+editorial:
+  created_at: '2026-09-27'
+  last_reviewed: '2026-09-27'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
