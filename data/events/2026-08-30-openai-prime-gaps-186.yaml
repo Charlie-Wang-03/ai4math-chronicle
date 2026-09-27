@@ -1,0 +1,261 @@
+schema_version: 1
+id: evt-2026-openai-prime-gaps-186
+slug: openai-gpt6-astra-prime-gaps-186
+
+title:
+  en: GPT-6 Astra is credited with improving the bounded prime-gap record to 186
+  zh-CN: GPT-6 Astra 被归因于将有界素数间隔纪录推进至 186
+
+dates:
+  event: '2026-08-30'
+  first_public_claim: '2026-08-30'
+  paper_release: '2026-08-30'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-09-27'
+  last_updated: '2026-09-27'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      This result is a Historical Milestone because it is an AI-attributed advance on a
+      prominent frontier problem in analytic number theory rather than a benchmark or a
+      reformulation of known mathematics. The OpenAI preprint claims the bound
+      liminf(p_(n+1)-p_n) <= 186, improving the long-standing 246 record of Polymath8b;
+      Terence Tao's Optimization Problems record lists 186 as the current best known
+      upper bound and notes that 246 had stood for twelve years. The result is accompanied
+      by a substantial Lean and numerical verification artifact. Historical significance
+      is recorded separately from the still-incomplete verification of the mathematical
+      inputs and provenance.
+    zh-CN: >-
+      该结果被列为 Historical Milestone，因为它不是 benchmark 提升或对已知数学的重新
+      形式化，而是一个被归因于 AI 的解析数论前沿推进。OpenAI 预印本声称得到
+      liminf(p_(n+1)-p_n) <= 186，把 Polymath8b 长期保持的 246 上界进一步降低；
+      Terence Tao 的 Optimization Problems 记录把 186 列为当前最好已知上界，并注明
+      246 纪录保持了十二年。该成果同时提供大规模 Lean 与数值验证产物。这里的历史
+      重要性与数学输入及 provenance 仍未完全验证的状态严格分开记录。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    OpenAI's 30 August 2026 preprint claims that GPT-6 Astra found a proof establishing
+    DHL[40,2], which, when applied to an explicit admissible 40-tuple of diameter 186,
+    yields liminf_(n->infinity)(p_(n+1)-p_n) <= 186 for consecutive prime gaps.
+    The result improves the prior 246 record associated with Polymath8b and predates
+    Julia Stadlmann's independently obtained 240 bound by one day.
+  zh-CN: >-
+    OpenAI 在 2026 年 8 月 30 日发布的预印本声称 GPT-6 Astra 找到了一项证明，
+    建立 DHL[40,2]；将其应用于一个直径为 186 的显式 admissible 40-tuple，可得到
+    连续素数间隔满足 liminf_(n->infinity)(p_(n+1)-p_n) <= 186。该结果改进了
+    Polymath8b 对应的 246 纪录，并比 Julia Stadlmann 独立得到的 240 上界早一天发布。
+
+summary:
+  en: >-
+    The public PrimeGaps186 repository contains a Lean 4 development for DHL[40,2] and
+    the 186 prime-gap consequence together with a Python/FLINT numerical certificate.
+    The registered main Lean declarations contain no sorry, and OpenAI reports that
+    Comparator, Nanoda and Lean's kernel accepted the conditional proofs. The formal
+    development nevertheless depends on three explicit project axioms: a rank-three
+    hyper-Kloosterman estimate, a rank-two Kloosterman correlation estimate, and a
+    collection of physical-integral and cap bounds. The first two are attributed to
+    established literature; the numerical input is checked by the companion certificate
+    rather than proved inside Lean. OpenAI's own metadata labels the review self-assessed
+    and states that no independent human semantic review had been completed.
+  zh-CN: >-
+    公开的 PrimeGaps186 仓库包含 DHL[40,2] 与 186 素数间隔结论的 Lean 4 开发，
+    并附带 Python/FLINT 数值 certificate。登记的主要 Lean declaration 均无 sorry，
+    OpenAI 报告 Comparator、Nanoda 与 Lean kernel 均接受这些条件式证明。但形式化
+    仍依赖三个显式项目公理：一个 rank-three hyper-Kloosterman 估计、一个 rank-two
+    Kloosterman correlation 估计，以及一组 physical-integral 与 cap bounds。前两个
+    输入来自既有文献；数值输入由配套 certificate 检查，而没有在 Lean 内证明。
+    OpenAI 自身的 metadata 将审查状态标为 self-assessed，并明确说明尚无独立人类
+    semantic review。
+
+why_it_matters:
+  en: >-
+    The bounded-prime-gap problem is one of the best-known modern examples of sustained
+    progress on the distribution of primes. Moving the unconditional published record
+    from 246 to 186 after roughly twelve years would be mathematically notable on its own;
+    having the proof publicly attributed to a frontier AI model makes the event a direct
+    test case for AI systems contributing new frontier mathematics. The accompanying
+    formal artifact also illustrates a new verification boundary: machine checking can
+    strongly validate a large conditional derivation while still leaving cited and
+    numerical inputs outside the proof assistant.
+  zh-CN: >-
+    有界素数间隔问题是现代素数分布研究中最知名的持续推进路线之一。在约十二年后把公开
+    无条件纪录从 246 推进至 186，本身就具有显著数学意义；而证明又被公开归因于前沿 AI
+    模型，使该事件成为 AI 系统直接贡献新前沿数学的代表案例。配套形式化同时清楚展示一种
+    新的验证边界：机器检查可以强力验证庞大的条件式推导，但被引用的数学估计和数值输入
+    仍可能位于 proof assistant 之外。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      OpenAI and the public formalization metadata attribute the proof to GPT-6 Astra
+      operating through Codex. The metadata also states that the artifact was refined
+      through human-guided edits and automated proof checks. This AI-role classification
+      records the disclosed workflow; it does not mean that Chronicle independently
+      reconstructed the full model-human derivation trace.
+    zh-CN: >-
+      OpenAI 及公开 formalization metadata 将证明归因于通过 Codex 工作的 GPT-6 Astra，
+      同时注明产物经过 human-guided edits 与自动证明检查。本 AI-role 分类记录的是公开
+      披露的工作流，并不表示 Chronicle 已独立重建完整的模型—人类推导轨迹。
+
+human_contribution:
+  description:
+    en: >-
+      Humans selected and released the research target and artifacts, guided refinement
+      of the generated formal development, connected unproved mathematical estimates to
+      the literature, and built or reviewed the numerical-certificate and checking
+      pipeline. The public metadata does not provide a complete person-by-person division
+      of intellectual labor.
+    zh-CN: >-
+      人类负责研究目标与成果的选择和发布，引导生成式形式化的修订，把未在 Lean 中证明的
+      数学估计对应到既有文献，并建立或审查数值 certificate 与验证流程。公开 metadata
+      没有提供完整的逐人智力分工记录。
+
+systems:
+- gpt-6-astra
+- lean
+- comparator
+- nanoda
+
+organizations:
+- openai
+
+people: []
+
+problems:
+- bounded-prime-gaps
+
+methods:
+- maynard-tao-sieve
+- multidimensional-selberg-sieve
+- prime-equidistribution
+- numerical-optimization
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: under_verification
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-08-30'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        OpenAI released the preprint and a public Lean/numerical verification artifact.
+        The repository records machine-checked conditional proofs of DHL[40,2] and the
+        186 bound, with three explicit non-standard input axioms.
+      zh-CN: >-
+        OpenAI 发布预印本以及公开 Lean/数值验证产物。仓库记录了 DHL[40,2] 和 186
+        上界的机器检查条件式证明，并明确列出三个非标准输入公理。
+  - date: '2026-09-27'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        Terence Tao's Optimization Problems record independently lists 186 as the current
+        best known bounded-prime-gap upper bound, records the 30 August preprint and the
+        GPT-6 Astra attribution, and separately documents the same three-axiom
+        formalization caveat. Chronicle has not located an independent semantic review
+        or full replay that discharges the project inputs, so the Event remains under
+        verification rather than independently_verified.
+      zh-CN: >-
+        Terence Tao 的 Optimization Problems 记录独立把 186 列为当前最好已知的有界素数
+        间隔上界，记录了 8 月 30 日预印本及 GPT-6 Astra 归因，并另行说明相同的三公理
+        形式化限制。Chronicle 尚未找到能够消除这些项目输入、并完成独立语义审查或完整
+        重放的证据，因此当前 Event 保持 under_verification，而不是 independently_verified。
+
+sources:
+- id: openai-improved-short-gaps-2026
+  tier: S1
+  type: paper
+  title: Improved short gaps between primes
+  url: https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/short_gaps.pdf
+  primary: true
+  published_date: '2026-08-30'
+  accessed_at: '2026-09-27'
+
+- id: openai-primegaps186-repository
+  tier: S1
+  type: repository
+  title: Prime Gaps at Most 186
+  url: https://github.com/openai/PrimeGaps186
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-27'
+
+- id: openai-primegaps186-formalization-metadata
+  tier: S1
+  type: formal_artifact
+  title: PrimeGaps186 formalization metadata
+  url: https://github.com/openai/PrimeGaps186/blob/main/formalization.yaml
+  primary: true
+  published_date: null
+  accessed_at: '2026-09-27'
+
+- id: tao-bounded-prime-gap-record
+  tier: S3
+  type: independent_analysis
+  title: Bounded prime gap constant
+  url: https://teorth.github.io/optimizationproblems/constants/88a.html
+  primary: false
+  published_date: null
+  accessed_at: '2026-09-27'
+
+artifacts:
+- id: primegaps186-lean
+  kind: proof
+  title: PrimeGaps186 Lean 4 development
+  url: https://github.com/openai/PrimeGaps186
+
+- id: primegaps186-numerical-certificate
+  kind: supplement
+  title: Prime-gap numerical certificate
+  url: https://github.com/openai/PrimeGaps186/blob/main/prime_gap_186_certificate.py
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2026-astra-liouville-goldbach
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- prime-gaps
+- bounded-prime-gaps
+- analytic-number-theory
+- gpt-6-astra
+- lean
+- comparator
+- nanoda
+- numerical-certificate
+- ai-generated-mathematics
+
+editorial:
+  created_at: '2026-09-27'
+  last_reviewed: '2026-09-27'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
