@@ -18,7 +18,7 @@ For a fresh task, load the smallest context needed to work safely:
 Load the full constitutional documents only when the task actually touches their scope:
 
 - [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) and the active [co-maintainer amendment](docs/gpt-project-governance-co-maintainer-amendment.md) for authority, human gates, governance changes, maintainer conflict, destructive operations, or state-recovery ambiguity;
-- [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) and active amendments named by [`docs/project-state.md`](docs/project-state.md) for product-scope, canonical-model, architecture, phase, or frozen-contract questions;
+- [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) together with any ratified amendment named by [`docs/project-state.md`](docs/project-state.md) for product-scope, canonical-model, architecture, phase, or frozen-contract questions;
 - [`MAINTAINERS.md`](MAINTAINERS.md) when trusted-maintainer identity or approval authority matters.
 
 Do not treat old chat summaries, memory, copied commit SHAs, stale branch names, or GitHub collaborator status as current project-governance truth. Historical conversation context may explain rationale but cannot silently override live GitHub facts or ratified governance.
