@@ -39,16 +39,16 @@ npm run build
 
 生产构建会校验 canonical YAML、生成机器可读输出、检查 Astro / TypeScript、渲染静态站点并构建 Pagefind 索引。
 
-涉及 reader interface 的修改还应针对 production build 运行聚焦的浏览器 smoke suite。该套件刻意只使用一套固定版本的 Chromium 工具链，而不是扩大成跨浏览器矩阵。Playwright 采用临时安装，因此不会成为网站运行依赖，也不会修改已提交的 lockfile：
+涉及 reader interface 的修改还应针对 production build 运行聚焦的浏览器 smoke suite。该套件刻意只使用一套固定版本的 Chromium 工具链，而不是扩大成跨浏览器矩阵。Playwright 是由 lockfile 固定的开发依赖，只用于浏览器验证，不属于网站运行依赖：
 
 ```bash
+npm ci
 npm run build
-npm install --no-save --package-lock=false @playwright/test@1.55.0
 npx playwright install chromium
 npm run test:browser
 ```
 
-CI 会安装相同固定版本的 Playwright、Chromium 及其系统依赖，并在正常 production build 之后执行 `npm run test:browser`。浏览器报告与失败产物只属于本地 / CI 输出，不提交进仓库。
+CI 会从 `package-lock.json` 恢复相同版本的 Playwright，安装 Chromium 及其系统依赖，并在正常 production build 之后执行 `npm run test:browser`。浏览器报告与失败产物只属于本地 / CI 输出，不提交进仓库。
 
 ## 仓库区域
 
