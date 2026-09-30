@@ -8,18 +8,13 @@ AI4Math Chronicle is a timeline-first, evidence-backed archive of major mileston
 
 ## Governance and state recovery
 
-For a fresh task, load the smallest context needed to work safely:
+Before substantive work in a fresh conversation, read and reconcile:
 
-1. read this file;
-2. read [`docs/project-state.md`](docs/project-state.md) for the approved semantic phase, collaboration state, and active mainline;
-3. inspect live GitHub state relevant to the task;
-4. read the task-specific guide from the next section.
-
-Load the full constitutional documents only when the task actually touches their scope:
-
-- [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) and the active [co-maintainer amendment](docs/gpt-project-governance-co-maintainer-amendment.md) for authority, human gates, governance changes, maintainer conflict, destructive operations, or state-recovery ambiguity;
-- [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) together with any ratified amendment named by [`docs/project-state.md`](docs/project-state.md) for product-scope, canonical-model, architecture, phase, or frozen-contract questions;
-- [`MAINTAINERS.md`](MAINTAINERS.md) when trusted-maintainer identity or approval authority matters.
+1. [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) together with the active [`docs/gpt-project-governance-co-maintainer-amendment.md`](docs/gpt-project-governance-co-maintainer-amendment.md) — agent authority, state recovery, trusted-maintainer authority, hard gates, conflict handling, and handoff;
+2. [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) together with any ratified amendment named by [`docs/project-state.md`](docs/project-state.md) — active v0.1 product contract;
+3. [`docs/project-state.md`](docs/project-state.md) — approved semantic phase, collaboration state, and active mainline;
+4. [`MAINTAINERS.md`](MAINTAINERS.md) — humans currently holding trusted-maintainer authority;
+5. live GitHub repository state — current HEAD, branches, PRs, Issues, releases, files, and task-relevant CI.
 
 Do not treat old chat summaries, memory, copied commit SHAs, stale branch names, or GitHub collaborator status as current project-governance truth. Historical conversation context may explain rationale but cannot silently override live GitHub facts or ratified governance.
 
