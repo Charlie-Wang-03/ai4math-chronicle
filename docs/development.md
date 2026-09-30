@@ -39,16 +39,16 @@ npm run build
 
 The production build validates canonical YAML, generates machine-readable exports, checks Astro/TypeScript, renders the static site, and builds the Pagefind index.
 
-For reader-interface work, run the focused browser smoke suite against the production build. The suite deliberately uses one pinned Chromium toolchain rather than a broad browser matrix. Playwright is installed ephemerally so it does not become a runtime dependency or change the committed lockfile:
+For reader-interface work, run the focused browser smoke suite against the production build. The suite deliberately uses one pinned Chromium toolchain rather than a broad browser matrix. Playwright is a locked development dependency used only for browser validation; it is not a website runtime dependency:
 
 ```bash
+npm ci
 npm run build
-npm install --no-save --package-lock=false @playwright/test@1.55.0
 npx playwright install chromium
 npm run test:browser
 ```
 
-CI installs the same pinned Playwright version plus Chromium system dependencies and runs `npm run test:browser` after the normal production build. Browser reports and failure artifacts are local/CI outputs and are not committed.
+CI restores the same Playwright version from `package-lock.json`, installs Chromium system dependencies, and runs `npm run test:browser` after the normal production build. Browser reports and failure artifacts are local/CI outputs and are not committed.
 
 ## Repository areas
 
