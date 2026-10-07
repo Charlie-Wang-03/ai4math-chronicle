@@ -193,7 +193,8 @@ artifacts:
 relationships:
   predecessors:
   - evt-2026-agmai-advisory-group
-  successors: []
+  successors:
+  - evt-2026-openai-math-release
   related:
   - evt-2026-severe-misalignment-ai-mathematics
 

@@ -1,0 +1,232 @@
+schema_version: 1
+id: evt-2026-claude-3sum-apsp
+slug: claude-3sum-apsp-polynomial-speedup
+
+title:
+  en: Claude is credited with discovering truly subquadratic 3SUM and truly subcubic APSP algorithms
+  zh-CN: Claude 被归因于发现真正次二次 3SUM 与真正次三次 APSP 算法
+
+dates:
+  event: '2026-10-05'
+  first_public_claim: '2026-10-05'
+  paper_release: '2026-10-05'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-07'
+  last_updated: '2026-10-07'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      This result is a Historical Milestone because it reports the first polynomial
+      exponent improvements for 3SUM and APSP, two problems whose conjectured
+      near-quadratic and near-cubic barriers structured fine-grained complexity for
+      decades. The paper attributes the core algorithmic discovery to an Anthropic
+      research model operating in a long session without human input, after which Josh
+      Alman and Virginia Vassilevska Williams independently understood, simplified,
+      strengthened and extended the method. Anthropic subsequently released a substantial
+      Lean formalization of the principal deterministic claims.
+    zh-CN: >-
+      该结果被列为 Historical Milestone，因为它报告了 3SUM 与 APSP 的首次多项式级
+      指数改进，而这两个问题长期以来的近二次与近三次复杂度假设塑造了 fine-grained
+      complexity 的研究框架。论文把核心算法发现归因于一个 Anthropic 研究模型在无人类
+      输入的长程 session 中完成；随后 Josh Alman 与 Virginia Vassilevska Williams
+      独立理解、简化、强化并扩展该方法。Anthropic 又公开了主要 deterministic claims
+      的大规模 Lean 形式化。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    Alman and Vassilevska Williams report deterministic algorithms solving 3SUM on
+    polynomial-size integer inputs in O(n^1.9992) time and APSP with polynomially
+    bounded integer weights in O(n^2.99942) time in their word-RAM formulation, together
+    with related improvements for Exact Triangle, min-plus product and zero-weight
+    k-Clique. The paper states that these are the first truly subquadratic and truly
+    subcubic algorithms in the corresponding settings and that they refute the standard
+    3SUM and APSP hypotheses used in fine-grained complexity.
+  zh-CN: >-
+    Alman 与 Vassilevska Williams 报告 deterministic algorithms：在其 word-RAM
+    模型中，对多项式大小整数输入的 3SUM 达到 O(n^1.9992)，对多项式有界整数权重的
+    APSP 达到 O(n^2.99942)，并同时改进 Exact Triangle、min-plus product 与
+    zero-weight k-Clique。论文称这些是在相应设定下首次真正次二次与真正次三次算法，
+    并由此推翻 fine-grained complexity 中常用的 3SUM 与 APSP hypotheses。
+
+summary:
+  en: >-
+    The paper's methodology section says an Anthropic employee initially asked an
+    internal research model to study a cryptographic question based on average-case
+    Zero-k-Clique. Claude unexpectedly developed a new algorithm, first for the
+    average-case setting and then for the worst case, during a session producing about
+    16 million output tokens with no human input. Anthropic shared the result with Alman
+    and Vassilevska Williams, who reconstructed the argument, simplified it, improved
+    constants and exponents, derived additional consequences and wrote the research
+    paper. After the paper was complete, Anthropic used a research model to formalize
+    major deterministic claims in Lean.
+  zh-CN: >-
+    论文的方法部分说明，Anthropic 员工最初让内部研究模型研究一个基于 average-case
+    Zero-k-Clique 的密码学问题。Claude 在约 1,600 万 output tokens、无人类输入的
+    session 中意外发展出新算法，先处理平均情形，再推广到最坏情形。Anthropic 将结果
+    提供给 Alman 与 Vassilevska Williams；两位作者随后重新理解论证、简化方法、
+    改进常数与指数、推出更多后果并撰写论文。论文完成后，Anthropic 又使用研究模型
+    把主要 deterministic claims 形式化到 Lean 中。
+
+why_it_matters:
+  en: >-
+    This event provides unusually explicit provenance for a frontier mathematical
+    algorithm originating in a long autonomous model run and then surviving expert human
+    reconstruction. The result does not merely improve a benchmark: it changes the
+    conjectural landscape of fine-grained complexity and forces reconsideration of
+    reductions and hardness assumptions built on 3SUM and APSP. The accompanying Lean
+    artifact further makes a subset of the headline claims mechanically inspectable.
+  zh-CN: >-
+    本事件为“前沿数学算法由长程自主模型运行产生、随后经专家重新理解”的过程提供了罕见的
+    明确 provenance。它不是 benchmark 提升，而是改变 fine-grained complexity 的
+    猜想格局，并迫使研究者重新审视建立在 3SUM 与 APSP 假设上的归约和困难性框架。
+    配套 Lean artifact 还使部分 headline claims 可以接受机械检查。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      The paper attributes the core algorithmic discovery to an Anthropic research model
+      in a 16-million-output-token session with no human input. Human authors then
+      independently understood the method, simplified and strengthened it, derived new
+      consequences and took responsibility for the final paper. This classification
+      applies to the reported discovery workflow, not to every theorem and exposition
+      choice in the final manuscript.
+    zh-CN: >-
+      论文把核心算法发现归因于 Anthropic 研究模型在约 1,600 万 output tokens 且
+      无人类输入的 session 中完成。人类作者随后独立理解该方法、简化并强化论证、
+      推出新的后果，并对最终论文负责。该分类描述的是公开披露的发现流程，并不表示
+      最终论文中的每个定理和阐释选择都由模型完成。
+
+human_contribution:
+  description:
+    en: >-
+      Josh Alman and Virginia Vassilevska Williams reconstructed the model's algorithm,
+      simplified and strengthened it, improved quantitative bounds, developed further
+      consequences and wrote the paper. Anthropic researchers supplied the model run and
+      later formalization infrastructure.
+    zh-CN: >-
+      Josh Alman 与 Virginia Vassilevska Williams 重新构建模型算法、简化并强化方法、
+      改进定量界、发展进一步后果并撰写论文；Anthropic 研究人员提供模型运行以及后续
+      形式化基础设施。
+
+systems:
+- claude
+- lean
+- comparator
+- nanoda
+
+organizations:
+- anthropic
+
+people:
+- josh-alman
+- virginia-vassilevska-williams
+
+problems:
+- three-sum
+- all-pairs-shortest-paths
+
+methods:
+- fine-grained-algorithms
+- sparse-lopsided-triangles
+- word-ram
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: under_verification
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-10-05'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The research paper publicly states the algorithmic results and gives an explicit
+        account of the AI discovery workflow and subsequent human reconstruction.
+      zh-CN: >-
+        研究论文公开陈述算法结果，并明确记录 AI 发现流程及随后的人类重建过程。
+  - date: '2026-10-07'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        Anthropic's public Lean project proves five headline deterministic claims,
+        including the 3SUM and APSP word-RAM bounds, and documents Comparator/Nanoda
+        checking procedures. The repository also explicitly lists paper claims that are
+        not formalized in the same machine model. Chronicle has not located an
+        independent external replay or specialist review sufficient for
+        independently_verified status.
+      zh-CN: >-
+        Anthropic 的公开 Lean 项目证明五项 headline deterministic claims，其中包括
+        3SUM 与 APSP 的 word-RAM 界，并记录 Comparator/Nanoda 检查流程。仓库也明确
+        列出未在同一机器模型中形式化的论文主张。Chronicle 尚未找到足以支持
+        independently_verified 状态的外部独立重放或专业审查。
+
+sources:
+- id: alman-vw-3sum-apsp-2026
+  tier: S1
+  type: paper
+  title: Truly Subquadratic 3SUM and Truly Subcubic APSP via Triangles in Sparse Lopsided Graphs
+  url: https://arxiv.org/abs/2610.06783
+  primary: true
+  published_date: '2026-10-05'
+  accessed_at: '2026-10-07'
+
+- id: anthropic-3sum-apsp-formalization
+  tier: S1
+  type: formal_artifact
+  title: Truly Subquadratic 3SUM and Truly Subcubic APSP — Lean 4 formalization
+  url: https://github.com/anthropics/formal-math/tree/main/3sum-apsp
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-07'
+
+artifacts:
+- id: anthropic-3sum-apsp-lean
+  kind: proof
+  title: Lean formalization of the principal deterministic 3SUM and APSP claims
+  url: https://github.com/anthropics/formal-math/tree/main/3sum-apsp
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- claude
+- 3sum
+- apsp
+- fine-grained-complexity
+- algorithms
+- lean
+- ai-generated-mathematics
+
+editorial:
+  created_at: '2026-10-07'
+  last_reviewed: '2026-10-07'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

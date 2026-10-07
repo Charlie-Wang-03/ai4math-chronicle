@@ -1,0 +1,186 @@
+schema_version: 1
+id: evt-2026-chatgpt-kls-proof
+slug: chatgpt-assisted-kls-proof
+
+title:
+  en: Bizeul, Klartag and Lehec release a ChatGPT-assisted proof of the KLS conjecture
+  zh-CN: Bizeul、Klartag 与 Lehec 发布由 ChatGPT 深度参与的 KLS 猜想证明
+
+dates:
+  event: '2026-10-04'
+  first_public_claim: '2026-10-04'
+  paper_release: '2026-10-04'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-07'
+  last_updated: '2026-10-07'
+
+event_types:
+- discovery
+- proof
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      This Event is a Historical Milestone because the paper claims a complete proof of
+      the Kannan–Lovász–Simonovits conjecture, a central long-standing problem in
+      asymptotic convex geometry and high-dimensional probability, and the authors
+      explicitly credit ChatGPT with finding most proofs and mathematical ideas in the
+      manuscript. If the result withstands specialist scrutiny, it is a direct example
+      of a general-purpose conversational AI making primary intellectual contributions
+      to the resolution of a major open conjecture.
+    zh-CN: >-
+      本事件被列为 Historical Milestone，因为论文声称完整证明 Kannan–Lovász–Simonovits
+      猜想——渐近凸几何与高维概率中的长期核心问题——并且作者明确将论文中大多数证明与
+      数学思想归因于 ChatGPT。如果该结果经受专业审查，它将成为通用对话式 AI 对重大开放
+      猜想解决作出主要智力贡献的直接案例。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- symbolic
+
+claim:
+  en: >-
+    Pierre Bizeul, Boaz Klartag and Joseph Lehec claim a dimension-free Poincaré bound
+    for isotropic log-concave probability measures, thereby proving the
+    Kannan–Lovász–Simonovits conjecture. Their paper builds on very recent work of
+    Song and Zhang that reduced the remaining dimension dependence to a slowly growing
+    factor and claims to remove that dependence completely.
+  zh-CN: >-
+    Pierre Bizeul、Boaz Klartag 与 Joseph Lehec 声称对 isotropic log-concave
+    probability measures 建立与维数无关的 Poincaré bound，从而证明
+    Kannan–Lovász–Simonovits 猜想。论文建立在 Song 与 Zhang 极近期工作之上；
+    后者已把剩余维数依赖降到缓慢增长因子，而新论文声称进一步完全去除该依赖。
+
+summary:
+  en: >-
+    In the acknowledgements, the authors state that most proofs and mathematical ideas
+    in the paper were found by ChatGPT. They identify the suspension idea as a notable
+    human contribution and describe their role as understanding the model's proofs,
+    checking and organizing the mathematics and improving the exposition. The paper is
+    currently a very recent preprint; Chronicle has not located a public proof-assistant
+    artifact or independent specialist review sufficient to move the event beyond a
+    paper-released verification state.
+  zh-CN: >-
+    作者在致谢中明确表示，论文中的大多数证明与数学思想由 ChatGPT 找到；其中 suspension
+    idea 被特别指出为人类作者提出的重要贡献。作者把自己的主要作用描述为理解模型给出的
+    证明、检查和组织数学内容并改善阐释。目前该成果仍是一篇非常新的预印本；Chronicle
+    尚未找到公开 proof-assistant artifact 或足以把事件提升到更高验证状态的独立专业审查。
+
+why_it_matters:
+  en: >-
+    KLS connects convex geometry, concentration of measure, Markov-chain mixing and
+    high-dimensional algorithms. A correct dimension-free proof would close a major
+    research programme with broad consequences. The explicit attribution to ChatGPT is
+    historically significant because the model is described not merely as a calculator,
+    proof checker or drafting assistant, but as the source of most of the mathematical
+    ideas and proofs later understood and presented by expert human authors.
+  zh-CN: >-
+    KLS 连接凸几何、测度集中、Markov chain mixing 与高维算法。若 dimension-free
+    证明正确，将结束一条重要研究路线并产生广泛后果。作者对 ChatGPT 的明确归因具有特殊
+    历史意义：模型并非仅作为计算器、证明检查器或写作助手，而被描述为后来由专家作者理解
+    和呈现的大多数数学思想与证明的来源。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      The authors explicitly state that ChatGPT found most proofs and mathematical ideas
+      in the paper. Human authors supplied important ideas of their own, including the
+      suspension idea, and were responsible for understanding, checking, organizing and
+      presenting the final proof. This classification records the authors' own account
+      and does not imply independent reconstruction of every model interaction.
+    zh-CN: >-
+      作者明确表示 ChatGPT 找到了论文中的大多数证明与数学思想。人类作者也提供了重要原创
+      思想，包括 suspension idea，并负责理解、检查、组织和呈现最终证明。该分类记录作者
+      自己的叙述，并不表示 Chronicle 已独立重建每一次模型交互。
+
+human_contribution:
+  description:
+    en: >-
+      Pierre Bizeul, Boaz Klartag and Joseph Lehec selected and developed the research
+      direction, contributed original ideas, understood and checked the model-produced
+      arguments, integrated them with the recent literature and wrote the final
+      mathematical exposition.
+    zh-CN: >-
+      Pierre Bizeul、Boaz Klartag 与 Joseph Lehec 负责选择和发展研究方向，贡献原创
+      思想，理解并检查模型生成的论证，把结果与最新文献整合，并完成最终数学阐释。
+
+systems:
+- chatgpt
+
+organizations: []
+
+people:
+- pierre-bizeul
+- boaz-klartag
+- joseph-lehec
+
+problems:
+- kannan-lovasz-simonovits-conjecture
+
+methods:
+- convex-geometry
+- localization
+- stochastic-localization
+- poincare-inequality
+- human-ai-collaboration
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2026-10-04'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The authors released a public preprint containing the claimed KLS proof and an
+        explicit first-party description of ChatGPT's role. The Event records that
+        publication and attribution; it does not independently certify the mathematical
+        correctness or historical priority of the proof.
+      zh-CN: >-
+        作者公开发布包含 KLS 证明主张的预印本，并直接说明 ChatGPT 的作用。该 Event
+        记录的是论文发布与归因，不代表 Chronicle 独立认证证明的数学正确性或历史优先权。
+
+sources:
+- id: bizeul-klartag-lehec-kls-2026
+  tier: S1
+  type: paper
+  title: A proof of the Kannan–Lovász–Simonovits conjecture
+  url: https://arxiv.org/abs/2610.05474
+  primary: true
+  published_date: '2026-10-04'
+  accessed_at: '2026-10-07'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- kls-conjecture
+- chatgpt
+- convex-geometry
+- high-dimensional-probability
+- mathematical-discovery
+- ai-generated-mathematics
+
+editorial:
+  created_at: '2026-10-07'
+  last_reviewed: '2026-10-07'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
