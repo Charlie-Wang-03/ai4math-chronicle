@@ -1,0 +1,244 @@
+schema_version: 1
+id: evt-2026-openai-math-release
+slug: openai-722-manuscript-mathematics-release
+
+title:
+  en: OpenAI releases 722 AI-generated mathematics manuscripts across 372 result families
+  zh-CN: OpenAI 发布 722 篇 AI 生成数学手稿，覆盖 372 个成果族
+
+dates:
+  event: '2026-10-06'
+  first_public_claim: '2026-10-06'
+  paper_release: '2026-10-06'
+  artifact_release: '2026-10-06'
+  independently_verified: null
+  added_to_chronicle: '2026-10-07'
+  last_updated: '2026-10-07'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      This release is a Historical Milestone because it moves AI-generated research
+      mathematics from isolated flagship results to a public corpus at unprecedented
+      scale. OpenAI released 722 manuscripts grouped into 372 result families, together
+      with a substantial Lean formalization programme, reasoning summaries, compute and
+      process disclosures, persistent public artifacts and revision commitments. The
+      historical significance lies in the scale and public scholarly interface of the
+      release, not in treating every mathematical claim in the collection as correct.
+    zh-CN: >-
+      该发布被列为 Historical Milestone，因为它把 AI 生成研究数学从少量旗舰成果推进到
+      前所未有规模的公开成果库。OpenAI 一次性公开 722 篇手稿、372 个成果族，并配套
+      大规模 Lean 形式化计划、推理摘要、算力与流程披露、持久化公开产物及版本修订承诺。
+      其历史意义来自发布规模和面向学术共同体的公开接口，而不是把库内每一项数学主张都
+      视为已经正确验证。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    On 6 October 2026, OpenAI released a public collection of mathematical manuscripts
+    and proof artifacts produced by an unreleased internal model. The repository reports
+    722 manuscripts organized into 372 result families, selected from roughly 4,000
+    posed research problems. OpenAI says that the vast majority were produced with a
+    common procedure averaging about three hours of ChatGPT Pro thinking compute per
+    result. The collection includes claimed resolutions and advances across multiple
+    areas of mathematics and theoretical computer science, with many but not all
+    manuscripts accompanied by Lean formalizations.
+  zh-CN: >-
+    2026 年 10 月 6 日，OpenAI 公开发布由未公开内部模型产生的数学手稿与证明产物集合。
+    仓库记录共有 722 篇手稿、372 个成果族，来源于约 4,000 个被提出的研究问题。
+    OpenAI 表示绝大多数结果使用统一流程产生，平均每项结果消耗约三小时 ChatGPT Pro
+    thinking compute。集合覆盖数学与理论计算机科学多个方向中的开放问题解决或推进，
+    其中许多但并非全部手稿配有 Lean 形式化。
+
+summary:
+  en: >-
+    The public repository includes an overview, a manuscript map, PDFs and sources,
+    a Lean library and formalization catalogue, ten selected reasoning summaries and
+    release-history commitments. OpenAI explicitly warns that some unformalized results
+    may contain issues and says revisions will remain accessible. The release followed
+    consultation with the independent Advisory Group on Mathematics and Artificial
+    Intelligence. AGMAI publicly stated that its advice does not endorse the mathematics
+    or OpenAI's process and characterized the release as the beginning of broader human
+    understanding and community assessment.
+  zh-CN: >-
+    公开仓库包含总览、手稿索引、PDF 与源码、Lean 库与形式化目录、十个精选 reasoning
+    summaries，以及保存公开版本历史的承诺。OpenAI 明确提醒部分未形式化结果可能存在问题，
+    并表示后续修订将保留历史版本。此次发布此前与独立的 Advisory Group on Mathematics
+    and Artificial Intelligence 进行了沟通；AGMAI 随后公开声明，其建议不构成对数学结果
+    或 OpenAI 流程的背书，并把本次发布视为更广泛人类理解与共同体评估的开始。
+
+why_it_matters:
+  en: >-
+    The event changes the scale at which frontier AI-generated mathematics enters the
+    public research ecosystem. It combines bulk research generation, formal verification
+    infrastructure, provenance disclosure, citation and revision mechanisms and
+    governance consultation in one release. It also creates a new editorial challenge:
+    aggregate historical importance can be high even while individual results occupy
+    very different verification states and require separate specialist review.
+  zh-CN: >-
+    本事件改变了前沿 AI 生成数学进入公共研究生态的规模，把批量研究生成、形式验证基础设施、
+    provenance 披露、引用与修订机制以及治理咨询集中到一次发布中。它同时带来新的编辑问题：
+    整体事件可以具有很高历史重要性，但其中各个结果的验证状态可能差异巨大，仍需分别接受
+    专业审查。
+
+ai_role:
+  level: unclear
+  description:
+    en: >-
+      OpenAI describes the unreleased internal model as the primary producer of the
+      collection and says the vast majority of results were obtained through a common
+      evaluation procedure. However, the exact human contribution, editing, checking and
+      formalization process varies across the 372 families. Chronicle therefore records
+      strong AI authorship at the aggregate level without assigning one uniform
+      per-result model-human division of labour.
+    zh-CN: >-
+      OpenAI 将未公开内部模型描述为该成果集的主要产生者，并表示绝大多数结果来自统一评测流程。
+      但 372 个成果族中的人类贡献、编辑、检查与形式化流程并不完全一致，因此 Chronicle
+      只在整体层面记录强 AI 生成属性，不为每项结果统一指定同一套模型—人类分工。
+
+human_contribution:
+  description:
+    en: >-
+      Humans selected and posed research problems, curated results into families and
+      manuscripts, prepared the release infrastructure, performed varying levels of
+      editing and verification, and coordinated formalization and external consultation.
+      The repository identifies exceptions to the otherwise common production procedure.
+    zh-CN: >-
+      人类负责选择和提出研究问题、把结果整理成成果族和手稿、准备发布基础设施、进行不同程度
+      的编辑与验证，并协调形式化和外部咨询。公开仓库也明确标记了少数偏离统一生成流程的例外。
+
+systems:
+- openai-internal-math-model
+- lean
+- comparator
+
+organizations:
+- openai
+- advisory-group-on-mathematics-and-artificial-intelligence
+
+people: []
+
+problems: []
+
+methods:
+- large-scale-mathematical-discovery
+- research-problem-evaluation
+- formal-verification
+- provenance-disclosure
+- responsible-release
+
+verification:
+  evidence_level: E3
+  status: under_verification
+  formal_assurance: artifact_available
+  history:
+  - date: '2026-10-06'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        OpenAI released the manuscripts, source files and a substantial public
+        formalization library. The repository explicitly states that verification stages
+        differ across results, that not all manuscripts have Lean formalizations and
+        that some unformalized results may contain issues.
+      zh-CN: >-
+        OpenAI 公开发布手稿、源码以及大规模形式化库。仓库明确说明不同成果处于不同验证阶段，
+        并非全部手稿都有 Lean 形式化，而且部分未形式化结果可能存在问题。
+  - date: '2026-10-06'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        AGMAI independently confirmed its consultation role and the importance of public
+        scrutiny while explicitly declining to endorse the mathematical claims or certify
+        OpenAI's compliance with its recommendations. Aggregate release significance is
+        therefore kept separate from per-result mathematical verification.
+      zh-CN: >-
+        AGMAI 独立确认了其咨询角色以及公开审查的重要性，同时明确不对数学主张背书，也不认证
+        OpenAI 已完全遵守其建议。因此 Chronicle 将整体发布的历史意义与逐项数学验证严格分离。
+
+sources:
+- id: openai-sharing-ai-progress-math-2026
+  tier: S2
+  type: official_announcement
+  title: Sharing AI progress in mathematics
+  url: https://openai.com/index/sharing-ai-progress-in-mathematics/
+  primary: true
+  published_date: '2026-10-06'
+  accessed_at: '2026-10-07'
+
+- id: openai-math-repository-2026
+  tier: S1
+  type: repository
+  title: OpenAI mathematics manuscript collection
+  url: https://github.com/openai/math
+  primary: true
+  published_date: '2026-10-06'
+  accessed_at: '2026-10-07'
+
+- id: agmai-openai-release-2026
+  tier: S2
+  type: official_announcement
+  title: On OpenAI's Release of Mathematical Results
+  url: https://agmai.org/
+  primary: false
+  published_date: '2026-10-06'
+  accessed_at: '2026-10-07'
+
+- id: agmai-responsible-release-2026
+  tier: S2
+  type: official_announcement
+  title: Responsible Release of AI-Generated Mathematics
+  url: https://agmai.org/general-sep29/
+  primary: false
+  published_date: '2026-09-29'
+  accessed_at: '2026-10-07'
+
+artifacts:
+- id: openai-math-corpus
+  kind: code
+  title: OpenAI public mathematics collection
+  url: https://github.com/openai/math
+
+relationships:
+  predecessors:
+  - evt-2026-agmai-responsible-release
+  successors: []
+  related:
+  - evt-2026-openai-prime-gaps-186
+  - evt-2026-openai-ten-advances
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- openai
+- ai-generated-mathematics
+- mathematical-discovery
+- formalization
+- lean
+- responsible-release
+- research-corpus
+
+editorial:
+  created_at: '2026-10-07'
+  last_reviewed: '2026-10-07'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
