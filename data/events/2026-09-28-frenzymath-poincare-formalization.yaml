@@ -1,0 +1,230 @@
+schema_version: 1
+id: evt-2026-frenzymath-poincare-formalization
+slug: frenzymath-poincare-formalization
+
+title:
+  en: FrenzyMath releases a Comparator-checked AI-assisted Lean formalization of the Poincaré conjecture
+  zh-CN: FrenzyMath 发布经 Comparator 检查的 AI 辅助庞加莱猜想 Lean 形式化
+
+dates:
+  event: '2026-09-28'
+  first_public_claim: '2026-09-28'
+  paper_release: null
+  artifact_release: '2026-09-28'
+  independently_verified: null
+  added_to_chronicle: '2026-10-07'
+  last_updated: '2026-10-07'
+
+event_types:
+- formalization
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      FrenzyMath's Poincaré development is a field milestone in AI-assisted
+      formalization because it packages a complete smooth/topological Poincaré proof
+      route into a multi-million-line Lean project and reports completion of most of the
+      work within roughly half a month using agentic pipelines and publicly available
+      commercial language models. The project exposes a Mathlib-facing statement,
+      full-build evidence and Comparator/Nanoda verification. A separate team released
+      another complete Lean development essentially concurrently, showing that
+      research-scale geometric-analysis formalization had moved from an isolated
+      demonstration to a reproducible frontier. Because the mathematical theorem was
+      already known and the exact agent/human division is not reconstructed theorem by
+      theorem, H2 is more appropriate than H1.
+    zh-CN: >-
+      FrenzyMath 的庞加莱猜想形式化构成 AI 辅助形式化方向的领域级里程碑：该项目把完整的
+      smooth/topological Poincaré 证明路线组织成数百万行 Lean 工程，并报告主要工作在约
+      半个月内通过 agentic pipelines 与公开商用大语言模型完成。项目公开了面向 Mathlib
+      的独立 statement、全量构建证据以及 Comparator/Nanoda 验证。几乎同期，另一支团队
+      也发布了独立完整 Lean 开发，表明研究级几何分析形式化已经从孤立演示走向可重复的
+      前沿实践。由于数学定理本身早已解决，且逐定理的人机分工并未被完整重建，因此 H2
+      比 H1 更合适。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+
+interfaces:
+- formal
+
+claim:
+  en: >-
+    On 28 September 2026, FrenzyMath announced a complete Lean 4 formalization of the
+    smooth and topological three-dimensional Poincaré conjecture, primarily following
+    Morgan and Tian's exposition of the Hamilton–Perelman proof. The team reports a full
+    Lean build and Comparator verification of two public endpoint statements using
+    Lean's kernel and Nanoda with only the standard axioms propext, Classical.choice and
+    Quot.sound. FrenzyMath reports that three AI developers with mathematical
+    backgrounds and several volunteer mathematicians completed most of the work within
+    half a month using publicly available commercial LLMs.
+  zh-CN: >-
+    2026 年 9 月 28 日，FrenzyMath 宣布完成三维 smooth 与 topological 庞加莱猜想的
+    Lean 4 形式化，证明路线主要跟随 Morgan–Tian 对 Hamilton–Perelman 证明的阐释。
+    团队报告全量 Lean build 已通过，并使用 Comparator 对两个公开 endpoint statement
+    进行验证，同时由 Lean kernel 与 Nanoda 检查，允许的公理仅为 propext、
+    Classical.choice 与 Quot.sound。FrenzyMath 表示，三名具有数学背景的 AI 开发者与
+    数名志愿数学家使用公开商用 LLM，在约半个月内完成了大部分工作。
+
+summary:
+  en: >-
+    FrenzyMath reports about 3.2 million lines of Lean and less than USD 30,000 in LLM
+    and compute costs for the project. The repository separates the Mathlib-only
+    endpoint statements from the proof library and preserves Comparator configuration,
+    verifier revisions, logs and source-provenance records. The announcement also notes
+    that an independent team led by Ziyang Qin, Yuan Liao, Ayush Khaitan and Bennett
+    Chow released another complete Poincaré Lean development earlier the same day; that
+    separate arXiv paper records a full public build and says automated assistance was
+    used for proofs and prose.
+  zh-CN: >-
+    FrenzyMath 报告该项目约包含 320 万行 Lean，LLM 与计算服务器总成本低于 3 万美元。
+    仓库将仅依赖 Mathlib 的 endpoint statements 与证明库分离，并保存 Comparator 配置、
+    verifier 版本、日志和源码 provenance 记录。公告同时指出，Ziyang Qin、Yuan Liao、
+    Ayush Khaitan 与 Bennett Chow 等组成的独立团队在同一天稍早也发布了另一套完整
+    庞加莱 Lean 开发；该独立 arXiv 论文记录了公开全量构建，并说明证明与文字工作中使用了
+    自动化辅助。
+
+why_it_matters:
+  en: >-
+    Poincaré is a foundational modern theorem whose standard proof uses a large stack of
+    geometric analysis, topology, partial differential equations and Ricci-flow
+    machinery. Compressing a project of this scope into weeks of AI-assisted
+    formalization demonstrates that frontier formal-mathematics agents can now operate
+    over extensive prerequisite libraries rather than only isolated olympiad theorems
+    or short research arguments. The near-simultaneous second formalization reinforces
+    the historical signal while also discouraging a simplistic single-project priority claim.
+  zh-CN: >-
+    庞加莱猜想是现代数学的基础性定理，其标准证明依赖庞大的几何分析、拓扑、偏微分方程与
+    Ricci flow 理论体系。把这种规模的项目压缩到数周 AI 辅助形式化，说明前沿形式数学 Agent
+    已能处理广泛前置理论库，而不再局限于孤立奥赛定理或短篇研究论证。近乎同期出现的第二套
+    独立形式化进一步强化了这一历史信号，同时也提醒 Chronicle 不应把里程碑简单归为单一项目
+    的优先权。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      FrenzyMath describes the project as a collaboration among AI developers with
+      mathematical backgrounds, volunteer mathematicians and publicly available
+      commercial LLMs coordinated through agentic pipelines. The public announcement
+      establishes substantial AI assistance but does not give a theorem-by-theorem
+      reconstruction of model versus human intellectual contributions.
+    zh-CN: >-
+      FrenzyMath 将该项目描述为具有数学背景的 AI 开发者、志愿数学家与公开商用 LLM 在
+      agentic pipelines 中协作完成。公开材料足以确认 AI 的实质参与，但没有逐定理重建
+      模型与人类的具体智力贡献。
+
+human_contribution:
+  description:
+    en: >-
+      Human developers and mathematicians designed and operated the pipelines, selected
+      the proof route and sources, reviewed integration and provenance, and maintained
+      the public verification surface and mathematical blueprint.
+    zh-CN: >-
+      人类开发者与数学家负责设计和运行 pipeline、选择证明路线与文献来源、审查集成与
+      provenance，并维护公开验证界面及数学 blueprint。
+
+systems:
+- lean
+- comparator
+- nanoda
+
+organizations:
+- frenzymath
+- pku-ai4math
+
+people: []
+
+problems:
+- poincare-conjecture
+
+methods:
+- agentic-formalization
+- blueprint-guided-formalization
+- formal-verification
+- independent-kernel-checking
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-09-28'
+    status: claimed
+    evidence_level: E3
+    note:
+      en: >-
+        FrenzyMath's announcement and repositories expose the endpoint statements,
+        proof library, full-build instructions and Comparator/Nanoda verification
+        records. Chronicle has not independently replayed the artifact in this
+        maintenance pass, so machine_checked records the released verification surface
+        rather than an independently_replayed status.
+      zh-CN: >-
+        FrenzyMath 的公告与公开仓库提供 endpoint statements、证明库、全量构建说明以及
+        Comparator/Nanoda 验证记录。本轮 Chronicle 没有自行独立重放该 artifact，因此
+        machine_checked 表示公开的机器检查证据，而不是 independently_replayed 状态。
+
+sources:
+- id: frenzymath-poincare-announcement-2026
+  tier: S2
+  type: official_announcement
+  title: Formalization of the Poincaré Conjecture
+  url: https://frenzymath.com/news/poincare-formalization/
+  primary: true
+  published_date: '2026-09-28'
+  accessed_at: '2026-10-07'
+
+- id: frenzymath-poincare-repository
+  tier: S1
+  type: formal_artifact
+  title: Poincare Conjecture Lean formalization
+  url: https://github.com/frenzymath/Poincare-Conjecture
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-07'
+
+- id: qin-liao-khaitan-chow-poincare-2026
+  tier: S1
+  type: paper
+  title: A Lean Formalization of the Hamilton--Perelman Proof of the Three-Dimensional Poincaré Conjecture
+  url: https://arxiv.org/abs/2609.33842
+  primary: false
+  published_date: '2026-09-27'
+  accessed_at: '2026-10-07'
+
+artifacts:
+- id: frenzymath-poincare-lean
+  kind: proof
+  title: FrenzyMath Poincaré Lean project
+  url: https://github.com/frenzymath/Poincare-Conjecture
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2026-claude-flt-formalization
+  - evt-2026-formalflow-mipstarre
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- poincare-conjecture
+- lean
+- formalization
+- comparator
+- nanoda
+- geometric-analysis
+- ricci-flow
+- ai-agents
+
+editorial:
+  created_at: '2026-10-07'
+  last_reviewed: '2026-10-07'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

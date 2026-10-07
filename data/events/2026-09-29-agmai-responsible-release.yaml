@@ -1,0 +1,219 @@
+schema_version: 1
+id: evt-2026-agmai-responsible-release
+slug: agmai-responsible-release-ai-generated-mathematics
+
+title:
+  en: AGMAI publishes responsible-release norms for AI-generated mathematics
+  zh-CN: AGMAI 发布 AI 生成数学成果的负责任发布规范
+
+dates:
+  event: '2026-09-29'
+  first_public_claim: '2026-09-29'
+  paper_release: null
+  artifact_release: '2026-09-29'
+  independently_verified: null
+  added_to_chronicle: '2026-10-07'
+  last_updated: '2026-10-07'
+
+event_types:
+- field_building
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      AGMAI's responsible-release recommendations are a field-building milestone because
+      they translate the 2026 debate over AI-generated mathematics into a concrete,
+      public set of norms for frontier AI labs. The recommendations address human
+      understanding, publication channels, citations, provenance, model and prompt
+      disclosure, compute reporting, formalization standards, failure disclosure,
+      community-led assimilation and equitable access. They were informed by more than
+      six hundred community responses and were subsequently discussed with OpenAI before
+      its large October mathematics release.
+    zh-CN: >-
+      AGMAI 的负责任发布建议构成领域建构里程碑，因为它把 2026 年围绕 AI 生成数学成果的
+      争论转化为一套面向前沿 AI 实验室的公开、具体规范。建议覆盖人类理解、发布渠道、
+      引用、provenance、模型与 prompt 披露、算力报告、形式化标准、失败样本披露、
+      共同体主导的成果吸收以及公平访问。该规范吸收了六百余份共同体反馈，并在 OpenAI
+      10 月大规模数学成果发布前与其进行了讨论。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    On 29 September 2026, the Advisory Group on Mathematics and Artificial Intelligence
+    published recommendations for the responsible release of AI-generated mathematics.
+    The group asks frontier labs to stop testing advanced mathematical problems on
+    proprietary models as its preferred long-term norm, while also specifying how
+    significant results should be released when such work occurs. For results not yet
+    understood by humans, the recommendations call for improved citations and exposition,
+    persistent community-oriented repositories, disclosure of the model, prompts,
+    summarized reasoning, time and compute, documentation of AI use and problem
+    selection, comparable failure statistics for batch releases, formalization where
+    possible, and material support for community-led human understanding.
+  zh-CN: >-
+    2026 年 9 月 29 日，Advisory Group on Mathematics and Artificial Intelligence
+    发布 AI 生成数学成果的负责任发布建议。该组织把“停止使用不可公开的专有模型测试前沿
+    数学问题”作为理想的长期规范，同时也规定当此类研究已经发生时，重要结果应如何发布。
+    对尚无人类完整理解的成果，建议要求改进引用与阐释、使用面向共同体的持久化仓库、
+    披露模型、prompts、摘要式推理、时间与算力、说明 AI 使用与选题过程、对批量发布给出
+    可比较的失败统计、尽可能进行形式化，并为共同体主导的人类理解投入实质支持。
+
+summary:
+  en: >-
+    AGMAI says the recommendations were informed by more than 600 responses from the
+    mathematical community. The document distinguishes ordinary papers that a responsible
+    mathematician fully understands from AI outputs that nobody yet understands. In the
+    latter case it proposes technical release norms and a parallel obligation for labs
+    to fund independent, community-led workshops, conferences, expository work and other
+    activities needed to assimilate the mathematics. It also warns that unequal access
+    to frontier systems could create a multi-tier mathematical community.
+  zh-CN: >-
+    AGMAI 表示该建议吸收了数学共同体超过 600 份反馈。文件区分两类情形：由负责的数学家
+    完整理解的普通论文，以及尚无人类完整理解的 AI 输出。针对后一类，文件既提出技术发布
+    规范，也要求实验室为独立、共同体主导的研讨会、会议、阐释工作及其他理解和吸收数学
+    所需活动提供支持；同时警告前沿系统访问不平等可能制造多层级的数学共同体。
+
+why_it_matters:
+  en: >-
+    Earlier 2026 statements identified problems in attribution, incentives, access and
+    research dissemination. This document converts those concerns into an operational
+    checklist that can be compared against actual releases. OpenAI's 6 October release
+    explicitly says it drew on AGMAI's advice, and AGMAI subsequently stated that it had
+    discussed the recommendations with OpenAI while leaving assessment of compliance and
+    mathematical merit to the wider community.
+  zh-CN: >-
+    2026 年此前的共同体声明主要指出归属、激励、访问和研究发布方面的问题；这份文件则把
+    这些问题转化为可以与真实发布行为逐项对照的操作规范。OpenAI 10 月 6 日的发布明确表示
+    参考了 AGMAI 建议；AGMAI 随后也说明已与 OpenAI 讨论这些规范，同时把是否充分遵循规范
+    以及成果数学价值的判断留给更广泛的共同体。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records human-authored scholarly-governance norms for AI-generated
+      mathematics rather than an AI system performing mathematical research.
+    zh-CN: >-
+      本事件记录的是人类制定的 AI 生成数学成果学术治理规范，而不是 AI 系统执行具体数学研究。
+
+human_contribution:
+  description:
+    en: >-
+      AGMAI members synthesized community feedback into public recommendations for
+      frontier AI labs and committed to independent, transparent engagement with the
+      mathematical community and AI companies.
+    zh-CN: >-
+      AGMAI 成员把共同体反馈整理为面向前沿 AI 实验室的公开建议，并承诺以独立、透明的方式
+      持续与数学共同体及 AI 企业互动。
+
+systems: []
+
+organizations:
+- advisory-group-on-mathematics-and-artificial-intelligence
+- institute-for-advanced-study
+
+people: []
+
+problems: []
+
+methods:
+- scholarly-governance
+- responsible-release
+- provenance-disclosure
+- formalization-standards
+- community-led-review
+- equitable-access
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-09-29'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        AGMAI's public recommendations establish the document, its scope and its stated
+        basis in more than 600 community responses.
+      zh-CN: >-
+        AGMAI 的公开建议确认了文件本身、规范范围以及其基于六百余份共同体反馈的说明。
+  - date: '2026-10-06'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        AGMAI's statement on OpenAI's large mathematics release says the group discussed
+        its recommendations with OpenAI and reaffirms them, while explicitly declining
+        to endorse the released mathematics or certify that the recommendations were
+        followed successfully.
+      zh-CN: >-
+        AGMAI 针对 OpenAI 大规模数学成果发布的声明表示其已与 OpenAI 讨论这些建议并再次
+        重申规范，同时明确不对发布的数学成果背书，也不自行认证 OpenAI 已成功遵循全部建议。
+
+sources:
+- id: agmai-responsible-release-2026
+  tier: S2
+  type: official_announcement
+  title: Responsible Release of AI-Generated Mathematics
+  url: https://agmai.org/general-sep29/
+  primary: true
+  published_date: '2026-09-29'
+  accessed_at: '2026-10-07'
+
+- id: agmai-openai-release-statement-2026
+  tier: S2
+  type: official_announcement
+  title: On OpenAI's Release of Mathematical Results
+  url: https://agmai.org/
+  primary: false
+  published_date: '2026-10-06'
+  accessed_at: '2026-10-07'
+
+- id: openai-sharing-math-2026
+  tier: S2
+  type: official_announcement
+  title: Sharing AI progress in mathematics
+  url: https://openai.com/index/sharing-ai-progress-in-mathematics/
+  primary: false
+  published_date: '2026-10-06'
+  accessed_at: '2026-10-07'
+
+artifacts:
+- id: agmai-responsible-release-document
+  kind: other
+  title: Responsible Release of AI-Generated Mathematics
+  url: https://agmai.org/general-sep29/
+
+relationships:
+  predecessors:
+  - evt-2026-agmai-advisory-group
+  successors: []
+  related:
+  - evt-2026-severe-misalignment-ai-mathematics
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- field-building
+- ai-governance
+- responsible-release
+- research-integrity
+- provenance
+- formalization
+- mathematical-community
+
+editorial:
+  created_at: '2026-10-07'
+  last_reviewed: '2026-10-07'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
