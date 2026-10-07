@@ -1,0 +1,261 @@
+schema_version: 1
+id: evt-2026-meta-muse-spark-open-research
+slug: meta-muse-spark-open-research
+
+title:
+  en: Meta publishes six Muse Spark–mathematician research papers, five answering open questions
+  zh-CN: Meta 发布六篇 Muse Spark 与数学家合作论文，其中五篇回答开放研究问题
+
+dates:
+  event: '2026-10-02'
+  first_public_claim: '2026-10-02'
+  paper_release: '2026-10-02'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-07'
+  last_updated: '2026-10-07'
+
+event_types:
+- discovery
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Meta's six-paper release is a field milestone because expert mathematicians used
+      Muse Spark 1.1 and 1.2 through the ordinary meta.ai chat interface, without a
+      bespoke research scaffold, to make substantive contributions across several areas
+      of mathematics. Five papers answer previously open research questions according
+      to Meta, and the release documents materially different AI roles including proof
+      exploration, counterexample search, GAP code generation, cross-field connection
+      finding and drafting technical arguments. The work is explicitly human-guided and
+      reviewed, and several results have concurrent independent solutions, so it is
+      better characterized as an H2 collaboration milestone than an autonomous H1 event.
+    zh-CN: >-
+      Meta 的六篇论文发布构成领域级里程碑，因为专业数学家使用 Muse Spark 1.1 与 1.2，
+      直接通过普通 meta.ai 聊天界面、无需专门研究脚手架，在多个数学领域作出实质贡献。
+      Meta 表示其中五篇回答此前开放的研究问题；公开材料还记录了多种不同 AI 角色，包括
+      探索证明、搜索反例、生成 GAP 程序、发现跨领域联系以及起草技术论证。由于工作明确由
+      人类引导并经第二组数学家审查，且若干结果存在同期独立解，本事件更适合定位为 H2
+      人机协作里程碑，而非自主型 H1 事件。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- symbolic
+
+claim:
+  en: >-
+    On 2 October 2026, Meta released six research papers produced by mathematicians
+    working with Muse Spark 1.1 and 1.2 in Thinking Mode through the standard meta.ai
+    chat interface. Meta states that five papers answer previously open research
+    questions. The results include a finite-time blow-up theorem for the mass-critical
+    biharmonic nonlinear Schrödinger equation, counterexamples in group theory and
+    evolution algebras, an exactness characterization in optimization, a Gaussian
+    ellipsoid-fitting threshold result, and a new arithmetic-physics connection.
+  zh-CN: >-
+    2026 年 10 月 2 日，Meta 发布六篇由数学家与 Muse Spark 1.1、1.2 在 Thinking Mode
+    下通过普通 meta.ai 聊天界面合作完成的研究论文。Meta 表示其中五篇回答此前开放的
+    研究问题。成果包括质量临界双调和非线性薛定谔方程的有限时间爆破解、群论与 evolution
+    algebra 中的反例、优化问题中的精确性刻画、高斯椭球拟合阈值结果，以及新的算术物理联系。
+
+summary:
+  en: >-
+    Meta says human mathematicians selected and guided the research, a separate group of
+    mathematicians reviewed the work, each paper marks passages primarily drafted by
+    researchers versus AI, and prior or concurrent work is credited. Muse Spark's role
+    varied by project: it helped test and revise calculations, generated a GAP search
+    program that found a 384-element group counterexample, proposed counterexamples and
+    proof strategies, and generated candidate proofs and technical sections. Meta also
+    acknowledges that several questions were independently resolved by other teams,
+    including one semiabelian-group counterexample reported by the Nilradical AI agent
+    before Meta's publication.
+  zh-CN: >-
+    Meta 表示，人类数学家负责选题并引导研究，另有一组数学家对工作进行审查；每篇论文标记
+    哪些段落主要由研究者或 AI 起草，并明确引用已有及同期工作。Muse Spark 在不同项目中的
+    作用并不相同：它协助测试与修订计算，生成 GAP 搜索程序并找到一个 384 阶群反例，
+    提出反例与证明策略，还生成候选证明并起草技术章节。Meta 同时承认若干问题被其他团队
+    独立解决，其中包括 Nilradical AI agent 在 Meta 发布前报告的另一 semiabelian-group 反例。
+
+why_it_matters:
+  en: >-
+    The release shows a different AI4Math research mode from autonomous lab-scale search:
+    expert mathematicians can use a generally available frontier chat model as an active
+    research collaborator on genuine open questions while retaining explicit human
+    authorship, review and passage-level attribution. The combination of ordinary user
+    interface, heterogeneous mathematical contributions and transparent division of
+    labour makes the batch a useful reference point for human–AI mathematical research
+    practice even where individual priority is shared or concurrent.
+  zh-CN: >-
+    该发布展示了一种不同于实验室自主搜索的 AI4Math 研究模式：专业数学家可以把面向普通
+    用户的前沿聊天模型作为开放问题研究中的活跃协作者，同时保留明确的人类署名、审查与
+    段落级贡献标注。普通用户界面、多样化数学贡献以及透明分工的组合，使这批工作即使在
+    部分成果存在同期或共享优先权的情况下，仍成为人机数学研究实践的重要参照。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Muse Spark made substantive but project-dependent contributions under human
+      direction. Meta documents roles ranging from calculations and proof exploration
+      to code-generated counterexample search, candidate proofs, proof strategies and
+      technical drafting. Human mathematicians selected the problems, steered the work,
+      checked and corrected arguments, and a second group reviewed the papers.
+    zh-CN: >-
+      Muse Spark 在人类引导下承担实质但因项目而异的贡献。Meta 记录的作用包括计算与证明
+      探索、通过代码搜索反例、生成候选证明与证明策略以及技术写作。人类数学家负责选题、
+      引导研究、检查和修正论证，并由第二组数学家进行审查。
+
+human_contribution:
+  description:
+    en: >-
+      Human researchers supplied the research questions and mathematical direction,
+      evaluated model suggestions, completed or corrected arguments, wrote substantial
+      parts of the papers and accepted responsibility for the final results. Separate
+      mathematicians reviewed the work before release.
+    zh-CN: >-
+      人类研究者提供研究问题与数学方向，评估模型建议，完成或修正论证，撰写论文中的
+      实质内容并对最终成果负责；另有独立数学家在发布前进行审查。
+
+systems:
+- muse-spark-1-1
+- muse-spark-1-2
+
+organizations:
+- meta
+
+people:
+- aykut-arslan
+- leonard-dinh
+- joseph-phillip-brennan
+- milana-golich
+- anindya-dey
+- gabriel-herczeg
+- an-huang
+- nicolas-jaramillo-torres
+- jacob-h-swenberg
+- andres-barei
+
+problems: []
+
+methods:
+- human-ai-collaboration
+- natural-language-mathematical-reasoning
+- counterexample-search
+- gap-computation
+- proof-development
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2026-10-02'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        Meta released six public research papers and a detailed account of the
+        collaboration and review workflow. Chronicle records Meta's claim that five
+        papers answer previously open questions while preserving the stated concurrent
+        independent results and without treating internal review as independent
+        community verification.
+      zh-CN: >-
+        Meta 发布六篇公开研究论文，并详细说明协作与审查流程。Chronicle 记录 Meta 关于
+        “其中五篇回答此前开放问题”的主张，同时保留其披露的同期独立结果，不把 Meta
+        内部或合作审查直接等同于数学共同体的独立验证。
+
+sources:
+- id: meta-muse-open-research-2026
+  tier: S2
+  type: official_announcement
+  title: Solving Open Research Problems Together
+  url: https://research.meta.ai/blog/solving-open-research-problems-together
+  primary: true
+  published_date: '2026-10-02'
+  accessed_at: '2026-10-07'
+
+- id: meta-gaussian-ellipsoid-paper-2026
+  tier: S1
+  type: paper
+  title: The Strict Threshold for Gaussian Ellipsoid Fitting
+  url: https://ai.meta.com/research/publications/the-strict-threshold-for-gaussian-ellipsoid-fitting/
+  primary: false
+  published_date: '2026-10-02'
+  accessed_at: '2026-10-07'
+
+- id: meta-biharmonic-nls-paper-2026
+  tier: S1
+  type: paper
+  title: Finite-Time Blow-Up of Radial Negative-Energy Solutions for the Mass-Critical Biharmonic Nonlinear Schrödinger Equation
+  url: https://ai.meta.com/research/publications/finite-time-blow-up-of-radial-negative-energy-solutions-for-the-mass-critical-biharmonic-nonlinear-schrodinger-equation/
+  primary: false
+  published_date: '2026-10-02'
+  accessed_at: '2026-10-07'
+
+- id: meta-semiabelian-paper-2026
+  tier: S1
+  type: paper
+  title: Semiabelian Groups Need Not Be Monomial
+  url: https://ai.meta.com/research/publications/semiabelian-groups-need-not-be-monomial/
+  primary: false
+  published_date: '2026-10-02'
+  accessed_at: '2026-10-07'
+
+- id: meta-cycle-relaxation-paper-2026
+  tier: S1
+  type: paper
+  title: Tightness of the Cycle-Based Relaxation for Completed Length-Three Alpha-Cycles
+  url: https://ai.meta.com/research/publications/tightness-of-the-cycle-based-relaxation-for-completed-length-three-alpha-cycles/
+  primary: false
+  published_date: '2026-10-02'
+  accessed_at: '2026-10-07'
+
+- id: meta-string-height-paper-2026
+  tier: S1
+  type: paper
+  title: String Two-Point Function = Height Function on a Curve
+  url: https://ai.meta.com/research/publications/string-two-point-function-height-function-on-a-curve/
+  primary: false
+  published_date: '2026-10-02'
+  accessed_at: '2026-10-07'
+
+- id: meta-evolution-algebra-paper-2026
+  tier: S1
+  type: paper
+  title: On Solvable Evolution Algebras and a Conjecture by García-Martínez and Pérez-Rodríguez
+  url: https://ai.meta.com/research/publications/on-solvable-evolution-algebras-and-a-conjecture-by-garcia-martinez-and-perez-rodriguez/
+  primary: false
+  published_date: '2026-10-02'
+  accessed_at: '2026-10-07'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- muse-spark
+- open-research
+- human-ai-collaboration
+- mathematical-discovery
+- counterexamples
+- proof-development
+- meta
+
+editorial:
+  created_at: '2026-10-07'
+  last_reviewed: '2026-10-07'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
