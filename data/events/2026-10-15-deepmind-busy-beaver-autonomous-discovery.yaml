@@ -1,0 +1,201 @@
+schema_version: 1
+id: evt-2026-deepmind-busy-beaver-autonomous-discovery
+slug: deepmind-busy-beaver-autonomous-discovery
+
+title:
+  en: DeepMind's Gemini agent autonomously discovers Lean-verified Busy Beaver accelerations
+  zh-CN: DeepMind Gemini Agent 自主发现并用 Lean 验证 Busy Beaver 加速规则
+
+dates:
+  event: '2026-10-15'
+  first_public_claim: '2026-10-15'
+  paper_release: '2026-10-15'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-20'
+  last_updated: '2026-10-20'
+
+event_types:
+- discovery
+- system
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      This is a field milestone in open-ended AI mathematical discovery because the
+      system does not merely answer a fixed theorem statement: it searches execution
+      traces, proposes its own compact acceleration rules, informally reasons about them
+      and formally proves accepted rules in Lean. The pipeline reports novel
+      Collatz-like accelerations for eleven unresolved BB(6) machines. Their halting
+      behavior remains open, so the milestone is autonomous structure discovery rather
+      than a solution of BB(6).
+    zh-CN: >-
+      这是开放式 AI 数学发现的领域级里程碑，因为系统并非只回答预先给定的定理，而是自行搜索
+      执行轨迹、提出紧凑加速规则、进行非形式推理，并把通过的规则形式化证明到 Lean 中。
+      该 pipeline 报告为 11 台尚未解决的 BB(6) 机器发现新的 Collatz-like 加速规则。
+      这些机器是否停机仍然未知，因此里程碑在于自主结构发现，而不是解决 BB(6)。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- symbolic
+- formal
+- hybrid
+
+claim:
+  en: >-
+    A Google DeepMind and University of Cambridge team introduces a Gemini-based agentic
+    pipeline integrating pattern recognition, conjecture generation, informal proof and
+    Lean verification. The system autonomously discovered and formally verified novel
+    Collatz-like acceleration rules for eleven BB(6) holdout Turing machines. The authors
+    provisionally call these machines Cryptids, subject to community acceptance, while
+    explicitly leaving their halting behavior unresolved.
+  zh-CN: >-
+    Google DeepMind 与剑桥大学团队提出一个基于 Gemini 的 agentic pipeline，整合模式识别、
+    猜想生成、非形式证明和 Lean 验证。系统自主发现并形式验证了 11 台 BB(6) holdout
+    Turing machines 的新 Collatz-like 加速规则。作者暂称这些机器为 Cryptids，并明确说明
+    该分类仍待共同体接受、机器是否停机仍未解决。
+
+summary:
+  en: >-
+    The public DeepMind repository contains a Busy Beaver Lean library with kernel-checked
+    behavioral predicates and Comparator configurations. It states that all project
+    proofs are free of sorry and use only the standard axioms. The work deliberately
+    chooses Busy Beaver as an uncomputable, open-ended frontier where no fixed benchmark
+    can exhaust the research space, testing whether agents can discover useful structures
+    without being handed a single theorem to prove.
+  zh-CN: >-
+    DeepMind 公开仓库包含 Busy Beaver Lean 库、kernel-checked 行为性质以及 Comparator
+    配置，并声明项目证明没有 sorry、只依赖标准公理。该工作刻意选择不可计算且开放式的
+    Busy Beaver 前沿，使研究空间无法被固定 benchmark 穷尽，用于测试 Agent 是否能在没有
+    单一定理任务的情况下自行发现有用数学结构。
+
+why_it_matters:
+  en: >-
+    Most AI4Math milestones still begin with a human-defined target. This project tests
+    a different capability: sustained exploration of an open-ended domain with
+    conjecture generation and formal verification inside the loop. The eleven new rules
+    are modest compared with resolving BB(6), but the research mode itself is historically
+    distinct.
+  zh-CN: >-
+    多数 AI4Math 里程碑仍从人类预先定义的目标开始。该项目测试另一种能力：在开放式领域中持续
+    探索，并把猜想生成和形式验证纳入闭环。11 条新规则距离解决 BB(6) 仍很远，但这种研究模式
+    本身具有不同的历史意义。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      The paper describes the Gemini pipeline as autonomously discovering the novel
+      accelerations; humans designed the research framework, domain and verification
+      machinery and analyzed the resulting discoveries.
+    zh-CN: >-
+      论文将新加速规则描述为由 Gemini pipeline 自主发现；人类负责设计研究框架、研究领域和
+      验证机制，并分析系统产生的发现。
+
+human_contribution:
+  description:
+    en: >-
+      Human researchers selected Busy Beaver as the testbed, engineered the agentic and
+      formal-verification pipeline, curated baselines and interpreted the discovered rules.
+    zh-CN: >-
+      人类研究者选择 Busy Beaver 作为试验场，设计 Agent 与形式验证 pipeline，整理基线并
+      解释发现的规则。
+
+systems:
+- gemini
+- lean
+- comparator
+
+organizations:
+- google-deepmind
+- university-of-cambridge
+
+people:
+- marco-dos-santos
+- vivek-veeriah
+- alex-havrilla
+- andrew-bolt
+- goran-zuzic
+- satinder-singh
+- tom-zahavy
+
+problems:
+- busy-beaver-6
+
+methods:
+- autonomous-conjecture-generation
+- turing-machine-acceleration
+- pattern-discovery
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-10-15'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The paper reports autonomous discovery and Lean verification; the public
+        google-deepmind/cryptids repository exposes the Busy Beaver formalization,
+        Comparator instructions and kernel-checked proof surface. Chronicle has not
+        independently replayed the full artifact.
+      zh-CN: >-
+        论文报告自主发现与 Lean 验证；公开 google-deepmind/cryptids 仓库提供 Busy Beaver
+        形式化、Comparator 说明和 kernel-checked 证明界面。本轮 Chronicle 未独立重放完整 artifact。
+
+sources:
+- id: deepmind-busy-beaver-paper-2026
+  tier: S1
+  type: paper
+  title: 'At the Limits of Computability: Steps Towards Autonomous AI Discovery on the Busy Beaver Frontier'
+  url: https://arxiv.org/abs/2610.22603
+  primary: true
+  published_date: '2026-10-15'
+  accessed_at: '2026-10-20'
+
+- id: deepmind-cryptids-repository
+  tier: S1
+  type: formal_artifact
+  title: Cryptids — formally verified conjecture-checking and Busy Beaver Turing machines
+  url: https://github.com/google-deepmind/cryptids
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-20'
+
+artifacts:
+- id: deepmind-busy-beaver-lean
+  kind: proof
+  title: Busy Beaver Lean formalization
+  url: https://github.com/google-deepmind/cryptids/tree/main/BusyBeaver
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- busy-beaver
+- gemini
+- autonomous-discovery
+- lean
+- formal-verification
+- turing-machines
+
+editorial:
+  created_at: '2026-10-20'
+  last_reviewed: '2026-10-20'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
