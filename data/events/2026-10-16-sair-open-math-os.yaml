@@ -1,0 +1,209 @@
+schema_version: 1
+id: evt-2026-sair-open-math-os
+slug: sair-open-math-os-soft-launch
+
+title:
+  en: SAIR soft-launches Open Math OS for collaborative mathematical research
+  zh-CN: SAIR 启动面向协作数学研究的 Open Math OS 试运行
+
+dates:
+  event: '2026-10-16'
+  first_public_claim: '2026-10-16'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-20'
+  last_updated: '2026-10-20'
+
+event_types:
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Open Math OS is an AI4Math-specific research infrastructure milestone: SAIR
+      moved its September open-math-model initiative from a statement of intent
+      into an announced, publicly described soft-launch service. The initial
+      offering combines existing open models, mathematical tooling and a shared
+      team workspace with an explicit academic-access and community-data-control
+      agenda. Its significance is the collaborative infrastructure and deployment
+      model, not a new foundation-model breakthrough or a demonstrated solution
+      to an open mathematical problem.
+    zh-CN: >-
+      Open Math OS 是 AI4Math 专用科研基础设施的领域级事件：SAIR 将 9 月公布的
+      开放数学模型倡议推进为正式宣布试运行的服务。初期服务将既有开放模型、
+      数学工具与团队共享工作空间结合，并提出面向学术用户的访问与共同体数据治理
+      方向。其意义在于协作研究基础设施及服务部署，而不是发布全新基础模型，
+      更不是已证明解决了某个开放数学问题。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    On 16 October 2026, Terence Tao announced the soft launch of SAIR Open
+    Math OS. At launch he described a web-based service hosting existing open
+    models including DeepSeek V4.1 Flash, Kimi K3 and GLM 5.3 Flash, suitable
+    for tasks such as medium-sized Lean formalization and mathematical discussion,
+    rather than frontier-level one-shot open-problem solving. The announcement
+    emphasized shared team accounts and applications for free academic access.
+  zh-CN: >-
+    2026 年 10 月 16 日，陶哲轩宣布 SAIR Open Math OS 进入试运行。按当天公告，
+    该网页服务部署了 DeepSeek V4.1 Flash、Kimi K3 和 GLM 5.3 Flash 等
+    现有开放模型，可用于中等规模的 Lean 形式化以及数学论证的讨论与梳理，
+    而不具备当时前沿模型所展示的一次性攻克困难开放问题的能力。公告强调
+    团队账户内共享对话，并向学术机构用户开放免费使用申请。
+
+summary:
+  en: >-
+    SAIR's announcement says the service is running on donated compute and
+    that access quotas may change with demand. Its distinctive operating
+    proposal is team-based research: team members can see each other's prompts
+    and work collaboratively. The Open Math Model website also describes a
+    research workspace bringing together open models, mathematical computing,
+    shared projects and explicit controls over research-data use. SAIR reports
+    that it is seeking partners for future mathematics-focused post-training;
+    the launch announcement does not claim that such a new model is already trained.
+  zh-CN: >-
+    SAIR 表示服务使用捐赠算力，访问配额可能随需求调整。其突出的协作机制
+    是团队成员能够共同查看提示词并开展项目研究。Open Math Model 官网展示了
+    整合开放模型、数学计算工具、共享项目和研究数据使用控制的工作空间。
+    SAIR 同时征集合作伙伴，以开展后续面向数学的模型后训练；试运行公告并未
+    宣称这类新模型已经训练完成。
+
+why_it_matters:
+  en: >-
+    The soft launch offers a concrete, math-oriented alternative to isolated
+    individual conversations with closed frontier models. It foregrounds
+    collaborative provenance, use of open model weights, computing tools and
+    community-directed data governance. Actual scientific effectiveness,
+    long-term compute availability and future model quality remain to be
+    established independently.
+  zh-CN: >-
+    这次试运行使以开放模型为基础、面向团队的数学研究服务从倡议进入可申请
+    使用的实践阶段，并将协作过程记录、数学计算工具以及由共同体主导的数据
+    治理置于核心位置。其真实科研效果、长期算力可用性和未来模型性能仍需
+    后续评估，不应直接视为已验证的突破。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Hosted language models provide mathematical discussion, drafting and
+      assistance with tasks such as Lean formalization. No new theorem, autonomous
+      discovery or independent proof outcome was announced as part of the launch.
+    zh-CN: >-
+      平台部署的语言模型支持数学讨论、文本整理及 Lean 形式化等工作；
+      此次发布没有宣布由平台自主发现的新定理或经独立核验的证明成果。
+
+human_contribution:
+  description:
+    en: >-
+      SAIR and its collaborators organized the open-model initiative, donated
+      computing arrangements, research workspace, team-account design, academic
+      access process and partnership outreach. Mathematicians remain responsible
+      for framing and assessing research problems and checking proposed results.
+    zh-CN: >-
+      SAIR 及其合作者组织开放模型倡议、捐赠算力部署、研究工作空间、
+      团队账户机制、学术访问流程与合作伙伴征集。数学家仍负责提出与评价
+      研究问题，并审查模型提出的结果。
+
+systems:
+- sair-open-math-os
+- deepseek-v4-1-flash
+- kimi-k3
+- glm-5-3-flash
+- lean
+
+organizations:
+- foundation-for-science-and-ai-research
+
+people:
+- terence-tao
+
+problems: []
+
+methods:
+- open-math-models
+- collaborative-research-workspaces
+- lean-formalization
+- scientific-computing
+- community-data-governance
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-10-16'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        Terence Tao's dated announcement establishes the soft launch, initial
+        hosted-model scope, collaborative-account design, donated-compute basis
+        and planned academic access. The initiative website documents the
+        advertised research workspace. No independent end-to-end service test
+        or scientific performance evaluation is recorded.
+      zh-CN: >-
+        陶哲轩在当日公告中确认了试运行、初期模型范围、团队账户机制、
+        捐赠算力来源及学术访问安排；倡议官网展示了相应研究工作空间。
+        当前没有记录独立完成的全流程服务测试或科研性能评测。
+
+sources:
+- id: tao-sair-open-math-os-2026
+  tier: S2
+  type: official_announcement
+  title: SAIR Open Math OS released
+  url: https://terrytao.wordpress.com/2026/10/16/sair-open-math-os-released/
+  primary: true
+  published_date: '2026-10-16'
+  accessed_at: '2026-10-20'
+
+- id: sair-open-math-model-platform
+  tier: S2
+  type: official_announcement
+  title: Open Math OS — collaborative math research and scientific computing
+  url: https://www.openmathmodel.org/
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-20'
+
+artifacts:
+- id: sair-open-math-os-site
+  kind: other
+  title: Open Math OS public platform landing page
+  url: https://www.openmathmodel.org/
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- sair
+- open-math-model
+- open-models
+- collaborative-mathematics
+- research-infrastructure
+- lean
+- scientific-computing
+- data-governance
+
+editorial:
+  created_at: '2026-10-20'
+  last_reviewed: '2026-10-20'
+  reviewers: []
+
+corrections: []
