@@ -1,0 +1,186 @@
+schema_version: 1
+id: evt-2026-sair-open-math-os
+slug: sair-open-math-os-soft-launch
+
+title:
+  en: SAIR soft-launches Open Math OS for collaborative mathematical research
+  zh-CN: SAIR 启动面向协作数学研究的 Open Math OS 试运行
+
+dates:
+  event: '2026-10-16'
+  first_public_claim: '2026-10-16'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-20'
+  last_updated: '2026-10-20'
+
+event_types:
+- system
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      Open Math OS is an AI4Math-specific research infrastructure milestone: SAIR moved
+      its open-math-model initiative from a statement of intent into an announced
+      soft-launch service. The initial offering combines existing open models,
+      mathematical tooling and a shared team workspace with an explicit academic-access
+      and community-data-control agenda. Its significance is the collaborative
+      infrastructure and deployment model, not a new frontier-model breakthrough.
+    zh-CN: >-
+      Open Math OS 是 AI4Math 专用科研基础设施的领域级事件：SAIR 将开放数学模型倡议推进为
+      已宣布试运行的服务。初期服务把既有开放模型、数学工具与团队共享工作空间结合，并提出
+      面向学术用户的访问和共同体数据治理方向。其意义在于协作研究基础设施与部署模式，而不是
+      发布新的前沿基础模型。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    On 16 October 2026, Terence Tao announced the soft launch of SAIR Open Math OS.
+    At launch the service hosted existing open models including DeepSeek V4.1 Flash,
+    Kimi K3 and GLM 5.3 Flash and was presented as useful for tasks such as medium-sized
+    Lean formalization and mathematical discussion. SAIR emphasized shared team accounts,
+    donated compute and free-access applications for academic researchers.
+  zh-CN: >-
+    2026 年 10 月 16 日，陶哲轩宣布 SAIR Open Math OS 进入试运行。初期服务部署
+    DeepSeek V4.1 Flash、Kimi K3 和 GLM 5.3 Flash 等现有开放模型，可用于中等规模
+    Lean 形式化和数学讨论等任务。SAIR 强调共享团队账户、捐赠算力以及面向学术研究者的
+    免费访问申请。
+
+summary:
+  en: >-
+    The Open Math Model initiative describes a collaborative research environment that
+    combines open models, scientific computing and controls over mathematical research
+    data. SAIR is also seeking partners for future mathematics-focused post-training;
+    the launch does not claim that a new frontier mathematical model has already been trained.
+  zh-CN: >-
+    Open Math Model 倡议把该平台描述为融合开放模型、科学计算以及数学研究数据控制的协作环境。
+    SAIR 也在征集合作伙伴开展后续数学专向后训练；此次试运行并未声称新的前沿数学模型已经完成训练。
+
+why_it_matters:
+  en: >-
+    The launch makes an open, team-oriented alternative to isolated use of proprietary
+    frontier models operational for mathematical research. It foregrounds collaborative
+    provenance, community data governance and access to open model infrastructure.
+  zh-CN: >-
+    该发布使基于开放模型、面向团队的数学研究服务从倡议走向实际运行，并把协作 provenance、
+    共同体数据治理和开放模型访问置于核心位置。
+
+ai_role:
+  level: ai_substantive_support
+  description:
+    en: >-
+      Hosted language models support mathematical discussion, drafting and tasks such as
+      Lean formalization. The launch itself does not claim a new autonomous mathematical discovery.
+    zh-CN: >-
+      平台部署的语言模型支持数学讨论、文本整理和 Lean 形式化等任务；此次发布本身并未宣称
+      新的自主数学发现。
+
+human_contribution:
+  description:
+    en: >-
+      SAIR and collaborators organized the platform, donated-compute arrangements,
+      team-account design, academic-access process and open-model development agenda.
+    zh-CN: >-
+      SAIR 及合作者负责组织平台、捐赠算力机制、团队账户设计、学术访问流程和开放模型发展议程。
+
+systems:
+- sair-open-math-os
+- deepseek-v4-1-flash
+- kimi-k3
+- glm-5-3-flash
+- lean
+
+organizations:
+- foundation-for-science-and-ai-research
+
+people:
+- terence-tao
+
+problems: []
+
+methods:
+- open-math-models
+- collaborative-research-workspaces
+- lean-formalization
+- scientific-computing
+- community-data-governance
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-10-16'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        Terence Tao's dated announcement establishes the soft launch, hosted-model scope,
+        collaborative-account design, donated-compute basis and planned academic access;
+        the initiative website documents the advertised workspace.
+      zh-CN: >-
+        陶哲轩的当日公告确认试运行、初期模型范围、团队账户、捐赠算力及学术访问安排；倡议官网
+        展示了对应研究工作空间。
+
+sources:
+- id: tao-sair-open-math-os-2026
+  tier: S2
+  type: official_announcement
+  title: SAIR Open Math OS released
+  url: https://terrytao.wordpress.com/2026/10/16/sair-open-math-os-released/
+  primary: true
+  published_date: '2026-10-16'
+  accessed_at: '2026-10-20'
+
+- id: sair-open-math-model-platform
+  tier: S2
+  type: official_announcement
+  title: Open Math OS — collaborative math research and scientific computing
+  url: https://www.openmathmodel.org/
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-20'
+
+artifacts:
+- id: sair-open-math-os-site
+  kind: other
+  title: Open Math OS public platform landing page
+  url: https://www.openmathmodel.org/
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+  - evt-2026-agmai-responsible-release
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- sair
+- open-math-model
+- open-models
+- collaborative-mathematics
+- research-infrastructure
+- lean
+- scientific-computing
+- data-governance
+
+editorial:
+  created_at: '2026-10-20'
+  last_reviewed: '2026-10-20'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

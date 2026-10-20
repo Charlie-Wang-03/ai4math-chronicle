@@ -1,0 +1,182 @@
+schema_version: 1
+id: evt-2026-yau-math-ai-alliance
+slug: yau-math-ai-laboratory-alliance
+
+title:
+  en: Yau Laboratory Alliance for Mathematics and Artificial Intelligence launches in China
+  zh-CN: 丘成桐数学与人工智能实验室联盟正式成立
+
+dates:
+  event: '2026-10-11'
+  first_public_claim: '2026-10-11'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-20'
+  last_updated: '2026-10-20'
+
+event_types:
+- field_building
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The alliance is a field-building milestone because it creates a standing
+      multi-institutional AI4Math organization spanning eight major mathematical
+      institutes and roughly one thousand researchers, with explicit plans for
+      mathematics-specific foundation models, shared training resources, formal-mathematics
+      libraries, computing infrastructure and AI-assisted theorem proving and conjecture
+      discovery. Its significance is institutional scale and durable shared infrastructure,
+      not a single model or mathematical result.
+    zh-CN: >-
+      该联盟构成领域建构里程碑，因为它由八家主要数学研究机构共同建立，汇聚约千名科研人员，
+      并明确规划数学专用基础模型、共享训练资源、形式化数学库、算力平台以及 AI 辅助证明与
+      猜想发现。其历史意义来自跨机构规模和持续性共享基础设施，而不是某一个模型或数学成果。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    On 11 October 2026, the Yau Laboratory Alliance for Mathematics and Artificial
+    Intelligence was inaugurated at Tsinghua University. Initiated by Shing-Tung Yau,
+    it joins eight mathematics institutions and states that it will develop
+    mathematics-specific foundation models, build AI-assisted mathematical research
+    infrastructure, support formal proof and conjecture discovery, and share model
+    training, formal-library and compute resources across participating institutions.
+  zh-CN: >-
+    2026 年 10 月 11 日，丘成桐数学与人工智能实验室联盟在清华大学正式成立。联盟由丘成桐
+    发起，联合八家数学研究机构，计划自主研发数学科学专用基础模型，建设 AI 辅助数学研究
+    基础设施，推进形式化证明与猜想发现，并向成员单位共享模型训练、形式化数学库和算力资源。
+
+summary:
+  en: >-
+    Tsinghua and the alliance describe a network including Qiuzhen College and Yau
+    Mathematical Sciences Center at Tsinghua, BIMSA, Morningside Center of Mathematics,
+    Shanghai Institute of Mathematics and Interdisciplinary Sciences, the Shing-Tung Yau
+    Center at Southeast University, Hetao Institute of Mathematics and Interdisciplinary
+    Sciences, and CUHK's Zhizhen School. The alliance reports more than one thousand
+    scientists and plans laboratories across several Chinese cities as well as scholarly
+    publishing and preprint infrastructure.
+  zh-CN: >-
+    清华大学与联盟官网列出的成员包括清华大学求真书院、丘成桐数学科学中心、北京雁栖湖应用
+    数学研究院、中国科学院晨兴数学中心、上海数学与交叉学科研究院、东南大学丘成桐中心、
+    河套数学与交叉学科研究院以及香港中文大学致真交叉数学科学院。联盟称将汇聚千余名科学家，
+    并在多地建设实验室以及相关学术出版与预印本基础设施。
+
+why_it_matters:
+  en: >-
+    AI4Math development is increasingly constrained by access to models, formal libraries,
+    compute and concentrated mathematical expertise. This alliance institutionalizes those
+    resources at a scale larger than an individual laboratory and gives China a durable
+    organizational vehicle for mathematics-specific AI research.
+  zh-CN: >-
+    AI4Math 的推进越来越依赖模型、形式化库、算力和高水平数学人才的集中协作。该联盟把这些
+    资源制度化到超越单一实验室的规模，为中国数学专用 AI 研究建立了持续性的组织载体。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event records the creation of a human-led research alliance and infrastructure,
+      not a particular AI system performing mathematical work.
+    zh-CN: >-
+      本事件记录的是人类主导的科研联盟与基础设施成立，而不是某个 AI 系统完成具体数学工作。
+
+human_contribution:
+  description:
+    en: >-
+      Shing-Tung Yau and the participating institutions established the alliance,
+      governance structure, resource-sharing programme and research agenda.
+    zh-CN: >-
+      丘成桐及各参与机构负责建立联盟、治理结构、资源共享机制与研究议程。
+
+systems: []
+
+organizations:
+- yau-laboratory-alliance-for-mathematics-and-ai
+- tsinghua-university
+- bimsa
+
+people:
+- shing-tung-yau
+
+problems: []
+
+methods:
+- field-building
+- mathematics-foundation-models
+- formal-mathematics-infrastructure
+- shared-compute
+- ai-assisted-theorem-proving
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-10-11'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        Tsinghua's official report establishes the inauguration date, participating
+        institutions and stated programme; the alliance's own website independently
+        exposes its organization and mission.
+      zh-CN: >-
+        清华大学官方报道确认成立日期、参与机构与工作方向；联盟官网另行公开组织架构与使命。
+
+sources:
+- id: tsinghua-yau-alliance-launch-2026
+  tier: S2
+  type: official_announcement
+  title: 丘成桐数学与人工智能实验室联盟在清华大学成立
+  url: https://www.tsinghua.edu.cn/info/1177/128669.htm
+  primary: true
+  published_date: '2026-10-13'
+  accessed_at: '2026-10-20'
+
+- id: yau-math-ai-alliance-about
+  tier: S2
+  type: official_announcement
+  title: Yau Laboratory Alliance for Mathematics and Artificial Intelligence
+  url: https://yaumathai.bimsa.net/en/about
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-20'
+
+artifacts:
+- id: yau-math-ai-alliance-site
+  kind: other
+  title: Yau Laboratory Alliance public site
+  url: https://yaumathai.bimsa.net/en/about
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- field-building
+- research-alliance
+- mathematics-foundation-models
+- formal-mathematics
+- shared-compute
+- china
+
+editorial:
+  created_at: '2026-10-20'
+  last_reviewed: '2026-10-20'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

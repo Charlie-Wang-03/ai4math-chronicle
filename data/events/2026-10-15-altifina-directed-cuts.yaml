@@ -1,0 +1,178 @@
+schema_version: 1
+id: evt-2026-altifina-directed-cuts
+slug: altifina-lee-loh-sudakov-directed-cuts
+
+title:
+  en: Altifina's multi-model research framework discovers a proof of the Lee–Loh–Sudakov directed-cut conjecture
+  zh-CN: Altifina 多模型研究框架发现 Lee–Loh–Sudakov 有向割猜想的证明
+
+dates:
+  event: '2026-10-15'
+  first_public_claim: '2026-10-15'
+  paper_release: '2026-10-15'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-20'
+  last_updated: '2026-10-20'
+
+event_types:
+- discovery
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      This is a field milestone because a multi-model AI research framework first found
+      the key proof of a 2013 extremal-digraph conjecture and the human author then
+      revised and extended it to sharper exact and stability results. The authors report
+      Lean verification, although the certificate is not publicly inspectable in the
+      sources recovered by Chronicle. The event therefore records substantive AI-originated
+      mathematical discovery without overstating the verification surface.
+    zh-CN: >-
+      该成果构成领域级里程碑，因为多模型 AI 研究框架首先找到一个 2013 年极值有向图猜想的关键
+      证明，随后人类作者进一步修订和扩展，得到更强的精确界与稳定性结果。作者报告证明已经
+      Lean 验证，但 Chronicle 当前获取到的来源中没有可公开检查的 certificate，因此本记录
+      确认实质性的 AI 原创数学发现，同时不夸大其验证界面。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- hybrid
+
+claim:
+  en: >-
+    Frederic Folz and Mykhaylo Tyomkyn prove the Lee–Loh–Sudakov conjecture on
+    simultaneously large directed cuts for every fixed minimum outdegree d, establish
+    the sharp asymptotic coefficient and an exact sufficiently-large-m bound, and settle
+    Scott's d = 2 question for all m. Their paper states that the proof of the core
+    asymptotic theorem was first discovered by the Altifina research framework using
+    ChatGPT 6 Astra, GPT-6.1 Sol and Claude Opus 5.5.
+  zh-CN: >-
+    Frederic Folz 与 Mykhaylo Tyomkyn 证明了关于同时大有向割的 Lee–Loh–Sudakov 猜想，
+    对每个固定最小出度 d 得到 sharp asymptotic coefficient 和充分大 m 的精确界，并对
+    d = 2 的 Scott 问题给出所有 m 的完整结论。论文明确表示，核心渐近定理的证明最初由
+    Altifina research framework 使用 ChatGPT 6 Astra、GPT-6.1 Sol 与 Claude Opus 5.5 发现。
+
+summary:
+  en: >-
+    The authors state that the AI-discovered proof was revised and extended by Tyomkyn,
+    aided by ChatGPT 6 Astra, to obtain the paper's main exact and stability results.
+    They also state that the proofs were verified in Lean and that a certificate is
+    available on request. The presentation itself is human-written. Because the formal
+    certificate is not exposed as a public artifact in the current record, Chronicle
+    keeps formal assurance at none pending an inspectable release.
+  zh-CN: >-
+    作者说明，AI 首先发现的证明随后由 Tyomkyn 在 ChatGPT 6 Astra 协助下修订和扩展，形成论文
+    的主要精确结果与稳定性结论。论文还称证明已在 Lean 中验证，certificate 可按需索取；
+    正文表述由人类完成。由于当前记录中没有公开可检查的形式化 artifact，Chronicle 暂不赋予
+    formal assurance，等待可公开审计的发布。
+
+why_it_matters:
+  en: >-
+    The event demonstrates a research workflow in which several frontier models are
+    combined into a discovery framework that originates a publishable combinatorial proof,
+    while expert mathematicians subsequently refine the result and take authorship
+    responsibility. It provides a useful contrast with single-model autonomous runs and
+    ordinary conversational assistance.
+  zh-CN: >-
+    本事件展示了另一种研究模式：多个前沿模型被组合进 discovery framework，首先产生可发表的
+    组合数学证明，再由专家数学家完善结果并承担作者责任。它与单模型自主运行和普通对话式辅助
+    都形成清晰对照。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      The paper says Altifina first discovered the proof of the core asymptotic theorem;
+      the human author revised and extended it, with further AI assistance, to the final results.
+    zh-CN: >-
+      论文称 Altifina 首先发现核心渐近定理的证明；人类作者随后在进一步 AI 协助下修订并扩展
+      为最终结果。
+
+human_contribution:
+  description:
+    en: >-
+      Mykhaylo Tyomkyn revised, extended and mathematically integrated the AI-discovered
+      argument; Folz and Tyomkyn wrote and take responsibility for the final paper and presentation.
+    zh-CN: >-
+      Mykhaylo Tyomkyn 对 AI 发现的论证进行修订、扩展和数学整合；Folz 与 Tyomkyn 撰写并
+      对最终论文和表述负责。
+
+systems:
+- chatgpt-6-astra
+- gpt-6-1-sol
+- claude-opus-5-5
+- altifina-research-framework
+
+organizations:
+- altifina-discovery-lab
+- charles-university
+
+people:
+- frederic-folz
+- mykhaylo-tyomkyn
+
+problems:
+- lee-loh-sudakov-directed-cut-conjecture
+
+methods:
+- extremal-combinatorics
+- multi-model-research
+- probabilistic-method
+- stability-analysis
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2026-10-15'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The arXiv paper states the theorem, AI contribution and reported Lean
+        verification. It says a certificate is available on request, but Chronicle has
+        not located a public formal artifact or independent replay.
+      zh-CN: >-
+        arXiv 论文公开定理、AI 贡献和作者报告的 Lean 验证，并称 certificate 可按需索取；
+        Chronicle 尚未找到公开形式化 artifact 或独立重放。
+
+sources:
+- id: folz-tyomkyn-directed-cuts-2026
+  tier: S1
+  type: paper
+  title: Optimally large cuts in both directions
+  url: https://arxiv.org/abs/2610.21381
+  primary: true
+  published_date: '2026-10-15'
+  accessed_at: '2026-10-20'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- directed-cuts
+- combinatorics
+- altifina
+- multi-model
+- ai-generated-proof
+
+editorial:
+  created_at: '2026-10-20'
+  last_reviewed: '2026-10-20'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
