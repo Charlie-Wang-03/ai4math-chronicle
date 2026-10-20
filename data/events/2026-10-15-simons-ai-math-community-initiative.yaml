@@ -1,0 +1,176 @@
+schema_version: 1
+id: evt-2026-simons-ai-math-community-initiative
+slug: simons-anthropic-openai-math-community-initiative
+
+title:
+  en: Simons Foundation, Anthropic and OpenAI commit $15M to mathematics-community AI initiatives
+  zh-CN: Simons Foundation、Anthropic 与 OpenAI 投入 1500 万美元支持数学共同体应对 AI 变革
+
+dates:
+  event: '2026-10-15'
+  first_public_claim: '2026-10-15'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-20'
+  last_updated: '2026-10-20'
+
+event_types:
+- field_building
+- infrastructure
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The initiative is a field-building milestone because it converts the 2026 debate
+      around AI-generated mathematics into substantial community-directed funding and
+      access to frontier AI resources. The Simons Foundation will manage open calls and
+      award combined funding and resources from itself, Anthropic and OpenAI for
+      workshops and initiatives on evaluating AI-assisted results, learning tools,
+      sharing perspectives and shaping collective standards.
+    zh-CN: >-
+      该计划构成领域建构里程碑，因为它把 2026 年围绕 AI 生成数学的治理讨论转化为由数学
+      共同体主导的大规模资金和前沿 AI 资源支持。Simons Foundation 将通过公开征集管理并
+      分配自身、Anthropic 与 OpenAI 合计 1500 万美元的资金与资源，用于评估 AI 辅助成果、
+      学习工具、交流观点以及形成共同体规范的研讨会和项目。
+
+mathematical_novelty:
+  type: not_applicable
+
+interfaces:
+- not_applicable
+
+claim:
+  en: >-
+    On 15 October 2026, the Simons Foundation announced a partnership with Anthropic
+    and OpenAI committing $15 million in combined funding and resources to help the
+    mathematics community adapt to rapidly expanding AI capabilities. The foundation
+    will manage and award the support through open calls, including activities that
+    evaluate recent AI-assisted results, teach researchers to use emerging tools and
+    develop community standards. The AI companies will also provide model and compute access.
+  zh-CN: >-
+    2026 年 10 月 15 日，Simons Foundation 宣布与 Anthropic、OpenAI 合作，合计投入
+    1500 万美元资金与资源，帮助数学共同体适应快速发展的 AI 能力。基金会将通过公开征集
+    管理和分配支持，覆盖评估近期 AI 辅助成果、帮助研究者学习新工具以及形成共同体规范等
+    活动；AI 企业还将提供模型与计算资源访问。
+
+summary:
+  en: >-
+    The programme places grantmaking authority with the Simons Foundation rather than
+    the participating AI laboratories. Its stated purpose includes independent
+    mathematical evaluation and community adaptation, making it a downstream
+    institutional response to the surge of frontier AI-generated research results in 2026.
+  zh-CN: >-
+    该计划把资助管理权放在 Simons Foundation，而不是参与合作的 AI 实验室手中。其目标
+    明确包括独立数学评估与共同体适应，因此可视为 2026 年前沿 AI 大规模产生研究结果后出现的
+    后续制度回应。
+
+why_it_matters:
+  en: >-
+    Responsible release requires more than repositories and model disclosures: human
+    mathematicians need time, compute, workshops and independent institutions to evaluate
+    and assimilate AI-generated research. This programme supplies a concrete funding
+    mechanism for that missing layer of the AI4Math ecosystem.
+  zh-CN: >-
+    负责任发布并不止需要代码仓库和模型披露；数学家还需要时间、算力、研讨机制和独立机构来
+    评估并吸收 AI 生成研究。该计划为 AI4Math 生态中这一此前薄弱的环节提供了具体资助机制。
+
+ai_role:
+  level: not_applicable
+  description:
+    en: >-
+      This Event concerns funding, access and research-community infrastructure rather
+      than an AI system performing mathematics.
+    zh-CN: >-
+      本事件涉及资助、模型访问和数学共同体基础设施，而不是 AI 系统执行具体数学工作。
+
+human_contribution:
+  description:
+    en: >-
+      The Simons Foundation, Anthropic and OpenAI established the funding partnership;
+      the Simons Foundation is responsible for managing open calls and awards.
+    zh-CN: >-
+      Simons Foundation、Anthropic 与 OpenAI 建立合作资助机制，其中 Simons Foundation
+      负责公开征集与资金分配。
+
+systems: []
+
+organizations:
+- simons-foundation
+- anthropic
+- openai
+
+people: []
+
+problems: []
+
+methods:
+- community-funding
+- independent-evaluation
+- field-building
+- model-access
+- compute-access
+
+verification:
+  evidence_level: E2
+  status: claimed
+  formal_assurance: none
+  history:
+  - date: '2026-10-15'
+    status: claimed
+    evidence_level: E2
+    note:
+      en: >-
+        The Simons Foundation's official announcement establishes the $15 million
+        combined commitment, its grant-management role and the intended categories of support.
+      zh-CN: >-
+        Simons Foundation 官方公告确认合计 1500 万美元投入、基金会的资助管理角色及支持范围。
+
+sources:
+- id: simons-ai-math-initiative-2026
+  tier: S2
+  type: official_announcement
+  title: Simons Foundation Launches $15M Effort To Help Mathematicians Navigate AI Era
+  url: https://www.simonsfoundation.org/news/simons-foundation-launches-15m-effort-to-help-mathematicians-navigate-ai-era/
+  primary: true
+  published_date: '2026-10-15'
+  accessed_at: '2026-10-20'
+
+- id: openai-simons-math-support-2026
+  tier: S2
+  type: official_announcement
+  title: Sharing AI progress in mathematics
+  url: https://openai.com/index/sharing-ai-progress-in-mathematics/
+  primary: false
+  published_date: '2026-10-06'
+  accessed_at: '2026-10-20'
+
+artifacts: []
+
+relationships:
+  predecessors:
+  - evt-2026-openai-math-release
+  - evt-2026-agmai-responsible-release
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- field-building
+- simons-foundation
+- community-review
+- research-funding
+- model-access
+- responsible-release
+
+editorial:
+  created_at: '2026-10-20'
+  last_reviewed: '2026-10-20'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
