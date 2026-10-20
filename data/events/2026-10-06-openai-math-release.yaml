@@ -13,7 +13,7 @@ dates:
   artifact_release: '2026-10-06'
   independently_verified: null
   added_to_chronicle: '2026-10-07'
-  last_updated: '2026-10-07'
+  last_updated: '2026-10-20'
 
 event_types:
 - discovery
@@ -51,15 +51,15 @@ claim:
   en: >-
     On 6 October 2026, OpenAI released a public collection of mathematical manuscripts
     and proof artifacts produced by an unreleased internal model. The repository reports
-    722 manuscripts organized into 372 result families, selected from roughly 4,000
-    posed research problems. OpenAI says that the vast majority were produced with a
+    722 manuscripts organized into 372 result families at initial release, selected
+    from roughly 4,000 posed research problems. OpenAI says that the vast majority were produced with a
     common procedure averaging about three hours of ChatGPT Pro thinking compute per
     result. The collection includes claimed resolutions and advances across multiple
     areas of mathematics and theoretical computer science, with many but not all
     manuscripts accompanied by Lean formalizations.
   zh-CN: >-
     2026 年 10 月 6 日，OpenAI 公开发布由未公开内部模型产生的数学手稿与证明产物集合。
-    仓库记录共有 722 篇手稿、372 个成果族，来源于约 4,000 个被提出的研究问题。
+    初始发布共有 722 篇手稿、372 个成果族，来源于约 4,000 个被提出的研究问题。
     OpenAI 表示绝大多数结果使用统一流程产生，平均每项结果消耗约三小时 ChatGPT Pro
     thinking compute。集合覆盖数学与理论计算机科学多个方向中的开放问题解决或推进，
     其中许多但并非全部手稿配有 Lean 形式化。
@@ -73,13 +73,20 @@ summary:
     consultation with the independent Advisory Group on Mathematics and Artificial
     Intelligence. AGMAI publicly stated that its advice does not endorse the mathematics
     or OpenAI's process and characterized the release as the beginning of broader human
-    understanding and community assessment.
+    understanding and community assessment. On 7 October, OpenAI withdrew three
+    manuscripts after finding a sign error in one argument, repaired fourteen other
+    manuscripts and updated related citations. The current catalogue therefore contains
+    719 manuscripts in the same 372 families, and OpenAI reports that roughly 42% of
+    top-line results now have formalizations.
   zh-CN: >-
     公开仓库包含总览、手稿索引、PDF 与源码、Lean 库与形式化目录、十个精选 reasoning
     summaries，以及保存公开版本历史的承诺。OpenAI 明确提醒部分未形式化结果可能存在问题，
     并表示后续修订将保留历史版本。此次发布此前与独立的 Advisory Group on Mathematics
     and Artificial Intelligence 进行了沟通；AGMAI 随后公开声明，其建议不构成对数学结果
-    或 OpenAI 流程的背书，并把本次发布视为更广泛人类理解与共同体评估的开始。
+    或 OpenAI 流程的背书，并把本次发布视为更广泛人类理解与共同体评估的开始。10 月 7 日，
+    OpenAI 在发现一处论证中的符号错误后撤回 3 篇手稿，修复另外 14 篇的证明、陈述或假设，
+    并更新相关引用；因此当前目录为同样 372 个成果族中的 719 篇手稿，OpenAI 报告约 42%
+    的 top-line results 已有形式化。
 
 why_it_matters:
   en: >-
@@ -170,6 +177,22 @@ verification:
       zh-CN: >-
         AGMAI 独立确认了其咨询角色以及公开审查的重要性，同时明确不对数学主张背书，也不认证
         OpenAI 已完全遵守其建议。因此 Chronicle 将整体发布的历史意义与逐项数学验证严格分离。
+  - date: '2026-10-07'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        OpenAI's public history records three withdrawals caused by a sign error in one
+        manuscript and two dependent papers, fourteen additional manuscript repairs and
+        thirteen citation-only updates. The catalogue consequently moved from 722 to 719
+        manuscripts while remaining at 372 result families. This is material evidence
+        that the release is actively being corrected, but it does not by itself justify
+        the hard-gated current status `corrected`; the Event remains under_verification.
+      zh-CN: >-
+        OpenAI 的公开 history 记录：一篇手稿中的符号错误导致该文及两篇依赖论文共 3 篇撤回，
+        另有 14 篇进行了证明、陈述或假设修复，13 篇只更新关联引用。目录因此从 722 篇降为
+        719 篇，但仍为 372 个成果族。这说明该成果集正在发生实质修订，但并不足以把 Event 的
+        当前状态越过人工门槛改为 `corrected`；当前继续保持 under_verification。
 
 sources:
 - id: openai-sharing-ai-progress-math-2026
@@ -199,6 +222,15 @@ sources:
   published_date: '2026-10-06'
   accessed_at: '2026-10-07'
 
+- id: openai-math-history-2026
+  tier: S1
+  type: repository
+  title: OpenAI mathematics collection history
+  url: https://github.com/openai/math/blob/main/history.md
+  primary: true
+  published_date: '2026-10-07'
+  accessed_at: '2026-10-20'
+
 - id: agmai-responsible-release-2026
   tier: S2
   type: official_announcement
@@ -217,7 +249,8 @@ artifacts:
 relationships:
   predecessors:
   - evt-2026-agmai-responsible-release
-  successors: []
+  successors:
+  - evt-2026-simons-ai-math-community-initiative
   related:
   - evt-2026-openai-prime-gaps-186
   - evt-2026-openai-ten-advances
@@ -237,7 +270,7 @@ tags:
 
 editorial:
   created_at: '2026-10-07'
-  last_reviewed: '2026-10-07'
+  last_reviewed: '2026-10-20'
   reviewers:
   - Charlie-Wang-03
 
