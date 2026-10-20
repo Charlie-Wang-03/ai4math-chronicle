@@ -1,0 +1,206 @@
+schema_version: 1
+id: evt-2026-axiom-dedekind-zeta-zero-free
+slug: axiom-dedekind-zeta-zero-free-31-32
+
+title:
+  en: Cureton and Thorner, with AxiomProver, establish a uniform Dedekind-zeta zero-free half-plane
+  zh-CN: Cureton 与 Thorner 在 AxiomProver 协助下建立统一 Dedekind ζ 零点空区
+
+dates:
+  event: '2026-10-12'
+  first_public_claim: '2026-10-12'
+  paper_release: '2026-10-12'
+  artifact_release: '2026-10-12'
+  independently_verified: null
+  added_to_chronicle: '2026-10-20'
+  last_updated: '2026-10-20'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The result is a field milestone because it extends the emerging fixed-half-plane
+      zero-free programme from restricted L-function families to the Dedekind zeta
+      function of every number field, and it is accompanied by a public Lean proof.
+      Named mathematicians directed the research and made the mathematical judgments,
+      while AxiomProver generated the proofs and formalization. The result is a major
+      advance in analytic/algebraic number theory but not a proof of the Riemann or
+      generalized Riemann hypotheses.
+    zh-CN: >-
+      该成果构成领域级里程碑，因为它把新近出现的固定半平面零点空区路线从受限 L-function
+      家族推广到任意数域的 Dedekind ζ 函数，并配有公开 Lean 证明。具名数学家负责研究
+      方向和数学判断，AxiomProver 生成证明与形式化。它是解析/代数数论中的重要推进，但并非
+      Riemann 猜想或广义 Riemann 猜想的证明。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- hybrid
+
+claim:
+  en: >-
+    Dean Cureton and Jesse Thorner report that for every number field K, the Dedekind
+    zeta function ζ_K(s) has no zeros in Re(s) > 31/32, apart from the pole at s = 1.
+    They also obtain the same zero-free half-plane for finite-order Hecke L-functions
+    wherever holomorphic. Axiom Math publishes a Lean formalization of Theorem 1.1 and
+    Corollary 1.2 using only Lean's standard axioms.
+  zh-CN: >-
+    Dean Cureton 与 Jesse Thorner 报告：对任意数域 K，Dedekind ζ 函数 ζ_K(s) 在
+    Re(s) > 31/32 的半平面内没有零点（s = 1 的极点除外）；有限阶 Hecke L-functions
+    在其全纯区域也满足同样的零点空区。Axiom Math 公开了 Theorem 1.1 与 Corollary 1.2
+    的 Lean 形式化，仅依赖 Lean 的标准公理。
+
+summary:
+  en: >-
+    The manuscript follows a strategy developed in recent OpenAI work but extends the
+    scope to arbitrary number fields. Axiom Math states that Cureton and Thorner directed
+    the research and made mathematical judgments, while AxiomProver generated the proofs
+    and Lean formalization. The public challenge/solution project has zero project
+    sorries outside the intentional challenge placeholders and reports only propext,
+    Quot.sound and Classical.choice in the main declarations. A subsequent paper by
+    Frei, Sofos and Widmer already cites the Cureton–Thorner result in deriving
+    unconditional applications to class groups and small generators.
+  zh-CN: >-
+    论文沿用近期 OpenAI 工作中的策略，但把适用范围推广到任意数域。Axiom Math 明确说明
+    Cureton 与 Thorner 负责研究方向与数学判断，AxiomProver 生成证明和 Lean 形式化。
+    公开 Challenge/Solution 工程在有意的 challenge 占位之外没有项目 sorry，主要定理
+    只报告 propext、Quot.sound 与 Classical.choice。随后 Frei、Sofos、Widmer 的论文
+    已引用该结果，并用于推出关于类群和小生成元的无条件应用。
+
+why_it_matters:
+  en: >-
+    This is an unusually concrete example of an AI system generating both a research
+    proof and its formalization under expert mathematical direction, with the result
+    immediately feeding into further human mathematical work. It also illustrates the
+    rapid reuse of AI-generated mathematics through open formal libraries.
+  zh-CN: >-
+    这是 AI 系统在专家数学家指导下同时生成研究证明和形式化的清晰案例，而且成果很快被后续
+    人类数学工作继续使用，也展示了开放形式化库如何加速 AI 生成数学的再利用。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Cureton and Thorner directed the research and made the mathematical judgments;
+      AxiomProver generated the proofs and Lean formalization under their direction.
+    zh-CN: >-
+      Cureton 与 Thorner 负责研究指导与数学判断，AxiomProver 在其指导下生成证明与 Lean 形式化。
+
+human_contribution:
+  description:
+    en: >-
+      Dean Cureton and Jesse Thorner selected and directed the mathematical programme,
+      evaluated the arguments, connected the proof to the literature and are responsible
+      for the mathematical judgments in the manuscript.
+    zh-CN: >-
+      Dean Cureton 与 Jesse Thorner 负责选定并指导数学研究路线、评价论证、连接既有文献，
+      并对论文中的数学判断负责。
+
+systems:
+- axiomprover
+- lean
+- comparator
+
+organizations:
+- axiom-math
+
+people:
+- dean-cureton
+- jesse-thorner
+
+problems:
+- dedekind-zeta-zero-free-region
+
+methods:
+- analytic-number-theory
+- metaplectic-forms
+- zero-free-regions
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-10-12'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The Hexagon manuscript and Axiom Math repository expose the claim, contribution
+        disclosure and Lean challenge/solution artifact. The project reports a full
+        build, Comparator configuration and only the three standard Lean axioms.
+        Chronicle has not independently replayed the entire dependency stack.
+      zh-CN: >-
+        Hexagon 论文与 Axiom Math 仓库公开了数学主张、人机贡献说明以及 Lean
+        Challenge/Solution artifact。项目报告全量构建、Comparator 配置和仅使用三个标准
+        Lean 公理；Chronicle 本轮未独立重放完整依赖栈。
+
+sources:
+- id: cureton-thorner-dedekind-zeta-2026
+  tier: S1
+  type: paper
+  title: A quasi-Riemann hypothesis for Dedekind zeta functions
+  url: https://hexagonmath.org/2610.00200v2
+  primary: true
+  published_date: '2026-10-12'
+  accessed_at: '2026-10-20'
+
+- id: axiom-dedekind-zeta-formalization
+  tier: S1
+  type: formal_artifact
+  title: Dedekind Zeta Zero-Free Region
+  url: https://github.com/AxiomMath/DedekindZetaZeroFree
+  primary: true
+  published_date: '2026-10-12'
+  accessed_at: '2026-10-20'
+
+- id: frei-sofos-widmer-applications-2026
+  tier: S1
+  type: paper
+  title: Some applications of the quasi-Riemann hypothesis to class groups and small generators of number fields
+  url: https://arxiv.org/abs/2610.18491
+  primary: false
+  published_date: '2026-10-13'
+  accessed_at: '2026-10-20'
+
+artifacts:
+- id: axiom-dedekind-zeta-lean
+  kind: proof
+  title: Lean formalization of the Dedekind-zeta zero-free region
+  url: https://github.com/AxiomMath/DedekindZetaZeroFree
+
+relationships:
+  predecessors:
+  - evt-2026-openai-math-release
+  successors: []
+  related:
+  - evt-2026-openai-prime-gaps-186
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- dedekind-zeta
+- hecke-l-functions
+- zero-free-region
+- axiomprover
+- lean
+- analytic-number-theory
+
+editorial:
+  created_at: '2026-10-20'
+  last_reviewed: '2026-10-20'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
