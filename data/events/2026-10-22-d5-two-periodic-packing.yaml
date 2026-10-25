@@ -3,8 +3,8 @@ id: evt-2026-d5-two-periodic-packing
 slug: d5-two-periodic-packing
 
 title:
-  en: Claude-assisted work proves and classifies the densest two-lattice-translate packings in five dimensions
-  zh-CN: Claude 辅助工作证明并分类五维中最密的双格平移球堆积
+  en: Claude-assisted work claims a proof and classification of the densest two-lattice-translate packings in five dimensions
+  zh-CN: Claude 辅助工作声称证明并分类五维中最密的双格平移球堆积
 
 dates:
   event: '2026-10-22'
@@ -45,15 +45,17 @@ interfaces:
 
 claim:
   en: >-
-    Deep Bhattacharjee and Ushashi Bhattacharya prove that no packing of unit balls
-    in R^5 whose centers form two translates of a lattice is denser than the D5 lattice
-    packing, and classify the equality cases up to congruence as the D5 lattice packing,
+    Deep Bhattacharjee and Ushashi Bhattacharya report a proof that no packing of unit
+    balls in R^5 whose centers form two translates of a lattice is denser than the D5
+    lattice packing, and report a classification of the equality cases up to congruence
+    as the D5 lattice packing,
     Leech's layered two-periodic packing and the packing with Szöllősi's Q5 kissing
     configuration. The proof combines hand arguments, exact polyhedral enumeration,
     multiple independent certificate checkers and a Lean-checked certificate surface.
   zh-CN: >-
-    Deep Bhattacharjee 与 Ushashi Bhattacharya 证明：在 R^5 中，中心由一个格及其一个
-    平移组成的单位球堆积密度不超过 D5 格堆积，并把等号情形按 congruence 分类为 D5 格堆积、
+    Deep Bhattacharjee 与 Ushashi Bhattacharya 报告了一项证明，声称在 R^5 中，中心由
+    一个格及其一个平移组成的单位球堆积密度不超过 D5 格堆积，并报告把等号情形按
+    congruence 分类为 D5 格堆积、
     Leech 的 layered two-periodic packing 以及具有 Szöllősi Q5 kissing configuration
     的堆积。证明结合手工论证、精确多面体枚举、多套独立 certificate checker 与 Lean 检查界面。
 
