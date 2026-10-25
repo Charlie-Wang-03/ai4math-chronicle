@@ -1,0 +1,200 @@
+schema_version: 1
+id: evt-2026-autoresearch-attention-head-complexity
+slug: autoresearch-attention-head-complexity
+
+title:
+  en: GPT-5.6 Sol autonomously derives and Lean-formalizes a theory of attention-head complexity
+  zh-CN: GPT-5.6 Sol 自主推导并用 Lean 形式化 Attention Head Complexity 理论
+
+dates:
+  event: '2026-10-18'
+  first_public_claim: '2026-10-18'
+  paper_release: '2026-10-18'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-25'
+  last_updated: '2026-10-25'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      This work is a field milestone because a single frontier-model research run
+      autonomously developed several nontrivial theorems about transformer expressivity,
+      including an exact linear-fractional normal form, a threshold-degree lower bound
+      and an exact characterization for symmetric Boolean functions, and the resulting
+      theory was subsequently formalized in Lean. The result is narrow in architectural
+      scope but provides an unusually transparent example of autonomous theorem discovery
+      about modern AI itself.
+    zh-CN: >-
+      该工作构成领域级里程碑，因为单个前沿模型的长程研究运行自主发展出多个关于 Transformer
+      表达能力的非平凡定理，包括精确的线性分式 normal form、threshold-degree 下界和对称
+      Boolean 函数的精确刻画，随后又将所得理论形式化到 Lean。其模型范围较窄，但它是“AI
+      自主发现关于现代 AI 本身的数学定理”的高度透明案例。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    Viswanathan, Dimitrov, Rocca and Sirikonda define the head complexity H*(f) of a
+    Boolean function in a one-layer attention-only transformer. They prove an exact
+    linear-fractional normal form, the lower bound deg±(f) <= H*(f), exact values
+    including H*(parity_n)=n, and a symmetric-function characterization. The paper
+    reports that a single GPT-5.6 Sol agent derived the main Section 2 theorems in an
+    approximately 9.5-hour one-shot run without web access or human intervention after
+    the initial goal; the main results and an explicit strict-separation example are
+    machine-checked in Lean.
+  zh-CN: >-
+    Viswanathan、Dimitrov、Rocca 与 Sirikonda 定义单层 attention-only Transformer
+    中 Boolean 函数的 head complexity H*(f)，证明精确线性分式 normal form、
+    deg±(f) <= H*(f) 下界、包括 H*(parity_n)=n 在内的精确值以及对称函数刻画。论文报告称，
+    一个 GPT-5.6 Sol Agent 在约 9.5 小时、无网络且初始目标给出后无人类介入的 one-shot
+    运行中推导出 Section 2 的主要定理；主要结果及一个显式 strict-separation 例子已由 Lean 检查。
+
+summary:
+  en: >-
+    Human researchers invested substantial effort in specifying the mathematical model
+    and acceptance criteria, but the theorem-generation run was then autonomous. The
+    paper distinguishes this core run from a later author-initiated counterexample search.
+    The public repository formalizes twelve foundational results plus the separation
+    counterexample, with no sorry/admit and only Lean's three standard axioms reported.
+    Concurrent work establishes overlapping symmetric-function results in a different model.
+  zh-CN: >-
+    人类研究者投入大量工作精确定义数学模型与验收条件，此后核心定理生成运行保持自主。论文把该
+    核心运行与后来由作者另行发起的 counterexample 搜索明确区分。公开仓库形式化了 12 个基础
+    结果和一个 separation counterexample，报告无 sorry/admit，且只使用 Lean 三个标准公理。
+    同期独立工作在不同模型下得到部分重叠的对称函数结论。
+
+why_it_matters:
+  en: >-
+    The project exposes prompts, traces, theorem ledgers and formal proofs rather than
+    only a polished final paper. It therefore provides unusually inspectable evidence for
+    a long-horizon autonomous mathematical research workflow and connects AI4Math
+    directly to the theoretical analysis of transformer architectures.
+  zh-CN: >-
+    该项目不仅发布最终论文，还公开 prompts、研究 traces、定理 ledger 与形式证明，因此为长程
+    自主数学研究流程提供了罕见的可审计证据，并把 AI4Math 直接连接到 Transformer 架构的理论分析。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      GPT-5.6 Sol generated the main theorem statements, derivations and constructions
+      during a one-shot research run and later generated the Lean formalizations. A
+      separate author-initiated search produced the strict-separation example.
+    zh-CN: >-
+      GPT-5.6 Sol 在 one-shot 研究运行中生成主要定理陈述、推导和构造，并在后续生成 Lean
+      形式化；strict-separation 例子来自另一次由作者发起的搜索。
+
+human_contribution:
+  description:
+    en: >-
+      The human authors chose the high-level research question, precisely specified the
+      attention model and acceptance criteria, reviewed the generated mathematics,
+      refined Lean code for readability and reuse, and curated the final paper.
+    zh-CN: >-
+      人类作者选择高层研究问题，精确定义 attention 模型和验收标准，审查生成的数学内容，
+      为可读性与复用性整理 Lean 代码，并策划最终论文。
+
+systems:
+- gpt-5-6-sol
+- codex-desktop
+- lean
+
+organizations: []
+
+people:
+- karthik-viswanathan
+- plamen-dimitrov
+- stefano-rocca
+- sarayu-sirikonda
+
+problems:
+- attention-head-complexity
+
+methods:
+- autonomous-theorem-discovery
+- threshold-degree
+- boolean-function-complexity
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-10-18'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The arXiv paper documents the autonomous run and the public repository exposes
+        the formalization. The repository reports twelve formalized theorems plus one
+        counterexample, no sorry/admit and only standard Lean axioms. Chronicle has not
+        independently replayed the project.
+      zh-CN: >-
+        arXiv 论文记录自主运行，公开仓库提供形式化。仓库报告 12 个已形式化定理加一个反例，
+        无 sorry/admit 且只使用标准 Lean 公理；Chronicle 本轮未独立重放该工程。
+
+sources:
+- id: autoresearch-attention-paper-2026
+  tier: S1
+  type: paper
+  title: Formally Verified Autoresearch for Analyzing the Expressivity of Multi-Head Attention
+  url: https://arxiv.org/abs/2610.25341
+  primary: true
+  published_date: '2026-10-18'
+  accessed_at: '2026-10-25'
+
+- id: autoresearch-attention-repository
+  tier: S1
+  type: formal_artifact
+  title: How many attention heads does it take to compute a Boolean function?
+  url: https://github.com/VerifiedMechanisms/automlr
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-25'
+
+artifacts:
+- id: attention-head-complexity-lean
+  kind: proof
+  title: Lean formalization of attention-head complexity results
+  url: https://github.com/VerifiedMechanisms/automlr/tree/main/formalization
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- transformer
+- attention
+- autonomous-research
+- gpt-5-6-sol
+- lean
+- mechanistic-interpretability
+- boolean-complexity
+
+editorial:
+  created_at: '2026-10-25'
+  last_reviewed: '2026-10-25'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
