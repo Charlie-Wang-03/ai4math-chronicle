@@ -297,6 +297,7 @@ relationships:
   successors:
   - evt-2026-simons-ai-math-community-initiative
   related:
+  - evt-2026-openai-quasi-riemann
   - evt-2026-openai-prime-gaps-186
   - evt-2026-openai-ten-advances
 
