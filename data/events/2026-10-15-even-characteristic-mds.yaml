@@ -1,0 +1,229 @@
+schema_version: 1
+id: evt-2026-even-characteristic-mds
+slug: even-characteristic-mds-conjecture
+
+title:
+  en: Two AI-assisted works claim a resolution of the linear MDS conjecture in even characteristic
+  zh-CN: 两项 AI 辅助工作分别声称解决偶特征下的线性 MDS 猜想
+
+dates:
+  event: '2026-10-15'
+  first_public_claim: '2026-10-15'
+  paper_release: '2026-10-20'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-25'
+  last_updated: '2026-10-25'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The even-characteristic MDS result is a field milestone because it addresses the
+      full remaining characteristic-two range of a coding-theory and finite-geometry
+      conjecture originating in Segre's 1955 arc problem. Pranava Kumar first registered
+      a complete Lean proof, and five days later Bocong Chen and Jing Huang released a
+      separate paper claiming the same theorem through a distinct local construction.
+      The odd-characteristic conjecture remains open in general, and neither route has
+      yet received conventional specialist peer review.
+    zh-CN: >-
+      偶特征 MDS 结果构成领域级里程碑，因为它处理了源自 Segre 1955 年有限射影空间弧问题的
+      编码理论/有限几何猜想在 characteristic two 下的完整剩余范围。Pranava Kumar 先注册
+      完整 Lean 证明，五天后 Bocong Chen 与 Jing Huang 又发布一篇使用不同局部构造、声称
+      得到同一主定理的论文。一般奇特征情形仍未解决，两条路线目前也尚未经过传统专业同行评审。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- symbolic
+
+claim:
+  en: >-
+    The two works claim that every nontrivial linear [n,k] MDS code over a finite
+    field of characteristic two has n <= q+1, except for k=3 and k=q-1 where
+    n <= q+2; classical constructions attain the stated bounds. Kumar's registered
+    Lean theorem states the exact maximum for every finite field of even order and
+    was checked by Lean, Comparator, NanoDa and con-ron. Chen and Huang independently
+    released a conventional proof manuscript on 20 October and explicitly compare
+    their argument with Kumar's.
+  zh-CN: >-
+    两项工作均声称：对 characteristic two 有限域上的任意非平凡线性 [n,k] MDS code，
+    除 k=3 或 k=q-1 时允许 n<=q+2 外，均有 n<=q+1，且经典构造达到这些界。
+    Kumar 注册的 Lean 定理对任意偶数阶有限域陈述精确最大长度，并通过 Lean、Comparator、
+    NanoDa 与 con-ron 检查。Chen 与 Huang 于 10 月 20 日独立发布常规数学证明，并在论文中
+    明确比较了其论证与 Kumar 的工作。
+
+summary:
+  en: >-
+    Kumar states that he devised the mathematical argument while Claude assisted with
+    translating and later packaging the Lean development. Chen and Huang state that
+    ChatGPT assisted with proof-strategy exploration, intermediate calculations and
+    editing, while they take responsibility for all mathematical arguments. The two
+    proofs share a Frobenius/colon-ideal/Gorenstein-unimodality mechanism but use
+    different local constructions.
+  zh-CN: >-
+    Kumar 表示数学论证由其本人提出，Claude 协助转写并后续整理 Lean 开发；Chen 与 Huang
+    则说明 ChatGPT 用于探索证明策略、检查中间计算和编辑，但全部数学论证由作者负责。两套
+    证明共享 Frobenius obstruction、colon ideal 与 Gorenstein unimodality 等核心机制，
+    但局部构造不同。
+
+why_it_matters:
+  en: >-
+    A full characteristic-two result would close a major classical branch of the MDS
+    conjecture and is unusually well suited to machine audit because one route arrived
+    with a fixed, multi-kernel-checked formal theorem. The near-concurrent second proof
+    materially strengthens the historical record while cautioning against a simplistic
+    single-project priority narrative.
+  zh-CN: >-
+    若 characteristic two 的完整结果成立，它将关闭 MDS 猜想的一条重要经典分支；其中一条
+    路线从发布之初就附带固定版本、经多内核检查的形式定理，因而特别适合机器审计。近乎同期
+    出现的第二套证明强化了历史记录，同时提醒 Chronicle 不应把优先权简化为单一项目叙事。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      In Kumar's route, the human author reports devising the mathematics while Claude
+      assisted formalization and repository preparation. In Chen–Huang, ChatGPT assisted
+      strategy exploration, calculations and editing, with the human authors responsible
+      for the mathematics.
+    zh-CN: >-
+      Kumar 路线中，人类作者称数学论证由其提出，Claude 协助形式化与仓库整理；Chen–Huang
+      路线中，ChatGPT 协助策略探索、计算和编辑，数学内容由人类作者负责。
+
+human_contribution:
+  description:
+    en: >-
+      Pranava Kumar devised and maintains the formal proof route; Bocong Chen and Jing
+      Huang developed the separate paper proof and take responsibility for its arguments
+      and exposition.
+    zh-CN: >-
+      Pranava Kumar 提出并维护形式证明路线；Bocong Chen 与 Jing Huang 发展另一套论文证明，
+      并对其论证和表述负责。
+
+systems:
+- claude
+- claude-opus-5-5
+- chatgpt
+- lean
+- comparator
+- nanoda
+- con-ron
+
+organizations:
+- palomar-registry
+- south-china-university-of-technology
+- guangzhou-university
+
+people:
+- pranava-kumar
+- bocong-chen
+- jing-huang
+
+problems:
+- linear-mds-conjecture
+
+methods:
+- finite-geometry
+- coding-theory
+- frobenius-obstruction
+- colon-ideals
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: partially_verified
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-10-15'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        Palomar registered Kumar's fixed formal statement and proof and reports successful
+        checks by Comparator, Lean, NanoDa and con-ron. Palomar explicitly notes that
+        this is mechanical assurance rather than human peer review or a novelty certificate.
+      zh-CN: >-
+        Palomar 注册 Kumar 的固定形式陈述与证明，并报告 Comparator、Lean、NanoDa 与
+        con-ron 均检查通过；Palomar 明确说明这属于机械保证，而不是人类同行评审或新颖性认证。
+  - date: '2026-10-20'
+    status: partially_verified
+    evidence_level: E3
+    note:
+      en: >-
+        Chen and Huang released a separate proof claiming the same full even-characteristic
+        theorem, cite Kumar as an independent claim and explain substantive differences
+        between the constructions. This provides meaningful cross-route corroboration,
+        while conventional specialist review remains pending.
+      zh-CN: >-
+        Chen 与 Huang 发布独立论文证明，声称得到同一完整偶特征定理，并引用 Kumar 为独立
+        claim，同时解释两种构造的实质差异。这提供了有意义的跨路线 corroboration，但传统
+        专业审查仍待进行。
+
+sources:
+- id: kumar-even-mds-palomar-2026
+  tier: S3
+  type: formal_artifact
+  title: The MDS conjecture over finite fields of even order
+  url: https://palomar-registry.org/entry?id=PALOMAR-2026-10-15-000014&version=1
+  primary: true
+  published_date: '2026-10-15'
+  accessed_at: '2026-10-25'
+
+- id: kumar-even-mds-repository
+  tier: S1
+  type: formal_artifact
+  title: The MDS conjecture over finite fields of even order
+  url: https://github.com/PranavaKCode/EvenOrderMDS
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-25'
+
+- id: chen-huang-even-mds-2026
+  tier: S1
+  type: paper
+  title: On the MDS conjecture in even characteristic
+  url: https://arxiv.org/abs/2610.28208
+  primary: true
+  published_date: '2026-10-20'
+  accessed_at: '2026-10-25'
+
+artifacts:
+- id: even-order-mds-lean
+  kind: proof
+  title: Kumar's Lean proof of the even-order MDS conjecture
+  url: https://github.com/PranavaKCode/EvenOrderMDS
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- mds-conjecture
+- coding-theory
+- finite-geometry
+- lean
+- claude
+- chatgpt
+- formal-verification
+
+editorial:
+  created_at: '2026-10-25'
+  last_reviewed: '2026-10-25'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

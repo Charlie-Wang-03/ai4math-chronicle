@@ -1,0 +1,195 @@
+schema_version: 1
+id: evt-2026-d5-two-periodic-packing
+slug: d5-two-periodic-packing
+
+title:
+  en: Claude-assisted work claims a proof and classification of the densest two-lattice-translate packings in five dimensions
+  zh-CN: Claude 辅助工作声称证明并分类五维中最密的双格平移球堆积
+
+dates:
+  event: '2026-10-22'
+  first_public_claim: '2026-10-22'
+  paper_release: '2026-10-22'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-25'
+  last_updated: '2026-10-25'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The result is a field milestone because it turns a previously computationally
+      reported five-dimensional optimum into a proof with a complete equality-case
+      classification, exact certificate checkers and a substantial Lean-checked
+      certificate surface. Claude performed the searches, computations, checker and Lean
+      development and paper drafting under human problem selection and direction.
+    zh-CN: >-
+      该成果构成领域级里程碑，因为它把此前主要由计算枚举报告的五维最优结论提升为带完整等号情形
+      分类的证明，并提供 exact certificate checkers 与大规模 Lean 检查界面。Claude 在人类
+      选题和指导下承担搜索、计算、检查程序、Lean 开发与论文草拟。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- numeric
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    Deep Bhattacharjee and Ushashi Bhattacharya report a proof that no packing of unit
+    balls in R^5 whose centers form two translates of a lattice is denser than the D5
+    lattice packing, and report a classification of the equality cases up to congruence
+    as the D5 lattice packing,
+    Leech's layered two-periodic packing and the packing with Szöllősi's Q5 kissing
+    configuration. The proof combines hand arguments, exact polyhedral enumeration,
+    multiple independent certificate checkers and a Lean-checked certificate surface.
+  zh-CN: >-
+    Deep Bhattacharjee 与 Ushashi Bhattacharya 报告了一项证明，声称在 R^5 中，中心由
+    一个格及其一个平移组成的单位球堆积密度不超过 D5 格堆积，并报告把等号情形按
+    congruence 分类为 D5 格堆积、
+    Leech 的 layered two-periodic packing 以及具有 Szöllősi Q5 kissing configuration
+    的堆积。证明结合手工论证、精确多面体枚举、多套独立 certificate checker 与 Lean 检查界面。
+
+summary:
+  en: >-
+    Bhattacharjee chose the problem and directed the work. The Hexagon provenance
+    statement says Claude Opus 5.5 through Claude Code carried out the searches and
+    computations, wrote the checking programs and Lean proofs, and drafted the paper;
+    both human authors approved the final version. The repository states that Lean
+    checks the vertex/edge certificate statements with standard axioms, while
+    completeness of ray lists and orbit decompositions is checked by several exact
+    external programs rather than formalized in Lean.
+  zh-CN: >-
+    Bhattacharjee 负责选题和指导。Hexagon provenance 声明称 Claude Opus 5.5 通过
+    Claude Code 执行搜索与计算、编写检查程序和 Lean 证明并草拟论文；两位人类作者批准最终版本。
+    仓库说明 Lean 使用标准公理检查 vertex/edge certificate 陈述，而 ray lists 与 orbit
+    decompositions 的完备性由多套精确外部程序检查，并未全部形式化进 Lean。
+
+why_it_matters:
+  en: >-
+    The work exemplifies a research workflow in which AI handles a technically demanding
+    mixture of exact computation, proof engineering and formal certification rather than
+    only natural-language derivation. It also makes the trust boundary unusually explicit
+    by separating kernel-checked certificate statements from exact but external enumeration.
+  zh-CN: >-
+    该工作展示 AI 同时承担精确计算、证明工程和形式认证的高技术负荷研究流程，而非只生成自然语言
+    推导；它还清楚区分 kernel-checked certificate 与 Lean 外部的精确枚举，使可信边界较为透明。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Claude Opus 5.5 is credited with the searches, computations, checking programs,
+      Lean proofs and paper draft. Human researchers chose and directed the problem and
+      approved the final mathematical work.
+    zh-CN: >-
+      Claude Opus 5.5 被归因于搜索、计算、检查程序、Lean 证明和论文初稿；人类研究者选择并
+      指导问题，并批准最终数学成果。
+
+human_contribution:
+  description:
+    en: >-
+      Deep Bhattacharjee selected the problem and directed the research; Deep
+      Bhattacharjee and Ushashi Bhattacharya reviewed and approved the final version and
+      are responsible for the public work.
+    zh-CN: >-
+      Deep Bhattacharjee 选择问题并指导研究；Deep Bhattacharjee 与 Ushashi Bhattacharya
+      审阅并批准最终版本，对公开成果负责。
+
+systems:
+- claude-opus-5-5
+- claude-code
+- lean
+
+organizations: []
+
+people:
+- deep-bhattacharjee
+- ushashi-bhattacharya
+
+problems:
+- five-dimensional-two-periodic-sphere-packing
+
+methods:
+- sphere-packing
+- exact-polyhedral-enumeration
+- certificate-checking
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-10-22'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        The paper, source repository, exact certificate and Lean development are public.
+        Lean checks a substantial certificate surface, while the repository explicitly
+        identifies enumeration-completeness claims checked externally rather than inside
+        Lean. Chronicle has not independently rerun the full computational stack.
+      zh-CN: >-
+        论文、源码仓库、精确 certificate 与 Lean 开发均已公开。Lean 检查大规模 certificate
+        界面，同时仓库明确标记了由外部程序而非 Lean 内部检查的枚举完备性主张。Chronicle
+        本轮未独立重跑完整计算栈。
+
+sources:
+- id: d5-two-periodic-hexagon-2026
+  tier: S1
+  type: paper
+  title: Densest packings of two translates of a lattice in five dimensions
+  url: https://hexagonmath.org/2610.00479v1
+  primary: true
+  published_date: '2026-10-22'
+  accessed_at: '2026-10-25'
+
+- id: d5-two-periodic-repository
+  tier: S1
+  type: repository
+  title: Densest packings of two translates of a lattice in five dimensions
+  url: https://github.com/creelie/D5
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-25'
+
+artifacts:
+- id: d5-two-periodic-proof-artifacts
+  kind: proof
+  title: Lean proof, exact certificate and checkers for the five-dimensional result
+  url: https://github.com/creelie/D5
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- sphere-packing
+- d5
+- claude
+- lean
+- exact-computation
+- computational-geometry
+
+editorial:
+  created_at: '2026-10-25'
+  last_reviewed: '2026-10-25'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

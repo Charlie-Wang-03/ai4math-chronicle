@@ -1,0 +1,173 @@
+schema_version: 1
+id: evt-2026-ai-goe-largest-gaps
+slug: ai-goe-largest-eigenvalue-gaps
+
+title:
+  en: Lopatto releases an AI-generated proof of the largest-gap law for the Gaussian orthogonal ensemble
+  zh-CN: Lopatto 发布由 AI 深度生成的高斯正交系综最大特征值间隙证明
+
+dates:
+  event: '2026-10-23'
+  first_public_claim: '2026-10-23'
+  paper_release: '2026-10-23'
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-25'
+  last_updated: '2026-10-25'
+
+event_types:
+- discovery
+- proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The work is a field milestone because it claims the asymptotic law for the largest
+      bulk eigenvalue gaps of the Gaussian orthogonal ensemble, completing a natural
+      orthogonal-ensemble counterpart to known unitary results, with the public provenance
+      statement assigning proof discovery, verification and writing to several frontier
+      AI systems. The result is currently a fresh preprint without formal artifact or
+      independent specialist review, so its historical record is kept conservative.
+    zh-CN: >-
+      该工作构成领域级里程碑，因为它声称确定 Gaussian orthogonal ensemble 在谱内部最大相邻
+      特征值间隙的渐近分布，补上已有 unitary ensemble 结果的自然正交对应版本；公开 provenance
+      声明把证明发现、验证与写作归因于多个前沿 AI 系统。当前它仍是极新的预印本，没有公开形式
+      artifact 或独立专业审查，因此 Chronicle 对其历史表述保持保守。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- symbolic
+
+claim:
+  en: >-
+    Patrick Lopatto's Hexagon preprint claims that, after explicit centering and scaling,
+    the largest consecutive eigenvalue gaps of the GOE in a fixed bulk interval converge
+    to a Poisson point process with exponential intensity, giving a shifted Gumbel law
+    for the largest gap. The proof relates GOE gap probabilities to corresponding GUE
+    probabilities times a fixed-size determinant and controls that determinant using
+    Nazarov's uncertainty principle and Hermite-function identities.
+  zh-CN: >-
+    Patrick Lopatto 的 Hexagon 预印本声称：经过显式中心化与缩放后，GOE 在固定 bulk interval
+    中最大的相邻特征值间隙收敛到具有指数强度的 Poisson point process，从而最大间隙服从
+    shifted Gumbel 极限。证明把 GOE 的 gap probability 与相应 GUE probability 及一个固定
+    大小行列式联系起来，并利用 Nazarov uncertainty principle 与 Hermite function 恒等式
+    控制该行列式。
+
+summary:
+  en: >-
+    The provenance statement says proof discovery, verification and writing were carried
+    out with GPT 6 Astra, GPT 6.1 Sol and Claude Opus 5.5. The public page identifies
+    Patrick Lopatto as the contributor but does not reconstruct the detailed prompt,
+    steering or theorem-by-theorem division of labor. Chronicle therefore records strong
+    AI involvement without calling the process fully autonomous.
+  zh-CN: >-
+    provenance 声明称证明发现、验证与写作使用 GPT 6 Astra、GPT 6.1 Sol 和 Claude Opus 5.5
+    完成。公开页面把 Patrick Lopatto 列为 contributor，但没有重建详细 prompt、steering 或
+    逐定理的人机分工。因此 Chronicle 记录强 AI 参与，但不把过程描述为完全自主。
+
+why_it_matters:
+  en: >-
+    The result extends a line of extreme-gap asymptotics from unitary to orthogonal random
+    matrix ensembles and supplies another concrete example of frontier models participating
+    in publishable research mathematics outside theorem-prover-native domains.
+  zh-CN: >-
+    该结果把极端间隙渐近理论从 unitary 随机矩阵系综推进到 orthogonal 情形，也提供了一个新的
+    具体案例：前沿模型在非 proof-assistant 原生领域参与可发表的研究数学。
+
+ai_role:
+  level: unclear
+  description:
+    en: >-
+      The source explicitly credits GPT 6 Astra, GPT 6.1 Sol and Claude Opus 5.5 with
+      proof discovery, verification and writing, but does not provide enough process
+      detail to distinguish autonomous-primary work from intensive human steering.
+    zh-CN: >-
+      来源明确把证明发现、验证和写作归因于 GPT 6 Astra、GPT 6.1 Sol 与 Claude Opus 5.5，
+      但流程细节不足以区分 autonomous-primary 与强人类 steering。
+
+human_contribution:
+  description:
+    en: >-
+      Patrick Lopatto is the named human contributor and public curator of the work.
+      The current provenance statement does not specify a finer-grained human role, so
+      Chronicle does not infer one.
+    zh-CN: >-
+      Patrick Lopatto 是具名人类 contributor 和公开成果提交者。当前 provenance 声明没有
+      说明更细粒度的人类角色，因此 Chronicle 不自行推断。
+
+systems:
+- gpt-6-astra
+- gpt-6-1-sol
+- claude-opus-5-5
+
+organizations: []
+
+people:
+- patrick-lopatto
+
+problems:
+- goe-largest-eigenvalue-gaps
+
+methods:
+- random-matrix-theory
+- gap-probabilities
+- poisson-point-process
+- hermite-functions
+
+verification:
+  evidence_level: E2
+  status: paper_released
+  formal_assurance: none
+  history:
+  - date: '2026-10-23'
+    status: paper_released
+    evidence_level: E2
+    note:
+      en: >-
+        The Hexagon preprint publicly states the theorem and AI provenance. Chronicle
+        has not located a formal proof artifact, independent specialist review or
+        external reconstruction of the argument in this maintenance sweep.
+      zh-CN: >-
+        Hexagon 预印本公开陈述定理与 AI provenance。本轮维护尚未找到形式证明 artifact、
+        独立专业审查或外部重建论证。
+
+sources:
+- id: lopatto-goe-largest-gaps-2026
+  tier: S1
+  type: paper
+  title: Largest Gaps between Eigenvalues of the Gaussian Orthogonal Ensemble
+  url: https://hexagonmath.org/2610.00491v1
+  primary: true
+  published_date: '2026-10-23'
+  accessed_at: '2026-10-25'
+
+artifacts: []
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- random-matrix-theory
+- goe
+- eigenvalue-gaps
+- gpt-6-astra
+- gpt-6-1-sol
+- claude-opus-5-5
+
+editorial:
+  created_at: '2026-10-25'
+  last_reviewed: '2026-10-25'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

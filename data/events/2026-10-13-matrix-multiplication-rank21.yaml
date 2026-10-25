@@ -1,0 +1,196 @@
+schema_version: 1
+id: evt-2026-matrix-multiplication-rank21
+slug: matrix-multiplication-rank21-all-fields
+
+title:
+  en: Ivanov reports an AI-assisted Lean proof raising the general 3×3 matrix-multiplication rank lower bound to 21
+  zh-CN: Ivanov 报告 AI 辅助 Lean 证明，将任意域 3×3 矩阵乘法 rank 下界提升至 21
+
+dates:
+  event: '2026-10-13'
+  first_public_claim: '2026-10-13'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-10-25'
+  last_updated: '2026-10-25'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The result is a field milestone because it reports a uniform lower bound of 21
+      multiplications for exact 3×3 matrix multiplication over every field, improving
+      the long-standing general-field lower bound of 19 while remaining only two below
+      Laderman's universal 23-multiplication upper bound. The theorem is publicly
+      formalized in Lean and mechanically registered, but specialist mathematical review
+      is still absent and the author deliberately makes no priority claim.
+    zh-CN: >-
+      该结果构成领域级里程碑，因为它报告对任意域上的精确 3×3 矩阵乘法建立统一的 21 次乘法
+      下界，相比长期 general-field 下界 19 有实质提升，并距离 Laderman 通用于任意域的
+      23 次乘法上界只差 2。定理已公开用 Lean 形式化并完成机械注册，但尚缺专业数学审查，
+      作者本人也有意不作优先权声明。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- formal
+- symbolic
+
+claim:
+  en: >-
+    Andrey Ivanov's public Lean development proves that every exact bilinear algorithm
+    for multiplying two 3×3 matrices over an arbitrary field uses at least 21 products
+    of input linear forms. The theorem includes finite and infinite fields in every
+    characteristic and concerns exact bilinear complexity, not border rank or arbitrary
+    arithmetic circuits.
+  zh-CN: >-
+    Andrey Ivanov 的公开 Lean 开发证明：在任意域上，任何精确计算两个 3×3 矩阵乘积的
+    bilinear algorithm 至少需要 21 个输入线性形式乘积。该定理覆盖所有特征的有限域和无限域，
+    讨论的是 exact bilinear complexity，而不是 border rank 或一般 arithmetic circuits。
+
+summary:
+  en: >-
+    The project reports substantial ChatGPT/Codex assistance in mathematical
+    exploration, Lean implementation, proof refactoring and documentation. Its main
+    statement is an ordinary Mathlib interface and the audit rejects nonstandard axioms.
+    Palomar registered the all-fields theorem on 13 October. MathWorld subsequently
+    incorporated the reported 21 lower bound into its matrix-multiplication entry while
+    noting that independent specialist review had not yet been reported.
+  zh-CN: >-
+    项目报告 ChatGPT/Codex 在数学探索、Lean 实现、证明重构与文档中提供了实质协助。主定理
+    使用普通 Mathlib 接口，审计会拒绝非标准公理。Palomar 于 10 月 13 日注册该任意域定理；
+    MathWorld 随后把所报告的 21 下界纳入矩阵乘法条目，同时注明尚未见独立专业审查。
+
+why_it_matters:
+  en: >-
+    Small matrix multiplication is a classical testbed for algebraic complexity.
+    Improving a uniform all-fields lower bound after more than two decades, with a
+    kernel-checkable proof from the outset, is materially different from stronger
+    field-specific computer searches over F2 and provides a notable AI-assisted
+    formal-mathematics result.
+  zh-CN: >-
+    小规模矩阵乘法是代数复杂度的经典试验场。时隔二十余年提升统一适用于任意域的下界，并从
+    一开始就提供 kernel-checkable 证明，与只针对 F2 的更强计算搜索有本质区别，也构成一个
+    值得记录的 AI 辅助形式数学成果。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Ivanov reports substantial ChatGPT/Codex assistance in mathematical exploration,
+      Lean implementation, proof refactoring and documentation; the public record does
+      not support assigning the core theorem exclusively to the AI.
+    zh-CN: >-
+      Ivanov 报告 ChatGPT/Codex 在数学探索、Lean 实现、证明重构与文档中提供实质协助；
+      公开记录不足以把核心定理完全归因于 AI。
+
+human_contribution:
+  description:
+    en: >-
+      Andrey Ivanov is the author and responsible maintainer, curates the mathematical
+      development and takes responsibility for the public theorem and formal repository.
+    zh-CN: >-
+      Andrey Ivanov 是作者和负责维护者，策划数学开发，并对公开定理与形式化仓库负责。
+
+systems:
+- chatgpt
+- codex
+- lean
+
+organizations:
+- palomar-registry
+
+people:
+- andrey-ivanov
+
+problems:
+- three-by-three-matrix-multiplication-rank
+
+methods:
+- bilinear-complexity
+- tensor-rank
+- conductor-arguments
+- formal-verification
+
+verification:
+  evidence_level: E3
+  status: under_verification
+  formal_assurance: machine_checked
+  history:
+  - date: '2026-10-13'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        A fixed formal theorem was registered and the public repository reports a clean
+        Lean build and standard-axiom audit. Independent mathematical specialist review
+        has not been reported; MathWorld independently records the claim and its scope.
+      zh-CN: >-
+        固定形式定理已经注册，公开仓库报告 Lean 构建与标准公理审计通过。当前尚未见独立数学
+        专家审查；MathWorld 已独立记录该主张及其适用范围。
+
+sources:
+- id: ivanov-mmrank21-repository
+  tier: S1
+  type: formal_artifact
+  title: A lower bound of 21 for 3 × 3 matrix multiplication over every field
+  url: https://github.com/AIV5/mmrank21
+  primary: true
+  published_date: null
+  accessed_at: '2026-10-25'
+
+- id: palomar-mmrank21-2026
+  tier: S3
+  type: formal_artifact
+  title: A lower bound of 21 for 3 × 3 matrix multiplication over every field
+  url: https://palomar-registry.org/entry?id=PALOMAR-2026-10-13-000009&version=1
+  primary: true
+  published_date: '2026-10-13'
+  accessed_at: '2026-10-25'
+
+- id: mathworld-matrix-multiplication-2026
+  tier: S3
+  type: independent_analysis
+  title: Matrix Multiplication
+  url: https://mathworld.wolfram.com/MatrixMultiplication.html
+  primary: false
+  published_date: null
+  accessed_at: '2026-10-25'
+
+artifacts:
+- id: mmrank21-lean
+  kind: proof
+  title: Lean proof of the all-fields 3×3 matrix-multiplication rank-21 lower bound
+  url: https://github.com/AIV5/mmrank21
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- matrix-multiplication
+- tensor-rank
+- bilinear-complexity
+- chatgpt
+- codex
+- lean
+
+editorial:
+  created_at: '2026-10-25'
+  last_reviewed: '2026-10-25'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
