@@ -1,0 +1,297 @@
+schema_version: 1
+id: evt-2026-openai-quasi-riemann
+slug: openai-quasi-riemann-hypothesis
+
+title:
+  en: OpenAI reports a proof of the quasi-Riemann hypothesis with a zero-free half-plane Re(s) > 7/8
+  zh-CN: OpenAI 报告证明 quasi-Riemann hypothesis，并得到 Re(s) > 7/8 的零点空半平面
+
+dates:
+  event: '2026-09-30'
+  first_public_claim: '2026-09-30'
+  paper_release: '2026-09-30'
+  artifact_release: '2026-10-06'
+  independently_verified: null
+  added_to_chronicle: '2026-10-25'
+  last_updated: '2026-10-25'
+
+event_types:
+- discovery
+- proof
+- formalization
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      This result is a Historical Milestone because it reports a fixed zero-free
+      half-plane for the Riemann zeta function and every Dirichlet L-function,
+      resolving the longstanding quasi-Riemann hypothesis rather than merely improving
+      a benchmark. The result was generated within OpenAI's AI-mathematics programme,
+      accompanied by a large public Lean formalization, and rapidly became the subject
+      of detailed specialist study, an independent mathematical reworking of its
+      Landau-Siegel consequence, and a third-party formal replay. Its historical
+      significance is distinct from OpenAI's later aggregate release of hundreds of
+      manuscripts, which is separately recorded as a scale-and-infrastructure milestone.
+    zh-CN: >-
+      该结果被列为 Historical Milestone，因为它报告对 Riemann ζ 函数以及所有 Dirichlet
+      L-functions 建立固定的零点空半平面，从而声称解决长期的 quasi-Riemann hypothesis，
+      而不是一次 benchmark 提升。该成果产生于 OpenAI 的 AI 数学研究流程，配有大规模公开
+      Lean 形式化，并迅速受到数论专家的详细研究、对 Landau-Siegel 后果的独立数学重推以及
+      第三方形式化重放。它的历史意义不同于 OpenAI 随后一次性发布数百篇手稿的 aggregate
+      H1；后者记录的是规模与公共研究基础设施的转折。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+- informal
+- formal
+- symbolic
+- hybrid
+
+claim:
+  en: >-
+    OpenAI's 30 September 2026 manuscript claims that the Riemann zeta function and
+    every Dirichlet L-function are zero-free in the half-plane Re(s) > 7/8, with the
+    principal-character pole at s = 1 excluded as appropriate. The accompanying
+    formalization also gives the same half-plane for finite-order Hecke L-functions
+    over Q(sqrt(-3)). A companion manuscript gives a different proof of the weaker
+    fixed half-plane Re(s) > 11/12, and a related manuscript establishes a uniform
+    logarithmic exclusion region for Landau-Siegel zeros.
+  zh-CN: >-
+    OpenAI 于 2026 年 9 月 30 日发布的手稿声称：Riemann ζ 函数以及所有 Dirichlet
+    L-functions 在 Re(s) > 7/8 的半平面内无零点，并在适用处排除 principal character
+    在 s = 1 的极点。配套形式化还对 Q(sqrt(-3)) 上的有限阶 Hecke L-functions 得到同一
+    半平面。另一篇 companion manuscript 用不同方法得到较弱但仍固定的 Re(s) > 11/12
+    半平面；相关手稿还建立了排除 Landau-Siegel zeros 的统一 logarithmic region。
+
+summary:
+  en: >-
+    OpenAI authors the main 7/8 manuscript under its institutional name. The 5 October
+    alternate 11/12 manuscript explicitly says it was written with human assistance.
+    The public Lean catalogue formalizes the zeta, Dirichlet and selected Hecke
+    statements together with a uniform real-zero gap. By 19 October, Quanta reported
+    that several named analytic-number-theory specialists had substantially unpacked
+    the shorter proof and broadly regarded the result as correct, while still stressing
+    the importance of full human understanding. William D. Banks independently derived
+    an explicit-constant version of the Landau-Siegel-zero consequence, and a separate
+    public project independently rebuilt the 7/8 Lean theorem from the OpenAI source.
+  zh-CN: >-
+    OpenAI 以机构名义署名 7/8 主手稿；10 月 5 日的 11/12 alternate manuscript 则明确注明
+    其写作有人类协助。公开 Lean catalogue 形式化了 ζ、Dirichlet 以及部分 Hecke 陈述，并
+    包含统一实零点间隔。到 10 月 19 日，Quanta 报道多位具名解析数论专家已实质拆解较短
+    证明，并总体认可其结果，同时仍强调完整人类理解的重要性。William D. Banks 又独立推出
+    Landau-Siegel-zero 后果的显式常数版本；另有公开第三方项目从 OpenAI 源码独立重建了
+    7/8 Lean 定理。
+
+why_it_matters:
+  en: >-
+    The quasi-Riemann hypothesis asks for any fixed zero-free half-plane
+    Re(s) > theta with theta < 1 and has broad consequences throughout analytic number
+    theory. A publicly inspectable AI-generated proof at 7/8, followed quickly by human
+    specialist digestion, independent downstream mathematics and formal replay, marks
+    a qualitatively stronger form of AI contribution than contest performance,
+    benchmark solving or unreviewed bulk theorem generation. The result is not the
+    Riemann hypothesis itself and does not assert zero-freeness down to Re(s) > 1/2.
+  zh-CN: >-
+    quasi-Riemann hypothesis 要求存在任意固定的零点空半平面 Re(s) > theta（theta < 1），
+    在解析数论中具有广泛后果。一个公开可审计、由 AI 流程产生的 7/8 证明，在很短时间内又
+    获得人类专家实质拆解、独立后续数学工作和形式化重放，这代表了比竞赛成绩、benchmark
+    解题或未经审查的批量定理生成更强的一类 AI 数学贡献。该结果并不是 Riemann hypothesis
+    本身，也没有声称把零点空区域推进到 Re(s) > 1/2。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      OpenAI's public mathematics programme presents the unreleased internal model as
+      the primary producer of the result family and the main 7/8 manuscript is authored
+      institutionally by OpenAI. The alternate 11/12 manuscript explicitly records
+      human assistance. Chronicle therefore records AI-primary mathematical production
+      with human editing, curation, verification and later specialist scrutiny rather
+      than claiming a fully autonomous end-to-end research process.
+    zh-CN: >-
+      OpenAI 的公开数学计划把未发布内部模型描述为该成果族的主要生产者，7/8 主手稿以 OpenAI
+      机构名义署名；11/12 alternate manuscript 则明确记录有人类协助。因此 Chronicle
+      记录为 AI-primary 的数学产出，并保留人类编辑、策划、验证和后续专家审查的角色，而不
+      声称这是完全自主的端到端科研过程。
+
+human_contribution:
+  description:
+    en: >-
+      Human researchers selected and curated the research programme, assisted the shorter
+      alternate manuscript, prepared and checked release artifacts and formalizations,
+      and subsequently subjected the proof to specialist mathematical study. Independent
+      mathematicians also produced a new explicit-constant treatment of a major
+      consequence.
+    zh-CN: >-
+      人类研究者负责选择和策划研究计划，协助较短的 alternate manuscript，准备并检查发布
+      artifact 与形式化；随后独立数论专家对证明进行了实质数学研究，且有数学家对重要后果
+      给出了新的显式常数论证。
+
+systems:
+- openai-internal-math-model
+- lean
+- comparator
+
+organizations:
+- openai
+
+people:
+- william-d-banks
+- jared-duker-lichtman
+- maksym-radziwill
+- alexander-dunn
+- peter-sarnak
+
+problems:
+- quasi-riemann-hypothesis
+- landau-siegel-zeros
+
+methods:
+- analytic-number-theory
+- l-functions
+- zero-free-regions
+- large-sieve-methods
+- formal-verification
+
+verification:
+  evidence_level: E4
+  status: partially_verified
+  formal_assurance: independently_replayed
+  history:
+  - date: '2026-09-30'
+    status: paper_released
+    evidence_level: E3
+    note:
+      en: >-
+        OpenAI released the 7/8 manuscript and later exposed a substantial Lean
+        formalization covering the central zeta and Dirichlet statements. The initial
+        release did not by itself establish independent mathematical corroboration.
+      zh-CN: >-
+        OpenAI 发布 7/8 手稿，并随后公开覆盖核心 ζ 与 Dirichlet 陈述的大规模 Lean
+        形式化。初始发布本身并不构成独立数学 corroboration。
+  - date: '2026-10-19'
+    status: partially_verified
+    evidence_level: E4
+    note:
+      en: >-
+        Named number theorists reported through Quanta that they had substantially
+        unpacked the shorter proof and broadly regarded the result as correct, while
+        retaining caution about full human understanding. Banks independently produced
+        a direct explicit-constant treatment of the Landau-Siegel-zero consequence, and
+        a separate public project independently rebuilt and audited the 7/8 Lean theorem.
+        Chronicle records this as substantial partial verification and independent replay,
+        not as its own certification of ultimate mathematical correctness.
+      zh-CN: >-
+        Quanta 报道多位具名数论专家已实质拆解较短证明，并总体认为结果成立，同时仍对完整人类
+        理解保持谨慎。Banks 独立给出 Landau-Siegel-zero 后果的直接显式常数论证；另有公开
+        第三方项目独立重建并审计 7/8 Lean 定理。Chronicle 因此记录为 substantial partial
+        verification 与 independent replay，而不是由 Chronicle 自行认证最终数学正确性。
+
+sources:
+- id: openai-quasi-rh-7-8-2026
+  tier: S1
+  type: paper
+  title: The Quasi-Riemann Hypothesis — A Zero-Free Half-Plane Re(s)>7/8
+  url: https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf
+  primary: true
+  published_date: '2026-09-30'
+  accessed_at: '2026-10-25'
+
+- id: openai-quasi-rh-11-12-2026
+  tier: S1
+  type: paper
+  title: The Quasi-Riemann Hypothesis
+  url: https://github.com/openai/math/blob/main/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf
+  primary: true
+  published_date: '2026-10-05'
+  accessed_at: '2026-10-25'
+
+- id: openai-landau-siegel-2026
+  tier: S1
+  type: paper
+  title: Uniform exclusion of Landau-Siegel zeros
+  url: https://github.com/openai/math/blob/main/preprints/Uniform-exclusion-of-Landau-Siegel-zeros-October-1-2026/paper.pdf
+  primary: true
+  published_date: '2026-10-01'
+  accessed_at: '2026-10-25'
+
+- id: openai-quasi-rh-lean-2026
+  tier: S1
+  type: formal_artifact
+  title: Lean formalization scope for the quasi-Riemann hypothesis
+  url: https://github.com/openai/math/blob/main/lean/docs/003.md
+  primary: true
+  published_date: '2026-10-06'
+  accessed_at: '2026-10-25'
+
+- id: banks-openai-landau-siegel-2026
+  tier: S3
+  type: paper
+  title: On the OpenAI proof that Landau-Siegel zeros do not exist
+  url: https://arxiv.org/abs/2610.15483
+  primary: false
+  published_date: '2026-10-11'
+  accessed_at: '2026-10-25'
+
+- id: independent-quasi-rh-lean-replay-2026
+  tier: S3
+  type: formal_artifact
+  title: Independent verification of OpenAI's quasi-Riemann 7/8 theorem
+  url: https://github.com/tomoto0/quasi-riemann-hypothesis-7-8-verification
+  primary: false
+  published_date: null
+  accessed_at: '2026-10-25'
+
+- id: quanta-openai-quasi-rh-2026
+  tier: S4
+  type: media
+  title: AI Proved the Quasi-Riemann Hypothesis. What Happens Now?
+  url: https://www.quantamagazine.org/ai-proved-the-quasi-riemann-hypothesis-what-happens-now-20261019/
+  primary: false
+  published_date: '2026-10-19'
+  accessed_at: '2026-10-25'
+
+artifacts:
+- id: openai-quasi-rh-lean
+  kind: proof
+  title: OpenAI Lean formalization for the quasi-Riemann result family
+  url: https://github.com/openai/math/tree/main/lean
+
+- id: quasi-rh-independent-replay
+  kind: proof
+  title: Independent rebuild and audit of the 7/8 Lean theorem
+  url: https://github.com/tomoto0/quasi-riemann-hypothesis-7-8-verification
+
+relationships:
+  predecessors: []
+  successors:
+  - evt-2026-openai-math-release
+  - evt-2026-axiom-dedekind-zeta-zero-free
+  related:
+  - evt-2026-openai-prime-gaps-186
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- quasi-riemann-hypothesis
+- riemann-zeta
+- dirichlet-l-functions
+- landau-siegel-zeros
+- analytic-number-theory
+- openai
+- ai-generated-mathematics
+- lean
+- independent-replay
+
+editorial:
+  created_at: '2026-10-25'
+  last_reviewed: '2026-10-25'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []

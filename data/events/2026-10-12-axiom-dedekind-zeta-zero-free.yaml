@@ -180,6 +180,7 @@ artifacts:
 
 relationships:
   predecessors:
+  - evt-2026-openai-quasi-riemann
   - evt-2026-openai-math-release
   successors: []
   related:
