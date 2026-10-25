@@ -1,0 +1,207 @@
+schema_version: 1
+id: evt-2026-first-proof-third-batch
+slug: first-proof-third-batch
+
+title:
+  en: First Proof's third batch sees a multi-model system solve 9 of 10 hidden research problems
+  zh-CN: First Proof 第三批评测中多模型系统解出 10 道隐藏研究题中的 9 道
+
+dates:
+  event: '2026-10-14'
+  first_public_claim: '2026-10-14'
+  paper_release: null
+  artifact_release: '2026-10-14'
+  independently_verified: null
+  added_to_chronicle: '2026-10-25'
+  last_updated: '2026-10-25'
+
+event_types:
+- benchmark
+- proof
+- system
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      The third First Proof batch is a field milestone because it provides a public,
+      expert-graded research-mathematics evaluation under hidden-problem conditions:
+      thirty specialist reviewers blind-graded five systems on ten unpublished but
+      human-solved research problems. ProofCouncil reached 9/10 and direct GPT-6 Astra
+      reached 7/10, while all ten problems were solved by at least one system. The
+      benchmark also exposes persistent weaknesses in exposition, attribution and the
+      cost/access gap between orchestration strategies.
+    zh-CN: >-
+      First Proof 第三批构成领域级里程碑，因为它在隐藏题目条件下提供了公开、专家评分的研究数学
+      评测：30 名专业审稿人以盲审方式评价 5 套系统对 10 道尚未公开人类解答的真实研究问题的
+      作答。ProofCouncil 达到 9/10，直接调用 GPT-6 Astra 达到 7/10，且全部 10 道题至少被
+      一套系统解出。评测同时暴露了表达、引用归属以及不同编排方案在成本和可及性上的持续问题。
+
+mathematical_novelty:
+  type: benchmark_result
+
+interfaces:
+- informal
+- symbolic
+
+claim:
+  en: >-
+    First Proof reports that, in testing conducted on 2–5 October 2026 with no
+    human input during the runs, ProofCouncil solved 9 of 10 hidden research problems,
+    GPT-6 Astra solved 7, MerLean 4, Anthropic Siege 3, and the Kimi-K3-based Humanize
+    system 0 under the benchmark's correctness threshold. Thirty expert referees then
+    graded anonymized submissions for correctness, exposition and attribution, and the
+    full problems, human solutions, AI outputs, referee reports, logs and harness code
+    were released on 14 October.
+  zh-CN: >-
+    First Proof 报告称，在 2026 年 10 月 2–5 日进行、运行期间无人类介入的测试中，按该评测的
+    correctness 阈值，ProofCouncil 解出 9/10，GPT-6 Astra 解出 7/10，MerLean 为 4/10，
+    Anthropic Siege 为 3/10，基于 Kimi K3 的 Humanize 为 0/10。随后约 30 名专家对匿名
+    作答分别从正确性、表达和引用归属评分，并于 10 月 14 日公开题目、人类解答、AI 作答、
+    审稿报告、运行日志与 harness 代码。
+
+summary:
+  en: >-
+    The batch deliberately separates mathematical correctness from presentation and
+    citation quality. ProofCouncil coordinates several frontier models rather than
+    representing a single base-model score. The organisers also report a large gap
+    between the tested open-weight system and frontier closed-model systems, and a
+    substantial cost difference between direct model use and heavier orchestration.
+  zh-CN: >-
+    本轮有意把数学正确性与表达、引用质量分开评分。ProofCouncil 是协调多个前沿模型的系统，
+    因而 9/10 不能解释为某个单一底模成绩。组织者还记录了本轮所测开权重系统与前沿闭源系统
+    之间的明显差距，以及直接调用模型和重型多 Agent 编排之间显著的成本差异。
+
+why_it_matters:
+  en: >-
+    Unlike benchmark sets whose answers may be in training corpora, First Proof uses
+    naturally occurring research problems with unpublished human solutions and publishes
+    the entire review trail. The third batch therefore offers unusually inspectable
+    evidence of frontier systems performing research-level proof work while also showing
+    that raw solve counts do not capture scholarly quality.
+  zh-CN: >-
+    不同于答案可能已进入训练语料的普通 benchmark，First Proof 使用真实研究问题并在测试时
+    隐藏人类证明，同时公开完整审查链。因此第三批为前沿系统处理研究级证明提供了罕见的可审计
+    证据，也表明单纯的解题数量不能代表合格的学术输出质量。
+
+ai_role:
+  level: ai_primary_human_verified
+  description:
+    en: >-
+      Each tested system received the problems and ran without additional human
+      mathematical interaction; AI systems generated the submitted proof attempts.
+      Human experts evaluated the resulting mathematics after the runs.
+    zh-CN: >-
+      各测试系统获得题目后，在没有额外人类数学交互的条件下生成提交的证明尝试；运行结束后由
+      人类专家评价数学内容。
+
+human_contribution:
+  description:
+    en: >-
+      Mathematicians supplied and pre-refereed unpublished problems and human solutions,
+      designed the protocol, operated the benchmark, and thirty specialists blind-graded
+      submissions for correctness, exposition and attribution.
+    zh-CN: >-
+      数学家提供并预审尚未公开的问题与人类解答，设计和运行评测协议；约 30 名专家对匿名提交
+      的正确性、表达和引用归属进行盲审。
+
+systems:
+- proofcouncil
+- gpt-6-astra
+- anthropic-siege
+- merlean
+- kimi-k3
+
+organizations:
+- first-proof
+- openai
+- anthropic
+
+people: []
+
+problems:
+- first-proof-third-batch
+
+methods:
+- hidden-research-problem-evaluation
+- blind-expert-review
+- multi-agent-proof-generation
+- long-horizon-reasoning
+
+verification:
+  evidence_level: E3
+  status: partially_verified
+  formal_assurance: none
+  history:
+  - date: '2026-10-14'
+    status: partially_verified
+    evidence_level: E3
+    note:
+      en: >-
+        First Proof publishes the full benchmark record and referee materials; independent
+        university reporting corroborates the protocol and headline scores. The status
+        records expert grading of this benchmark, not a general certification of the
+        systems' research reliability.
+      zh-CN: >-
+        First Proof 公开完整评测与审稿材料，独立大学报道也核实了协议和主要成绩。该状态记录的是
+        本轮评测的专家评分，不代表对这些系统总体科研可靠性的认证。
+
+sources:
+- id: first-proof-third-batch-2026
+  tier: S2
+  type: benchmark
+  title: Third Batch Benchmark
+  url: https://1stproof.org/third-batch.html
+  primary: true
+  published_date: '2026-10-14'
+  accessed_at: '2026-10-25'
+
+- id: first-proof-third-batch-press-2026
+  tier: S2
+  type: official_announcement
+  title: Frontier AI Systems Solve up to 9/10 Problems in First Proof Benchmark
+  url: https://1stproof.org/third-batch-press-release.html
+  primary: true
+  published_date: '2026-10-14'
+  accessed_at: '2026-10-25'
+
+- id: harvard-first-proof-third-batch-2026
+  tier: S4
+  type: media
+  title: Top mathematicians grade AI's ability to solve toughest problems
+  url: https://current.fas.harvard.edu/stories/top-mathematicians-grade-ais-ability-solve-toughest-problems
+  primary: false
+  published_date: '2026-10-19'
+  accessed_at: '2026-10-25'
+
+artifacts:
+- id: first-proof-third-batch-record
+  kind: benchmark
+  title: First Proof Third Batch benchmark record
+  url: https://1stproof.org/third-batch.html
+
+relationships:
+  predecessors:
+  - evt-2026-first-proof-openai
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+- first-proof
+- research-mathematics
+- proofcouncil
+- gpt-6-astra
+- expert-review
+- benchmark
+
+editorial:
+  created_at: '2026-10-25'
+  last_reviewed: '2026-10-25'
+  reviewers:
+  - Charlie-Wang-03
+
+corrections: []
