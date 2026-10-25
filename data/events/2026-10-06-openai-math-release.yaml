@@ -13,7 +13,7 @@ dates:
   artifact_release: '2026-10-06'
   independently_verified: null
   added_to_chronicle: '2026-10-07'
-  last_updated: '2026-10-20'
+  last_updated: '2026-10-25'
 
 event_types:
 - discovery
@@ -193,6 +193,24 @@ verification:
         另有 14 篇进行了证明、陈述或假设修复，13 篇只更新关联引用。目录因此从 722 篇降为
         719 篇，但仍为 372 个成果族。这说明该成果集正在发生实质修订，但并不足以把 Event 的
         当前状态越过人工门槛改为 `corrected`；当前继续保持 under_verification。
+  - date: '2026-10-19'
+    status: under_verification
+    evidence_level: E3
+    note:
+      en: >-
+        One flagship family now has substantially stronger external corroboration.
+        Quanta reports that named number theorists have unpacked the shorter
+        quasi-Riemann proof and largely agree with its result, while William D. Banks
+        published an independent direct treatment of the Landau–Siegel-zero consequence
+        with explicit constants. A separate public project also independently rebuilt
+        the 7/8 Lean theorem. This strengthens that family but does not convert the
+        heterogeneous 372-family aggregate release into an independently verified Event.
+      zh-CN: >-
+        一个旗舰成果族现已有明显更强的外部 corroboration。Quanta 报道多位具名数论专家已拆解
+        较短的 quasi-Riemann 证明并大体认可其结果；William D. Banks 又发表独立的
+        Landau–Siegel zero 直接论证并给出显式常数；另有公开项目独立重建 7/8 Lean 定理。
+        这些证据显著加强该成果族，但不能把包含 372 个异质成果族的 aggregate release 整体
+        视为 independently verified。
 
 sources:
 - id: openai-sharing-ai-progress-math-2026
@@ -230,6 +248,33 @@ sources:
   primary: true
   published_date: '2026-10-07'
   accessed_at: '2026-10-20'
+
+- id: quanta-openai-quasi-rh-2026
+  tier: S4
+  type: media
+  title: AI Proved the Quasi-Riemann Hypothesis. What Happens Now?
+  url: https://www.quantamagazine.org/ai-proved-the-quasi-riemann-hypothesis-what-happens-now-20261019/
+  primary: false
+  published_date: '2026-10-19'
+  accessed_at: '2026-10-25'
+
+- id: banks-openai-landau-siegel-2026
+  tier: S3
+  type: paper
+  title: On the OpenAI proof that Landau-Siegel zeros do not exist
+  url: https://arxiv.org/abs/2610.15483
+  primary: false
+  published_date: '2026-10-11'
+  accessed_at: '2026-10-25'
+
+- id: independent-quasi-rh-lean-replay-2026
+  tier: S3
+  type: formal_artifact
+  title: Independent verification of OpenAI's quasi-Riemann 7/8 theorem
+  url: https://github.com/tomoto0/quasi-riemann-hypothesis-7-8-verification
+  primary: false
+  published_date: null
+  accessed_at: '2026-10-25'
 
 - id: agmai-responsible-release-2026
   tier: S2
@@ -270,7 +315,7 @@ tags:
 
 editorial:
   created_at: '2026-10-07'
-  last_reviewed: '2026-10-20'
+  last_reviewed: '2026-10-25'
   reviewers:
   - Charlie-Wang-03
 
