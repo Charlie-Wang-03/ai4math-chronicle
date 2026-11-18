@@ -1,0 +1,154 @@
+schema_version: 1
+
+id: evt-2026-axiom-cfsg-lean
+
+slug: axiom-finite-simple-groups-lean
+
+title:
+  en: Axiom releases a Lean proof that the classification list covers every finite simple group
+  zh-CN: Axiom 公布有限单群分类名单穷尽性的 Lean 证明
+
+dates:
+  event: '2026-10-26'
+  first_public_claim: '2026-10-26'
+  paper_release: null
+  artifact_release: '2026-10-26'
+  independently_verified: null
+  added_to_chronicle: '2026-11-18'
+  last_updated: '2026-11-18'
+
+event_types:
+  - formalization
+  - proof
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      The classification draws on decades of work spread across hundreds of papers. Connecting that literature
+      to one checkable theorem is a landmark application of proof agents to a large existing mathematical
+      argument.
+    zh-CN: 有限单群分类汇集了数十年间数百篇论文的成果。把文献中的证明组织成一个可由内核检查的总定理，是证明智能体处理大规模既有数学论证的重要案例。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+
+interfaces:
+  - formal
+
+claim:
+  en: >-
+    Axiom reports a Lean proof that every finite simple group is isomorphic to a group on the explicit classification
+    list. The public theorem uses TauCeti’s statement and group constructions.
+  zh-CN: Axiom 报告称，团队已在 Lean 中证明每个有限单群都同构于分类名单上某个显式构造的群。公开的总定理采用了 TauCeti 项目的命题与群构造。
+
+summary:
+  en: >-
+    The development largely follows the first-generation proof. Engineers and mathematicians coordinated
+    proof agents across intermediate results. The repository links the exact target statement and supplies
+    build instructions.
+  zh-CN: 该工程主要沿用第一代分类证明。工程师与数学家协调多个证明智能体，逐项完成中间结果。代码仓库给出了总定理的精确表述和构建说明。
+
+why_it_matters:
+  en: >-
+    Readers can inspect both sides of the formalization task: how agents assembled a long dependency chain,
+    and which mathematical definitions the final classification statement actually uses.
+  zh-CN: 读者既可沿依赖关系查看智能体如何衔接漫长的证明，也可核对最终分类命题所使用的群定义。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Under human direction, Axiom’s agents translated arguments into Lean, proved intermediate statements
+      and revised code in response to checking failures.
+    zh-CN: 在团队指导下，Axiom 的智能体将论证写成 Lean 代码，证明中间命题，并根据检查结果修订证明。
+
+human_contribution:
+  description:
+    en: >-
+      The project builds on the work of the original classifiers and existing Lean libraries. Mathematicians
+      guided the treatment of difficult arguments and engineers coordinated builds and agent work.
+    zh-CN: 项目以原分类证明及已有 Lean 库为基础。数学家参与处理困难论证，工程师协调构建与智能体分工。
+
+systems:
+  - axiomprover
+  - lean
+  - mathlib
+  - tauceti
+
+organizations:
+  - axiom-math
+
+people: []
+
+problems:
+  - classification-of-finite-simple-groups
+
+methods:
+  - interactive-theorem-proving
+  - multi-agent-proof-construction
+
+verification:
+  evidence_level: E3
+  status: claimed
+  formal_assurance: machine_checked
+  history:
+    - date: '2026-10-26'
+      status: claimed
+      evidence_level: E3
+      note:
+        en: >-
+          Axiom reported kernel checking and published the source. The cited top-level theorem states exhaustiveness
+          of the list. No independent rebuild is recorded in this entry.
+        zh-CN: Axiom 报告已通过内核检查并公开源代码。所引总定理陈述的是分类名单的穷尽性，本条目尚未收录独立重建记录。
+
+sources:
+  - id: axiom-cfsg-announcement
+    tier: S2
+    type: official_announcement
+    title: Formalizing the Enormous Theorem
+    url: https://axiommath.ai/research/the-enormous-theorem-formalized/
+    primary: true
+    published_date: '2026-10-26'
+    accessed_at: '2026-11-18'
+  - id: axiom-cfsg-lean-project
+    tier: S1
+    type: formal_artifact
+    title: Classification of Finite Simple Groups in Lean
+    url: https://github.com/AxiomMath/CFSG
+    primary: true
+    published_date: null
+    accessed_at: '2026-11-18'
+
+artifacts:
+  - id: axiom-cfsg-proof
+    kind: proof
+    title: Lean development and classification statement
+    url: https://github.com/AxiomMath/CFSG
+  - id: axiom-cfsg-map
+    kind: supplement
+    title: Interactive proof map
+    url: https://cfsg.axiommath.ai/
+
+relationships:
+  predecessors: []
+  successors: []
+  related: []
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+  - finite-groups
+  - algebra
+  - lean
+  - formalization
+  - proof-agents
+
+editorial:
+  created_at: '2026-11-18'
+  last_reviewed: '2026-11-18'
+  reviewers: []
+
+corrections: []
