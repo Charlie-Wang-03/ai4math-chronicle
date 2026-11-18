@@ -1,0 +1,177 @@
+schema_version: 1
+
+id: evt-2026-openai-euclidean-wave-local-smoothing
+
+slug: openai-euclidean-wave-local-smoothing-kakeya
+
+title:
+  en: OpenAI releases a proposed proof of Euclidean local smoothing with Kakeya consequences
+  zh-CN: OpenAI 公布欧氏波方程局部光滑性猜想及其 Kakeya 推论的证明稿
+
+dates:
+  event: '2026-10-26'
+  first_public_claim: '2026-10-26'
+  paper_release: '2026-10-26'
+  artifact_release: '2026-10-26'
+  independently_verified: null
+  added_to_chronicle: '2026-11-18'
+  last_updated: '2026-11-18'
+
+event_types:
+  - discovery
+  - proof
+  - formalization
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      A proof in every spatial dimension would connect a longstanding question about wave propagation to
+      sharp bounds for thin tubes and to the dimension of Kakeya sets. The public manuscript and precise
+      formal statements make the claim open to mathematical scrutiny.
+    zh-CN: 若在所有空间维数成立，该结果将把波传播中的长期公开问题与细管极大估计、Kakeya 集的维数联系起来。公开的手稿与形式命题使同行能够逐项审查这一主张。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+  - informal
+  - formal
+
+claim:
+  en: >-
+    OpenAI reports a model-generated proof of Sogge’s Euclidean local smoothing conjecture in spatial dimensions
+    two and higher. Among the stated consequences are the Kakeya maximal estimate with arbitrarily small
+    power loss and full Hausdorff dimension for Euclidean Kakeya sets.
+  zh-CN: >-
+    OpenAI 报告其模型给出了 Sogge 欧氏局部光滑性猜想在所有空间维数 n ≥ 2 的证明。公布的推论包括允许任意小幂次损失的 Kakeya 极大估计，以及欧氏 Kakeya 集具有满 Hausdorff
+    维数。
+
+summary:
+  en: >-
+    The manuscript studies spatial regularity gained by averaging a wave over time. Its argument introduces
+    an auxiliary PDE. The companion Lean scope document identifies the half-wave inequality, Kakeya statements
+    and spherical extension estimates in their stated parameter ranges.
+  zh-CN: 手稿研究对时间取平均后，波的空间正则性可以改善多少，并引入了一个辅助偏微分方程。配套 Lean 文档逐项列出半波估计、Kakeya 命题以及限定参数范围内的球面延拓估计。
+
+why_it_matters:
+  en: >-
+    The release lets analysts compare the manuscript’s harmonic analysis with the quantifiers, parameter
+    ranges and losses in the formal statements. The significance of the problem and the level of independent
+    scrutiny can be tracked separately.
+  zh-CN: 分析学研究者可以将手稿中的论证与形式命题的量词、参数范围及正则性损失逐项对照，并继续跟踪同行审查的进展。
+
+ai_role:
+  level: autonomous_primary
+  description:
+    en: >-
+      OpenAI attributes the natural-language proof to its models and reports that a Lean formalization followed
+      the next day.
+    zh-CN: OpenAI 将自然语言证明归于其模型，并称次日完成了 Lean 形式化。
+
+human_contribution:
+  description:
+    en: >-
+      OpenAI researchers consulted an expert about how to share the work and published the model output,
+      the manuscript and the scope of the formalization for public examination.
+    zh-CN: OpenAI 研究人员就发布方式咨询了领域专家，随后公开模型输出、手稿和形式化覆盖范围，供同行检查。
+
+systems:
+  - lean
+
+organizations:
+  - openai
+
+people: []
+
+problems:
+  - local-smoothing-conjecture
+  - kakeya-conjecture
+
+methods:
+  - harmonic-analysis
+  - partial-differential-equations
+  - formal-verification
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: artifact_available
+  history:
+    - date: '2026-10-26'
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          The October 26 release history identifies the manuscript and its Lean companion. The scope document
+          lists the exact comparison statements. This entry records their release, without asserting independent
+          replay or mathematical endorsement.
+        zh-CN: 10 月 26 日的发布记录列出了手稿及配套 Lean 形式化。范围文档可定位到各个比较命题。本条目记录公开发布，独立重建及数学界核验情况仍待跟踪。
+
+sources:
+  - id: openai-wave-release
+    tier: S2
+    type: official_announcement
+    title: Working with academic communities to build scientific understanding
+    url: https://openai.com/index/building-scientific-understanding-with-academic-communities/
+    primary: true
+    published_date: '2026-10-26'
+    accessed_at: '2026-11-18'
+  - id: openai-wave-manuscript
+    tier: S1
+    type: paper
+    title: Local smoothing for the Euclidean wave equation
+    url: https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf
+    primary: true
+    published_date: '2026-10-26'
+    accessed_at: '2026-11-18'
+  - id: openai-wave-formal-scope
+    tier: S1
+    type: formal_artifact
+    title: Scope and comparator statements for Euclidean local smoothing
+    url: https://github.com/openai/math/blob/main/lean/docs/079.md
+    primary: true
+    published_date: null
+    accessed_at: '2026-11-18'
+  - id: openai-math-october-history
+    tier: S1
+    type: repository
+    title: Public release history for OpenAI mathematics manuscripts
+    url: https://github.com/openai/math/blob/main/history.md
+    primary: true
+    published_date: null
+    accessed_at: '2026-11-18'
+
+artifacts:
+  - id: wave-manuscript
+    kind: proof
+    title: Mathematical manuscript
+    url: https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf
+  - id: wave-lean-comparator
+    kind: proof
+    title: Lean scope and links to the comparator statements
+    url: https://github.com/openai/math/blob/main/lean/docs/079.md
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+    - evt-2026-openai-math-release
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+  - harmonic-analysis
+  - local-smoothing
+  - kakeya
+  - lean
+  - wave-equation
+
+editorial:
+  created_at: '2026-11-18'
+  last_reviewed: '2026-11-18'
+  reviewers: []
+
+corrections: []
