@@ -1,0 +1,159 @@
+schema_version: 1
+
+id: evt-2026-alphaproof-code-libsignal
+
+slug: alphaproof-code-libsignal
+
+title:
+  en: AlphaProof Code verifies properties of compiled Signal protocol code in Lean
+  zh-CN: AlphaProof Code 用 Lean 验证 Signal 协议机器码的安全性质
+
+dates:
+  event: '2026-11-10'
+  first_public_claim: '2026-11-10'
+  paper_release: '2026-11-10'
+  artifact_release: '2026-11-10'
+  independently_verified: null
+  added_to_chronicle: '2026-11-18'
+  last_updated: '2026-11-18'
+
+event_types:
+  - system
+  - formalization
+  - proof
+
+significance:
+  tier: H2
+  rationale:
+    en: >-
+      This case connects agent-generated proofs of cryptographic properties to the compiled instructions
+      of a deployed protocol library. The released development makes its trusted assumptions inspectable.
+    zh-CN: 这项工作把智能体生成的密码学证明与实际部署的协议库机器指令联系起来。公开的形式化工程列出了证明依赖的可信假设。
+
+mathematical_novelty:
+  type: tooling_only
+
+interfaces:
+  - formal
+
+claim:
+  en: >-
+    Google DeepMind reports machine-checked proofs for selected properties of libsignal’s PQXDH handshake
+    and Triple Ratchet on AArch64, including forward secrecy and security after a compromise under the paper’s
+    assumptions.
+  zh-CN: >-
+    Google DeepMind 报告称，团队对 AArch64 上 libsignal 的 PQXDH 握手与 Triple Ratchet 完成了若干性质的机器检查证明，涵盖论文假设下的前向保密性与失陷后安全性。
+
+summary:
+  en: >-
+    A specification agent helped researchers state the obligations in Lean. Prover agents then discharged
+    them against a model of AArch64 instructions. The report identifies the binary components covered and
+    lists the trusted specifications and semantics.
+  zh-CN: 研究人员借助智能体用 Lean 编写规约，再由证明智能体基于 AArch64 指令语义完成证明。报告列出了受验证的二进制组件、可信规约及指令语义。
+
+why_it_matters:
+  en: >-
+    A reader can follow a protocol-level guarantee down to the binary components it covers and see where
+    trust in a specification enters the argument.
+  zh-CN: 读者可以从协议级安全保证追溯到证明覆盖的二进制组件，并查明论证在哪些环节依赖可信规约。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Agents helped draft specifications and generated proofs checked by the Lean kernel against approved
+      statements.
+    zh-CN: 智能体协助起草规约，并生成由 Lean 内核按照已批准命题检查的证明。
+
+human_contribution:
+  description:
+    en: >-
+      Researchers guided and approved specifications, selected the properties to verify, and documented
+      the trusted computing base.
+    zh-CN: 研究人员指导并审核规约，选定验证目标，记录可信计算基。
+
+systems:
+  - alphaproof-code
+  - lean
+
+organizations:
+  - google-deepmind
+  - google
+
+people: []
+
+problems:
+  - protocol-verification
+
+methods:
+  - formal-verification
+  - proof-synthesis
+
+verification:
+  evidence_level: E3
+  status: paper_released
+  formal_assurance: machine_checked
+  history:
+    - date: '2026-11-10'
+      status: paper_released
+      evidence_level: E3
+      note:
+        en: >-
+          The authors published the technical report and Lean development, specifying the machine model
+          and the scope of the proofs.
+        zh-CN: 作者公开技术报告及 Lean 工程，说明了机器模型与证明覆盖范围。
+
+sources:
+  - id: alphaproof-code-report
+    tier: S1
+    type: paper
+    title: 'AlphaProof Code: Verifying Signal’s Security at the Machine-Code Level'
+    url: https://google-deepmind.github.io/code-verification/
+    primary: true
+    published_date: '2026-11-10'
+    accessed_at: '2026-11-18'
+  - id: alphaproof-code-development
+    tier: S1
+    type: formal_artifact
+    title: Public Lean development for AlphaProof Code
+    url: https://github.com/google-deepmind/code-verification
+    primary: true
+    published_date: null
+    accessed_at: '2026-11-18'
+  - id: alphaproof-code-announcement
+    tier: S2
+    type: official_announcement
+    title: Google DeepMind introduces AlphaProof Code
+    url: https://deepmind.google/blog/introducing-alphaproof-code/
+    primary: true
+    published_date: '2026-11-10'
+    accessed_at: '2026-11-18'
+
+artifacts:
+  - id: alphaproof-code-lean
+    kind: proof
+    title: Lean proofs and specifications
+    url: https://github.com/google-deepmind/code-verification
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+    - evt-2026-alphaproof-nexus
+
+timeline:
+  featured: false
+  significance: primary
+
+tags:
+  - lean
+  - formal-verification
+  - cryptography
+  - proof-agents
+
+editorial:
+  created_at: '2026-11-18'
+  last_reviewed: '2026-11-18'
+  reviewers: []
+
+corrections: []
