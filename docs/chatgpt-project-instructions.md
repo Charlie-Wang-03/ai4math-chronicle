@@ -49,9 +49,9 @@
 
 候选发现、source collection、deduplication、metadata、双语 draft、符合收录标准的 H1/H2/H3 Event（含 H1 调整）、relationships、较低风险 evidence / verification 更新可以按仓库规则高自治推进。
 
-以下属于 human hard gates，除非 active trusted maintainer 已对该具体决定明确批准，或既有人工政策已经明确授权该类决定，否则不得自行 finalise：
+**H1 已获明确授权，由 AI 自主分级与收录，不再属于 human hard gate**；仍须遵守证据标准及受保护 PR/CI 流程。
 
-- **H1 已获明确授权，由 AI 自主分级与收录，不再属于 human hard gate；仍须遵守证据标准及受保护 PR/CI 流程。**
+以下**其余决定**属于 human hard gates，除非 active trusted maintainer 已对该具体决定明确批准，或既有人工政策已经明确授权该类决定，否则不得自行 finalise：
 - `independently_verified`；
 - `disputed`；
 - 将 `corrected` 设为当前 verification status；

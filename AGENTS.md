@@ -60,9 +60,9 @@ Scanner output and Source Lead Issues are operational discovery records, not can
 
 Agents may gather evidence, draft bilingual text, suggest taxonomy, detect duplicates, create qualifying H1/H2/H3 Event records, maintain relationships, and apply lower-risk evidence / verification updates when the documented rule is satisfied and supporting sources are recorded.
 
-The following are standing human hard gates unless an active trusted maintainer has explicitly approved the exact decision or an already-established human policy explicitly delegates it:
+H1 significance **is not a human gate** under the ratified [2026-11-19 amendment](docs/gpt-project-governance-h1-autonomy-amendment.md).
 
-H1 significance **is not a human gate** under the ratified 2026-11-19 amendment. The following **remaining** decisions are human-gated:
+The following **remaining** decisions are standing human hard gates unless an active trusted maintainer has explicitly approved the exact decision or an established policy has explicitly delegated it:
 - finalizing `independently_verified`;
 - finalizing `disputed`;
 - finalizing `corrected` as the current verification status;

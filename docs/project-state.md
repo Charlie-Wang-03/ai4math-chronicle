@@ -142,9 +142,11 @@ Without a new phase decision, agents may continue:
 
 ## Human gates currently in force
 
-The standing hard gates are defined canonically in [`gpt-project-governance.md`](./gpt-project-governance.md), interpreted together with the [Trusted Co-Maintainer Governance Amendment](./gpt-project-governance-co-maintainer-amendment.md). In particular, do not autonomously finalize:
+The standing hard gates are defined by the [core Governance Protocol](./gpt-project-governance.md), interpreted together with the [Trusted Co-Maintainer Amendment](./gpt-project-governance-co-maintainer-amendment.md) and the later [H1 Autonomy Amendment](./gpt-project-governance-h1-autonomy-amendment.md).
 
-- **H1 is no longer a human gate**; autonomous H1 still requires a defensible significance rationale, authoritative evidence, attribution, careful uncertainty wording, and protected PR/CI;
+**H1 significance is no longer human-gated**; autonomous H1 decisions still require defensible historical-significance rationale, authoritative evidence, attribution, clear uncertainty, and protected PR/CI.
+
+The remaining decisions that must **not** be autonomously finalized are:
 - `independently_verified`;
 - `disputed`;
 - `corrected` as current verification status;
