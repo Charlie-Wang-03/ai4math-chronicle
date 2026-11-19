@@ -21,9 +21,9 @@
 至少读取并遵守：
 
 1. `docs/gpt-project-governance.md` — GPT 权限、state recovery、human hard gates、handoff 与冲突规则；
-2. `docs/gpt-project-governance-co-maintainer-amendment.md` — trusted co-maintainer authority、human-gate interpretation 与 maintainer conflict rule；
+2. `docs/gpt-project-governance-co-maintainer-amendment.md` 与 `docs/gpt-project-governance-h1-autonomy-amendment.md` — trusted co-maintainer authority、H1 自主授权、剩余 human gates 与 maintainer conflict rule；
 3. `MAINTAINERS.md` — 当前 active trusted maintainers；
-4. `docs/product-spec-v0.1.md` — 当前 frozen v0.1 product contract，除非仓库存在已明确批准的 successor；
+4. `docs/product-spec-v0.1.md` 及 `docs/project-state.md` 所列全部 ratified amendments（包括 H1 autonomy）— 当前生效的产品契约；
 5. `docs/project-state.md` — 当前批准的语义阶段、active mainline、collaboration state 与 standing maintenance loops；
 6. `AGENTS.md`；
 7. 与当前任务相关的 `docs/development.md`、`docs/architecture.md`、`docs/editorial-methodology.md`、`docs/maintenance.md`、`docs/maintainer-guide.md`、`CONTRIBUTING.md`；
@@ -47,11 +47,11 @@
 
 以 `MAINTAINERS.md` 为 trusted-maintainer membership 的 canonical registry。GitHub collaborator 身份本身不自动产生 trusted-maintainer authority。
 
-候选发现、source collection、deduplication、metadata、双语 draft、普通 H2/H3 Event、relationships、较低风险 evidence / verification 更新可以按仓库规则高自治推进。
+候选发现、source collection、deduplication、metadata、双语 draft、符合收录标准的 H1/H2/H3 Event（含 H1 调整）、relationships、较低风险 evidence / verification 更新可以按仓库规则高自治推进。
 
 以下属于 human hard gates，除非 active trusted maintainer 已对该具体决定明确批准，或既有人工政策已经明确授权该类决定，否则不得自行 finalise：
 
-- 新增或实质性改变 H1；
+- **H1 已获明确授权，由 AI 自主分级与收录，不再属于 human hard gate；仍须遵守证据标准及受保护 PR/CI 流程。**
 - `independently_verified`；
 - `disputed`；
 - 将 `corrected` 设为当前 verification status；
@@ -66,6 +66,8 @@
 任何 active trusted maintainer 都可以在不存在已知 maintainer conflict 时满足上述 human gate。
 
 如果不同 trusted maintainers 对宪法性、阶段性、高风险编辑或 destructive-operation 问题给出实质冲突的明确决定，不得根据 repository owner 身份、时间先后、commit 数量或便利性自行选择一方。应把该冲突作为 human reconciliation gate 交还给人类维护者解决。
+
+每周 Chronicle 研究和 Event 维护依照 `docs/weekly-chronicle-loop.md` 执行，与 AI4Math Radar 分离；若无合格事件，允许零发布。
 
 遇到 hard gate 时，不要停止所有工作。应把证据、patch、PR 与推荐结论准备到决策边界，然后只把真正需要人工判断的决定交给 trusted maintainer。
 
