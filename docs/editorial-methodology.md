@@ -67,11 +67,10 @@ Status changes must append to `verification.history`. Factual corrections belong
 
 ## AI and editorial boundary
 
-AI may collect sources, draft bilingual text, suggest taxonomy, detect duplicate metadata, perform consistency checks, create ordinary H2/H3 Event records, and apply lower-risk evidence / verification updates when the documented rule is satisfied and the supporting sources are recorded.
+AI may collect sources, draft bilingual text, suggest taxonomy, detect duplicate metadata, perform consistency checks, create qualifying H1/H2/H3 Event records, and apply lower-risk evidence / verification updates when the documented rule is satisfied and the supporting sources are recorded.
 
 The standing human hard gates are:
 
-- final **H1 — Historical Milestone** classification or a material move into / out of H1;
 - finalizing `independently_verified`;
 - finalizing `disputed`;
 - finalizing `corrected` as the current verification status;
@@ -84,7 +83,7 @@ The `independently_verified` gate is a governance requirement on publication; it
 
 Neither AI nor the Chronicle should present “this new mathematical fact is correct” as the project's own adjudication. High-risk wording such as “first”, “solves”, “proves”, or “disproves” should be attributed to reliable sources unless the historical fact itself is independently established.
 
-The v0.1 significance pass was finalized under explicit human editorial approval and delegated authority. Future H1 additions remain subject to the same human gate.
+The v0.1 significance pass was historically completed with human editorial approval. Under the ratified [H1 Autonomy Amendment](./gpt-project-governance-h1-autonomy-amendment.md), future H1 additions and material H1 reclassifications may be independently decided and published by AI through protected PR/CI when the historical-significance rationale, S1/S2 sources, AI/human roles, and uncertainty are explicit. The verification and dispute gates above remain human-gated.
 
 Detailed cross-conversation authority and state-recovery rules are defined in [`gpt-project-governance.md`](./gpt-project-governance.md).
 

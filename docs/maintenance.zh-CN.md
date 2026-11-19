@@ -21,6 +21,10 @@ AI4Math 大事记定位为精选历史档案，而不是实时新闻流。因此
 
 ## 建议复核节奏
 
+### 每周 Chronicle 研究 — 定时 Agent 工作流
+
+已批准外部 ChatGPT 定时任务，按 [每周 Chronicle 工作规范](./weekly-chronicle-loop.md) 回顾滚动七天的重要进展。AI 可通过受保护 PR/CI 自主评定与收录符合要求的 H1/H2/H3 Event；**没有每周发布数量指标**。现有 GitHub Actions 确定性信源扫描仍为手动触发，不是无人监管的定时爬虫。实际任务时间在 ChatGPT Tasks 管理。
+
 ### Source Intake — 持续进行
 
 可能有价值的论文、代码仓库、公告、artifact replay、独立分析、媒体报道和社区信号，可以在成熟为 Event proposal 之前先记录为 **Source Lead** Issue。
@@ -65,14 +69,13 @@ Candidate 可以直接来自成熟 Event Proposal，也可以由 Source Lead 在
 
 长期保留的人工编辑 hard gates 为：
 
-- 新增或实质性改变 **H1 — 历史级里程碑** 分类；
 - 最终确定 `independently_verified`；
 - 最终确定 `disputed`；
 - 最终将 `corrected` 设为当前 verification status；
 - 最终确定 `retracted`；
 - 以 Chronicle 自身权威解决存在实质冲突的数学正确性、归属或历史优先权争议。
 
-自动化可以把证据收集、完整 patch 与推荐结论准备到 gate 边界，但除非既有人工政策已经明确授权该类决定，否则不得在没有 trusted maintainer 直接批准的情况下正式发布 gated status 或 classification。
+H1 分类已由批准的 [H1 自主治理修正案](./gpt-project-governance-h1-autonomy-amendment.md) 从人工 gate 中移除。AI 可基于充分证据，经受保护 PR/CI 自主发布 H1；其余 gated status 或高风险裁决仍须 trusted maintainer 直接批准。
 
 较低风险的 evidence / verification 更新，在文档化规则满足且支持来源已记录时仍可高自治推进。
 

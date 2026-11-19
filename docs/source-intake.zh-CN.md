@@ -171,7 +171,7 @@ AI 维护者可以使用网页搜索、学术搜索、GitHub 搜索、官方 fee
 
 > 如果一个信源值得未来继续采取编辑动作，但还没准备好进入 canonical Event 工作，就应把它持久化为 Source Lead，而不是依赖聊天历史。
 
-在已批准 maintenance loop 内，AI 可以高自治完成来源收集、metadata 规范化、去重和 triage。H1 与高风险 verification / dispute 决定仍严格遵守 Governance Protocol 中的人工 hard gates。
+在已批准 maintenance loop 内，AI 可以高自治完成来源收集、metadata 规范化、去重和 triage。根据后续批准的 [H1 自主治理修正案](./gpt-project-governance-h1-autonomy-amendment.md)，H1 等级可由 AI 自主决定并通过受保护 PR/CI 发布；高风险 verification / dispute、数学正确性和归属裁决仍受人工 hard gates 约束。
 
 ## 当前自动化边界
 
@@ -179,7 +179,7 @@ v0.1.x 当前只实现 GitHub-native intake queue，**不运行**自动从 arXiv
 
 如果未来明确批准 collector，它也应把结果送到同一 Source Lead 边界，而不是直接发布 canonical Event。
 
-> Autonomous discovery must not become autonomous publication.
+> 确定性 source scanner 不得将未经编辑审查的结果直接变为 canonical Event。单独批准的 ChatGPT 每周编辑任务可以按 [每周 Chronicle 工作规范](./weekly-chronicle-loop.md)，在证据充分、通过受保护 PR/CI 的前提下自主收录 H1/H2/H3。
 
 ## 隐私、版权与信源卫生
 

@@ -171,13 +171,13 @@ The durable handoff rule is:
 
 > If a source is worth remembering for later editorial action but is not yet ready for canonical Event work, persist it as a Source Lead rather than relying on chat history.
 
-AI may autonomously collect, normalize, deduplicate, and triage sources inside the approved maintenance loop. Human hard gates still apply to H1 and high-risk verification / dispute decisions exactly as defined in the Governance Protocol.
+AI may autonomously collect, normalize, deduplicate, and triage sources inside the approved maintenance loop. The ratified [H1 Autonomy Amendment](./gpt-project-governance-h1-autonomy-amendment.md) allows evidence-backed autonomous H1 decisions through protected PR/CI; the remaining high-risk verification, dispute, correctness and attribution gates still apply.
 
 ## Current automation boundary
 
 The v0.1.x implementation intentionally stops at a GitHub-native intake queue. It does **not** currently run a scheduled crawler that automatically opens Issues from arXiv, RSS, social media, or lab feeds.
 
-A future collector, if ever approved, should feed the same Source Lead boundary rather than publish directly to canonical Events. Autonomous discovery must not become autonomous publication.
+A future collector, if ever approved, should feed the same Source Lead boundary rather than publish directly to canonical Events. The deterministic source scanner must never turn raw results directly into published Events. The separately authorized ChatGPT weekly editorial loop **may** publish independently investigated, evidence-backed H1/H2/H3 Events through protected PR/CI ([weekly procedure](./weekly-chronicle-loop.md)).
 
 ## Privacy, copyright, and source hygiene
 

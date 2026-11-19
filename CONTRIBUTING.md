@@ -79,11 +79,10 @@ The main rules are:
 
 ## Human editorial gates
 
-Automated analysis may collect evidence, prepare the full Event / correction patch, and recommend significance or verification changes. Lower-risk H2/H3 publication and routine verification maintenance may proceed under the documented rules.
+Automated analysis may collect evidence, prepare the full Event / correction patch, and recommend significance or verification changes. Evidence-backed H1/H2/H3 publication and routine verification maintenance may proceed under the documented rules.
 
-Contributions and automation must not unilaterally finalize any of the following without direct human editorial approval unless an already-established human policy explicitly delegates that exact class of decision:
+Under the [ratified H1 autonomy amendment](./docs/gpt-project-governance-h1-autonomy-amendment.md), AI may independently classify and publish qualified H1/H2/H3 Events through protected PRs and required CI. Contributions and automation must **not** unilaterally finalize these remaining decisions without direct trusted-maintainer approval:
 
-- a new or materially changed **H1 — Historical Milestone** classification;
 - `independently_verified`;
 - `disputed`;
 - `corrected` as the current verification status;
