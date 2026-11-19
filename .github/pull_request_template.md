@@ -30,7 +30,7 @@
 
 ## Human editorial / governance gates
 
-- [ ] This PR does not finalize a new or materially changed `H1` classification without direct trusted-maintainer review or an already-established explicit delegation.
+- [ ] Any new or materially changed `H1` decision provides a durable-significance rationale, authoritative S1/S2 sources, explicit AI/human roles, uncertainty and provenance per the ratified H1 autonomy amendment; individual H1 sign-off is no longer required.
 - [ ] This PR does not finalize `independently_verified`, `disputed`, `corrected` as the current verification status, or `retracted` without direct trusted-maintainer editorial approval or an already-established explicit delegation.
 - [ ] This PR does not adjudicate a material mathematical-correctness, attribution, or historical-priority dispute on Chronicle's own authority.
 - [ ] High-risk wording such as `first`, `solves`, `proves`, or `disproves` is source-attributed unless the historical fact itself is independently established.

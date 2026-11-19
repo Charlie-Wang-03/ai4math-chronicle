@@ -130,6 +130,6 @@ MVP 不引入：
 - vector database；
 - leaderboard；
 - chatbot；
-- 绕过人工编辑审核的 autonomous publication。
+- 绕过 canonical 证据标准及受保护 PR/CI 的无审查批量导入；依据 H1 自主治理修正案进行的 H1/H2/H3 规范收录仍被允许。
 
 这些是 v0.1 的架构约束，并不意味着未来版本永远不能加入相关能力。

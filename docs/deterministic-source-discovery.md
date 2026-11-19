@@ -207,4 +207,4 @@ This implementation does not add:
 - automatic Source Lead creation;
 - automatic Event creation or publication.
 
-Additional verified official feed adapters may be added as ordinary source-maintenance improvements when they remain inside the approved v0.1.x mainline. Any materially broader autonomous publication system would require separate product/governance review.
+Additional verified official feed adapters may be added as ordinary source-maintenance improvements when they remain inside the approved v0.1.x mainline. The separately approved weekly ChatGPT editorial loop may publish individually researched, evidence-backed H1/H2/H3 Events through protected PR/CI; it is **not** an automatic feature of this scanner. Materially broader direct-ingestion publication would require separate product/governance review.
