@@ -32,7 +32,7 @@ A trusted maintainer may ordinarily:
 - choose and execute scoped work inside the approved mainline;
 - create branches, Issues, PRs, reviews, and release-preparation changes;
 - triage source leads, corrections, bugs, and maintenance work;
-- publish ordinary H2 / H3 Event changes when the evidence rules are satisfied;
+- publish evidence-backed H1 / H2 / H3 Event changes when the evidence rules are satisfied;
 - approve or reject ordinary engineering / editorial PRs;
 - open a focused PR and, once the enforced branch-protection and CI conditions pass, squash-merge that same PR without requiring another maintainer's approval unless a more specific gate applies;
 - authorize an existing human hard gate when they are comfortable taking responsibility for that decision;
@@ -43,9 +43,8 @@ The GitHub repository owner may retain account-level controls that the platform 
 
 ## 3. Human hard gates
 
-The standing gates remain unchanged. They include:
+The remaining hard gates under the ratified 2026-11-19 [H1 Autonomy Amendment](./gpt-project-governance-h1-autonomy-amendment.md) include:
 
-- a new or materially changed H1 classification;
 - `independently_verified`;
 - `disputed`;
 - `corrected` as the current verification status;

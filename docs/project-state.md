@@ -1,7 +1,7 @@
 # AI4Math Chronicle — Current Project State
 
 **Status:** Canonical semantic operational state  
-**Last governance review:** 2026-09-17
+**Last governance review:** 2026-11-19
 
 This file records the **approved semantic state** that a future conversation needs in order to resume work. It intentionally does not mirror volatile GitHub facts such as commit SHAs, branch lists, corpus counts, workflow-run IDs, or temporary implementation details.
 
@@ -9,7 +9,7 @@ This file records the **approved semantic state** that a future conversation nee
 
 **Post-launch v0.1.x maintenance and corpus stewardship** under the v0.1 product/editorial contract.
 
-The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md), [`product-spec-v0.1-field-building-amendment.md`](./product-spec-v0.1-field-building-amendment.md), and [`product-spec-v0.1-public-entrypoints-amendment.md`](./product-spec-v0.1-public-entrypoints-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model. The field-building amendment extends the inclusion boundary and canonical taxonomy to cover historically significant formation, institutionalization, norms, governance, and scholarly-infrastructure milestones in AI4Math without creating a new product phase. The public-entrypoints amendment defines the Chronicle's approved product-facing URL topology without changing its single-source-of-truth architecture.
+The active product contract is the frozen [`product-spec-v0.1.md`](./product-spec-v0.1.md) together with the owner-approved [`product-spec-v0.1-r0-amendment.md`](./product-spec-v0.1-r0-amendment.md), [`product-spec-v0.1-field-building-amendment.md`](./product-spec-v0.1-field-building-amendment.md), and [`product-spec-v0.1-public-entrypoints-amendment.md`](./product-spec-v0.1-public-entrypoints-amendment.md), and [`product-spec-v0.1-h1-autonomy-amendment.md`](./product-spec-v0.1-h1-autonomy-amendment.md). The R0 amendment reconciles the post-launch reader experience with the approved Timeline / Search & Explore / Event Detail / About product model. The field-building amendment extends the inclusion boundary and canonical taxonomy to cover historically significant formation, institutionalization, norms, governance, and scholarly-infrastructure milestones in AI4Math without creating a new product phase. The public-entrypoints amendment defines the Chronicle's approved product-facing URL topology without changing its single-source-of-truth architecture.
 
 The owner-approved R1 reader-information work is recorded in [`information-design.md`](./information-design.md). It is an implementation-level design contract inside v0.1.x, not a Product Specification amendment and not a new product phase. The owner-approved R1.2C-A signature-ornament language is recorded in [`ornament-language.md`](./ornament-language.md) as a subordinate visual-identity contract; it defines ornament boundaries without authorizing a broader redesign or new product phase.
 
@@ -17,7 +17,7 @@ The public v0.1 line is already launched. Ordinary maintenance, incremental Even
 
 ## Active governance model
 
-The canonical AI operating protocol remains [`gpt-project-governance.md`](./gpt-project-governance.md), amended by the ratified [`gpt-project-governance-co-maintainer-amendment.md`](./gpt-project-governance-co-maintainer-amendment.md).
+The canonical AI operating protocol remains [`gpt-project-governance.md`](./gpt-project-governance.md), amended by the ratified [`gpt-project-governance-co-maintainer-amendment.md`](./gpt-project-governance-co-maintainer-amendment.md) and the owner-approved [`gpt-project-governance-h1-autonomy-amendment.md`](./gpt-project-governance-h1-autonomy-amendment.md). The latter removes the H1-specific human gate while preserving all other high-risk gates.
 
 The project has an **active trusted co-maintainer model**:
 
@@ -49,9 +49,11 @@ These entrypoints expose the same Chronicle and canonical Event corpus. Product-
 The approved long-term mainline has two standing tracks:
 
 1. **Product / engineering maintenance** — keep the Chronicle reliable, discoverable, professional, accessible, coherent, and easy to navigate across the three approved public entrypoints under the active v0.1 product contract, while preserving one static product and one canonical Event source of truth.
-2. **Chronicle / corpus maintenance** — continue evidence-backed candidate intake, deduplication, Event drafting, normal H2/H3 publication, source maintenance, corrections, relationships, and verification follow-up under the Editorial Methodology and Governance Protocol.
+2. **Chronicle / corpus maintenance** — continue evidence-backed candidate intake, deduplication, Event drafting, qualified H1/H2/H3 publication, source maintenance, corrections, relationships, and verification follow-up under the Editorial Methodology and Governance Protocol.
 
 These are standing maintenance loops, not authorization to invent a new major feature family or a new product phase.
+
+The corpus track includes the approved **weekly Chronicle research and editorial loop** in [`weekly-chronicle-loop.md`](./weekly-chronicle-loop.md), orchestrated by an external ChatGPT task. This is not a scheduled GitHub Actions crawler and imposes no publication quota.
 
 No additional concrete collaboration workstream is approved merely by virtue of the co-maintainer transition.
 
@@ -80,7 +82,7 @@ The following owner-approved rules are now part of the active v0.1 contract:
 - Durable AI4Math-specific journals / conferences and materially norm-setting community statements are valid candidate classes, but ordinary petitions, individual opinion pieces, one-off workshops, routine special issues, local symposia, and ephemeral community activity remain excluded by default.
 - `infrastructure` continues to mean technical or research infrastructure; it must not be used as a proxy for institutional field building.
 - Pure field-building events may use `not_applicable` for mathematical novelty, AI role, and mathematical interface when those dimensions genuinely do not apply. `not_applicable` is restricted to events containing `field_building`; for interfaces it must be exclusive.
-- Field-building events use the existing H1 / H2 / H3, source, evidence, verification, formal-assurance, correction, and human-gate frameworks. H1 remains human-gated.
+- Field-building events use the existing H1 / H2 / H3, source, evidence, verification, formal-assurance, correction, and human-gate frameworks. H1 significance is autonomously decidable under the later H1 governance amendment; remaining high-risk gates still apply.
 - Inclusion records historical significance and evidence; it does not endorse a community statement's normative position or a scholarly venue's prestige.
 
 ### Approved R0 product-coherence model
@@ -132,16 +134,19 @@ Without a new phase decision, agents may continue:
 - parking / detaching `news.aixmath.org` from Chronicle delivery so the hostname remains reserved for a future separately approved product;
 - schema, CI, documentation, and data-quality improvements;
 - candidate event discovery and source collection, including `field_building` candidates under the approved amendment;
-- ordinary H2/H3 Event creation when evidence and scope rules are satisfied, including ordinary H2/H3 `field_building` records;
+- qualified H1/H2/H3 Event creation and significance updates when evidence and scope rules are satisfied, including `field_building` records;
+- weekly Chronicle research, triage, and protected PR/CI publication under the approved weekly procedure;
 - routine evidence-level and lower-risk verification updates;
 - relationship, metadata, translation, and provenance maintenance;
 - focused correction preparation up to any human hard gate.
 
 ## Human gates currently in force
 
-The standing hard gates are defined canonically in [`gpt-project-governance.md`](./gpt-project-governance.md), interpreted together with the [Trusted Co-Maintainer Governance Amendment](./gpt-project-governance-co-maintainer-amendment.md). In particular, do not autonomously finalize:
+The standing hard gates are defined by the [core Governance Protocol](./gpt-project-governance.md), interpreted together with the [Trusted Co-Maintainer Amendment](./gpt-project-governance-co-maintainer-amendment.md) and the later [H1 Autonomy Amendment](./gpt-project-governance-h1-autonomy-amendment.md).
 
-- new or materially changed H1 classification;
+**H1 significance is no longer human-gated**; autonomous H1 decisions still require defensible historical-significance rationale, authoritative evidence, attribution, clear uncertainty, and protected PR/CI.
+
+The remaining decisions that must **not** be autonomously finalized are:
 - `independently_verified`;
 - `disputed`;
 - `corrected` as current verification status;

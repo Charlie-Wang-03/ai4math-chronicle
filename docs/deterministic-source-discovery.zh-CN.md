@@ -207,4 +207,4 @@ AI 仍适合承担：
 - 自动创建 Source Lead；
 - 自动创建或发布 Event。
 
-未来如果核实到稳定官方 feed / API，可以在不改变 v0.1.x 产品契约的前提下，作为普通 source-maintenance 改进继续增加 adapter。若进一步发展成更广泛的 autonomous publication system，则必须单独经过 product / governance 审查。
+未来如果核实到稳定官方 feed / API，可以在不改变 v0.1.x 产品契约的前提下，作为普通 source-maintenance 改进继续增加 adapter。已另行批准 ChatGPT 每周 Chronicle 编辑任务，可基于独立核验的来源，经受保护 PR/CI 发布 H1/H2/H3；该能力不是扫描器自身的自动入库功能。更广泛的直接批量发布系统仍须单独经过 product / governance 审查。

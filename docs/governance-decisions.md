@@ -197,3 +197,12 @@ This reservation does **not** authorize building or launching that product. `new
 - external infrastructure should park or detach `news.aixmath.org` from Chronicle delivery until a future separately approved product gives that hostname a new role.
 
 This decision does not create a new product phase, does not approve AI4Math News implementation, and does not authorize a canonical-domain migration.
+## 2026-11-19 — Autonomous H1 and weekly Chronicle stewardship authorized
+
+**Status:** Explicitly approved by `@Charlie-Wang-03` (active trusted maintainer)
+
+The owner authorized AI to make and publish **H1** significance decisions, including material reclassification, without individual human H1 review. The old H1 gate was deliberately removed while historical significance, evidence sourcing, canonical Event provenance, and protected PR/CI requirements remain strict.
+
+The decision is codified in the [H1 Governance Amendment](./gpt-project-governance-h1-autonomy-amendment.md) and [H1 Product Amendment](./product-spec-v0.1-h1-autonomy-amendment.md). All other high-risk verification, disputes, mathematical correctness, attribution/priority, constitutional and destructive-operation gates remain intact. An unresolved material conflict between trusted maintainers still requires human reconciliation.
+
+The owner also approved an **external weekly ChatGPT Chronicle task** (see [Weekly Chronicle Loop](./weekly-chronicle-loop.md)). It does not add a scheduled GitHub crawler, a separate database, a news product, a publication quota, or a new product phase.

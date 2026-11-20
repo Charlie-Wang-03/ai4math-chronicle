@@ -67,11 +67,10 @@ Evidence level（`E0`–`E4`）、verification status、formal assurance 与 sig
 
 ## AI 与人工编辑边界
 
-AI 可以参与来源收集、双语文本草拟、taxonomy 建议、重复 metadata 检测、一致性检查、新增普通 H2/H3 Event，以及在文档规则已满足且证据已经记录时执行较低风险的 evidence / verification 更新。
+AI 可以参与来源收集、双语文本草拟、taxonomy 建议、重复 metadata 检测、一致性检查、新增满足证据要求的 H1/H2/H3 Event，以及在文档规则已满足且证据已经记录时执行较低风险的 evidence / verification 更新。
 
 长期保留的人工 hard gates 为：
 
-- 最终确定新的 **H1 — 历史级里程碑**，或将既有事件实质性移入 / 移出 H1；
 - 最终确定 `independently_verified`；
 - 最终确定 `disputed`；
 - 最终将 `corrected` 设为当前 verification status；
@@ -84,7 +83,7 @@ AI 可以把证据收集、完整 patch 与推荐结论准备到 gate 边界，�
 
 AI 与 Chronicle 都不应把“这个新数学事实是正确的”写成项目自身的最终裁决。对于“首次”“解决”“证明”“反驳”等高风险历史措辞，除非对应历史事实已经得到独立确认，否则应明确归属于可靠来源。
 
-v0.1 的 significance 终审是在人工整体验收并显式授权分类调整的前提下完成的。今后的新增 H1 仍保持同样的人工门槛。
+v0.1 significance 终审当时经过人工批准，此为历史记录。根据后续批准的 [H1 自主编辑修正案](./gpt-project-governance-h1-autonomy-amendment.md)，AI 可以独立判断和发布新增 H1 或实质性 H1 重分类，但仍须论证历史重要性、引用 S1/S2 权威来源、区分 AI / 人类贡献、说明不确定性，并通过受保护的 PR/CI 流程。上述高风险 verification / dispute gate 保持不变。
 
 跨对话的 AI 权限、state recovery 与 hard-gate 规则，以 [`gpt-project-governance.md`](./gpt-project-governance.md) 为准。
 

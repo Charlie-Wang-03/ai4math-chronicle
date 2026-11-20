@@ -32,7 +32,7 @@ Trusted maintainers 在项目决策层面拥有基本对等的权限。
 - 在已批准 mainline 内选择并推进聚焦任务；
 - 创建 branches、Issues、PRs、reviews 与 release-preparation 改动；
 - triage source leads、corrections、bugs 与维护任务；
-- 在证据规则满足时发布普通 H2 / H3 Event 改动；
+- 在证据规则满足时发布符合证据标准的 H1 / H2 / H3 Event 改动；
 - 审批或拒绝普通工程 / 编辑 PR；
 - 创建自己的聚焦 PR，并在 enforced branch protection 与 required CI 全部通过后自行 squash merge，除非更具体的 gate 要求另一位人类复核；
 - 在愿意承担该决定责任时，对现有 human hard gate 给出明确批准；
@@ -43,9 +43,8 @@ GitHub 仓库所有者可能因为平台限制而保留某些无法完全委派�
 
 ## 3. Human hard gates
 
-现有 hard gates 不因多人维护而削弱，包括：
+2026-11-19 [H1 自主治理修正案](./gpt-project-governance-h1-autonomy-amendment.md) 已将 H1 从人工 hard gates 中移除。其余门槛不因多人维护而削弱，包括：
 
-- 新增或实质性改变 H1 分类；
 - `independently_verified`；
 - `disputed`；
 - 将 `corrected` 设为当前 verification status；

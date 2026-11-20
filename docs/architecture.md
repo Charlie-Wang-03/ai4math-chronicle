@@ -130,6 +130,6 @@ The MVP does not introduce:
 - a vector database;
 - a leaderboard;
 - a chatbot;
-- autonomous publication without human editorial review.
+- unsourced or unvalidated mass ingestion bypassing canonical editorial checks and protected PR/CI. Scoped H1/H2/H3 AI publication remains permitted under the ratified H1 autonomy amendment.
 
 These exclusions are architectural constraints for v0.1, not claims that the project can never add such capabilities later.

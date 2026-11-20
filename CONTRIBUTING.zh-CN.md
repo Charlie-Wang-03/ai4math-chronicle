@@ -79,11 +79,10 @@ Source Lead 是编辑 inbox，不是 canonical data。它可以是初步的、�
 
 ## 人工编辑门槛
 
-自动化分析可以完成证据收集、完整 Event / correction patch，并提出 significance 或 verification 建议。普通 H2/H3 发布和较低风险的日常 verification 维护，在满足文档规则时可以继续高自治推进。
+自动化分析可以完成证据收集、完整 Event / correction patch，并提出 significance 或 verification 建议。符合证据标准的 H1/H2/H3 发布和较低风险的日常 verification 维护，在满足文档规则时可以继续高自治推进。
 
-除非既有人工政策已经明确授权该类决定，否则贡献者与自动化不得在缺少直接人工编辑批准的情况下单方面最终确定：
+根据[批准的 H1 自治修正案](./docs/gpt-project-governance-h1-autonomy-amendment.md)，AI 可以独立判断 H1/H2/H3，并在证据充分且 PR/CI 通过后发布。以下**剩余**决定仍须 trusted maintainer 直接批准：
 
-- 新增或实质性改变 **H1 — 历史级里程碑** 分类；
 - `independently_verified`；
 - `disputed`；
 - 将 `corrected` 设为当前 verification status；

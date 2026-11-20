@@ -10,8 +10,8 @@ AI4Math Chronicle is a timeline-first, evidence-backed archive of major mileston
 
 Before substantive work in a fresh conversation, read and reconcile:
 
-1. [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) together with the active [`docs/gpt-project-governance-co-maintainer-amendment.md`](docs/gpt-project-governance-co-maintainer-amendment.md) — agent authority, state recovery, trusted-maintainer authority, hard gates, conflict handling, and handoff;
-2. [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) together with any ratified amendment named by [`docs/project-state.md`](docs/project-state.md) — active v0.1 product contract;
+1. [`docs/gpt-project-governance.md`](docs/gpt-project-governance.md) together with the active [`docs/gpt-project-governance-co-maintainer-amendment.md`](docs/gpt-project-governance-co-maintainer-amendment.md) and [`docs/gpt-project-governance-h1-autonomy-amendment.md`](docs/gpt-project-governance-h1-autonomy-amendment.md) — agent authority, state recovery, trusted-maintainer authority, hard gates, conflict handling, and handoff;
+2. [`docs/product-spec-v0.1.md`](docs/product-spec-v0.1.md) together with any ratified amendment named by [`docs/project-state.md`](docs/project-state.md), including [`docs/product-spec-v0.1-h1-autonomy-amendment.md`](docs/product-spec-v0.1-h1-autonomy-amendment.md) — active v0.1 product contract;
 3. [`docs/project-state.md`](docs/project-state.md) — approved semantic phase, collaboration state, and active mainline;
 4. [`MAINTAINERS.md`](MAINTAINERS.md) — humans currently holding trusted-maintainer authority;
 5. live GitHub repository state — current HEAD, branches, PRs, Issues, releases, files, and task-relevant CI.
@@ -54,15 +54,15 @@ Use the rule:
 
 For broad candidate discovery, prefer the repository's versioned deterministic and direct-source channels before relying on open-ended LLM/web search. Use [`docs/deterministic-source-discovery.md`](docs/deterministic-source-discovery.md) and `config/source-channels.yaml` to establish an explicit date window and inspectable candidate set. Probabilistic web search remains useful for gap filling, following a named lead, locating independent corroboration, and investigating known uncertainty; it should not be the only baseline enumeration method when a deterministic/direct channel covers the task.
 
-Scanner output and Source Lead Issues are operational discovery records, not canonical factual data. Triage machine results before opening Source Leads; persist a lead when it is worth later editorial action; move mature evidence into the relevant canonical Event through the normal review path. Discovery automation must not become autonomous publication.
+Scanner output and Source Lead Issues are operational discovery records, not canonical factual data. Triage machine results before opening Source Leads; persist a lead when it is worth later editorial action; move mature evidence into the relevant canonical Event through the normal review path. Raw scanner output must not directly become a canonical Event. The separately approved weekly Chronicle task may publish researched H1/H2/H3 Events through the normal evidence-backed protected PR/CI flow ([weekly procedure](docs/weekly-chronicle-loop.md)).
 
 ## Editorial boundaries
 
-Agents may gather evidence, draft bilingual text, suggest taxonomy, detect duplicates, create ordinary H2/H3 Event records, maintain relationships, and apply lower-risk evidence / verification updates when the documented rule is satisfied and supporting sources are recorded.
+Agents may gather evidence, draft bilingual text, suggest taxonomy, detect duplicates, create qualifying H1/H2/H3 Event records, maintain relationships, and apply lower-risk evidence / verification updates when the documented rule is satisfied and supporting sources are recorded.
 
-The following are standing human hard gates unless an active trusted maintainer has explicitly approved the exact decision or an already-established human policy explicitly delegates it:
+H1 significance **is not a human gate** under the ratified [2026-11-19 amendment](docs/gpt-project-governance-h1-autonomy-amendment.md).
 
-- a new or materially changed `H1` classification;
+The following **remaining** decisions are standing human hard gates unless an active trusted maintainer has explicitly approved the exact decision or an established policy has explicitly delegated it:
 - finalizing `independently_verified`;
 - finalizing `disputed`;
 - finalizing `corrected` as the current verification status;

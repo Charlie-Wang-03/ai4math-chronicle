@@ -21,6 +21,10 @@ There is no guaranteed publication SLA. Accuracy, provenance, and historical sel
 
 ## Suggested review cadence
 
+### Weekly Chronicle research — scheduled agent loop
+
+An external ChatGPT task reviews a rolling seven-day window under the [Weekly Chronicle Loop](./weekly-chronicle-loop.md). It may independently classify and publish qualified H1/H2/H3 Events via reviewable PRs and required CI; there is **no weekly publication quota**. The repository's deterministic GitHub Actions source scanner remains manual-dispatch only, not an unattended crawler. The task schedule is managed in ChatGPT Tasks and not duplicated here.
+
 ### Source intake — continuous
 
 Potentially useful papers, repositories, announcements, artifact replays, independent analyses, media reports, and community signals may be captured as **Source Lead** Issues before they mature into Event proposals.
@@ -65,14 +69,13 @@ Human review is reserved for an enumerated set of high-risk decisions rather tha
 
 The standing human editorial gates are:
 
-- a new or materially changed **H1 — Historical Milestone** classification;
 - finalizing `independently_verified`;
 - finalizing `disputed`;
 - finalizing `corrected` as the current verification status;
 - finalizing `retracted`;
 - resolving a material mathematical-correctness, attribution, or historical-priority dispute on the Chronicle's own authority.
 
-Automation may prepare the evidence, complete the draft patch, and recommend any of these decisions, but the gated status or classification must not be published without direct trusted-maintainer approval unless an already-established human policy explicitly delegates that exact class of decision.
+H1 classification is no longer human-gated: the ratified [H1 Autonomy Amendment](./gpt-project-governance-h1-autonomy-amendment.md) authorizes evidence-backed H1 decisions through protected PR/CI. Automation may prepare evidence and a patch for the **remaining** gated states and adjudications but must not finalize them without direct trusted-maintainer approval.
 
 Lower-risk evidence and verification updates may continue autonomously when the documented rule is satisfied and supporting sources are recorded.
 
