@@ -1,0 +1,239 @@
+schema_version: 1
+
+id: evt-2026-claude-riemann-lean-claim
+
+slug: claude-riemann-hypothesis-lean-proof-claim
+
+title:
+  en: Alpöge and Claude release a claimed Lean proof of the Riemann and generalized Riemann hypotheses
+  zh-CN: Alpöge 与 Claude 公布声称证明黎曼猜想及广义黎曼猜想的 Lean 形式化文件
+
+dates:
+  event: '2026-11-20'
+  first_public_claim: '2026-11-20'
+  paper_release: null
+  artifact_release: '2026-11-20'
+  independently_verified: null
+  added_to_chronicle: '2026-11-21'
+  last_updated: '2026-11-21'
+
+event_types:
+  - discovery
+  - proof
+  - formalization
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      The public release of an unusually extensive AI-assisted formal proof claim for the Riemann
+      hypothesis and Dirichlet generalized Riemann hypothesis is a consequential AI4Math historical
+      episode in its own right: it places a precise Millennium Problem statement and a large
+      inspectable Lean development before independent checkers, rather than merely asserting
+      an informal solution. The claim's extraordinary potential and emerging scrutiny warrant
+      H1 historical attention, but this is a provisional editorial assessment of the release,
+      not acceptance that either hypothesis is proved. The significance and wording must be
+      revisited if full replay or mathematical review undermines the claim.
+    zh-CN: >-
+      这次公开发布针对黎曼猜想与 Dirichlet 广义黎曼猜想的超大规模 AI 辅助形式化证明主张，
+      本身就是 AI4Math 历史中值得重点记录的事件：它把千禧年难题的精确形式命题及大规模
+      可检查 Lean 工程交给外部核验，而不只是提出一份非形式化解答。主张的潜在影响与正在
+      进行的独立审查使其具有 H1 级关注价值，但这是对发布事件的暂定历史重要性判断，
+      绝非认定两个猜想已经得到证明。若后续完整重放或数学审查否定主张，须重新评估其
+      定级与措辞。
+
+mathematical_novelty:
+  type: new_result
+
+interfaces:
+  - formal
+  - informal
+
+claim:
+  en: >-
+    A first-person note on mathematician Levent Alpöge's website dated 20 November 2026 says
+    that he and Claude found a proof of the Riemann hypothesis and that the method also resolves
+    the generalized Riemann hypothesis. The note asserts that the arguments have been formalized
+    in Lean without additional assumptions. These are the author's claims, not conclusions that
+    Chronicle or independent mathematicians have validated.
+  zh-CN: >-
+    2026 年 11 月 20 日，数学家 Levent Alpöge 个人网站上的第一人称声明称，他与 Claude
+    找到了黎曼猜想的证明，而且方法还解决了广义黎曼猜想；声明并称相关论证已在 Lean
+    中完成无需额外假设的形式化。这些均为发布方主张，并非 Chronicle 或独立数学家
+    已经核准的结论。
+
+summary:
+  en: >-
+    The author supplied a four-page methodological remark and 14 downloadable parts of a Lean
+    source archive instead of a conventional proof paper. An independent mirror reports roughly
+    175,000 Lean source files and identifies a top-level theorem typed as Mathlib's
+    RiemannHypothesis, alongside statements for Dirichlet L-functions. Preliminary checks
+    confirm archive correspondence and the independent challenge statements, and a static
+    scan found no explicit sorry or custom axiom declarations in the submitted source.
+    Full independent build, axiom-dependency audit, and kernel/Comparator replay have not
+    yet been reported as successful.
+  zh-CN: >-
+    发布方没有提供常规数学论文，而是公开四页研究说明和分成 14 个分卷的 Lean
+    源码归档。独立镜像报告约 17.5 万个 Lean 源文件，识别出以 Mathlib 的
+    RiemannHypothesis 为类型的顶层定理，以及 Dirichlet L 函数相关命题。
+    初步检查确认归档内容与镜像一致、独立写出的目标命题可编译，源码静态扫描
+    未发现显式 sorry 或自定义 axiom 声明。然而完整的独立构建、证明依赖审计
+    与内核 / Comparator 重放均尚无成功结论。
+
+why_it_matters:
+  en: >-
+    A successful assumption-disciplined replay of the exact RiemannHypothesis theorem would
+    be a transformative result for number theory and for the role of AI in mathematical
+    discovery. Conversely, a failed check would show why a large formal-looking archive
+    and plausible theorem statement cannot alone establish a claimed solution. The
+    distinction between public claim, inspectable artifact, independent kernel replay,
+    mathematical understanding, and community acceptance is essential here.
+  zh-CN: >-
+    如果精确的 RiemannHypothesis 定理在无额外未证假设的条件下通过独立重放，
+    其意义将同时改变数论与 AI 辅助数学发现的历史图景。反之，即便代码看似
+    完整、定理表述准确，大型形式化归档本身也不能保证一个猜想已经解决。
+    本事件必须持续区分公开主张、可检查工件、独立内核重放、数学理解及学界接受度。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      The note credits Claude with major technical progress, especially near the end of the
+      research, and with extensive Lean formalization work. This is the author's description
+      of AI's contribution; the exact discovery and formalization provenance has not been
+      independently audited.
+    zh-CN: >-
+      声明将研究后期的重大技术进展与大量 Lean 形式化工作归于 Claude。
+      这是作者对 AI 贡献的陈述，具体发现过程和形式化工作的归属尚未获得
+      独立审计。
+
+human_contribution:
+  description:
+    en: >-
+      Alpöge reports directing the work toward the mathematical setting and underlying
+      conceptual strategy, consulting colleagues, and publishing the formal artifacts.
+      He explicitly says he has not yet produced a conventional readable exposition.
+    zh-CN: >-
+      Alpöge 自述负责引导数学研究场景与概念策略、咨询同行并公开形式化工件。
+      他明确表示尚未形成常规的可读数学证明稿。
+
+systems:
+  - claude-research
+  - lean
+  - mathlib
+
+organizations:
+  - anthropic
+
+people:
+  - levent-alpoge
+
+problems:
+  - riemann-hypothesis
+  - generalized-riemann-hypothesis
+
+methods:
+  - analytic-number-theory
+  - automorphic-forms
+  - theta-lifts
+  - formal-verification
+
+verification:
+  evidence_level: E3
+  status: under_verification
+  formal_assurance: artifact_available
+  history:
+    - date: '2026-11-20'
+      status: under_verification
+      evidence_level: E3
+      note:
+        en: >-
+          The original personal-site statement and public Lean archive are available.
+          The independent Deicyde mirror checks byte correspondence, statements and
+          source-level risky constructs, but explicitly reports the full Comparator
+          check as not yet completed. No independent successful kernel replay or
+          mathematical acceptance is established; the Claim remains attributed.
+        zh-CN: >-
+          原始个人网站声明和 Lean 归档已公开。Deicyde 独立镜像进行了
+          字节对应、目标命题与源码风险构造的初步检查，但明确表示
+          完整 Comparator 核验尚未完成。尚无独立成功的内核重放
+          或数学界接受的证据，因此证明主张保持归属表述。
+
+sources:
+  - id: alpoge-rh-remark
+    tier: S2
+    type: official_announcement
+    title: Remark — Levent Alpöge's personal website statement
+    url: https://alpo.ge/remark.pdf
+    primary: true
+    published_date: '2026-11-20'
+    accessed_at: '2026-11-21'
+  - id: alpoge-rh-original-lean
+    tier: S1
+    type: formal_artifact
+    title: Original Lean source archive, part 01 of 14 (full index in the remark)
+    url: https://alpo.ge/lean.tar.gz.part01
+    primary: true
+    published_date: '2026-11-20'
+    accessed_at: '2026-11-21'
+  - id: deicyde-rh-lean-preliminary-audit
+    tier: S3
+    type: independent_analysis
+    title: Independent mirror, statement challenge and preliminary verification notes
+    url: https://github.com/Deicyde/riemann-hypothesis
+    primary: false
+    published_date: '2026-11-20'
+    accessed_at: '2026-11-21'
+  - id: clay-rh-problem-status
+    tier: S2
+    type: other
+    title: Riemann Hypothesis — Clay Mathematics Institute Millennium Problem
+    url: https://www.claymath.org/millennium/Riemann-Hypothesis/
+    primary: false
+    published_date: null
+    accessed_at: '2026-11-21'
+  - id: verge-alpoge-rh-report
+    tier: S4
+    type: media
+    title: Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude
+    url: https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem
+    primary: false
+    published_date: '2026-11-20'
+    accessed_at: '2026-11-21'
+
+artifacts:
+  - id: alpoge-rh-lean-archive
+    kind: proof
+    title: Original Lean proof archive in 14 parts
+    url: https://alpo.ge/lean.tar.gz.part01
+  - id: alpoge-rh-lean-audit-repository
+    kind: supplement
+    title: Independent source mirror and pending Comparator validation
+    url: https://github.com/Deicyde/riemann-hypothesis
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+    - evt-2026-claude-riemann-lower-bound
+    - evt-2026-openai-quasi-riemann
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+  - riemann-hypothesis
+  - generalized-riemann-hypothesis
+  - claude
+  - lean
+  - formal-mathematics
+  - ai-mathematical-discovery
+  - under-verification
+
+editorial:
+  created_at: '2026-11-21'
+  last_reviewed: '2026-11-21'
+  reviewers: []
+
+corrections: []
