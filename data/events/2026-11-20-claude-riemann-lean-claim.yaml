@@ -15,7 +15,7 @@ dates:
   artifact_release: '2026-11-20'
   independently_verified: null
   added_to_chronicle: '2026-11-21'
-  last_updated: '2026-11-21'
+  last_updated: '2026-11-22'
 
 event_types:
   - discovery
@@ -64,21 +64,30 @@ claim:
 
 summary:
   en: >-
-    The author supplied a four-page methodological remark and 14 downloadable parts of a Lean
-    source archive instead of a conventional proof paper. An independent mirror reports roughly
-    175,000 Lean source files and identifies a top-level theorem typed as Mathlib's
-    RiemannHypothesis, alongside statements for Dirichlet L-functions. Preliminary checks
-    confirm archive correspondence and the independent challenge statements, and a static
-    scan found no explicit sorry or custom axiom declarations in the submitted source.
-    Full independent build, axiom-dependency audit, and kernel/Comparator replay have not
-    yet been reported as successful.
+    Alpöge published a four-page note and a 14-part Lean archive containing 175,187 source
+    modules. Independent checks reported on 21–22 November by Andrew Sutherland (MIT)
+    and a separate LUMI-based audit show that the complete source compiles, the five
+    headline theorems use only propext, Classical.choice and Quot.sound, and all modules
+    have passed kernel replay in Sutherland's audit. Independent nanoda and con-leche
+    kernels accepted the full export; con-leche and con-ron comparison modes matched all
+    five statements against a clean Mathlib-only challenge. Sutherland also reports
+    a sandboxed rebuild reproducing the exported proof byte for byte. As of his
+    22 November 04:35 UTC update, the full Lean 4.36 Comparator run and the Lean-kernel
+    replay of the exported file were still running. These checks are substantial formal
+    corroboration, not a mathematical exposition, community acceptance, or an independent
+    adjudication of the informal RH/GRH proof claim.
   zh-CN: >-
-    发布方没有提供常规数学论文，而是公开四页研究说明和分成 14 个分卷的 Lean
-    源码归档。独立镜像报告约 17.5 万个 Lean 源文件，识别出以 Mathlib 的
-    RiemannHypothesis 为类型的顶层定理，以及 Dirichlet L 函数相关命题。
-    初步检查确认归档内容与镜像一致、独立写出的目标命题可编译，源码静态扫描
-    未发现显式 sorry 或自定义 axiom 声明。然而完整的独立构建、证明依赖审计
-    与内核 / Comparator 重放均尚无成功结论。
+    Alpöge 公开四页说明与包含 175187 个 Lean 源码模块的 14 分卷归档。
+    Andrew Sutherland（MIT）及独立的 LUMI 核验团队于 11 月 21—22 日报告：
+    全部源码编译通过，五条核心定理仅依赖 propext、Classical.choice 与
+    Quot.sound 三项标准公理，Sutherland 的逐模块内核重放全部通过。
+    独立的 nanoda 与 con-leche 内核接受了完整导出，con-leche 和 con-ron
+    的命题比较模式确认五条定理与干净的 Mathlib-only Challenge 一致；
+    Sutherland 还报告隔离重建生成了字节一致的证明导出文件。
+    截至其 11 月 22 日 04:35 UTC 更新，完整的 Lean 4.36 Comparator 检查
+    与导出文件的 Lean 内核重放仍在运行。这些是重要的形式化核验佐证，
+    但不等于常规数学证明说明、数学界正式接受，或 Chronicle 对 RH/GRH
+    自然语言证明正确性的独立裁决。
 
 why_it_matters:
   en: >-
@@ -139,9 +148,9 @@ methods:
   - formal-verification
 
 verification:
-  evidence_level: E3
-  status: under_verification
-  formal_assurance: artifact_available
+  evidence_level: E4
+  status: partially_verified
+  formal_assurance: independently_replayed
   history:
     - date: '2026-11-20'
       status: under_verification
@@ -158,6 +167,28 @@ verification:
           字节对应、目标命题与源码风险构造的初步检查，但明确表示
           完整 Comparator 核验尚未完成。尚无独立成功的内核重放
           或数学界接受的证据，因此证明主张保持归属表述。
+    - date: '2026-11-22'
+      status: partially_verified
+      evidence_level: E4
+      note:
+        en: >-
+          Andrew Sutherland's MIT verification page (updated 22 November 04:35 UTC)
+          reports full source compilation, all-module kernel replay, independent
+          nanoda and con-leche replay, con-leche/con-ron statement comparison,
+          standard-axiom-only dependencies, and a byte-identical sandboxed export.
+          An independent LUMI build and axiom audit corroborate key parts.
+          The full Lean 4.36 Comparator and export-level Lean kernel stages remain
+          in progress as of that update. This status recognizes the independently
+          reproduced formal artifact only; it does not pronounce the underlying
+          number-theoretic argument correct or settle priority and attribution.
+        zh-CN: >-
+          Andrew Sutherland 的 MIT 核验网页（11 月 22 日 04:35 UTC 更新）
+          报告完整源码编译、全部模块内核重放、独立 nanoda 与 con-leche
+          重放、con-leche/con-ron 命题比对、标准公理依赖审计，以及
+          隔离环境下字节一致的导出文件。独立 LUMI 编译与公理审计
+          佐证了其中的重要部分。截至上述更新，Lean 4.36 完整 Comparator
+          与导出级 Lean 内核检查仍在运行。当前状态仅认可形式化工件
+          获得实质独立核验，不对底层数论论证、优先权和归属作最终裁决。
 
 sources:
   - id: alpoge-rh-remark
@@ -201,6 +232,23 @@ sources:
     published_date: '2026-11-20'
     accessed_at: '2026-11-21'
 
+  - id: mit-sutherland-rh-verification
+    tier: S3
+    type: independent_analysis
+    title: Andrew Sutherland (MIT) — RH Lean proof verification files and logs
+    url: https://math.mit.edu/~drew/grh/
+    primary: false
+    published_date: null
+    accessed_at: '2026-11-22'
+  - id: lumi-rh-independent-build
+    tier: S3
+    type: independent_analysis
+    title: LUMI independent build and axiom-dependency audit of the RH/GRH Lean development
+    url: https://github.com/aapolipponen/rh-lean-check-lumi
+    primary: false
+    published_date: null
+    accessed_at: '2026-11-22'
+
 artifacts:
   - id: alpoge-rh-lean-archive
     kind: proof
@@ -208,8 +256,16 @@ artifacts:
     url: https://alpo.ge/lean.tar.gz.part01
   - id: alpoge-rh-lean-audit-repository
     kind: supplement
-    title: Independent source mirror and pending Comparator validation
-    url: https://github.com/Deicyde/riemann-hypothesis
+    title: Independent source mirror and Comparator checking configuration
+    url: https://github.com/leanprover-community/riemann-hypothesis
+  - id: mit-rh-formal-verification-logs
+    kind: supplement
+    title: MIT independent compilation, kernel replay and comparison logs
+    url: https://math.mit.edu/~drew/grh/
+  - id: lumi-rh-reproduction
+    kind: supplement
+    title: Independent LUMI build and proof-dependency audit
+    url: https://github.com/aapolipponen/rh-lean-check-lumi
 
 relationships:
   predecessors: []
@@ -233,7 +289,7 @@ tags:
 
 editorial:
   created_at: '2026-11-21'
-  last_reviewed: '2026-11-21'
+  last_reviewed: '2026-11-22'
   reviewers: []
 
 corrections: []
