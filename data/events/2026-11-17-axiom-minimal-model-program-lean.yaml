@@ -1,0 +1,234 @@
+schema_version: 1
+
+id: evt-2026-axiom-mmp-lean
+
+slug: axiom-minimal-model-program-lean
+
+title:
+  en: Axiom releases a 2.1-million-line Lean formalization of the minimal model program through dimension four
+  zh-CN: Axiom 公布覆盖四维极小模型纲领的约 210 万行 Lean 形式化工程
+
+dates:
+  event: '2026-11-17'
+  first_public_claim: '2026-11-17'
+  paper_release: null
+  artifact_release: null
+  independently_verified: null
+  added_to_chronicle: '2026-11-22'
+  last_updated: '2026-11-22'
+
+event_types:
+  - formalization
+  - proof
+
+significance:
+  tier: H1
+  rationale:
+    en: >-
+      The release makes a newly claimed four-dimensional birational-geometry result and
+      extensive classical prerequisites inspectable in a single large Lean project.
+      Its connection to OpenAI's October 2026 informal fourfold result, its reliance
+      on Axiom's formalized Stacks library, and its roughly 2.1-million-line scope
+      make this a potentially landmark demonstration of AI-assisted formal mathematics
+      across organizational and mathematical boundaries. H1 records the significance
+      of this public formalization milestone; it does not independently endorse
+      the stated mathematical result or certify the source library's assumptions.
+    zh-CN: >-
+      本次公开发布将新近提出的四维双有理几何结论与大量经典基础理论整合为
+      可检查的 Lean 工程。该项目衔接 OpenAI 于 2026 年 10 月公布的
+      四维结果，复用 Axiom 的 Stacks Project 形式化库，源码规模约
+      210 万行，是跨机构、跨数学理论的大规模 AI 辅助形式化潜在标志性案例。
+      H1 评价的是公开形式化里程碑的历史意义，并不意味着 Chronicle
+      已独立认可数学结论或审定底层依赖的全部假设。
+
+mathematical_novelty:
+  type: formalization_of_known_result
+
+interfaces:
+  - formal
+  - informal
+
+claim:
+  en: >-
+    On 17 November 2026 Axiom announced a Lean 4 library formalizing the minimal model
+    program in dimensions two, three and four. The advertised fourfold theorem concerns
+    projective log canonical pairs with rational boundary over algebraically closed
+    fields of characteristic zero: maximal programs terminate and end at a nef model
+    or Mori fibre space. The theorem draws on OpenAI's previously released informal
+    fourfold work. This is Axiom's reported theorem and scope, not Chronicle's own
+    finding about the mathematical correctness of the OpenAI manuscripts.
+  zh-CN: >-
+    2026 年 11 月 17 日，Axiom 宣布发布覆盖二维、三维和四维极小模型纲领的
+    Lean 4 证明库。公布的四维核心定理针对特征零代数闭域上、有有理边界的
+    射影对数典范对，声称极大极小模型程序终止，并以 nef 模型或 Mori 纤维
+    空间结束；有关四维结论参考了 OpenAI 此前公布的非形式化论文。
+    这属于 Axiom 所公开主张的定理和适用范围，不代表 Chronicle
+    已裁定 OpenAI 原始数学论文正确。
+
+summary:
+  en: >-
+    The public AxiomMath/MMP repository targets Lean 4.35.0 and contains about
+    2,270 modules, reported as approximately 2.1 million lines of code.
+    It builds upon Mathlib and Axiom's separate Stacks Project formalization.
+    Its README names the principal fourfold statement, continuation and termination
+    lemmas, classical lower-dimensional inputs, and only the standard axioms
+    propext, Classical.choice and Quot.sound. Axiom reports kernel-checked proofs
+    without sorry or custom axioms. The README explicitly says the AI-written code
+    has not been reviewed by humans. No independent end-to-end build or detailed
+    specialist correctness assessment is established by these source materials.
+    The four-dimensional statement does not itself assert abundance, and the
+    announced library does not automatically validate all other fourfold or Kähler claims.
+  zh-CN: >-
+    公开的 AxiomMath/MMP 仓库使用 Lean 4.35.0，约有 2270 个模块、
+    210 万行源码，依赖 Mathlib 与 Axiom 另行发布的 Stacks Project
+    形式化库。README 给出了四维主定理、延拓及终止引理、低维经典基础，
+    并报告其证明仅依赖 propext、Classical.choice、Quot.sound 三项
+    标准公理。Axiom 声称代码经内核检查、不含 sorry 或额外公理，
+    但 README 同时明确指出 AI 编写的源码尚未经过人类审阅。
+    现有来源尚不能证明第三方已经完整重建工程或完成专业数学审查。
+    核心四维命题本身不包含丰沛性结论，也不能据此推及其他
+    四维或 Kähler 情形的全部主张。
+
+why_it_matters:
+  en: >-
+    The case tests a central proposition of AI4Math: an AI-assisted formalization
+    ecosystem can make complex, recently AI-generated research claims inspectable
+    against explicit definitions and axioms, rather than leaving them as informal
+    manuscripts alone. Its very large dependency chain also makes independent
+    build reproducibility and statement-faithfulness auditing essential.
+  zh-CN: >-
+    该案例检验 AI4Math 的关键路线：依靠可复用的形式化基础库，
+    将复杂的、近期由 AI 参与生成的数学研究主张转化为具备显式定义
+    与公理依赖、可由内核检查的文件，而非仅保留非形式化论文。
+    庞大的依赖链也使独立重建和命题忠实性审计至关重要。
+
+ai_role:
+  level: human_ai_collaboration
+  description:
+    en: >-
+      Axiom credits its proof agents with writing approximately 2,270 Lean modules,
+      using existing APIs to formalize geometric arguments and the fourfold result.
+      The release does not identify a specific underlying model or publish a complete
+      human-versus-agent authorship trace; the exact autonomy level is not established.
+    zh-CN: >-
+      Axiom 将约 2270 个 Lean 模块的编写归于证明智能体，它们复用既有 API，
+      形式化几何理论及四维结果。发布材料未明确底层模型或完整的人机贡献
+      追踪，具体自主程度仍未得到独立确认。
+
+human_contribution:
+  description:
+    en: >-
+      Axiom's engineers and mathematicians organized and released the development
+      and selected the mathematical statements and library interfaces.
+      The mathematical prerequisites derive from generations of algebraic geometers,
+      community Mathlib and Stacks Project contributors; the referenced new fourfold
+      proof was previously published by OpenAI. The project README says the
+      AI-written Lean code is not yet human-reviewed.
+    zh-CN: >-
+      Axiom 的工程及数学团队组织、发布证明库并选择研究目标和形式化接口。
+      基础理论源于几代代数几何学家以及 Mathlib、Stacks Project 社区；
+      被引用的新四维结论此前由 OpenAI 公布。项目 README 明确表示，
+      AI 编写的 Lean 代码尚未完成人类审阅。
+
+systems:
+  - axiomprover
+  - lean
+  - mathlib
+
+organizations:
+  - axiom-math
+  - openai
+
+people: []
+
+problems:
+  - minimal-model-program
+  - fourfold-flip-termination
+
+methods:
+  - formal-verification
+  - ai-assisted-formalization
+  - birational-geometry
+
+verification:
+  evidence_level: E3
+  status: under_verification
+  formal_assurance: machine_checked
+  history:
+    - date: '2026-11-17'
+      status: under_verification
+      evidence_level: E3
+      note:
+        en: >-
+          Axiom published the Lean source and states that the principal theorem compiles
+          using three standard axioms. The repository reports no sorry and says that
+          the AI-generated code has not yet received human review. No independent
+          full compilation or expert assessment is established here. The verification
+          label records the formalization release, not acceptance of the underlying proof.
+        zh-CN: >-
+          Axiom 发布 Lean 源码，声称主定理依赖三项标准公理且编译通过，
+          仓库说明不含 sorry，同时明确表示 AI 代码尚无人类审阅。
+          本条尚无独立完整编译或专业审查结论；验证状态只描述
+          形式化工件的公开证据，不代表底层数学证明已被接受。
+
+sources:
+  - id: axiom-mmp-announcement
+    tier: S2
+    type: official_announcement
+    title: The Minimal Model Program, Formalized in Lean — Axiom
+    url: https://axiommath.ai/research/the-minimal-model-program-formalized/
+    primary: true
+    published_date: '2026-11-17'
+    accessed_at: '2026-11-22'
+  - id: axiom-mmp-lean-source
+    tier: S1
+    type: formal_artifact
+    title: AxiomMath/MMP Lean 4 source and theorem statements
+    url: https://github.com/AxiomMath/MMP
+    primary: true
+    published_date: null
+    accessed_at: '2026-11-22'
+  - id: axiom-mmp-independent-reading
+    tier: S3
+    type: independent_analysis
+    title: AI Proved What? — The minimal model program in Lean?
+    url: https://aiprovedwhat.com/episodes/ax10-minimal-model-program-lean/
+    primary: false
+    published_date: null
+    accessed_at: '2026-11-22'
+
+artifacts:
+  - id: axiom-mmp-source
+    kind: proof
+    title: Lean library for the minimal model program
+    url: https://github.com/AxiomMath/MMP
+  - id: axiom-mmp-stacks-dependency
+    kind: supplement
+    title: Axiom's Lean formalization of the Stacks Project
+    url: https://github.com/AxiomMath/Stacks
+
+relationships:
+  predecessors: []
+  successors: []
+  related:
+    - evt-2026-openai-math-release
+
+timeline:
+  featured: true
+  significance: primary
+
+tags:
+  - minimal-model-program
+  - algebraic-geometry
+  - fourfolds
+  - axiomprover
+  - lean
+  - formalization
+  - under-verification
+
+editorial:
+  created_at: '2026-11-22'
+  last_reviewed: '2026-11-22'
+  reviewers: []
+
+corrections: []
