@@ -15,7 +15,7 @@ dates:
   artifact_release: '2026-10-26'
   independently_verified: null
   added_to_chronicle: '2026-11-18'
-  last_updated: '2026-11-18'
+  last_updated: '2026-11-22'
 
 event_types:
   - formalization
@@ -44,10 +44,26 @@ claim:
 
 summary:
   en: >-
-    The development largely follows the first-generation proof. Engineers and mathematicians coordinated
-    proof agents across intermediate results. The repository links the exact target statement and supplies
-    build instructions.
-  zh-CN: 该工程主要沿用第一代分类证明。工程师与数学家协调多个证明智能体，逐项完成中间结果。代码仓库给出了总定理的精确表述和构建说明。
+    The development largely follows the first-generation group-classification proof.
+    Engineers and mathematicians coordinated proof agents across intermediate results,
+    and the repository publishes the exact top-level classification statement.
+    In a separate 16 November 2026 announcement, Axiom reported that its agents
+    formalized thirty published results external to the classification with
+    the reusable CFSG corpus, including classical group-theory, graph-theory
+    and combinatorics examples. The CFSG-applications repository offers distinct
+    conditional proofs (assuming corpus theorems) and unconditional integrations
+    (resolving those premises from the pinned corpus). The authors explicitly
+    note that the conditional Hall–Paige formalization has not yet been connected
+    in full to the supporting corpus; published code and claims still require
+    independent replay and review.
+  zh-CN: >-
+    该工程主要沿用有限单群分类的一代证明体系，工程师与数学家协调证明智能体
+    完成中间结果，仓库公布了精确的分类总定理。Axiom 又于 2026 年 11 月
+    16 日宣布，其智能体复用 CFSG 基础库，形式化了不属于分类证明本身的
+    30 项已发表定理，涉及群论、图论和组合学。CFSG-applications 仓库将
+    把基础库定理视为前提的条件化证明，与通过固定版本基础库补齐前提的
+    非条件化集成分开。作者也明确指出，Hall–Paige 形式化的条件化证明
+    尚未全部连接到其基础库前提；公开源码和有关主张仍有待独立重放与审阅。
 
 why_it_matters:
   en: >-
@@ -119,6 +135,22 @@ sources:
     primary: true
     published_date: null
     accessed_at: '2026-11-18'
+  - id: axiom-cfsg-applications-announcement
+    tier: S2
+    type: official_announcement
+    title: Beyond the Classification — What the CFSG Corpus Unlocks
+    url: https://axiommath.ai/research/beyond-the-classification-what-the-cfsg-corpus-unlocks/
+    primary: false
+    published_date: '2026-11-16'
+    accessed_at: '2026-11-22'
+  - id: axiom-cfsg-applications-repository
+    tier: S1
+    type: formal_artifact
+    title: Thirty published results built on the CFSG corpus
+    url: https://github.com/AxiomMath/CFSG-applications
+    primary: false
+    published_date: null
+    accessed_at: '2026-11-22'
 
 artifacts:
   - id: axiom-cfsg-proof
@@ -129,6 +161,10 @@ artifacts:
     kind: supplement
     title: Interactive proof map
     url: https://cfsg.axiommath.ai/
+  - id: axiom-cfsg-applications
+    kind: supplement
+    title: Conditional and corpus-integrated Lean proof applications
+    url: https://github.com/AxiomMath/CFSG-applications
 
 relationships:
   predecessors: []
@@ -148,7 +184,7 @@ tags:
 
 editorial:
   created_at: '2026-11-18'
-  last_reviewed: '2026-11-18'
+  last_reviewed: '2026-11-22'
   reviewers: []
 
 corrections: []
