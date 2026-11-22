@@ -42,7 +42,7 @@ significance:
       已独立认可数学结论或审定底层依赖的全部假设。
 
 mathematical_novelty:
-  type: new_proof
+  type: formalization_of_known_result
 
 interfaces:
   - formal
